@@ -1,6 +1,6 @@
 {
   "name": "fenextjs-component",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "",
   "main": "./cjs/index.js",
   "module": "./cjs/index.js",
@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/franciscoblancojn/fenextjs-component.git"
+    "url": "git+https://github.com/franciscoblancojn/fenextjs-component.git"
   },
   "keywords": [
     "fenextjs",
@@ -44,9 +44,9 @@
   "author": "franciscoblancojn",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/franciscoblancojn/fenextjs-component/issues"
+    "url": "https://github.com/franciscoblancojn/fenextjs-component/issues"
   },
-  "homepage": "https://gitlab.com/franciscoblancojn/fenextjs-component#readme",
+  "homepage": "https://github.com/franciscoblancojn/fenextjs-component#readme",
   "dependencies": {
     "@react-google-maps/api": "^2.19.2",
     "fenextjs-error": "^1.0.14",
