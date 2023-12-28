@@ -19,7 +19,7 @@ Index.args = {
     onComponent: ({ data,load }) => {
         return (
             <>
-                <div>Data:{JSON.stringify(data)} {load ? "load" : ""}</div>
+                <div>Data:{JSON.stringify(data ?? {})} {load ? "load" : ""}</div>
             </>
         );
     },
