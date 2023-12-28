@@ -1,0 +1,48 @@
+# Box
+
+El componente Box es un componente simple que representa un contenedor que puede ser utilizado para agrupar contenido dentro de una caja con estilos personalizados.
+
+### Importacion
+
+Para importar el componente Box, se puede hacer desde fenextjs o fenextjs-component
+
+```tsx copy
+import { Box, BoxProps } from "fenextjs/cjs/component/Box";
+```
+
+o
+
+```tsx copy
+import { Box, BoxProps } from "fenextjs-component/cjs/Box";
+```
+
+### Parametros
+
+| Parametro |   Tipo    | Requerido | Default | Descripcion                        |
+| --------- | :-------: | :-------: | :-----: | :--------------------------------- |
+| children  | ReactNode |    no     |         | Contenido del componente           |
+| className |  string   |    no     |   ""    | Clase personalizada del componente |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/box-box--index)
+
+### Usos
+
+-   Uso básico del componente Box
+
+```tsx copy
+<Box>
+    <h2>Contenido dentro del Box</h2>
+    <p>Este es un párrafo dentro del Box.</p>
+</Box>
+```
+
+-   Box con clase de estilo personalizada
+
+```tsx copy
+<Box className="custom-box">
+    <h2>Contenido personalizado dentro del Box</h2>
+    <p>Este es otro párrafo dentro del Box con estilos personalizados.</p>
+</Box>
+```

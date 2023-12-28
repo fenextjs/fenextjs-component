@@ -1,0 +1,66 @@
+.fenext-input-img {
+    border-radius: 1rem;
+    border: dashed 3px var(--fenext-color-gray);
+    background: var(--fenext-color-white);
+    position: relative;
+    overflow: hidden;
+    &-up {
+        display: grid;
+        gap: 1rem;
+        padding: 1rem;
+        justify-items: center;
+        cursor: pointer;
+    }
+    &-remove {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--fenext-color-white);
+        background: var(--fenext-color-red);
+        padding: 0.4rem;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+    &-img {
+        width: 100%;
+        max-height: 50dvh;
+        object-fit: contain;
+        object-position: center;
+    }
+    &-title {
+    }
+    &-content-icon {
+        width: min(100%, 2rem);
+    }
+    &-btn {
+    }
+    &-text {
+    }
+    &-progress {
+    }
+    &-in-progress {
+        border: solid 3px var(--fenext-color-white-dark);
+        background: var(--fenext-color-white-dark);
+    }
+    &-ok {
+        border: solid 3px var(--fenext-color-green);
+        background: var(--fenext-color-white-dark);
+        .fenext-input-img-up {
+            padding: 0;
+        }
+    }
+    &-error {
+        border: solid 3px var(--fenext-color-red);
+        background: var(--fenext-color-white-dark);
+    }
+    .fenext-error {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+}

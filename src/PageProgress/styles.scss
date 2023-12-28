@@ -1,0 +1,35 @@
+.fenext-page-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    --height: 1rem;
+    transition: 1s;
+    height: calc(var(--height) / 2);
+    z-index: var(--fenext-z-index-modal);
+    border-top-right-radius: var(--height);
+    border-bottom-right-radius: var(--height);
+    background: var(--fenext-color-gray-light);
+
+    overflow: hidden;
+
+    &-none {
+        display: none;
+    }
+    &-start {
+        animation: fenext-page-progress-animation 5s forwards;
+    }
+    &-done {
+        width: 100%;
+    }
+
+    &:has(~ .fenext-page-progress),
+    &:has(~ * .fenext-page-progress) {
+        display: none;
+    }
+}
+@keyframes fenext-page-progress-animation {
+    to {
+        width: 80%;
+    }
+}

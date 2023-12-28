@@ -1,0 +1,30 @@
+.fenext-breadcrumb {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    align-items: center;
+    list-style: none;
+    &-item {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        color: var(--fenext-color-dark);
+        &:not(:last-child) {
+            &::after {
+                content: "/";
+            }
+        }
+        &-link {
+            font-family: var(--fenext-font-global);
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1;
+            cursor: pointer;
+            color: var(--fenext-color-dark);
+            text-decoration: none;
+            &:hover {
+                color: var(--fenext-color-info);
+            }
+        }
+    }
+}

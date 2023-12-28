@@ -1,0 +1,28 @@
+@keyframes to-move-to-y-100 {
+    0% {
+        transform: translateY(100%);
+    }
+    15% {
+        transform: translateY(0%);
+    }
+    85% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+@keyframes to-move-to-y--100 {
+    0% {
+        transform: translateY(-100%);
+    }
+    15% {
+        transform: translateY(0%);
+    }
+    85% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}

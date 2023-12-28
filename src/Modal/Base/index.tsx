@@ -1,0 +1,117 @@
+import React, { PropsWithChildren, useMemo } from "react";
+import { Close } from "fenextjs-svg/cjs/close";
+import { _TProps } from "fenextjs-interface";
+import { _tValidate } from "fenextjs-functions";
+/**
+ * Properties for the base ModalBase component.
+ */
+export interface ModalBaseBaseProps extends PropsWithChildren, _TProps {
+    /**
+     * If active modal.
+     */
+    active?: boolean;
+    /**
+     * Type of modal.
+     */
+    type?:
+        | "top"
+        | "left"
+        | "right"
+        | "bottom"
+        | "center"
+        | "full"
+        | "layout-grid";
+    /**
+     * onClose ModalBase.
+     */
+    onClose?: () => void;
+}
+
+/**
+ * Properties for the class of the ModalBase component.
+ */
+export interface ModalBaseClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+    /**
+     * The class name for Bg the component.
+     */
+    classNameBg?: string;
+    /**
+     * The class name for Icon Close the component.
+     */
+    classNameClose?: string;
+    /**
+     * The class name for Content the component.
+     */
+    classNameContent?: string;
+}
+
+/**
+ * Properties for the ModalBase component.
+ */
+export interface ModalBaseProps
+    extends ModalBaseBaseProps,
+        ModalBaseClassProps {}
+
+export const ModalBase = ({
+    className = "",
+    classNameBg = "",
+    classNameContent = "",
+    classNameClose = "",
+
+    active = false,
+    type = "center",
+    onClose,
+    children,
+    _t,
+}: ModalBaseProps) => {
+    const uuid = useMemo(() => new Date().getTime(), [active]);
+    return (
+        <>
+            <dialog
+                open={active}
+                className={`fenext-modal-base-dialog fenext-modal-base-dialog-${
+                    active ? "active" : "inactive"
+                }`}
+            >
+                <div
+                    className={`fenext-modal-base-bg fenext-modal-base-bg-${
+                        active ? "active" : "inactive"
+                    } ${classNameBg} `}
+                ></div>
+                <div
+                    className={`fenext-modal-base fenext-modal-base-bg-close fenext-modal-base-bg-close-${uuid} fenext-modal-base-${
+                        active ? "active" : "inactive"
+                    } fenext-modal-base-${type} ${className} `}
+                    onClick={(e) => {
+                        const ele = e.target as HTMLDivElement;
+                        if (
+                            ele.classList.value.includes(
+                                `fenext-modal-base-bg-close-${uuid}`,
+                            )
+                        ) {
+                            onClose?.();
+                        }
+                    }}
+                >
+                    <div
+                        className={`fenext-modal-base-content ${classNameContent} `}
+                    >
+                        {_tValidate(children, _t)}
+                    </div>
+                </div>
+                <div
+                    onClick={onClose}
+                    className={`fenext-modal-base-close fenext-modal-base-close-${type}  fenext-modal-base-close-${
+                        active ? "active" : "inactive"
+                    } ${classNameClose}`}
+                >
+                    <Close />
+                </div>
+            </dialog>
+        </>
+    );
+};

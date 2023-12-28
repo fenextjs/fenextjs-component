@@ -1,0 +1,81 @@
+.fenext-theme {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    &-item {
+        display: flex;
+        align-items: center;
+        width: 10rem;
+        aspect-ratio: 63/52;
+        cursor: pointer;
+        position: relative;
+        --fenext-svg-theme-bg: #404040;
+        --fenext-svg-theme-bar: #161618;
+        --fenext-svg-theme-bg-content: #242424;
+        --fenext-svg-theme-col: #313131;
+        --fenext-svg-theme-line: #404040;
+        --fenext-svg-theme-active: #122dea;
+        --box-shadow-size: 0px;
+        border-radius: 0.5rem;
+        overflow: hidden;
+
+        svg {
+            width: 100%;
+        }
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            position: absolute;
+            display: none;
+            border-radius: 0.5rem;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0) 85%,
+                var(--fenext-color-info) 85%,
+                var(--fenext-color-info) 100%
+            );
+            z-index: 2;
+        }
+
+        &-light {
+            --fenext-svg-theme-bg: #ffffff;
+            --fenext-svg-theme-bar: #d2d2d2;
+            --fenext-svg-theme-bg-content: #e9e9e9;
+            --fenext-svg-theme-col: #c8c6c6;
+            --fenext-svg-theme-line: #757575;
+            --fenext-svg-theme-active: #435aff;
+        }
+        &-dark {
+            --fenext-svg-theme-bg: #404040;
+            --fenext-svg-theme-bar: #161618;
+            --fenext-svg-theme-bg-content: #242424;
+            --fenext-svg-theme-col: #313131;
+            --fenext-svg-theme-line: #404040;
+            --fenext-svg-theme-active: #122dea;
+        }
+        &-auto {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: white;
+                mix-blend-mode: difference;
+                clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+                z-index: 1;
+            }
+        }
+        &-active {
+            &::before {
+                display: block;
+            }
+        }
+    }
+}

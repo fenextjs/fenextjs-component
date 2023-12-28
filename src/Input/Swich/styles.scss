@@ -1,0 +1,31 @@
+.fenext-input-swich {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    --size-cicle: 1rem;
+    --bg: var(--fenext-color-red);
+    --bg-circle: var(--fenext-color-white);
+
+    background-color: var(--bg);
+    border-radius: var(--size-cicle);
+    padding: 0.25rem;
+    width: calc(calc(var(--size-cicle) * 2.75) + 0.5rem);
+    transition: 0.1s;
+    &-input {
+        position: fixed;
+        scale: 0;
+    }
+    &-circle {
+        width: var(--size-cicle);
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        background-color: var(--bg-circle);
+        transition: 0.1s;
+    }
+    &:has(&-input:checked) {
+        --bg: var(--fenext-color-teal);
+        .fenext-input-swich-circle {
+            transform: translateX(175%);
+        }
+    }
+}

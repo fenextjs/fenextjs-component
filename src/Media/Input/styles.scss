@@ -1,0 +1,98 @@
+.fenext-media {
+    display: grid;
+    gap: 1rem;
+    .fenext-input-upload {
+        .fenext-btn {
+            display: none;
+        }
+    }
+    &-element-show-modal {
+        position: relative;
+    }
+    &-btn-modal {
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    .fenext-grid-gallery {
+        grid-auto-rows: minmax(auto, 15rem);
+        &-item {
+            display: flex;
+        }
+    }
+    .fenext-input-upload-ok {
+        max-height: 100%;
+        width: 100%;
+        display: flex;
+        .fenext-input-upload {
+            height: 100%;
+            &-up {
+                padding: 0;
+                max-height: 100%;
+                width: 100%;
+                display: flex;
+                border-radius: 1rem;
+                overflow: hidden;
+                position: relative;
+            }
+            &-preview {
+                object-fit: contain;
+                object-position: center;
+                min-height: 0;
+                max-height: 100%;
+                width: 100%;
+            }
+            &-remove {
+                z-index: 3;
+            }
+        }
+        .fenext-title {
+            z-index: 2;
+            padding: 0.5rem 1rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            font-size: 1rem;
+            text-align: center;
+            background-color: var(--fenext-color-white);
+            color: var(--fenext-color-dark);
+            opacity: 0.75;
+        }
+        .fenext-collapse {
+            z-index: 1;
+            max-height: 100%;
+            width: 100%;
+            &-header {
+                display: none;
+            }
+            &-body {
+                transform: none;
+                padding: 0;
+                display: flex;
+                border-radius: 1rem;
+                overflow: hidden;
+                max-height: 100%;
+                width: 100%;
+            }
+        }
+    }
+    .fenext-modal-base-content {
+        display: grid;
+        gap: 1rem;
+        grid-template-rows: auto auto 1fr;
+        height: 100dvh;
+        .fenext-media-page {
+            height: calc(100dvh - 2rem);
+        }
+    }
+    &:has(.fenext-media-page-top-btn-acepte .fenext-btn) {
+        .fenext-modal-base-close {
+            display: none;
+        }
+    }
+}

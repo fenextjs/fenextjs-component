@@ -1,0 +1,289 @@
+.fenext-select {
+    position: relative;
+    width: 100%;
+    --list-scaleY: 0;
+    --fenext-select-max-height: 100dvh;
+    --fenext-select-error-range-height: 1rem;
+
+    &-checkbox-close {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        scale: 0;
+    }
+    &-is-not-change-text {
+        .fenext-input-content-input {
+            caret-color: transparent;
+        }
+    }
+    &-clear {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        color: var(--fenext-color-light);
+        outline: none;
+        font-family: var(--fenext-font-global);
+        font-size: 0.75rem;
+        font-weight: 800;
+        line-height: 1.36;
+        text-align: left;
+        padding: 0.5rem 1rem;
+        height: 100%;
+        background: transparent;
+        border: 0;
+        display: none;
+        z-index: var(--fenext-z-index-modal);
+    }
+
+    &:not(&-options-up) {
+        --fenext-size-menu-top: 0px;
+    }
+    &-list-options {
+        position: absolute;
+        top: calc(100% - 0.5rem);
+        left: 0;
+        width: 100%;
+        color: var(--fenext-color-dark);
+        background-color: var(--fenext-color-light);
+        border-radius: 0.7rem;
+        padding: 1rem 0;
+        z-index: var(--fenext-z-index-select-option);
+        transition: transform 0.1s 0.1s;
+        transition-delay: calc(calc(1.4 - var(--list-scaleY, 0)) * 0.25s);
+        transform: scaleY(var(--list-scaleY, 0));
+        transform-origin: top center;
+        overflow: auto;
+        @media (min-width: 576px) {
+            max-height: calc(
+                var(--fenext-select-max-height, 0px) - var(
+                        --fenext-size-menu-top,
+                        0px
+                    ) - var(--fenext-select-error-range-height)
+            );
+        }
+        &-type {
+            &-select {
+                top: 0;
+                opacity: 0;
+                height: 100%;
+                cursor: pointer;
+                display: block;
+                --list-scaleY: 1;
+            }
+            &-datalist {
+                --list-scaleY: 1;
+            }
+        }
+    }
+    &:has(.fenext-error) {
+        .fenext-select-list-options {
+            top: calc(100% - 2rem);
+        }
+    }
+    &-options-up {
+        @media (min-width: 576px) {
+            .fenext-select-list-options.fenext-select-list-options.fenext-select-list-options {
+                top: inherit;
+                bottom: calc(100% - 0.5rem);
+                transform-origin: bottom center;
+                display: flex;
+                flex-direction: column-reverse;
+                .fenext-select-option-btn {
+                    top: inherit;
+                    bottom: 0;
+                    margin-bottom: 0;
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+    &.hover:hover,
+    &.focus:has(.fenext-input-content-input:focus),
+    &.focus-hover:hover,
+    &.focus-hover:has(.fenext-input-content-input:focus) {
+        --list-scaleY: 1;
+    }
+    &.not-hover:not(:hover),
+    &.not-focus:not(:has(.fenext-input-content-input:focus)),
+    &.not-focus-hover:not(:hover):not(:has(.fenext-input-content-input:focus)) {
+        --list-scaleY: 0;
+    }
+    &-close {
+        display: none;
+        svg {
+            width: 1rem;
+        }
+        &-checkbox {
+            display: none;
+        }
+    }
+    @media (max-width: 575px) {
+        transition:
+            all 0.5s,
+            background-color 0s;
+        --list-scaleY: 0;
+        .fenext-select-list-options {
+            transition: 0s;
+            background: transparent;
+        }
+        &:has(.fenext-select-clear:hover),
+        &:has(.fenext-select-clear:focus),
+        &:has(.fenext-select-option:hover),
+        &:has(.fenext-input-content-input:focus) {
+            &:not(:has(.fenext-select-checkbox-close:focus)) {
+                & {
+                    background-color: var(--fenext-color-white);
+                    width: 100dvw;
+                    height: 100dvh;
+                    inset: 0;
+                    position: fixed;
+                    z-index: var(--fenext-z-index-modal);
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto 1fr;
+                    padding: 1rem 0;
+                    gap: 1rem;
+
+                    .fenext-select-clear {
+                        display: inline-block;
+                    }
+                    .fenext-select-close {
+                        display: flex;
+                        align-items: center;
+                        color: var(--fenext-color-dark);
+                        background: transparent;
+                        padding: 1rem 0.5rem;
+                        width: 4rem;
+                        justify-content: center;
+                        border: 0;
+                    }
+                    .fenext-select-content-search {
+                        padding: 0 1rem;
+                        position: relative;
+                        .fenext-input-content-input {
+                            padding-right: 3rem;
+                        }
+                        display: grid;
+                        grid-template-columns: 1fr auto;
+                        .fenext-error {
+                            grid-column: 1/-1;
+                            grid-row: 2/3;
+                        }
+                    }
+                    .fenext-select-list-options.fenext-select-list-options {
+                        position: relative;
+                        height: 100%;
+                        overflow: auto;
+                        grid-column: 1/-1;
+                        top: 0;
+                        left: 0;
+                        transform: none;
+                        // transition: 0s;
+                        padding: 0;
+                    }
+                    .fenext-input-content-icon {
+                        display: none;
+                    }
+                    .fenext-input-content-input {
+                        padding-left: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+body {
+    @media (max-width: 575px) {
+        &:has(.fenext-select-clear:hover),
+        &:has(.fenext-select-clear:focus),
+        &:has(.fenext-select-option:hover),
+        &:has(.fenext-select .fenext-input-content-input:focus) {
+            &:not(:has(.fenext-select-checkbox-close:focus)) {
+                .fenext-modal-base-close {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+body:not(:has(.fenext-layout-grid-mt-menu-top)) {
+    .fenext-select {
+        --fenext-size-menu-top: 0px;
+    }
+}
+
+@media (max-width: 575px) {
+    body:has(.fenext-select .fenext-select-clear:focus),
+    body:has(.fenext-select .fenext-select-clear:hover),
+    body:has(.fenext-select .fenext-input-content-input:focus),
+    body:has(.fenext-select .fenext-select-option:hover) {
+        &:not(.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1) {
+            overflow: hidden !important;
+        }
+        &:not(:has(.fenext-select-checkbox-close:focus)) {
+            *:not(:has(.fenext-select .fenext-select-clear:focus)),
+            *:not(:has(.fenext-select .fenext-select-clear:hover)),
+            *:not(:has(.fenext-select .fenext-input-content-input:focus)),
+            *:not(:has(.fenext-select .fenext-select-option:hover)) {
+                &:not(:has(.fenext-select-checkbox-close:focus)) {
+                    &:not([class*="fenext-select"]) {
+                        &:not(:has([class*="fenext-select"])) {
+                            z-index: -1 !important;
+                            transition: 0s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    *:has(
+            .fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select
+                .fenext-select-clear:focus
+        ),
+    *:has(
+            .fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select
+                .fenext-select-clear:hover
+        ),
+    *:has(
+            .fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select
+                .fenext-input-content-input:focus
+        ),
+    *:has(
+            .fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select
+                .fenext-select-option:hover
+        ) {
+        &:not(:has(.fenext-select-checkbox-close:focus)) {
+            z-index: var(--fenext-z-index-modal) !important;
+            position: absolute !important;
+            overflow: visible !important;
+            transform: none !important;
+            transition: 0s !important;
+            inset: 0 !important;
+            width: 100vw;
+            height: 100dvh;
+            container-type: initial !important;
+            padding: 0 !important;
+            transition: 0s;
+        }
+    }
+
+    .fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select:has(
+            .fenext-select-clear:hover
+        ),
+    .fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select:has(
+            .fenext-select-clear:focus
+        ),
+    .fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select:has(
+            .fenext-input-content-input:focus
+        ),
+    .fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select:has(
+            .fenext-select-option:hover
+        ) {
+        &:not(:has(.fenext-select-checkbox-close:focus)) {
+            z-index: var(--fenext-z-index-modal) !important;
+            transition: 0s;
+        }
+    }
+}

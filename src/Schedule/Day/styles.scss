@@ -1,0 +1,35 @@
+.fenext-schedule-day {
+    display: grid;
+    gap: 1rem;
+
+    &-content {
+        &-date-range {
+            display: grid;
+            gap: 1rem;
+            &:empty {
+                display: none;
+            }
+        }
+        &-btn {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    &-date-range {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+        align-items: flex-end;
+        &-close {
+            padding: 1rem;
+            cursor: pointer;
+            color: var(--fenext-color-gray-dark);
+            &:hover {
+                color: var(--fenext-color-red);
+            }
+            svg {
+                width: 1rem;
+            }
+        }
+    }
+}

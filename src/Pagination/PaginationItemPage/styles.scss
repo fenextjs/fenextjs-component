@@ -1,0 +1,75 @@
+.fenext-pagination-item-page {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    &-hidden {
+        display: none;
+    }
+    &-up {
+        svg {
+            width: 0.9rem;
+            display: inline-block;
+        }
+    }
+    &-pre {
+        svg {
+            width: 0.6rem;
+            display: inline-block;
+        }
+    }
+    &-current {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-family: var(--fenext-font-global);
+        font-size: 1rem;
+        font-weight: 800;
+        line-height: 1.36;
+        text-align: left;
+        &-item {
+            width: 1.5rem;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            background-color: var(--fenext-color-white-dark);
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--fenext-color-gray-dark);
+            &-dog {
+                background-color: transparent;
+                cursor: auto;
+                @media (max-width: 575px) {
+                    display: none;
+                }
+            }
+            &-init {
+                @media (max-width: 575px) {
+                    display: none;
+                }
+            }
+            &-final {
+                @media (max-width: 575px) {
+                    display: none;
+                }
+            }
+            &-active {
+                background-color: var(--fenext-color-dark);
+                color: var(--fenext-color-white);
+            }
+        }
+    }
+    &-next {
+        svg {
+            width: 0.6rem;
+            display: inline-block;
+        }
+    }
+    &-down {
+        svg {
+            width: 0.9rem;
+            display: inline-block;
+        }
+    }
+}

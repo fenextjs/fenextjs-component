@@ -1,0 +1,35 @@
+.fenext-share {
+    &-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    &-item {
+        width: 3rem;
+        cursor: pointer;
+        &-whatsapp {
+            color: #43d855;
+        }
+        &-facebook {
+            color: #3a5997;
+        }
+        &-twitter {
+            color: #00abf0;
+        }
+        &-linkedin {
+            color: #0a66c2;
+        }
+        &-email {
+            color: #888888;
+        }
+        &-copy {
+            color: #888888;
+        }
+    }
+    &-copy {
+        cursor: pointer;
+        margin-top: 0.5rem;
+        color: var(--fenext-color-dark);
+    }
+}

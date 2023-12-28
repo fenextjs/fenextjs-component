@@ -1,0 +1,16 @@
+.fenext-grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
+    color: var(--fenext-color-black);
+    font-family: var(--fenext-font-global);
+    &-item {
+        color: currentColor;
+        @media (min-width: 992px) {
+            &:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+        }
+    }
+}

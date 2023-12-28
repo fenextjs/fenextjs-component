@@ -1,0 +1,42 @@
+.fenext-notification {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-family: var(--fenext-font-global);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--fenext-color-neto-dark);
+    background: var(--fenext-color-white-dark);
+    position: sticky;
+    top: 0;
+    &-ok {
+        background: var(--fenext-color-success);
+        color: var(--fenext-color-white);
+    }
+    &-error {
+        background: var(--fenext-color-danger);
+        color: var(--fenext-color-white);
+    }
+    &-none {
+        color: var(--fenext-color-dark);
+        background: transparent;
+    }
+    &-normal {
+        color: var(--fenext-color-dark);
+        background: var(--fenext-color-white-dark);
+    }
+    &-warning {
+        background: var(--fenext-color-warning);
+    }
+    &-close {
+        position: absolute;
+        width: 0.75rem;
+        top: 0;
+        right: 1rem;
+        bottom: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,10 @@
+.fenext-link {
+    font-family: var(--fenext-font-global);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--fenext-color-dark);
+    &:hover {
+        color: var(--fenext-color-blue);
+    }
+}

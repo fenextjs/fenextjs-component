@@ -1,0 +1,91 @@
+&-ml {
+    $nameClass: &;
+    font-family: var(--fenext-font-global);
+
+    display: grid;
+    grid-template-columns: var(--fenext-size-menu-left, auto) 1fr;
+    grid-template-rows: 1fr;
+
+    position: relative;
+
+    transition: 0.5s;
+
+    &-menu-left {
+        position: sticky;
+        background-color: var(--fenext-color-light-dark);
+        color: var(--fenext-color-dark);
+        clip-path: circle(200% at 0% 0%);
+        height: 100dvh;
+        top: 0;
+        overflow: auto;
+        overflow-x: hidden;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        &-content {
+            width: var(--fenext-size-menu-left-max, auto);
+        }
+    }
+    @media (min-width: 576px) {
+        &-inactive {
+            grid-template-columns: 0 1fr;
+        }
+    }
+    &-movil {
+        @media (max-width: 575px) {
+            &-inactive {
+                #{$nameClass}-menu-left {
+                    clip-path: circle(0% at 0% 0%);
+                }
+            }
+        }
+    }
+    &-use-btn-menu {
+        @at-root body:has(.fenext-btn-menu-checkbox:checked) & {
+            @media (min-width: 576px) {
+                grid-template-columns: var(--fenext-size-menu-left, auto) 1fr;
+            }
+            @media (max-width: 575px) {
+                #{$nameClass}-menu-left {
+                    clip-path: circle(200% at 0% 0%);
+                }
+            }
+        }
+        @at-root body:not(:has(.fenext-btn-menu-checkbox:checked)) & {
+            @media (min-width: 576px) {
+                grid-template-columns: 0 1fr;
+            }
+            @media (max-width: 575px) {
+                #{$nameClass}-menu-left {
+                    clip-path: circle(0% at 0% 0%);
+                }
+            }
+        }
+    }
+    &-children {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        z-index: 2;
+        background-color: var(--fenext-color-white);
+        position: relative;
+
+        color: var(--fenext-color-black);
+        font-family: var(--fenext-font-global);
+
+        container-type: inline-size;
+        container-name: fenext-layout-grid-ml-children;
+    }
+    @media (max-width: 575px) {
+        grid-template-columns: 1fr;
+        &-menu-left {
+            grid-column: 1/-1;
+            grid-row: 1/-1;
+            z-index: 2;
+            transition: 0.5s;
+        }
+        &-children {
+            grid-column: 1/-1;
+            grid-row: 1/-1;
+            z-index: 1;
+        }
+    }
+}

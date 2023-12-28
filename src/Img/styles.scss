@@ -1,0 +1,25 @@
+.fenext-picture {
+    display: inline-flex;
+    position: relative;
+    .fenext-loader-line {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        ~ .fenext-img,
+        ~ .fenext-img-layer {
+            opacity: 0;
+        }
+    }
+}
+.fenext-img {
+    max-width: 100%;
+    object-fit: cover;
+    &-layer {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

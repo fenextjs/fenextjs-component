@@ -1,0 +1,5 @@
+@mixin styleTheme($theme: "light") {
+    html:has(.fenext-theme-item-#{$theme}.fenext-theme-item-active) {
+        @content;
+    }
+}

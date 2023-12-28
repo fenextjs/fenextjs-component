@@ -1,0 +1,196 @@
+.fenext-table {
+    width: 100%;
+    padding-bottom: 0.5rem;
+    max-height: 100dvh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    @media not print {
+        @media (max-width: 991px) {
+            grid-template-rows: auto 1fr auto;
+            &::before {
+                content: var(--fenext-table-name) ": ";
+                font-family: var(--fenext-font-global);
+                font-size: 1.3rem;
+                font-weight: 800;
+                line-height: 1.36;
+                text-align: left;
+                color: var(--fenext-color-gray-dark);
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+    &-content {
+        width: 100%;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+        overflow: auto;
+        &-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--fenext-color-white);
+            color: var(--fenext-color-dark);
+            &-thead {
+                background-color: var(--fenext-color-white-smoke);
+                border-bottom: 1px solid var(--fenext-color-gray-extra-light);
+                position: sticky;
+                top: 0;
+                @media not print {
+                    @media (max-width: 991px) {
+                        display: none;
+                    }
+                }
+            }
+            @media (min-width: 992px) {
+                @for $i from 1 through 25 {
+                    &:has(
+                            .fenext-table-content-table-th:nth-child(#{$i})
+                                .fenext-input-radio-input-id-hidden:checked
+                        ) {
+                        .fenext-table-content-table-th:nth-child(#{$i}),
+                        .fenext-table-content-table-td:nth-child(#{$i}) {
+                            font-size: 0;
+                            padding-inline: 0.1rem;
+                            > label {
+                                gap: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .fenext-input-checkbox {
+                align-items: flex-end;
+                &-text {
+                    display: none;
+                }
+            }
+
+            &-th {
+                font-family: var(--fenext-font-global);
+                font-size: 1rem;
+                font-weight: 800;
+                line-height: 1.36;
+                text-align: left;
+                color: var(--fenext-color-gray-dark);
+                padding: 1.5rem 1rem;
+                white-space: nowrap;
+                position: relative;
+                transition: 0.25s;
+                cursor: pointer;
+                &-arrow {
+                    width: 0.5rem;
+                }
+                .fenext-collapse {
+                    &-header {
+                        color: var(--fenext-color-dark);
+                        background-color: transparent;
+                        padding: 0;
+                        font-family: inherit;
+                        font-size: inherit;
+                        font-weight: inherit;
+                        line-height: inherit;
+                        &-icon {
+                            svg {
+                                width: 0.5rem;
+                            }
+                        }
+                    }
+                    .fenext-collapse-body {
+                        padding-inline: 0;
+                        display: grid;
+                        min-width: min(max(100%, 12rem), 100dvw);
+                    }
+                }
+                &-popup-item,
+                .fenext-input-radio {
+                    padding: 0.2rem 1.5rem;
+                    color: var(--fenext-color-white);
+                    &:hover {
+                        background-color: var(--fenext-color-gray-extra-light);
+                    }
+                }
+                .fenext-input-radio-text {
+                    color: currentColor;
+                }
+                .fenext-content-radio {
+                    gap: 0;
+                }
+            }
+            &-tbody {
+                @media not print {
+                    @media (max-width: 991px) {
+                        display: grid;
+                        grid-template-columns: repeat(
+                            auto-fit,
+                            minmax(300px, 1fr)
+                        );
+                        column-gap: 1rem;
+                        row-gap: 2rem;
+                    }
+                }
+            }
+            &-tr {
+                &:nth-child(2n) {
+                    background-color: var(--fenext-color-white-smoke);
+                }
+                &:hover {
+                    background-color: var(--fenext-color-white-smoke-dark);
+                }
+                @media not print {
+                    @media (max-width: 991px) {
+                        display: grid;
+                        padding: 1rem;
+                        border-radius: 0.5rem;
+                        background-color: var(--fenext-color-white-smoke);
+                        &:hover {
+                            background-color: var(--fenext-color-white-smoke);
+                        }
+                    }
+                }
+            }
+            &-td {
+                font-family: var(--fenext-font-global);
+                font-size: 0.8rem;
+                font-weight: 400;
+                line-height: 1.36;
+                text-align: left;
+                border-bottom: 1px solid var(--fenext-color-gray-extra-light);
+                padding: 1rem 1rem;
+
+                transition: 0.25s;
+
+                white-space: nowrap;
+                @media not print {
+                    @media (max-width: 991px) {
+                        border: 0;
+                        white-space: normal;
+                        padding: 0.5rem 1rem;
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        align-items: center;
+                        &:nth-child(2n) {
+                            background-color: var(--fenext-color-white);
+                            border-radius: 0.5rem;
+                        }
+                        &::before {
+                            content: var(--fenext-table-head-th) ": ";
+                        }
+                        &:has(.fenext-input-checkbox) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        &-pagination {
+            width: 100%;
+            padding: 0 0.5rem;
+            @media print {
+                display: none;
+            }
+        }
+    }
+    &-not-result {
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+}

@@ -1,0 +1,84 @@
+.fenext-img-gallery {
+    .fenext-grid-gallery {
+        --round-img: 1rem;
+        border-radius: var(--round-img);
+        overflow: hidden;
+
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(auto, 10rem);
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        }
+        &:not(:has(.fenext-grid-gallery-item:nth-child(5))) {
+            .fenext-grid-gallery-item:nth-child(4) {
+                grid-column: span 2;
+            }
+        }
+        &:not(:has(.fenext-grid-gallery-item:nth-child(4))) {
+            .fenext-grid-gallery-item:nth-child(2),
+            .fenext-grid-gallery-item:nth-child(3) {
+                grid-column: span 2;
+            }
+        }
+        &:not(:has(.fenext-grid-gallery-item:nth-child(3))) {
+            .fenext-grid-gallery-item:nth-child(2) {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+        }
+        &:not(:has(.fenext-grid-gallery-item:nth-child(2))) {
+            .fenext-grid-gallery-item:nth-child(1) {
+                grid-column: span 4;
+                grid-row: span 2;
+            }
+        }
+    }
+    .fenext-picture {
+        height: 100%;
+        width: 100%;
+        .fenext-img {
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+    &-content-btn {
+        padding-block: 0.5rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .fenext-modal-base-content {
+        display: grid;
+        .fenext-picture {
+            width: 100%;
+            height: 100%;
+        }
+        .fenext-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .fenext-steps {
+        height: calc(100dvh - 2rem);
+        overflow: hidden;
+        &-content {
+            &-items {
+                height: 100%;
+                overflow: hidden;
+            }
+        }
+        &-item {
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+    .fenext-steps-content-btn {
+        .fenext-btn {
+            padding-block: 0.5rem;
+        }
+        svg {
+            width: 1rem;
+        }
+    }
+}

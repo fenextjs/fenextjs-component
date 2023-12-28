@@ -1,0 +1,8 @@
+.fenext-input-date-range {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.5rem;
+    .fenext-input-label {
+        grid-column: 1/-1;
+    }
+}

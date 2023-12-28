@@ -1,0 +1,25 @@
+.fenext-chat-user {
+    padding: 0.25rem 0.5rem;
+    padding-right: 0.75rem;
+    border-radius: 1.5rem;
+    background: var(--fenext-color-gray-light);
+    width: auto;
+    display: grid;
+    --size-img: 2rem;
+    grid-template-columns: var(--size-img) 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    &-text {
+        min-width: 5rem;
+        white-space: nowrap;
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+    &-img {
+        border-radius: 100%;
+        width: var(--size-img);
+    }
+    &-content {
+    }
+}

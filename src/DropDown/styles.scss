@@ -1,0 +1,46 @@
+.fenext-dropdown {
+    display: inline-block;
+    .fenext-collapse {
+        width: auto;
+        position: relative;
+        &:has(
+                > .fenext-collapse-header
+                    > .fenext-collapse-header-checkbox:checked
+            ) {
+            grid-template-rows: 1fr;
+        }
+        &-header {
+            width: auto;
+            border-radius: 1rem;
+        }
+        &-body {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 1rem;
+            width: max-content;
+            max-width: calc(100dvw - 2rem);
+            min-width: min(100%, 100dvw);
+            border-radius: 1rem;
+            padding: 1rem;
+            background-color: var(--fenext-color-dark);
+            color: var(--fenext-color-white);
+        }
+    }
+    &-right {
+        .fenext-collapse {
+            &-body {
+                left: inherit;
+                right: 1rem;
+            }
+        }
+    }
+    &-up {
+        .fenext-collapse {
+            &-body {
+                top: inherit;
+                bottom: calc(100% + 0.5rem);
+                transform-origin: center bottom;
+            }
+        }
+    }
+}

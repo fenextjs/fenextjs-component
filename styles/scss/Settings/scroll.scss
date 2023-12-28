@@ -1,0 +1,13 @@
+::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--fenext-color-white, white);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--fenext-color-gray, gray);
+}
+* {
+    scroll-behavior: smooth;
+}

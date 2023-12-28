@@ -1,0 +1,11 @@
+# dependencies
+/node_modules
+
+#build
+/dist
+
+package-lock.json
+pnpm-lock.yaml
+.env
+
+bun.lockb

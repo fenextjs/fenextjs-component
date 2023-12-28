@@ -1,0 +1,56 @@
+@use "sass:map";
+
+@mixin generateVarConfig(
+    $component,
+    $vars: (normal: (), hover: (), focus: (), disabled: ())
+) {
+    $normal: map.get($vars, "normal");
+    $hover: map.get($vars, "hover");
+    $focus: map.get($vars, "focus");
+    $disabled: map.get($vars, "disabled");
+    @at-root :root {
+        @each $var, $value in $normal {
+            --fenext-#{$component}-#{$var}: #{$value};
+            --fenext-#{$component}-hover-#{$var}: #{$value};
+            --fenext-#{$component}-focus-#{$var}: #{$value};
+            --fenext-#{$component}-disabled-#{$var}: #{$value};
+        }
+        @each $var, $value in $hover {
+            --fenext-#{$component}-hover-#{$var}: #{$value};
+        }
+        @each $var, $value in $focus {
+            --fenext-#{$component}-focus-#{$var}: #{$value};
+        }
+        @each $var, $value in $disabled {
+            --fenext-#{$component}-disabled-#{$var}: #{$value};
+        }
+    }
+    @each $var, $value in $normal {
+        #{$var}: var(--fenext-#{$component}-#{$var});
+    }
+    &:hover {
+        @each $var, $value in $hover {
+            #{$var}: var(
+                --fenext-#{$component}-hover-#{$var},
+                var(--fenext-#{$component}-#{$var})
+            );
+        }
+    }
+    &:focus {
+        @each $var, $value in $focus {
+            #{$var}: var(
+                --fenext-#{$component}-focus-#{$var},
+                var(--fenext-#{$component}-#{$var})
+            );
+        }
+    }
+    &[disabled],
+    &.disabled {
+        @each $var, $value in $disabled {
+            #{$var}: var(
+                --fenext-#{$component}-disabled-#{$var},
+                var(--fenext-#{$component}-#{$var})
+            );
+        }
+    }
+}

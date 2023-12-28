@@ -1,0 +1,64 @@
+.fenext-input-number {
+    &-icon {
+        &-increase {
+            right: 1rem;
+        }
+        &-decrease {
+            left: 1rem;
+        }
+        &-arrow {
+            svg {
+                width: 0.5rem;
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            user-select: none; /* supported by Chrome and Opera */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            -webkit-touch-callout: none;
+            padding: 0.2rem 0.5rem;
+            &-up {
+                transform: rotateZ(180deg);
+            }
+            &-down {
+            }
+        }
+        &-increase,
+        &-decrease {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            user-select: none; /* supported by Chrome and Opera */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            -webkit-touch-callout: none;
+            svg {
+                width: 1rem;
+            }
+        }
+    }
+}
+.fenext-input-content {
+    &:has(.fenext-input-number-icon-arrow:hover) {
+        .fenext-input-content-input {
+            box-shadow: 0px 0px 0px 2px var(--fenext-color-primary);
+        }
+    }
+    &:has(.fenext-input-number-icon-increase) {
+        .fenext-input-content-input {
+            padding-right: 3rem;
+            padding-left: 3rem;
+            text-align: center;
+        }
+    }
+    &-icon {
+        &:has(.fenext-input-number-icon-increase) {
+            position: static;
+        }
+    }
+}

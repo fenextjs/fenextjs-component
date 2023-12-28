@@ -1,0 +1,10 @@
+.fenext-layout-grid {
+    @import "./GridMenuLeft/styles.scss";
+    @import "./GridMenuTop/styles.scss";
+    @import "./GridMenuTopLeft/styles.scss";
+    .fenext-loader {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+    }
+}

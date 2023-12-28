@@ -1,0 +1,21 @@
+@use "sass:color";
+
+@mixin generateColor($name, $color, $theme: "light") {
+    $extraDark: color.adjust($color, $lightness: -25%);
+    $dark: color.adjust($color, $lightness: -10%);
+    $light: color.adjust($color, $lightness: 10%);
+    $extraLight: color.adjust($color, $lightness: 25%);
+
+    @if $theme == "dark" {
+        $extraDark: color.adjust($color, $lightness: 25%);
+        $dark: color.adjust($color, $lightness: 10%);
+        $light: color.adjust($color, $lightness: -10%);
+        $extraLight: color.adjust($color, $lightness: -25%);
+    }
+
+    --fenext-color-#{$name}-extra-dark: #{$extraDark};
+    --fenext-color-#{$name}-dark: #{$dark};
+    --fenext-color-#{$name}: #{$color};
+    --fenext-color-#{$name}-light: #{$light};
+    --fenext-color-#{$name}-extra-light: #{$extraLight};
+}

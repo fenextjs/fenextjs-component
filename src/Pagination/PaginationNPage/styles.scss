@@ -1,0 +1,19 @@
+.fenext-pagination-npage {
+    width: min(100%, 4rem);
+    .fenext-input-content-input {
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;
+    }
+    .fenext-input-content-icon {
+        right: 0.5rem;
+        svg {
+            width: 0.75rem;
+        }
+    }
+    .fenext-select-close {
+        bottom: 0.5rem;
+        svg {
+            width: 0.75rem;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.fenext-cols {
+    columns: var(--nCols, 1);
+    color: var(--fenext-color-dark);
+    font-family: var(--fenext-font-global);
+    &-break-inside {
+        > * {
+            break-inside: avoid;
+        }
+    }
+}

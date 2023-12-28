@@ -1,0 +1,14 @@
+.fenext-error {
+    background-color: var(--fenext-color-red);
+    color: var(--fenext-color-black);
+    font-family: var(--fenext-font-global);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.25rem 0.3rem;
+    border-radius: 0.2rem;
+    margin: 0.5rem 0;
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}

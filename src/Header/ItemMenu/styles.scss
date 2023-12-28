@@ -1,0 +1,61 @@
+.fenext-menu-item {
+    background-color: var(--fenext-color-dark);
+    &-a {
+        font-family: var(--fenext-font-global);
+        font-size: 1rem;
+        font-weight: 900;
+        line-height: 1;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        --color-normal: var(--fenext-color-light);
+        --color-active: var(--fenext-color-info);
+        --color: var(--color-normal);
+        color: var(--color);
+        &-icon {
+            width: 1rem;
+            color: var(--color);
+            svg {
+                color: var(--color);
+            }
+            &:empty {
+                display: none;
+            }
+        }
+        &-active {
+            --color: var(--color-active);
+            @at-root *:has(> .fenext-menu-item .fenext-collapse-header &) {
+                @for $i from 1 through 10 {
+                    &:has(.fenext-menu-item-a-url-inter-#{11 - $i}) {
+                        @for $j from 1 through $i {
+                            .fenext-menu-item-a-url-inter-#{11 - $i - $j} {
+                                --color: var(--color-normal);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-text {
+        }
+        &:hover {
+            --color: var(--color-active);
+        }
+    }
+    &:has(> .fenext-collapse > .fenext-collapse-body:empty) {
+        > .fenext-collapse {
+            > .fenext-collapse-header {
+                padding: 0;
+                display: block;
+                .fenext-menu-item-a {
+                    padding: 1rem;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .fenext-menu-item {
+        padding-left: 1rem;
+    }
+}

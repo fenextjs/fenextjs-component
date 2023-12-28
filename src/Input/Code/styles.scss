@@ -1,0 +1,55 @@
+.fenext-input-code {
+    //--fenext-max-length
+
+    --size-item: 3.5rem;
+    --separation-item: 1rem;
+
+    --width-item: calc(var(--fenext-max-length, 1) * var(--size-item));
+    --width-separation: calc(
+        calc(var(--fenext-max-length, 1) - 1) * var(--separation-item)
+    );
+    width: min(100%, calc(var(--width-item) + var(--width-separation)));
+    display: block;
+    .fenext-input-content-input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        z-index: 1;
+        opacity: 0;
+    }
+
+    &-content-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--separation-item);
+        align-items: center;
+    }
+    &-item {
+        border-radius: 0.7rem;
+        border: 0;
+        background-color: var(--fenext-color-dark);
+        font-family: var(--fenext-font-global);
+        font-size: 1rem;
+        font-weight: 800;
+        text-align: left;
+        color: var(--fenext-color-light);
+        padding: 0.5rem;
+        aspect-ratio: 1/1;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--size-item);
+    }
+    &:has(.fenext-input-content-input:focus) {
+        .fenext-input-code {
+            &-item {
+                &-current {
+                    box-shadow: inset 0px 0px 0px 6px
+                        var(--fenext-color-primary);
+                }
+            }
+        }
+    }
+}

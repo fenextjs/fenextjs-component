@@ -1,0 +1,38 @@
+.fenext-loader {
+    &-line {
+        --size: var(--height, 1rem);
+
+        width: 100%;
+        height: var(--size, 1rem);
+        border-radius: var(--size, 1rem);
+        overflow: hidden;
+        display: block;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            top: 0;
+            left: -100%;
+            background: linear-gradient(
+                to right,
+                var(--fenext-color-loader-background) 0%,
+                var(--fenext-color-loader-foreground) 50%,
+                var(--fenext-color-loader-background) 100%
+            );
+            transition: 1s;
+            animation: toMove_n100_2002 2s infinite alternate;
+
+            @keyframes toMove_n100_2002 {
+                from {
+                    left: -100%;
+                }
+                to {
+                    left: 0%;
+                }
+            }
+        }
+    }
+}

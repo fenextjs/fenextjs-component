@@ -1,0 +1,16 @@
+.fenext-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    &-content {
+        &-n-page {
+            display: flex;
+            justify-content: flex-end;
+            width: min(100%, 4rem);
+            margin-left: auto;
+        }
+    }
+}

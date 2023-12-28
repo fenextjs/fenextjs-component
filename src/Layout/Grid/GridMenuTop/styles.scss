@@ -1,0 +1,28 @@
+&-mt {
+    font-family: var(--fenext-font-global);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--fenext-size-menu-top, auto) 1fr;
+
+    min-height: 100dvh;
+
+    &-menu-top {
+        position: relative;
+        position: sticky;
+        top: 0;
+        z-index: var(--fenext-z-index-menu);
+        background-color: var(--fenext-color-light-extra-dark);
+        color: var(--fenext-color-dark);
+        display: flex;
+        align-items: center;
+    }
+    &-children {
+        position: relative;
+
+        color: var(--fenext-color-black);
+        font-family: var(--fenext-font-global);
+        container-type: inline-size;
+        container-name: fenext-layout-grid-mt-children;
+    }
+}

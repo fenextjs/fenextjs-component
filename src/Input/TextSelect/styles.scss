@@ -1,0 +1,40 @@
+.fenext-input-text-select {
+    display: grid;
+    grid-template-columns: min(7rem, 30%) 1fr;
+    column-gap: 0.5rem;
+    &-label {
+        grid-column: 1/-1;
+        order: 1;
+    }
+    &-text {
+        order: 3;
+    }
+    &-select {
+        order: 2;
+        .fenext-input-content-input {
+            padding-inline: 0.5rem;
+        }
+        .fenext-input-content-icon {
+            right: 0.5rem;
+        }
+        .fenext-select-option {
+            padding-inline: 0.5rem;
+        }
+    }
+    &-right {
+        grid-template-columns: 1fr min(7rem, 30%);
+        .fenext-input-text-select {
+            &-text {
+                order: 2;
+            }
+            &-select {
+                order: 3;
+            }
+        }
+    }
+    .fenext-error {
+        grid-column: 1/-1;
+
+        order: 4;
+    }
+}

@@ -1,0 +1,7 @@
+.fenext-content-show {
+    color: var(--fenext-color-dark);
+    font-family: var(--fenext-font-global);
+    &-hidden {
+        display: none;
+    }
+}

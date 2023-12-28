@@ -1,0 +1,22 @@
+.fenext-input-phone {
+    display: grid;
+    grid-template-columns: min(7rem, 30%) 1fr;
+    column-gap: 0.5rem;
+    &-label {
+        grid-column: 1/-1;
+    }
+    &-code {
+        .fenext-input-content-input {
+            padding-inline: 0.5rem;
+        }
+        .fenext-input-content-icon {
+            right: 0.5rem;
+        }
+        .fenext-select-option {
+            padding-inline: 0.5rem;
+        }
+    }
+    .fenext-error {
+        grid-column: 1/-1;
+    }
+}

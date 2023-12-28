@@ -1,0 +1,18 @@
+.fenext-input-content {
+    &:has(.fenext-input-password-icon:hover) {
+        .fenext-input-content-input {
+            box-shadow: 0px 0px 0px 2px var(--fenext-color-primary);
+        }
+    }
+}
+.fenext-input-password-icon {
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    -webkit-touch-callout: none;
+    svg {
+        width: 1.5rem;
+    }
+}

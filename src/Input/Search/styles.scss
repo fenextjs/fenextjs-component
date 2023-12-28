@@ -1,0 +1,245 @@
+.fenext-input-search {
+    transition: 0.1s;
+    position: relative;
+    $className: &;
+    display: grid;
+    gap: 1rem;
+    .fenext-input-icon-pos-left {
+        .fenext-input-content-icon {
+            display: flex;
+        }
+    }
+    &-checkbox {
+        position: fixed;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    &-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: var(--fenext-color-dark);
+    }
+    &-clear {
+        position: absolute;
+        top: 0;
+        left: inherit;
+        right: 1.5rem;
+        bottom: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--fenext-color-white);
+        color: var(--fenext-color-dark);
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 100%;
+        cursor: pointer;
+        svg {
+            width: 75%;
+            max-height: 75%;
+        }
+    }
+    &:has(.fenext-input-content-input:placeholder-shown):has(
+            .fenext-input-search-content-tabs-selected:empty
+        ),
+    &:has(.fenext-input-content-loader) {
+        #{$className}-clear {
+            display: none;
+        }
+    }
+
+    &-content-result {
+        height: fit-content;
+        max-height: 100%;
+        overflow: auto;
+        display: grid;
+        position: relative;
+        gap: 1rem;
+        border-radius: 0.5rem;
+        background: var(--fenext-color-dark);
+        align-items: flex-start;
+        align-content: flex-start;
+
+        --padding: 0;
+        max-height: 0vw;
+        padding: var(--padding);
+        &:has(#{$className}-content-tabs:not(:empty)) {
+            padding-top: 0;
+        }
+        &:has(.fenext-input-search-load-more) {
+            padding-bottom: 0;
+        }
+        &-empty {
+            color: var(--fenext-color-white);
+            display: grid;
+            place-items: center;
+            padding-block: 2rem;
+        }
+        &-pre-search {
+            color: var(--fenext-color-white);
+            display: grid;
+            place-items: center;
+            padding-block: 2rem;
+        }
+    }
+    .fenext-select-option {
+        display: inline-flex;
+        width: auto;
+        border-radius: 0.5rem;
+        line-height: 1;
+        &-delete {
+            padding-left: 0.1rem;
+            color: var(--fenext-color-dark);
+        }
+    }
+    &-content-tabs {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        position: sticky;
+        top: 0;
+        background: var(--fenext-color-dark);
+        padding-block: 1rem;
+        &:empty {
+            display: none;
+        }
+        &-selected {
+            padding: 0;
+            border-radius: 0.7rem;
+            display: inline-flex;
+            gap: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            max-width: 100%;
+            background: var(--fenext-color-white);
+            .fenext-select-option {
+                border-radius: 0;
+                background: var(--fenext-color-white);
+                color: var(--fenext-color-dark);
+            }
+        }
+    }
+    .fenext-input-content {
+        &:has(#{$className}-content-tabs-selected:not(:empty)) {
+            .fenext-input-content-input {
+                padding-top: 2.5rem;
+            }
+        }
+    }
+    &-content-load-more {
+        padding-block: 1rem;
+        position: sticky;
+        bottom: 0;
+        background: var(--fenext-color-dark);
+    }
+    &-load-more {
+        width: 100%;
+    }
+    &-result {
+        font-family: var(--fenext-font-global);
+        font-size: 1rem;
+        font-weight: 800;
+        line-height: 1.36;
+        text-align: left;
+        background: var(--fenext-color-white);
+        color: var(--fenext-color-dark);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        > * {
+            max-width: 100%;
+        }
+    }
+    .fenext-input {
+        position: relative;
+    }
+    &-fixed-focus {
+        grid-template-rows: auto 1fr;
+        max-height: 100dvh;
+        gap: 0;
+        &:has(.fenext-input-search-load-more:hover),
+        &:has(.fenext-input-search-content-tabs-selected:hover),
+        &:has(.fenext-input-search-clear:hover),
+        &:has(.fenext-input-search-content-result:active),
+        &:has(.fenext-input-search-content-result:hover) {
+            transition-delay: 0.2s;
+            .fenext-input-search-content-result {
+                transition-delay: 0.2s;
+            }
+        }
+        &:has(.fenext-input-content-input:focus) {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100dvh;
+            padding: 1rem;
+            z-index: var(--fenext-z-index-modal);
+            gap: 1rem;
+            #{$className} {
+                &-bg {
+                    opacity: 0.5;
+                }
+                &-content-result {
+                    max-height: 100%;
+                    --padding: 1rem;
+                }
+            }
+        }
+    }
+    &:has(.fenext-input-content-input:focus),
+    &:has(.fenext-input-search-content-result:active) {
+        #{$className} {
+            &-content-result {
+                display: grid;
+            }
+        }
+    }
+    &-not-use-result {
+        &:has(.fenext-input-content-input:focus),
+        &:has(.fenext-input-search-content-result:active) {
+            grid-template-rows: 1fr;
+            align-content: center;
+            align-items: center;
+        }
+    }
+    &-single-tabs {
+        .fenext-input-content:has(
+                .fenext-input-search-content-tabs-selected:not(:empty)
+            )
+            .fenext-input-content-input {
+            padding-top: 1rem;
+        }
+        .fenext-input-search-content-tabs-selected {
+            top: 0;
+            left: inherit;
+            right: 3.5rem;
+            bottom: 0;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            background: transparent;
+            .fenext-select-option {
+                background: var(--fenext-color-white);
+                border-radius: 0.7rem;
+            }
+        }
+    }
+}
+
+$SearchActive: ".fenext-input-search-fixed-focus .fenext-input-content-input:focus";
+
+*:has(#{$SearchActive}) {
+    z-index: var(--fenext-z-index-modal);
+    position: relative;
+}
+html:has(#{$SearchActive}),
+body:has(#{$SearchActive}) {
+    overflow: hidden;
+}

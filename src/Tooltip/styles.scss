@@ -1,0 +1,86 @@
+.fenext-tooltip {
+    position: relative;
+    display: inline-block;
+
+    &-content {
+        position: fixed;
+        width: max-content;
+        max-width: calc(100vw - 1rem);
+        max-height: calc(100dvh - 1rem);
+        overflow: auto;
+        background: var(--fenext-color-white);
+        box-shadow: 0 0 2px var(--fenext-color-dark-extra-light);
+        border-radius: 1rem;
+        padding: 1rem;
+        z-index: var(--fenext-z-index-modal);
+        transition: opacity 0.5s;
+
+        --separate: 0.5rem;
+
+        --x-value: 0px;
+        --x: max(
+            var(--separate),
+            min(
+                calc(100vw - var(--element-width) - var(--separate)),
+                var(--x-value)
+            )
+        );
+
+        --y-value: 0px;
+        --y: max(
+            var(--separate),
+            min(
+                calc(100dvh - var(--element-height) - var(--separate)),
+                var(--y-value)
+            )
+        );
+
+        --center-x: calc(
+            var(--element-center-x) - calc(var(--element-width) / 2)
+        );
+        --right: calc(var(--element-right) - var(--separate));
+        --left: calc(
+            var(--element-left) - var(--element-width) + var(--separate)
+        );
+
+        --center-y: calc(
+            var(--element-center-y) - calc(var(--element-height) / 2)
+        );
+        --top: calc(
+            var(--element-top) - var(--element-height) + var(--separate)
+        );
+        --bottom: calc(var(--element-bottom) - var(--separate));
+
+        @at-root body:not(:has(.fenext-tooltip:hover)) &:not(:hover) {
+            inset: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        top: var(--y);
+        left: var(--x);
+
+        &-x {
+            &-center {
+                --x-value: var(--center-x);
+            }
+            &-right {
+                --x-value: var(--right);
+            }
+            &-left {
+                --x-value: var(--left);
+            }
+        }
+        &-y {
+            &-center {
+                --y-value: var(--center-y);
+            }
+            &-top {
+                --y-value: var(--top);
+            }
+            &-bottom {
+                --y-value: var(--bottom);
+            }
+        }
+    }
+}

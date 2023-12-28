@@ -1,0 +1,23 @@
+.fenext-chat-form-send-message {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: flex-start;
+    &-input-message {
+        .fenext-input-content {
+            display: flex;
+        }
+        .fenext-input-content-input {
+            height: 7.5rem;
+            resize: none;
+            // font-weight: 400;
+            border-radius: 1rem;
+            padding: 1rem 1.25rem;
+            @media (max-width: 575px) {
+                height: 3rem;
+                border-radius: 0.5rem;
+                padding: 0.75rem;
+            }
+        }
+    }
+}

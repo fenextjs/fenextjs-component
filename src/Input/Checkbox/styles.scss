@@ -1,0 +1,45 @@
+.fenext-input-checkbox {
+    $className: &;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    &-input {
+        position: fixed;
+        transform: scale(0);
+    }
+    &-box {
+        width: 1.25rem;
+        aspect-ratio: 1/1;
+        border-radius: 3px;
+        border: 2px solid var(--fenext-color-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg {
+                width: 75%;
+            }
+        }
+    }
+    &-text {
+        font-family: var(--fenext-font-global);
+        font-size: 1rem;
+        font-weight: 800;
+        line-height: 1.36;
+        text-align: left;
+        color: var(--fenext-color-gray-dark);
+    }
+    &:has(&-input:checked) {
+        #{$className } {
+            &-box {
+                background: var(--fenext-color-dark);
+                color: var(--fenext-color-white);
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html,
+body {
+    max-width: 100vw;
+    min-height: 100dvh;
+}
+
+html {
+    font-size: 16px;
+    overflow: auto;
+    background-color: var(--fenext-color-white);
+    @media (min-width: 575px) {
+        font-size: 14px;
+    }
+    @media (min-width: 768px) {
+        font-size: 15px;
+    }
+    @media (min-width: 992px) {
+        font-size: 16px;
+    }
+    @media (min-width: 1024px) {
+        font-size: 17px;
+    }
+    @media (min-width: 1440px) {
+        font-size: 18px;
+    }
+    @media (min-width: 1680px) {
+        font-size: 19px;
+    }
+    @media (min-width: 1920px) {
+        font-size: 20px;
+    }
+}
+body {
+    padding: 0;
+    margin: 0;
+    &.sb-show-main.sb-main-padded {
+        padding: 2rem;
+        &:has(.fenext-layout-grid){
+            padding: 0;
+        }
+    }
+}
+:root {
+    --fenext-size-menu-top: 3rem;
+    --fenext-size-menu-left-max: max(13rem, 10vw);
+    --fenext-size-menu-left: min(100%, var(--fenext-size-menu-left-max));
+
+    --fenext-z-index-menu: 100;
+    --fenext-z-index-modal: 2000;
+    --fenext-z-index-select-option: 3000;
+    --fenext-z-index-notification: 30000;
+
+    --fenext-size-container: 70rem;
+
+    --fenext-size-btn-menu: 2rem;
+
+    --fenext-size-user: 3rem;
+
+    --fenext-modal-width: max(30vw, min(30rem, 100%));
+    --fenext-modal-height: max(30vh, min(15rem, 100%));
+}

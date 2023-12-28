@@ -1,0 +1,28 @@
+.fenext-back {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    cursor: pointer;
+    color: var(--fenext-color-dark);
+    padding: 0.5rem 0;
+    &-icon {
+        display: flex;
+        align-items: center;
+        svg {
+            width: 1rem;
+            max-height: 1em;
+        }
+    }
+    &-content {
+        font-family: var(--fenext-font-global);
+        font-size: 1rem;
+        font-weight: 900;
+        line-height: 1;
+    }
+    &-disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}

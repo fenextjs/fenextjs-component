@@ -1,0 +1,8 @@
+&-mtl {
+    .fenext-layout-grid-ml {
+        &-menu-left {
+            height: calc(100vh - var(--fenext-size-menu-top, auto));
+            top: var(--fenext-size-menu-top, auto);
+        }
+    }
+}

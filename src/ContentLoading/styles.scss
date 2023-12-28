@@ -1,0 +1,12 @@
+.fenext-content-loading {
+    color: var(--fenext-color-dark);
+    font-family: var(--fenext-font-global);
+    &-page {
+        width: 100%;
+        min-height: calc(100dvh - var(--fenext-size-menu-top, auto));
+    }
+    &-loader {
+        display: grid;
+        place-content: center;
+    }
+}

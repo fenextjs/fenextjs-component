@@ -1,0 +1,74 @@
+import React, { PropsWithChildren } from "react";
+import { LoaderLine } from "../Loader/Line";
+import { _TProps } from "fenextjs-interface";
+import { _tValidate } from "fenextjs-functions";
+
+/**
+ * Properties for the base Text component.
+ */
+export interface TextBaseProps extends PropsWithChildren, _TProps {
+    /**
+     * The class name for the component.
+     */
+    tag?:
+        | "p"
+        | "strong"
+        | "small"
+        | "em"
+        | "b"
+        | "del"
+        | "i"
+        | "mark"
+        | "ins"
+        | "sub"
+        | "sup";
+    /**
+     * The loader for the component.
+     */
+    loader?: boolean;
+    /**
+     * The nLineLoader for the component.
+     */
+    nLineLoader?: number;
+}
+
+/**
+ * Properties for the class of the Text component.
+ */
+export interface TextClassProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
+}
+
+/**
+ * Properties for the Text component.
+ */
+export interface TextProps extends TextBaseProps, TextClassProps {}
+
+export const Text = ({
+    className = "",
+    tag = "p",
+    loader = false,
+    children,
+    nLineLoader = 3,
+    _t,
+}: TextProps) => {
+    const Tag = tag;
+    return (
+        <>
+            <Tag className={`fenext-text fenext-text-${tag} ${className} `}>
+                {loader ? (
+                    <>
+                        <div className="fenext-text-loader">
+                            {new Array(nLineLoader).fill(<LoaderLine />)}
+                        </div>
+                    </>
+                ) : (
+                    <>{_tValidate(children, _t)}</>
+                )}
+            </Tag>
+        </>
+    );
+};

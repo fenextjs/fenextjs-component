@@ -1,0 +1,31 @@
+.fenext-progess-circle {
+    --p: 50;
+    --progess: calc(var(--p) * 3.6deg);
+    --bg: var(--fenext-color-white-dark);
+    --bgp: var(--fenext-color-blue);
+    width: min(100%, 20rem);
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    padding: 1rem;
+    transition: 0.1s;
+    background: conic-gradient(
+        var(--bgp) 0deg,
+        var(--bgp) var(--progess),
+        var(--bg) var(--progess),
+        var(--bg) 360deg
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fenext-font-global);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--fenext-color-white);
+    &-show-p {
+        &:before {
+            counter-reset: p var(--p);
+            content: counter(p) "%";
+        }
+    }
+}

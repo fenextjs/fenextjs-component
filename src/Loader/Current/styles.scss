@@ -1,0 +1,15 @@
+.fenext {
+    &-loader {
+        width: 1.5rem;
+        aspect-ratio: 1/1;
+        border: 0.3rem solid var(--fenext-color-dark);
+        border-color: color-contrast(
+            var(--fenext-color-dark) vs #fff,
+            var(--fenext-color-dark)
+        );
+        border-top-color: transparent;
+        border-radius: 100%;
+        margin: auto;
+        animation: to-rotate 1s infinite;
+    }
+}

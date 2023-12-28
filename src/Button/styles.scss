@@ -1,0 +1,57 @@
+.fenext-btn {
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 0;
+    font-family: var(--fenext-font-global);
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    color: var(--fenext-color-white);
+    background: var(--fenext-color-dark);
+    display: inline-block;
+    position: relative;
+    &:hover {
+        background: var(--fenext-color-dark-light);
+    }
+    &:disabled {
+        background: var(--fenext-color-secondary);
+    }
+    &-size {
+        &-extra-small {
+            padding: 0.5rem 0.9rem;
+            font-size: 0.7rem;
+        }
+        &-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+        }
+        &-normal {
+            padding: 1rem 1.5rem;
+        }
+        &-strong {
+            padding: 1.2rem 1.7rem;
+            font-size: 1.2rem;
+        }
+        &-extra-strong {
+            padding: 1.3rem 2rem;
+            font-size: 1.4rem;
+        }
+        &-full {
+            width: 100%;
+        }
+    }
+    .fenext-loader {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        color: var(--fenext-color-white);
+    }
+    &:has(.fenext-loader) {
+        color: transparent;
+        > *:not(.fenext-loader) {
+            opacity: 0;
+        }
+    }
+}
