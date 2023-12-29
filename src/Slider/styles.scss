@@ -53,6 +53,7 @@
         transition-delay: var(--timeDelay, 4s);
         width: 100%;
         scroll-snap-align: start;
+        color: var(--fenext-color-dark);
     }
     &-dogs {
         display: flex;
