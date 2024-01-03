@@ -62,6 +62,18 @@
                 }
             }
         }
+        &-disabled-close {
+            &-active {
+                > .fenext-modal-base
+                    > .fenext-modal-base-content
+                    > .fenext-modal-base-close {
+                    display: none;
+                }
+                > .fenext-modal-base-close {
+                    display: none;
+                }
+            }
+        }
     }
     &-bg {
         z-index: var(--fenext-z-index-modal);

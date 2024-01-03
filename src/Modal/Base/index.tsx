@@ -11,6 +11,10 @@ export interface ModalBaseBaseProps extends PropsWithChildren, _TProps {
      */
     active?: boolean;
     /**
+     * If disabled close modal.
+     */
+    disabledClose?: boolean;
+    /**
      * Type of modal.
      */
     type?:
@@ -67,6 +71,7 @@ export const ModalBase = ({
     classNameClose = "",
 
     active = false,
+    disabledClose = false,
     type = "center",
     typeClose = "out",
     onClose,
@@ -79,7 +84,7 @@ export const ModalBase = ({
         return (
             <>
                 <div
-                    onClick={onClose}
+                    onClick={disabledClose ? () => {} : onClose}
                     className={`fenext-modal-base-close fenext-modal-base-close-${type}  fenext-modal-base-close-${
                         active ? "active" : "inactive"
                     } ${classNameClose}`}
@@ -88,7 +93,7 @@ export const ModalBase = ({
                 </div>
             </>
         );
-    }, [onClose, type, active, classNameClose]);
+    }, [onClose, type, active, classNameClose,disabledClose]);
 
     return (
         <>
@@ -96,6 +101,8 @@ export const ModalBase = ({
                 open={active}
                 className={`fenext-modal-base-dialog fenext-modal-base-dialog-close-${typeClose} fenext-modal-base-dialog-${
                     active ? "active" : "inactive"
+                } fenext-modal-base-dialog-disabled-close-${
+                    disabledClose ? "active" : "inactive"
                 }`}
             >
                 <div
@@ -112,7 +119,8 @@ export const ModalBase = ({
                         if (
                             ele.classList.value.includes(
                                 `fenext-modal-base-bg-close-${uuid}`,
-                            )
+                            ) &&
+                            !disabledClose
                         ) {
                             onClose?.();
                         }
