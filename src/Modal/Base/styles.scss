@@ -38,6 +38,26 @@
                 display: none;
             }
         }
+        &-close{
+            &-out{
+                > .fenext-modal-base > .fenext-modal-base-content  > .fenext-modal-base-close{
+                    display: none;
+                }
+            }
+            &-inset{
+                > .fenext-modal-base-close{
+                    display: none;
+                }
+            }
+            &-none{
+                > .fenext-modal-base > .fenext-modal-base-content  > .fenext-modal-base-close{
+                    display: none;
+                }
+                > .fenext-modal-base-close{
+                    display: none;
+                }
+            }
+        }
     }
     &-bg {
         z-index: var(--fenext-z-index-modal);
@@ -121,6 +141,10 @@
         z-index: var(--fenext-z-index-modal);
         padding: 1rem;
         border: 0;
+        position: relative;
+        > .fenext-modal-base-close{
+            position: absolute;
+        }
     }
 
     &-top {

@@ -35,6 +35,7 @@ Index.args = {
             </p>
         </>
     ),
+    typeClose:'inset'
 } as ModalProps;
 
 const WithLayout_: Story<PropsWithChildren<ModalProps>> = (args) => (

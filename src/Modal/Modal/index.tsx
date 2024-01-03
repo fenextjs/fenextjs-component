@@ -23,7 +23,7 @@ export interface ModalClassProps {
 export interface ModalProps
     extends Pick<
             ModalBaseBaseProps,
-            "children" | "type" | "active" | "onClose" | "_t"
+            "children" | "type" | "active" | "onClose" | "_t" | 'typeClose'
         >,
         ModalClassProps {
     /**
@@ -53,6 +53,7 @@ export const Modal = ({
     onClose: onCloseProps,
     onActive: onActiveProps,
     type = "center",
+    typeClose='out',
     _t,
 }: ModalProps) => {
     const [activeValue, setActiveValue] = useState(false);
@@ -88,6 +89,7 @@ export const Modal = ({
                 active={active}
                 type={type}
                 _t={_t}
+                typeClose={typeClose}
             >
                 {children}
             </ModalBase>

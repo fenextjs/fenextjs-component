@@ -22,6 +22,10 @@ export interface ModalBaseBaseProps extends PropsWithChildren, _TProps {
         | "full"
         | "layout-grid";
     /**
+     * Type of btn close for modal.
+     */
+    typeClose?: "out" | "inset" | "none";
+    /**
      * onClose ModalBase.
      */
     onClose?: () => void;
@@ -64,16 +68,33 @@ export const ModalBase = ({
 
     active = false,
     type = "center",
+    typeClose='out',
     onClose,
     children,
     _t,
 }: ModalBaseProps) => {
     const uuid = useMemo(() => new Date().getTime(), [active]);
+
+    const CLOSECOMPONENTE = useMemo(() => {
+        return (
+            <>
+                <div
+                    onClick={onClose}
+                    className={`fenext-modal-base-close fenext-modal-base-close-${type}  fenext-modal-base-close-${
+                        active ? "active" : "inactive"
+                    } ${classNameClose}`}
+                >
+                    <Close />
+                </div>
+            </>
+        );
+    }, [onClose, type, active, classNameClose]);
+
     return (
         <>
             <dialog
                 open={active}
-                className={`fenext-modal-base-dialog fenext-modal-base-dialog-${
+                className={`fenext-modal-base-dialog fenext-modal-base-dialog-close-${typeClose} fenext-modal-base-dialog-${
                     active ? "active" : "inactive"
                 }`}
             >
@@ -101,16 +122,10 @@ export const ModalBase = ({
                         className={`fenext-modal-base-content ${classNameContent} `}
                     >
                         {_tValidate(children, _t)}
+                        {CLOSECOMPONENTE}
                     </div>
                 </div>
-                <div
-                    onClick={onClose}
-                    className={`fenext-modal-base-close fenext-modal-base-close-${type}  fenext-modal-base-close-${
-                        active ? "active" : "inactive"
-                    } ${classNameClose}`}
-                >
-                    <Close />
-                </div>
+                {CLOSECOMPONENTE}
             </dialog>
         </>
     );
