@@ -5,13 +5,16 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Base_1 = require("../Base");
 const fenextjs_functions_1 = require("fenextjs-functions");
-const Modal = ({ classNameElementActionModalActive = "", classNameModal = {}, ElementActionModalActive, children, active: activeProps = undefined, onClose: onCloseProps, onActive: onActiveProps, type = "center", _t, }) => {
+const Modal = ({ classNameElementActionModalActive = "", classNameModal = {}, ElementActionModalActive, disabledElementActionModalActive = false, children, active: activeProps = undefined, onClose: onCloseProps, onActive: onActiveProps, type = "center", _t, }) => {
     const [activeValue, setActiveValue] = (0, react_1.useState)(false);
     const active = (0, react_1.useMemo)(() => activeProps ?? activeValue, [activeProps, activeValue]);
-    const onActive = () => {
+    const onActive = (0, react_1.useCallback)(() => {
+        if (disabledElementActionModalActive) {
+            return;
+        }
         setActiveValue(true);
         onActiveProps?.();
-    };
+    }, [disabledElementActionModalActive]);
     const onClose = () => {
         setActiveValue(false);
         onCloseProps?.();
