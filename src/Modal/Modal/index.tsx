@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo, useState } from "react";
+import React, { ReactNode, useCallback, useMemo, useState } from "react";
 
 import { ModalBaseBaseProps, ModalBaseClassProps, ModalBase } from "../Base";
 import { _tValidate } from "fenextjs-functions";
@@ -31,6 +31,10 @@ export interface ModalProps
      */
     ElementActionModalActive?: ReactNode;
     /**
+     * If The element with onClick for active modal is disabled.
+     */
+    disabledElementActionModalActive?: boolean;
+    /**
      * onActive Modal.
      */
     onActive?: () => void;
@@ -41,6 +45,7 @@ export const Modal = ({
     classNameModal = {},
 
     ElementActionModalActive,
+    disabledElementActionModalActive = false,
     children,
 
     active: activeProps = undefined,
@@ -57,10 +62,14 @@ export const Modal = ({
         [activeProps, activeValue],
     );
 
-    const onActive = () => {
+    const onActive = useCallback(() => {
+        if (disabledElementActionModalActive) {
+            return;
+        }
         setActiveValue(true);
         onActiveProps?.();
-    };
+    }, [disabledElementActionModalActive]);
+
     const onClose = () => {
         setActiveValue(false);
         onCloseProps?.();
