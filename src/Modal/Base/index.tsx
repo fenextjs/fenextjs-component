@@ -68,7 +68,7 @@ export const ModalBase = ({
 
     active = false,
     type = "center",
-    typeClose='out',
+    typeClose = "out",
     onClose,
     children,
     _t,

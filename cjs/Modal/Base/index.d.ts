@@ -13,6 +13,10 @@ export interface ModalBaseBaseProps extends PropsWithChildren, _TProps {
      */
     type?: "top" | "left" | "right" | "bottom" | "center" | "full" | "layout-grid";
     /**
+     * Type of btn close for modal.
+     */
+    typeClose?: "out" | "inset" | "none";
+    /**
      * onClose ModalBase.
      */
     onClose?: () => void;
@@ -43,4 +47,4 @@ export interface ModalBaseClassProps {
  */
 export interface ModalBaseProps extends ModalBaseBaseProps, ModalBaseClassProps {
 }
-export declare const ModalBase: ({ className, classNameBg, classNameContent, classNameClose, active, type, onClose, children, _t, }: ModalBaseProps) => React.JSX.Element;
+export declare const ModalBase: ({ className, classNameBg, classNameContent, classNameClose, active, type, typeClose, onClose, children, _t, }: ModalBaseProps) => React.JSX.Element;

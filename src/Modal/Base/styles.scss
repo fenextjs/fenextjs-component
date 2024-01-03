@@ -38,22 +38,26 @@
                 display: none;
             }
         }
-        &-close{
-            &-out{
-                > .fenext-modal-base > .fenext-modal-base-content  > .fenext-modal-base-close{
+        &-close {
+            &-out {
+                > .fenext-modal-base
+                    > .fenext-modal-base-content
+                    > .fenext-modal-base-close {
                     display: none;
                 }
             }
-            &-inset{
-                > .fenext-modal-base-close{
+            &-inset {
+                > .fenext-modal-base-close {
                     display: none;
                 }
             }
-            &-none{
-                > .fenext-modal-base > .fenext-modal-base-content  > .fenext-modal-base-close{
+            &-none {
+                > .fenext-modal-base
+                    > .fenext-modal-base-content
+                    > .fenext-modal-base-close {
                     display: none;
                 }
-                > .fenext-modal-base-close{
+                > .fenext-modal-base-close {
                     display: none;
                 }
             }
@@ -142,7 +146,7 @@
         padding: 1rem;
         border: 0;
         position: relative;
-        > .fenext-modal-base-close{
+        > .fenext-modal-base-close {
             position: absolute;
         }
     }
