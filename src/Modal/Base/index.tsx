@@ -93,7 +93,7 @@ export const ModalBase = ({
                 </div>
             </>
         );
-    }, [onClose, type, active, classNameClose,disabledClose]);
+    }, [onClose, type, active, classNameClose, disabledClose]);
 
     return (
         <>

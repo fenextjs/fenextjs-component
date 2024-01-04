@@ -23,7 +23,13 @@ export interface ModalClassProps {
 export interface ModalProps
     extends Pick<
             ModalBaseBaseProps,
-            "children" | "type" | "active" | "onClose" | "_t" | "typeClose" | 'disabledClose'
+            | "children"
+            | "type"
+            | "active"
+            | "onClose"
+            | "_t"
+            | "typeClose"
+            | "disabledClose"
         >,
         ModalClassProps {
     /**
