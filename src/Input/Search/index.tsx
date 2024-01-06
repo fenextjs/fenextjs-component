@@ -63,6 +63,10 @@ export interface InputSearchBaseProps extends Omit<InputTextBaseProps, "type"> {
      */
     onEnterSearch?: (v: string) => void;
     /**
+     * onClearSearch by InputSearchResultProps.
+     */
+    onClearSearch?: () => void;
+    /**
      * onClickSearch by InputSearchResultProps.
      */
     onClickSearch?: (v: InputSearchResultProps) => void;
@@ -177,6 +181,7 @@ export const InputSearch = ({
     onChange,
     onClickSearch,
     onEnterSearch,
+    onClearSearch : onClearSearchProps,
     useLoseFocusInEnter = true,
     defaultValue = undefined,
     value = undefined,
@@ -298,11 +303,12 @@ export const InputSearch = ({
         onFocusClickSearch();
     };
 
-    const onClearSearh = () => {
+    const onClearSearch = () => {
         setTabFilter([]);
         setSearchText("");
         onSearchTabFilter([]);
         onFocusClickSearch();
+        onClearSearchProps?.()
     };
     const onLoadMore = () => {
         onLoadMore_?.();
@@ -374,7 +380,7 @@ export const InputSearch = ({
                             </div>
                             <div
                                 className="fenext-input-search-clear"
-                                onClick={onClearSearh}
+                                onClick={onClearSearch}
                             >
                                 <Close />
                             </div>
