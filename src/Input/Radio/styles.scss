@@ -21,6 +21,9 @@
     &-input {
         position: fixed;
         scale: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
     }
     &-box {
         width: 1.25rem;
