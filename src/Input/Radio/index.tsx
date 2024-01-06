@@ -204,6 +204,7 @@ export const InputRadio = <T = any,>({
                         <input
                             type="radio"
                             name={name}
+                            defaultChecked={item?.id == defaultValue?.id}
                             className={`fenext-input-radio-input fenext-input-radio-input-id-${item.id}`}
                         />
                         <span

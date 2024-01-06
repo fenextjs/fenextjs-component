@@ -28,7 +28,7 @@ const InputRadio = ({ classNameContent = "", classNameLabel = "", classNameLabel
         return (react_1.default.createElement("label", { key: i, className: `fenext-input-radio ${labelPosition} ${classNameLabel}  ${isCheck
                 ? classNameLabelActive
                 : classNameLabelInactive}`, onClick: onChecked(item) },
-            react_1.default.createElement("input", { type: "radio", name: name, className: `fenext-input-radio-input fenext-input-radio-input-id-${item.id}` }),
+            react_1.default.createElement("input", { type: "radio", name: name, defaultChecked: item?.id == defaultValue?.id, className: `fenext-input-radio-input fenext-input-radio-input-id-${item.id}` }),
             react_1.default.createElement("span", { className: `fenext-input-radio-box ${classNameContentRadio} ${isCheck
                     ? classNameContentRadioActive
                     : classNameContentRadioInactive}` },
