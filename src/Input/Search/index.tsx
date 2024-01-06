@@ -181,7 +181,7 @@ export const InputSearch = ({
     onChange,
     onClickSearch,
     onEnterSearch,
-    onClearSearch : onClearSearchProps,
+    onClearSearch: onClearSearchProps,
     useLoseFocusInEnter = true,
     defaultValue = undefined,
     value = undefined,
@@ -308,7 +308,7 @@ export const InputSearch = ({
         setSearchText("");
         onSearchTabFilter([]);
         onFocusClickSearch();
-        onClearSearchProps?.()
+        onClearSearchProps?.();
     };
     const onLoadMore = () => {
         onLoadMore_?.();

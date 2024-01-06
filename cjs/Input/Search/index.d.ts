@@ -41,6 +41,10 @@ export interface InputSearchBaseProps extends Omit<InputTextBaseProps, "type"> {
      */
     onEnterSearch?: (v: string) => void;
     /**
+     * onClearSearch by InputSearchResultProps.
+     */
+    onClearSearch?: () => void;
+    /**
      * onClickSearch by InputSearchResultProps.
      */
     onClickSearch?: (v: InputSearchResultProps) => void;
@@ -137,4 +141,4 @@ export interface InputSearchClassProps extends InputTextClassProps {
  */
 export interface InputSearchProps extends InputSearchBaseProps, InputSearchClassProps {
 }
-export declare const InputSearch: ({ classNameSearch, classNameSearchBg, classNameSearchContentResult, classNameSearchResult, placeholder, icon, loader, onSearch, onChange, onClickSearch, onEnterSearch, useLoseFocusInEnter, defaultValue, value, useResult, useLoadMore, ButtonLoadMoreProps, onLoadMore: onLoadMore_, useSearchFixed, useTabFilter, resultList, resultEmpty, resultPreSearch, listTabFilter, defaultTabFilterSelected, onChangeTabFilterSelected, selectMultipleTabFilter, iconPos, _t, ...props }: InputSearchProps) => React.JSX.Element;
+export declare const InputSearch: ({ classNameSearch, classNameSearchBg, classNameSearchContentResult, classNameSearchResult, placeholder, icon, loader, onSearch, onChange, onClickSearch, onEnterSearch, onClearSearch: onClearSearchProps, useLoseFocusInEnter, defaultValue, value, useResult, useLoadMore, ButtonLoadMoreProps, onLoadMore: onLoadMore_, useSearchFixed, useTabFilter, resultList, resultEmpty, resultPreSearch, listTabFilter, defaultTabFilterSelected, onChangeTabFilterSelected, selectMultipleTabFilter, iconPos, _t, ...props }: InputSearchProps) => React.JSX.Element;

@@ -11,7 +11,7 @@ const SelectOption_1 = require("../SelectOption");
 const Text_1 = require("../Text");
 const Button_1 = require("../../Button");
 const fenextjs_functions_1 = require("fenextjs-functions");
-const InputSearch = ({ classNameSearch = "", classNameSearchBg = "", classNameSearchContentResult = "", classNameSearchResult = "", placeholder = "Search", icon = react_1.default.createElement(search_1.SVGSearch, null), loader = false, onSearch, onChange, onClickSearch, onEnterSearch, useLoseFocusInEnter = true, defaultValue = undefined, value = undefined, useResult = false, useLoadMore = true, ButtonLoadMoreProps = {
+const InputSearch = ({ classNameSearch = "", classNameSearchBg = "", classNameSearchContentResult = "", classNameSearchResult = "", placeholder = "Search", icon = react_1.default.createElement(search_1.SVGSearch, null), loader = false, onSearch, onChange, onClickSearch, onEnterSearch, onClearSearch: onClearSearchProps, useLoseFocusInEnter = true, defaultValue = undefined, value = undefined, useResult = false, useLoadMore = true, ButtonLoadMoreProps = {
     children: "Load More",
 }, onLoadMore: onLoadMore_, useSearchFixed = false, useTabFilter = false, resultList = undefined, resultEmpty = (react_1.default.createElement(react_1.default.Fragment, null,
     react_1.default.createElement(Title_1.Title, { tag: "h4" }, "Not Results"))), resultPreSearch = (react_1.default.createElement(react_1.default.Fragment, null,
@@ -78,11 +78,12 @@ const InputSearch = ({ classNameSearch = "", classNameSearchBg = "", classNameSe
         onSearchTabFilter(n.filter((e, j) => e && j != i));
         onFocusClickSearch();
     };
-    const onClearSearh = () => {
+    const onClearSearch = () => {
         setTabFilter([]);
         setSearchText("");
         onSearchTabFilter([]);
         onFocusClickSearch();
+        onClearSearchProps?.();
     };
     const onLoadMore = () => {
         onLoadMore_?.();
@@ -114,7 +115,7 @@ const InputSearch = ({ classNameSearch = "", classNameSearchBg = "", classNameSe
                         }
                         return (react_1.default.createElement(SelectOption_1.InputSelectOption, { key: `${i}_item_selected_${item.id}`, onDelete: onClickDeleteTabFilter(i), onClick: onFocusClickSearch, type: "multiple", iconDelete: react_1.default.createElement(close_1.Close, null), ...item, _t: _t }));
                     })),
-                    react_1.default.createElement("div", { className: "fenext-input-search-clear", onClick: onClearSearh },
+                    react_1.default.createElement("div", { className: "fenext-input-search-clear", onClick: onClearSearch },
                         react_1.default.createElement(close_1.Close, null))) }),
             useResult && (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("div", { className: `fenext-input-search-content-result ${classNameSearchContentResult} ` },
