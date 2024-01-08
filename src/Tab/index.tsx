@@ -5,11 +5,11 @@ import React, { useMemo, useState } from "react";
 /**
  * Properties of a tab item.
  */
-export interface TabItemProps {
+export interface TabItemProps<T=string> {
     /**
      * Unique identifier of the tab.
      */
-    id: string;
+    id: T;
 
     /**
      * Content to be displayed in the tab header.
@@ -34,15 +34,15 @@ export interface TabItemProps {
 /**
  * Base properties of a tab component.
  */
-export interface TabBaseProps extends _TProps {
+export interface TabBaseProps<T=string> extends _TProps {
     /**
      * Array of `TabItemProps` objects representing the tabs.
      */
-    items?: TabItemProps[];
+    items?: TabItemProps<T>[];
     /**
      * onChange Tab.
      */
-    onChange?: (item: TabItemProps) => void;
+    onChange?: (item: TabItemProps<T>) => void;
 
     /**
      * Index of the tab to be shown by default.
@@ -123,7 +123,7 @@ export interface TabClassProps {
  * Properties for a tab component.
  * Combines `TabBaseProps` and `TabClassProps`.
  */
-export interface TabProps extends TabBaseProps, TabClassProps {}
+export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps {}
 
 /**
  * Tab component that displays a set of tabs with content.
@@ -136,7 +136,7 @@ export interface TabProps extends TabBaseProps, TabClassProps {}
  * @param items Array of `TabItemProps` objects representing the tabs.
  * @param defaultTab Index of the tab to be shown by default.
  */
-export const Tab = ({
+export const Tab = <T = string,>({
     className = "",
     classNameContentHead = "",
     classNameHead = "",
@@ -155,7 +155,7 @@ export const Tab = ({
     tabScrollActive = false,
     validataTabOneHiddenHeader = true,
     _t,
-}: TabProps) => {
+}: TabProps<T>) => {
     const [tabSelect, setTabSelect] = useState(
         Math.max(0, Math.min(defaultTab, items.length - 1)),
     );
