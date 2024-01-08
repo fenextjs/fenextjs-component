@@ -46,7 +46,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
         if (loader) {
             if (typeLoader == "spinner") {
                 return (react_1.default.createElement("tr", { className: `fenext-table-content-table-tr ${classNameTr}` },
-                    react_1.default.createElement("td", { className: `fenext-table-content-table-td ${classNameTd}`, colSpan: headerNotTr.length },
+                    react_1.default.createElement("td", { className: `fenext-table-content-table-td ${classNameTd}`, colSpan: 999 },
                         react_1.default.createElement("div", { className: `${classNameLoader}` },
                             react_1.default.createElement(Loader_1.Loader, null)))));
             }
@@ -62,7 +62,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
         }
         if (items.length == 0) {
             return (react_1.default.createElement("tr", { className: `fenext-table-content-table-tr ${classNameTr}` },
-                react_1.default.createElement("td", { className: `fenext-table-content-table-td fenext-table-not-result ${classNameTd}`, colSpan: headerNotTr.length }, (0, fenextjs_functions_1._tValidate)(notResult, _t))));
+                react_1.default.createElement("td", { className: `fenext-table-content-table-td fenext-table-not-result ${classNameTd}`, colSpan: 999 }, (0, fenextjs_functions_1._tValidate)(notResult, _t))));
         }
         return items.map((item, i) => {
             return (react_1.default.createElement(react_1.default.Fragment, null,
