@@ -180,7 +180,7 @@ export const InputPhone = ({
                 <div
                     className={`fenext-input-phone-code ${classNamePhoneCode}`}
                 >
-                    <InputSelect
+                    <InputSelect<Partial<PhoneProps>>
                         {...classNameSelectCode}
                         placeholder={placeholderCode}
                         _t={_t}

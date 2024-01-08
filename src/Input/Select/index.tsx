@@ -31,7 +31,10 @@ export interface InputSelectClassProps
 }
 
 export interface InputSelectItemOptionBaseProps<T = any>
-    extends Omit<InputSelectOptionBaseProps<T>, "onClick" | "type" | "onDelete"> {}
+    extends Omit<
+        InputSelectOptionBaseProps<T>,
+        "onClick" | "type" | "onDelete"
+    > {}
 
 /**
  * Interface that defines the base properties for a text input component.

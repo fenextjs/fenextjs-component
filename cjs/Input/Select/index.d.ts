@@ -14,20 +14,20 @@ export interface InputSelectClassProps extends InputTextClassProps, InputSelectO
      */
     classNameList?: string;
 }
-export interface InputSelectItemOptionBaseProps extends Omit<InputSelectOptionBaseProps, "onClick" | "type" | "onDelete"> {
+export interface InputSelectItemOptionBaseProps<T = any> extends Omit<InputSelectOptionBaseProps<T>, "onClick" | "type" | "onDelete"> {
 }
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectBaseProps extends Omit<InputTextBaseProps, "value" | "type" | "yup" | "defaultValue" | "value" | "onChange" | "onBlur" | "onEnter" | "onChangeValidate" | "onChangeValidateBeforeYup" | "onChangeValidateAfterYup"> {
+export interface InputSelectBaseProps<T = any> extends Omit<InputTextBaseProps, "value" | "type" | "yup" | "defaultValue" | "value" | "onChange" | "onBlur" | "onEnter" | "onChangeValidate" | "onChangeValidateBeforeYup" | "onChangeValidateAfterYup"> {
     /**
      * Options of select.
      */
-    options: InputSelectItemOptionBaseProps[];
+    options: InputSelectItemOptionBaseProps<T>[];
     /**
      * Options of select.
      */
-    filterOptions?: (data: InputSelectItemOptionBaseProps[]) => InputSelectItemOptionBaseProps[];
+    filterOptions?: (data: InputSelectItemOptionBaseProps<T>[]) => InputSelectItemOptionBaseProps<T>[];
     /**
      * showOptions type of show option select.
      */
@@ -39,7 +39,7 @@ export interface InputSelectBaseProps extends Omit<InputTextBaseProps, "value" |
     /**
      * Default Options of select.
      */
-    defaultValue?: InputSelectItemOptionBaseProps;
+    defaultValue?: InputSelectItemOptionBaseProps<T>;
     /**
      * Type Select of option.
      */
@@ -47,19 +47,19 @@ export interface InputSelectBaseProps extends Omit<InputTextBaseProps, "value" |
     /**
      * Value Options of select.
      */
-    value?: InputSelectItemOptionBaseProps;
+    value?: InputSelectItemOptionBaseProps<T>;
     /**
      * Value of Not Result of select.
      */
-    noResult?: InputSelectItemOptionBaseProps;
+    noResult?: InputSelectItemOptionBaseProps<T>;
     /**
      * Value of Selected of select.
      */
-    selected?: InputSelectItemOptionBaseProps;
+    selected?: InputSelectItemOptionBaseProps<T>;
     /**
      * Value of Create of select.
      */
-    create?: InputSelectItemOptionBaseProps;
+    create?: InputSelectItemOptionBaseProps<T>;
     /**
      * onCreate of select.
      */
@@ -75,7 +75,7 @@ export interface InputSelectBaseProps extends Omit<InputTextBaseProps, "value" |
     /**
      * Function to call when the input value changes.
      */
-    onChange?: (v?: InputSelectItemOptionBaseProps) => void;
+    onChange?: (v?: InputSelectItemOptionBaseProps<T>) => void;
     /**
      * Function to call when the input value changes text.
      */
@@ -83,7 +83,7 @@ export interface InputSelectBaseProps extends Omit<InputTextBaseProps, "value" |
     /**
      * Function to call for custom input validation.
      */
-    onChangeValidate?: (e?: InputSelectItemOptionBaseProps) => Promise<any> | any;
+    onChangeValidate?: (e?: InputSelectItemOptionBaseProps<T>) => Promise<any> | any;
     /**
      * Icon for close options in Movil.
      */
@@ -96,11 +96,11 @@ export interface InputSelectBaseProps extends Omit<InputTextBaseProps, "value" |
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
  */
-export interface InputSelectProps extends InputSelectBaseProps, InputSelectClassProps {
+export interface InputSelectProps<T = any> extends InputSelectBaseProps<T>, InputSelectClassProps {
 }
-export interface InputSelectValue {
-    option?: InputSelectItemOptionBaseProps;
+export interface InputSelectValue<T = any> {
+    option?: InputSelectItemOptionBaseProps<T>;
     text?: string;
     textSearch?: string;
 }
-export declare const InputSelect: ({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, value, onChange, onChangeText, onChangeValidate, icon, noResult, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, _t, ...props }: InputSelectProps) => React.JSX.Element;
+export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, value, onChange, onChangeText, onChangeValidate, icon, noResult, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, _t, ...props }: InputSelectProps<T>) => React.JSX.Element;

@@ -22,7 +22,9 @@ export interface InputSelectOptionClassProps {
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectOptionBaseProps<T= any> extends PropsWithChildren, _TProps {
+export interface InputSelectOptionBaseProps<T = any>
+    extends PropsWithChildren,
+        _TProps {
     /**
      * ID of option.
      */
@@ -80,7 +82,7 @@ export interface InputSelectOptionProps<T = any>
     extends InputSelectOptionBaseProps<T>,
         InputSelectOptionClassProps {}
 
-export const InputSelectOption =<T = any,> ({
+export const InputSelectOption = <T = any,>({
     classNameOption = "",
     classNameOptionImg = "",
     classNameOptionDelete = "",

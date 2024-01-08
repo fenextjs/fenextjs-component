@@ -20,7 +20,7 @@ export interface InputSelectOptionClassProps {
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectOptionBaseProps extends PropsWithChildren, _TProps {
+export interface InputSelectOptionBaseProps<T = any> extends PropsWithChildren, _TProps {
     /**
      * ID of option.
      */
@@ -64,7 +64,7 @@ export interface InputSelectOptionBaseProps extends PropsWithChildren, _TProps {
     /**
      * Data custom of option.
      */
-    data?: any;
+    data?: T;
     /**
      * iconDelete custom of option.
      * @default <Trash />
@@ -74,6 +74,6 @@ export interface InputSelectOptionBaseProps extends PropsWithChildren, _TProps {
 /**
  * Props interface for the InputSelectOption component. Extends both InputSelectOptionBaseProps and InputSelectOptionClassProps interfaces.
  */
-export interface InputSelectOptionProps extends InputSelectOptionBaseProps, InputSelectOptionClassProps {
+export interface InputSelectOptionProps<T = any> extends InputSelectOptionBaseProps<T>, InputSelectOptionClassProps {
 }
-export declare const InputSelectOption: ({ classNameOption, classNameOptionImg, classNameOptionDelete, id, text, img, icon, children, type, onClick, onDelete, disabled, selected, isBtn, _t, data, iconDelete, }: InputSelectOptionProps) => React.JSX.Element;
+export declare const InputSelectOption: <T = any>({ classNameOption, classNameOptionImg, classNameOptionDelete, id, text, img, icon, children, type, onClick, onDelete, disabled, selected, isBtn, _t, data, iconDelete, }: InputSelectOptionProps<T>) => React.JSX.Element;
