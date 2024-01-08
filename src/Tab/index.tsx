@@ -5,7 +5,7 @@ import React, { useMemo, useState } from "react";
 /**
  * Properties of a tab item.
  */
-export interface TabItemProps<T=string> {
+export interface TabItemProps<T = string> {
     /**
      * Unique identifier of the tab.
      */
@@ -34,7 +34,7 @@ export interface TabItemProps<T=string> {
 /**
  * Base properties of a tab component.
  */
-export interface TabBaseProps<T=string> extends _TProps {
+export interface TabBaseProps<T = string> extends _TProps {
     /**
      * Array of `TabItemProps` objects representing the tabs.
      */
