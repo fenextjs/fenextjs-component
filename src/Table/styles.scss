@@ -159,6 +159,11 @@
                 transition: 0.25s;
 
                 white-space: nowrap;
+
+                &.fenext-table-not-result{
+                    border: 0;
+                }
+
                 @media not print {
                     @media (max-width: 991px) {
                         border: 0;

@@ -269,7 +269,7 @@ export const Table = <T,>({
                     >
                         <td
                             className={`fenext-table-content-table-td ${classNameTd}`}
-                            colSpan={headerNotTr.length}
+                            colSpan={999}
                         >
                             <div className={`${classNameLoader}`}>
                                 <Loader />
@@ -314,7 +314,7 @@ export const Table = <T,>({
                 <tr className={`fenext-table-content-table-tr ${classNameTr}`}>
                     <td
                         className={`fenext-table-content-table-td fenext-table-not-result ${classNameTd}`}
-                        colSpan={headerNotTr.length}
+                        colSpan={999}
                     >
                         {_tValidate(notResult, _t)}
                     </td>
