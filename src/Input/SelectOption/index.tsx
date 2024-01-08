@@ -22,7 +22,7 @@ export interface InputSelectOptionClassProps {
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectOptionBaseProps extends PropsWithChildren, _TProps {
+export interface InputSelectOptionBaseProps<T= any> extends PropsWithChildren, _TProps {
     /**
      * ID of option.
      */
@@ -66,7 +66,7 @@ export interface InputSelectOptionBaseProps extends PropsWithChildren, _TProps {
     /**
      * Data custom of option.
      */
-    data?: any;
+    data?: T;
     /**
      * iconDelete custom of option.
      * @default <Trash />
@@ -76,11 +76,11 @@ export interface InputSelectOptionBaseProps extends PropsWithChildren, _TProps {
 /**
  * Props interface for the InputSelectOption component. Extends both InputSelectOptionBaseProps and InputSelectOptionClassProps interfaces.
  */
-export interface InputSelectOptionProps
-    extends InputSelectOptionBaseProps,
+export interface InputSelectOptionProps<T = any>
+    extends InputSelectOptionBaseProps<T>,
         InputSelectOptionClassProps {}
 
-export const InputSelectOption = ({
+export const InputSelectOption =<T = any,> ({
     classNameOption = "",
     classNameOptionImg = "",
     classNameOptionDelete = "",
@@ -97,9 +97,9 @@ export const InputSelectOption = ({
     selected = false,
     isBtn = false,
     _t = (e) => e,
-    data = {},
+    data,
     iconDelete = <Trash />,
-}: InputSelectOptionProps) => {
+}: InputSelectOptionProps<T>) => {
     const TAG = type == "option" ? "option" : "div";
 
     return (

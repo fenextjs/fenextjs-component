@@ -30,13 +30,13 @@ export interface InputSelectClassProps
     classNameList?: string;
 }
 
-export interface InputSelectItemOptionBaseProps
-    extends Omit<InputSelectOptionBaseProps, "onClick" | "type" | "onDelete"> {}
+export interface InputSelectItemOptionBaseProps<T = any>
+    extends Omit<InputSelectOptionBaseProps<T>, "onClick" | "type" | "onDelete"> {}
 
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectBaseProps
+export interface InputSelectBaseProps<T = any>
     extends Omit<
         InputTextBaseProps,
         | "value"
@@ -54,13 +54,13 @@ export interface InputSelectBaseProps
     /**
      * Options of select.
      */
-    options: InputSelectItemOptionBaseProps[];
+    options: InputSelectItemOptionBaseProps<T>[];
     /**
      * Options of select.
      */
     filterOptions?: (
-        data: InputSelectItemOptionBaseProps[],
-    ) => InputSelectItemOptionBaseProps[];
+        data: InputSelectItemOptionBaseProps<T>[],
+    ) => InputSelectItemOptionBaseProps<T>[];
     /**
      * showOptions type of show option select.
      */
@@ -72,7 +72,7 @@ export interface InputSelectBaseProps
     /**
      * Default Options of select.
      */
-    defaultValue?: InputSelectItemOptionBaseProps;
+    defaultValue?: InputSelectItemOptionBaseProps<T>;
     /**
      * Type Select of option.
      */
@@ -80,19 +80,19 @@ export interface InputSelectBaseProps
     /**
      * Value Options of select.
      */
-    value?: InputSelectItemOptionBaseProps;
+    value?: InputSelectItemOptionBaseProps<T>;
     /**
      * Value of Not Result of select.
      */
-    noResult?: InputSelectItemOptionBaseProps;
+    noResult?: InputSelectItemOptionBaseProps<T>;
     /**
      * Value of Selected of select.
      */
-    selected?: InputSelectItemOptionBaseProps;
+    selected?: InputSelectItemOptionBaseProps<T>;
     /**
      * Value of Create of select.
      */
-    create?: InputSelectItemOptionBaseProps;
+    create?: InputSelectItemOptionBaseProps<T>;
     /**
      * onCreate of select.
      */
@@ -108,7 +108,7 @@ export interface InputSelectBaseProps
     /**
      * Function to call when the input value changes.
      */
-    onChange?: (v?: InputSelectItemOptionBaseProps) => void;
+    onChange?: (v?: InputSelectItemOptionBaseProps<T>) => void;
     /**
      * Function to call when the input value changes text.
      */
@@ -118,7 +118,7 @@ export interface InputSelectBaseProps
      * Function to call for custom input validation.
      */
     onChangeValidate?: (
-        e?: InputSelectItemOptionBaseProps,
+        e?: InputSelectItemOptionBaseProps<T>,
     ) => Promise<any> | any;
     /**
      * Icon for close options in Movil.
@@ -132,17 +132,17 @@ export interface InputSelectBaseProps
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
  */
-export interface InputSelectProps
-    extends InputSelectBaseProps,
+export interface InputSelectProps<T = any>
+    extends InputSelectBaseProps<T>,
         InputSelectClassProps {}
 
-export interface InputSelectValue {
-    option?: InputSelectItemOptionBaseProps;
+export interface InputSelectValue<T = any> {
+    option?: InputSelectItemOptionBaseProps<T>;
     text?: string;
     textSearch?: string;
 }
 
-export const InputSelect = ({
+export const InputSelect = <T = any,>({
     classNameSelect = "",
     classNameList = "",
 
@@ -170,7 +170,7 @@ export const InputSelect = ({
     validator,
     _t,
     ...props
-}: InputSelectProps) => {
+}: InputSelectProps<T>) => {
     const options = useMemo(
         () => (filterOptions ? filterOptions(optionsProps) : optionsProps),
         [optionsProps, filterOptions],
@@ -190,8 +190,8 @@ export const InputSelect = ({
         undefined,
     );
     const { data, setData, isChange } = useData<
-        InputSelectValue,
-        InputSelectValue
+        InputSelectValue<T>,
+        InputSelectValue<T>
     >(
         {
             option: value ?? defaultValue,
@@ -199,7 +199,7 @@ export const InputSelect = ({
             textSearch: "",
         },
         {
-            onChangeDataAfter: (d: InputSelectValue) => {
+            onChangeDataAfter: (d: InputSelectValue<T>) => {
                 onChange?.(d.option ?? undefined);
             },
         },
@@ -244,7 +244,7 @@ export const InputSelect = ({
             return;
         }
         onChangeText?.(text);
-        let option: InputSelectItemOptionBaseProps | undefined = undefined;
+        let option: InputSelectItemOptionBaseProps<T> | undefined = undefined;
         if (typeSelect != "div") {
             option = options.find((o) => o.text == text);
         }
@@ -261,7 +261,7 @@ export const InputSelect = ({
             textSearch: "",
         });
     };
-    const onChangeOption = (option: InputSelectItemOptionBaseProps) => {
+    const onChangeOption = (option: InputSelectItemOptionBaseProps<T>) => {
         setData({
             option,
             text: isSelectClearText ? "" : option.text,
@@ -274,7 +274,7 @@ export const InputSelect = ({
         }, 100);
     };
 
-    const OPTIONSSEARCH = useMemo<InputSelectItemOptionBaseProps[]>(() => {
+    const OPTIONSSEARCH = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
         const textSearch = dataMemo?.textSearch?.toLowerCase() ?? "";
         return options.filter(
             (option) =>
@@ -282,7 +282,7 @@ export const InputSelect = ({
                 textSearch?.includes(option.text?.toLowerCase()),
         );
     }, [options, dataMemo]);
-    const OPTIONS = useMemo<InputSelectItemOptionBaseProps[]>(() => {
+    const OPTIONS = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
         if (typeSelect == "div") {
             return OPTIONSSEARCH;
         }
@@ -426,7 +426,7 @@ export const InputSelect = ({
                     )}
                     {OPTIONS.map((option, i) => {
                         return (
-                            <InputSelectOption
+                            <InputSelectOption<T>
                                 key={i}
                                 {...option}
                                 onClick={onChangeOption}
