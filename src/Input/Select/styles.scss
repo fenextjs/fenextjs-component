@@ -69,6 +69,8 @@
                 height: 100%;
                 cursor: pointer;
                 display: block;
+                max-height: none;
+                bottom: inherit;
                 --list-scaleY: 1;
             }
             &-datalist {
