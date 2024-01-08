@@ -92,4 +92,15 @@
             grid-area: 1 / 3 / 2 / 4;
         }
     }
+    &:not(:has(.fenext-slider-dog:nth-child(2))) {
+        grid-template-rows: 1fr;
+        .fenext-slider {
+            &-dogs {
+                display: none;
+            }
+            &-arrow {
+                display: none;
+            }
+        }
+    }
 }
