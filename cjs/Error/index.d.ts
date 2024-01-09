@@ -9,6 +9,10 @@ export interface ErrorComponentBaseProps extends PropsWithChildren, _TProps {
      * The class name for the component.
      */
     error?: ErrorFenextjs;
+    /**
+     * The data-error .
+     */
+    useDataError?: boolean;
 }
 /**
  * Properties for the class of the ErrorComponent component.
@@ -24,4 +28,4 @@ export interface ErrorComponentClassProps {
  */
 export interface ErrorComponentProps extends ErrorComponentBaseProps, ErrorComponentClassProps {
 }
-export declare const ErrorComponent: ({ error, children, className, _t, }: ErrorComponentProps) => React.JSX.Element;
+export declare const ErrorComponent: ({ error, children, className, useDataError, _t, }: ErrorComponentProps) => React.JSX.Element;

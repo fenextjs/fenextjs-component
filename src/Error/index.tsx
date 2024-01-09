@@ -11,6 +11,10 @@ export interface ErrorComponentBaseProps extends PropsWithChildren, _TProps {
      * The class name for the component.
      */
     error?: ErrorFenextjs;
+    /**
+     * The data-error .
+     */
+    useDataError?: boolean;
 }
 
 /**
@@ -34,6 +38,7 @@ export const ErrorComponent = ({
     error,
     children,
     className = "",
+    useDataError = true,
     _t,
 }: ErrorComponentProps) => {
     const content = useMemo(() => {
@@ -50,6 +55,7 @@ export const ErrorComponent = ({
     return (
         <div
             className={`fenext-error ${className} fenext-error-${error?.code}`}
+            data-error={useDataError ? error?.data : undefined}
         >
             {content}
         </div>
