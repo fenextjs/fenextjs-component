@@ -51,12 +51,12 @@ export const ErrorComponent = ({
             <>
                 {error ? (
                     <>
-                        {_tValidate(error.msg ?? "", _t)}
+                        {_tValidate(error?.msg ?? "", _t)}
                         {useErrorInput && error?.input && (
                             <>
                                 {" "}
                                 <span className="fenext-error-input">
-                                    {_tValidate(`[${error.input ?? ""}]`, _t)}
+                                    {_tValidate(`[${error?.input ?? ""}]`, _t)}
                                 </span>
                             </>
                         )}
