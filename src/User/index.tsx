@@ -10,7 +10,7 @@ export interface UserBaseProps {
     /**
      * User data.
      */
-    user: Partial<UserInterfaceProps>;
+    user?: Partial<UserInterfaceProps>;
     /**
      * If loader user.
      */
@@ -87,13 +87,13 @@ export const User = ({
                     }}
                 />
                 <div className={`fenext-user-letter ${classNameLetter} `}>
-                    {user.name?.[0]}
+                    {user?.name?.[0]}
                 </div>
                 <div className={`fenext-user-name ${classNameName} `}>
-                    {user.name}
+                    {user?.name}
                 </div>
                 <div className={`fenext-user-email ${classNameEmail} `}>
-                    {user.email}
+                    {user?.email}
                 </div>
             </div>
         </>

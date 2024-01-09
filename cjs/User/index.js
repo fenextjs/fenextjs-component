@@ -15,9 +15,9 @@ const User = ({ className = "", classNameEmail = "", classNamePicture = "", clas
             react_1.default.createElement(Img_1.Img, { src: "", ...user?.img, className: `fenext-user-picture ${classNamePicture}`, classNameImg: `fenext-user-img ${classNameImg}`, onErrorImg: (e) => {
                     e.currentTarget.style.display = "none";
                 } }),
-            react_1.default.createElement("div", { className: `fenext-user-letter ${classNameLetter} ` }, user.name?.[0]),
-            react_1.default.createElement("div", { className: `fenext-user-name ${classNameName} ` }, user.name),
-            react_1.default.createElement("div", { className: `fenext-user-email ${classNameEmail} ` }, user.email))));
+            react_1.default.createElement("div", { className: `fenext-user-letter ${classNameLetter} ` }, user?.name?.[0]),
+            react_1.default.createElement("div", { className: `fenext-user-name ${classNameName} ` }, user?.name),
+            react_1.default.createElement("div", { className: `fenext-user-email ${classNameEmail} ` }, user?.email))));
 };
 exports.User = User;
 //# sourceMappingURL=index.js.map

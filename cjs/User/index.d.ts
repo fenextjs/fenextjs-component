@@ -8,7 +8,7 @@ export interface UserBaseProps {
     /**
      * User data.
      */
-    user: Partial<UserInterfaceProps>;
+    user?: Partial<UserInterfaceProps>;
     /**
      * If loader user.
      */
