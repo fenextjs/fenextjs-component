@@ -8,7 +8,7 @@ export interface NotificationBaseProps extends PropsWithChildren, _TProps {
     /**
      * The class name for the component.
      */
-    type?: RequestResultTypeProps;
+    type?: RequestResultTypeProps | keyof typeof RequestResultTypeProps;
 }
 /**
  * Properties for the class of the Notification component.
