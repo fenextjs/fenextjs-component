@@ -15,6 +15,10 @@ export interface ErrorComponentBaseProps extends PropsWithChildren, _TProps {
      * The data-error .
      */
     useDataError?: boolean;
+    /**
+     * The data-error .
+     */
+    useErrorInput?: boolean;
 }
 
 /**
@@ -39,23 +43,40 @@ export const ErrorComponent = ({
     children,
     className = "",
     useDataError = true,
+    useErrorInput = true,
     _t,
 }: ErrorComponentProps) => {
     const content = useMemo(() => {
         return (
             <>
                 {error ? (
-                    <>{_tValidate(error.message ?? "", _t)}</>
+                    <>
+                        {_tValidate(error.msg ?? "", _t)}
+                        {useErrorInput && error?.input && (
+                           <>
+                           {" "}
+                            <span className="fenext-error-input">
+                                {_tValidate(`[${error.input ?? ""}]`, _t)}
+                            </span>
+                           </>
+                        )}
+                    </>
                 ) : (
                     _tValidate(children, _t)
                 )}
             </>
         );
-    }, [error, _t, children]);
+    }, [error, _t, children,useErrorInput]);
+
+    const dataError = useMemo(() =>{
+        const err =  useDataError ? error?.data : undefined
+        return err ? JSON.stringify(error) : undefined
+    }, [useDataError,error])
+
     return (
         <div
             className={`fenext-error ${className} fenext-error-${error?.code}`}
-            data-error={useDataError ? error?.data : undefined}
+            data-error={dataError}
         >
             {content}
         </div>

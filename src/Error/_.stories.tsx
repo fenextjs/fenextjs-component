@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { Story, Meta } from "@storybook/react";
+import {ErrorFenextjs } from "fenextjs-error";
 
 import { ErrorComponent, ErrorComponentProps } from "./index";
 
@@ -19,4 +20,15 @@ Index.args = {
             Error Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, voluptas?
         </>
     ),
+} as ErrorComponentProps;
+
+export const WithError = Profile.bind({});
+WithError.args = {
+    error : new ErrorFenextjs({
+            message:"Message error",
+            input:"Input",
+            data:{
+                test:1
+            }
+    }),
 } as ErrorComponentProps;
