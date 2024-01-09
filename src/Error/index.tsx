@@ -53,12 +53,12 @@ export const ErrorComponent = ({
                     <>
                         {_tValidate(error.msg ?? "", _t)}
                         {useErrorInput && error?.input && (
-                           <>
-                           {" "}
-                            <span className="fenext-error-input">
-                                {_tValidate(`[${error.input ?? ""}]`, _t)}
-                            </span>
-                           </>
+                            <>
+                                {" "}
+                                <span className="fenext-error-input">
+                                    {_tValidate(`[${error.input ?? ""}]`, _t)}
+                                </span>
+                            </>
                         )}
                     </>
                 ) : (
@@ -66,12 +66,12 @@ export const ErrorComponent = ({
                 )}
             </>
         );
-    }, [error, _t, children,useErrorInput]);
+    }, [error, _t, children, useErrorInput]);
 
-    const dataError = useMemo(() =>{
-        const err =  useDataError ? error?.data : undefined
-        return err ? JSON.stringify(error) : undefined
-    }, [useDataError,error])
+    const dataError = useMemo(() => {
+        const err = useDataError ? error?.data : undefined;
+        return err ? JSON.stringify(error) : undefined;
+    }, [useDataError, error]);
 
     return (
         <div
