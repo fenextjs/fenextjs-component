@@ -15,6 +15,7 @@
         position: relative;
         gap: calc(var(--fenext-size-btn-menu) / 6);
         cursor: pointer;
+        color: var(--fenext-color-dark);
         &-bar-close,
         &::before,
         &::after {
@@ -24,7 +25,6 @@
             width: 100%;
             height: calc(var(--fenext-size-btn-menu) / 6);
             border-radius: calc(var(--fenext-size-btn-menu) / 6);
-            color: var(--fenext-color-dark);
             background-color: currentColor;
             position: absolute;
             inset: 0;
