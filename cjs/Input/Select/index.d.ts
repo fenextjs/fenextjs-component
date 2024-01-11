@@ -92,6 +92,10 @@ export interface InputSelectBaseProps<T = any> extends Omit<InputTextBaseProps, 
      * ReactNode for clear option in Movil.
      */
     clearContent?: ReactNode;
+    /**
+     * searchById .
+     */
+    searchById?: boolean;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -103,4 +107,4 @@ export interface InputSelectValue<T = any> {
     text?: string;
     textSearch?: string;
 }
-export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, value, onChange, onChangeText, onChangeValidate, icon, noResult, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, _t, ...props }: InputSelectProps<T>) => React.JSX.Element;
+export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, value, onChange, onChangeText, onChangeValidate, icon, noResult, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, _t, ...props }: InputSelectProps<T>) => React.JSX.Element;

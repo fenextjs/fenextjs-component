@@ -131,6 +131,10 @@ export interface InputSelectBaseProps<T = any>
      * ReactNode for clear option in Movil.
      */
     clearContent?: ReactNode;
+    /**
+     * searchById .
+     */
+    searchById?: boolean;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -171,6 +175,7 @@ export const InputSelect = <T = any,>({
     isSelectChangeText = true,
     errorWithIsChange = true,
     validator,
+    searchById = false,
     _t,
     ...props
 }: InputSelectProps<T>) => {
@@ -282,15 +287,18 @@ export const InputSelect = <T = any,>({
         return options.filter(
             (option) =>
                 option.text?.toLowerCase()?.includes(textSearch) ||
-                textSearch?.includes(option.text?.toLowerCase()),
+                textSearch?.includes(option.text?.toLowerCase()) ||
+                (searchById &&
+                    (`${option.id}`?.toLowerCase()?.includes(textSearch) ||
+                        textSearch?.includes(`${option.id}`?.toLowerCase()))),
         );
-    }, [options, dataMemo]);
+    }, [options, dataMemo, searchById]);
     const OPTIONS = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
         if (typeSelect == "div") {
             return OPTIONSSEARCH;
         }
         return options;
-    }, [typeSelect, OPTIONSSEARCH, options, dataMemo]);
+    }, [typeSelect, OPTIONSSEARCH, options]);
 
     const onEnter = () => {
         const optionSect = OPTIONSSEARCH[0];
@@ -390,7 +398,6 @@ export const InputSelect = <T = any,>({
                 </div>
                 <TAG
                     id={props?.datalist}
-                    key={JSON.stringify(options ?? [])}
                     className={`fenext-select-list-options fenext-select-list-options-type-${typeSelect}  ${classNameList}`}
                     onChange={(e) => {
                         onChangeText_(e?.target?.value);
