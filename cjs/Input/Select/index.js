@@ -153,7 +153,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                 react_1.default.createElement(Text_1.InputText, { ...props, _t: _t, icon: icon, onChange: onChangeText_, value: dataMemo?.text ?? "", onEnter: onEnter, error: errorInput, autoComplete: false, errorWithIsChange: errorWithIsChange, extraInContentInput: react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("button", { className: `fenext-select-clear`, onClick: onClear }, (0, fenextjs_functions_1._tValidate)(clearContent, _t))), validator: undefined }),
                 react_1.default.createElement("button", { ref: btnClose, className: `fenext-select-close` }, iconCloseMovil)),
-            react_1.default.createElement(TAG, { id: props?.datalist, className: `fenext-select-list-options fenext-select-list-options-type-${typeSelect}  ${classNameList}`, onChange: (e) => {
+            react_1.default.createElement(TAG, { id: props?.datalist, key: JSON.stringify(options ?? []), className: `fenext-select-list-options fenext-select-list-options-type-${typeSelect}  ${classNameList}`, onChange: (e) => {
                     onChangeText_(e?.target?.value);
                 } },
                 create && typeSelect == "div" ? (react_1.default.createElement(react_1.default.Fragment, null,

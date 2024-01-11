@@ -390,6 +390,7 @@ export const InputSelect = <T = any,>({
                 </div>
                 <TAG
                     id={props?.datalist}
+                    key={JSON.stringify(options ?? [])}
                     className={`fenext-select-list-options fenext-select-list-options-type-${typeSelect}  ${classNameList}`}
                     onChange={(e) => {
                         onChangeText_(e?.target?.value);
