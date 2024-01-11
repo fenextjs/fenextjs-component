@@ -302,6 +302,8 @@ export const Table = <T,>({
                                         ["--fenext-table-head-th"]: `"${h?.th}"`,
                                     } as React.CSSProperties
                                 }
+                                data-col-id={h?.id}
+                                data-col-text={h?.th}
                             >
                                 <LoaderLine />
                             </td>
@@ -349,6 +351,8 @@ export const Table = <T,>({
                                         ["--fenext-table-head-th"]: `"${h?.th}"`,
                                     } as React.CSSProperties
                                 }
+                                data-col-id={h?.id}
+                                data-col-text={h?.th}
                             >
                                 {h?.parse?.(item) ?? item[h.id] ?? ""}
                             </td>
@@ -370,6 +374,8 @@ export const Table = <T,>({
                                             } as React.CSSProperties
                                         }
                                         colSpan={100}
+                                        data-col-id={new_tr?.id}
+                                        data-col-text={new_tr?.th}
                                     >
                                         {new_tr?.parse?.(item) ??
                                             item[new_tr.id] ??
@@ -436,6 +442,8 @@ export const Table = <T,>({
                                     <th
                                         key={i}
                                         className={`fenext-table-content-table-th ${classNameTh}`}
+                                        data-col-id={h?.id}
+                                        data-col-text={h?.th}
                                     >
                                         <DropDown
                                             header={<>{_tValidate(h.th, _t)}</>}
