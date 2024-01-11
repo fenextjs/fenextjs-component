@@ -105,7 +105,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
             return OPTIONSSEARCH;
         }
         return options;
-    }, [typeSelect, OPTIONSSEARCH, options]);
+    }, [typeSelect, OPTIONSSEARCH, options, dataMemo]);
     const onEnter = () => {
         const optionSect = OPTIONSSEARCH[0];
         if (optionSect) {

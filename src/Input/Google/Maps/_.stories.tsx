@@ -2,7 +2,6 @@ import React, { PropsWithChildren } from "react";
 import { Story, Meta } from "@storybook/react";
 
 import { InputGoogleMaps, InputGoogleMapsProps } from "./index";
-import { InputGoogleLoadScript } from "../LoadScript";
 
 export default {
     title: "Input/Google/Maps",
@@ -12,9 +11,7 @@ export default {
 const Profile: Story<PropsWithChildren<InputGoogleMapsProps>> = (
     args,
 ) => (
-    <InputGoogleLoadScript>
         <InputGoogleMaps {...args} />
-    </InputGoogleLoadScript>
 );
 
 export const Index = Profile.bind({});
