@@ -99,7 +99,7 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                     }, icon: data?.img ? (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("img", { src: data.img, alt: data.code }))) : (react_1.default.createElement(react_1.default.Fragment, null)) })),
             react_1.default.createElement("div", { className: `fenext-input-phone-text ${classNamePhoneNumber}` },
-                react_1.default.createElement(Text_1.InputText, { ...classNameInputNumber, ...props, type: "number", onChange: onChangeData("number"), loader: !loadPhoneCodes || loader, disabled: !loadPhoneCodes || disabled, placeholder: placeholder, defaultValue: data?.number, value: value?.number, _t: _t, validator: undefined })),
+                react_1.default.createElement(Text_1.InputText, { ...classNameInputNumber, ...props, type: "number", onChange: onChangeData("number"), loader: !loadPhoneCodes || loader, disabled: !loadPhoneCodes || disabled, placeholder: placeholder, defaultValue: data?.number, value: value?.number, _t: _t, validator: validator?.getObjectValidator?.()?.number })),
             ((props?.error ?? error) || (errorFenext && isChange)) && (react_1.default.createElement(Error_1.ErrorComponent, { error: errorFenext ?? props?.error ?? error, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputPhone = InputPhone;

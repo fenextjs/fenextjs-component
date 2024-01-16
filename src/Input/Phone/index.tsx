@@ -9,7 +9,7 @@ import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorComponent } from "../../Error";
 import { ErrorCode } from "fenextjs-interface";
 import { useValidator } from "fenextjs-hook";
-import { FenextjsValidator } from "fenextjs-validator";
+import { FenextjsValidator, FenextjsValidatorClass } from "fenextjs-validator";
 import { _tValidate } from "fenextjs-functions";
 
 /**
@@ -52,7 +52,12 @@ export interface InputPhoneClassProps {
 export interface InputPhoneBaseProps
     extends Omit<
         InputTextBaseProps,
-        "type" | "value" | "onChange" | "defaultValue" | "datalist"
+        | "type"
+        | "value"
+        | "onChange"
+        | "defaultValue"
+        | "datalist"
+        | "validator"
     > {
     /**
      * disabled select code.
@@ -74,6 +79,10 @@ export interface InputPhoneBaseProps
      * onChange of Phone.
      */
     onChange?: (data: Partial<PhoneProps>) => void;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validator?: FenextjsValidatorClass<PhoneProps>;
 }
 
 /**
@@ -246,7 +255,7 @@ export const InputPhone = ({
                         defaultValue={data?.number}
                         value={value?.number}
                         _t={_t}
-                        validator={undefined}
+                        validator={validator?.getObjectValidator?.()?.number}
                     />
                 </div>
                 {((props?.error ?? error) || (errorFenext && isChange)) && (
