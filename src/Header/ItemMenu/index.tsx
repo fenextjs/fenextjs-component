@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { Collapse } from "../../Collapse/Simple";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
+import { ArrowCollapse } from "fenextjs-svg/cjs/arrowCollapse";
 
 /**
  * Properties for the base ItemMenu component.
@@ -29,6 +30,11 @@ export interface ItemMenuBaseProps extends _TProps {
      * Indicates whether the Collapse is defaultActive for show.
      */
     defaultActive?: boolean;
+    /**
+     * iconArrow of Collapse.
+     * @default ArrowCollapse
+     */
+    iconArrow?: ReactNode;
 }
 
 /**
@@ -69,6 +75,7 @@ export const ItemMenu = ({
     icon = <></>,
     subItems = [],
     defaultActive = false,
+    iconArrow = <ArrowCollapse/>,
     _t,
 }: ItemMenuProps) => {
     const router = useRouter();
@@ -112,6 +119,7 @@ export const ItemMenu = ({
                             </Link>
                         </>
                     }
+                    iconArrow={iconArrow}
                 >
                     {subItems?.map((sub, i) => (
                         <ItemMenu key={i} {...sub} _t={_t} />

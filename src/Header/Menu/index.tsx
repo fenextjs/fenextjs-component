@@ -1,6 +1,7 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { ItemMenu, ItemMenuProps } from "../ItemMenu";
 import { _TProps } from "fenextjs-interface";
+import { ArrowCollapse } from "fenextjs-svg/cjs/arrowCollapse";
 
 /**
  * Properties for the base Menu component.
@@ -10,6 +11,11 @@ export interface MenuBaseProps extends _TProps {
      * The class name for the component.
      */
     items?: ItemMenuProps[];
+    /**
+     * iconArrow of Collapse.
+     * @default ArrowCollapse
+     */
+    iconArrow?: ReactNode;
 }
 
 /**
@@ -38,6 +44,7 @@ export const Menu = ({
     items = [],
 
     defaultShowSubMenu = false,
+    iconArrow = <ArrowCollapse/>,
     _t,
 }: MenuProps) => {
     return (
@@ -48,6 +55,7 @@ export const Menu = ({
                         key={i}
                         {...item}
                         defaultActive={item.defaultActive ?? defaultShowSubMenu}
+                        iconArrow={item?.iconArrow ?? iconArrow}
                         _t={_t}
                     />
                 ))}

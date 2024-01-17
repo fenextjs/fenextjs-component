@@ -48,6 +48,11 @@ export interface CollapseBaseProps extends PropsWithChildren, _TProps {
      * onChange of Collapse.
      */
     onChange?: (value: boolean) => void;
+    /**
+     * iconArrow of Collapse.
+     * @default ArrowCollapse
+     */
+    iconArrow?: ReactNode;
 }
 
 /**
@@ -99,6 +104,7 @@ export const Collapse = ({
     show = "checked",
     status = "none",
     onChange,
+    iconArrow = <ArrowCollapse/>,
     _t,
 }: CollapseProps) => {
     return (
@@ -136,7 +142,7 @@ export const Collapse = ({
                             </>
                         ) : (
                             <>
-                                <ArrowCollapse />
+                                {iconArrow}
                             </>
                         )}
                     </div>
