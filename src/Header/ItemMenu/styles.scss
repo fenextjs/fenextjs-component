@@ -1,27 +1,34 @@
 .fenext-menu-item {
     background-color: var(--fenext-color-dark);
+    --color-normal: var(--fenext-color-light);
+    --color-active: var(--fenext-color-info);
+    --color-hover: var(--fenext-color-info);
+    --color: var(--color-normal);
+    --size-icon: 1.2rem;
     &-a {
         font-family: var(--fenext-font-global);
         font-size: 1rem;
         font-weight: 900;
         line-height: 1;
         text-decoration: none;
-        display: flex;
+        display: grid;
         align-items: center;
+        grid-template-columns: var(--size-icon) 1fr;
         gap: 0.5rem;
-        --color-normal: var(--fenext-color-light);
-        --color-active: var(--fenext-color-info);
-        --color: var(--color-normal);
         color: var(--color);
         &-icon {
-            width: 1rem;
-            color: var(--color);
+            width: 100%;
+            color: currentColor;
             svg {
-                color: var(--color);
+                color: currentColor;
+                fill: currentColor;
             }
             &:empty {
                 display: none;
             }
+        }
+        &:has(&-icon:empty) {
+            grid-template-columns: 1fr;
         }
         &-active {
             --color: var(--color-active);
@@ -40,7 +47,7 @@
         &-text {
         }
         &:hover {
-            --color: var(--color-active);
+            --color: var(--color-hover);
         }
     }
     &:has(> .fenext-collapse > .fenext-collapse-body:empty) {
