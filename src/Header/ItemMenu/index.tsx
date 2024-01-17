@@ -75,7 +75,7 @@ export const ItemMenu = ({
     icon = <></>,
     subItems = [],
     defaultActive = false,
-    iconArrow = <ArrowCollapse/>,
+    iconArrow = <ArrowCollapse />,
     _t,
 }: ItemMenuProps) => {
     const router = useRouter();

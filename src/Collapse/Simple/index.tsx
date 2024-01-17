@@ -104,7 +104,7 @@ export const Collapse = ({
     show = "checked",
     status = "none",
     onChange,
-    iconArrow = <ArrowCollapse/>,
+    iconArrow = <ArrowCollapse />,
     _t,
 }: CollapseProps) => {
     return (
@@ -141,9 +141,7 @@ export const Collapse = ({
                                 <Loader />
                             </>
                         ) : (
-                            <>
-                                {iconArrow}
-                            </>
+                            <>{iconArrow}</>
                         )}
                     </div>
                     {type == "radio" ? (

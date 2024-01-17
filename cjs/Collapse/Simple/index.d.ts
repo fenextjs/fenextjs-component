@@ -44,6 +44,11 @@ export interface CollapseBaseProps extends PropsWithChildren, _TProps {
      * onChange of Collapse.
      */
     onChange?: (value: boolean) => void;
+    /**
+     * iconArrow of Collapse.
+     * @default ArrowCollapse
+     */
+    iconArrow?: ReactNode;
 }
 /**
  * Properties for the class of the Collapse component.
@@ -75,4 +80,4 @@ export interface CollapseClassProps {
  */
 export interface CollapseProps extends CollapseBaseProps, CollapseClassProps {
 }
-export declare const Collapse: ({ className, classNameHeader, classNameHeaderContent, classNameHeaderIcon, classNameBody, children, loader, header, disabled, defaultActive, active, name, type, show, status, onChange, _t, }: CollapseProps) => React.JSX.Element;
+export declare const Collapse: ({ className, classNameHeader, classNameHeaderContent, classNameHeaderIcon, classNameBody, children, loader, header, disabled, defaultActive, active, name, type, show, status, onChange, iconArrow, _t, }: CollapseProps) => React.JSX.Element;

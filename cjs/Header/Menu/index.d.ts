@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { ItemMenuProps } from "../ItemMenu";
 import { _TProps } from "fenextjs-interface";
 /**
@@ -9,6 +9,11 @@ export interface MenuBaseProps extends _TProps {
      * The class name for the component.
      */
     items?: ItemMenuProps[];
+    /**
+     * iconArrow of Collapse.
+     * @default ArrowCollapse
+     */
+    iconArrow?: ReactNode;
 }
 /**
  * Properties for the class of the Menu component.
@@ -29,4 +34,4 @@ export interface MenuClassProps {
  */
 export interface MenuProps extends MenuBaseProps, MenuClassProps {
 }
-export declare const Menu: ({ className, items, defaultShowSubMenu, _t, }: MenuProps) => React.JSX.Element;
+export declare const Menu: ({ className, items, defaultShowSubMenu, iconArrow, _t, }: MenuProps) => React.JSX.Element;

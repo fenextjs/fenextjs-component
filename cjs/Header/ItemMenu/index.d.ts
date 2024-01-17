@@ -24,6 +24,11 @@ export interface ItemMenuBaseProps extends _TProps {
      * Indicates whether the Collapse is defaultActive for show.
      */
     defaultActive?: boolean;
+    /**
+     * iconArrow of Collapse.
+     * @default ArrowCollapse
+     */
+    iconArrow?: ReactNode;
 }
 /**
  * Properties for the class of the ItemMenu component.
@@ -51,4 +56,4 @@ export interface ItemMenuClassProps {
  */
 export interface ItemMenuProps extends ItemMenuBaseProps, ItemMenuClassProps {
 }
-export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, _t, }: ItemMenuProps) => React.JSX.Element;
+export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, _t, }: ItemMenuProps) => React.JSX.Element;

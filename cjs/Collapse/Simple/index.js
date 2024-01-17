@@ -6,7 +6,7 @@ const react_1 = tslib_1.__importDefault(require("react"));
 const Loader_1 = require("../../Loader");
 const arrowCollapse_1 = require("fenextjs-svg/cjs/arrowCollapse");
 const fenextjs_functions_1 = require("fenextjs-functions");
-const Collapse = ({ className = "", classNameHeader = "", classNameHeaderContent = "", classNameHeaderIcon = "", classNameBody = "", children, loader = false, header, disabled = false, defaultActive = false, active = undefined, name = "", type = "checkbox", show = "checked", status = "none", onChange, _t, }) => {
+const Collapse = ({ className = "", classNameHeader = "", classNameHeaderContent = "", classNameHeaderIcon = "", classNameBody = "", children, loader = false, header, disabled = false, defaultActive = false, active = undefined, name = "", type = "checkbox", show = "checked", status = "none", onChange, iconArrow = react_1.default.createElement(arrowCollapse_1.ArrowCollapse, null), _t, }) => {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-collapse fenext-collapse-status-${status} fenext-collapse-${show} ${className}` },
             react_1.default.createElement("label", { className: `fenext-collapse-header ${classNameHeader}` },
@@ -19,8 +19,7 @@ const Collapse = ({ className = "", classNameHeader = "", classNameHeaderContent
                     } }),
                 react_1.default.createElement("div", { className: `fenext-collapse-header-content ${classNameHeaderContent}` }, (0, fenextjs_functions_1._tValidate)(header, _t)),
                 react_1.default.createElement("div", { className: `fenext-collapse-header-icon ${classNameHeaderIcon}` }, loader ? (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(Loader_1.Loader, null))) : (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(arrowCollapse_1.ArrowCollapse, null)))),
+                    react_1.default.createElement(Loader_1.Loader, null))) : (react_1.default.createElement(react_1.default.Fragment, null, iconArrow))),
                 type == "radio" ? (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement("input", { type: type, className: `fenext-collapse-header-uncheck`, name: name, disabled: disabled || loader, onChange: (e) => {
                             onChange?.(e.target.checked);

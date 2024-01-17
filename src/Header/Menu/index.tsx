@@ -44,7 +44,7 @@ export const Menu = ({
     items = [],
 
     defaultShowSubMenu = false,
-    iconArrow = <ArrowCollapse/>,
+    iconArrow = <ArrowCollapse />,
     _t,
 }: MenuProps) => {
     return (
