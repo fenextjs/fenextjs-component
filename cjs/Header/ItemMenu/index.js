@@ -24,7 +24,7 @@ const ItemMenu = ({ className = "", classNameA = "", classNameIcon = "", classNa
                                 ? `fenext-menu-item-a-active fenext-menu-item-a-url-inter-${urlInter}`
                                 : ""}`, ["data-url"]: url },
                             react_1.default.createElement("div", { className: `fenext-menu-item-a-icon ${classNameIcon}` }, icon),
-                            react_1.default.createElement("div", { className: `fenext-menu-item-a-text ${classNameText}` }, (0, fenextjs_functions_1._tValidate)(text, _t))))), iconArrow: iconArrow }, subItems?.map((sub, i) => (react_1.default.createElement(exports.ItemMenu, { key: i, ...sub, _t: _t })))))));
+                            react_1.default.createElement("div", { className: `fenext-menu-item-a-text ${classNameText}` }, (0, fenextjs_functions_1._tValidate)(text, _t))))), iconArrow: iconArrow }, subItems?.map((sub, i) => (react_1.default.createElement(exports.ItemMenu, { key: i, ...sub, _t: _t, iconArrow: sub?.iconArrow ?? iconArrow })))))));
 };
 exports.ItemMenu = ItemMenu;
 //# sourceMappingURL=index.js.map

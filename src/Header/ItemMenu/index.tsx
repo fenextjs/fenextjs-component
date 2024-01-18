@@ -122,7 +122,12 @@ export const ItemMenu = ({
                     iconArrow={iconArrow}
                 >
                     {subItems?.map((sub, i) => (
-                        <ItemMenu key={i} {...sub} _t={_t} />
+                        <ItemMenu
+                            key={i}
+                            {...sub}
+                            _t={_t}
+                            iconArrow={sub?.iconArrow ?? iconArrow}
+                        />
                     ))}
                 </Collapse>
             </div>
