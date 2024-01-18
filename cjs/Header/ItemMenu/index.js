@@ -16,13 +16,24 @@ const ItemMenu = ({ className = "", classNameA = "", classNameIcon = "", classNa
         const common = nlLink.filter((x) => nlUrl.indexOf(x) !== -1);
         return common.length;
     }, [router?.asPath, url]);
+    const urlActive = (0, react_1.useCallback)((url) => {
+        return (router?.asPath?.indexOf?.(url) == 0 &&
+            (router?.asPath != "/" || url == "/"));
+    }, [router?.asPath]);
+    const subItemsActive = (0, react_1.useCallback)((sub) => {
+        return sub?.some((e) => {
+            return (urlActive(e?.url) ||
+                (e?.subItems && subItemsActive(e?.subItems)));
+        });
+    }, [router?.asPath]);
+    const contentSubItemAtive = (0, react_1.useMemo)(() => subItemsActive(subItems), [subItems, router?.asPath]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-menu-item ${className}` },
-            react_1.default.createElement(Simple_1.Collapse, { defaultActive: defaultActive, header: react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement(Simple_1.Collapse, { key: router?.asPath ?? "", defaultActive: defaultActive || contentSubItemAtive, header: react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(link_1.default, { href: url, legacyBehavior: true },
-                        react_1.default.createElement("a", { className: `fenext-menu-item-a ${classNameA} ${router.asPath.indexOf(url) == 0
+                        react_1.default.createElement("a", { className: `fenext-menu-item-a ${classNameA} ${urlActive(url)
                                 ? `fenext-menu-item-a-active fenext-menu-item-a-url-inter-${urlInter}`
-                                : ""}`, ["data-url"]: url },
+                                : ""}`, "data-url": url },
                             react_1.default.createElement("div", { className: `fenext-menu-item-a-icon ${classNameIcon}` }, icon),
                             react_1.default.createElement("div", { className: `fenext-menu-item-a-text ${classNameText}` }, (0, fenextjs_functions_1._tValidate)(text, _t))))), iconArrow: iconArrow }, subItems?.map((sub, i) => (react_1.default.createElement(exports.ItemMenu, { key: i, ...sub, _t: _t, iconArrow: sub?.iconArrow ?? iconArrow })))))));
 };
