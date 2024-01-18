@@ -1,5 +1,5 @@
 import { _TProps } from "fenextjs-interface";
-import React from "react";
+import React, { ReactNode } from "react";
 /**
  * Properties of a tab item.
  */
@@ -24,6 +24,22 @@ export interface TabItemProps<T = string> {
      * Component of after list  Tabs Header;
      */
     afterTab?: React.ReactNode;
+    /**
+     * useCount  Tabs Header;
+     */
+    useCount?: boolean;
+    /**
+     * count  Tabs Header;
+     */
+    count?: number;
+    /**
+     * singular  Tabs Header;
+     */
+    singular?: ReactNode;
+    /**
+     * plural  Tabs Header;
+     */
+    plural?: ReactNode;
 }
 /**
  * Base properties of a tab component.
@@ -59,6 +75,10 @@ export interface TabBaseProps<T = string> extends _TProps {
      * @default true
      */
     validataTabOneHiddenHeader?: boolean;
+    /**
+     * useCount  Tabs;
+     */
+    useCount?: boolean;
 }
 /**
  * CSS class properties for a tab component.
@@ -107,6 +127,7 @@ export interface TabClassProps {
  */
 export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps {
 }
+export declare const parseTabCount: <T>(d: TabItemProps<T>) => TabItemProps<T>;
 /**
  * Tab component that displays a set of tabs with content.
  * @param className CSS class name for the component.
@@ -118,4 +139,4 @@ export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps {
  * @param items Array of `TabItemProps` objects representing the tabs.
  * @param defaultTab Index of the tab to be shown by default.
  */
-export declare const Tab: <T = string>({ className, classNameContentHead, classNameHead, classNameHeadItem, classNameHeadItemActive, classNameBody, classNameBodyItem, classNameContentAfterHead, classNameContentBeforeHead, items, defaultTab, afterTabs, beforeTabs, onChange, tabScrollActive, validataTabOneHiddenHeader, _t, }: TabProps<T>) => React.JSX.Element;
+export declare const Tab: <T = string>({ className, classNameContentHead, classNameHead, classNameHeadItem, classNameHeadItemActive, classNameBody, classNameBodyItem, classNameContentAfterHead, classNameContentBeforeHead, items, defaultTab, afterTabs, beforeTabs, onChange, tabScrollActive, validataTabOneHiddenHeader, _t, useCount, }: TabProps<T>) => React.JSX.Element;

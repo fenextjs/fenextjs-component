@@ -16,10 +16,14 @@ export const Index = Profile.bind({});
 const args: TabProps = {
     beforeTabs:"Name Tabs",
     afterTabs:"Total Items 3",
+    useCount:false,
     items: [
         {
             id: "1",
             head: "Head 1",
+            singular:"Head",
+            plural:"Heads",
+            count:1244,
             body: (
                 <>
                     <h1>Lorem 1</h1>
@@ -30,10 +34,14 @@ const args: TabProps = {
                     molestias!
                 </>
             ),
+            useCount:true
         },
         {
             id: "2",
             head: "Head 2",
+            singular:"Head",
+            plural:"Heads",
+            count:1244,
             body: (
                 <>
                     <h1>Lorem 2</h1>
@@ -54,6 +62,9 @@ const args: TabProps = {
         {
             id: "3",
             head: "Head 3",
+            singular:"Head",
+            plural:"Heads",
+            count:1,
             body: (
                 <>
                     <h1>Lorem 3</h1>

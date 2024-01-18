@@ -1,6 +1,6 @@
-import { _tValidate } from "fenextjs-functions";
+import { _tValidate, parseNumberCount } from "fenextjs-functions";
 import { _TProps } from "fenextjs-interface";
-import React, { useMemo, useState } from "react";
+import React, { ReactNode, useMemo, useState } from "react";
 
 /**
  * Properties of a tab item.
@@ -29,6 +29,26 @@ export interface TabItemProps<T = string> {
      * Component of after list  Tabs Header;
      */
     afterTab?: React.ReactNode;
+
+    /**
+     * useCount  Tabs Header;
+     */
+    useCount?: boolean;
+
+    /**
+     * count  Tabs Header;
+     */
+    count?: number;
+
+    /**
+     * singular  Tabs Header;
+     */
+    singular?: ReactNode;
+
+    /**
+     * plural  Tabs Header;
+     */
+    plural?: ReactNode;
 }
 
 /**
@@ -69,6 +89,11 @@ export interface TabBaseProps<T = string> extends _TProps {
      * @default true
      */
     validataTabOneHiddenHeader?: boolean;
+
+    /**
+     * useCount  Tabs;
+     */
+    useCount?: boolean;
 }
 
 /**
@@ -125,6 +150,18 @@ export interface TabClassProps {
  */
 export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps {}
 
+export const parseTabCount = <T,>(d: TabItemProps<T>): TabItemProps<T> => {
+    return {
+        ...d,
+        head: (
+            <>
+                {((d.count ?? 0) > 1 ? d.plural : d.singular) ?? d.head} (
+                {parseNumberCount(d.count ?? 0)})
+            </>
+        ),
+    };
+};
+
 /**
  * Tab component that displays a set of tabs with content.
  * @param className CSS class name for the component.
@@ -155,13 +192,22 @@ export const Tab = <T = string,>({
     tabScrollActive = false,
     validataTabOneHiddenHeader = true,
     _t,
+    useCount = false,
 }: TabProps<T>) => {
     const [tabSelect, setTabSelect] = useState(
         Math.max(0, Math.min(defaultTab, items.length - 1)),
     );
 
     const CHead = useMemo(() => {
-        return items.map((item, i) => {
+        let ITEMS = items;
+        if (useCount) {
+            ITEMS = ITEMS.map(parseTabCount<T>);
+        }
+        return ITEMS.map((item, i) => {
+            let ITEM = item;
+            if (ITEM.useCount) {
+                ITEM = parseTabCount<T>(ITEM);
+            }
             return (
                 <div
                     key={i}
@@ -169,17 +215,17 @@ export const Tab = <T = string,>({
                         i == tabSelect
                             ? `fenext-tab-head-item-active ${classNameHeadItemActive}`
                             : ""
-                    } fenext-tab-head-item-id-${item.id}`}
+                    } fenext-tab-head-item-id-${ITEM.id}`}
                     onClick={() => {
                         setTabSelect(i);
-                        onChange?.(item);
+                        onChange?.(ITEM);
                     }}
                 >
-                    {_tValidate(item.head, _t)}
+                    {_tValidate(ITEM.head, _t)}
                 </div>
             );
         });
-    }, [tabSelect, items]);
+    }, [tabSelect, items, useCount]);
 
     const CBody = useMemo(() => {
         if (tabScrollActive) {
