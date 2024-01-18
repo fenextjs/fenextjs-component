@@ -11,12 +11,15 @@ import {
 /**
  * Properties for the base InputGoogleMaps component.
  */
-export interface InputGoogleMapsBaseProps extends GoogleMapProps {
+export interface InputGoogleMapsBaseProps
+    extends Omit<GoogleMapProps, "onBoundsChanged"> {
     markers?: MarkerProps[];
     useLoadCenterWithMarker?: boolean;
     useLoadFitBoundsWithMarker?: boolean;
     useLoadDirectionsWithMarker?: boolean;
     showDirectionsWaypoints?: boolean;
+
+    onBoundsChanged?: (data: google.maps.LatLngBounds | undefined) => void;
 }
 
 /**
@@ -119,6 +122,9 @@ export const InputGoogleMaps = ({
                 onLoad={(e) => {
                     setMap(e);
                     props?.onLoad?.(e);
+                }}
+                onBoundsChanged={() => {
+                    props?.onBoundsChanged?.(map?.getBounds?.());
                 }}
             >
                 {markers && !showDirectionsWaypoints && (

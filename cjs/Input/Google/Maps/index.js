@@ -68,6 +68,8 @@ const InputGoogleMaps = ({ mapContainerStyle = {
         react_1.default.createElement(api_1.GoogleMap, { mapContainerStyle: mapContainerStyle, center: centerMarker ?? center, ...props, onLoad: (e) => {
                 setMap(e);
                 props?.onLoad?.(e);
+            }, onBoundsChanged: () => {
+                props?.onBoundsChanged?.(map?.getBounds?.());
             } },
             markers && !showDirectionsWaypoints && (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement(api_1.MarkerClusterer, null, () => (react_1.default.createElement(react_1.default.Fragment, null, markers.map((e, i) => (react_1.default.createElement(api_1.Marker, { key: i, ...e })))))))),
