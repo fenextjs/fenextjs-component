@@ -65,7 +65,10 @@ const InputGoogleMaps = ({ mapContainerStyle = {
     };
     (0, react_1.useEffect)(onLoadMap, [map]);
     return (react_1.default.createElement("div", { className: `fenext-input-google-maps ` },
-        react_1.default.createElement(api_1.GoogleMap, { mapContainerStyle: mapContainerStyle, center: centerMarker ?? center, onLoad: setMap, ...props },
+        react_1.default.createElement(api_1.GoogleMap, { mapContainerStyle: mapContainerStyle, center: centerMarker ?? center, ...props, onLoad: (e) => {
+                setMap(e);
+                props?.onLoad?.(e);
+            } },
             markers && !showDirectionsWaypoints && (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement(api_1.MarkerClusterer, null, () => (react_1.default.createElement(react_1.default.Fragment, null, markers.map((e, i) => (react_1.default.createElement(api_1.Marker, { key: i, ...e })))))))),
             directionsResult && (react_1.default.createElement(api_1.DirectionsRenderer, { directions: directionsResult, options: {

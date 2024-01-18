@@ -115,8 +115,11 @@ export const InputGoogleMaps = ({
             <GoogleMap
                 mapContainerStyle={mapContainerStyle}
                 center={centerMarker ?? center}
-                onLoad={setMap}
                 {...props}
+                onLoad={(e) => {
+                    setMap(e);
+                    props?.onLoad?.(e);
+                }}
             >
                 {markers && !showDirectionsWaypoints && (
                     <>
