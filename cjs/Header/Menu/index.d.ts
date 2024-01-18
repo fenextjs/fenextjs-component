@@ -14,6 +14,10 @@ export interface MenuBaseProps extends _TProps {
      * @default ArrowCollapse
      */
     iconArrow?: ReactNode;
+    /**
+     * type of collapse.
+     */
+    typeCollapse?: "radio" | "checkbox";
 }
 /**
  * Properties for the class of the Menu component.
@@ -34,4 +38,4 @@ export interface MenuClassProps {
  */
 export interface MenuProps extends MenuBaseProps, MenuClassProps {
 }
-export declare const Menu: ({ className, items, defaultShowSubMenu, iconArrow, _t, }: MenuProps) => React.JSX.Element;
+export declare const Menu: ({ className, items, defaultShowSubMenu, iconArrow, typeCollapse, _t, }: MenuProps) => React.JSX.Element;

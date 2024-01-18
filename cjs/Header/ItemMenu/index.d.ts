@@ -29,6 +29,15 @@ export interface ItemMenuBaseProps extends _TProps {
      * @default ArrowCollapse
      */
     iconArrow?: ReactNode;
+    /**
+     * nameNumber of Collapse.
+     * @default 1
+     */
+    nameNumber?: number;
+    /**
+     * type of collapse.
+     */
+    typeCollapse?: "radio" | "checkbox";
 }
 /**
  * Properties for the class of the ItemMenu component.
@@ -56,4 +65,4 @@ export interface ItemMenuClassProps {
  */
 export interface ItemMenuProps extends ItemMenuBaseProps, ItemMenuClassProps {
 }
-export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, _t, }: ItemMenuProps) => React.JSX.Element;
+export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, nameNumber, typeCollapse, _t, }: ItemMenuProps) => React.JSX.Element;

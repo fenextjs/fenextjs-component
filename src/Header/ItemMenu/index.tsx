@@ -35,6 +35,15 @@ export interface ItemMenuBaseProps extends _TProps {
      * @default ArrowCollapse
      */
     iconArrow?: ReactNode;
+    /**
+     * nameNumber of Collapse.
+     * @default 1
+     */
+    nameNumber?: number;
+    /**
+     * type of collapse.
+     */
+    typeCollapse?: "radio" | "checkbox";
 }
 
 /**
@@ -76,6 +85,8 @@ export const ItemMenu = ({
     subItems = [],
     defaultActive = false,
     iconArrow = <ArrowCollapse />,
+    nameNumber = 1,
+    typeCollapse,
     _t,
 }: ItemMenuProps) => {
     const router = useRouter();
@@ -91,7 +102,7 @@ export const ItemMenu = ({
         (url: Omit<ItemMenuProps, "_t">["url"]) => {
             return (
                 router?.asPath?.indexOf?.(url) == 0 &&
-                (router?.asPath != "/" || url == "/")
+                (router?.asPath != "/" || (url == "/" && router?.asPath == "/"))
             );
         },
         [router?.asPath],
@@ -119,7 +130,9 @@ export const ItemMenu = ({
             <div className={`fenext-menu-item ${className}`}>
                 <Collapse
                     key={router?.asPath ?? ""}
+                    name={`fenext-menu-item-${nameNumber}`}
                     defaultActive={defaultActive || contentSubItemAtive}
+                    type={typeCollapse}
                     header={
                         <>
                             <Link href={url} legacyBehavior>
@@ -153,6 +166,7 @@ export const ItemMenu = ({
                             {...sub}
                             _t={_t}
                             iconArrow={sub?.iconArrow ?? iconArrow}
+                            nameNumber={nameNumber + 1}
                         />
                     ))}
                 </Collapse>

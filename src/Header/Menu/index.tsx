@@ -16,6 +16,10 @@ export interface MenuBaseProps extends _TProps {
      * @default ArrowCollapse
      */
     iconArrow?: ReactNode;
+    /**
+     * type of collapse.
+     */
+    typeCollapse?: "radio" | "checkbox";
 }
 
 /**
@@ -45,6 +49,7 @@ export const Menu = ({
 
     defaultShowSubMenu = false,
     iconArrow = <ArrowCollapse />,
+    typeCollapse,
     _t,
 }: MenuProps) => {
     return (
@@ -57,6 +62,7 @@ export const Menu = ({
                         defaultActive={item.defaultActive ?? defaultShowSubMenu}
                         iconArrow={item?.iconArrow ?? iconArrow}
                         _t={_t}
+                        typeCollapse={item?.typeCollapse ?? typeCollapse}
                     />
                 ))}
             </div>
