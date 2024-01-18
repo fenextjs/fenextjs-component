@@ -17,7 +17,7 @@ export const Index = Profile.bind({});
 Index.args = {
     items: [
         {
-            url: "/?path",
+            url: "/123",
             text: "Text Items 1",
             icon: (
                 <>
@@ -26,49 +26,49 @@ Index.args = {
             ),
         },
         {
-            url: "/?path=/story",
+            url: "/123",
             text: "Text Items 2",
         },
         {
-            url: "/?path=/story/header-menu--index",
+            url: "/123",
             text: "Text Items 3",
-            defaultActive: true,
+            // defaultActive: true,
             subItems: [
                 {
-                    url: "/",
+                    url: "/123",
                     text: "Text SubItems 1-1",
                 },
                 {
-                    url: "/",
+                    url: "/123",
                     text: "Text SubItems 1-2",
-                    defaultActive: true,
+                    // defaultActive: true,
                     subItems: [
                         {
-                            url: "/",
+                            url: "/123",
                             text: "Text SubItems 1-2-1",
                         },
                         {
-                            url: "/",
+                            url: "/123",
                             text: "Text SubItems 1-2-2",
                         },
                         {
-                            url: "/",
+                            url: "/asdasdasdasd",
                             text: "Text SubItems 1-2-3",
                         },
                     ],
                 },
                 {
-                    url: "/",
+                    url: "/123",
                     text: "Text SubItems 1-3",
                 },
             ],
         },
         {
-            url: "/",
+            url: "/123",
             text: "Text Items 4",
         },
         {
-            url: "/",
+            url: "/123",
             text: "Text Items 5",
         },
     ],

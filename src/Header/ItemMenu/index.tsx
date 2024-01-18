@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo } from "react";
+import React, { ReactNode, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Collapse } from "../../Collapse/Simple";
@@ -87,23 +87,49 @@ export const ItemMenu = ({
         return common.length;
     }, [router?.asPath, url]);
 
+    const urlActive = useCallback(
+        (url: Omit<ItemMenuProps, "_t">["url"]) => {
+            return (
+                router?.asPath?.indexOf?.(url) == 0 &&
+                (router?.asPath != "/" || url == "/")
+            );
+        },
+        [router?.asPath],
+    );
+
+    const subItemsActive = useCallback(
+        (sub: Omit<ItemMenuProps, "_t">[]) => {
+            return sub?.some((e) => {
+                return (
+                    urlActive(e?.url) ||
+                    (e?.subItems && subItemsActive(e?.subItems))
+                );
+            });
+        },
+        [router?.asPath],
+    );
+
+    const contentSubItemAtive = useMemo(
+        () => subItemsActive(subItems),
+        [subItems, router?.asPath],
+    );
+
     return (
         <>
             <div className={`fenext-menu-item ${className}`}>
                 <Collapse
-                    defaultActive={defaultActive}
+                    key={router?.asPath ?? ""}
+                    defaultActive={defaultActive || contentSubItemAtive}
                     header={
                         <>
                             <Link href={url} legacyBehavior>
                                 <a
                                     className={`fenext-menu-item-a ${classNameA} ${
-                                        router.asPath.indexOf(url) == 0
+                                        urlActive(url)
                                             ? `fenext-menu-item-a-active fenext-menu-item-a-url-inter-${urlInter}`
                                             : ""
                                     }`}
-                                    {...{
-                                        ["data-url"]: url,
-                                    }}
+                                    data-url={url}
                                 >
                                     <div
                                         className={`fenext-menu-item-a-icon ${classNameIcon}`}
