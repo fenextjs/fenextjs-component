@@ -102,7 +102,8 @@ export const ItemMenu = ({
         (url: Omit<ItemMenuProps, "_t">["url"]) => {
             return (
                 router?.asPath?.indexOf?.(url) == 0 &&
-                ((router?.asPath != "/"  && url!="/")|| (url == "/" && router?.asPath == "/"))
+                ((router?.asPath != "/" && url != "/") ||
+                    (url == "/" && router?.asPath == "/"))
             );
         },
         [router?.asPath],

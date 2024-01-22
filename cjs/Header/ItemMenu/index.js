@@ -18,7 +18,8 @@ const ItemMenu = ({ className = "", classNameA = "", classNameIcon = "", classNa
     }, [router?.asPath, url]);
     const urlActive = (0, react_1.useCallback)((url) => {
         return (router?.asPath?.indexOf?.(url) == 0 &&
-            (router?.asPath != "/" || (url == "/" && router?.asPath == "/")));
+            ((router?.asPath != "/" && url != "/") ||
+                (url == "/" && router?.asPath == "/")));
     }, [router?.asPath]);
     const subItemsActive = (0, react_1.useCallback)((sub) => {
         return sub?.some((e) => {
