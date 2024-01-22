@@ -17,7 +17,7 @@ const LayoutGridMenuLeft = ({ className = "", classNameLoader = "", classNameChi
                 react_1.default.createElement("div", { className: `fenext-layout-grid-ml-menu-left-content ${classNameMenuLeftContent}` }, menuLeft)),
             react_1.default.createElement("div", { className: `fenext-layout-grid-ml-children ${classNameChildren}` },
                 usePageProgress && react_1.default.createElement(PageProgress_1.PageProgress, null),
-                loader ? (react_1.default.createElement(Loader_1.Loader, { classNameLoader: classNameLoader })) : (react_1.default.createElement(react_1.default.Fragment, null, children))))));
+                loader ? (react_1.default.createElement(Loader_1.Loader, { classNameLoader: `${classNameLoader} fenext-layout-grid-loader` })) : (react_1.default.createElement(react_1.default.Fragment, null, children))))));
 };
 exports.LayoutGridMenuLeft = LayoutGridMenuLeft;
 //# sourceMappingURL=index.js.map

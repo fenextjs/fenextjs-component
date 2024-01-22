@@ -11,7 +11,7 @@ const LayoutGridMenuTop = ({ className = "", classNameLoader = "", classNameChil
             react_1.default.createElement("div", { className: `fenext-layout-grid-mt-menu-top ${classNameMenuTop}` }, menuTop),
             react_1.default.createElement("div", { className: `fenext-layout-grid-mt-children ${classNameChildren}` },
                 usePageProgress && react_1.default.createElement(PageProgress_1.PageProgress, null),
-                loader ? (react_1.default.createElement(Loader_1.Loader, { classNameLoader: classNameLoader })) : (react_1.default.createElement(react_1.default.Fragment, null, children))))));
+                loader ? (react_1.default.createElement(Loader_1.Loader, { classNameLoader: `${classNameLoader} fenext-layout-grid-loader` })) : (react_1.default.createElement(react_1.default.Fragment, null, children))))));
 };
 exports.LayoutGridMenuTop = LayoutGridMenuTop;
 //# sourceMappingURL=index.js.map

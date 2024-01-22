@@ -72,7 +72,9 @@ export const LayoutGridMenuTop = ({
                 >
                     {usePageProgress && <PageProgress />}
                     {loader ? (
-                        <Loader classNameLoader={classNameLoader} />
+                        <Loader
+                            classNameLoader={`${classNameLoader} fenext-layout-grid-loader`}
+                        />
                     ) : (
                         <>{children}</>
                     )}
