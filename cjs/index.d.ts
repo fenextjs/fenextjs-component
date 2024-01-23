@@ -44,3 +44,4 @@ export * from "./PageProgress";
 export * from "./Tooltip";
 export * from "./Chronometer";
 export * from "./ChronologicalList";
+export * from "./SwichTableBox";

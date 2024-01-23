@@ -47,4 +47,5 @@ tslib_1.__exportStar(require("./PageProgress"), exports);
 tslib_1.__exportStar(require("./Tooltip"), exports);
 tslib_1.__exportStar(require("./Chronometer"), exports);
 tslib_1.__exportStar(require("./ChronologicalList"), exports);
+tslib_1.__exportStar(require("./SwichTableBox"), exports);
 //# sourceMappingURL=index.js.map
