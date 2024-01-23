@@ -45,17 +45,6 @@ export const SwichTableBox = ({
 }: SwichTableBoxProps) => {
     const ITEMS: InputRadioItemProps<SwichTableBoxType>[] = [
         {
-            id: "fenext-table-view-list",
-            label: (
-                <>
-                    <div className={`fenext-swich-table-box-item`}>
-                        <TableList />
-                    </div>
-                </>
-            ),
-            data: "list",
-        },
-        {
             id: "fenext-table-view-box",
             label: (
                 <>
@@ -66,12 +55,23 @@ export const SwichTableBox = ({
             ),
             data: "box",
         },
+        {
+            id: "fenext-table-view-list",
+            label: (
+                <>
+                    <div className={`fenext-swich-table-box-item`}>
+                        <TableList />
+                    </div>
+                </>
+            ),
+            data: "list",
+        },
     ];
     return (
         <div className={`fenext-swich-table-box ${className}`}>
             <InputRadio
                 name="fenext-table-view"
-                defaultValue={ITEMS[defaultValue == "list" ? 0 : 1]}
+                defaultValue={ITEMS[defaultValue == "list" ? 1 : 0]}
                 items={ITEMS}
                 onChange={(e) => {
                     onChange?.(e?.data);
