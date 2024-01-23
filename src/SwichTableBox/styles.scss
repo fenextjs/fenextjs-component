@@ -1,0 +1,75 @@
+.fenext-swich-table-box {
+    padding: 0.2rem .5rem;
+    width: fit-content;
+    .fenext-content-radio {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 1rem;
+        .fenext-input-radio {
+            grid-template-columns: 1fr;
+            &-box {
+                display: none;
+            }
+            &:has(.fenext-input-radio-input:checked) {
+                .fenext-swich-table-box {
+                    &-item {
+                        color: var(--fenext-color-blue);
+                    }
+                }
+            }
+        }
+    }
+    &-item {
+        display: grid;
+        place-items: center;
+        color: var(--fenext-color-dark);
+        width: 2rem;
+    }
+}
+
+@at-root body:has(.fenext-input-radio-input-id-fenext-table-view-box:checked) {
+    .fenext-table {
+        &-content {
+            &-table {
+                &-thead {
+                    display: none;
+                }
+
+                &-tbody {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    column-gap: 1rem;
+                    row-gap: 2rem;
+                }
+                &-tr {
+                    display: grid;
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+                    background-color: var(--fenext-color-white-smoke);
+                    &:hover {
+                        background-color: var(--fenext-color-white-smoke);
+                    }
+                }
+                &-td {
+                    border: 0;
+                    white-space: normal;
+                    padding: 0.5rem 1rem;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    align-items: center;
+                    &:nth-child(2n) {
+                        background-color: var(--fenext-color-white);
+                        border-radius: 0.5rem;
+                    }
+                    &::before {
+                        content: var(--fenext-table-head-th) ": ";
+                    }
+                    &:has(.fenext-input-checkbox) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
