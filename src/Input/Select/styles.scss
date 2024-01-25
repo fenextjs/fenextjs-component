@@ -1,44 +1,54 @@
+$breakSelectModalMovil : 575px;
+$breakSelectModalMovilTop : $breakSelectModalMovil + 1px;
+
 @mixin fenext-select-box {
-    --size-box: 150px;
-    .fenext-select {
-        &-list-options.fenext-select-list-options.fenext-select-list-options {
-            display: grid;
-            grid-template-columns: repeat(
-                auto-fill,
-                minmax(var(--size-box), 1fr)
-            );
-            max-height: 70dvh;
-            position: relative;
-            top: initial;
-            left: initial;
-            bottom: initial;
-            transform: none;
-            flex-direction: initial;
-            gap: 1rem;
-            padding: 1rem;
-            border-radius: 1rem;
-            margin-top: 0.5rem;
-            overflow: auto;
-        }
-        &-option {
-            aspect-ratio: 1/1;
-            border-radius: 1rem;
-            display: grid;
-            place-items: center;
-            text-align: center;
-            background: var(--fenext-color-light-dark);
-            &:hover {
-                background: var(--fenext-color-light-extra-dark);
+    @media (min-width: $breakSelectModalMovilTop) {
+        --size-box: 150px;
+        .fenext-select {
+            &-list-options.fenext-select-list-options.fenext-select-list-options {
+                display: grid;
+                grid-template-columns: repeat(
+                    auto-fill,
+                    minmax(var(--size-box), 1fr)
+                );
+                max-height: 70dvh;
+                position: relative;
+                top: initial;
+                left: initial;
+                bottom: initial;
+                transform: none;
+                flex-direction: initial;
+                gap: 1rem;
+                padding: 1rem;
+                border-radius: 1rem;
+                margin-top: 0.5rem;
+                overflow: auto;
             }
-            &-btn {
-                margin: 0;
-                width: 100%;
-                background: var(--fenext-color-dark);
-                aspect-ratio: initial;
-                grid-column: 1/-1;
-                border-radius: 0.75rem;
+            &-option {
+                aspect-ratio: 1/1;
+                border-radius: 1rem;
+                display: grid;
+                place-items: center;
+                text-align: center;
+                background: var(--fenext-color-light-dark);
                 &:hover {
-                    background: var(--fenext-color-dark-light);
+                    background: var(--fenext-color-light-extra-dark);
+                }
+                &-btn {
+                    margin: 0;
+                    width: 100%;
+                    background: var(--fenext-color-dark);
+                    aspect-ratio: initial;
+                    grid-column: 1/-1;
+                    border-radius: 0.75rem;
+                    &:hover {
+                        background: var(--fenext-color-dark-light);
+                    }
+                }
+                &-not-result{
+                    grid-column: 1/-1;
+                    aspect-ratio: initial;
+                    border-radius: 0.75rem;
                 }
             }
         }
@@ -46,38 +56,40 @@
 }
 
 @mixin fenext-select-list {
-    .fenext-select {
-        &-list-options.fenext-select-list-options.fenext-select-list-options {
-            display: grid;
-            max-height: 70dvh;
-            position: relative;
-            top: initial;
-            left: initial;
-            bottom: initial;
-            transform: none;
-            flex-direction: initial;
-            gap: 1rem;
-            padding: 1rem;
-            border-radius: 1rem;
-            margin-top: 0.5rem;
-            overflow: auto;
-        }
-        &-option {
-            border-radius: 0.75rem;
-            background: var(--fenext-color-light-dark);
-            &:hover {
-                background: var(--fenext-color-light-extra-dark);
-            }
-            &-btn {
-                margin: 0;
-                width: 100%;
-                background: var(--fenext-color-dark);
-                grid-column: 1/-1;
+    @media (min-width: $breakSelectModalMovilTop) {
+        .fenext-select {
+            &-list-options.fenext-select-list-options.fenext-select-list-options {
                 display: grid;
-                place-items: center;
-                text-align: center;
+                max-height: 70dvh;
+                position: relative;
+                top: initial;
+                left: initial;
+                bottom: initial;
+                transform: none;
+                flex-direction: initial;
+                gap: 1rem;
+                padding: 1rem;
+                border-radius: 1rem;
+                margin-top: 0.5rem;
+                overflow: auto;
+            }
+            &-option {
+                border-radius: 0.75rem;
+                background: var(--fenext-color-light-dark);
                 &:hover {
-                    background: var(--fenext-color-dark-light);
+                    background: var(--fenext-color-light-extra-dark);
+                }
+                &-btn {
+                    margin: 0;
+                    width: 100%;
+                    background: var(--fenext-color-dark);
+                    grid-column: 1/-1;
+                    display: grid;
+                    place-items: center;
+                    text-align: center;
+                    &:hover {
+                        background: var(--fenext-color-dark-light);
+                    }
                 }
             }
         }
@@ -140,7 +152,7 @@
         transform: scaleY(var(--list-scaleY, 0));
         transform-origin: top center;
         overflow: auto;
-        @media (min-width: 576px) {
+        @media (min-width: $breakSelectModalMovilTop) {
             max-height: calc(
                 var(--fenext-select-max-height, 0px) - var(
                         --fenext-size-menu-top,
@@ -170,7 +182,7 @@
         }
     }
     &-options-up {
-        @media (min-width: 576px) {
+        @media (min-width: $breakSelectModalMovilTop) {
             .fenext-select-list-options.fenext-select-list-options.fenext-select-list-options {
                 top: inherit;
                 bottom: calc(100% - 0.5rem);
@@ -206,7 +218,7 @@
             display: none;
         }
     }
-    @media (max-width: 575px) {
+    @media (max-width: $breakSelectModalMovil) {
         transition:
             all 0.5s,
             background-color 0s;
@@ -291,10 +303,23 @@
             @include fenext-select-list;
         }
     }
+
+
+    &:has(.fenext-swich-view){
+        @media (min-width:$breakSelectModalMovilTop) {
+           .fenext-input {
+            display: grid;
+            grid-template-columns: 1fr 9rem;
+            >*:not(:where(.fenext-input-content,.fenext-swich-view)){
+                grid-column: 1/-1;
+            }
+           } 
+        }
+    }
 }
 
 body {
-    @media (max-width: 575px) {
+    @media (max-width:  $breakSelectModalMovil) {
         &:has(.fenext-select-clear:hover),
         &:has(.fenext-select-clear:focus),
         &:has(.fenext-select-option:hover),
@@ -313,7 +338,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) {
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width:  $breakSelectModalMovil) {
     body:has(.fenext-select .fenext-select-clear:focus),
     body:has(.fenext-select .fenext-select-clear:hover),
     body:has(.fenext-select .fenext-input-content-input:focus),

@@ -397,6 +397,7 @@ export const InputSelect = <T = any,>({
                                 >
                                     {_tValidate(clearContent, _t)}
                                 </button>
+                                {/* {props?.extraInContentInput} */}
                             </>
                         }
                         validator={undefined}
@@ -462,6 +463,7 @@ export const InputSelect = <T = any,>({
                                 id={noResult?.id ?? "notResult"}
                                 text={noResult?.text ?? "Not Result"}
                                 children={noResult?.children ?? undefined}
+                                classNameOption="fenext-select-option-not-result"
                                 _t={_t}
                                 disabled={true}
                             />

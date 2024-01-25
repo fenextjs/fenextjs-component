@@ -1,6 +1,8 @@
 .fenext-swich-view {
     padding: 0.2rem 0.5rem;
     // width: fit-content;
+    display: grid;
+    align-items: center;
     .fenext-content-radio {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(2rem, 1fr));

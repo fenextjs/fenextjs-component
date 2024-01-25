@@ -16,7 +16,7 @@ const t = new Array(20).fill(1).map((e, i) => {
         text: `Option ${n}`,
         children: <>Option {n}</>,
     };
-})
+});
 
 const Profile: Story<SwichViewSelectProps> = (args) => (
     <>
@@ -34,3 +34,26 @@ const Profile: Story<SwichViewSelectProps> = (args) => (
 
 export const Index = Profile.bind({});
 Index.args = {} as SwichViewSelectProps;
+
+const ProfileInterna: Story<SwichViewSelectProps> = (args) => (
+    <>
+        <InputSelect
+        label={"Select"}
+        placeholder="Select"
+            options={t}
+            create={{
+                id: "create",
+                text: "Create",
+            }}
+            onCreate={() => alert("Create")}
+            extraInLabel={
+                <>
+                    <SwichViewSelect {...args} />
+                </>
+            }
+        />
+    </>
+);
+
+export const Interna = ProfileInterna.bind({});
+Interna.args = {} as SwichViewSelectProps;

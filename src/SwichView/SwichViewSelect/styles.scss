@@ -10,6 +10,9 @@
 }
 
 .fenext-swich-view-select {
+    @media (max-width:575px) {
+        display: none;
+    }
     .fenext-input-radio {
         &:has(
                 .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box
