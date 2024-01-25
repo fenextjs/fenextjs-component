@@ -19,6 +19,10 @@
             @media (max-width: 575px) {
                 flex-direction: column;
             }
+
+            &-after {
+                margin-left: auto;
+            }
         }
     }
     &-head {

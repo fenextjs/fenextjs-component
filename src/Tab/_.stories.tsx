@@ -83,8 +83,8 @@ Index.args = args;
 
 export const OneTab = Profile.bind({});
 const OneTabargs: TabProps = {
-    // beforeTabs:"Name Tabs",
-    // afterTabs:"Total Items 3",
+    beforeTabs:"Name Tabs",
+    afterTabs:"Total Items 3",
     validataTabOneHiddenHeader:true,
     items: [
         {
