@@ -170,7 +170,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                     return (react_1.default.createElement(SelectOption_1.InputSelectOption, { key: i, ...option, onClick: onChangeOption, type: typeSelect == "div" ? "div" : "option", _t: _t }));
                 }),
                 OPTIONS.length == 0 ? (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(SelectOption_1.InputSelectOption, { type: typeSelect == "div" ? "div" : "option", id: noResult?.id ?? "notResult", text: noResult?.text ?? "Not Result", children: noResult?.children ?? undefined, _t: _t, disabled: true }))) : (react_1.default.createElement(react_1.default.Fragment, null))))));
+                    react_1.default.createElement(SelectOption_1.InputSelectOption, { type: typeSelect == "div" ? "div" : "option", id: noResult?.id ?? "notResult", text: noResult?.text ?? "Not Result", children: noResult?.children ?? undefined, classNameOption: "fenext-select-option-not-result", _t: _t, disabled: true }))) : (react_1.default.createElement(react_1.default.Fragment, null))))));
 };
 exports.InputSelect = InputSelect;
 //# sourceMappingURL=index.js.map

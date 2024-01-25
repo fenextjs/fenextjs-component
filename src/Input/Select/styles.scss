@@ -1,5 +1,5 @@
-$breakSelectModalMovil : 575px;
-$breakSelectModalMovilTop : $breakSelectModalMovil + 1px;
+$breakSelectModalMovil: 575px;
+$breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
 
 @mixin fenext-select-box {
     @media (min-width: $breakSelectModalMovilTop) {
@@ -45,7 +45,7 @@ $breakSelectModalMovilTop : $breakSelectModalMovil + 1px;
                         background: var(--fenext-color-dark-light);
                     }
                 }
-                &-not-result{
+                &-not-result {
                     grid-column: 1/-1;
                     aspect-ratio: initial;
                     border-radius: 0.75rem;
@@ -304,22 +304,21 @@ $breakSelectModalMovilTop : $breakSelectModalMovil + 1px;
         }
     }
 
-
-    &:has(.fenext-swich-view){
-        @media (min-width:$breakSelectModalMovilTop) {
-           .fenext-input {
-            display: grid;
-            grid-template-columns: 1fr 9rem;
-            >*:not(:where(.fenext-input-content,.fenext-swich-view)){
-                grid-column: 1/-1;
+    &:has(.fenext-swich-view) {
+        @media (min-width: $breakSelectModalMovilTop) {
+            .fenext-input {
+                display: grid;
+                grid-template-columns: 1fr 9rem;
+                > *:not(:where(.fenext-input-content, .fenext-swich-view)) {
+                    grid-column: 1/-1;
+                }
             }
-           } 
         }
     }
 }
 
 body {
-    @media (max-width:  $breakSelectModalMovil) {
+    @media (max-width: $breakSelectModalMovil) {
         &:has(.fenext-select-clear:hover),
         &:has(.fenext-select-clear:focus),
         &:has(.fenext-select-option:hover),
@@ -338,7 +337,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) {
     }
 }
 
-@media (max-width:  $breakSelectModalMovil) {
+@media (max-width: $breakSelectModalMovil) {
     body:has(.fenext-select .fenext-select-clear:focus),
     body:has(.fenext-select .fenext-select-clear:hover),
     body:has(.fenext-select .fenext-input-content-input:focus),
