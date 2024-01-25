@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { InputTextBaseProps, InputTextClassProps } from "../Text";
 import { InputSelectOptionBaseProps, InputSelectOptionClassProps } from "../SelectOption";
+export type InputSelectTypeStyle = "normal" | "box" | "list";
 /**
  * Interface that defines CSS class properties for a select input component.
  */
@@ -44,6 +45,10 @@ export interface InputSelectBaseProps<T = any> extends Omit<InputTextBaseProps, 
      * Type Select of option.
      */
     typeSelect?: "div" | "select" | "datalist";
+    /**
+     * Type Select of styles.
+     */
+    typeSelectStyle?: InputSelectTypeStyle;
     /**
      * Value Options of select.
      */
@@ -107,4 +112,4 @@ export interface InputSelectValue<T = any> {
     text?: string;
     textSearch?: string;
 }
-export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, value, onChange, onChangeText, onChangeValidate, icon, noResult, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, _t, ...props }: InputSelectProps<T>) => React.JSX.Element;
+export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeText, onChangeValidate, icon, noResult, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, _t, ...props }: InputSelectProps<T>) => React.JSX.Element;

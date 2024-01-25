@@ -10,10 +10,12 @@
 }
 
 .fenext-swich-view-select {
-    .fenext-input-radio{
-        &:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box){
-            .fenext-swich-view-item{
-                padding: .2rem;
+    .fenext-input-radio {
+        &:has(
+                .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box
+            ) {
+            .fenext-swich-view-item {
+                padding: 0.2rem;
             }
         }
     }
