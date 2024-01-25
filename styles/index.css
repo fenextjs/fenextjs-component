@@ -1314,6 +1314,39 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-autocomplete-googl
 .fenext-select-type-style-box .fenext-select-option-btn:hover {
   background: var(--fenext-color-dark-light);
 }
+.fenext-select-type-style-list .fenext-select-list-options {
+  display: grid;
+  max-height: 70dvh;
+  position: relative;
+  top: initial;
+  left: initial;
+  transform: none;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+  overflow: auto;
+}
+.fenext-select-type-style-list .fenext-select-option {
+  border-radius: 1rem;
+  background: var(--fenext-color-light-dark);
+}
+.fenext-select-type-style-list .fenext-select-option:hover {
+  background: var(--fenext-color-light-extra-dark);
+}
+.fenext-select-type-style-list .fenext-select-option-btn {
+  margin: 0;
+  width: 100%;
+  background: var(--fenext-color-dark);
+  grid-column: 1/-1;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.fenext-select-type-style-list .fenext-select-option-btn:hover {
+  background: var(--fenext-color-dark-light);
+}
+
 @media (max-width: 575px) {
   body:has(.fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-modal-base-close, body:has(.fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-modal-base-close, body:has(.fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-modal-base-close, body:has(.fenext-select .fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-modal-base-close {
     display: none;
