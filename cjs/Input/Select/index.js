@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Text_1 = require("../Text");
 const SelectOption_1 = require("../SelectOption");
-const arrowCollapse_1 = require("fenextjs-svg/cjs/arrowCollapse");
+const Arrow_1 = require("fenextjs-svg/cjs/Arrow");
 const cancel_1 = require("fenextjs-svg/cjs/cancel");
 const useData_1 = require("fenextjs-hook/cjs/useData");
 const GetSpaceParent_1 = require("fenextjs-functions/cjs/html/GetSpaceParent");
@@ -13,7 +13,7 @@ const fenextjs_error_1 = require("fenextjs-error");
 const fenextjs_interface_1 = require("fenextjs-interface");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const fenextjs_hook_1 = require("fenextjs-hook");
-const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeText, onChangeValidate, icon = react_1.default.createElement(arrowCollapse_1.ArrowCollapse, null), noResult, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(cancel_1.Cancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, _t, ...props }) => {
+const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeText, onChangeValidate, icon = react_1.default.createElement(Arrow_1.Arrow, null), noResult, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(cancel_1.Cancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, _t, ...props }) => {
     const options = (0, react_1.useMemo)(() => (filterOptions ? filterOptions(optionsProps) : optionsProps), [optionsProps, filterOptions]);
     const checkboxClose = (0, react_1.useRef)(null);
     const btnClose = (0, react_1.useRef)(null);

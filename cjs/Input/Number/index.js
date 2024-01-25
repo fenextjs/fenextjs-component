@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Text_1 = require("../Text");
 const Number_1 = require("fenextjs-svg/cjs/Number");
-const arrowCollapse_1 = tslib_1.__importDefault(require("fenextjs-svg/cjs/arrowCollapse"));
+const Arrow_1 = require("fenextjs-svg/cjs/Arrow");
 const fenextjs_validator_1 = require("fenextjs-validator");
 const useValidator_1 = require("fenextjs-hook/cjs/useValidator");
 const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = false, validator = undefined, ...props }) => {
@@ -46,9 +46,9 @@ const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = fal
                     react_1.default.createElement(Number_1.SVGNumberDecrease, null)))) : (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("div", { className: "fenext-input-number-icon-arrow" },
                     react_1.default.createElement("span", { onClick: addValue(1), className: `fenext-input-number-icon-arrow-up` },
-                        react_1.default.createElement(arrowCollapse_1.default, null)),
+                        react_1.default.createElement(Arrow_1.Arrow, null)),
                     react_1.default.createElement("span", { onClick: addValue(-1), className: `fenext-input-number-icon-arrow-down` },
-                        react_1.default.createElement(arrowCollapse_1.default, null)))))), onChangeValidate: (v) => {
+                        react_1.default.createElement(Arrow_1.Arrow, null)))))), onChangeValidate: (v) => {
                 const value = minMaxValue(valueToNumber(v));
                 const s = props?.onChangeValidate?.(value) ?? value;
                 return `${s}`;

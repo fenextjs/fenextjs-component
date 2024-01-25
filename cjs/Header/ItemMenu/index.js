@@ -7,8 +7,8 @@ const link_1 = tslib_1.__importDefault(require("next/link"));
 const router_1 = require("next/router");
 const Simple_1 = require("../../Collapse/Simple");
 const fenextjs_functions_1 = require("fenextjs-functions");
-const arrowCollapse_1 = require("fenextjs-svg/cjs/arrowCollapse");
-const ItemMenu = ({ className = "", classNameA = "", classNameIcon = "", classNameText = "", text, url, icon = react_1.default.createElement(react_1.default.Fragment, null), subItems = [], defaultActive = false, iconArrow = react_1.default.createElement(arrowCollapse_1.ArrowCollapse, null), nameNumber = 1, typeCollapse, _t, }) => {
+const Arrow_1 = require("fenextjs-svg/cjs/Arrow");
+const ItemMenu = ({ className = "", classNameA = "", classNameIcon = "", classNameText = "", text, url, icon = react_1.default.createElement(react_1.default.Fragment, null), subItems = [], defaultActive = false, iconArrow = react_1.default.createElement(Arrow_1.Arrow, null), nameNumber = 1, typeCollapse, _t, }) => {
     const router = (0, router_1.useRouter)();
     const urlInter = (0, react_1.useMemo)(() => {
         const nlLink = router?.asPath.split("/");

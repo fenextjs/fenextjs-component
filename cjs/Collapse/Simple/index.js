@@ -4,9 +4,9 @@ exports.Collapse = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importDefault(require("react"));
 const Loader_1 = require("../../Loader");
-const arrowCollapse_1 = require("fenextjs-svg/cjs/arrowCollapse");
+const Arrow_1 = require("fenextjs-svg/cjs/Arrow");
 const fenextjs_functions_1 = require("fenextjs-functions");
-const Collapse = ({ className = "", classNameHeader = "", classNameHeaderContent = "", classNameHeaderIcon = "", classNameBody = "", children, loader = false, header, disabled = false, defaultActive = false, active = undefined, name = "", type = "checkbox", show = "checked", status = "none", onChange, iconArrow = react_1.default.createElement(arrowCollapse_1.ArrowCollapse, null), _t, }) => {
+const Collapse = ({ className = "", classNameHeader = "", classNameHeaderContent = "", classNameHeaderIcon = "", classNameBody = "", children, loader = false, header, disabled = false, defaultActive = false, active = undefined, name = "", type = "checkbox", show = "checked", status = "none", onChange, iconArrow = react_1.default.createElement(Arrow_1.Arrow, null), _t, }) => {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-collapse fenext-collapse-status-${status} fenext-collapse-${show} ${className}` },
             react_1.default.createElement("label", { className: `fenext-collapse-header ${classNameHeader}` },
