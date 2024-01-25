@@ -1,12 +1,12 @@
 import React, { PropsWithChildren } from "react";
 import { Story, Meta } from "@storybook/react";
 
-import { SwichTableBox, SwichTableBoxProps } from "./index";
-import { Table } from "../Table";
+import { SwichViewTable, SwichViewTableProps } from "./index";
+import { Table } from "../../Table";
 
 export default {
-    title: "SwichTableBox/SwichTableBox",
-    component: SwichTableBox,
+    title: "SwichView/Table",
+    component: SwichViewTable,
 } as Meta;
 interface TestItemTable {
     id: string;
@@ -20,9 +20,9 @@ interface TestItemTable {
         name: string;
     };
 }
-const Profile: Story<PropsWithChildren<SwichTableBoxProps>> = (args) => (
+const Profile: Story<PropsWithChildren<SwichViewTableProps>> = (args) => (
     <>
-        <SwichTableBox {...args} />
+        <SwichViewTable {...args} />
         <Table<TestItemTable>
             name="Usuarios"
             header={[
@@ -133,4 +133,4 @@ const Profile: Story<PropsWithChildren<SwichTableBoxProps>> = (args) => (
 );
 
 export const Index = Profile.bind({});
-Index.args = {} as SwichTableBoxProps;
+Index.args = {} as SwichViewTableProps;

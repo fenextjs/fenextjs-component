@@ -1,0 +1,29 @@
+.fenext-swich-view {
+    padding: 0.2rem 0.5rem;
+    width: fit-content;
+    .fenext-content-radio {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 1rem;
+        .fenext-input-radio {
+            grid-template-columns: 1fr;
+            &-box {
+                display: none;
+            }
+            &:has(.fenext-input-radio-input:checked) {
+                .fenext-swich-view {
+                    &-item {
+                        color: var(--fenext-color-blue);
+                    }
+                }
+            }
+        }
+    }
+    &-item {
+        display: grid;
+        place-items: center;
+        color: var(--fenext-color-dark);
+        width: 2rem;
+    }
+}

@@ -45,4 +45,4 @@ export * from "./Tooltip";
 
 export * from "./Chronometer";
 export * from "./ChronologicalList";
-export * from "./SwichTableBox";
+export * from "./SwichView";
