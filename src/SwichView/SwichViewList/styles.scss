@@ -26,9 +26,9 @@
         place-items: center;
         color: var(--fenext-color-dark);
         width: 2rem;
-        transition: .5s;
-        scale: .9;
-        &:hover{
+        transition: 0.5s;
+        scale: 0.9;
+        &:hover {
             scale: 1;
         }
     }
