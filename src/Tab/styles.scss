@@ -124,7 +124,9 @@
                 display: none;
             }
             .fenext-tab-content-head {
-                &:not(:has(> *:not(.fenext-tab-head):nth-child(1))) {
+                &:not(:has(> .fenext-tab-content-head-after)):not(
+                        :has(> .fenext-tab-content-head-before)
+                    ) {
                     display: none;
                 }
             }
