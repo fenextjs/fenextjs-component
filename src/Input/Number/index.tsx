@@ -3,7 +3,7 @@ import React, { useMemo, useState } from "react";
 import { InputText, InputTextProps } from "../Text";
 
 import { SVGNumberIncrease, SVGNumberDecrease } from "fenextjs-svg/cjs/Number";
-import SVGArrowCollapse from "fenextjs-svg/cjs/arrowCollapse";
+import {Arrow} from "fenextjs-svg/cjs/Arrow";
 import { FenextjsValidator } from "fenextjs-validator";
 import { useValidator } from "fenextjs-hook/cjs/useValidator";
 
@@ -122,13 +122,13 @@ export const InputNumber = ({
                                         onClick={addValue(1)}
                                         className={`fenext-input-number-icon-arrow-up`}
                                     >
-                                        <SVGArrowCollapse />
+                                        <Arrow />
                                     </span>
                                     <span
                                         onClick={addValue(-1)}
                                         className={`fenext-input-number-icon-arrow-down`}
                                     >
-                                        <SVGArrowCollapse />
+                                        <Arrow />
                                     </span>
                                 </div>
                             </>

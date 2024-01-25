@@ -5,7 +5,7 @@ import {
     InputSelectOptionBaseProps,
     InputSelectOptionClassProps,
 } from "../SelectOption";
-import { ArrowCollapse } from "fenextjs-svg/cjs/arrowCollapse";
+import { Arrow } from "fenextjs-svg/cjs/Arrow";
 import { Cancel } from "fenextjs-svg/cjs/cancel";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { GetSpaceParent } from "fenextjs-functions/cjs/html/GetSpaceParent";
@@ -171,7 +171,7 @@ export const InputSelect = <T = any,>({
     onChange,
     onChangeText,
     onChangeValidate,
-    icon = <ArrowCollapse />,
+    icon = <Arrow />,
     noResult,
     selected,
     create,

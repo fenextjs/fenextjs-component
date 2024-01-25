@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { Collapse } from "../../Collapse/Simple";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
-import { ArrowCollapse } from "fenextjs-svg/cjs/arrowCollapse";
+import { Arrow } from "fenextjs-svg/cjs/Arrow";
 
 /**
  * Properties for the base ItemMenu component.
@@ -84,7 +84,7 @@ export const ItemMenu = ({
     icon = <></>,
     subItems = [],
     defaultActive = false,
-    iconArrow = <ArrowCollapse />,
+    iconArrow = <Arrow />,
     nameNumber = 1,
     typeCollapse,
     _t,

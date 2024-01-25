@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, ReactNode } from "react";
 import { Loader } from "../../Loader";
-import { ArrowCollapse } from "fenextjs-svg/cjs/arrowCollapse";
+import { Arrow } from "fenextjs-svg/cjs/Arrow";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 
@@ -104,7 +104,7 @@ export const Collapse = ({
     show = "checked",
     status = "none",
     onChange,
-    iconArrow = <ArrowCollapse />,
+    iconArrow = <Arrow />,
     _t,
 }: CollapseProps) => {
     return (
