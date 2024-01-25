@@ -5,7 +5,7 @@ import { InputRadio, InputRadioItemProps } from "../../Input/Radio";
 /**
  * Properties for the base SwichViewList component.
  */
-export interface SwichViewListBaseItemProps<T>  {
+export interface SwichViewListBaseItemProps<T> {
     id: T;
     icon: ReactNode;
 }
@@ -13,7 +13,7 @@ export interface SwichViewListBaseItemProps<T>  {
  * Properties for the base SwichViewList component.
  */
 export interface SwichViewListBaseProps<T> extends _TProps {
-    name?:string
+    name?: string;
     /**
      * The class name for the component.
      */
@@ -51,7 +51,7 @@ export const SwichViewList = <T,>({
     defaultValue,
     onChange,
     list = [],
-    name="fenext-swich-view"
+    name = "fenext-swich-view",
 }: SwichViewListProps<T>) => {
     const ITEMS = useMemo<InputRadioItemProps<T>[]>(() => {
         return list.map((e) => {

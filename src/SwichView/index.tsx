@@ -1,2 +1,2 @@
-export * from  "./SwichViewList"
-export * from "./SwichViewTable"
+export * from "./SwichViewList";
+export * from "./SwichViewTable";

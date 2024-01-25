@@ -14,8 +14,7 @@ import { ErrorCode } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 import { useValidator } from "fenextjs-hook";
 
-
-export type InputSelectTypeStyle = 'normal' | 'box' | 'list'
+export type InputSelectTypeStyle = "normal" | "box" | "list";
 
 /**
  * Interface that defines CSS class properties for a select input component.
@@ -87,7 +86,7 @@ export interface InputSelectBaseProps<T = any>
     /**
      * Type Select of styles.
      */
-    typeSelectStyle?: InputSelectTypeStyle
+    typeSelectStyle?: InputSelectTypeStyle;
     /**
      * Value Options of select.
      */
@@ -167,7 +166,7 @@ export const InputSelect = <T = any,>({
     hiddenOptions = "not-hover",
     defaultValue = undefined,
     typeSelect = "div",
-    typeSelectStyle = 'normal',
+    typeSelectStyle = "normal",
     value = undefined,
     onChange,
     onChangeText,

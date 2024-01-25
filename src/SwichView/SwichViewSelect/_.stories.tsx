@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import { Story, Meta } from "@storybook/react";
 
 import { SwichViewSelect, SwichViewSelectProps } from "./index";
@@ -8,30 +8,26 @@ export default {
     title: "SwichView/Select",
     component: SwichViewSelect,
 } as Meta;
-interface TestItemSelect {
-    id: string;
-    name: string;
-    date: Date;
-    dni: string;
-    amount: number;
-    quanty: number;
-    org: {
-        id: string;
-        name: string;
+
+const t = new Array(20).fill(1).map((e, i) => {
+    const n = e * i + 1;
+    return {
+        id: n,
+        text: `Option ${n}`,
+        children: <>Option {n}</>,
     };
-}
-const Profile: Story<PropsWithChildren<SwichViewSelectProps>> = (args) => (
+})
+
+const Profile: Story<SwichViewSelectProps> = (args) => (
     <>
         <SwichViewSelect {...args} />
-        <InputSelect<TestItemSelect>
-            options={new Array(20).fill(1).map((e, i) => {
-                const n = e * i + 1;
-                return {
-                    id: n,
-                    text: `Option ${n}`,
-                    children: <>Option {n}</>,
-                };
-            })}
+        <InputSelect
+            options={t}
+            create={{
+                id: "create",
+                text: "Create",
+            }}
+            onCreate={() => alert("Create")}
         />
     </>
 );

@@ -1,6 +1,10 @@
-@at-root body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box:checked) {
+@at-root body:has(
+            .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box:checked
+        ) {
     @include fenext-select-box;
 }
-@at-root body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-list:checked) {
+@at-root body:has(
+            .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-list:checked
+        ) {
     @include fenext-select-list;
 }

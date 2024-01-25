@@ -96,7 +96,6 @@
                 }
             }
             &-tbody {
-
             }
             &-tr {
                 &:nth-child(2n) {
@@ -137,7 +136,6 @@
         place-items: center;
     }
 }
-
 
 @mixin fenext-table-view-box {
     .fenext-table {
@@ -199,7 +197,6 @@
         }
     }
 }
-
 
 @media not print {
     @media (max-width: 991px) {
