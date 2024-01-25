@@ -1310,6 +1310,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-autocomplete-googl
   background: var(--fenext-color-dark);
   aspect-ratio: initial;
   grid-column: 1/-1;
+  border-radius: 0.75rem;
 }
 .fenext-select-type-style-box .fenext-select-option-btn:hover {
   background: var(--fenext-color-dark-light);
@@ -1328,7 +1329,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-autocomplete-googl
   overflow: auto;
 }
 .fenext-select-type-style-list .fenext-select-option {
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   background: var(--fenext-color-light-dark);
 }
 .fenext-select-type-style-list .fenext-select-option:hover {
