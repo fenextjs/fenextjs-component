@@ -1279,14 +1279,16 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-autocomplete-googl
 .fenext-select-type-style-box {
   --size-box: 150px;
 }
-.fenext-select-type-style-box .fenext-select-list-options {
+.fenext-select-type-style-box .fenext-select-list-options.fenext-select-list-options.fenext-select-list-options {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--size-box), 1fr));
   max-height: 70dvh;
   position: relative;
   top: initial;
   left: initial;
+  bottom: initial;
   transform: none;
+  flex-direction: initial;
   gap: 1rem;
   padding: 1rem;
   border-radius: 1rem;
@@ -1315,13 +1317,15 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-autocomplete-googl
 .fenext-select-type-style-box .fenext-select-option-btn:hover {
   background: var(--fenext-color-dark-light);
 }
-.fenext-select-type-style-list .fenext-select-list-options {
+.fenext-select-type-style-list .fenext-select-list-options.fenext-select-list-options.fenext-select-list-options {
   display: grid;
   max-height: 70dvh;
   position: relative;
   top: initial;
   left: initial;
+  bottom: initial;
   transform: none;
+  flex-direction: initial;
   gap: 1rem;
   padding: 1rem;
   border-radius: 1rem;
@@ -5536,14 +5540,16 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-table-
 body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box:checked) {
   --size-box: 150px;
 }
-body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box:checked) .fenext-select-list-options {
+body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box:checked) .fenext-select-list-options.fenext-select-list-options.fenext-select-list-options {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--size-box), 1fr));
   max-height: 70dvh;
   position: relative;
   top: initial;
   left: initial;
+  bottom: initial;
   transform: none;
+  flex-direction: initial;
   gap: 1rem;
   padding: 1rem;
   border-radius: 1rem;
@@ -5573,13 +5579,15 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
   background: var(--fenext-color-dark-light);
 }
 
-body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-list:checked) .fenext-select-list-options {
+body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-list:checked) .fenext-select-list-options.fenext-select-list-options.fenext-select-list-options {
   display: grid;
   max-height: 70dvh;
   position: relative;
   top: initial;
   left: initial;
+  bottom: initial;
   transform: none;
+  flex-direction: initial;
   gap: 1rem;
   padding: 1rem;
   border-radius: 1rem;
@@ -5604,6 +5612,10 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
 }
 body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-list:checked) .fenext-select-option-btn:hover {
   background: var(--fenext-color-dark-light);
+}
+
+.fenext-swich-view-select .fenext-input-radio:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box) .fenext-swich-view-item {
+  padding: 0.2rem;
 }
 
 @keyframes to-rotate {

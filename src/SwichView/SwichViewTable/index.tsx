@@ -16,7 +16,7 @@ export type SwichViewTableType =
  * Properties for the base SwichViewTable component.
  */
 export interface SwichViewTableBaseProps
-    extends Omit<SwichViewListBaseProps<SwichViewTableType>,'list'|'name'> {}
+    extends Omit<SwichViewListBaseProps<SwichViewTableType>, "list" | "name"> {}
 
 /**
  * Properties for the class of the SwichViewTable component.
@@ -32,7 +32,7 @@ export interface SwichViewTableProps
 
 export const SwichViewTable = ({
     className = "",
-    defaultValue = 'fenext-swich-view-table-list',
+    defaultValue = "fenext-swich-view-table-list",
     ...props
 }: SwichViewTableProps) => {
     const ITEMS: SwichViewListBaseItemProps<SwichViewTableType>[] = [

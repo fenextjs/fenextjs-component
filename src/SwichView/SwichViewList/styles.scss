@@ -3,10 +3,7 @@
     // width: fit-content;
     .fenext-content-radio {
         display: grid;
-        grid-template-columns: repeat(
-            auto-fill,
-            minmax(2rem, 1fr)
-        );
+        grid-template-columns: repeat(auto-fill, minmax(2rem, 1fr));
         align-items: center;
         gap: 1rem;
         .fenext-input-radio {

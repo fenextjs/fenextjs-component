@@ -1,7 +1,7 @@
 @mixin fenext-select-box {
     --size-box: 150px;
     .fenext-select {
-        &-list-options {
+        &-list-options.fenext-select-list-options.fenext-select-list-options {
             display: grid;
             grid-template-columns: repeat(
                 auto-fill,
@@ -11,7 +11,9 @@
             position: relative;
             top: initial;
             left: initial;
+            bottom:  initial;
             transform: none;
+            flex-direction: initial;
             gap: 1rem;
             padding: 1rem;
             border-radius: 1rem;
@@ -45,13 +47,15 @@
 
 @mixin fenext-select-list {
     .fenext-select {
-        &-list-options {
+        &-list-options.fenext-select-list-options.fenext-select-list-options {
             display: grid;
             max-height: 70dvh;
             position: relative;
             top: initial;
             left: initial;
+            bottom:  initial;
             transform: none;
+            flex-direction: initial;
             gap: 1rem;
             padding: 1rem;
             border-radius: 1rem;

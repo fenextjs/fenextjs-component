@@ -8,3 +8,13 @@
         ) {
     @include fenext-select-list;
 }
+
+.fenext-swich-view-select {
+    .fenext-input-radio{
+        &:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box){
+            .fenext-swich-view-item{
+                padding: .2rem;
+            }
+        }
+    }
+}
