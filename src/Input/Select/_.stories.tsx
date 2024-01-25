@@ -320,3 +320,27 @@ const InLayout: Story<InputSelectProps> = (args) => (
 export const In_Layout = InLayout.bind({});
 
 In_Layout.args = In_Oveflow_arg;
+
+
+
+
+
+export const Box = Profile.bind({});
+
+const Boxargs: InputSelectProps = {
+    ...args,
+    typeSelectStyle:'box',
+
+    options: new Array(20).fill(1).map((e,i)=>{
+        const n = e*i+1
+        return {
+
+            id:n,
+            text: `Option ${n}`,
+            children: <>Option {n}</>,
+        }
+    }),
+};
+
+Box.args = Boxargs;
+

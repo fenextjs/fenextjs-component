@@ -13,6 +13,10 @@ import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorCode } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 import { useValidator } from "fenextjs-hook";
+
+
+export type InputSelectTypeStyle = 'normal' | 'box' | 'list'
+
 /**
  * Interface that defines CSS class properties for a select input component.
  */
@@ -80,6 +84,10 @@ export interface InputSelectBaseProps<T = any>
      * Type Select of option.
      */
     typeSelect?: "div" | "select" | "datalist";
+    /**
+     * Type Select of styles.
+     */
+    typeSelectStyle?: InputSelectTypeStyle
     /**
      * Value Options of select.
      */
@@ -159,6 +167,7 @@ export const InputSelect = <T = any,>({
     hiddenOptions = "not-hover",
     defaultValue = undefined,
     typeSelect = "div",
+    typeSelectStyle = 'normal',
     value = undefined,
     onChange,
     onChangeText,
@@ -347,6 +356,7 @@ export const InputSelect = <T = any,>({
                         showOptionsUp?.up ? "options-up" : "options-down"
                     }
                     fenext-select-type-${typeSelect}
+                    fenext-select-type-style-${typeSelectStyle}
                     fenext-select-${
                         isSelectChangeText
                             ? "is-change-text"
