@@ -1,10 +1,10 @@
 import React, { ReactNode, useCallback, useMemo } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { Collapse } from "../../Collapse/Simple";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 import { Arrow } from "fenextjs-svg/cjs/Arrow";
+import { Link } from "../../Link";
 
 /**
  * Properties for the base ItemMenu component.
@@ -44,6 +44,14 @@ export interface ItemMenuBaseProps extends _TProps {
      * type of collapse.
      */
     typeCollapse?: "radio" | "checkbox";
+    /**
+     * isLink.
+     */
+    isLink?: boolean;
+    /**
+     * isLink.
+     */
+    onClick?: () => void;
 }
 
 /**
@@ -87,6 +95,8 @@ export const ItemMenu = ({
     iconArrow = <Arrow />,
     nameNumber = 1,
     typeCollapse,
+    isLink = true,
+    onClick,
     _t,
 }: ItemMenuProps) => {
     const router = useRouter();
@@ -126,6 +136,8 @@ export const ItemMenu = ({
         [subItems, router?.asPath],
     );
 
+        const Tag = isLink ? Link : "div"
+
     return (
         <>
             <div className={`fenext-menu-item ${className}`}>
@@ -136,27 +148,27 @@ export const ItemMenu = ({
                     type={typeCollapse}
                     header={
                         <>
-                            <Link href={url} legacyBehavior>
-                                <a
-                                    className={`fenext-menu-item-a ${classNameA} ${
-                                        urlActive(url)
-                                            ? `fenext-menu-item-a-active fenext-menu-item-a-url-inter-${urlInter}`
-                                            : ""
-                                    }`}
-                                    data-url={url}
+                            <Tag
+                                href={url}
+                                className={`fenext-menu-item-a ${classNameA} ${
+                                    urlActive(url)
+                                        ? `fenext-menu-item-a-active fenext-menu-item-a-url-inter-${urlInter}`
+                                        : ""
+                                }`}
+                                data-url={url}
+                                onClick={onClick}
+                            >
+                                <div
+                                    className={`fenext-menu-item-a-icon ${classNameIcon}`}
                                 >
-                                    <div
-                                        className={`fenext-menu-item-a-icon ${classNameIcon}`}
-                                    >
-                                        {icon}
-                                    </div>
-                                    <div
-                                        className={`fenext-menu-item-a-text ${classNameText}`}
-                                    >
-                                        {_tValidate(text, _t)}
-                                    </div>
-                                </a>
-                            </Link>
+                                    {icon}
+                                </div>
+                                <div
+                                    className={`fenext-menu-item-a-text ${classNameText}`}
+                                >
+                                    {_tValidate(text, _t)}
+                                </div>
+                            </Tag>
                         </>
                     }
                     iconArrow={iconArrow}
