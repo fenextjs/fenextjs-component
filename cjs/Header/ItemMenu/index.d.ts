@@ -38,6 +38,14 @@ export interface ItemMenuBaseProps extends _TProps {
      * type of collapse.
      */
     typeCollapse?: "radio" | "checkbox";
+    /**
+     * isLink.
+     */
+    isLink?: boolean;
+    /**
+     * isLink.
+     */
+    onClick?: () => void;
 }
 /**
  * Properties for the class of the ItemMenu component.
@@ -65,4 +73,4 @@ export interface ItemMenuClassProps {
  */
 export interface ItemMenuProps extends ItemMenuBaseProps, ItemMenuClassProps {
 }
-export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, nameNumber, typeCollapse, _t, }: ItemMenuProps) => React.JSX.Element;
+export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, nameNumber, typeCollapse, isLink, onClick, _t, }: ItemMenuProps) => React.JSX.Element;

@@ -136,7 +136,7 @@ export const ItemMenu = ({
         [subItems, router?.asPath],
     );
 
-        const Tag = isLink ? Link : "div"
+    const Tag = isLink ? Link : "div";
 
     return (
         <>
