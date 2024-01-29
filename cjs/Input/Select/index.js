@@ -13,7 +13,7 @@ const fenextjs_error_1 = require("fenextjs-error");
 const fenextjs_interface_1 = require("fenextjs-interface");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const fenextjs_hook_1 = require("fenextjs-hook");
-const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeText, onChangeValidate, icon = react_1.default.createElement(Arrow_1.Arrow, null), noResult, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(cancel_1.Cancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, _t, ...props }) => {
+const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeText, onChangeValidate, icon = react_1.default.createElement(Arrow_1.Arrow, null), noResult, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(cancel_1.Cancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, _t, ...props }) => {
     const options = (0, react_1.useMemo)(() => (filterOptions ? filterOptions(optionsProps) : optionsProps), [optionsProps, filterOptions]);
     const checkboxClose = (0, react_1.useRef)(null);
     const btnClose = (0, react_1.useRef)(null);
@@ -144,6 +144,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                     fenext-select-${showOptionsUp?.up ? "options-up" : "options-down"}
                     fenext-select-type-${typeSelect}
                     fenext-select-type-style-${typeSelectStyle}
+                    fenext-select-${useSwichtypeSelectStyle ? "use-swich-select-style" : ""}
                     fenext-select-${isSelectChangeText
                 ? "is-change-text"
                 : "is-not-change-text"}

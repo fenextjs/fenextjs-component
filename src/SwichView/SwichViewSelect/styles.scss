@@ -1,7 +1,7 @@
 @at-root body:has(
             .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box:checked
         ) {
-    *:has(> .fenext-select-use-swich-select-style){
+    *:has(> .fenext-select-use-swich-select-style) {
         @include fenext-select-box;
     }
     .fenext-input-radio:has(
@@ -16,7 +16,7 @@
 @at-root body:has(
             .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-list:checked
         ) {
-    *:has(> .fenext-select-use-swich-select-style){
+    *:has(> .fenext-select-use-swich-select-style) {
         @include fenext-select-list;
     }
     .fenext-input-radio:has(

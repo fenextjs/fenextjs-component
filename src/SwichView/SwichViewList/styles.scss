@@ -3,7 +3,7 @@
     // width: fit-content;
     display: grid;
     align-items: center;
-    --color-active:var(--fenext-color-blue);
+    --color-active: var(--fenext-color-blue);
     .fenext-content-radio {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(2rem, 1fr));

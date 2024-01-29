@@ -50,6 +50,10 @@ export interface InputSelectBaseProps<T = any> extends Omit<InputTextBaseProps, 
      */
     typeSelectStyle?: InputSelectTypeStyle;
     /**
+     * Type Select of styles.
+     */
+    useSwichtypeSelectStyle?: boolean;
+    /**
      * Value Options of select.
      */
     value?: InputSelectItemOptionBaseProps<T>;
@@ -112,4 +116,4 @@ export interface InputSelectValue<T = any> {
     text?: string;
     textSearch?: string;
 }
-export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeText, onChangeValidate, icon, noResult, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, _t, ...props }: InputSelectProps<T>) => React.JSX.Element;
+export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeText, onChangeValidate, icon, noResult, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, _t, ...props }: InputSelectProps<T>) => React.JSX.Element;
