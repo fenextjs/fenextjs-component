@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { InputSelectBaseProps, InputSelectClassProps } from "../Select";
 import { InputSelectItemOptionBaseProps } from "../Select";
 /**
@@ -34,10 +34,15 @@ export interface InputSelectMultipleBaseProps extends Omit<InputSelectBaseProps,
      * Function to call for custom input validation.
      */
     onChangeValidate?: (e: InputSelectItemOptionBaseProps[]) => Promise<any> | any;
+    /**
+     * iconDelete custom of option.
+     * @default <Trash />
+     */
+    iconDelete?: ReactNode;
 }
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
  */
 export interface InputSelectMultipleProps extends InputSelectMultipleBaseProps, InputSelectMultipleClassProps {
 }
-export declare const InputSelectMultiple: ({ classNameSelectMultiple, classNameSelectMultipleList, onChange, value, defaultValue, onChangeValidate, options, ...props }: InputSelectMultipleProps) => React.JSX.Element;
+export declare const InputSelectMultiple: ({ classNameSelectMultiple, classNameSelectMultipleList, onChange, value, defaultValue, onChangeValidate, options, iconDelete, ...props }: InputSelectMultipleProps) => React.JSX.Element;
