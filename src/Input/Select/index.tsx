@@ -88,6 +88,10 @@ export interface InputSelectBaseProps<T = any>
      */
     typeSelectStyle?: InputSelectTypeStyle;
     /**
+     * Type Select of styles.
+     */
+    useSwichtypeSelectStyle?: boolean;
+    /**
      * Value Options of select.
      */
     value?: InputSelectItemOptionBaseProps<T>;
@@ -184,6 +188,7 @@ export const InputSelect = <T = any,>({
     errorWithIsChange = true,
     validator,
     searchById = false,
+    useSwichtypeSelectStyle=false,
     _t,
     ...props
 }: InputSelectProps<T>) => {
@@ -356,6 +361,7 @@ export const InputSelect = <T = any,>({
                     }
                     fenext-select-type-${typeSelect}
                     fenext-select-type-style-${typeSelectStyle}
+                    fenext-select-${useSwichtypeSelectStyle?"use-swich-select-style":""}
                     fenext-select-${
                         isSelectChangeText
                             ? "is-change-text"

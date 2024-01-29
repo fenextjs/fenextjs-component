@@ -1,12 +1,44 @@
 @at-root body:has(
             .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box:checked
         ) {
-    @include fenext-select-box;
+    *:has(> .fenext-select-use-swich-select-style){
+        @include fenext-select-box;
+    }
+    .fenext-input-radio:has(
+            .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-box
+        ) {
+        .fenext-swich-view-item {
+            color: var(--fenext-color-blue);
+            scale: 1;
+        }
+    }
 }
 @at-root body:has(
             .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-list:checked
         ) {
-    @include fenext-select-list;
+    *:has(> .fenext-select-use-swich-select-style){
+        @include fenext-select-list;
+    }
+    .fenext-input-radio:has(
+            .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-list
+        ) {
+        .fenext-swich-view-item {
+            color: var(--fenext-color-blue);
+            scale: 1;
+        }
+    }
+}
+@at-root body:has(
+            .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-normal:checked
+        ) {
+    .fenext-input-radio:has(
+            .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-normal
+        ) {
+        .fenext-swich-view-item {
+            color: var(--fenext-color-blue);
+            scale: 1;
+        }
+    }
 }
 
 .fenext-swich-view-select {

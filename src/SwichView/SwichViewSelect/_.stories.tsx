@@ -28,7 +28,9 @@ const Profile: Story<SwichViewSelectProps> = (args) => (
                 text: "Create",
             }}
             onCreate={() => alert("Create")}
+            useSwichtypeSelectStyle={true}
         />
+        <SwichViewSelect {...args} />
     </>
 );
 
@@ -51,6 +53,7 @@ const ProfileInterna: Story<SwichViewSelectProps> = (args) => (
                     <SwichViewSelect {...args} />
                 </>
             }
+            useSwichtypeSelectStyle={true}
         />
     </>
 );

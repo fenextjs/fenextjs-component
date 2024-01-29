@@ -3,6 +3,7 @@
     // width: fit-content;
     display: grid;
     align-items: center;
+    --color-active:var(--fenext-color-blue);
     .fenext-content-radio {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(2rem, 1fr));
@@ -16,7 +17,7 @@
             &:has(.fenext-input-radio-input:checked) {
                 .fenext-swich-view {
                     &-item {
-                        color: var(--fenext-color-blue);
+                        color: var(--color-active);
                         scale: 1;
                     }
                 }
