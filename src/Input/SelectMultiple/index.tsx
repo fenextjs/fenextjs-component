@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { ReactNode, useEffect, useMemo, useState } from "react";
 
 import {
     InputSelect,
@@ -10,6 +10,7 @@ import { useData } from "fenextjs-hook/cjs/useData";
 import { InputSelectOption } from "../SelectOption";
 import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorCode } from "fenextjs-interface";
+import { Trash } from "fenextjs-svg";
 /**
  * Interface that defines CSS class properties for a select-multiple input component.
  */
@@ -52,6 +53,11 @@ export interface InputSelectMultipleBaseProps
     onChangeValidate?: (
         e: InputSelectItemOptionBaseProps[],
     ) => Promise<any> | any;
+    /**
+     * iconDelete custom of option.
+     * @default <Trash />
+     */
+    iconDelete?: ReactNode;
 }
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
@@ -68,6 +74,7 @@ export const InputSelectMultiple = ({
     defaultValue = [],
     onChangeValidate,
     options = [],
+    iconDelete = <Trash />,
     ...props
 }: InputSelectMultipleProps) => {
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
@@ -139,6 +146,7 @@ export const InputSelectMultiple = ({
                                 {...option}
                                 type={"multiple"}
                                 onDelete={onRemoveItemSelect}
+                                iconDelete={option?.iconDelete ?? iconDelete}
                             />
                         );
                     })}
