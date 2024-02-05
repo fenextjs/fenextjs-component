@@ -29,29 +29,29 @@ export interface InputSelectMultipleClassProps extends InputSelectClassProps {
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectMultipleBaseProps
+export interface InputSelectMultipleBaseProps<T = any>
     extends Omit<
-        InputSelectBaseProps,
+        InputSelectBaseProps<T>,
         "defaultValue" | "value" | "onChange" | "onChangeValidate"
     > {
     /**
      * Default Options of select.
      */
-    defaultValue?: InputSelectItemOptionBaseProps[];
+    defaultValue?: InputSelectItemOptionBaseProps<T>[];
     /**
      * Default Options of select.
      */
-    value?: InputSelectItemOptionBaseProps[];
+    value?: InputSelectItemOptionBaseProps<T>[];
     /**
      * Function to call when the input value changes.
      */
-    onChange?: (v?: InputSelectItemOptionBaseProps[]) => void;
+    onChange?: (v?: InputSelectItemOptionBaseProps<T>[]) => void;
 
     /**
      * Function to call for custom input validation.
      */
     onChangeValidate?: (
-        e: InputSelectItemOptionBaseProps[],
+        e: InputSelectItemOptionBaseProps<T>[],
     ) => Promise<any> | any;
     /**
      * iconDelete custom of option.
@@ -62,11 +62,11 @@ export interface InputSelectMultipleBaseProps
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
  */
-export interface InputSelectMultipleProps
-    extends InputSelectMultipleBaseProps,
+export interface InputSelectMultipleProps<T = any>
+    extends InputSelectMultipleBaseProps<T>,
         InputSelectMultipleClassProps {}
 
-export const InputSelectMultiple = ({
+export const InputSelectMultiple = <T = any,>({
     classNameSelectMultiple = "",
     classNameSelectMultipleList = "",
     onChange,
@@ -76,9 +76,9 @@ export const InputSelectMultiple = ({
     options = [],
     iconDelete = <Trash />,
     ...props
-}: InputSelectMultipleProps) => {
+}: InputSelectMultipleProps<T>) => {
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
-    const { data, setData } = useData<InputSelectItemOptionBaseProps[]>(
+    const { data, setData } = useData<InputSelectItemOptionBaseProps<T>[]>(
         defaultValue,
         {
             onChangeDataAfter: (e) => {
@@ -108,7 +108,7 @@ export const InputSelectMultiple = ({
         validateOptions();
     }, [dataMemo]);
     const onAddItemSelect = (
-        newItem: InputSelectItemOptionBaseProps | undefined,
+        newItem: InputSelectItemOptionBaseProps<T> | undefined,
     ) => {
         if (newItem) {
             setData([...dataMemo, newItem]);
