@@ -135,7 +135,7 @@ export const InputSelectMultiple = <T = any,>({
                     onChange={onAddItemSelect}
                     options={OPTIONS}
                     error={props?.error ?? error}
-                    isSelectClearText={true}
+                    // isSelectClearText={true}
                     extraInLabel={
                         <>
                             <div
