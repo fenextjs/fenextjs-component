@@ -6,7 +6,7 @@
         flex-wrap: wrap;
         grid-column: 1/-1;
         order: 9;
-        &:empty{
+        &:empty {
             display: none;
         }
     }

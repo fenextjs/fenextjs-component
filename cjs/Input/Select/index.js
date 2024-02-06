@@ -21,6 +21,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
     const [showOptionsUp, setShowOptionsUp] = (0, react_1.useState)({
         up: false,
         height: 0,
+        heightMultiple: 0,
     });
     const [dataErrorInput, setErrorInput] = (0, react_1.useState)(undefined);
     const { data, setData, isChange } = (0, useData_1.useData)({
@@ -123,9 +124,12 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
             const { spaceBottom: spaceBottomParent, spaceTop: spaceTopParent } = (0, GetSpaceParent_1.GetSpaceParent)(selectRef.current);
             const spaceBottom = Math.min(spaceBottomParent, spaceBottomWindow);
             const spaceTop = Math.min(spaceTopParent, spaceTopWindow);
+            const heightMultiple = selectRef.current.querySelector(".fenext-select-multiple-list")
+                ?.clientHeight ?? 0;
             setShowOptionsUp({
                 up: spaceTop > spaceBottom,
-                height: Math.max(spaceTop, spaceBottom),
+                height: Math.max(spaceTop, spaceBottom) + heightMultiple,
+                heightMultiple,
             });
         }
     };
@@ -152,6 +156,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                     ${hiddenOptions}
                 `, style: {
                 ["--fenext-select-max-height"]: `${showOptionsUp.height}px`,
+                ["--fenext-select-height-multiple"]: `${showOptionsUp.heightMultiple}px`,
             } },
             react_1.default.createElement("input", { type: "checkbox", ref: checkboxClose, className: "fenext-select-checkbox-close" }),
             react_1.default.createElement("div", { className: `fenext-select-content-search`, onClick: onDefOptionsUpDown },

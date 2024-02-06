@@ -203,11 +203,11 @@ export const InputSelect = <T = any,>({
     const [showOptionsUp, setShowOptionsUp] = useState<{
         up: boolean;
         height: number;
-        heightMultiple : number
+        heightMultiple: number;
     }>({
         up: false,
         height: 0,
-        heightMultiple:0
+        heightMultiple: 0,
     });
     const [dataErrorInput, setErrorInput] = useState<ErrorFenextjs | undefined>(
         undefined,
@@ -334,12 +334,14 @@ export const InputSelect = <T = any,>({
             const spaceBottom = Math.min(spaceBottomParent, spaceBottomWindow);
             const spaceTop = Math.min(spaceTopParent, spaceTopWindow);
 
-            const heightMultiple = selectRef.current.querySelector(".fenext-select-multiple-list")?.clientHeight ?? 0
+            const heightMultiple =
+                selectRef.current.querySelector(".fenext-select-multiple-list")
+                    ?.clientHeight ?? 0;
 
             setShowOptionsUp({
                 up: spaceTop > spaceBottom,
                 height: Math.max(spaceTop, spaceBottom) + heightMultiple,
-                heightMultiple
+                heightMultiple,
             });
         }
     };
