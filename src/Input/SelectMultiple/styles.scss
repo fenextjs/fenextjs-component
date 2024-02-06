@@ -4,5 +4,10 @@
         padding: 1rem 0;
         gap: 1rem;
         flex-wrap: wrap;
+        grid-column: 1/-1;
+        order: 9;
+        &:empty{
+            display: none;
+        }
     }
 }

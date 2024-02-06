@@ -23,32 +23,34 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
                 border-radius: 1rem;
                 margin-top: 0.5rem;
                 overflow: auto;
-            }
-            &-option {
-                aspect-ratio: 1/1;
-                border-radius: 1rem;
-                display: grid;
-                place-items: center;
-                text-align: center;
-                background: var(--fenext-color-light-dark);
-                &:hover {
-                    background: var(--fenext-color-light-extra-dark);
-                }
-                &-btn {
-                    margin: 0;
-                    width: 100%;
-                    background: var(--fenext-color-dark);
-                    aspect-ratio: initial;
-                    grid-column: 1/-1;
-                    border-radius: 0.75rem;
-                    &:hover {
-                        background: var(--fenext-color-dark-light);
+                .fenext-select {
+                    &-option {
+                        aspect-ratio: 1/1;
+                        border-radius: 1rem;
+                        display: grid;
+                        place-items: center;
+                        text-align: center;
+                        background: var(--fenext-color-light-dark);
+                        &:hover {
+                            background: var(--fenext-color-light-extra-dark);
+                        }
+                        &-btn {
+                            margin: 0;
+                            width: 100%;
+                            background: var(--fenext-color-dark);
+                            aspect-ratio: initial;
+                            grid-column: 1/-1;
+                            border-radius: 0.75rem;
+                            &:hover {
+                                background: var(--fenext-color-dark-light);
+                            }
+                        }
+                        &-not-result {
+                            grid-column: 1/-1;
+                            aspect-ratio: initial;
+                            border-radius: 0.75rem;
+                        }
                     }
-                }
-                &-not-result {
-                    grid-column: 1/-1;
-                    aspect-ratio: initial;
-                    border-radius: 0.75rem;
                 }
             }
         }
@@ -72,23 +74,26 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
                 border-radius: 1rem;
                 margin-top: 0.5rem;
                 overflow: auto;
-            }
-            &-option {
-                border-radius: 0.75rem;
-                background: var(--fenext-color-light-dark);
-                &:hover {
-                    background: var(--fenext-color-light-extra-dark);
-                }
-                &-btn {
-                    margin: 0;
-                    width: 100%;
-                    background: var(--fenext-color-dark);
-                    grid-column: 1/-1;
-                    display: grid;
-                    place-items: center;
-                    text-align: center;
-                    &:hover {
-                        background: var(--fenext-color-dark-light);
+
+                .fenext-select {
+                    &-option {
+                        border-radius: 0.75rem;
+                        background: var(--fenext-color-light-dark);
+                        &:hover {
+                            background: var(--fenext-color-light-extra-dark);
+                        }
+                        &-btn {
+                            margin: 0;
+                            width: 100%;
+                            background: var(--fenext-color-dark);
+                            grid-column: 1/-1;
+                            display: grid;
+                            place-items: center;
+                            text-align: center;
+                            &:hover {
+                                background: var(--fenext-color-dark-light);
+                            }
+                        }
                     }
                 }
             }
@@ -101,6 +106,7 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
     width: 100%;
     --list-scaleY: 0;
     --fenext-select-max-height: 100dvh;
+    --fenext-select-height-multiple: 0px;
     --fenext-select-error-range-height: 1rem;
 
     &-checkbox-close {
@@ -139,7 +145,7 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
     }
     &-list-options {
         position: absolute;
-        top: calc(100% - 0.5rem);
+        top: calc(100% - 0.5rem - var(--fenext-select-height-multiple));
         left: 0;
         width: 100%;
         color: var(--fenext-color-dark);

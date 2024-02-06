@@ -3,6 +3,7 @@ import { Story, Meta } from "@storybook/react";
 
 import { SwichViewSelect, SwichViewSelectProps } from "./index";
 import { InputSelect } from "../../Input/Select";
+import { InputSelectMultiple } from "../../Input/SelectMultiple";
 
 export default {
     title: "SwichView/Select",
@@ -60,3 +61,32 @@ const ProfileInterna: Story<SwichViewSelectProps> = (args) => (
 
 export const Interna = ProfileInterna.bind({});
 Interna.args = {} as SwichViewSelectProps;
+
+
+
+
+
+
+const ProfileMultiple: Story<SwichViewSelectProps> = (args) => (
+    <>
+        <InputSelectMultiple
+        label={"Select"}
+        placeholder="Select"
+            options={t}
+            create={{
+                id: "create",
+                text: "Create",
+            }}
+            onCreate={() => alert("Create")}
+            extraInLabel={
+                <>
+                    <SwichViewSelect {...args} />
+                </>
+            }
+            useSwichtypeSelectStyle={true}
+        />
+    </>
+);
+
+export const Multiple = ProfileMultiple.bind({});
+Multiple.args = {} as SwichViewSelectProps;

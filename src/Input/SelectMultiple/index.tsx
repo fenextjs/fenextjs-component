@@ -136,21 +136,28 @@ export const InputSelectMultiple = <T = any,>({
                     options={OPTIONS}
                     error={props?.error ?? error}
                     isSelectClearText={true}
+                    extraInLabel={
+                        <>
+                            <div
+                                className={`fenext-select-multiple-list ${classNameSelectMultipleList} `}
+                            >
+                                {dataMemo.map((option) => {
+                                    return (
+                                        <InputSelectOption
+                                            {...option}
+                                            type={"multiple"}
+                                            onDelete={onRemoveItemSelect}
+                                            iconDelete={
+                                                option?.iconDelete ?? iconDelete
+                                            }
+                                        />
+                                    );
+                                })}
+                            </div>
+                            {props?.extraInLabel}
+                        </>
+                    }
                 />
-                <div
-                    className={`fenext-select-multiple-list ${classNameSelectMultipleList} `}
-                >
-                    {dataMemo.map((option) => {
-                        return (
-                            <InputSelectOption
-                                {...option}
-                                type={"multiple"}
-                                onDelete={onRemoveItemSelect}
-                                iconDelete={option?.iconDelete ?? iconDelete}
-                            />
-                        );
-                    })}
-                </div>
             </div>
         </>
     );
