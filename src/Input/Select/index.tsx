@@ -273,7 +273,7 @@ export const InputSelect = <T = any,>({
         }
         setData({
             option,
-            text: isSelectClearText ? "" : text,
+            text: text,
             textSearch: text,
         });
     };

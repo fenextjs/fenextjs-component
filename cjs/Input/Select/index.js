@@ -74,7 +74,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
         }
         setData({
             option,
-            text: isSelectClearText ? "" : text,
+            text: text,
             textSearch: text,
         });
     };
