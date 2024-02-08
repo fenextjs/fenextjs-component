@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, useMemo } from "react";
-import { Close } from "fenextjs-svg/cjs/close";
+import { Close } from "fenextjs-svg/cjs/Close";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 /**

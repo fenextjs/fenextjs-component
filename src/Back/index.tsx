@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { useRouter } from "next/router";
 import { Loader, LoaderClassProps } from "../Loader";
-import { PaginationPre } from "fenextjs-svg/cjs/pagination";
+import { PaginationPre } from "fenextjs-svg/cjs/Pagination";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 

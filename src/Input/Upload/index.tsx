@@ -7,7 +7,7 @@ import { Upload2 } from "fenextjs-svg/cjs/Upload";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { FileProps } from "fenextjs-interface/cjs/File";
 import { ErrorProps } from "fenextjs-interface/cjs/Error";
-import { Close } from "fenextjs-svg/cjs/close";
+import { Close } from "fenextjs-svg/cjs/Close";
 import { Collapse } from "../../Collapse";
 import { _tValidate } from "fenextjs-functions";
 

@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../Text";
 import { TypeDate } from "fenextjs-interface/cjs/Date";
-import { Date as SVGDate } from "fenextjs-svg/cjs/date";
+import { Date as SVGDate } from "fenextjs-svg/cjs/Date";
 import {
     parseDateToText,
     parseTextToDate,

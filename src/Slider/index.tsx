@@ -1,5 +1,5 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react";
-import { PaginationPre, PaginationNext } from "fenextjs-svg/cjs/pagination";
+import { PaginationPre, PaginationNext } from "fenextjs-svg/cjs/Pagination";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 

@@ -6,7 +6,7 @@ import {
     InputDateRangeValueType,
 } from "../../Input/DateRange";
 import { useData } from "fenextjs-hook";
-import { Close } from "fenextjs-svg/cjs/close";
+import { Close } from "fenextjs-svg/cjs/Close";
 import { Button, ButtonProps } from "../../Button";
 import { _TProps } from "fenextjs-interface";
 

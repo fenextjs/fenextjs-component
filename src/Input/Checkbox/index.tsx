@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 
-import { Check } from "fenextjs-svg/cjs/check";
+import { Check } from "fenextjs-svg/cjs/Check";
 import { env_log } from "fenextjs-functions/cjs/env_log";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";

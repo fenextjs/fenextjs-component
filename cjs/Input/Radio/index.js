@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InputRadio = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
-const check_1 = require("fenextjs-svg/cjs/check");
+const Check_1 = require("fenextjs-svg/cjs/Check");
 const env_log_1 = require("fenextjs-functions/cjs/env_log");
 const fenextjs_functions_1 = require("fenextjs-functions");
 /**
@@ -14,7 +14,7 @@ const InputRadio = ({ classNameContent = "", classNameLabel = "", classNameLabel
     (0, env_log_1.env_log)(e, {
         name: "input radio onchange",
     });
-}, defaultValue = undefined, useValue = false, value = undefined, disabled = false, icon = react_1.default.createElement(check_1.Check, null), items = [], _t, }) => {
+}, defaultValue = undefined, useValue = false, value = undefined, disabled = false, icon = react_1.default.createElement(Check_1.Check, null), items = [], _t, }) => {
     const [checked, setChecked] = (0, react_1.useState)(defaultValue);
     const onChecked = (i) => () => {
         if (disabled) {

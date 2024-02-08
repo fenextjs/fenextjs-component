@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaginationItemPage = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
-const pagination_1 = require("fenextjs-svg/cjs/pagination");
+const Pagination_1 = require("fenextjs-svg/cjs/Pagination");
 const PaginationItemPage = ({ classNameContent = "", classNameUp = "", classNamePre = "", classNameCurrent = "", classNameCurrentItem = "", classNameNext = "", classNameDown = "", icons = {
-    up: react_1.default.createElement(pagination_1.PaginationUp, null),
-    pre: react_1.default.createElement(pagination_1.PaginationPre, null),
-    next: react_1.default.createElement(pagination_1.PaginationNext, null),
-    down: react_1.default.createElement(pagination_1.PaginationDown, null),
+    up: react_1.default.createElement(Pagination_1.PaginationUp, null),
+    pre: react_1.default.createElement(Pagination_1.PaginationPre, null),
+    next: react_1.default.createElement(Pagination_1.PaginationNext, null),
+    down: react_1.default.createElement(Pagination_1.PaginationDown, null),
 }, defaultPage = 0, nItems, nItemsPage = 10, disabled = false, onChangePage, hiddenIfNItemsSmallerThanOrEqualNItemsPage = true, }) => {
     const [page, setPage_] = (0, react_1.useState)(defaultPage);
     const maxPage = (0, react_1.useMemo)(() => Math.ceil(nItems / nItemsPage) - 1, [nItems, nItemsPage]);

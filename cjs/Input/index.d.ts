@@ -1,4 +1,3 @@
-export * from "./AutocompleteGoogleMaps";
 export * from "./Text";
 export * from "./Password";
 export * from "./Date";

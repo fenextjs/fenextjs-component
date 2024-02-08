@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importDefault(require("react"));
 const DateRange_1 = require("../../Input/DateRange");
 const fenextjs_hook_1 = require("fenextjs-hook");
-const close_1 = require("fenextjs-svg/cjs/close");
+const Close_1 = require("fenextjs-svg/cjs/Close");
 const Button_1 = require("../../Button");
 const ScheduleDay = ({ className = "", defaultValue = [[undefined, undefined]], value = undefined, onChange, propsStart = {
     label: "Start time",
@@ -33,7 +33,7 @@ const ScheduleDay = ({ className = "", defaultValue = [[undefined, undefined]], 
                         react_1.default.createElement("div", { className: "fenext-schedule-day-date-range-close", onClick: () => {
                                 onDeleteData(i);
                             } },
-                            react_1.default.createElement(close_1.Close, null)))));
+                            react_1.default.createElement(Close_1.Close, null)))));
             })),
             react_1.default.createElement("div", { className: "fenext-schedule-day-content-btn" },
                 react_1.default.createElement(Button_1.Button, { ...ButtonProps, onClick: onAddTimeRange, _t: _t })))));

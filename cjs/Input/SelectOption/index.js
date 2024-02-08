@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InputSelectOption = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importDefault(require("react"));
-const trash_1 = require("fenextjs-svg/cjs/trash");
+const Trash_1 = require("fenextjs-svg/cjs/Trash");
 const fenextjs_functions_1 = require("fenextjs-functions");
-const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", classNameOptionDelete = "", id, text, img = undefined, icon = undefined, children, type = "div", onClick, onDelete, disabled = false, selected = false, isBtn = false, _t = (e) => e, data, iconDelete = react_1.default.createElement(trash_1.Trash, null), }) => {
+const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", classNameOptionDelete = "", id, text, img = undefined, icon = undefined, children, type = "div", onClick, onDelete, disabled = false, selected = false, isBtn = false, _t = (e) => e, data, iconDelete = react_1.default.createElement(Trash_1.Trash, null), }) => {
     const TAG = type == "option" ? "option" : "div";
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(TAG, { key: id, id: `${id}`, className: `fenext-select-option ${isBtn ? "fenext-select-option-btn" : ""} ${classNameOption} fenext-select-option-type-${type}`, onClick: () => {

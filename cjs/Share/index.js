@@ -10,8 +10,8 @@ const Whatsapp_1 = require("fenextjs-svg/cjs/Whatsapp");
 const Facebook_1 = require("fenextjs-svg/cjs/Facebook");
 const Twitter_1 = require("fenextjs-svg/cjs/Twitter");
 const Email_1 = require("fenextjs-svg/cjs/Email");
-const copy_1 = require("fenextjs-svg/cjs/copy");
-const Copy_1 = require("../Copy");
+const Copy_1 = require("fenextjs-svg/cjs/Copy");
+const Copy_2 = require("../Copy");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const Share = ({ className = "", share = "", ButtonProps = {
     children: "Share",
@@ -38,7 +38,7 @@ const Share = ({ className = "", share = "", ButtonProps = {
         },
         copy: {
             urlShare: "",
-            icon: react_1.default.createElement(copy_1.SvgCopyBox, null),
+            icon: react_1.default.createElement(Copy_1.CopyBox, null),
         },
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
@@ -51,12 +51,12 @@ const Share = ({ className = "", share = "", ButtonProps = {
                     const item = LISTSHARE[key];
                     if (key === "copy") {
                         return (react_1.default.createElement(react_1.default.Fragment, null,
-                            react_1.default.createElement(Copy_1.Copy, { key: i, className: `fenext-share-item fenext-share-item-${key}`, text: share, _t: _t }, item.icon)));
+                            react_1.default.createElement(Copy_2.Copy, { key: i, className: `fenext-share-item fenext-share-item-${key}`, text: share, _t: _t }, item.icon)));
                     }
                     return (react_1.default.createElement("a", { href: `${item.urlShare}${share}`, key: i, className: `fenext-share-item fenext-share-item-${key}`, target: "_blank" }, (0, fenextjs_functions_1._tValidate)(item.icon, _t)));
                 })),
                 showShareCopy && (react_1.default.createElement("div", { className: "fenext-share-copy" },
-                    react_1.default.createElement(Copy_1.Copy, { className: `fenext-share-copy`, text: share, _t: _t }, share)))))));
+                    react_1.default.createElement(Copy_2.Copy, { className: `fenext-share-copy`, text: share, _t: _t }, share)))))));
 };
 exports.Share = Share;
 //# sourceMappingURL=index.js.map

@@ -10,7 +10,7 @@ import { LoaderSpinner } from "../../Loader";
 import { FileProps, _TProps } from "fenextjs-interface";
 import { parseBase64ToImgData } from "fenextjs-functions/cjs/parse/Img/Base64ToImgData";
 import { env_log } from "fenextjs-functions/cjs/env_log";
-import { Trash } from "fenextjs-svg/cjs/trash";
+import { Trash } from "fenextjs-svg/cjs/Trash";
 import { Save } from "fenextjs-svg/cjs/Save";
 import { _tValidate } from "fenextjs-functions";
 

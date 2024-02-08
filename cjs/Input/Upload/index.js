@@ -9,7 +9,7 @@ const Button_1 = require("../../Button");
 const Text_1 = require("../../Text");
 const Upload_1 = require("fenextjs-svg/cjs/Upload");
 const useData_1 = require("fenextjs-hook/cjs/useData");
-const close_1 = require("fenextjs-svg/cjs/close");
+const Close_1 = require("fenextjs-svg/cjs/Close");
 const Collapse_1 = require("../../Collapse");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const InputUpload = ({ className = "", classNameBtn = {}, classNameContentIcon = "", classNameText = {}, classNamePreview = "", classNameTitle = {
@@ -49,7 +49,7 @@ const InputUpload = ({ className = "", classNameBtn = {}, classNameContentIcon =
                             text: "",
                         });
                     } },
-                    react_1.default.createElement(close_1.Close, null)))))) : (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(Close_1.Close, null)))))) : (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(File_1.InputFile, { onChange: setData, parseProgress: () => "", onChangeProgress: setProgress, onChangeError: setError, ...props, _t: _t },
                 react_1.default.createElement("div", { className: `fenext-input-upload-up ${classNameUp}` },
                     progress > 0 && progress < 100 ? (react_1.default.createElement(Title_1.Title, { ...classNameTitle, className: `fenext-input-upload-progress ${classNameProgress}` }, parseProgress(progress))) : (react_1.default.createElement(Title_1.Title, { ...classNameTitle, className: `fenext-input-upload-title ${classNameTitle.className}` }, (0, fenextjs_functions_1._tValidate)(title, _t))),

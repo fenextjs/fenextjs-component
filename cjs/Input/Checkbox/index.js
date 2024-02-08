@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InputCheckbox = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
-const check_1 = require("fenextjs-svg/cjs/check");
+const Check_1 = require("fenextjs-svg/cjs/Check");
 const env_log_1 = require("fenextjs-functions/cjs/env_log");
 const fenextjs_functions_1 = require("fenextjs-functions");
 /**
@@ -14,7 +14,7 @@ const InputCheckbox = ({ classNameLabel = "", classNameLabelActive = "", classNa
     (0, env_log_1.env_log)(e, {
         name: "input checkbox onchange",
     });
-}, defaultValue = false, useValue = false, value = false, disabled = false, icon = react_1.default.createElement(check_1.Check, null), onValidateCheck = async () => { }, _t, }) => {
+}, defaultValue = false, useValue = false, value = false, disabled = false, icon = react_1.default.createElement(Check_1.Check, null), onValidateCheck = async () => { }, _t, }) => {
     const [checked_, setChecked] = (0, react_1.useState)(defaultValue === true);
     const checked = (0, react_1.useMemo)(() => (useValue ? value : checked_), [useValue, value, checked_]);
     const onChecked = async () => {

@@ -8,12 +8,12 @@ const Title_1 = require("../../Title");
 const Text_1 = require("../../Text");
 const Img_1 = require("fenextjs-svg/cjs/Img");
 const useData_1 = require("fenextjs-hook/cjs/useData");
-const close_1 = require("fenextjs-svg/cjs/close");
+const Close_1 = require("fenextjs-svg/cjs/Close");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const InputImg = ({ className = "", classNameContentIcon = "", classNameText = {}, classNameTitle = {
     tag: "h2",
 }, classNameUp = "", classNameProgress = "", classNameRemove = "", classNameImg = "", icon = (react_1.default.createElement(react_1.default.Fragment, null,
-    react_1.default.createElement(Img_1.SvgImg, null))), text = "Drag Image", title = "Add Image", defaultValue = {
+    react_1.default.createElement(Img_1.Img, null))), text = "Drag Image", title = "Add Image", defaultValue = {
     fileData: "",
     text: "",
 }, parseProgress = (e) => `Imging . . . ${e.toFixed(0)}%`, onChange, onRemove, _t, ...props }) => {
@@ -37,7 +37,7 @@ const InputImg = ({ className = "", classNameContentIcon = "", classNameText = {
                         });
                         onRemove?.();
                     } },
-                    react_1.default.createElement(close_1.Close, null))))) : (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(Close_1.Close, null))))) : (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(File_1.InputFile, { onChange: setData, parseProgress: () => "", onChangeProgress: setProgress, onChangeError: setError, accept: [
                     "jpg",
                     "jpeg",

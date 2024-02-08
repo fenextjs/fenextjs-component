@@ -13,7 +13,7 @@ const Theme = ({ className = "", classNameItem = "" }) => {
             return (react_1.default.createElement("div", { key: i, className: `fenext-theme-item fenext-theme-item-${t} fenext-theme-item-${t == theme ? "active" : ""} ${classNameItem} `, onClick: () => {
                     setTheme(t);
                 } },
-                react_1.default.createElement(Theme_1.SvgTheme, null)));
+                react_1.default.createElement(Theme_1.Theme, null)));
         }))));
 };
 exports.Theme = Theme;

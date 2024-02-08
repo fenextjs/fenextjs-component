@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../Text";
 
-import { Eye, EyeBar } from "fenextjs-svg/cjs/eye";
+import { Eye, EyeBar } from "fenextjs-svg/cjs/Eye";
 
 /**
  * Interface for the base props of an input password component.

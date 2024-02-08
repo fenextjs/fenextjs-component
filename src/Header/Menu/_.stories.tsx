@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { Story, Meta } from "@storybook/react";
-import { Date } from "fenextjs-svg/cjs/date";
+import { Date } from "fenextjs-svg/cjs/Date";
 
 import { Menu, MenuProps } from "./index";
 

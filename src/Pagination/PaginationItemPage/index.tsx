@@ -5,7 +5,7 @@ import {
     PaginationPre,
     PaginationNext,
     PaginationDown,
-} from "fenextjs-svg/cjs/pagination";
+} from "fenextjs-svg/cjs/Pagination";
 import { _TProps } from "fenextjs-interface";
 /**
  * Class properties to customize the style of the pagination.

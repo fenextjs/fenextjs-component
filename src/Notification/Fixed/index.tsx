@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { RequestResultTypeProps } from "fenextjs-interface/cjs/Request";
-import { Close } from "fenextjs-svg/cjs/close";
+import { Close } from "fenextjs-svg/cjs/Close";
 import { useNotification } from "fenextjs-hook";
 import { _tValidate } from "fenextjs-functions";
 import { _TProps } from "fenextjs-interface";

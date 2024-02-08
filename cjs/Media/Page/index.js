@@ -12,7 +12,7 @@ const Button_1 = require("../../Button");
 const Loader_1 = require("../../Loader");
 const Base64ToImgData_1 = require("fenextjs-functions/cjs/parse/Img/Base64ToImgData");
 const env_log_1 = require("fenextjs-functions/cjs/env_log");
-const trash_1 = require("fenextjs-svg/cjs/trash");
+const Trash_1 = require("fenextjs-svg/cjs/Trash");
 const Save_1 = require("fenextjs-svg/cjs/Save");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const MediaPage = ({ className = "", multiple = false, onChange, onUploadImg, onDeleteImg, onAcepte, HeaderPage = (react_1.default.createElement(react_1.default.Fragment, null,
@@ -91,7 +91,7 @@ const MediaPage = ({ className = "", multiple = false, onChange, onUploadImg, on
                         react_1.default.createElement("div", { className: `fenext-media-page-img-action fenext-media-page-img-delete`, onClick: () => {
                                 onDeleteImg?.(img);
                             } },
-                            react_1.default.createElement(trash_1.Trash, null))))));
+                            react_1.default.createElement(Trash_1.Trash, null))))));
         })));
     }, [images, onRenderImg, onSelectImg, onDeleteImg, _t]);
     return (react_1.default.createElement(react_1.default.Fragment, null,

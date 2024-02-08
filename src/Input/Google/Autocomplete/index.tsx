@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../../Text";
 import { Autocomplete, AutocompleteProps } from "@react-google-maps/api";
-import { Close } from "fenextjs-svg/cjs/close";
+import { Close } from "fenextjs-svg/cjs/Close";
 import { useData } from "fenextjs-hook/cjs/useData";
 import {
     AddressGoogle,

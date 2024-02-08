@@ -1,6 +1,6 @@
 import React, { ReactNode, useRef, useState } from "react";
-import { SVGSearch } from "fenextjs-svg/cjs/search";
-import { Close } from "fenextjs-svg/cjs/close";
+import { SVGSearch } from "fenextjs-svg/cjs/Search";
+import { Close } from "fenextjs-svg/cjs/Close";
 import { useData } from "fenextjs-hook";
 import { Title } from "../../Title";
 import { InputSelectOption, InputSelectOptionProps } from "../SelectOption";

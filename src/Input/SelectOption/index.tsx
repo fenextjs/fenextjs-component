@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactNode } from "react";
-import { Trash } from "fenextjs-svg/cjs/trash";
+import { Trash } from "fenextjs-svg/cjs/Trash";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 /**
