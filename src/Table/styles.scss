@@ -4,7 +4,10 @@
     max-height: 100dvh;
     display: grid;
     grid-template-rows: 1fr auto;
-    .fenext-table-actions-checkbox {
+    &:has(.fenext-table-content-actions) {
+        grid-template-rows: auto 1fr auto;
+    }
+    &-content-actions {
         margin-bottom: 1rem;
     }
     &-content {

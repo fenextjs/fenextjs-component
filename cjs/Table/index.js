@@ -100,15 +100,16 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
         react_1.default.createElement("div", { className: `fenext-table ${classNameContent}`, style: {
                 ["--fenext-table-name"]: `"${name}"`,
             } },
-            react_1.default.createElement("div", { className: `fenext-table-content ${classNameContentTable}` },
-                useCheckbox &&
-                    checkbox.some((e) => e.__checkbox) &&
-                    actionsCheckbox && (react_1.default.createElement(TableActionCheckbox_1.TableActionCheckbox, { ...actionsCheckbox, actionAllCheckbox: {
+            useCheckbox &&
+                checkbox.some((e) => e.__checkbox) &&
+                actionsCheckbox && (react_1.default.createElement("div", { className: `fenext-table-content-actions` },
+                react_1.default.createElement(TableActionCheckbox_1.TableActionCheckbox, { ...actionsCheckbox, actionAllCheckbox: {
                         label: actionsCheckboxSelectAll,
                         onChange: onCheckedAll,
                         value: checkbox.every((e) => e?.__checkbox ?? false),
                         useValue: true,
-                    }, data: checkbox.filter((e) => e.__checkbox) })),
+                    }, data: checkbox.filter((e) => e.__checkbox) }))),
+            react_1.default.createElement("div", { className: `fenext-table-content ${classNameContentTable}` },
                 react_1.default.createElement("table", { className: `fenext-table-content-table ${classNameTable}` },
                     react_1.default.createElement("thead", { className: `fenext-table-content-table-thead ${classNameTHead}` },
                         react_1.default.createElement("tr", { className: `fenext-table-content-table-thr ${classNameThr}` },

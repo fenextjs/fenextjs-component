@@ -721,8 +721,8 @@ Actions.args = {
         return r;
     }),
     pagination: {
-        nItems: 1,
-        showNPage:false
+        nItems: 100,
+        showNPage:true
     },
     loader: false,
     onOrderBy:(a)=>{

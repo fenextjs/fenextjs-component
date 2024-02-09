@@ -424,12 +424,10 @@ export const Table = <T,>({
                     } as React.CSSProperties
                 }
             >
-                <div
-                    className={`fenext-table-content ${classNameContentTable}`}
-                >
-                    {useCheckbox &&
-                        checkbox.some((e) => e.__checkbox) &&
-                        actionsCheckbox && (
+                {useCheckbox &&
+                    checkbox.some((e) => e.__checkbox) &&
+                    actionsCheckbox && (
+                        <div className={`fenext-table-content-actions`}>
                             <TableActionCheckbox
                                 {...actionsCheckbox}
                                 actionAllCheckbox={{
@@ -442,8 +440,11 @@ export const Table = <T,>({
                                 }}
                                 data={checkbox.filter((e) => e.__checkbox)}
                             />
-                        )}
-
+                        </div>
+                    )}
+                <div
+                    className={`fenext-table-content ${classNameContentTable}`}
+                >
                     <table
                         className={`fenext-table-content-table ${classNameTable}`}
                     >
