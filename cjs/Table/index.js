@@ -9,8 +9,9 @@ const DropDown_1 = require("../DropDown");
 const Loader_1 = require("../Loader");
 const Line_1 = require("../Loader/Line");
 const __1 = require("..");
+const TableActionCheckbox_1 = require("../TableActionCheckbox");
 const fenextjs_functions_1 = require("fenextjs-functions");
-const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameContentPagination = "", classNameLoader = "", name, items, header, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, onShowHidden, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), _t = (e) => e, }) => {
+const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameContentPagination = "", classNameLoader = "", name, items, header, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, onShowHidden, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), actionsCheckbox, actionsCheckboxSelectAll = "Select All", _t = (e) => e, }) => {
     const checkboxItems = (0, react_1.useMemo)(() => items.map((item) => ({ ...item, __checkbox: false })), [items]);
     const [checkbox, setCheckbox] = (0, react_1.useState)(checkboxItems);
     const onCheckedAll = (v) => {
@@ -100,6 +101,14 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                 ["--fenext-table-name"]: `"${name}"`,
             } },
             react_1.default.createElement("div", { className: `fenext-table-content ${classNameContentTable}` },
+                useCheckbox &&
+                    checkbox.some((e) => e.__checkbox) &&
+                    actionsCheckbox && (react_1.default.createElement(TableActionCheckbox_1.TableActionCheckbox, { ...actionsCheckbox, actionAllCheckbox: {
+                        label: actionsCheckboxSelectAll,
+                        onChange: onCheckedAll,
+                        value: checkbox.every((e) => e?.__checkbox ?? false),
+                        useValue: true,
+                    }, data: checkbox.filter((e) => e.__checkbox) })),
                 react_1.default.createElement("table", { className: `fenext-table-content-table ${classNameTable}` },
                     react_1.default.createElement("thead", { className: `fenext-table-content-table-thead ${classNameTHead}` },
                         react_1.default.createElement("tr", { className: `fenext-table-content-table-thr ${classNameThr}` },

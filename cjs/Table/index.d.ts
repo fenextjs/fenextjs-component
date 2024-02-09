@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { PaginationProps } from "../Pagination";
+import { TableActionCheckboxProps } from "../TableActionCheckbox";
 import { _TProps } from "fenextjs-interface";
 /**
  * Represents the properties that can be passed to a table component to specify CSS class names.
@@ -149,6 +150,8 @@ export interface TableBaseProps<T> extends _TProps {
      * If use checkbox in table.
      */
     showPagination?: boolean;
+    actionsCheckbox?: Omit<TableActionCheckboxProps<T>, "actionAllCheckbox" | "data">;
+    actionsCheckboxSelectAll?: ReactNode;
 }
 /**
  * Represents the properties that can be passed to a table component.
@@ -157,4 +160,4 @@ export interface TableBaseProps<T> extends _TProps {
  */
 export interface TableProps<T> extends TableClassProps, TableBaseProps<T> {
 }
-export declare const Table: <T>({ classNameContent, classNameContentTable, classNameTable, classNameTHead, classNameTBody, classNameThr, classNameTr, classNameTh, classNameTd, classNameContentPagination, classNameLoader, name, items, header, pagination, showPagination, loader, typeLoader, useCheckbox, onOrderBy, onShowHidden, onChecked, notResult, _t, }: TableProps<T>) => React.JSX.Element;
+export declare const Table: <T>({ classNameContent, classNameContentTable, classNameTable, classNameTHead, classNameTBody, classNameThr, classNameTr, classNameTh, classNameTd, classNameContentPagination, classNameLoader, name, items, header, pagination, showPagination, loader, typeLoader, useCheckbox, onOrderBy, onShowHidden, onChecked, notResult, actionsCheckbox, actionsCheckboxSelectAll, _t, }: TableProps<T>) => React.JSX.Element;

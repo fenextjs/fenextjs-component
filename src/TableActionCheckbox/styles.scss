@@ -1,8 +1,8 @@
 .fenext-table-actions-checkbox {
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     background-color: var(--fenext-color-white);
     color: var(--fenext-color-dark);
-    border:1px solid var(--fenext-color-gray-extra-light);
+    border: 1px solid var(--fenext-color-gray-extra-light);
     font-family: var(--fenext-font-global);
     width: auto;
     display: inline-flex;
@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     gap: 1rem;
 
-    &-action{
+    &-action {
         cursor: pointer;
     }
 }

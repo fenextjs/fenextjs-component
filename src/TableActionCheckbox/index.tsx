@@ -55,7 +55,7 @@ export const TableActionCheckbox = <T = any,>({
                 </>
             );
         });
-    }, [data,actions]);
+    }, [data, actions]);
     return (
         <>
             <div className={`fenext-table-actions-checkbox ${className} `}>

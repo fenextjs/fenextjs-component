@@ -48,4 +48,5 @@ tslib_1.__exportStar(require("./Tooltip"), exports);
 tslib_1.__exportStar(require("./Chronometer"), exports);
 tslib_1.__exportStar(require("./ChronologicalList"), exports);
 tslib_1.__exportStar(require("./SwichView"), exports);
+tslib_1.__exportStar(require("./TableActionCheckbox"), exports);
 //# sourceMappingURL=index.js.map
