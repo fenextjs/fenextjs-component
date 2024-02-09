@@ -6,6 +6,10 @@ import { DropDown } from "../DropDown";
 import { Loader } from "../Loader";
 import { LoaderLine } from "../Loader/Line";
 import { InputRadio } from "..";
+import {
+    TableActionCheckbox,
+    TableActionCheckboxProps,
+} from "../TableActionCheckbox";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 
@@ -176,6 +180,12 @@ export interface TableBaseProps<T> extends _TProps {
      * If use checkbox in table.
      */
     showPagination?: boolean;
+
+    actionsCheckbox?: Omit<
+        TableActionCheckboxProps<T>,
+        "actionAllCheckbox" | "data"
+    >;
+    actionsCheckboxSelectAll?: ReactNode;
 }
 /**
  * Represents the properties that can be passed to a table component.
@@ -213,6 +223,8 @@ export const Table = <T,>({
     onShowHidden,
     onChecked,
     notResult = <div>There is not results</div>,
+    actionsCheckbox,
+    actionsCheckboxSelectAll = "Select All",
     _t = (e) => e,
 }: TableProps<T>) => {
     const checkboxItems = useMemo(
@@ -415,6 +427,23 @@ export const Table = <T,>({
                 <div
                     className={`fenext-table-content ${classNameContentTable}`}
                 >
+                    {useCheckbox &&
+                        checkbox.some((e) => e.__checkbox) &&
+                        actionsCheckbox && (
+                            <TableActionCheckbox
+                                {...actionsCheckbox}
+                                actionAllCheckbox={{
+                                    label: actionsCheckboxSelectAll,
+                                    onChange: onCheckedAll,
+                                    value: checkbox.every(
+                                        (e) => e?.__checkbox ?? false,
+                                    ),
+                                    useValue: true,
+                                }}
+                                data={checkbox.filter((e) => e.__checkbox)}
+                            />
+                        )}
+
                     <table
                         className={`fenext-table-content-table ${classNameTable}`}
                     >

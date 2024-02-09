@@ -4,6 +4,9 @@
     max-height: 100dvh;
     display: grid;
     grid-template-rows: 1fr auto;
+    .fenext-table-actions-checkbox {
+        margin-bottom: 1rem;
+    }
     &-content {
         width: 100%;
         padding-bottom: 0.5rem;
