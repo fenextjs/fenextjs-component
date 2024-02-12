@@ -46,7 +46,7 @@
 .fenext-input-content {
     &:has(.fenext-input-number-icon-arrow:hover) {
         .fenext-input-content-input {
-            --box-shadow-color: var(--fenext-color-primary);
+            box-shadow: var(--box-shadow);
         }
     }
     &:has(.fenext-input-number-icon-increase) {
