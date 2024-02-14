@@ -3,7 +3,12 @@ import { InputTextProps } from "../Text";
 /**
  * Props for InputNumber component.
  */
-export interface InputNumberProps extends Omit<InputTextProps, "defaultValue" | "onChange" | "onChangeValidate"> {
+export interface InputNumberProps extends Omit<InputTextProps, "defaultValue" | "onChange" | "onChangeValidate" | "value"> {
+    /**
+     * The default value of the input.
+     * @default ""
+     */
+    value?: number | "";
     /**
      * The default value of the input.
      * @default ""
@@ -30,4 +35,4 @@ export interface InputNumberProps extends Omit<InputTextProps, "defaultValue" | 
      */
     useBtnIncreaseDecrease?: boolean;
 }
-export declare const InputNumber: ({ defaultValue, onChange, useBtnIncreaseDecrease, validator, ...props }: InputNumberProps) => React.JSX.Element;
+export declare const InputNumber: ({ defaultValue, onChange, useBtnIncreaseDecrease, validator, value, ...props }: InputNumberProps) => React.JSX.Element;

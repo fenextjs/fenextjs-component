@@ -13,18 +13,18 @@ import { useValidator } from "fenextjs-hook/cjs/useValidator";
 export interface InputNumberProps
     extends Omit<
         InputTextProps,
-        "defaultValue" | "onChange" | "onChangeValidate" | 'value'
+        "defaultValue" | "onChange" | "onChangeValidate" | "value"
     > {
-        /**
-         * The default value of the input.
-         * @default ""
-         */
-        value?: number | "";
-        /**
-         * The default value of the input.
-         * @default ""
-         */
-        defaultValue?: number | "";
+    /**
+     * The default value of the input.
+     * @default ""
+     */
+    value?: number | "";
+    /**
+     * The default value of the input.
+     * @default ""
+     */
+    defaultValue?: number | "";
     /**
      * The callback function that is triggered when the value of the input changes.
      */
@@ -59,7 +59,7 @@ export const InputNumber = ({
 
     const valueInput = useMemo(
         () => value ?? (value_ == "" ? defaultValue : value_),
-        [value_, defaultValue,value],
+        [value_, defaultValue, value],
     );
 
     const setValue = (v: number) => {

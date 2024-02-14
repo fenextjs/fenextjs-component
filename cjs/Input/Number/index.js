@@ -8,9 +8,9 @@ const Number_1 = require("fenextjs-svg/cjs/Number");
 const Arrow_1 = require("fenextjs-svg/cjs/Arrow");
 const fenextjs_validator_1 = require("fenextjs-validator");
 const useValidator_1 = require("fenextjs-hook/cjs/useValidator");
-const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = false, validator = undefined, ...props }) => {
-    const [value, setValue_] = (0, react_1.useState)(defaultValue ?? "");
-    const valueInput = (0, react_1.useMemo)(() => (value == "" ? defaultValue : value), [value, defaultValue]);
+const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = false, validator = undefined, value, ...props }) => {
+    const [value_, setValue_] = (0, react_1.useState)(defaultValue ?? "");
+    const valueInput = (0, react_1.useMemo)(() => value ?? (value_ == "" ? defaultValue : value_), [value_, defaultValue, value]);
     const setValue = (v) => {
         setValue_(v);
         onChange?.(v);
@@ -49,8 +49,8 @@ const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = fal
                         react_1.default.createElement(Arrow_1.Arrow, null)),
                     react_1.default.createElement("span", { onClick: addValue(-1), className: `fenext-input-number-icon-arrow-down` },
                         react_1.default.createElement(Arrow_1.Arrow, null)))))), onChangeValidate: (v) => {
-                const value = minMaxValue(valueToNumber(v));
-                const s = props?.onChangeValidate?.(value) ?? value;
+                const v2 = minMaxValue(valueToNumber(v));
+                const s = props?.onChangeValidate?.(v2) ?? v2;
                 return `${s}`;
             }, onChange: (v) => {
                 setValue(minMaxValue(valueToNumber(v)));
