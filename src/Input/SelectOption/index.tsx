@@ -109,11 +109,11 @@ export const InputSelectOption = <T = any,>({
             <TAG
                 key={id}
                 id={`${id}`}
-                className={`fenext-select-option fenext-select-option-${disabled?"disabled":""} ${
+                className={`fenext-select-option fenext-select-option-${disabled ? "disabled" : ""} ${
                     isBtn ? "fenext-select-option-btn" : ""
                 } ${classNameOption} fenext-select-option-type-${type}`}
                 onClick={() => {
-                    if(!disabled){
+                    if (!disabled) {
                         onClick?.({ id, text, children, data, img });
                     }
                 }}

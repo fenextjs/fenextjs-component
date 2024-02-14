@@ -8,8 +8,10 @@ const fenextjs_functions_1 = require("fenextjs-functions");
 const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", classNameOptionDelete = "", id, text, img = undefined, icon = undefined, children, type = "div", onClick, onDelete, disabled = false, selected = false, isBtn = false, _t = (e) => e, data, iconDelete = react_1.default.createElement(Trash_1.Trash, null), }) => {
     const TAG = type == "option" ? "option" : "div";
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(TAG, { key: id, id: `${id}`, className: `fenext-select-option ${isBtn ? "fenext-select-option-btn" : ""} ${classNameOption} fenext-select-option-type-${type}`, onClick: () => {
-                onClick?.({ id, text, children, data, img });
+        react_1.default.createElement(TAG, { key: id, id: `${id}`, className: `fenext-select-option fenext-select-option-${disabled ? "disabled" : ""} ${isBtn ? "fenext-select-option-btn" : ""} ${classNameOption} fenext-select-option-type-${type}`, onClick: () => {
+                if (!disabled) {
+                    onClick?.({ id, text, children, data, img });
+                }
             }, disabled: disabled, selected: selected, value: text },
             img ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("img", { src: img, alt: text, className: `fenext-select-option-img ${classNameOptionImg}` }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
