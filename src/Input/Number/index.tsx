@@ -13,13 +13,18 @@ import { useValidator } from "fenextjs-hook/cjs/useValidator";
 export interface InputNumberProps
     extends Omit<
         InputTextProps,
-        "defaultValue" | "onChange" | "onChangeValidate"
+        "defaultValue" | "onChange" | "onChangeValidate" | 'value'
     > {
-    /**
-     * The default value of the input.
-     * @default ""
-     */
-    defaultValue?: number | "";
+        /**
+         * The default value of the input.
+         * @default ""
+         */
+        value?: number | "";
+        /**
+         * The default value of the input.
+         * @default ""
+         */
+        defaultValue?: number | "";
     /**
      * The callback function that is triggered when the value of the input changes.
      */
@@ -47,13 +52,14 @@ export const InputNumber = ({
     onChange,
     useBtnIncreaseDecrease = false,
     validator = undefined,
+    value,
     ...props
 }: InputNumberProps) => {
-    const [value, setValue_] = useState<number | "">(defaultValue ?? "");
+    const [value_, setValue_] = useState<number | "">(defaultValue ?? "");
 
     const valueInput = useMemo(
-        () => (value == "" ? defaultValue : value),
-        [value, defaultValue],
+        () => value ?? (value_ == "" ? defaultValue : value_),
+        [value_, defaultValue,value],
     );
 
     const setValue = (v: number) => {
@@ -136,8 +142,8 @@ export const InputNumber = ({
                     </>
                 }
                 onChangeValidate={(v: string) => {
-                    const value = minMaxValue(valueToNumber(v));
-                    const s = props?.onChangeValidate?.(value) ?? value;
+                    const v2 = minMaxValue(valueToNumber(v));
+                    const s = props?.onChangeValidate?.(v2) ?? v2;
                     return `${s}`;
                 }}
                 onChange={(v: string) => {
