@@ -34,6 +34,7 @@ const args: InputSelectProps = {
             id: "1",
             text: "Option 1",
             children: <>Option 1</>,
+            disabled:true
         },
         {
             id: "2",

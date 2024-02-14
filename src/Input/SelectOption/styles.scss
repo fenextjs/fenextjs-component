@@ -13,6 +13,11 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    &-disabled{
+        filter: grayscale(1);
+        opacity: .5;
+        cursor: not-allowed;
+    }
     &:hover {
         color: var(--fenext-color-dark);
         background-color: var(--fenext-color-light-extra-dark);
