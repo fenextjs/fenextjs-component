@@ -5,11 +5,11 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
     @media (min-width: $breakSelectModalMovilTop) {
         --size-box: 150px;
         .fenext-select {
-            &-content-icon{
-                &-arrow{
+            &-content-icon {
+                &-arrow {
                     display: none;
                 }
-                &-search{
+                &-search {
                     display: flex;
                 }
             }
@@ -68,11 +68,11 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
 @mixin fenext-select-list {
     @media (min-width: $breakSelectModalMovilTop) {
         .fenext-select {
-            &-content-icon{
-                &-arrow{
+            &-content-icon {
+                &-arrow {
                     display: none;
                 }
-                &-search{
+                &-search {
                     display: flex;
                 }
             }
@@ -125,11 +125,10 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
     --fenext-select-height-multiple: 0px;
     --fenext-select-error-range-height: 1rem;
 
-    &-content-icon{
-        &-arrow{
-            
+    &-content-icon {
+        &-arrow {
         }
-        &-search{
+        &-search {
             display: none;
         }
     }
