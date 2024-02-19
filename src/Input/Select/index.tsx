@@ -13,6 +13,7 @@ import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorCode } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 import { useValidator } from "fenextjs-hook";
+import { SVGSearch } from "fenextjs-svg";
 
 export type InputSelectTypeStyle = "normal" | "box" | "list";
 
@@ -146,6 +147,10 @@ export interface InputSelectBaseProps<T = any>
      * searchById .
      */
     searchById?: boolean;
+    /**
+     * Icon search in select.
+     */
+    iconSearch?: ReactNode;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -176,6 +181,7 @@ export const InputSelect = <T = any,>({
     onChangeText,
     onChangeValidate,
     icon = <Arrow />,
+    iconSearch = <SVGSearch />,
     noResult,
     selected,
     create,
@@ -396,7 +402,18 @@ export const InputSelect = <T = any,>({
                     <InputText
                         {...props}
                         _t={_t}
-                        icon={icon}
+                        icon={
+                            <>
+                                <div className="fenext-select-content-icon">
+                                    <div className="fenext-select-content-icon-arrow">
+                                        {icon}
+                                    </div>
+                                    <div className="fenext-select-content-icon-search">
+                                        {iconSearch}
+                                    </div>
+                                </div>
+                            </>
+                        }
                         onChange={onChangeText_}
                         value={dataMemo?.text ?? ""}
                         onEnter={onEnter}
