@@ -133,7 +133,7 @@ export const InputPhone = ({
     const {
         dataMemo: data,
         onChangeData,
-        setData,
+        onConcatData,
         isChange,
     } = useData<Partial<PhoneProps>, Partial<PhoneProps>>(defaultValue, {
         onChangeDataMemoAfter: onChange,
@@ -191,6 +191,7 @@ export const InputPhone = ({
                 >
                     <InputSelect<Partial<PhoneProps>>
                         {...classNameSelectCode}
+                        key={data.code}
                         placeholder={placeholderCode}
                         _t={_t}
                         options={phones.map((phone) => {
@@ -214,22 +215,16 @@ export const InputPhone = ({
                                   }
                                 : undefined
                         }
-                        value={
-                            data?.code
-                                ? {
-                                      id: data.code,
-                                      text: data.code,
-                                      img: data.img,
-                                      data: data,
-                                  }
-                                : undefined
-                        }
                         onChange={(option) => {
-                            setData({
-                                ...data,
-                                ...option?.data,
-                            });
+                            if (option?.data?.code) {
+                                onConcatData({
+                                    code: option?.data?.code,
+                                    img: option?.data?.img,
+                                });
+                            }
                         }}
+                        regExp={/[^0-9+-]/g}
+                        regExpReplace=""
                         icon={
                             data?.img ? (
                                 <>
