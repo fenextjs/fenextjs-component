@@ -26,7 +26,7 @@ Index.args = {
             ),
         },
         {
-            url: "/123",
+            url: "/",
             text: "Text Items 2",
         },
         {

@@ -1,5 +1,9 @@
 .fenext-menu-item {
-    background-color: var(--fenext-color-dark);
+    --background-normal: var(--fenext-color-dark);
+    --background-active: var(--fenext-color-dark);
+    --background-hover: var(--fenext-color-dark);
+    --background: var(--background-normal);
+
     --color-normal: var(--fenext-color-light);
     --color-active: var(--fenext-color-info);
     --color-hover: var(--fenext-color-info);
@@ -16,6 +20,7 @@
         grid-template-columns: var(--size-icon) 1fr;
         gap: 0.5rem;
         color: var(--color);
+        background: var(--background);
         &-icon {
             width: 100%;
             color: currentColor;
@@ -32,12 +37,14 @@
         }
         &-active {
             --color: var(--color-active);
+            --background: var(--background-active);
             @at-root *:has(> .fenext-menu-item .fenext-collapse-header &) {
                 @for $i from 1 through 10 {
                     &:has(.fenext-menu-item-a-url-inter-#{11 - $i}) {
                         @for $j from 1 through $i {
                             .fenext-menu-item-a-url-inter-#{11 - $i - $j} {
                                 --color: var(--color-normal);
+                                --background: var(--background-normal);
                             }
                         }
                     }
@@ -48,6 +55,7 @@
         }
         &:hover {
             --color: var(--color-hover);
+            --background: var(--background-hover);
         }
     }
     &:has(> .fenext-collapse > .fenext-collapse-body:empty) {
