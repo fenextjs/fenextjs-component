@@ -127,8 +127,12 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
 
     &-content-icon {
         &-arrow {
+            display: flex;
+            align-items: center;
         }
         &-search {
+            display: flex;
+            align-items: center;
             display: none;
         }
     }
