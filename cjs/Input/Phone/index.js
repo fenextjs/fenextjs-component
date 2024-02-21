@@ -28,7 +28,7 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
 }, value = undefined, onChange, validator = undefined, _t = (e) => e, ...props }) => {
     const [error, setError] = (0, react_1.useState)(undefined);
     const [loadPhoneCodes, setlLoadPhoneCodes] = (0, react_1.useState)(false);
-    const { dataMemo: data, onChangeData, setData, isChange, } = (0, useData_1.useData)(defaultValue, {
+    const { dataMemo: data, onChangeData, onConcatData, isChange, } = (0, useData_1.useData)(defaultValue, {
         onChangeDataMemoAfter: onChange,
         onMemo: (d) => {
             const v = value ?? d;
@@ -70,7 +70,7 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
         react_1.default.createElement("div", { className: `fenext-input-phone ${classNamePhone}` },
             react_1.default.createElement("div", { className: `fenext-input-phone-label fenext-input-label ${classNamePhoneLabel} ` }, (0, fenextjs_functions_1._tValidate)(label, _t)),
             react_1.default.createElement("div", { className: `fenext-input-phone-code ${classNamePhoneCode}` },
-                react_1.default.createElement(Select_1.InputSelect, { ...classNameSelectCode, placeholder: placeholderCode, _t: _t, options: phones.map((phone) => {
+                react_1.default.createElement(Select_1.InputSelect, { ...classNameSelectCode, key: data.code, placeholder: placeholderCode, _t: _t, options: phones.map((phone) => {
                         return {
                             id: phone.code,
                             text: phone.code,
@@ -84,19 +84,14 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                             img: data.img,
                             data: data,
                         }
-                        : undefined, value: data?.code
-                        ? {
-                            id: data.code,
-                            text: data.code,
-                            img: data.img,
-                            data: data,
-                        }
                         : undefined, onChange: (option) => {
-                        setData({
-                            ...data,
-                            ...option?.data,
-                        });
-                    }, icon: data?.img ? (react_1.default.createElement(react_1.default.Fragment, null,
+                        if (option?.data?.code) {
+                            onConcatData({
+                                code: option?.data?.code,
+                                img: option?.data?.img,
+                            });
+                        }
+                    }, regExp: /[^0-9+-]/g, regExpReplace: "", icon: data?.img ? (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("img", { src: data.img, alt: data.code }))) : (react_1.default.createElement(react_1.default.Fragment, null)) })),
             react_1.default.createElement("div", { className: `fenext-input-phone-text ${classNamePhoneNumber}` },
                 react_1.default.createElement(Text_1.InputText, { ...classNameInputNumber, ...props, type: "number", onChange: onChangeData("number"), loader: !loadPhoneCodes || loader, disabled: !loadPhoneCodes || disabled, placeholder: placeholder, defaultValue: data?.number, value: value?.number, _t: _t, validator: validator?.getObjectValidator?.()?.number })),
