@@ -101,6 +101,10 @@ export interface InputSelectBaseProps<T = any>
      */
     noResult?: InputSelectItemOptionBaseProps<T>;
     /**
+     * Value of Not Result of select.
+     */
+    loaderOption?: InputSelectItemOptionBaseProps<T>;
+    /**
      * Value of Selected of select.
      */
     selected?: InputSelectItemOptionBaseProps<T>;
@@ -183,6 +187,7 @@ export const InputSelect = <T = any,>({
     icon = <Arrow />,
     iconSearch = <SVGSearch />,
     noResult,
+    loaderOption,
     selected,
     create,
     onCreate,
@@ -487,20 +492,42 @@ export const InputSelect = <T = any,>({
                             />
                         );
                     })}
-                    {OPTIONS.length == 0 ? (
+                    {props.loader ? (
                         <>
                             <InputSelectOption
                                 type={typeSelect == "div" ? "div" : "option"}
-                                id={noResult?.id ?? "notResult"}
-                                text={noResult?.text ?? "Not Result"}
-                                children={noResult?.children ?? undefined}
-                                classNameOption="fenext-select-option-not-result"
+                                id={loaderOption?.id ?? "loader"}
+                                text={loaderOption?.text ?? "Loading"}
+                                children={loaderOption?.children ?? undefined}
+                                classNameOption="fenext-select-option-loading"
                                 _t={_t}
                                 disabled={true}
                             />
                         </>
                     ) : (
-                        <></>
+                        <>
+                            {OPTIONS.length == 0 ? (
+                                <>
+                                    <InputSelectOption
+                                        type={
+                                            typeSelect == "div"
+                                                ? "div"
+                                                : "option"
+                                        }
+                                        id={noResult?.id ?? "notResult"}
+                                        text={noResult?.text ?? "Not Result"}
+                                        children={
+                                            noResult?.children ?? undefined
+                                        }
+                                        classNameOption="fenext-select-option-not-result"
+                                        _t={_t}
+                                        disabled={true}
+                                    />
+                                </>
+                            ) : (
+                                <></>
+                            )}
+                        </>
                     )}
                 </TAG>
             </div>
