@@ -47,3 +47,4 @@ export * from "./Chronometer";
 export * from "./ChronologicalList";
 export * from "./SwichView";
 export * from "./TableActionCheckbox";
+export * from "./Alert";

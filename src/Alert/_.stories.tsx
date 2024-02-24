@@ -1,0 +1,46 @@
+import React, { PropsWithChildren } from "react";
+import { Story, Meta } from "@storybook/react";
+
+import { Alert, AlertProps } from "./index";
+
+export default {
+    title: "Component/Alert",
+    component: Alert,
+} as Meta;
+
+const Profile: Story<PropsWithChildren<AlertProps>> = (args) => (
+    <Alert {...args} />
+);
+
+const argsBase: AlertProps = {
+    message:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tenetur ullam voluptatum dignissimos deserunt quasi nihil",
+    type: "OK",
+};
+
+const argsBaseOK: AlertProps = {
+    ...argsBase,
+};
+export const OK = Profile.bind({});
+OK.args = argsBaseOK;
+
+const argsBaseERROR: AlertProps = {
+    ...argsBase,
+    type: "ERROR",
+};
+export const ERROR = Profile.bind({});
+ERROR.args = argsBaseERROR;
+
+const argsBaseNORMAL: AlertProps = {
+    ...argsBase,
+    type: "NORMAL",
+};
+export const NORMAL = Profile.bind({});
+NORMAL.args = argsBaseNORMAL;
+
+const argsBaseWARNING: AlertProps = {
+    ...argsBase,
+    type: "WARNING",
+};
+export const WARNING = Profile.bind({});
+WARNING.args = argsBaseWARNING;

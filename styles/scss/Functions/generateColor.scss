@@ -16,6 +16,7 @@
     --fenext-color-#{$name}-extra-dark: #{$extraDark};
     --fenext-color-#{$name}-dark: #{$dark};
     --fenext-color-#{$name}: #{$color};
+    --fenext-color-#{$name}-neto-#{$theme}: #{$color};
     --fenext-color-#{$name}-light: #{$light};
     --fenext-color-#{$name}-extra-light: #{$extraLight};
 }
