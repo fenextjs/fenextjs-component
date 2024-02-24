@@ -3177,6 +3177,9 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   grid-template-rows: var(--fenext-size-menu-top, auto) 1fr;
   min-height: 100dvh;
 }
+.fenext-layout-grid-mt .fenext-layout-grid-alert {
+  top: var(--fenext-size-menu-top, 0);
+}
 .fenext-layout-grid-mt-menu-top {
   position: relative;
   position: sticky;
@@ -3202,6 +3205,10 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   position: absolute;
   inset: 0;
   margin: auto;
+}
+.fenext-layout-grid-alert {
+  position: sticky;
+  top: 0;
 }
 
 .fenext-collapse {
@@ -5815,7 +5822,6 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
   grid-template-columns: 1fr auto;
   gap: 1rem;
   align-items: center;
-  border-radius: 0.5rem;
   --color: var(--fenext-color-dark-neto-light);
   --background: var(--fenext-color-gray);
   color: var(--color);

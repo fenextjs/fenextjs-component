@@ -1,10 +1,19 @@
 import React, { PropsWithChildren, ReactNode } from "react";
 import { Loader, LoaderClassProps } from "../../../Loader";
 import { PageProgress } from "../../../PageProgress";
+import { AlertHook, AlertHookProps } from "../../../AlertHook";
 /**
  * Properties for the base button component.
  */
 export interface LayoutGridMenuTopBaseProps extends PropsWithChildren {
+    /**
+     * Indicates if render componenet alert hook.
+     */
+    useAlertHook?: boolean;
+    /**
+     * props for alert hook.
+     */
+    alertHookProps?:AlertHookProps
     /**
      * Indicates whether the page is currently in the loading state.
      */
@@ -54,6 +63,8 @@ export const LayoutGridMenuTop = ({
     menuTop,
     loader = false,
     usePageProgress = true,
+    useAlertHook = true,
+    alertHookProps={},
     ...props
 }: LayoutGridMenuTopProps) => {
     return (
@@ -71,6 +82,7 @@ export const LayoutGridMenuTop = ({
                     className={`fenext-layout-grid-mt-children ${classNameChildren}`}
                 >
                     {usePageProgress && <PageProgress />}
+                    {useAlertHook && <AlertHook {...alertHookProps} className={`fenext-layout-grid-alert ${alertHookProps?.className ?? ''}`}/>}
                     {loader ? (
                         <Loader
                             classNameLoader={`${classNameLoader} fenext-layout-grid-loader`}

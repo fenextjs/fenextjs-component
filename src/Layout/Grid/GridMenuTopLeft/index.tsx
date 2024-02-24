@@ -48,6 +48,8 @@ export const LayoutGridMenuTopLeft = ({
     menuLeftMovilActive = false,
     useHeaderButtonMenu = false,
     usePageProgress = true,
+    alertHookProps,
+    useAlertHook = true,
 }: LayoutGridMenuTopLeftProps) => {
     return (
         <>
@@ -56,6 +58,7 @@ export const LayoutGridMenuTopLeft = ({
                 classNameMenuTop={classNameMenuTop}
                 menuTop={menuTop}
                 usePageProgress={false}
+                useAlertHook={false}
             >
                 <LayoutGridMenuLeft
                     classNameLoader={classNameLoader}
@@ -68,6 +71,8 @@ export const LayoutGridMenuTopLeft = ({
                     menuLeftMovilActive={menuLeftMovilActive}
                     useHeaderButtonMenu={useHeaderButtonMenu}
                     usePageProgress={usePageProgress}
+                    useAlertHook={useAlertHook}
+                    alertHookProps={alertHookProps}
                 >
                     {children}
                 </LayoutGridMenuLeft>

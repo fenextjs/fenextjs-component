@@ -1,5 +1,8 @@
 import React, { PropsWithChildren } from "react";
 import { Story, Meta } from "@storybook/react";
+import { useAlert } from "fenextjs-hook";
+import { Button } from "../../../Button";
+import { AlertProps } from "fenextjs-interface";
 
 import { LayoutGridMenuTopLeft, LayoutGridMenuTopLeftProps } from "./index";
 import { ButtonMenu } from "../../../Header/ButtonMenu";
@@ -11,7 +14,72 @@ export default {
 
 const Profile: Story<PropsWithChildren<LayoutGridMenuTopLeftProps>> = (
     args,
-) => <LayoutGridMenuTopLeft {...args} />;
+) => {
+    const { setAlert } = useAlert({});
+    const argsBase: AlertProps = {
+        message:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tenetur ullam voluptatum dignissimos deserunt quasi nihil",
+        type: "OK",
+    };
+    const argsBaseOK: AlertProps = {
+        ...argsBase,
+    };
+    const argsBaseERROR: AlertProps = {
+        ...argsBase,
+        type: "ERROR",
+    };
+    const argsBaseNORMAL: AlertProps = {
+        ...argsBase,
+        type: "NORMAL",
+    };
+    const argsBaseWARNING: AlertProps = {
+        ...argsBase,
+        type: "WARNING",
+    };
+
+    return (
+        <>
+            <LayoutGridMenuTopLeft {...args}>
+                {args?.children}
+                <div
+                    style={{
+                        display: "grid",
+                        gap: "1rem",
+                    }}
+                >
+                    <Button
+                        onClick={() => {
+                            setAlert(argsBaseOK);
+                        }}
+                    >
+                        Test generate alert OK
+                    </Button>
+                    <Button
+                        onClick={() => {
+                            setAlert(argsBaseERROR);
+                        }}
+                    >
+                        Test generate alert ERROR
+                    </Button>
+                    <Button
+                        onClick={() => {
+                            setAlert(argsBaseNORMAL);
+                        }}
+                    >
+                        Test generate alert NORMAL
+                    </Button>
+                    <Button
+                        onClick={() => {
+                            setAlert(argsBaseWARNING);
+                        }}
+                    >
+                        Test generate alert WARNING
+                    </Button>
+                </div>
+            </LayoutGridMenuTopLeft>
+        </>
+    );
+};
 
 export const Index = Profile.bind({});
 Index.args = {
@@ -32,6 +100,7 @@ Index.args = {
                 nesciunt numquam modi hic, sit repellat at iste?
             </p>
             <h1>It is Body</h1>
+
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Aperiam laboriosam qui expedita nostrum facere consequuntur
@@ -318,7 +387,7 @@ WithBtnMenuAndElementContainer.args = {
             <div className="content_c">
                 <h3>@container con fenext-layout-grid-ml-children</h3>
                 <code>
-                   {`
+                    {`
                      @container  (min-width: 700px) {
                         .content_c {
                             background:red
@@ -331,7 +400,7 @@ WithBtnMenuAndElementContainer.args = {
                 or
                 <br />
                 <code>
-                   {`
+                    {`
                     @container  fenext-layout-grid-ml-children (min-width: 700px) {
                        .content_c {
                            background:red
@@ -344,9 +413,11 @@ WithBtnMenuAndElementContainer.args = {
                 <br />
                 <br />
                 <br />
-                <h3>@container con fenext-layout-grid-mt-children (window width)</h3>
+                <h3>
+                    @container con fenext-layout-grid-mt-children (window width)
+                </h3>
                 <code>
-                   {`
+                    {`
                     @container fenext-layout-grid-mt-children (min-width: 700px) {
                         .content_c {
                             border:5px solid blue;
