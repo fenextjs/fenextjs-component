@@ -51,7 +51,7 @@
     "@react-google-maps/api": "^2.19.3",
     "fenextjs-error": "^2.0.0",
     "fenextjs-functions": "^2.0.0",
-    "fenextjs-hook": "^2.2.0",
+    "fenextjs-hook": "^2.2.3",
     "fenextjs-img-placeholder": "^2.0.0",
     "fenextjs-interface": "^2.1.0",
     "fenextjs-svg": "2.0.0",
