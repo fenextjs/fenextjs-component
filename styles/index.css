@@ -5865,6 +5865,10 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
   --background: var(--fenext-color-yellow);
 }
 
+.fenext-alert-hook:empty {
+  display: none;
+}
+
 @keyframes to-rotate {
   to {
     transform: rotate(360deg);
