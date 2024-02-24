@@ -1,9 +1,18 @@
 import React, { PropsWithChildren, ReactNode } from "react";
 import { LoaderClassProps } from "../../../Loader";
+import { AlertHookProps } from "../../../AlertHook";
 /**
  * Properties for the base button component.
  */
 export interface LayoutGridMenuLeftBaseProps extends PropsWithChildren {
+    /**
+     * Indicates if render componenet alert hook.
+     */
+    useAlertHook?: boolean;
+    /**
+     * props for alert hook.
+     */
+    alertHookProps?: AlertHookProps;
     /**
      * Indicates whether the page is currently in the loading state.
      */
@@ -55,4 +64,4 @@ export interface LayoutGridMenuLeftClassProps extends LoaderClassProps {
  */
 export interface LayoutGridMenuLeftProps extends LayoutGridMenuLeftBaseProps, LayoutGridMenuLeftClassProps {
 }
-export declare const LayoutGridMenuLeft: ({ className, classNameLoader, classNameChildren, classNameMenuLeft, classNameMenuLeftContent, children, menuLeft, loader, menuLeftActive, menuLeftMovilActive, useHeaderButtonMenu, usePageProgress, ...props }: LayoutGridMenuLeftProps) => React.JSX.Element;
+export declare const LayoutGridMenuLeft: ({ className, classNameLoader, classNameChildren, classNameMenuLeft, classNameMenuLeftContent, children, menuLeft, loader, menuLeftActive, menuLeftMovilActive, useHeaderButtonMenu, usePageProgress, useAlertHook, alertHookProps, ...props }: LayoutGridMenuLeftProps) => React.JSX.Element;

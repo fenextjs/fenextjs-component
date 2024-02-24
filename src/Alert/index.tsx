@@ -2,14 +2,12 @@ import React, { ReactNode } from "react";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 import { Close } from "fenextjs-svg";
-import {AlertProps as AlertInterface} from 'fenextjs-interface'
-
+import { AlertProps as AlertInterface } from "fenextjs-interface";
 
 /**
  * Properties for the Alert component.
  */
 export interface AlertProps extends _TProps, AlertInterface {
-
     /**
      * The class name for the component.
      */
@@ -21,19 +19,18 @@ export interface AlertProps extends _TProps, AlertInterface {
     /**
      * The onClose for the component.
      */
-    onClose?: ()=>void;
+    onClose?: () => void;
 }
 
 export const Alert = ({
     className = "",
     message,
-    iconClose = <Close/>,
+    iconClose = <Close />,
     type,
     data,
     _t,
     onClose,
 }: AlertProps) => {
-
     return (
         <>
             <div

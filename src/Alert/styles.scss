@@ -31,9 +31,9 @@
         cursor: pointer;
         background: var(--fenext-color-red-neto-light);
         color: var(--fenext-color-light-neto-light);
-        transition: .5s;
-        &:hover{
-            scale: .8;
+        transition: 0.5s;
+        &:hover {
+            scale: 0.8;
         }
         svg {
             width: 100%;

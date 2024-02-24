@@ -6,7 +6,7 @@
     grid-template-rows: var(--fenext-size-menu-top, auto) 1fr;
 
     min-height: 100dvh;
-    .fenext-layout-grid-alert{
+    .fenext-layout-grid-alert {
         top: var(--fenext-size-menu-top, 0);
     }
     &-menu-top {

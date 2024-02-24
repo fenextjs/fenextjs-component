@@ -13,7 +13,7 @@ export interface LayoutGridMenuLeftBaseProps extends PropsWithChildren {
     /**
      * props for alert hook.
      */
-    alertHookProps?:AlertHookProps
+    alertHookProps?: AlertHookProps;
     /**
      * Indicates whether the page is currently in the loading state.
      */
@@ -84,7 +84,7 @@ export const LayoutGridMenuLeft = ({
     useHeaderButtonMenu = false,
     usePageProgress = true,
     useAlertHook = true,
-    alertHookProps={},
+    alertHookProps = {},
     ...props
 }: LayoutGridMenuLeftProps) => {
     return (
@@ -117,7 +117,12 @@ export const LayoutGridMenuLeft = ({
                     className={`fenext-layout-grid-ml-children ${classNameChildren}`}
                 >
                     {usePageProgress && <PageProgress />}
-                    {useAlertHook && <AlertHook {...alertHookProps} className={`fenext-layout-grid-alert ${alertHookProps?.className ?? ''}`}/>}
+                    {useAlertHook && (
+                        <AlertHook
+                            {...alertHookProps}
+                            className={`fenext-layout-grid-alert ${alertHookProps?.className ?? ""}`}
+                        />
+                    )}
                     {loader ? (
                         <Loader
                             classNameLoader={`${classNameLoader} fenext-layout-grid-loader`}
