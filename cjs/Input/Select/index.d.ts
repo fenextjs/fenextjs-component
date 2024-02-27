@@ -113,6 +113,10 @@ export interface InputSelectBaseProps<T = any> extends Omit<InputTextBaseProps, 
      * Icon search in select.
      */
     iconSearch?: ReactNode;
+    /**
+     * changeByFirstOptionInOnBlur in select.
+     */
+    changeByFirstOptionInOnBlur?: boolean;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -124,4 +128,4 @@ export interface InputSelectValue<T = any> {
     text?: string;
     textSearch?: string;
 }
-export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, _t, ...props }: InputSelectProps<T>) => React.JSX.Element;
+export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, _t, ...props }: InputSelectProps<T>) => React.JSX.Element;
