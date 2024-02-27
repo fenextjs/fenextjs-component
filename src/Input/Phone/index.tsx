@@ -234,6 +234,7 @@ export const InputPhone = ({
                                 <></>
                             )
                         }
+                        changeByFirstOptionInOnBlur={true}
                     />
                 </div>
                 <div

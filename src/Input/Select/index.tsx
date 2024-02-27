@@ -155,6 +155,10 @@ export interface InputSelectBaseProps<T = any>
      * Icon search in select.
      */
     iconSearch?: ReactNode;
+    /**
+     * changeByFirstOptionInOnBlur in select.
+     */
+    changeByFirstOptionInOnBlur?: boolean;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -200,6 +204,7 @@ export const InputSelect = <T = any,>({
     validator,
     searchById = false,
     useSwichtypeSelectStyle = false,
+    changeByFirstOptionInOnBlur = false,
     _t,
     ...props
 }: InputSelectProps<T>) => {
@@ -223,6 +228,7 @@ export const InputSelect = <T = any,>({
     const [dataErrorInput, setErrorInput] = useState<ErrorFenextjs | undefined>(
         undefined,
     );
+    const [isChangeTextBlur, setIsChangeTextBlur] = useState(false);
     const { data, setData, isChange } = useData<
         InputSelectValue<T>,
         InputSelectValue<T>
@@ -277,6 +283,7 @@ export const InputSelect = <T = any,>({
         if (!isSelectChangeText) {
             return;
         }
+        setIsChangeTextBlur(true);
         onChangeText?.(text);
         let option: InputSelectItemOptionBaseProps<T> | undefined = undefined;
         if (typeSelect != "div") {
@@ -356,18 +363,26 @@ export const InputSelect = <T = any,>({
             });
         }
     };
-
     const { error: errorFenext } = useValidator({
         data: data.option,
         validator,
     });
-
     const errorInput = useMemo<ErrorFenextjs | undefined>(() => {
         if (errorWithIsChange && !isChange) {
             return undefined;
         }
         return error ?? errorFenext ?? dataErrorInput;
     }, [error, errorFenext, dataErrorInput, errorWithIsChange, isChange]);
+
+    const onBlur = () => {
+        if (changeByFirstOptionInOnBlur && isChangeTextBlur) {
+            const optionSect = OPTIONS[0];
+            if (optionSect) {
+                onChangeOption(optionSect);
+                setIsChangeTextBlur(false);
+            }
+        }
+    };
 
     return (
         <>
@@ -419,6 +434,7 @@ export const InputSelect = <T = any,>({
                                 </div>
                             </>
                         }
+                        onBlur={onBlur}
                         onChange={onChangeText_}
                         value={dataMemo?.text ?? ""}
                         onEnter={onEnter}
