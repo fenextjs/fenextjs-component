@@ -12,7 +12,7 @@ const useData_1 = require("fenextjs-hook/cjs/useData");
 const Close_1 = require("fenextjs-svg/cjs/Close");
 const Collapse_1 = require("../../Collapse");
 const fenextjs_functions_1 = require("fenextjs-functions");
-const Loader_1 = require("@/Loader");
+const Loader_1 = require("../../Loader");
 const InputUpload = ({ className = "", classNameBtn = {}, classNameContentIcon = "", classNameText = {}, classNamePreview = "", classNameTitle = {
     tag: "h2",
 }, classNameUp = "", classNameProgress = "", classNameRemove = "", btn = "Choose File", icon = (react_1.default.createElement(react_1.default.Fragment, null,

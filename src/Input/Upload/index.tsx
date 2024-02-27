@@ -10,7 +10,7 @@ import { ErrorProps } from "fenextjs-interface/cjs/Error";
 import { Close } from "fenextjs-svg/cjs/Close";
 import { Collapse } from "../../Collapse";
 import { _tValidate } from "fenextjs-functions";
-import { LoaderSpinner } from "@/Loader";
+import { LoaderSpinner } from "../../Loader";
 
 /**
  * Properties for the base InputUpload component.
