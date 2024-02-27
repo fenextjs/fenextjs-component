@@ -10,6 +10,7 @@ import { ErrorProps } from "fenextjs-interface/cjs/Error";
 import { Close } from "fenextjs-svg/cjs/Close";
 import { Collapse } from "../../Collapse";
 import { _tValidate } from "fenextjs-functions";
+import { LoaderSpinner } from "@/Loader";
 
 /**
  * Properties for the base InputUpload component.
@@ -39,6 +40,14 @@ export interface InputUploadBaseProps extends InputFileBaseProps {
      * The tagPreview for the component.
      */
     tagPreview?: "iframe" | "img";
+    /**
+     * The loader for the component.
+     */
+    loader?: boolean
+    /**
+     * The Icon for the component.
+     */
+    iconLoader?: React.ReactNode;
 }
 
 /**
@@ -120,7 +129,8 @@ export const InputUpload = ({
     onChange,
 
     tagPreview = "iframe",
-
+    loader=false,
+    iconLoader = <LoaderSpinner/>,
     _t,
     ...props
 }: InputUploadProps) => {
@@ -166,6 +176,13 @@ export const InputUpload = ({
                             >
                                 {_tValidate(data?.text, _t)}
                             </Title>
+                                <div
+                                    className={`fenext-input-upload-content-icon ${classNameContentIcon}`}
+                                >
+                                    {
+                                        loader ? iconLoader : "" 
+                                    }
+                                </div>
                             <Collapse
                                 header={
                                     <>
@@ -229,7 +246,9 @@ export const InputUpload = ({
                                 <div
                                     className={`fenext-input-upload-content-icon ${classNameContentIcon}`}
                                 >
-                                    {icon}
+                                    {
+                                        loader ? iconLoader : icon 
+                                    }
                                 </div>
                                 <Button
                                     {...classNameBtn}

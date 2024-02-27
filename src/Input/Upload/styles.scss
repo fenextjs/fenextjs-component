@@ -37,6 +37,9 @@
     }
     &-content-icon {
         width: min(100%, 2rem);
+        &:empty{
+            display: none;
+        }
     }
     &-btn {
     }
