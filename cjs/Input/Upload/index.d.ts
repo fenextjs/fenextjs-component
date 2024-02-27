@@ -31,6 +31,14 @@ export interface InputUploadBaseProps extends InputFileBaseProps {
      * The tagPreview for the component.
      */
     tagPreview?: "iframe" | "img";
+    /**
+     * The loader for the component.
+     */
+    loader?: boolean;
+    /**
+     * The Icon for the component.
+     */
+    iconLoader?: React.ReactNode;
 }
 /**
  * Properties for the class of the InputUpload component.
@@ -78,4 +86,4 @@ export interface InputUploadClassProps {
  */
 export interface InputUploadProps extends InputUploadBaseProps, InputUploadClassProps {
 }
-export declare const InputUpload: ({ className, classNameBtn, classNameContentIcon, classNameText, classNamePreview, classNameTitle, classNameUp, classNameProgress, classNameRemove, btn, icon, text, title, textPreview, defaultValue, parseProgress, onChange, tagPreview, _t, ...props }: InputUploadProps) => React.JSX.Element;
+export declare const InputUpload: ({ className, classNameBtn, classNameContentIcon, classNameText, classNamePreview, classNameTitle, classNameUp, classNameProgress, classNameRemove, btn, icon, text, title, textPreview, defaultValue, parseProgress, onChange, tagPreview, loader, iconLoader, _t, ...props }: InputUploadProps) => React.JSX.Element;

@@ -43,7 +43,7 @@ export interface InputUploadBaseProps extends InputFileBaseProps {
     /**
      * The loader for the component.
      */
-    loader?: boolean
+    loader?: boolean;
     /**
      * The Icon for the component.
      */
@@ -129,8 +129,8 @@ export const InputUpload = ({
     onChange,
 
     tagPreview = "iframe",
-    loader=false,
-    iconLoader = <LoaderSpinner/>,
+    loader = false,
+    iconLoader = <LoaderSpinner />,
     _t,
     ...props
 }: InputUploadProps) => {
@@ -176,13 +176,11 @@ export const InputUpload = ({
                             >
                                 {_tValidate(data?.text, _t)}
                             </Title>
-                                <div
-                                    className={`fenext-input-upload-content-icon ${classNameContentIcon}`}
-                                >
-                                    {
-                                        loader ? iconLoader : "" 
-                                    }
-                                </div>
+                            <div
+                                className={`fenext-input-upload-content-icon ${classNameContentIcon}`}
+                            >
+                                {loader ? iconLoader : ""}
+                            </div>
                             <Collapse
                                 header={
                                     <>
@@ -246,9 +244,7 @@ export const InputUpload = ({
                                 <div
                                     className={`fenext-input-upload-content-icon ${classNameContentIcon}`}
                                 >
-                                    {
-                                        loader ? iconLoader : icon 
-                                    }
+                                    {loader ? iconLoader : icon}
                                 </div>
                                 <Button
                                     {...classNameBtn}

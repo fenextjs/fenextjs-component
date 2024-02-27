@@ -12,13 +12,14 @@ const useData_1 = require("fenextjs-hook/cjs/useData");
 const Close_1 = require("fenextjs-svg/cjs/Close");
 const Collapse_1 = require("../../Collapse");
 const fenextjs_functions_1 = require("fenextjs-functions");
+const Loader_1 = require("@/Loader");
 const InputUpload = ({ className = "", classNameBtn = {}, classNameContentIcon = "", classNameText = {}, classNamePreview = "", classNameTitle = {
     tag: "h2",
 }, classNameUp = "", classNameProgress = "", classNameRemove = "", btn = "Choose File", icon = (react_1.default.createElement(react_1.default.Fragment, null,
     react_1.default.createElement(Upload_1.Upload2, null))), text = "Drag and drop your file or template here.", title = "Drag and drop here", textPreview = "Preview File", defaultValue = {
     fileData: "",
     text: "",
-}, parseProgress = (e) => `Uploading . . . ${e.toFixed(0)}%`, onChange, tagPreview = "iframe", _t, ...props }) => {
+}, parseProgress = (e) => `Uploading . . . ${e.toFixed(0)}%`, onChange, tagPreview = "iframe", loader = false, iconLoader = react_1.default.createElement(Loader_1.LoaderSpinner, null), _t, ...props }) => {
     const { data, setData } = (0, useData_1.useData)(defaultValue, {
         onChangeDataAfter: onChange,
     });
@@ -40,6 +41,7 @@ const InputUpload = ({ className = "", classNameBtn = {}, classNameContentIcon =
                 : ""} ${error ? "fenext-input-upload-error" : ""}` }, data.fileData && data.fileData != "" ? (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement("div", { className: `fenext-input-upload-up ${classNameUp}` },
                 react_1.default.createElement(Title_1.Title, { ...classNameTitle, className: `fenext-input-upload-title ${classNameTitle.className}` }, (0, fenextjs_functions_1._tValidate)(data?.text, _t)),
+                react_1.default.createElement("div", { className: `fenext-input-upload-content-icon ${classNameContentIcon}` }, loader ? iconLoader : ""),
                 react_1.default.createElement(Collapse_1.Collapse, { header: react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement(Text_1.Text, { ...classNameText, className: `fenext-input-upload-text ${classNameText.className}` }, (0, fenextjs_functions_1._tValidate)(textPreview, _t))) },
                     react_1.default.createElement(TAGPREVIEW, { src: data.fileData, className: `fenext-input-upload-preview ${classNamePreview}` })),
@@ -53,7 +55,7 @@ const InputUpload = ({ className = "", classNameBtn = {}, classNameContentIcon =
             react_1.default.createElement(File_1.InputFile, { onChange: setData, parseProgress: () => "", onChangeProgress: setProgress, onChangeError: setError, ...props, _t: _t },
                 react_1.default.createElement("div", { className: `fenext-input-upload-up ${classNameUp}` },
                     progress > 0 && progress < 100 ? (react_1.default.createElement(Title_1.Title, { ...classNameTitle, className: `fenext-input-upload-progress ${classNameProgress}` }, parseProgress(progress))) : (react_1.default.createElement(Title_1.Title, { ...classNameTitle, className: `fenext-input-upload-title ${classNameTitle.className}` }, (0, fenextjs_functions_1._tValidate)(title, _t))),
-                    react_1.default.createElement("div", { className: `fenext-input-upload-content-icon ${classNameContentIcon}` }, icon),
+                    react_1.default.createElement("div", { className: `fenext-input-upload-content-icon ${classNameContentIcon}` }, loader ? iconLoader : icon),
                     react_1.default.createElement(Button_1.Button, { ...classNameBtn, className: `fenext-input-upload-btn ${classNameBtn.className}` }, (0, fenextjs_functions_1._tValidate)(btn, _t)),
                     react_1.default.createElement(Text_1.Text, { ...classNameText, className: `fenext-input-upload-text ${classNameText.className}` }, (0, fenextjs_functions_1._tValidate)(text, _t)))))))));
 };
