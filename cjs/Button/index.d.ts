@@ -2,6 +2,7 @@ import React, { PropsWithChildren, ReactNode } from "react";
 import { LoaderClassProps } from "../Loader";
 import { _TProps } from "fenextjs-interface";
 export type ButtonBaseSize = "extra-small" | "small" | "normal" | "strong" | "extra-strong";
+export type ButtonOnClick = React.MouseEventHandler<HTMLButtonElement> & React.MouseEventHandler<HTMLDivElement>;
 /**
  * Properties for the base button component.
  */
@@ -17,7 +18,11 @@ export interface ButtonBaseProps extends PropsWithChildren, _TProps {
     /**
      * The callback function that is called when the button is clicked.
      */
-    onClick?: React.MouseEventHandler<HTMLButtonElement> & React.MouseEventHandler<HTMLDivElement>;
+    onClick?: ButtonOnClick;
+    /**
+     * The callback function that is called when the button is clicked as disabled.
+     */
+    onClickDisabled?: ButtonOnClick;
     /**
      * The icon to display in the button.
      */
@@ -49,4 +54,4 @@ export interface ButtonClassProps extends LoaderClassProps {
  */
 export interface ButtonProps extends ButtonBaseProps, ButtonClassProps {
 }
-export declare const Button: ({ className, classNameLoader, children, loader, disabled, onClick, icon, isBtn, full, size, _t, }: ButtonProps) => React.JSX.Element;
+export declare const Button: ({ className, classNameLoader, children, loader, disabled, onClick, onClickDisabled, icon, isBtn, full, size, _t, }: ButtonProps) => React.JSX.Element;
