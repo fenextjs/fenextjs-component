@@ -10,6 +10,8 @@ export type ButtonBaseSize =
     | "strong"
     | "extra-strong";
 
+export type ButtonOnClick = React.MouseEventHandler<HTMLButtonElement> &
+    React.MouseEventHandler<HTMLDivElement>;
 /**
  * Properties for the base button component.
  */
@@ -25,8 +27,11 @@ export interface ButtonBaseProps extends PropsWithChildren, _TProps {
     /**
      * The callback function that is called when the button is clicked.
      */
-    onClick?: React.MouseEventHandler<HTMLButtonElement> &
-        React.MouseEventHandler<HTMLDivElement>;
+    onClick?: ButtonOnClick;
+    /**
+     * The callback function that is called when the button is clicked as disabled.
+     */
+    onClickDisabled?: ButtonOnClick;
     /**
      * The icon to display in the button.
      */
@@ -68,6 +73,7 @@ export const Button = ({
     loader = false,
     disabled = false,
     onClick = () => {},
+    onClickDisabled = () => {},
     icon = "",
     isBtn = true,
     full = false,
@@ -79,7 +85,7 @@ export const Button = ({
     return (
         <>
             <Tag
-                onClick={disabled ? () => 1 : onClick}
+                onClick={disabled ? onClickDisabled : onClick}
                 className={`fenext-btn fenext-btn-size-${size}  ${
                     full ? "fenext-btn-size-full" : ""
                 } ${className} `}
