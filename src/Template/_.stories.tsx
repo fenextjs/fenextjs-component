@@ -13,4 +13,5 @@ const Profile: Story<PropsWithChildren<TemplateProps>> = (args) => (
 );
 
 export const Index = Profile.bind({});
-Index.args = {} as TemplateProps;
+const args : TemplateProps = {}
+Index.args = args

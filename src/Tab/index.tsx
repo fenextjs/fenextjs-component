@@ -151,6 +151,9 @@ export interface TabClassProps {
 export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps {}
 
 export const parseTabCount = <T,>(d: TabItemProps<T>): TabItemProps<T> => {
+    if (!d.useCount) {
+        return d;
+    }
     return {
         ...d,
         head: (
@@ -199,15 +202,11 @@ export const Tab = <T = string,>({
     );
 
     const CHead = useMemo(() => {
-        let ITEMS = items;
-        if (useCount) {
-            ITEMS = ITEMS.map(parseTabCount<T>);
-        }
-        return ITEMS.map((item, i) => {
-            let ITEM = item;
-            if (ITEM.useCount) {
-                ITEM = parseTabCount<T>(ITEM);
-            }
+        return items.map((item, i) => {
+            const ITEM = parseTabCount<T>({
+                ...item,
+                useCount: item?.useCount ?? useCount ?? false,
+            });
             return (
                 <div
                     key={i}
