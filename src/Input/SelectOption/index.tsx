@@ -120,7 +120,7 @@ export const InputSelectOption = <T = any,>({
                     fenext-select-option-${selected ? "selected" : "not-selected"}
                     fenext-select-option-${isBtn ? "btn" : ""}
                     fenext-select-option-type-${type}
-                    fenext-select-option-${hidden ? "hidden":"not-hidden"}
+                    fenext-select-option-${hidden ? "hidden" : "not-hidden"}
                     ${classNameOption}
                 `}
                 onClick={() => {

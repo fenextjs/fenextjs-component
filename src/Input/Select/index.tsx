@@ -509,7 +509,10 @@ export const InputSelect = <T = any,>({
                         return (
                             <InputSelectOption<T>
                                 key={i}
-                                selected={data.option?.id!=undefined && data.option?.id === option?.id}
+                                selected={
+                                    data.option?.id != undefined &&
+                                    data.option?.id === option?.id
+                                }
                                 {...option}
                                 onClick={onChangeOption}
                                 type={typeSelect == "div" ? "div" : "option"}

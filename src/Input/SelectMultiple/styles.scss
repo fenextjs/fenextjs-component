@@ -10,12 +10,12 @@
             display: none;
         }
     }
-    --display-list-empty:none;
-    .fenext-select-list-options{
+    --display-list-empty: none;
+    .fenext-select-list-options {
         &:empty {
             display: var(--display-list-empty) !important;
         }
-        &:not(:has(.fenext-select-option-not-hidden)){
+        &:not(:has(.fenext-select-option-not-hidden)) {
             display: var(--display-list-empty) !important;
         }
     }

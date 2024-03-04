@@ -43,7 +43,7 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
                         &:hover {
                             background: var(--fenext-color-light-extra-dark);
                         }
-                        &-img{
+                        &-img {
                             max-width: 50%;
                         }
                         &-btn {
@@ -123,14 +123,14 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
 
 @mixin fenext-select-checkbox {
     @include fenext-select-box();
-    --display-list-empty:grid;
-    .fenext-select-multiple-list  {
+    --display-list-empty: grid;
+    .fenext-select-multiple-list {
         display: none;
     }
-    .fenext-select-option{
-        --display-hidden :grid;
-        &-selected{
-            box-shadow: inset 0 0 0 .25rem var(--fenext-color-info);
+    .fenext-select-option {
+        --display-hidden: grid;
+        &-selected {
+            box-shadow: inset 0 0 0 0.25rem var(--fenext-color-info);
         }
     }
 }

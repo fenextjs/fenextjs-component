@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { InputTextBaseProps, InputTextClassProps } from "../Text";
 import { InputSelectOptionBaseProps, InputSelectOptionClassProps } from "../SelectOption";
-export type InputSelectTypeStyle = "normal" | "box" | "list";
+export type InputSelectTypeStyle = "normal" | "box" | "list" | "checkbox";
 /**
  * Interface that defines CSS class properties for a select input component.
  */

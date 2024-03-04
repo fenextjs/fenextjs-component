@@ -78,14 +78,13 @@ export const InputSelectMultiple = <T = any,>({
     ...props
 }: InputSelectMultipleProps<T>) => {
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
-    const { data, setData,setDataFunction } = useData<InputSelectItemOptionBaseProps<T>[]>(
-        defaultValue,
-        {
-            onChangeDataAfter: (e) => {
-                onChange?.(e);
-            },
+    const { data, setData, setDataFunction } = useData<
+        InputSelectItemOptionBaseProps<T>[]
+    >(defaultValue, {
+        onChangeDataAfter: (e) => {
+            onChange?.(e);
         },
-    );
+    });
 
     const dataMemo = useMemo(() => value ?? data, [data]);
 
@@ -111,12 +110,12 @@ export const InputSelectMultiple = <T = any,>({
         newItem: InputSelectItemOptionBaseProps<T> | undefined,
     ) => {
         if (newItem) {
-            setDataFunction((old)=>{
-                if(old.find(e=>e.id == newItem.id)){
-                    return old.filter(e=>e.id != newItem.id)
+            setDataFunction((old) => {
+                if (old.find((e) => e.id == newItem.id)) {
+                    return old.filter((e) => e.id != newItem.id);
                 }
-                return [...old,newItem]
-            })
+                return [...old, newItem];
+            });
         }
     };
 
@@ -125,16 +124,15 @@ export const InputSelectMultiple = <T = any,>({
     };
 
     const OPTIONS = useMemo(() => {
-        return options.map(
-            (option) => {
-                const isSelect = dataMemo.find((e) => e.id == option.id) != undefined
-                return {
-                    ...option,
-                    hidden:isSelect,
-                    selected:isSelect
-                }
-            },
-        );
+        return options.map((option) => {
+            const isSelect =
+                dataMemo.find((e) => e.id == option.id) != undefined;
+            return {
+                ...option,
+                hidden: isSelect,
+                selected: isSelect,
+            };
+        });
     }, [options, dataMemo]);
 
     return (

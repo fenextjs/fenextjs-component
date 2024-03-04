@@ -155,6 +155,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
             }
         }
     };
+    const OPTIONSLENGTH = (0, react_1.useMemo)(() => OPTIONS.filter((e) => (e?.selected ?? false) || !(e?.hidden ?? false))?.length, [OPTIONS]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { ref: selectRef, className: `fenext-select
                     fenext-select-${showOptionsUp?.up ? "options-up" : "options-down"}
@@ -183,15 +184,16 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                 } },
                 create && typeSelect == "div" ? (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(SelectOption_1.InputSelectOption, { type: "div", id: create?.id ?? "create", text: create?.text ?? "Create", children: create?.children ?? undefined, _t: _t, isBtn: true, onClick: onCreate }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
-                OPTIONS.length != 0 && typeSelect == "select" ? (react_1.default.createElement(react_1.default.Fragment, null,
+                OPTIONSLENGTH != 0 && typeSelect == "select" ? (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(SelectOption_1.InputSelectOption, { type: "option", id: noResult?.id ?? "selected", text: selected?.text ??
                             props?.placeholder ??
                             "Select", children: selected?.children ?? undefined, _t: _t }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
                 OPTIONS.map((option, i) => {
-                    return (react_1.default.createElement(SelectOption_1.InputSelectOption, { key: i, ...option, onClick: onChangeOption, type: typeSelect == "div" ? "div" : "option", _t: _t }));
+                    return (react_1.default.createElement(SelectOption_1.InputSelectOption, { key: i, selected: data.option?.id != undefined &&
+                            data.option?.id === option?.id, ...option, onClick: onChangeOption, type: typeSelect == "div" ? "div" : "option", _t: _t }));
                 }),
                 props.loader ? (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(SelectOption_1.InputSelectOption, { type: typeSelect == "div" ? "div" : "option", id: loaderOption?.id ?? "loader", text: loaderOption?.text ?? "Loading", children: loaderOption?.children ?? undefined, classNameOption: "fenext-select-option-loading", _t: _t, disabled: true }))) : (react_1.default.createElement(react_1.default.Fragment, null, OPTIONS.length == 0 ? (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(SelectOption_1.InputSelectOption, { type: typeSelect == "div" ? "div" : "option", id: loaderOption?.id ?? "loader", text: loaderOption?.text ?? "Loading", children: loaderOption?.children ?? undefined, classNameOption: "fenext-select-option-loading", _t: _t, disabled: true }))) : (react_1.default.createElement(react_1.default.Fragment, null, OPTIONSLENGTH == 0 ? (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(SelectOption_1.InputSelectOption, { type: typeSelect == "div"
                             ? "div"
                             : "option", id: noResult?.id ?? "notResult", text: noResult?.text ?? "Not Result", children: noResult?.children ?? undefined, classNameOption: "fenext-select-option-not-result", _t: _t, disabled: true }))) : (react_1.default.createElement(react_1.default.Fragment, null))))))));

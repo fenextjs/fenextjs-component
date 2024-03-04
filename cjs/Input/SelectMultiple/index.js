@@ -11,7 +11,7 @@ const fenextjs_interface_1 = require("fenextjs-interface");
 const fenextjs_svg_1 = require("fenextjs-svg");
 const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMultipleList = "", onChange, value = undefined, defaultValue = [], onChangeValidate, options = [], iconDelete = react_1.default.createElement(fenextjs_svg_1.Trash, null), ...props }) => {
     const [error, setError] = (0, react_1.useState)(undefined);
-    const { data, setData } = (0, useData_1.useData)(defaultValue, {
+    const { data, setData, setDataFunction } = (0, useData_1.useData)(defaultValue, {
         onChangeDataAfter: (e) => {
             onChange?.(e);
         },
@@ -36,14 +36,26 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
     }, [dataMemo]);
     const onAddItemSelect = (newItem) => {
         if (newItem) {
-            setData([...dataMemo, newItem]);
+            setDataFunction((old) => {
+                if (old.find((e) => e.id == newItem.id)) {
+                    return old.filter((e) => e.id != newItem.id);
+                }
+                return [...old, newItem];
+            });
         }
     };
     const onRemoveItemSelect = (deleteItem) => {
         setData(dataMemo.filter((option) => option.id != deleteItem.id));
     };
     const OPTIONS = (0, react_1.useMemo)(() => {
-        return options.filter((option) => dataMemo.find((e) => e.id == option.id) == undefined);
+        return options.map((option) => {
+            const isSelect = dataMemo.find((e) => e.id == option.id) != undefined;
+            return {
+                ...option,
+                hidden: isSelect,
+                selected: isSelect,
+            };
+        });
     }, [options, dataMemo]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-select-multiple ${classNameSelectMultiple} ` },
