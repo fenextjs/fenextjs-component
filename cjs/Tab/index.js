@@ -5,6 +5,9 @@ const tslib_1 = require("tslib");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const react_1 = tslib_1.__importStar(require("react"));
 const parseTabCount = (d) => {
+    if (!d.useCount) {
+        return d;
+    }
     return {
         ...d,
         head: (react_1.default.createElement(react_1.default.Fragment, null,
@@ -29,15 +32,11 @@ exports.parseTabCount = parseTabCount;
 const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", classNameHeadItem = "", classNameHeadItemActive = "", classNameBody = "", classNameBodyItem = "", classNameContentAfterHead = "", classNameContentBeforeHead = "", items = [], defaultTab = 0, afterTabs = undefined, beforeTabs = undefined, onChange, tabScrollActive = false, validataTabOneHiddenHeader = true, _t, useCount = false, }) => {
     const [tabSelect, setTabSelect] = (0, react_1.useState)(Math.max(0, Math.min(defaultTab, items.length - 1)));
     const CHead = (0, react_1.useMemo)(() => {
-        let ITEMS = items;
-        if (useCount) {
-            ITEMS = ITEMS.map((exports.parseTabCount));
-        }
-        return ITEMS.map((item, i) => {
-            let ITEM = item;
-            if (ITEM.useCount) {
-                ITEM = (0, exports.parseTabCount)(ITEM);
-            }
+        return items.map((item, i) => {
+            const ITEM = (0, exports.parseTabCount)({
+                ...item,
+                useCount: item?.useCount ?? useCount ?? false,
+            });
             return (react_1.default.createElement("div", { key: i, className: `fenext-tab-head-item ${classNameHeadItem} ${i == tabSelect
                     ? `fenext-tab-head-item-active ${classNameHeadItemActive}`
                     : ""} fenext-tab-head-item-id-${ITEM.id}`, onClick: () => {
