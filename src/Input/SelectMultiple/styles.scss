@@ -10,4 +10,12 @@
             display: none;
         }
     }
+    .fenext-select-list-options{
+        &:empty {
+            display: none !important;
+        }
+        &:not(:has(.fenext-select-option-not-hidden)){
+            display: none !important;
+        }
+    }
 }

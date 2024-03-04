@@ -18,6 +18,10 @@ const args: InputSelectMultipleProps = {
     label: "Select Multiple",
     placeholder: "Select Multiple",
     datalist:"listOption",
+    // create :{
+    //     id:"create",
+    //     text:"Create"
+    // },
     options: [
         {
             id: "1",

@@ -120,8 +120,16 @@ export const InputSelectMultiple = <T = any,>({
     };
 
     const OPTIONS = useMemo(() => {
-        return options.filter(
-            (option) => dataMemo.find((e) => e.id == option.id) == undefined,
+        return options.map(
+            (option) => {
+                if( dataMemo.find((e) => e.id == option.id) != undefined){
+                    return {
+                        ...option,
+                        hidden:true
+                    }
+                }
+                return option
+            },
         );
     }, [options, dataMemo]);
 

@@ -384,6 +384,8 @@ export const InputSelect = <T = any,>({
         }
     };
 
+    const OPTIONSLENGTH = useMemo(() => OPTIONS.filter(e=>!(e?.hidden ?? false))?.length, [OPTIONS])
+
     return (
         <>
             <div
@@ -480,7 +482,7 @@ export const InputSelect = <T = any,>({
                     ) : (
                         <></>
                     )}
-                    {OPTIONS.length != 0 && typeSelect == "select" ? (
+                    {OPTIONSLENGTH != 0 && typeSelect == "select" ? (
                         <>
                             <InputSelectOption
                                 type={"option"}
@@ -522,7 +524,7 @@ export const InputSelect = <T = any,>({
                         </>
                     ) : (
                         <>
-                            {OPTIONS.length == 0 ? (
+                            {OPTIONSLENGTH == 0 ? (
                                 <>
                                     <InputSelectOption
                                         type={

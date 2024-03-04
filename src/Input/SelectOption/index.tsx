@@ -54,6 +54,10 @@ export interface InputSelectOptionBaseProps<T = any>
      */
     selected?: boolean;
     /**
+     * Selected of option.
+     */
+    hidden?: boolean;
+    /**
      * onClick of option.
      */
     onClick?: (item: InputSelectOptionBaseProps) => void;
@@ -97,6 +101,7 @@ export const InputSelectOption = <T = any,>({
     onDelete,
     disabled = false,
     selected = false,
+    hidden = false,
     isBtn = false,
     _t = (e) => e,
     data,
@@ -109,9 +114,14 @@ export const InputSelectOption = <T = any,>({
             <TAG
                 key={id}
                 id={`${id}`}
-                className={`fenext-select-option fenext-select-option-${disabled ? "disabled" : ""} ${
-                    isBtn ? "fenext-select-option-btn" : ""
-                } ${classNameOption} fenext-select-option-type-${type}`}
+                className={`
+                    fenext-select-option
+                    fenext-select-option-${disabled ? "disabled" : ""}
+                    fenext-select-option-${isBtn ? "btn" : ""}
+                    fenext-select-option-type-${type}
+                    fenext-select-option-${hidden ? "hidden":"not-hidden"}
+                    ${classNameOption}
+                `}
                 onClick={() => {
                     if (!disabled) {
                         onClick?.({ id, text, children, data, img });
