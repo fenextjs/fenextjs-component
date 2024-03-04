@@ -27,6 +27,7 @@ const args: InputSelectMultipleProps = {
             id: "1",
             text: "Option 1",
             children: <>Option 1</>,
+            img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
         },
         {
             id: "2",
@@ -44,6 +45,7 @@ const args: InputSelectMultipleProps = {
             throw "No Puedes seleccionar 3 elementos"
         }
     },
+    typeSelectStyle:"checkbox"
 };
 
 Index.args = args;

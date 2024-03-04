@@ -117,6 +117,7 @@ export const InputSelectOption = <T = any,>({
                 className={`
                     fenext-select-option
                     fenext-select-option-${disabled ? "disabled" : ""}
+                    fenext-select-option-${selected ? "selected" : "not-selected"}
                     fenext-select-option-${isBtn ? "btn" : ""}
                     fenext-select-option-type-${type}
                     fenext-select-option-${hidden ? "hidden":"not-hidden"}

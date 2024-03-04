@@ -36,11 +36,15 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
                         aspect-ratio: 1/1;
                         border-radius: 1rem;
                         display: grid;
+                        place-content: center;
                         place-items: center;
                         text-align: center;
                         background: var(--fenext-color-light-dark);
                         &:hover {
                             background: var(--fenext-color-light-extra-dark);
+                        }
+                        &-img{
+                            max-width: 50%;
                         }
                         &-btn {
                             margin: 0;
@@ -113,6 +117,20 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
                     }
                 }
             }
+        }
+    }
+}
+
+@mixin fenext-select-checkbox {
+    @include fenext-select-box();
+    --display-list-empty:grid;
+    .fenext-select-multiple-list  {
+        display: none;
+    }
+    .fenext-select-option{
+        --display-hidden :grid;
+        &-selected{
+            box-shadow: inset 0 0 0 .25rem var(--fenext-color-info);
         }
     }
 }
@@ -335,6 +353,9 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
         }
         &-list {
             @include fenext-select-list;
+        }
+        &-checkbox {
+            @include fenext-select-checkbox;
         }
     }
 

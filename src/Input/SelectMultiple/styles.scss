@@ -10,12 +10,13 @@
             display: none;
         }
     }
+    --display-list-empty:none;
     .fenext-select-list-options{
         &:empty {
-            display: none !important;
+            display: var(--display-list-empty) !important;
         }
         &:not(:has(.fenext-select-option-not-hidden)){
-            display: none !important;
+            display: var(--display-list-empty) !important;
         }
     }
 }

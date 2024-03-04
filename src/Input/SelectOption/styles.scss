@@ -13,8 +13,9 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    --display-hidden : none;
     &-hidden{
-        display: none !important;
+        display: var(--display-hidden ) !important;
     }
     &-disabled {
         filter: grayscale(1);

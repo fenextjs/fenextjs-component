@@ -78,7 +78,7 @@ export const InputSelectMultiple = <T = any,>({
     ...props
 }: InputSelectMultipleProps<T>) => {
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
-    const { data, setData } = useData<InputSelectItemOptionBaseProps<T>[]>(
+    const { data, setData,setDataFunction } = useData<InputSelectItemOptionBaseProps<T>[]>(
         defaultValue,
         {
             onChangeDataAfter: (e) => {
@@ -111,7 +111,12 @@ export const InputSelectMultiple = <T = any,>({
         newItem: InputSelectItemOptionBaseProps<T> | undefined,
     ) => {
         if (newItem) {
-            setData([...dataMemo, newItem]);
+            setDataFunction((old)=>{
+                if(old.find(e=>e.id == newItem.id)){
+                    return old.filter(e=>e.id != newItem.id)
+                }
+                return [...old,newItem]
+            })
         }
     };
 
@@ -122,13 +127,12 @@ export const InputSelectMultiple = <T = any,>({
     const OPTIONS = useMemo(() => {
         return options.map(
             (option) => {
-                if( dataMemo.find((e) => e.id == option.id) != undefined){
-                    return {
-                        ...option,
-                        hidden:true
-                    }
+                const isSelect = dataMemo.find((e) => e.id == option.id) != undefined
+                return {
+                    ...option,
+                    hidden:isSelect,
+                    selected:isSelect
                 }
-                return option
             },
         );
     }, [options, dataMemo]);

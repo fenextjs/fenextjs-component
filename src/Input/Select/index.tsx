@@ -15,7 +15,7 @@ import { _tValidate } from "fenextjs-functions";
 import { useValidator } from "fenextjs-hook";
 import { SVGSearch } from "fenextjs-svg";
 
-export type InputSelectTypeStyle = "normal" | "box" | "list";
+export type InputSelectTypeStyle = "normal" | "box" | "list" | "checkbox";
 
 /**
  * Interface that defines CSS class properties for a select input component.
@@ -384,7 +384,13 @@ export const InputSelect = <T = any,>({
         }
     };
 
-    const OPTIONSLENGTH = useMemo(() => OPTIONS.filter(e=>!(e?.hidden ?? false))?.length, [OPTIONS])
+    const OPTIONSLENGTH = useMemo(
+        () =>
+            OPTIONS.filter(
+                (e) => (e?.selected ?? false) || !(e?.hidden ?? false),
+            )?.length,
+        [OPTIONS],
+    );
 
     return (
         <>
@@ -503,6 +509,7 @@ export const InputSelect = <T = any,>({
                         return (
                             <InputSelectOption<T>
                                 key={i}
+                                selected={data.option?.id!=undefined && data.option?.id === option?.id}
                                 {...option}
                                 onClick={onChangeOption}
                                 type={typeSelect == "div" ? "div" : "option"}
