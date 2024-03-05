@@ -2,6 +2,7 @@ import React, { PropsWithChildren, ReactNode } from "react";
 import { Trash } from "fenextjs-svg/cjs/Trash";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
+import { Img, ImgProps } from "../../Img";
 /**
  * Interface that defines CSS class properties for a select input component.
  */
@@ -37,6 +38,10 @@ export interface InputSelectOptionBaseProps<T = any>
      * Img of option.
      */
     img?: string;
+    /**
+     * Img of option.
+     */
+    imgComponent?: ImgProps;
     /**
      * Img of option.
      */
@@ -94,6 +99,7 @@ export const InputSelectOption = <T = any,>({
     id,
     text,
     img = undefined,
+    imgComponent = undefined,
     icon = undefined,
     children,
     type = "div",
@@ -141,7 +147,18 @@ export const InputSelectOption = <T = any,>({
                         />
                     </>
                 ) : (
-                    <></>
+                    <>
+                        {imgComponent ? (
+                            <>
+                                <Img
+                                    {...imgComponent}
+                                    className={`fenext-select-option-img ${classNameOptionImg} ${imgComponent.className}`}
+                                />
+                            </>
+                        ) : (
+                            <></>
+                        )}
+                    </>
                 )}
                 {icon ? (
                     <>
