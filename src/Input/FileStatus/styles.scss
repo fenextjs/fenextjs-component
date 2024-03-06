@@ -1,10 +1,11 @@
 .fenext-input-file-status {
-    --color-status: var(--fenext-color-gray);
+    --color-status-base: var(--fenext-color-gray);
     --color-status-NONE: var(--fenext-color-gray);
     --color-status-APPROVED: var(--fenext-color-green);
     --color-status-PENDING: var(--fenext-color-orange);
     --color-status-REFUSED: var(--fenext-color-red);
 
+    --color-status: var(--color-status-base);
     border-radius: 1rem;
     border: dashed 3px var(--color-status);
     background: var(--fenext-color-white);
