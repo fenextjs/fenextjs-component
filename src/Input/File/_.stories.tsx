@@ -17,6 +17,7 @@ const Profile: Story<PropsWithChildren<InputFileProps>> = (args) => (
 );
 
 export const Index = Profile.bind({});
-Index.args = {
-
-}as InputFileProps
+const arg : InputFileProps = {
+    
+}
+Index.args = arg

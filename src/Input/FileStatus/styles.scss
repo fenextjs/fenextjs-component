@@ -1,0 +1,92 @@
+.fenext-input-file-status {
+    --color-status:var(--fenext-color-gray);
+    --color-status-NONE:var(--fenext-color-gray);
+    --color-status-APPROVED:var(--fenext-color-green);
+    --color-status-PENDING:var(--fenext-color-orange);
+    --color-status-REJECTED:var(--fenext-color-red);
+
+    border-radius: 1rem;
+    border: dashed 3px var(--color-status);
+    background: var(--fenext-color-white);
+    position: relative;
+    &-up {
+        display: grid;
+        gap: 1rem;
+        padding: 1rem;
+        justify-items: center;
+        cursor: pointer;
+    }
+    &-remove {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--fenext-color-white);
+        background: var(--fenext-color-red);
+        padding: 0.4rem;
+        border-radius: 100%;
+        cursor: pointer;
+        svg {
+            width: 100%;
+        }
+    }
+    &-title {
+        white-space: nowrap;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: var(--fenext-color-dark);
+    }
+    &-text{
+        color: var(--fenext-color-dark);
+    }
+    &-tag{
+        color: var(--fenext-color-white);
+        background: var(--color-status);
+        padding: .2rem 1rem;
+        border-radius: .75rem;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        .fenext-text{
+            font-weight: 700;
+        }
+    }
+    &-link{
+        white-space: nowrap;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &-content-icon {
+        width: min(100%, 2rem);
+        &:empty {
+            display: none;
+        }
+        color: var(--color-status) ;
+    }
+    
+    &-NONE {
+        --color-status:var(--color-status-NONE);
+    }
+    &-APPROVED {
+        --color-status:var(--color-status-APPROVED);
+    }
+    &-PENDING {
+        --color-status:var(--color-status-PENDING);
+    }
+    &-REJECTED {
+        --color-status:var(--color-status-REJECTED);
+    }
+    .fenext-error {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+}
