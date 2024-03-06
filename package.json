@@ -53,7 +53,7 @@
     "fenextjs-functions": "^2.0.0",
     "fenextjs-hook": "^2.4.0",
     "fenextjs-img-placeholder": "^2.0.0",
-    "fenextjs-interface": "^2.2.1",
+    "fenextjs-interface": "^2.2.2",
     "fenextjs-svg": "2.0.0",
     "fenextjs-validator": "^2.0.1",
     "next": "13.4.12",
