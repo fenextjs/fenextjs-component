@@ -50,5 +50,5 @@ export interface FormProps<D = any, R = any, E = any, T = RequestResultTypeProps
      */
     className?: string;
 }
-export declare const Form: <D = any, R = any, E = any>({ id, data, disabled, onChangeDisable, onChangeLoader, children, yup, validateAfterYup, className, _t, ...props }: React.PropsWithChildren<FormProps<D, R, E, RequestResultTypeProps>>) => React.JSX.Element;
+export declare const Form: <D = any, R = any, E = any>({ id, data, disabled, onChangeDisable, onChangeLoader, children, yup, validateAfterYup, className, _t, ...props }: PropsWithChildren<FormProps<D, R, E>>) => React.JSX.Element;
 export default Form;

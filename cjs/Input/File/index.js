@@ -27,6 +27,7 @@ const InputFile = ({ defaultValue = {
         });
         return {
             fileData,
+            base64: `${fileData ?? ""}`,
             text: data.nameFile,
             extend: data.extend,
         };

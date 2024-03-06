@@ -82,7 +82,6 @@ export const InputFileStatus = ({
         fileData: "",
         text: "",
     },
-    parseProgress = (e) => `FileStatusing . . . ${e.toFixed(0)}%`,
     onChange,
 
     iconLoader = <LoaderSpinner />,
@@ -131,7 +130,6 @@ export const InputFileStatus = ({
             return r;
         },
     });
-    console.log({ data });
 
     return (
         <>
@@ -149,22 +147,26 @@ export const InputFileStatus = ({
                                 className={`fenext-input-file-status-title `}
                             >
                                 {_tValidate(
-                                    contentByStatus?.[data?.status ?? "NONE"]?.title ??
-                                        title,
+                                    contentByStatus?.[data?.status ?? "NONE"]
+                                        ?.title ?? title,
                                     _t,
                                 )}
                             </Title>
                             <div
                                 className={`fenext-input-file-status-content-icon`}
                             >
-                                {contentByStatus?.[data?.status ?? "NONE"]?.icon ??
-                                        icon}
+                                {contentByStatus?.[data?.status ?? "NONE"]
+                                    ?.icon ?? icon}
                             </div>
-                            <div
-                                className={`fenext-input-file-status-tag`}
-                            >
+                            <div className={`fenext-input-file-status-tag`}>
                                 <Text>
-                                    {_tValidate(contentByStatus?.[data?.status ?? "NONE"]?.tag, _t)}</Text>
+                                    {_tValidate(
+                                        contentByStatus?.[
+                                            data?.status ?? "NONE"
+                                        ]?.tag,
+                                        _t,
+                                    )}
+                                </Text>
                             </div>
                             <Link
                                 href={
