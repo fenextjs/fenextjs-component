@@ -121,14 +121,7 @@ export const InputFileStatus = ({
         resultSubmitData,
     } = useData<FileProps, any, FileProps>(defaultValue, {
         onChangeDataAfter: onChange,
-        onSubmitData: async (e) => {
-            const r = await onUploadFile(e);
-            setData({
-                ...e,
-                ...r,
-            });
-            return r;
-        },
+        onSubmitData: onUploadFile,
     });
 
     return (

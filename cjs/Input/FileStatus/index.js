@@ -40,14 +40,7 @@ const InputFileStatus = ({ className = "", btn = "Choose File", icon = (react_1.
     }), [contentByStatusProps]);
     const { data, setData, dataError, onSubmitData, loaderSubmit, resultSubmitData, } = (0, useData_1.useData)(defaultValue, {
         onChangeDataAfter: onChange,
-        onSubmitData: async (e) => {
-            const r = await onUploadFile(e);
-            setData({
-                ...e,
-                ...r,
-            });
-            return r;
-        },
+        onSubmitData: onUploadFile,
     });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-input-file-status fenext-input-file-status-${data.status ?? "NONE"} ${className}` }, resultSubmitData &&
