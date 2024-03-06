@@ -97,7 +97,7 @@ export const InputFileStatus = ({
                 tag: "Accepted",
                 icon: <Check />,
             },
-            REJECTED: {
+            REFUSED: {
                 title: "Refused! go up again",
                 tag: "Denied",
                 icon: <Upload2 />,

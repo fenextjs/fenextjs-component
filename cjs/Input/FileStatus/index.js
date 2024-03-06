@@ -26,7 +26,7 @@ const InputFileStatus = ({ className = "", btn = "Choose File", icon = (react_1.
             tag: "Accepted",
             icon: react_1.default.createElement(Check_1.Check, null),
         },
-        REJECTED: {
+        REFUSED: {
             title: "Refused! go up again",
             tag: "Denied",
             icon: react_1.default.createElement(Upload_1.Upload2, null),

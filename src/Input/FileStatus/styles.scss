@@ -3,7 +3,7 @@
     --color-status-NONE: var(--fenext-color-gray);
     --color-status-APPROVED: var(--fenext-color-green);
     --color-status-PENDING: var(--fenext-color-orange);
-    --color-status-REJECTED: var(--fenext-color-red);
+    --color-status-REFUSED: var(--fenext-color-red);
 
     border-radius: 1rem;
     border: dashed 3px var(--color-status);
@@ -82,8 +82,8 @@
     &-PENDING {
         --color-status: var(--color-status-PENDING);
     }
-    &-REJECTED {
-        --color-status: var(--color-status-REJECTED);
+    &-REFUSED {
+        --color-status: var(--color-status-REFUSED);
     }
     .fenext-error {
         margin: 0.5rem 0;
