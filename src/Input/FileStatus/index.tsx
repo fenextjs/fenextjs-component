@@ -112,14 +112,11 @@ export const InputFileStatus = ({
         [contentByStatusProps],
     );
 
-    const {
-        data,
-        setData,
-        dataError,
-        onSubmitData,
-        loaderSubmit,
-        resultSubmitData,
-    } = useData<FileProps, any, FileProps>(defaultValue, {
+    const { data, setData, dataError, onSubmitData, loaderSubmit } = useData<
+        FileProps,
+        any,
+        FileProps
+    >(defaultValue, {
         onChangeDataAfter: onChange,
         onSubmitData: onUploadFile,
     });
@@ -129,8 +126,7 @@ export const InputFileStatus = ({
             <div
                 className={`fenext-input-file-status fenext-input-file-status-${data.status ?? "NONE"} ${className}`}
             >
-                {resultSubmitData &&
-                !dataError &&
+                {!dataError &&
                 !loaderSubmit &&
                 data?.fileData &&
                 data?.fileData != "" ? (
