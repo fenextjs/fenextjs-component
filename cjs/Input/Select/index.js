@@ -190,7 +190,10 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                             "Select", children: selected?.children ?? undefined, _t: _t }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
                 OPTIONS.map((option, i) => {
                     return (react_1.default.createElement(SelectOption_1.InputSelectOption, { key: i, selected: data.option?.id != undefined &&
-                            data.option?.id === option?.id, ...option, onClick: onChangeOption, type: typeSelect == "div" ? "div" : "option", _t: _t }));
+                            data.option?.id === option?.id, ...option, onClick: (e) => {
+                            onChangeOption(e);
+                            option?.onClick?.(e);
+                        }, type: typeSelect == "div" ? "div" : "option", _t: _t }));
                 }),
                 props.loader ? (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(SelectOption_1.InputSelectOption, { type: typeSelect == "div" ? "div" : "option", id: loaderOption?.id ?? "loader", text: loaderOption?.text ?? "Loading", children: loaderOption?.children ?? undefined, classNameOption: "fenext-select-option-loading", _t: _t, disabled: true }))) : (react_1.default.createElement(react_1.default.Fragment, null, OPTIONSLENGTH == 0 ? (react_1.default.createElement(react_1.default.Fragment, null,
