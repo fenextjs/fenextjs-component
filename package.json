@@ -1,6 +1,6 @@
 {
   "name": "fenextjs-component",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "",
   "main": "./cjs/index.js",
   "module": "./cjs/index.js",
@@ -51,7 +51,7 @@
     "@react-google-maps/api": "^2.19.3",
     "fenextjs-error": "^2.0.0",
     "fenextjs-functions": "^3.0.0",
-    "fenextjs-hook": "^3.0.1",
+    "fenextjs-hook": "^3.0.2",
     "fenextjs-img-placeholder": "^2.0.0",
     "fenextjs-interface": "^2.2.2",
     "fenextjs-svg": "3.0.0",
