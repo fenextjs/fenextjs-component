@@ -64,6 +64,10 @@ export interface InputNumberCountBaseProps
      * FenextjsValidatorClass used for input validation.
      */
     validator?: FenextjsValidatorClass<number>;
+    /**
+     * optionsParseNumber used for input validation.
+     */
+    optionsParseNumber?: Intl.NumberFormatOptions
 }
 /**
  * Props interface for the InputNumberCount component. Extends both InputNumberCountBaseProps and InputNumberCountClassProps interfaces.
@@ -85,13 +89,16 @@ export const InputNumberCount = ({
     max = Infinity,
     minError,
     maxError,
+    optionsParseNumber,
 
     ...props
 }: InputNumberCountProps) => {
-    const { data, setData, isChange } = useData<number | "">(
-        value ?? defaultValue ?? "",
+    const { data, setData, isChange } = useData<string | "">(
+       `${ value ?? defaultValue ?? ""}`,
         {
-            onChangeDataAfter: onChange,
+            onChangeDataAfter: (e)=>{
+                onChange?.(parseNumber(e))
+            },
         },
     );
 
@@ -104,27 +111,22 @@ export const InputNumberCount = ({
     }, [validatorProps, min, max]);
 
     const { error: errorFenext } = useValidator({
-        data,
+        data:parseNumber(data),
         validator: validator,
     });
 
     const dataText = useMemo(() => {
-        const d = value ?? data;
+        const d = `${value ?? data}`;
         if (d == "") {
             return "";
         }
-        const n = parseNumberCount(d);
-        return `${symbolInit}${n}${symbolFinal}`;
-    }, [symbolInit, symbolFinal, data, value]);
+        const n = parseNumberCount(d,optionsParseNumber);
+        return `${symbolInit}${n}${d.at(-1) == "." ? ".":symbolFinal}`;
+    }, [symbolInit, symbolFinal, data, value,optionsParseNumber]);
 
     const onChangeNumber = (number: number | string) => {
         const n = `${number}`.replace(/[^0-9.-]/g, "");
-        if (n == "") {
-            setData("");
-            return;
-        }
-        const n2 = parseNumber(number);
-        setData(n2);
+        setData(n)
     };
 
     return (
