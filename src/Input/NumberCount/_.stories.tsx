@@ -1,6 +1,5 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import * as Yup from "yup";
 import {  FenextjsValidator } from "fenextjs-validator";
 
 import { InputNumberCount, InputNumberCountProps } from "./index";
@@ -19,7 +18,6 @@ export const Index = Profile.bind({});
 const args  : InputNumberCountProps = {
     label:"Label",
     placeholder:"Placeholder",
-    yup:Yup.string().required(),
     min:20,
     max:30
 }

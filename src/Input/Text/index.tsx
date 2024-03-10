@@ -244,6 +244,10 @@ export interface InputTextBaseProps extends _TProps {
      */
     useLoader?: boolean;
     /**
+     * inputMode of Input.
+     */
+    inputMode?: "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search" | undefined;
+    /**
      * AutoComplete of Input.
      */
     autoComplete?: boolean;
@@ -327,6 +331,7 @@ export const InputText = ({
     isChange: isChangeProps = undefined,
     onKeyDown,
     iconPos = "right",
+    inputMode,
 
     validator,
     maxLength = undefined,
@@ -590,6 +595,7 @@ export const InputText = ({
                         autoComplete={autoComplete ? "on" : "off"}
                         onKeyDown={onKeyDown}
                         {...props}
+                        inputMode={inputMode}
                     />
                     {ICON}
                     {LOADER}

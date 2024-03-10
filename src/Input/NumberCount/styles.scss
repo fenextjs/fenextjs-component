@@ -1,25 +1,3 @@
 .fenext-input-number-count {
-    position: relative;
-    &:has(.fenext-input-content-input:focus) {
-        .fenext-input-content-input {
-            box-shadow: var(--box-shadow);
-        }
-    }
-    &-text {
-    }
-    &-number {
-        &,
-        &-movil {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-        }
-        &-movil {
-            @media (min-width: 768px) {
-                display: none;
-            }
-        }
-    }
+    
 }

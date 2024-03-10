@@ -1,34 +1,26 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../Text";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { parseNumberCount } from "fenextjs-functions/cjs/parse/NumberCount";
 import { parseNumber } from "fenextjs-functions/cjs/parse/Number";
 import { useValidator } from "fenextjs-hook";
-import { FenextjsValidator } from "fenextjs-validator";
+import { FenextjsValidator, FenextjsValidatorClass } from "fenextjs-validator";
 /**
  * Interface that defines CSS class properties for a text input component.
  */
-export interface InputNumberCountClassProps extends InputTextClassProps {
-    /**
-     * CSS class name for the component.
-     */
-    classNameNumberCount?: string;
-    /**
-     * CSS class name for the component.
-     */
-    classNameNumberCountText?: string;
-    /**
-     * CSS class name for the component.
-     */
-    classNameNumberCountNumber?: string;
-}
+export interface InputNumberCountClassProps extends InputTextClassProps {}
 /**
  * Interface that defines the base properties for a text input component.
  */
 export interface InputNumberCountBaseProps
     extends Omit<
         InputTextBaseProps,
-        "type" | "defaultValue" | "onChange" | "onChangeValidate" | "value"
+        | "type"
+        | "defaultValue"
+        | "onChange"
+        | "onChangeValidate"
+        | "value"
+        | "validator"
     > {
     /**
      * symbol of money in de Init, default $.
@@ -60,6 +52,18 @@ export interface InputNumberCountBaseProps
      * The maximum value allowed for the input.
      */
     max?: number;
+    /**
+     * The minimum value allowed for the input.
+     */
+    minError?: string;
+    /**
+     * The maximum value allowed for the input.
+     */
+    maxError?: string;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validator?: FenextjsValidatorClass<number>;
 }
 /**
  * Props interface for the InputNumberCount component. Extends both InputNumberCountBaseProps and InputNumberCountClassProps interfaces.
@@ -69,10 +73,6 @@ export interface InputNumberCountProps
         InputNumberCountClassProps {}
 
 export const InputNumberCount = ({
-    classNameNumberCount = "",
-    classNameNumberCountText = "",
-    classNameNumberCountNumber = "",
-
     onChange,
     value = undefined,
     defaultValue,
@@ -80,104 +80,66 @@ export const InputNumberCount = ({
     symbolInit = "$",
     symbolFinal = "",
 
-    validator = undefined,
+    validator: validatorProps = undefined,
+    min = -Infinity,
+    max = Infinity,
+    minError,
+    maxError,
 
     ...props
 }: InputNumberCountProps) => {
-    const minMaxValue = (v: number) => {
-        return Math.max(
-            props.min ?? -Infinity,
-            Math.min(props.max ?? Infinity, v),
-        );
-    };
-    const { data, dataMemo, onChangeData, isChange } = useData<
+    const { data, setData, isChange } = useData<number | "">(
+        value ?? defaultValue ?? "",
         {
-            number: number | string;
-        },
-        {
-            number: number | string;
-            numberText: string;
-        }
-    >(
-        {
-            number: value ?? defaultValue ?? "",
-        },
-        {
-            onMemo: ({ number }) => {
-                number = parseNumber(number);
-                return {
-                    number,
-                    numberText:
-                        symbolInit +
-                        parseNumberCount(value ?? number) +
-                        symbolFinal,
-                };
-            },
-            onChangeDataAfter: ({ number }) => {
-                number = parseNumber(number);
-                onChange?.(number);
-            },
+            onChangeDataAfter: onChange,
         },
     );
+
+    const validator = useMemo(() => {
+        const v = validatorProps ?? FenextjsValidator().isNumber();
+        if (!validatorProps) {
+            v.isMinOrEqual(min, minError).isMaxOrEqual(max, maxError);
+        }
+        return v;
+    }, [validatorProps, min, max]);
+
     const { error: errorFenext } = useValidator({
-        data: dataMemo.number,
-        validator: validator ?? FenextjsValidator(),
+        data,
+        validator: validator,
     });
 
+    const dataText = useMemo(() => {
+        const d = value ?? data;
+        if (d == "") {
+            return "";
+        }
+        const n = parseNumberCount(d);
+        return `${symbolInit}${n}${symbolFinal}`;
+    }, [symbolInit, symbolFinal, data, value]);
+
     const onChangeNumber = (number: number | string) => {
-        const n = minMaxValue(parseNumber(number));
-        onChangeData("number")(n);
+        const n = `${number}`.replace(/[^0-9.-]/g, "");
+        if (n == "") {
+            setData("");
+            return;
+        }
+        const n2 = parseNumber(number);
+        setData(n2);
     };
 
     return (
         <>
-            <div
-                className={`fenext-input-number-count ${classNameNumberCount}`}
-            >
-                <div
-                    className={`fenext-input-number-count-text ${classNameNumberCountText}`}
-                >
-                    <InputText
-                        {...props}
-                        onChange={onChangeNumber}
-                        type="text"
-                        value={dataMemo.numberText}
-                        isChange={isChange}
-                        validator={undefined}
-                        error={errorFenext}
-                    />
-                </div>
-                <div
-                    className={`fenext-input-number-count-number ${classNameNumberCountNumber}`}
-                >
-                    <InputText
-                        label={props?.label}
-                        disabled={props?.disabled}
-                        loader={props?.loader}
-                        onChange={onChangeNumber}
-                        type="number"
-                        value={`${data.number}`}
-                        yup={null}
-                        validator={undefined}
-                        error={errorFenext}
-                    />
-                </div>
-                <div
-                    className={`fenext-input-number-count-number-movil ${classNameNumberCountNumber}`}
-                >
-                    <InputText
-                        label={props?.label}
-                        disabled={props?.disabled}
-                        loader={props?.loader}
-                        onChange={onChangeNumber}
-                        type="number"
-                        value={`${data.number}`}
-                        yup={null}
-                        validator={undefined}
-                        error={errorFenext}
-                    />
-                </div>
-            </div>
+            <InputText
+                {...props}
+                className={`fenext-input-number-count ${props?.className ?? ""}`}
+                onChange={onChangeNumber}
+                type="text"
+                value={dataText}
+                isChange={isChange}
+                validator={undefined}
+                error={errorFenext}
+                inputMode="numeric"
+            />
         </>
     );
 };
