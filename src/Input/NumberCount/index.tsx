@@ -67,7 +67,7 @@ export interface InputNumberCountBaseProps
     /**
      * optionsParseNumber used for input validation.
      */
-    optionsParseNumber?: Intl.NumberFormatOptions
+    optionsParseNumber?: Intl.NumberFormatOptions;
 }
 /**
  * Props interface for the InputNumberCount component. Extends both InputNumberCountBaseProps and InputNumberCountClassProps interfaces.
@@ -94,10 +94,10 @@ export const InputNumberCount = ({
     ...props
 }: InputNumberCountProps) => {
     const { data, setData, isChange } = useData<string | "">(
-       `${ value ?? defaultValue ?? ""}`,
+        `${value ?? defaultValue ?? ""}`,
         {
-            onChangeDataAfter: (e)=>{
-                onChange?.(parseNumber(e))
+            onChangeDataAfter: (e) => {
+                onChange?.(parseNumber(e));
             },
         },
     );
@@ -111,7 +111,7 @@ export const InputNumberCount = ({
     }, [validatorProps, min, max]);
 
     const { error: errorFenext } = useValidator({
-        data:parseNumber(data),
+        data: parseNumber(data),
         validator: validator,
     });
 
@@ -120,13 +120,13 @@ export const InputNumberCount = ({
         if (d == "") {
             return "";
         }
-        const n = parseNumberCount(d,optionsParseNumber);
-        return `${symbolInit}${n}${d.at(-1) == "." ? ".":symbolFinal}`;
-    }, [symbolInit, symbolFinal, data, value,optionsParseNumber]);
+        const n = parseNumberCount(d, optionsParseNumber);
+        return `${symbolInit}${n}${d.at(-1) == "." ? "." : symbolFinal}`;
+    }, [symbolInit, symbolFinal, data, value, optionsParseNumber]);
 
     const onChangeNumber = (number: number | string) => {
         const n = `${number}`.replace(/[^0-9.-]/g, "");
-        setData(n)
+        setData(n);
     };
 
     return (

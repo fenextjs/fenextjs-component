@@ -52,10 +52,14 @@ export interface InputNumberCountBaseProps extends Omit<InputTextBaseProps, "typ
      * FenextjsValidatorClass used for input validation.
      */
     validator?: FenextjsValidatorClass<number>;
+    /**
+     * optionsParseNumber used for input validation.
+     */
+    optionsParseNumber?: Intl.NumberFormatOptions;
 }
 /**
  * Props interface for the InputNumberCount component. Extends both InputNumberCountBaseProps and InputNumberCountClassProps interfaces.
  */
 export interface InputNumberCountProps extends InputNumberCountBaseProps, InputNumberCountClassProps {
 }
-export declare const InputNumberCount: ({ onChange, value, defaultValue, symbolInit, symbolFinal, validator: validatorProps, min, max, minError, maxError, ...props }: InputNumberCountProps) => React.JSX.Element;
+export declare const InputNumberCount: ({ onChange, value, defaultValue, symbolInit, symbolFinal, validator: validatorProps, min, max, minError, maxError, optionsParseNumber, ...props }: InputNumberCountProps) => React.JSX.Element;
