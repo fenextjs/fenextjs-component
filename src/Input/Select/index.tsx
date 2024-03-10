@@ -14,6 +14,7 @@ import { ErrorCode } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 import { useValidator } from "fenextjs-hook";
 import { SVGSearch } from "fenextjs-svg";
+import { Img } from "@/Img";
 
 export type InputSelectTypeStyle = "normal" | "box" | "list" | "checkbox";
 
@@ -454,7 +455,36 @@ export const InputSelect = <T = any,>({
                                 >
                                     {_tValidate(clearContent, _t)}
                                 </button>
-                                {/* {props?.extraInContentInput} */}
+                                {data?.option?.img ? (
+                                    <>
+                                        <div className="fenext-select-option-selected-img">
+                                            <img src={data?.option?.img} />
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        {data?.option?.imgComponent ? (
+                                            <>
+                                                <div className="fenext-select-option-selected-img">
+                                                    <Img
+                                                        {...data?.option
+                                                            ?.imgComponent}
+                                                    />
+                                                </div>
+                                            </>
+                                        ) : (
+                                            <>
+                                                {data?.option?.icon && (
+                                                    <>
+                                                        <div className="fenext-select-option-selected-img">
+                                                            {data?.option?.icon}
+                                                        </div>
+                                                    </>
+                                                )}
+                                            </>
+                                        )}
+                                    </>
+                                )}
                             </>
                         }
                         validator={undefined}

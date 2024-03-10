@@ -1049,6 +1049,7 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   display: flex;
   align-items: center;
   gap: 1rem;
+  z-index: 1;
   --display-hidden: none;
 }
 .fenext-select-option-hidden {
@@ -1068,6 +1069,9 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.fenext-select-option-img * {
+  max-width: 100%;
 }
 .fenext-select-option-icon {
   max-width: 2rem;
@@ -1140,6 +1144,23 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   display: flex;
   align-items: center;
   display: none;
+}
+.fenext-select:has(.fenext-select-option-selected-img) .fenext-input-content-input {
+  padding-left: 4rem;
+}
+.fenext-select-option-selected-img {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  bottom: 0;
+  margin: auto;
+  max-width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fenext-select-option-selected-img * {
+  max-width: 100%;
 }
 .fenext-select-checkbox-close {
   position: absolute;
