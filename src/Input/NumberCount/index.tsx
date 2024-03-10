@@ -93,10 +93,14 @@ export const InputNumberCount = ({
 
     ...props
 }: InputNumberCountProps) => {
-    const { data, setData, isChange } = useData<string | "">(
+    const { data, setData, isChange } = useData<string>(
         `${value ?? defaultValue ?? ""}`,
         {
             onChangeDataAfter: (e) => {
+                if (e == "") {
+                    onChange?.("");
+                    return;
+                }
                 onChange?.(parseNumber(e));
             },
         },

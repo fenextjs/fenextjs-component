@@ -12,6 +12,10 @@ const fenextjs_validator_1 = require("fenextjs-validator");
 const InputNumberCount = ({ onChange, value = undefined, defaultValue, symbolInit = "$", symbolFinal = "", validator: validatorProps = undefined, min = -Infinity, max = Infinity, minError, maxError, optionsParseNumber, ...props }) => {
     const { data, setData, isChange } = (0, useData_1.useData)(`${value ?? defaultValue ?? ""}`, {
         onChangeDataAfter: (e) => {
+            if (e == "") {
+                onChange?.("");
+                return;
+            }
             onChange?.((0, Number_1.parseNumber)(e));
         },
     });
