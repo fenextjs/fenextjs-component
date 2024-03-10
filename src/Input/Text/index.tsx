@@ -246,7 +246,16 @@ export interface InputTextBaseProps extends _TProps {
     /**
      * inputMode of Input.
      */
-    inputMode?: "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search" | undefined;
+    inputMode?:
+        | "none"
+        | "text"
+        | "tel"
+        | "url"
+        | "email"
+        | "numeric"
+        | "decimal"
+        | "search"
+        | undefined;
     /**
      * AutoComplete of Input.
      */

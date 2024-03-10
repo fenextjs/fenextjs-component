@@ -22,7 +22,7 @@ const InputText = ({ id = "", datalist = undefined, name = "", yup = Yup.string(
     (0, env_log_1.env_log)(e, {
         name: "onChangeValidateAfterYup",
     });
-}, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", loader = false, autoComplete = false, useLoader = true, isChange: isChangeProps = undefined, onKeyDown, iconPos = "right", validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, _t = (e) => e, }) => {
+}, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", loader = false, autoComplete = false, useLoader = true, isChange: isChangeProps = undefined, onKeyDown, iconPos = "right", inputMode, validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, _t = (e) => e, }) => {
     const [statusInput, setStateInput] = (0, react_1.useState)("");
     const { dataMemo: dataErrorInput, setData: setErrorInput } = (0, fenextjs_hook_1.useData)(undefined);
     const errorInput = (0, react_1.useMemo)(() => error ?? dataErrorInput, [error, dataErrorInput]);
@@ -199,7 +199,7 @@ const InputText = ({ id = "", datalist = undefined, name = "", yup = Yup.string(
                         if (event.keyCode === 13) {
                             onEnter();
                         }
-                    }, autoComplete: autoComplete ? "on" : "off", onKeyDown: onKeyDown, ...props }),
+                    }, autoComplete: autoComplete ? "on" : "off", onKeyDown: onKeyDown, ...props, inputMode: inputMode }),
                 ICON,
                 LOADER,
                 extraInContentInput),

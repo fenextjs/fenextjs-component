@@ -193,6 +193,10 @@ export interface InputTextBaseProps extends _TProps {
      */
     useLoader?: boolean;
     /**
+     * inputMode of Input.
+     */
+    inputMode?: "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search" | undefined;
+    /**
      * AutoComplete of Input.
      */
     autoComplete?: boolean;
@@ -222,4 +226,4 @@ export interface InputTextBaseProps extends _TProps {
  */
 export interface InputTextProps extends InputTextBaseProps, InputTextClassProps {
 }
-export declare const InputText: ({ id, datalist, name, yup, label, placeholder, defaultValue, value, type, className, classNameLabel, classNameContentInput, classNameInput, classNameIcon, classNameLoaderValidate, iconLoader, onChange, onBlur, onEnter, onChangeValidate, onChangeValidateBeforeYup, onChangeValidateAfterYup, props, icon, extraInContentInput, extraInLabel, disabled, showIcon, error, errorWithIsChange, optional, optionalText, loader, autoComplete, useLoader, isChange: isChangeProps, onKeyDown, iconPos, validator, maxLength, regExp, regExpReplace, onChangeEvent, _t, }: InputTextProps) => React.JSX.Element;
+export declare const InputText: ({ id, datalist, name, yup, label, placeholder, defaultValue, value, type, className, classNameLabel, classNameContentInput, classNameInput, classNameIcon, classNameLoaderValidate, iconLoader, onChange, onBlur, onEnter, onChangeValidate, onChangeValidateBeforeYup, onChangeValidateAfterYup, props, icon, extraInContentInput, extraInLabel, disabled, showIcon, error, errorWithIsChange, optional, optionalText, loader, autoComplete, useLoader, isChange: isChangeProps, onKeyDown, iconPos, inputMode, validator, maxLength, regExp, regExpReplace, onChangeEvent, _t, }: InputTextProps) => React.JSX.Element;
