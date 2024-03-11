@@ -226,13 +226,7 @@ export const InputPhone = ({
                         regExp={/[^0-9+-]/g}
                         regExpReplace=""
                         icon={
-                            data?.img ? (
-                                <>
-                                    <img src={data.img} alt={data.code} />
-                                </>
-                            ) : (
-                                <></>
-                            )
+                            <></>
                         }
                         changeByFirstOptionInOnBlur={true}
                     />
@@ -243,7 +237,7 @@ export const InputPhone = ({
                     <InputText
                         {...classNameInputNumber}
                         {...props}
-                        type="number"
+                        type="text"
                         onChange={onChangeData("number")}
                         loader={!loadPhoneCodes || loader}
                         disabled={!loadPhoneCodes || disabled}
@@ -252,6 +246,9 @@ export const InputPhone = ({
                         value={value?.number}
                         _t={_t}
                         validator={validator?.getObjectValidator?.()?.number}
+                        inputMode="numeric"
+                        regExpReplace=""
+                        regExp={/[^1-9]/g}
                     />
                 </div>
                 {((props?.error ?? error) || (errorFenext && isChange)) && (

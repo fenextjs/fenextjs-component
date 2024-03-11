@@ -19,6 +19,7 @@ export const InputCardCCV = ({
                 maxLength={4}
                 regExpReplace=""
                 regExp={/[^1-9]/g}
+                inputMode="numeric"
                 type="number"
             />
         </>

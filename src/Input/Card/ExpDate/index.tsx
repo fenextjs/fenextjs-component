@@ -108,6 +108,7 @@ export const InputCardExpDate = ({
                 onChange={(v: string) => {
                     setData(textToCardExpDateData(v));
                 }}
+                inputMode="numeric"
             />
         </>
     );

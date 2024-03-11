@@ -92,6 +92,7 @@ export const InputCardNumber = ({
                             .slice(0, Math.max(15, maxNumberLength)),
                     );
                 }}
+                inputMode="numeric"
             />
         </>
     );
