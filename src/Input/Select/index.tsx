@@ -14,7 +14,7 @@ import { ErrorCode } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 import { useValidator } from "fenextjs-hook";
 import { SVGSearch } from "fenextjs-svg";
-import { Img } from "@/Img";
+import { Img } from "../../Img";
 
 export type InputSelectTypeStyle = "normal" | "box" | "list" | "checkbox";
 
