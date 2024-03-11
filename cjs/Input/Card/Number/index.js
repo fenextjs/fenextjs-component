@@ -43,7 +43,7 @@ const InputCardNumber = ({ value: valueProps, defaultValue = "", onChange, valid
                 setData(`${v}`
                     .replace(/[^0-9]/g, "")
                     .slice(0, Math.max(15, maxNumberLength)));
-            } })));
+            }, inputMode: "numeric" })));
 };
 exports.InputCardNumber = InputCardNumber;
 //# sourceMappingURL=index.js.map

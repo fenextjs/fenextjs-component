@@ -6,7 +6,8 @@
         grid-column: 1/-1;
     }
     &-code {
-        .fenext-select:has(.fenext-select-option-selected-img) .fenext-input-content-input{
+        .fenext-select:has(.fenext-select-option-selected-img)
+            .fenext-input-content-input {
             padding-left: 3rem;
         }
         .fenext-input-content-input {

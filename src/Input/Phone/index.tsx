@@ -225,9 +225,7 @@ export const InputPhone = ({
                         }}
                         regExp={/[^0-9+-]/g}
                         regExpReplace=""
-                        icon={
-                            <></>
-                        }
+                        icon={<></>}
                         changeByFirstOptionInOnBlur={true}
                     />
                 </div>

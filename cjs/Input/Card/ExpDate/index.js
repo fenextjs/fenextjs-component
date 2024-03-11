@@ -56,7 +56,7 @@ const InputCardExpDate = ({ value: valueProps, defaultValue = {}, placeholder = 
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(Text_1.InputText, { ...props, value: CardExpDateDataToText(value), className: `fenext-input-card-exp-date ${props?.className}`, error: errorFenext, placeholder: placeholder, onChange: (v) => {
                 setData(textToCardExpDateData(v));
-            } })));
+            }, inputMode: "numeric" })));
 };
 exports.InputCardExpDate = InputCardExpDate;
 //# sourceMappingURL=index.js.map
