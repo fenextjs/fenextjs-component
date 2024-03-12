@@ -246,7 +246,7 @@ export const InputPhone = ({
                         validator={validator?.getObjectValidator?.()?.number}
                         inputMode="numeric"
                         regExpReplace=""
-                        regExp={/[^1-9]/g}
+                        regExp={/[^0-9]/g}
                     />
                 </div>
                 {((props?.error ?? error) || (errorFenext && isChange)) && (
