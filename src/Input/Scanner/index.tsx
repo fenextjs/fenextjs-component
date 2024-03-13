@@ -1,1 +1,1 @@
-export * from "./Qr"
+export * from "./Qr";

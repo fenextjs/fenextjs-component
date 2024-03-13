@@ -2530,15 +2530,40 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   text-align: center;
 }
 
+.fenext-input-scanner-qr .fenext-modal-base-close,
 .fenext-input-scanner-qr .fenext-btn {
-  padding: 0.3rem;
+  padding: 0.5rem;
   border-radius: 0.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: auto;
 }
+.fenext-input-scanner-qr .fenext-modal-base-close svg,
 .fenext-input-scanner-qr .fenext-btn svg {
-  width: 2rem;
+  width: 1.5rem;
+  max-height: 1.5rem;
+}
+.fenext-input-scanner-qr .fenext-modal-base-close {
+  top: 1.5rem;
+  right: 1.5rem;
+  border-radius: 100%;
+}
+.fenext-input-scanner-qr-btn-change-camera {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+.fenext-input-scanner-qr-btn-change-camera.fenext-btn {
+  border-radius: 100%;
+}
+.fenext-input-scanner-qr-btn-flash {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+}
+.fenext-input-scanner-qr-btn-flash.fenext-btn {
+  border-radius: 100%;
 }
 .fenext-input-scanner-qr .fenext-modal-base {
   overflow: hidden;
