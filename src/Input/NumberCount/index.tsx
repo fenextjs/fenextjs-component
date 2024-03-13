@@ -55,6 +55,14 @@ export interface InputNumberCountBaseProps
     /**
      * The minimum value allowed for the input.
      */
+    aplyMin?: boolean;
+    /**
+     * The maximum value allowed for the input.
+     */
+    aplyMax?: boolean;
+    /**
+     * The minimum value allowed for the input.
+     */
     minError?: string;
     /**
      * The maximum value allowed for the input.
@@ -90,10 +98,12 @@ export const InputNumberCount = ({
     minError,
     maxError,
     optionsParseNumber,
+    aplyMax = true,
+    aplyMin = false,
 
     ...props
 }: InputNumberCountProps) => {
-    const { data, setData, isChange } = useData<string>(
+    const { data, setDataFunction, isChange } = useData<string>(
         `${value ?? defaultValue ?? ""}`,
         {
             onChangeDataAfter: (e) => {
@@ -128,9 +138,29 @@ export const InputNumberCount = ({
         return `${symbolInit}${n}${d.at(-1) == "." ? "." : symbolFinal}`;
     }, [symbolInit, symbolFinal, data, value, optionsParseNumber]);
 
-    const onChangeNumber = (number: number | string) => {
-        const n = `${number}`.replace(/[^0-9.-]/g, "");
-        setData(n);
+    const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
+        props?.onKeyDown?.(event);
+        const keyNew = event?.key;
+
+        setDataFunction((old) => {
+            let n = `${old}${keyNew}`.replace(/[^0-9.-]/g, "");
+            if (keyNew == "Backspace") {
+                n = n.slice(0, n.length - 1);
+            }
+            if (keyNew == "ArrowUp") {
+                n = `${parseNumber(n) + 1}`;
+            }
+            if (keyNew == "ArrowDown") {
+                n = `${parseNumber(n) - 1}`;
+            }
+            if(aplyMax && max != undefined){
+                n = `${Math.min(max,parseNumber(n))}`;
+            }
+            if(aplyMin && min != undefined){
+                n = `${Math.max(min,parseNumber(n))}`;
+            }
+            return n;
+        });
     };
 
     return (
@@ -138,10 +168,11 @@ export const InputNumberCount = ({
             <InputText
                 {...props}
                 className={`fenext-input-number-count ${props?.className ?? ""}`}
-                onChange={onChangeNumber}
+                // onChange={onChangeNumber}
                 type="text"
                 value={dataText}
                 isChange={isChange}
+                onKeyDown={onKeyDown as any}
                 validator={undefined}
                 error={errorFenext}
                 inputMode="numeric"
