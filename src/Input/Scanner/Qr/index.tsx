@@ -30,13 +30,13 @@ export const InputScannerQr = ({
     onChange,
     buttonScannerContent = <Qr />,
     buttonChangeCameraContent = <CameraChange />,
-    buttonToggleFlashContent=<Bolt/>
+    buttonToggleFlashContent = <Bolt />,
 }: InputScannerQrProps) => {
     const uuid = useMemo(() => generateRandomID(), []);
     const ref = useRef<HTMLVideoElement>(null);
     const [showScanner, setShowScanner] = useState(false);
-    const [hasFlash, setHasFlash] = useState(false)
-    const [nCamera, setNCamera] = useState(0)
+    const [hasFlash, setHasFlash] = useState(false);
+    const [nCamera, setNCamera] = useState(0);
     const [listCamera, setListCamera] = useState<
         QrScanner.Camera[] | undefined
     >(undefined);
@@ -56,17 +56,17 @@ export const InputScannerQr = ({
         qrScanner?.toggleFlash();
     }, [qrScanner]);
     const onChangeCamera = useCallback(() => {
-        setNCamera(p=>{
-            let n = p + 1
-            if(n >=( listCamera?.length ?? 0)){
-                n = 0 
+        setNCamera((p) => {
+            let n = p + 1;
+            if (n >= (listCamera?.length ?? 0)) {
+                n = 0;
             }
-            if(listCamera?.[n]?.id){
-                qrScanner?.setCamera(listCamera?.[n]?.id)
+            if (listCamera?.[n]?.id) {
+                qrScanner?.setCamera(listCamera?.[n]?.id);
             }
-            return n
-        })
-    }, [qrScanner,listCamera]);
+            return n;
+        });
+    }, [qrScanner, listCamera]);
 
     const onScan = useCallback(
         (v?: string) => {
@@ -89,8 +89,8 @@ export const InputScannerQr = ({
             qrScanner.stop();
             setQrScanner(qrScanner);
             (async () => {
-                setListCamera( await QrScanner.listCameras());
-                setHasFlash( await QrScanner.hasCamera())
+                setListCamera(await QrScanner.listCameras());
+                setHasFlash(await QrScanner.hasCamera());
             })();
         } else {
             setTimeout(onStartScan, 500);
@@ -120,24 +120,22 @@ export const InputScannerQr = ({
                         ref={ref}
                         className="fenext-input-scanner-qr-video"
                     ></video>
-                    {
-                        listCamera && listCamera.length > 1 &&
+                    {listCamera && listCamera.length > 1 && (
                         <Button
                             className="fenext-input-scanner-qr-btn-change-camera"
                             onClick={onChangeCamera}
                         >
                             {buttonChangeCameraContent}
                         </Button>
-                    }
-                    {
-                        hasFlash && 
+                    )}
+                    {hasFlash && (
                         <Button
                             className="fenext-input-scanner-qr-btn-flash"
                             onClick={onToggleFlash}
                         >
                             {buttonToggleFlashContent}
                         </Button>
-                    }
+                    )}
                 </Modal>
             </div>
         </>

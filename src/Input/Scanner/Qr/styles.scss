@@ -12,11 +12,10 @@
             max-height: 1.5rem;
         }
     }
-    .fenext-modal-base-close{
+    .fenext-modal-base-close {
         top: 1.5rem;
         right: 1.5rem;
         border-radius: 100%;
-
     }
     &-btn {
         &-scanner {
@@ -29,14 +28,13 @@
                 border-radius: 100%;
             }
         }
-        &-flash{
+        &-flash {
             position: fixed;
             bottom: 1.5rem;
             left: 1.5rem;
             &.fenext-btn {
                 border-radius: 100%;
             }
-
         }
     }
     .fenext-modal-base {

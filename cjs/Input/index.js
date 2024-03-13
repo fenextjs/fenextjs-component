@@ -32,4 +32,5 @@ tslib_1.__exportStar(require("./Unit"), exports);
 tslib_1.__exportStar(require("./Code"), exports);
 tslib_1.__exportStar(require("./Google"), exports);
 tslib_1.__exportStar(require("./FileStatus"), exports);
+tslib_1.__exportStar(require("./Scanner"), exports);
 //# sourceMappingURL=index.js.map
