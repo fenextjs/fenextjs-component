@@ -153,11 +153,11 @@ export const InputNumberCount = ({
             if (keyNew == "ArrowDown") {
                 n = `${parseNumber(n) - 1}`;
             }
-            if(aplyMax && max != undefined){
-                n = `${Math.min(max,parseNumber(n))}`;
+            if (aplyMax && max != undefined) {
+                n = `${Math.min(max, parseNumber(n))}`;
             }
-            if(aplyMin && min != undefined){
-                n = `${Math.max(min,parseNumber(n))}`;
+            if (aplyMin && min != undefined) {
+                n = `${Math.max(min, parseNumber(n))}`;
             }
             return n;
         });

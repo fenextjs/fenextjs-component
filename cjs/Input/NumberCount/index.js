@@ -9,8 +9,8 @@ const NumberCount_1 = require("fenextjs-functions/cjs/parse/NumberCount");
 const Number_1 = require("fenextjs-functions/cjs/parse/Number");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_validator_1 = require("fenextjs-validator");
-const InputNumberCount = ({ onChange, value = undefined, defaultValue, symbolInit = "$", symbolFinal = "", validator: validatorProps = undefined, min = -Infinity, max = Infinity, minError, maxError, optionsParseNumber, ...props }) => {
-    const { data, setData, isChange } = (0, useData_1.useData)(`${value ?? defaultValue ?? ""}`, {
+const InputNumberCount = ({ onChange, value = undefined, defaultValue, symbolInit = "$", symbolFinal = "", validator: validatorProps = undefined, min = -Infinity, max = Infinity, minError, maxError, optionsParseNumber, aplyMax = true, aplyMin = false, ...props }) => {
+    const { data, setDataFunction, isChange } = (0, useData_1.useData)(`${value ?? defaultValue ?? ""}`, {
         onChangeDataAfter: (e) => {
             if (e == "") {
                 onChange?.("");
@@ -38,12 +38,33 @@ const InputNumberCount = ({ onChange, value = undefined, defaultValue, symbolIni
         const n = (0, NumberCount_1.parseNumberCount)(d, optionsParseNumber);
         return `${symbolInit}${n}${d.at(-1) == "." ? "." : symbolFinal}`;
     }, [symbolInit, symbolFinal, data, value, optionsParseNumber]);
-    const onChangeNumber = (number) => {
-        const n = `${number}`.replace(/[^0-9.-]/g, "");
-        setData(n);
+    const onKeyDown = (event) => {
+        props?.onKeyDown?.(event);
+        const keyNew = event?.key;
+        setDataFunction((old) => {
+            let n = `${old}${keyNew}`.replace(/[^0-9.-]/g, "");
+            if (keyNew == "Backspace") {
+                n = n.slice(0, n.length - 1);
+            }
+            if (keyNew == "ArrowUp") {
+                n = `${(0, Number_1.parseNumber)(n) + 1}`;
+            }
+            if (keyNew == "ArrowDown") {
+                n = `${(0, Number_1.parseNumber)(n) - 1}`;
+            }
+            if (aplyMax && max != undefined) {
+                n = `${Math.min(max, (0, Number_1.parseNumber)(n))}`;
+            }
+            if (aplyMin && min != undefined) {
+                n = `${Math.max(min, (0, Number_1.parseNumber)(n))}`;
+            }
+            return n;
+        });
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(Text_1.InputText, { ...props, className: `fenext-input-number-count ${props?.className ?? ""}`, onChange: onChangeNumber, type: "text", value: dataText, isChange: isChange, validator: undefined, error: errorFenext, inputMode: "numeric" })));
+        react_1.default.createElement(Text_1.InputText, { ...props, className: `fenext-input-number-count ${props?.className ?? ""}`, 
+            // onChange={onChangeNumber}
+            type: "text", value: dataText, isChange: isChange, onKeyDown: onKeyDown, validator: undefined, error: errorFenext, inputMode: "numeric" })));
 };
 exports.InputNumberCount = InputNumberCount;
 //# sourceMappingURL=index.js.map
