@@ -99,6 +99,7 @@ export const InputSelectCSC = ({
         onChangeDataMemoAfter: onChange,
         ifLoadImgCountry,
     });
+
     const onChange_ =
         (id: keyof CSCProps) =>
         (v: InputSelectItemOptionBaseProps | undefined) => {
@@ -106,8 +107,9 @@ export const InputSelectCSC = ({
                 onChangeCSC(id)({
                     id: parseInt(`${v?.id}`),
                     text: v?.text ?? "",
-                    id_country: value?.country?.id,
-                    id_state: value?.state?.id as any,
+                    id_country: v?.data?.id_country,
+                    id_state: v?.data?.id_state as any,
+                    nameAve: v?.data?.nameAve as any,
                 });
             } else {
                 if (id == "country") {
@@ -128,7 +130,12 @@ export const InputSelectCSC = ({
                         {...props}
                         {...country}
                         key={value?.country?.id}
-                        options={countrys}
+                        options={countrys?.map((e) => {
+                            return {
+                                ...e,
+                                data: e,
+                            };
+                        })}
                         onChange={onChange_("country")}
                         defaultValue={value?.country}
                         loader={!load}
@@ -137,7 +144,12 @@ export const InputSelectCSC = ({
                         {...props}
                         {...state}
                         key={value?.state?.id}
-                        options={statesForCountrySelected}
+                        options={statesForCountrySelected?.map((e) => {
+                            return {
+                                ...e,
+                                data: e,
+                            };
+                        })}
                         onChange={onChange_("state")}
                         defaultValue={value?.state}
                         loader={!load}
@@ -146,7 +158,12 @@ export const InputSelectCSC = ({
                         {...props}
                         {...city}
                         key={value?.city?.id}
-                        options={citysForStateSelected}
+                        options={citysForStateSelected?.map((e) => {
+                            return {
+                                ...e,
+                                data: e,
+                            };
+                        })}
                         onChange={onChange_("city")}
                         defaultValue={value?.city}
                         loader={!load}
