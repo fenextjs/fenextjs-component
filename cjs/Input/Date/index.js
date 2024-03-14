@@ -69,8 +69,8 @@ const InputDate = ({ classNameInputDate = "", type = "date", defaultValue = unde
                     const h = (0, fenextjs_functions_1.parseNumberCount)(e * i, {
                         minimumIntegerDigits: 2,
                     });
-                    return (react_1.default.createElement(react_1.default.Fragment, null, new Array(60).fill(1).map((l, j) => {
-                        const m = (0, fenextjs_functions_1.parseNumberCount)(l * j, {
+                    return (react_1.default.createElement(react_1.default.Fragment, null, new Array(6).fill(1).map((l, j) => {
+                        const m = (0, fenextjs_functions_1.parseNumberCount)(l * j * 10, {
                             minimumIntegerDigits: 2,
                         });
                         return (react_1.default.createElement(react_1.default.Fragment, null,
