@@ -12,9 +12,13 @@ const NotificationPop = ({ classNamePop = "", className = "", typePop = "down", 
             reset();
         }, time);
     }, []);
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: `fenext-notification-pop fenext-notification-pop-${typePop} fenext-notification-pop-${notification?.message != "" ? "active" : ""} ${classNamePop} ` },
-            react_1.default.createElement(Fixed_1.Notification, { className: className, type: notification?.type, children: notification?.message, _t: _t }))));
+    return (react_1.default.createElement(react_1.default.Fragment, null, notification && (react_1.default.createElement("div", { className: `
+                        fenext-notification-pop
+                        fenext-notification-pop-${typePop}
+                        fenext-notification-pop-${notification?.message != "" ? "active" : ""}
+                        ${classNamePop}
+                    ` },
+        react_1.default.createElement(Fixed_1.Notification, { className: className, type: notification?.type, children: notification?.message, _t: _t })))));
 };
 exports.NotificationPop = NotificationPop;
 //# sourceMappingURL=index.js.map

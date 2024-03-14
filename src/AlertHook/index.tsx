@@ -17,14 +17,12 @@ export const AlertHook = ({
     configHook = {},
     _t,
 }: AlertHookProps) => {
-    const { alert, load, onClearAlert } = useAlert(configHook);
+    const { alert, onClearAlert } = useAlert(configHook);
     return (
         <>
-            {load && (
+            {alert && (
                 <div className={`fenext-alert-hook ${className}`}>
-                    {alert && (
-                        <Alert _t={_t} {...alert} onClose={onClearAlert} />
-                    )}
+                    <Alert _t={_t} {...alert} onClose={onClearAlert} />
                 </div>
             )}
         </>

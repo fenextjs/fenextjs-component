@@ -51,18 +51,23 @@ export const NotificationPop = ({
 
     return (
         <>
-            <div
-                className={`fenext-notification-pop fenext-notification-pop-${typePop} fenext-notification-pop-${
-                    notification?.message != "" ? "active" : ""
-                } ${classNamePop} `}
-            >
-                <Notification
-                    className={className}
-                    type={notification?.type}
-                    children={notification?.message}
-                    _t={_t}
-                />
-            </div>
+            {notification && (
+                <div
+                    className={`
+                        fenext-notification-pop
+                        fenext-notification-pop-${typePop}
+                        fenext-notification-pop-${notification?.message != "" ? "active" : ""}
+                        ${classNamePop}
+                    `}
+                >
+                    <Notification
+                        className={className}
+                        type={notification?.type}
+                        children={notification?.message}
+                        _t={_t}
+                    />
+                </div>
+            )}
         </>
     );
 };
