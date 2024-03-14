@@ -155,8 +155,8 @@ export const InputDate = ({
                             });
                             return (
                                 <>
-                                    {new Array(60).fill(1).map((l, j) => {
-                                        const m = parseNumberCount(l * j, {
+                                    {new Array(6).fill(1).map((l, j) => {
+                                        const m = parseNumberCount(l * j * 10, {
                                             minimumIntegerDigits: 2,
                                         });
                                         return (
