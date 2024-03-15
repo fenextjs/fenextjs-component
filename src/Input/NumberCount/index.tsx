@@ -86,7 +86,7 @@ export interface InputNumberCountProps
 
 export const InputNumberCount = ({
     onChange,
-    value = undefined,
+    value: valueProps = undefined,
     defaultValue,
 
     symbolInit = "$",
@@ -104,7 +104,7 @@ export const InputNumberCount = ({
     ...props
 }: InputNumberCountProps) => {
     const { data, setDataFunction, isChange } = useData<string>(
-        `${value ?? defaultValue ?? ""}`,
+        `${defaultValue ?? ""}`,
         {
             onChangeDataAfter: (e) => {
                 if (e == "") {
@@ -115,6 +115,7 @@ export const InputNumberCount = ({
             },
         },
     );
+    const value = useMemo(() => valueProps ?? data, [valueProps, data]);
 
     const validator = useMemo(() => {
         const v = validatorProps ?? FenextjsValidator().isNumber();
@@ -125,18 +126,18 @@ export const InputNumberCount = ({
     }, [validatorProps, min, max]);
 
     const { error: errorFenext } = useValidator({
-        data: parseNumber(data),
+        data: parseNumber(value),
         validator: validator,
     });
 
     const dataText = useMemo(() => {
-        const d = `${value ?? data}`;
+        const d = `${value}`;
         if (d == "") {
             return "";
         }
         const n = parseNumberCount(d, optionsParseNumber);
         return `${symbolInit}${n}${d.at(-1) == "." ? "." : symbolFinal}`;
-    }, [symbolInit, symbolFinal, data, value, optionsParseNumber]);
+    }, [symbolInit, symbolFinal, value, optionsParseNumber]);
 
     const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
         props?.onKeyDown?.(event);

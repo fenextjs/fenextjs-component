@@ -9,8 +9,8 @@ const NumberCount_1 = require("fenextjs-functions/cjs/parse/NumberCount");
 const Number_1 = require("fenextjs-functions/cjs/parse/Number");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_validator_1 = require("fenextjs-validator");
-const InputNumberCount = ({ onChange, value = undefined, defaultValue, symbolInit = "$", symbolFinal = "", validator: validatorProps = undefined, min = -Infinity, max = Infinity, minError, maxError, optionsParseNumber, aplyMax = true, aplyMin = false, ...props }) => {
-    const { data, setDataFunction, isChange } = (0, useData_1.useData)(`${value ?? defaultValue ?? ""}`, {
+const InputNumberCount = ({ onChange, value: valueProps = undefined, defaultValue, symbolInit = "$", symbolFinal = "", validator: validatorProps = undefined, min = -Infinity, max = Infinity, minError, maxError, optionsParseNumber, aplyMax = true, aplyMin = false, ...props }) => {
+    const { data, setDataFunction, isChange } = (0, useData_1.useData)(`${defaultValue ?? ""}`, {
         onChangeDataAfter: (e) => {
             if (e == "") {
                 onChange?.("");
@@ -19,6 +19,7 @@ const InputNumberCount = ({ onChange, value = undefined, defaultValue, symbolIni
             onChange?.((0, Number_1.parseNumber)(e));
         },
     });
+    const value = (0, react_1.useMemo)(() => valueProps ?? data, [valueProps, data]);
     const validator = (0, react_1.useMemo)(() => {
         const v = validatorProps ?? (0, fenextjs_validator_1.FenextjsValidator)().isNumber();
         if (!validatorProps) {
@@ -27,17 +28,17 @@ const InputNumberCount = ({ onChange, value = undefined, defaultValue, symbolIni
         return v;
     }, [validatorProps, min, max]);
     const { error: errorFenext } = (0, fenextjs_hook_1.useValidator)({
-        data: (0, Number_1.parseNumber)(data),
+        data: (0, Number_1.parseNumber)(value),
         validator: validator,
     });
     const dataText = (0, react_1.useMemo)(() => {
-        const d = `${value ?? data}`;
+        const d = `${value}`;
         if (d == "") {
             return "";
         }
         const n = (0, NumberCount_1.parseNumberCount)(d, optionsParseNumber);
         return `${symbolInit}${n}${d.at(-1) == "." ? "." : symbolFinal}`;
-    }, [symbolInit, symbolFinal, data, value, optionsParseNumber]);
+    }, [symbolInit, symbolFinal, value, optionsParseNumber]);
     const onKeyDown = (event) => {
         props?.onKeyDown?.(event);
         const keyNew = event?.key;

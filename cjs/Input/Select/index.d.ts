@@ -90,6 +90,10 @@ export interface InputSelectBaseProps<T = any> extends Omit<InputTextBaseProps, 
      */
     onChange?: (v?: InputSelectItemOptionBaseProps<T>) => void;
     /**
+     * Function to call when the input value changes.
+     */
+    onChangeData?: (v?: T) => void;
+    /**
      * Function to call when the input value changes text.
      */
     onChangeText?: (v?: string) => void;
@@ -128,4 +132,4 @@ export interface InputSelectValue<T = any> {
     text?: string;
     textSearch?: string;
 }
-export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, _t, ...props }: InputSelectProps<T>) => React.JSX.Element;
+export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, _t, ...props }: InputSelectProps<T>) => React.JSX.Element;

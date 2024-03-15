@@ -21,7 +21,8 @@ const args  : InputNumberCountProps = {
     min:20,
     max:30,
     symbolFinal:"%",
-    symbolInit:""
+    symbolInit:"",
+    value:22
 }
 
 Index.args= args

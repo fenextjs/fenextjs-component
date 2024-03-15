@@ -94,7 +94,6 @@ export const InputSelectCSC = ({
         onChange,
         ifLoadImgCountry,
     });
-
     const CONTENT = useMemo(() => {
         let C = (
             <>
@@ -108,9 +107,7 @@ export const InputSelectCSC = ({
                             data: e,
                         };
                     })}
-                    onChange={(e) => {
-                        onChangeCSC("country")(e?.data);
-                    }}
+                    onChangeData={onChangeCSC("country")}
                     defaultValue={value?.country}
                 />
                 <InputSelect<StateProps>
@@ -123,9 +120,7 @@ export const InputSelectCSC = ({
                             data: e,
                         };
                     })}
-                    onChange={(e) => {
-                        onChangeCSC("state")(e?.data);
-                    }}
+                    onChangeData={onChangeCSC("state")}
                     defaultValue={value?.state}
                 />
                 <InputSelect<CityProps>
@@ -138,9 +133,7 @@ export const InputSelectCSC = ({
                             data: e,
                         };
                     })}
-                    onChange={(e) => {
-                        onChangeCSC("city")(e?.data);
-                    }}
+                    onChangeData={onChangeCSC("city")}
                     defaultValue={value?.city}
                 />
             </>
@@ -157,6 +150,6 @@ export const InputSelectCSC = ({
         }
 
         return C;
-    }, [value, countrys, state, citys, useContainer, country, state, city]);
+    }, [value, countrys, states, citys, useContainer, country, state, city]);
     return <>{CONTENT}</>;
 };

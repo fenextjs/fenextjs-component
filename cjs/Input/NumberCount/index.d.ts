@@ -70,4 +70,4 @@ export interface InputNumberCountBaseProps extends Omit<InputTextBaseProps, "typ
  */
 export interface InputNumberCountProps extends InputNumberCountBaseProps, InputNumberCountClassProps {
 }
-export declare const InputNumberCount: ({ onChange, value, defaultValue, symbolInit, symbolFinal, validator: validatorProps, min, max, minError, maxError, optionsParseNumber, aplyMax, aplyMin, ...props }: InputNumberCountProps) => React.JSX.Element;
+export declare const InputNumberCount: ({ onChange, value: valueProps, defaultValue, symbolInit, symbolFinal, validator: validatorProps, min, max, minError, maxError, optionsParseNumber, aplyMax, aplyMin, ...props }: InputNumberCountProps) => React.JSX.Element;

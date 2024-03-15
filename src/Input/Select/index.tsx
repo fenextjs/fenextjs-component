@@ -127,6 +127,10 @@ export interface InputSelectBaseProps<T = any>
      */
     onChange?: (v?: InputSelectItemOptionBaseProps<T>) => void;
     /**
+     * Function to call when the input value changes.
+     */
+    onChangeData?: (v?: T) => void;
+    /**
      * Function to call when the input value changes text.
      */
     onChangeText?: (v?: string) => void;
@@ -184,6 +188,7 @@ export const InputSelect = <T = any,>({
     typeSelectStyle = "normal",
     value = undefined,
     onChange,
+    onChangeData,
     onChangeText,
     onChangeValidate,
     icon = <Arrow />,
@@ -239,6 +244,7 @@ export const InputSelect = <T = any,>({
         {
             onChangeDataAfter: (d: InputSelectValue<T>) => {
                 onChange?.(d.option ?? undefined);
+                onChangeData?.(d?.option?.data ?? undefined);
             },
         },
     );
