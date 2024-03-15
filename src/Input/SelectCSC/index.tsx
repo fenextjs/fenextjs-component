@@ -3,10 +3,14 @@ import {
     InputSelect,
     InputSelectBaseProps,
     InputSelectClassProps,
-    InputSelectItemOptionBaseProps,
 } from "../Select";
 import { useCSC, useCSCProps } from "fenextjs-hook/cjs/useCSC";
-import { CSCProps } from "fenextjs-interface/cjs/CSC";
+import {
+    CSCProps,
+    CountryProps,
+    StateProps,
+    CityProps,
+} from "fenextjs-interface/cjs/CSC";
 import { InputTextBaseProps } from "../Text";
 
 /**
@@ -68,7 +72,6 @@ export interface InputSelectCSCProps
 export const InputSelectCSC = ({
     classNameSelectCSC = "",
     defaultValue = undefined,
-    defaultValueString = undefined,
     useContainer = true,
     onChange,
     country = {
@@ -86,91 +89,63 @@ export const InputSelectCSC = ({
     ifLoadImgCountry = false,
     ...props
 }: InputSelectCSCProps) => {
-    const {
-        load,
-        countrys,
-        statesForCountrySelected,
-        citysForStateSelected,
-        onChangeCSC,
-        value,
-    } = useCSC({
+    const { countrys, states, citys, onChangeCSC, value } = useCSC({
         defaultValue,
-        defaultValueString,
-        onChangeDataMemoAfter: onChange,
+        onChange,
         ifLoadImgCountry,
     });
 
-    const onChange_ =
-        (id: keyof CSCProps) =>
-        (v: InputSelectItemOptionBaseProps | undefined) => {
-            if (v) {
-                onChangeCSC(id)({
-                    id: parseInt(`${v?.id}`),
-                    text: v?.text ?? "",
-                    id_country: v?.data?.id_country,
-                    id_state: v?.data?.id_state as any,
-                    nameAve: v?.data?.nameAve as any,
-                });
-            } else {
-                if (id == "country") {
-                    onChangeCSC("state")(undefined);
-                }
-                if (id == "state") {
-                    onChangeCSC("city")(undefined);
-                }
-            }
-        };
-
     const CONTENT = useMemo(() => {
-        let C = <></>;
-        if (load) {
-            C = (
-                <>
-                    <InputSelect
-                        {...props}
-                        {...country}
-                        key={value?.country?.id}
-                        options={countrys?.map((e) => {
-                            return {
-                                ...e,
-                                data: e,
-                            };
-                        })}
-                        onChange={onChange_("country")}
-                        defaultValue={value?.country}
-                        loader={!load}
-                    />
-                    <InputSelect
-                        {...props}
-                        {...state}
-                        key={value?.state?.id}
-                        options={statesForCountrySelected?.map((e) => {
-                            return {
-                                ...e,
-                                data: e,
-                            };
-                        })}
-                        onChange={onChange_("state")}
-                        defaultValue={value?.state}
-                        loader={!load}
-                    />
-                    <InputSelect
-                        {...props}
-                        {...city}
-                        key={value?.city?.id}
-                        options={citysForStateSelected?.map((e) => {
-                            return {
-                                ...e,
-                                data: e,
-                            };
-                        })}
-                        onChange={onChange_("city")}
-                        defaultValue={value?.city}
-                        loader={!load}
-                    />
-                </>
-            );
-        }
+        let C = (
+            <>
+                <InputSelect<CountryProps>
+                    {...props}
+                    {...country}
+                    key={value?.country?.id}
+                    options={countrys?.map((e) => {
+                        return {
+                            ...e,
+                            data: e,
+                        };
+                    })}
+                    onChange={(e) => {
+                        onChangeCSC("country")(e?.data);
+                    }}
+                    defaultValue={value?.country}
+                />
+                <InputSelect<StateProps>
+                    {...props}
+                    {...state}
+                    key={value?.state?.id}
+                    options={states?.map((e) => {
+                        return {
+                            ...e,
+                            data: e,
+                        };
+                    })}
+                    onChange={(e) => {
+                        onChangeCSC("state")(e?.data);
+                    }}
+                    defaultValue={value?.state}
+                />
+                <InputSelect<CityProps>
+                    {...props}
+                    {...city}
+                    key={value?.city?.id}
+                    options={citys?.map((e) => {
+                        return {
+                            ...e,
+                            data: e,
+                        };
+                    })}
+                    onChange={(e) => {
+                        onChangeCSC("city")(e?.data);
+                    }}
+                    defaultValue={value?.city}
+                />
+            </>
+        );
+
         if (useContainer) {
             C = (
                 <>
@@ -182,16 +157,6 @@ export const InputSelectCSC = ({
         }
 
         return C;
-    }, [
-        value,
-        load,
-        countrys,
-        statesForCountrySelected,
-        citysForStateSelected,
-        useContainer,
-        country,
-        state,
-        city,
-    ]);
+    }, [value, countrys, state, citys, useContainer, country, state, city]);
     return <>{CONTENT}</>;
 };
