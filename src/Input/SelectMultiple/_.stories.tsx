@@ -45,7 +45,8 @@ const args: InputSelectMultipleProps = {
             throw "No Puedes seleccionar 3 elementos"
         }
     },
-    typeSelectStyle:"checkbox"
+    typeSelectStyle:"normal",
+    typeSelectMultipleStyle:"checkbox",
 };
 
 Index.args = args;
