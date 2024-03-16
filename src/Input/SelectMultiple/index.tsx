@@ -59,7 +59,7 @@ export interface InputSelectMultipleBaseProps<T = any>
      */
     iconDelete?: ReactNode;
 
-    typeSelectMultipleStyle?:"normal" | "checkbox"
+    typeSelectMultipleStyle?: "normal" | "checkbox";
 }
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
@@ -77,7 +77,7 @@ export const InputSelectMultiple = <T = any,>({
     onChangeValidate,
     options = [],
     iconDelete = <Trash />,
-    typeSelectMultipleStyle= "normal",
+    typeSelectMultipleStyle = "normal",
     ...props
 }: InputSelectMultipleProps<T>) => {
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
@@ -162,7 +162,6 @@ export const InputSelectMultiple = <T = any,>({
                                     return (
                                         <InputSelectOption
                                             {...option}
-                                            
                                             type={"multiple"}
                                             onDelete={onRemoveItemSelect}
                                             iconDelete={

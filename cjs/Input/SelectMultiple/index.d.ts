@@ -39,10 +39,11 @@ export interface InputSelectMultipleBaseProps<T = any> extends Omit<InputSelectB
      * @default <Trash />
      */
     iconDelete?: ReactNode;
+    typeSelectMultipleStyle?: "normal" | "checkbox";
 }
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
  */
 export interface InputSelectMultipleProps<T = any> extends InputSelectMultipleBaseProps<T>, InputSelectMultipleClassProps {
 }
-export declare const InputSelectMultiple: <T = any>({ classNameSelectMultiple, classNameSelectMultipleList, onChange, value, defaultValue, onChangeValidate, options, iconDelete, ...props }: InputSelectMultipleProps<T>) => React.JSX.Element;
+export declare const InputSelectMultiple: <T = any>({ classNameSelectMultiple, classNameSelectMultipleList, onChange, value, defaultValue, onChangeValidate, options, iconDelete, typeSelectMultipleStyle, ...props }: InputSelectMultipleProps<T>) => React.JSX.Element;
