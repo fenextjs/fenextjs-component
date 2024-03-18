@@ -75,4 +75,4 @@ export interface InputPhoneProps extends InputPhoneBaseProps, InputPhoneClassPro
  * Component that renders a checkbox input.
  * Takes an InputPhoneProps object as props.
  */
-export declare const InputPhone: ({ classNameInputNumber, classNameSelectCode, classNamePhone, classNamePhoneCode, classNamePhoneLabel, classNamePhoneNumber, classNameError, disabledSelectCode, disabled, label, loader, yup, placeholderCode, placeholder, defaultValue, value, onChange, validator, _t, ...props }: InputPhoneProps) => React.JSX.Element;
+export declare const InputPhone: ({ classNameInputNumber, classNameSelectCode, classNamePhone, classNamePhoneCode, classNamePhoneLabel, classNamePhoneNumber, classNameError, disabledSelectCode, disabled, label, loader, yup, placeholderCode, placeholder, defaultValue, value, onChange, validator, _t, optional, optionalText, ...props }: InputPhoneProps) => React.JSX.Element;
