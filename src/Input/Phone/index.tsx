@@ -126,6 +126,8 @@ export const InputPhone = ({
     onChange,
     validator = undefined,
     _t = (e) => e,
+    optional = false,
+    optionalText = "(optional)",
     ...props
 }: InputPhoneProps) => {
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
@@ -185,6 +187,13 @@ export const InputPhone = ({
                     className={`fenext-input-phone-label fenext-input-label ${classNamePhoneLabel} `}
                 >
                     {_tValidate(label, _t)}
+                    {optional && (
+                        <>
+                            <small className="fenext-input-optional">
+                                {_tValidate(optionalText, _t)}
+                            </small>
+                        </>
+                    )}
                 </div>
                 <div
                     className={`fenext-input-phone-code ${classNamePhoneCode}`}
@@ -227,6 +236,7 @@ export const InputPhone = ({
                         regExpReplace=""
                         icon={<></>}
                         changeByFirstOptionInOnBlur={true}
+                        optional={false}
                     />
                 </div>
                 <div
@@ -247,6 +257,7 @@ export const InputPhone = ({
                         inputMode="numeric"
                         regExpReplace=""
                         regExp={/[^0-9]/g}
+                        optional={false}
                     />
                 </div>
                 {((props?.error ?? error) || (errorFenext && isChange)) && (
