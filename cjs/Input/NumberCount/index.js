@@ -59,6 +59,12 @@ const InputNumberCount = ({ onChange, value: valueProps = undefined, defaultValu
             if (aplyMin && min != undefined) {
                 n = `${Math.max(min, (0, Number_1.parseNumber)(n))}`;
             }
+            if (keyNew == "." && !n.includes(".")) {
+                n += ".";
+            }
+            else {
+                n = (0, NumberCount_1.parseNumberCount)(n, optionsParseNumber);
+            }
             return n;
         });
     };
