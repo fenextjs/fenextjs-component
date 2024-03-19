@@ -188,15 +188,19 @@ export const InputDate = ({
             onChange={() => 1}
             extraInContentInput={
                 <>
-                    <input
-                        type={type}
-                        onChange={changeInput}
-                        className={`fenext-input-date ${classNameInputDate}`}
-                        min={MIN}
-                        max={MAX}
-                        list={`input-date-${uuid}`}
-                    />
-                    {DATALIST}
+                    {props?.disabled != true && (
+                        <>
+                            <input
+                                type={type}
+                                onChange={changeInput}
+                                className={`fenext-input-date ${classNameInputDate}`}
+                                min={MIN}
+                                max={MAX}
+                                list={`input-date-${uuid}`}
+                            />
+                            {DATALIST}
+                        </>
+                    )}
                 </>
             }
             iconPos={iconPos}
