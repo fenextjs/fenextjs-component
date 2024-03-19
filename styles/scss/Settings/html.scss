@@ -47,6 +47,7 @@ body {
 }
 :root {
     --fenext-size-menu-top: 3rem;
+    --fenext-size-menu-left-close: 0px;
     --fenext-size-menu-left-max: max(13rem, 10vw);
     --fenext-size-menu-left: min(100%, var(--fenext-size-menu-left-max));
 

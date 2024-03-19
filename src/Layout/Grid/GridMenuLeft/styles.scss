@@ -52,7 +52,7 @@
         }
         @at-root body:not(:has(.fenext-btn-menu-checkbox:checked)) & {
             @media (min-width: 576px) {
-                grid-template-columns: 0 1fr;
+                grid-template-columns: var(--fenext-size-menu-left-close, 0px) 1fr;
             }
             @media (max-width: 575px) {
                 #{$nameClass}-menu-left {
