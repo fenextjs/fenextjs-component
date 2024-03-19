@@ -21,7 +21,7 @@ exports.InputCardNumberIcons = {
     VISA_ELECTRON: react_1.default.createElement(fenextjs_svg_1.CardVisaElectron, null),
 };
 const InputCardNumber = ({ value: valueProps, defaultValue = "", onChange, validator = undefined, maxNumberLength = 19, ...props }) => {
-    const { data, setData } = (0, useData_1.useData)(defaultValue, {
+    const { data, setData } = (0, useData_1.useData)(defaultValue ?? "", {
         onChangeDataAfter: onChange,
     });
     const value = (0, react_1.useMemo)(() => valueProps ?? data, [valueProps, data]);

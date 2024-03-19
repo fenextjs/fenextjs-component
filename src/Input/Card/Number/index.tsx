@@ -50,7 +50,7 @@ export const InputCardNumber = ({
     maxNumberLength = 19,
     ...props
 }: InputCardNumberProps) => {
-    const { data, setData } = useData<string>(defaultValue, {
+    const { data, setData } = useData<string>(defaultValue ?? "", {
         onChangeDataAfter: onChange,
     });
     const value = useMemo(() => valueProps ?? data, [valueProps, data]);

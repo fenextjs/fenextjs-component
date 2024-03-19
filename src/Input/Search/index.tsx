@@ -228,7 +228,7 @@ export const InputSearch = ({
         },
     });
     const [searchText, setSearchText] = useState<string | undefined>(
-        defaultValue,
+        defaultValue ?? "",
     );
     const [loaderSearch, setLoaderSearch] = useState(false);
     const { dataMemo: resultSearch, setData: setResultSearch } = useData<

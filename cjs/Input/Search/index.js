@@ -23,7 +23,7 @@ const InputSearch = ({ classNameSearch = "", classNameSearchBg = "", classNameSe
             onChangeTabFilterSelected?.(d);
         },
     });
-    const [searchText, setSearchText] = (0, react_1.useState)(defaultValue);
+    const [searchText, setSearchText] = (0, react_1.useState)(defaultValue ?? "");
     const [loaderSearch, setLoaderSearch] = (0, react_1.useState)(false);
     const { dataMemo: resultSearch, setData: setResultSearch } = (0, fenextjs_hook_1.useData)(resultList ?? [], {
         data: resultList,

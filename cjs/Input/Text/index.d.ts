@@ -99,11 +99,11 @@ export interface InputTextBaseProps extends _TProps {
     /**
      * Default value to set for the input field.
      */
-    defaultValue?: string;
+    defaultValue?: string | undefined | null;
     /**
      * Value to set for the input field.
      */
-    value?: string;
+    value?: string | undefined | null;
     /**
      * Type of input to display (e.g. text, number, password, etc.).
      */
