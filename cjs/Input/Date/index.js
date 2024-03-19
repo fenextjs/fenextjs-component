@@ -84,9 +84,9 @@ const InputDate = ({ classNameInputDate = "", type = "date", defaultValue = unde
         data: data,
         validator: validator ?? (0, fenextjs_validator_1.FenextjsValidator)(),
     });
-    return (react_1.default.createElement(Text_1.InputText, { ...props, defaultValue: "", value: value ? (0, Date_2.parseDateToText)({ date: value, type }) : valueString, onChange: () => 1, extraInContentInput: react_1.default.createElement(react_1.default.Fragment, null,
+    return (react_1.default.createElement(Text_1.InputText, { ...props, defaultValue: "", value: value ? (0, Date_2.parseDateToText)({ date: value, type }) : valueString, onChange: () => 1, extraInContentInput: react_1.default.createElement(react_1.default.Fragment, null, props?.disabled != true && (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement("input", { type: type, onChange: changeInput, className: `fenext-input-date ${classNameInputDate}`, min: MIN, max: MAX, list: `input-date-${uuid}` }),
-            DATALIST), iconPos: iconPos, icon: react_1.default.createElement("span", { className: `fenext-input-date-icon ` }, icon), validator: undefined, error: errorFenext, isChange: isChange }));
+            DATALIST))), iconPos: iconPos, icon: react_1.default.createElement("span", { className: `fenext-input-date-icon ` }, icon), validator: undefined, error: errorFenext, isChange: isChange }));
 };
 exports.InputDate = InputDate;
 //# sourceMappingURL=index.js.map
