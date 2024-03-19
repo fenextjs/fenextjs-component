@@ -160,6 +160,11 @@ export const InputNumberCount = ({
             if (aplyMin && min != undefined) {
                 n = `${Math.max(min, parseNumber(n))}`;
             }
+            if (keyNew == "." && !n.includes(".")) {
+                n +="."
+            }else{
+                n = parseNumberCount(n, optionsParseNumber);
+            }
             return n;
         });
     };

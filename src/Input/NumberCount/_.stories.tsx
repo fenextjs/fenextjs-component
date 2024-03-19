@@ -19,10 +19,10 @@ const args  : InputNumberCountProps = {
     label:"Label",
     placeholder:"Placeholder",
     min:20,
-    max:30,
+    max:30000,
     symbolFinal:"%",
     symbolInit:"",
-    value:22
+    // value:22
 }
 
 Index.args= args
