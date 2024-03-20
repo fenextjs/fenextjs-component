@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { LoadScript, LoadScriptProps } from "@react-google-maps/api";
 import { ErrorComponent } from "../../../Error";
 import { ErrorFenextjs, ErrorGoogleKeyInvalid } from "fenextjs-error";
-import { _tValidate } from "fenextjs-functions";
 import { _TProps } from "fenextjs-interface";
 
 /**
@@ -48,7 +47,7 @@ export const InputGoogleLoadScript = ({
     const [load, setLoad] = useState(false);
 
     const onLoad = () => {
-        if (typeof window == undefined) {
+        if (typeof window == "undefined") {
             setTimeout(onLoad, 500);
             return;
         }

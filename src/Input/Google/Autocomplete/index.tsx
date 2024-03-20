@@ -7,7 +7,6 @@ import {
     AddressGoogle,
     AutocompleteGoogle,
 } from "fenextjs-interface/cjs/AddressGoogle";
-import { ErrorComponent } from "../../../Error";
 import { ErrorFenextjs, ErrorGoogleKeyInvalid } from "fenextjs-error";
 import { FenextjsValidatorClass } from "fenextjs-validator";
 
@@ -58,7 +57,6 @@ export const InputGoogleAutocomplete = ({
     defaultValue = undefined,
     className = "",
     validator,
-    errorWithIsChange = true,
     ...props
 }: InputGoogleAutocompleteProps) => {
     const [valueText, setValueText] = useState(
@@ -66,17 +64,18 @@ export const InputGoogleAutocomplete = ({
     );
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
 
-    const { setData, isValidData } = useData<
-        AddressGoogle | undefined
-    >(defaultValue, {
-        onChangeDataAfter: (d) => {
-            onChange?.(d);
-            if (d) {
-                setValueText(d?.formatted_address ?? "");
-            }
+    const { setData, isValidData } = useData<AddressGoogle | undefined>(
+        defaultValue,
+        {
+            onChangeDataAfter: (d) => {
+                onChange?.(d);
+                if (d) {
+                    setValueText(d?.formatted_address ?? "");
+                }
+            },
+            validator,
         },
-        validator,
-    });
+    );
 
     const [autocompleteValue, setAutocompleteValue] = useState<
         AutocompleteGoogle | undefined
@@ -114,7 +113,12 @@ export const InputGoogleAutocomplete = ({
                                 setValueText(e);
                                 setData(undefined);
                             }}
-                            error={error ?? (isValidData instanceof ErrorFenextjs ? isValidData : undefined)}
+                            error={
+                                error ??
+                                (isValidData instanceof ErrorFenextjs
+                                    ? isValidData
+                                    : undefined)
+                            }
                         />
                     </Autocomplete>
                 </div>
