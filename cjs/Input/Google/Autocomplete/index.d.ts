@@ -31,4 +31,4 @@ export interface InputGoogleAutocompleteClassProps extends InputTextClassProps {
  */
 export interface InputGoogleAutocompleteProps extends InputGoogleAutocompleteBaseProps, InputGoogleAutocompleteClassProps {
 }
-export declare const InputGoogleAutocomplete: ({ onChange, defaultValue, className, validator, ...props }: InputGoogleAutocompleteProps) => React.JSX.Element;
+export declare const InputGoogleAutocomplete: ({ onChange, defaultValue, className, validator, errorWithIsChange, ...props }: InputGoogleAutocompleteProps) => React.JSX.Element;
