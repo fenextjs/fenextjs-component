@@ -58,6 +58,7 @@ export const InputGoogleAutocomplete = ({
     defaultValue = undefined,
     className = "",
     validator,
+    errorWithIsChange = true,
     ...props
 }: InputGoogleAutocompleteProps) => {
     const [valueText, setValueText] = useState(
@@ -65,16 +66,15 @@ export const InputGoogleAutocomplete = ({
     );
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
 
-    const { setData, isValidData } = useData<AddressGoogle | undefined>(
-        defaultValue,
-        {
-            onChangeDataAfter: (d) => {
-                onChange?.(d);
-                setValueText(d?.formatted_address ?? "");
-            },
-            validator,
+    const { setData, isValidData, isChange } = useData<
+        AddressGoogle | undefined
+    >(defaultValue, {
+        onChangeDataAfter: (d) => {
+            onChange?.(d);
+            setValueText(d?.formatted_address ?? "");
         },
-    );
+        validator,
+    });
 
     const [autocompleteValue, setAutocompleteValue] = useState<
         AutocompleteGoogle | undefined
@@ -116,9 +116,10 @@ export const InputGoogleAutocomplete = ({
                 </span>
             </div>
             {error && <ErrorComponent error={error} />}
-            {isValidData instanceof ErrorFenextjs && (
-                <ErrorComponent error={isValidData} />
-            )}
+            {((errorWithIsChange && isChange) || !errorWithIsChange) &&
+                isValidData instanceof ErrorFenextjs && (
+                    <ErrorComponent error={isValidData} />
+                )}
         </div>
     );
 };
