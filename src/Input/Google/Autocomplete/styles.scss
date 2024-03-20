@@ -40,6 +40,10 @@
     }
 }
 
+@at-root .pac-container{
+    z-index: var(--fenext-z-index-google-autocomplete-pac);
+}
+
 body {
     @media (max-width: 575px) {
         &:has(.fenext-input-google-autocomplete-clear:hover),
@@ -117,8 +121,11 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) {
                                         [class*="fenext-input-google-autocomplete"]
                                     )
                             ) {
+                                &:not(.pac-container){
+
                             z-index: -1 !important;
                             transition: 0s;
+                                }
                         }
                     }
                 }

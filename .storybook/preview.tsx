@@ -20,7 +20,6 @@ const preview: Preview = {
     decorators: [
         (Story) => (
             <InputGoogleLoadScript googleMapsApiKey={process?.env?.['NEXT_PUBLIC_GOOGLE_KEY']}
-                libraries={['marker']}
             >
                 <NotificationPop />
                 <PageProgress />
