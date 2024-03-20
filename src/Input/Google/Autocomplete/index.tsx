@@ -9,6 +9,7 @@ import {
 } from "fenextjs-interface/cjs/AddressGoogle";
 import { ErrorComponent } from "../../../Error";
 import { ErrorFenextjs, ErrorGoogleKeyInvalid } from "fenextjs-error";
+import { FenextjsValidatorClass } from "fenextjs-validator";
 
 /**
  * Properties for the base InputGoogleAutocomplete component.
@@ -17,7 +18,11 @@ export interface InputGoogleAutocompleteBaseProps
     extends Omit<AutocompleteProps, "children">,
         Omit<
             InputTextBaseProps,
-            "defaultValue" | "onChange" | "onChangeValidate" | "value"
+            | "defaultValue"
+            | "onChange"
+            | "onChangeValidate"
+            | "value"
+            | "validator"
         > {
     /**
      * defaultValue of input.
@@ -29,6 +34,10 @@ export interface InputGoogleAutocompleteBaseProps
      * Function to call when the input value changes.
      */
     onChange?: (v: AddressGoogle | undefined) => void;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validator?: FenextjsValidatorClass<AddressGoogle>;
 }
 
 /**
@@ -48,6 +57,7 @@ export const InputGoogleAutocomplete = ({
     onChange,
     defaultValue = undefined,
     className = "",
+    validator,
     ...props
 }: InputGoogleAutocompleteProps) => {
     const [valueText, setValueText] = useState(
@@ -55,12 +65,16 @@ export const InputGoogleAutocomplete = ({
     );
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
 
-    const { setData } = useData<AddressGoogle | undefined>(defaultValue, {
-        onChangeDataAfter: (d) => {
-            onChange?.(d);
-            setValueText(d?.formatted_address ?? "");
+    const { setData, isValidData } = useData<AddressGoogle | undefined>(
+        defaultValue,
+        {
+            onChangeDataAfter: (d) => {
+                onChange?.(d);
+                setValueText(d?.formatted_address ?? "");
+            },
+            validator,
         },
-    });
+    );
 
     const [autocompleteValue, setAutocompleteValue] = useState<
         AutocompleteGoogle | undefined
@@ -90,8 +104,10 @@ export const InputGoogleAutocomplete = ({
                     >
                         <InputText
                             {...props}
+                            validator={undefined}
                             value={valueText}
                             onChange={setValueText}
+                            error={undefined}
                         />
                     </Autocomplete>
                 </div>
@@ -100,6 +116,9 @@ export const InputGoogleAutocomplete = ({
                 </span>
             </div>
             {error && <ErrorComponent error={error} />}
+            {isValidData instanceof ErrorFenextjs && (
+                <ErrorComponent error={isValidData} />
+            )}
         </div>
     );
 };
