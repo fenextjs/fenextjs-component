@@ -9,14 +9,15 @@ const Close_1 = require("fenextjs-svg/cjs/Close");
 const useData_1 = require("fenextjs-hook/cjs/useData");
 const Error_1 = require("../../../Error");
 const fenextjs_error_1 = require("fenextjs-error");
-const InputGoogleAutocomplete = ({ onChange, defaultValue = undefined, className = "", ...props }) => {
+const InputGoogleAutocomplete = ({ onChange, defaultValue = undefined, className = "", validator, ...props }) => {
     const [valueText, setValueText] = (0, react_1.useState)(defaultValue?.formatted_address ?? "");
     const [error, setError] = (0, react_1.useState)(undefined);
-    const { setData } = (0, useData_1.useData)(defaultValue, {
+    const { setData, isValidData } = (0, useData_1.useData)(defaultValue, {
         onChangeDataAfter: (d) => {
             onChange?.(d);
             setValueText(d?.formatted_address ?? "");
         },
+        validator,
     });
     const [autocompleteValue, setAutocompleteValue] = (0, react_1.useState)(undefined);
     const onPlaceChanged = () => {
@@ -33,10 +34,11 @@ const InputGoogleAutocomplete = ({ onChange, defaultValue = undefined, className
         react_1.default.createElement("div", { className: `fenext-input-google-autocomplete-content` },
             react_1.default.createElement("div", { className: `fenext-input-google-autocomplete-content-input` },
                 react_1.default.createElement(api_1.Autocomplete, { ...props, onLoad: setAutocompleteValue, onPlaceChanged: onPlaceChanged },
-                    react_1.default.createElement(Text_1.InputText, { ...props, value: valueText, onChange: setValueText }))),
+                    react_1.default.createElement(Text_1.InputText, { ...props, validator: undefined, value: valueText, onChange: setValueText, error: undefined }))),
             react_1.default.createElement("span", { className: `fenext-input-google-autocomplete-close` },
                 react_1.default.createElement(Close_1.Close, null))),
-        error && react_1.default.createElement(Error_1.ErrorComponent, { error: error })));
+        error && react_1.default.createElement(Error_1.ErrorComponent, { error: error }),
+        isValidData instanceof fenextjs_error_1.ErrorFenextjs && (react_1.default.createElement(Error_1.ErrorComponent, { error: isValidData }))));
 };
 exports.InputGoogleAutocomplete = InputGoogleAutocomplete;
 //# sourceMappingURL=index.js.map
