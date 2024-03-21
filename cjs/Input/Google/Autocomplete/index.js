@@ -28,7 +28,11 @@ const InputGoogleAutocomplete = ({ onChange, defaultValue = undefined, className
                 setError(new fenextjs_error_1.ErrorGoogleKeyInvalid());
                 return;
             }
-            setData(place);
+            setData({
+                ...place,
+                lat: place?.geometry?.location?.lat?.(),
+                lng: place?.geometry?.location?.lng?.(),
+            });
         }
         else {
             setData(undefined);

@@ -90,8 +90,8 @@ export const InputGoogleAutocomplete = ({
             }
             setData({
                 ...place,
-                lat:place?.geometry?.location?.lat?.(),
-                lng:place?.geometry?.location?.lng?.(),
+                lat: place?.geometry?.location?.lat?.(),
+                lng: place?.geometry?.location?.lng?.(),
             });
         } else {
             setData(undefined);
