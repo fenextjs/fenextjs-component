@@ -15,6 +15,7 @@ import { _tValidate } from "fenextjs-functions";
 import { useValidator } from "fenextjs-hook";
 import { SVGSearch } from "fenextjs-svg";
 import { Img } from "../../Img";
+import { useSelectOptionsPos } from "./useRender";
 
 export type InputSelectTypeStyle = "normal" | "box" | "list" | "checkbox";
 
@@ -249,8 +250,6 @@ export const InputSelect = <T = any,>({
         },
     );
 
-    const TAG = typeSelect;
-
     const dataMemo = useMemo(() => {
         if (value) {
             return {
@@ -396,109 +395,10 @@ export const InputSelect = <T = any,>({
         [OPTIONS],
     );
 
-    return (
-        <>
-            <div
-                ref={selectRef}
-                className={`fenext-select
-                    fenext-select-${
-                        showOptionsUp?.up ? "options-up" : "options-down"
-                    }
-                    fenext-select-type-${typeSelect}
-                    fenext-select-type-style-${typeSelectStyle}
-                    fenext-select-${useSwichtypeSelectStyle ? "use-swich-select-style" : ""}
-                    fenext-select-${
-                        isSelectChangeText
-                            ? "is-change-text"
-                            : "is-not-change-text"
-                    }
-                    ${classNameSelect} ${showOptions}
-                    ${hiddenOptions}
-                `}
-                style={
-                    {
-                        ["--fenext-select-max-height"]: `${showOptionsUp.height}px`,
-                        ["--fenext-select-height-multiple"]: `${showOptionsUp.heightMultiple}px`,
-                    } as React.CSSProperties
-                }
-            >
-                <input
-                    type="checkbox"
-                    ref={checkboxClose}
-                    className="fenext-select-checkbox-close"
-                />
-                <div
-                    className={`fenext-select-content-search`}
-                    onClick={onDefOptionsUpDown}
-                >
-                    <InputText
-                        {...props}
-                        _t={_t}
-                        icon={
-                            <>
-                                <div className="fenext-select-content-icon">
-                                    <div className="fenext-select-content-icon-arrow">
-                                        {icon}
-                                    </div>
-                                    <div className="fenext-select-content-icon-search">
-                                        {iconSearch}
-                                    </div>
-                                </div>
-                            </>
-                        }
-                        onBlur={onBlur}
-                        onChange={onChangeText_}
-                        value={dataMemo?.text ?? ""}
-                        onEnter={onEnter}
-                        error={errorInput}
-                        autoComplete={false}
-                        errorWithIsChange={errorWithIsChange}
-                        extraInContentInput={
-                            <>
-                                <button
-                                    className={`fenext-select-clear`}
-                                    onClick={onClear}
-                                >
-                                    {_tValidate(clearContent, _t)}
-                                </button>
-                                {data?.option?.img ? (
-                                    <>
-                                        <div className="fenext-select-option-selected-img">
-                                            <img src={data?.option?.img} />
-                                        </div>
-                                    </>
-                                ) : (
-                                    <>
-                                        {data?.option?.imgComponent ? (
-                                            <>
-                                                <div className="fenext-select-option-selected-img">
-                                                    <Img
-                                                        {...data?.option
-                                                            ?.imgComponent}
-                                                    />
-                                                </div>
-                                            </>
-                                        ) : (
-                                            <>
-                                                {data?.option?.icon && (
-                                                    <>
-                                                        <div className="fenext-select-option-selected-img">
-                                                            {data?.option?.icon}
-                                                        </div>
-                                                    </>
-                                                )}
-                                            </>
-                                        )}
-                                    </>
-                                )}
-                            </>
-                        }
-                        validator={undefined}
-                    />
-                    <button ref={btnClose} className={`fenext-select-close`}>
-                        {iconCloseMovil}
-                    </button>
-                </div>
+    const TAGLIST = useMemo(() => {
+        const TAG = typeSelect;
+        return (
+            <>
                 <TAG
                     id={props?.datalist}
                     className={`fenext-select-list-options fenext-select-list-options-type-${typeSelect}  ${classNameList}`}
@@ -594,7 +494,154 @@ export const InputSelect = <T = any,>({
                         </>
                     )}
                 </TAG>
+            </>
+        );
+    }, [
+        typeSelect,
+        props?.datalist,
+        classNameList,
+        create,
+        onCreate,
+        OPTIONSLENGTH,
+        noResult,
+        selected,
+        props?.placeholder,
+        OPTIONS,
+        data,
+        _t,
+        props.loader,
+        loaderOption,
+        selectRef,
+    ]);
+
+    const { ref, uuid ,onLoadPos} = useSelectOptionsPos({
+        id: "fenext-select",
+        children: <>{typeSelect == "div" && typeSelectStyle=="normal" ? <>{TAGLIST}</> : <></>}</>,
+        target:selectRef?.current
+    });
+    console.log(ref);
+
+    return (
+        <>
+            <div
+                ref={selectRef}
+                onClick={onLoadPos}
+                onMouseEnter={onLoadPos}
+                className={`fenext-select
+                    fenext-select-${
+                        showOptionsUp?.up ? "options-up" : "options-down"
+                    }
+                    fenext-select-type-${typeSelect}
+                    fenext-select-type-style-${typeSelectStyle}
+                    fenext-select-${useSwichtypeSelectStyle ? "use-swich-select-style" : ""}
+                    fenext-select-${
+                        isSelectChangeText
+                            ? "is-change-text"
+                            : "is-not-change-text"
+                    }
+                    ${classNameSelect} ${showOptions}
+                    ${hiddenOptions}
+                `}
+                style={
+                    {
+                        ["--fenext-select-max-height"]: `${showOptionsUp.height}px`,
+                        ["--fenext-select-height-multiple"]: `${showOptionsUp.heightMultiple}px`,
+                    } as React.CSSProperties
+                }
+                data-uuid={uuid}
+            >
+                <input
+                    type="checkbox"
+                    ref={checkboxClose}
+                    className="fenext-select-checkbox-close"
+                />
+                <div
+                    className={`fenext-select-content-search`}
+                    onClick={onDefOptionsUpDown}
+                >
+                    <InputText
+                        {...props}
+                        _t={_t}
+                        icon={
+                            <>
+                                <div className="fenext-select-content-icon">
+                                    <div className="fenext-select-content-icon-arrow">
+                                        {icon}
+                                    </div>
+                                    <div className="fenext-select-content-icon-search">
+                                        {iconSearch}
+                                    </div>
+                                </div>
+                            </>
+                        }
+                        onBlur={onBlur}
+                        onChange={onChangeText_}
+                        value={dataMemo?.text ?? ""}
+                        onEnter={onEnter}
+                        error={errorInput}
+                        autoComplete={false}
+                        errorWithIsChange={errorWithIsChange}
+                        extraInContentInput={
+                            <>
+                                <button
+                                    className={`fenext-select-clear`}
+                                    onClick={onClear}
+                                >
+                                    {_tValidate(clearContent, _t)}
+                                </button>
+                                {data?.option?.img ? (
+                                    <>
+                                        <div className="fenext-select-option-selected-img">
+                                            <img src={data?.option?.img} />
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        {data?.option?.imgComponent ? (
+                                            <>
+                                                <div className="fenext-select-option-selected-img">
+                                                    <Img
+                                                        {...data?.option
+                                                            ?.imgComponent}
+                                                    />
+                                                </div>
+                                            </>
+                                        ) : (
+                                            <>
+                                                {data?.option?.icon && (
+                                                    <>
+                                                        <div className="fenext-select-option-selected-img">
+                                                            {data?.option?.icon}
+                                                        </div>
+                                                    </>
+                                                )}
+                                            </>
+                                        )}
+                                    </>
+                                )}
+                            </>
+                        }
+                        validator={undefined}
+                    />
+                    <button ref={btnClose} className={`fenext-select-close`}>
+                        {iconCloseMovil}
+                    </button>
+                </div>
+                {typeSelect == "div"&& typeSelectStyle=="normal"  ? <></> : <>{TAGLIST}</>}
             </div>
+
+            <style>
+                {`
+                    body:has([data-uuid="${uuid}"].hover:hover),
+                    body:has([data-uuid="${uuid}"].focus .fenext-input-content-input:focus),
+                    body:has([data-uuid="${uuid}"].focus-hover:hover),
+                    body:has([data-uuid="${uuid}"].focus-hover .fenext-input-content-input:focus) {
+                        #fenext-select-${uuid} .fenext-select-list-options{
+                            --list-scaleY: 1;
+                        }
+                    }
+                `}
+            </style>
         </>
     );
 };

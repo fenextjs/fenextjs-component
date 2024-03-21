@@ -483,3 +483,30 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) {
         }
     }
 }
+
+
+
+.fenext-use-select-options-pos {
+    position: fixed;
+    width: var(--element-width);
+    z-index: var(--fenext-z-index-modal);
+
+    top: var(--element-bottom);
+    left: var(--element-left);
+
+    .fenext-select-list-options {
+        max-height: calc(100dvh - var(--element-bottom) - .5rem);
+    }
+    
+    &[fenext-direction-pos="top"]{
+        top: var(--element-top);
+        .fenext-select-list-options {
+            max-height: calc(var(--element-top) - .5rem);
+            rotate: 180deg;
+            >*{
+                rotate: 180deg;
+            }
+        }
+    }
+
+}
