@@ -88,7 +88,11 @@ export const InputGoogleAutocomplete = ({
                 setError(new ErrorGoogleKeyInvalid());
                 return;
             }
-            setData(place);
+            setData({
+                ...place,
+                lat:place?.geometry?.location?.lat?.(),
+                lng:place?.geometry?.location?.lng?.(),
+            });
         } else {
             setData(undefined);
         }

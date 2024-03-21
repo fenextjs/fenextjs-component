@@ -54,7 +54,7 @@
     "fenextjs-functions": "^3.1.0",
     "fenextjs-hook": "^5.0.0",
     "fenextjs-img-placeholder": "^2.0.0",
-    "fenextjs-interface": "^2.4.0",
+    "fenextjs-interface": "^2.5.0",
     "fenextjs-svg": "3.2.0",
     "fenextjs-validator": "^2.0.1",
     "next": "13.5.1",
@@ -72,16 +72,16 @@
     "styles/font.css"
   ],
   "devDependencies": {
-    "@storybook/addon-actions": "^8.0.2",
-    "@storybook/addon-essentials": "^8.0.2",
-    "@storybook/addon-interactions": "^8.0.2",
-    "@storybook/addon-links": "^8.0.2",
-    "@storybook/addon-onboarding": "^8.0.2",
-    "@storybook/blocks": "^8.0.2",
-    "@storybook/builder-webpack5": "^8.0.2",
+    "@storybook/addon-actions": "^8.0.3",
+    "@storybook/addon-essentials": "^8.0.3",
+    "@storybook/addon-interactions": "^8.0.3",
+    "@storybook/addon-links": "^8.0.3",
+    "@storybook/addon-onboarding": "^8.0.3",
+    "@storybook/blocks": "^8.0.3",
+    "@storybook/builder-webpack5": "^8.0.3",
     "@storybook/manager-webpack5": "^6.5.16",
-    "@storybook/nextjs": "^8.0.2",
-    "@storybook/react": "^8.0.2",
+    "@storybook/nextjs": "^8.0.3",
+    "@storybook/react": "^8.0.3",
     "@storybook/testing-library": "^0.2.2",
     "@types/node": "20.11.30",
     "@types/react": "18.2.67",
@@ -92,10 +92,10 @@
     "eslint-plugin-storybook": "^0.8.0",
     "npm-check-updates": "^16.14.17",
     "prettier": "^3.2.5",
-    "storybook": "^8.0.2",
+    "storybook": "^8.0.3",
     "storybook-dark-mode": "^4.0.1",
     "ts-loader": "^9.5.1",
     "tslib": "^2.6.2",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.3"
   }
 }
