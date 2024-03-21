@@ -8,7 +8,6 @@ import {
 import { Arrow } from "fenextjs-svg/cjs/Arrow";
 import { Cancel } from "fenextjs-svg/cjs/cancel";
 import { useData } from "fenextjs-hook/cjs/useData";
-import { GetSpaceParent } from "fenextjs-functions/cjs/html/GetSpaceParent";
 import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorCode } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
@@ -220,15 +219,6 @@ export const InputSelect = <T = any,>({
     const checkboxClose = useRef<HTMLInputElement | null>(null);
     const btnClose = useRef<HTMLButtonElement | null>(null);
     const selectRef = useRef<HTMLDivElement>(null);
-    const [showOptionsUp, setShowOptionsUp] = useState<{
-        up: boolean;
-        height: number;
-        heightMultiple: number;
-    }>({
-        up: false,
-        height: 0,
-        heightMultiple: 0,
-    });
     const [dataErrorInput, setErrorInput] = useState<ErrorFenextjs | undefined>(
         undefined,
     );
@@ -340,30 +330,6 @@ export const InputSelect = <T = any,>({
         const optionSect = OPTIONSSEARCH[0];
         if (optionSect) {
             onChangeOption(optionSect);
-        }
-    };
-    const onDefOptionsUpDown = (event) => {
-        const mouseY = event.clientY;
-
-        const spaceBottomWindow = window.innerHeight - mouseY;
-        const spaceTopWindow = mouseY;
-
-        if (selectRef.current) {
-            const { spaceBottom: spaceBottomParent, spaceTop: spaceTopParent } =
-                GetSpaceParent(selectRef.current);
-
-            const spaceBottom = Math.min(spaceBottomParent, spaceBottomWindow);
-            const spaceTop = Math.min(spaceTopParent, spaceTopWindow);
-
-            const heightMultiple =
-                selectRef.current.querySelector(".fenext-select-multiple-list")
-                    ?.clientHeight ?? 0;
-
-            setShowOptionsUp({
-                up: spaceTop > spaceBottom,
-                height: Math.max(spaceTop, spaceBottom) + heightMultiple,
-                heightMultiple,
-            });
         }
     };
     const { error: errorFenext } = useValidator({
@@ -525,12 +491,7 @@ export const InputSelect = <T = any,>({
         <>
             <div
                 ref={selectRef}
-                onClick={onLoadPos}
-                onMouseEnter={onLoadPos}
                 className={`fenext-select
-                    fenext-select-${
-                        showOptionsUp?.up ? "options-up" : "options-down"
-                    }
                     fenext-select-type-${typeSelect}
                     fenext-select-type-style-${typeSelectStyle}
                     fenext-select-${useSwichtypeSelectStyle ? "use-swich-select-style" : ""}
@@ -542,12 +503,6 @@ export const InputSelect = <T = any,>({
                     ${classNameSelect} ${showOptions}
                     ${hiddenOptions}
                 `}
-                style={
-                    {
-                        ["--fenext-select-max-height"]: `${showOptionsUp.height}px`,
-                        ["--fenext-select-height-multiple"]: `${showOptionsUp.heightMultiple}px`,
-                    } as React.CSSProperties
-                }
                 data-uuid={uuid}
             >
                 <input
@@ -557,7 +512,8 @@ export const InputSelect = <T = any,>({
                 />
                 <div
                     className={`fenext-select-content-search`}
-                    onClick={onDefOptionsUpDown}
+                    onClick={onLoadPos}
+                    onMouseEnter={onLoadPos}
                 >
                     <InputText
                         {...props}

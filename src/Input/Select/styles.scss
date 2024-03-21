@@ -204,12 +204,9 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
         z-index: var(--fenext-z-index-modal);
     }
 
-    &:not(&-options-up) {
-        --fenext-size-menu-top: 0px;
-    }
     &-list-options {
         position: absolute;
-        top: calc(100% - 0.5rem - var(--fenext-select-height-multiple));
+        top: 0;
         left: 0;
         width: 100%;
         color: var(--fenext-color-dark);
@@ -222,14 +219,6 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
         transform: scaleY(var(--list-scaleY, 0));
         transform-origin: top center;
         overflow: auto;
-        @media (min-width: $breakSelectModalMovilTop) {
-            max-height: calc(
-                var(--fenext-select-max-height, 0px) - var(
-                        --fenext-size-menu-top,
-                        0px
-                    ) - var(--fenext-select-error-range-height)
-            );
-        }
         &-type {
             &-select {
                 top: 0;
@@ -250,34 +239,6 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
         .fenext-select-list-options {
             top: calc(100% - 2rem);
         }
-    }
-    &-options-up {
-        @media (min-width: $breakSelectModalMovilTop) {
-            .fenext-select-list-options.fenext-select-list-options.fenext-select-list-options {
-                top: inherit;
-                bottom: calc(100% - 0.5rem);
-                transform-origin: bottom center;
-                display: flex;
-                flex-direction: column-reverse;
-                .fenext-select-option-btn {
-                    top: inherit;
-                    bottom: 0;
-                    margin-bottom: 0;
-                    margin-top: 1rem;
-                }
-            }
-        }
-    }
-    &.hover:hover,
-    &.focus:has(.fenext-input-content-input:focus),
-    &.focus-hover:hover,
-    &.focus-hover:has(.fenext-input-content-input:focus) {
-        --list-scaleY: 1;
-    }
-    &.not-hover:not(:hover),
-    &.not-focus:not(:has(.fenext-input-content-input:focus)),
-    &.not-focus-hover:not(:hover):not(:has(.fenext-input-content-input:focus)) {
-        --list-scaleY: 0;
     }
     &-close {
         display: none;
@@ -387,26 +348,6 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
                 }
             }
         }
-    }
-}
-
-body {
-    @media (max-width: $breakSelectModalMovil) {
-        &:has(.fenext-select-clear:hover),
-        &:has(.fenext-select-clear:focus),
-        &:has(.fenext-select-option:hover),
-        &:has(.fenext-select .fenext-input-content-input:focus) {
-            &:not(:has(.fenext-select-checkbox-close:focus)) {
-                .fenext-modal-base-close {
-                    display: none;
-                }
-            }
-        }
-    }
-}
-body:not(:has(.fenext-layout-grid-mt-menu-top)) {
-    .fenext-select {
-        --fenext-size-menu-top: 0px;
     }
 }
 
