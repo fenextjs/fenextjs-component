@@ -1,5 +1,5 @@
 import { useRender } from "fenextjs-hook";
-import { ReactNode, useEffect, useMemo, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 export interface useSelectOptionsPosProps {
     id: string;
