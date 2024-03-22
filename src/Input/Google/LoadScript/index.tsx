@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { LoadScript, LoadScriptProps } from "@react-google-maps/api";
 import { ErrorComponent } from "../../../Error";
 import { ErrorFenextjs, ErrorGoogleKeyInvalid } from "fenextjs-error";
@@ -44,22 +44,11 @@ export const InputGoogleLoadScript = ({
     ...props
 }: InputGoogleLoadScriptProps) => {
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
-    const [load, setLoad] = useState(false);
-
-    const onLoad = () => {
-        if (typeof window == "undefined") {
-            setTimeout(onLoad, 500);
-            return;
-        }
-        setLoad(true);
-    };
-    useEffect(onLoad, []);
 
     return (
         <div className={`fenext-input-google-load-script ${className}`}>
             <LoadScript
                 {...props}
-                key={load ? "load" : "not-load"}
                 googleMapsApiKey={googleMapsApiKey ?? ""}
                 libraries={["places", "geometry", "marker"]}
                 onError={() => {
