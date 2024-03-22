@@ -231,30 +231,6 @@
     }
 }
 
-*:has(.fenext-modal-base-active) {
-    z-index: var(--fenext-z-index-modal) !important;
-    position: relative !important;
-    overflow: visible !important;
-    transform: none !important;
-    transition: 0s !important;
-    inset: 0 !important;
-    container-type: initial !important;
-    .fenext-modal-base-content:has(.fenext-modal-base-active) {
-        position: fixed !important;
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        *:has(.fenext-modal-base-active) {
-            position: absolute !important;
-        }
-    }
-}
-*:has(.fenext-modal-base-active) {
-    .fenext-layout-grid-ml-menu-left,
-    .fenext-layout-grid-mt-menu-top {
-        z-index: -1 !important;
-    }
-}
 html:has(.fenext-modal-base-active),
 body:has(.fenext-modal-base-active) {
     overflow: hidden !important;
