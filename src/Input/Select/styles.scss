@@ -287,13 +287,19 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
 .fenext-use-select-options-pos {
     position: fixed;
     width: var(--element-width);
-    z-index: var(--fenext-z-index-modal);
+    z-index: var(--fenext-z-index-select-option);
 
     top: var(--element-bottom);
     left: var(--element-left);
 
     .fenext-select-list-options {
         max-height: calc(100dvh - var(--element-bottom) - 0.5rem);
+    }
+    .fenext-select-option {
+        z-index: var(--fenext-z-index-select-option);
+        &-btn {
+            z-index: calc(var(--fenext-z-index-select-option) + 1);
+        }
     }
 
     @media (min-width: $breakSelectModalMovilTop) {
