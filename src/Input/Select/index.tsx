@@ -629,7 +629,7 @@ export const InputSelect = <T = any,>({
                         validator={undefined}
                     />
                 </div>
-                {typeSelect == "div" && typeSelectStyle == "normal" ? (
+                {typeSelect == "div" && typeSelectStyle == "normal" && !useSwichtypeSelectStyle ? (
                     <></>
                 ) : (
                     <>{TAGLIST}</>
@@ -647,6 +647,14 @@ export const InputSelect = <T = any,>({
                         }
 
                     }
+                    ${useSwichtypeSelectStyle?`
+                    body:not(:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-normal:checked)) {
+                        #fenext-select-${uuid} {
+                            display:none;
+                        }
+                    }
+            
+                    `:""}
                 `}
             </style>
         </>
