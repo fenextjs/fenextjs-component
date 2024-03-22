@@ -218,7 +218,9 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                                 react_1.default.createElement(Img_1.Img, { ...data?.option
                                         ?.imgComponent })))) : (react_1.default.createElement(react_1.default.Fragment, null, data?.option?.icon && (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement("div", { className: "fenext-select-option-selected-img" }, data?.option?.icon)))))))), validator: undefined })),
-            typeSelect == "div" && typeSelectStyle == "normal" ? (react_1.default.createElement(react_1.default.Fragment, null)) : (react_1.default.createElement(react_1.default.Fragment, null, TAGLIST))),
+            typeSelect == "div" &&
+                typeSelectStyle == "normal" &&
+                !useSwichtypeSelectStyle ? (react_1.default.createElement(react_1.default.Fragment, null)) : (react_1.default.createElement(react_1.default.Fragment, null, TAGLIST))),
         react_1.default.createElement("style", null, `
                     body:has([data-uuid="${uuid}"].hover:hover),
                     body:has([data-uuid="${uuid}"].focus .fenext-input-content-input:focus),
@@ -229,6 +231,16 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                         }
 
                     }
+                    ${useSwichtypeSelectStyle
+            ? `
+                    body:not(:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-normal:checked)) {
+                        #fenext-select-${uuid} {
+                            display:none;
+                        }
+                    }
+            
+                    `
+            : ""}
                 `)));
 };
 exports.InputSelect = InputSelect;
