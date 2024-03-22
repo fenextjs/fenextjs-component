@@ -217,7 +217,6 @@ export const InputSelect = <T = any,>({
     );
 
     const checkboxClose = useRef<HTMLInputElement | null>(null);
-    const btnClose = useRef<HTMLButtonElement | null>(null);
     const selectRef = useRef<HTMLDivElement>(null);
     const [dataErrorInput, setErrorInput] = useState<ErrorFenextjs | undefined>(
         undefined,
@@ -480,10 +479,56 @@ export const InputSelect = <T = any,>({
         selectRef,
     ]);
 
-    const { ref, uuid ,onLoadPos} = useSelectOptionsPos({
+    const { ref, uuid, onLoadPos } = useSelectOptionsPos({
         id: "fenext-select",
-        children: <>{typeSelect == "div" && typeSelectStyle=="normal" ? <>{TAGLIST}</> : <></>}</>,
-        target:selectRef?.current
+        children: (
+            <>
+                {typeSelect == "div" && typeSelectStyle == "normal" ? (
+                    <>
+                        <div className={`fenext-select-content-search`}>
+                            <InputText
+                                {...props}
+                                _t={_t}
+                                icon={
+                                    <>
+                                        <div className="fenext-select-content-icon">
+                                            <div className="fenext-select-content-icon-search">
+                                                {iconSearch}
+                                            </div>
+                                        </div>
+                                    </>
+                                }
+                                onBlur={onBlur}
+                                onChange={onChangeText_}
+                                value={dataMemo?.text ?? ""}
+                                onEnter={onEnter}
+                                error={errorInput}
+                                autoComplete={false}
+                                errorWithIsChange={errorWithIsChange}
+                                extraInContentInput={
+                                    <>
+                                        <button
+                                            className={`fenext-select-clear`}
+                                            onClick={onClear}
+                                        >
+                                            {_tValidate(clearContent, _t)}
+                                        </button>
+                                    </>
+                                }
+                                validator={undefined}
+                            />
+                            <button className={`fenext-select-close`}>
+                                {iconCloseMovil}
+                            </button>
+                        </div>
+                        {TAGLIST}
+                    </>
+                ) : (
+                    <></>
+                )}
+            </>
+        ),
+        target: selectRef?.current,
     });
     console.log(ref);
 
@@ -505,11 +550,6 @@ export const InputSelect = <T = any,>({
                 `}
                 data-uuid={uuid}
             >
-                <input
-                    type="checkbox"
-                    ref={checkboxClose}
-                    className="fenext-select-checkbox-close"
-                />
                 <div
                     className={`fenext-select-content-search`}
                     onClick={onLoadPos}
@@ -579,11 +619,12 @@ export const InputSelect = <T = any,>({
                         }
                         validator={undefined}
                     />
-                    <button ref={btnClose} className={`fenext-select-close`}>
-                        {iconCloseMovil}
-                    </button>
                 </div>
-                {typeSelect == "div"&& typeSelectStyle=="normal"  ? <></> : <>{TAGLIST}</>}
+                {typeSelect == "div" && typeSelectStyle == "normal" ? (
+                    <></>
+                ) : (
+                    <>{TAGLIST}</>
+                )}
             </div>
 
             <style>
@@ -592,9 +633,10 @@ export const InputSelect = <T = any,>({
                     body:has([data-uuid="${uuid}"].focus .fenext-input-content-input:focus),
                     body:has([data-uuid="${uuid}"].focus-hover:hover),
                     body:has([data-uuid="${uuid}"].focus-hover .fenext-input-content-input:focus) {
-                        #fenext-select-${uuid} .fenext-select-list-options{
+                        #fenext-select-${uuid} {
                             --list-scaleY: 1;
                         }
+
                     }
                 `}
             </style>

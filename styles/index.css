@@ -1225,78 +1225,20 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   top: calc(100% - 2rem);
 }
 .fenext-select-close {
-  display: none;
+  display: flex;
+  align-items: center;
+  color: var(--fenext-color-dark);
+  background: transparent;
+  padding: 1rem 0.5rem;
+  width: 4rem;
+  justify-content: center;
+  border: 0;
 }
 .fenext-select-close svg {
   width: 1rem;
 }
 .fenext-select-close-checkbox {
   display: none;
-}
-@media (max-width: 575px) {
-  .fenext-select {
-    transition: all 0.5s, background-color 0s;
-    --list-scaleY: 0;
-  }
-  .fenext-select .fenext-select-list-options {
-    transition: 0s;
-    background: transparent;
-  }
-  .fenext-select:has(.fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)), .fenext-select:has(.fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)), .fenext-select:has(.fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)), .fenext-select:has(.fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) {
-    background-color: var(--fenext-color-white);
-    width: 100dvw;
-    height: 100dvh;
-    inset: 0;
-    position: fixed;
-    z-index: var(--fenext-z-index-modal);
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    padding: 1rem 0;
-    gap: 1rem;
-  }
-  .fenext-select:has(.fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-clear, .fenext-select:has(.fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-clear, .fenext-select:has(.fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-clear, .fenext-select:has(.fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-clear {
-    display: inline-block;
-  }
-  .fenext-select:has(.fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-close, .fenext-select:has(.fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-close, .fenext-select:has(.fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-close, .fenext-select:has(.fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-close {
-    display: flex;
-    align-items: center;
-    color: var(--fenext-color-dark);
-    background: transparent;
-    padding: 1rem 0.5rem;
-    width: 4rem;
-    justify-content: center;
-    border: 0;
-  }
-  .fenext-select:has(.fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-content-search, .fenext-select:has(.fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-content-search, .fenext-select:has(.fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-content-search, .fenext-select:has(.fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-content-search {
-    padding: 0 1rem;
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr auto;
-  }
-  .fenext-select:has(.fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-content-search .fenext-input-content-input, .fenext-select:has(.fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-content-search .fenext-input-content-input, .fenext-select:has(.fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-content-search .fenext-input-content-input, .fenext-select:has(.fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-content-search .fenext-input-content-input {
-    padding-right: 3rem;
-  }
-  .fenext-select:has(.fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-content-search .fenext-error, .fenext-select:has(.fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-content-search .fenext-error, .fenext-select:has(.fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-content-search .fenext-error, .fenext-select:has(.fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-content-search .fenext-error {
-    grid-column: 1/-1;
-    grid-row: 2/3;
-  }
-  .fenext-select:has(.fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-list-options.fenext-select-list-options, .fenext-select:has(.fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-list-options.fenext-select-list-options, .fenext-select:has(.fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-list-options.fenext-select-list-options, .fenext-select:has(.fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-select-list-options.fenext-select-list-options {
-    position: relative;
-    height: 100%;
-    overflow: auto;
-    grid-column: 1/-1;
-    top: 0;
-    left: 0;
-    transform: none;
-    padding: 0;
-  }
-  .fenext-select:has(.fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-input-content-icon, .fenext-select:has(.fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-input-content-icon, .fenext-select:has(.fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-input-content-icon, .fenext-select:has(.fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-input-content-icon {
-    display: none;
-  }
-  .fenext-select:has(.fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-input-content-input, .fenext-select:has(.fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-input-content-input, .fenext-select:has(.fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) .fenext-input-content-input, .fenext-select:has(.fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) .fenext-input-content-input {
-    padding-left: 1rem;
-  }
 }
 @media (min-width: 576px) {
   .fenext-select-type-style-box {
@@ -1478,56 +1420,6 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   }
 }
 
-@media (max-width: 575px) {
-  body:has(.fenext-select .fenext-select-clear:focus):not(.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1),
-  body:has(.fenext-select .fenext-select-clear:hover):not(.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1),
-  body:has(.fenext-select .fenext-input-content-input:focus):not(.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1),
-  body:has(.fenext-select .fenext-select-option:hover):not(.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1.___1) {
-    overflow: hidden !important;
-  }
-  body:has(.fenext-select .fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-select-clear:focus)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-select-clear:hover)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-input-content-input:focus)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-select-option:hover)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-select-clear:focus)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-select-clear:hover)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-input-content-input:focus)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-select-option:hover)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-select-clear:focus)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-select-clear:hover)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-input-content-input:focus)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-select-option:hover)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-select-clear:focus)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-select-clear:hover)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-input-content-input:focus)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])),
-  body:has(.fenext-select .fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) *:not(:has(.fenext-select .fenext-select-option:hover)):not(:has(.fenext-select-checkbox-close:focus)):not([class*=fenext-select]):not(:has([class*=fenext-select])) {
-    z-index: -1 !important;
-    transition: 0s;
-  }
-  *:has(.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select .fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)),
-  *:has(.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select .fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)),
-  *:has(.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select .fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)),
-  *:has(.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select .fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) {
-    z-index: var(--fenext-z-index-modal) !important;
-    position: absolute !important;
-    overflow: visible !important;
-    transform: none !important;
-    transition: 0s !important;
-    inset: 0 !important;
-    width: 100vw;
-    height: 100dvh;
-    container-type: initial !important;
-    padding: 0 !important;
-    transition: 0s;
-  }
-  .fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select:has(.fenext-select-clear:hover):not(:has(.fenext-select-checkbox-close:focus)),
-  .fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select:has(.fenext-select-clear:focus):not(:has(.fenext-select-checkbox-close:focus)),
-  .fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select:has(.fenext-input-content-input:focus):not(:has(.fenext-select-checkbox-close:focus)),
-  .fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select.fenext-select:has(.fenext-select-option:hover):not(:has(.fenext-select-checkbox-close:focus)) {
-    z-index: var(--fenext-z-index-modal) !important;
-    transition: 0s;
-  }
-}
 .fenext-use-select-options-pos {
   position: fixed;
   width: var(--element-width);
@@ -1538,15 +1430,62 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
 .fenext-use-select-options-pos .fenext-select-list-options {
   max-height: calc(100dvh - var(--element-bottom) - 0.5rem);
 }
-.fenext-use-select-options-pos[fenext-direction-pos=top] {
-  top: var(--element-top);
+@media (min-width: 576px) {
+  .fenext-use-select-options-pos .fenext-select-content-search {
+    display: none;
+  }
+  .fenext-use-select-options-pos[fenext-direction-pos=top] {
+    top: var(--element-top);
+  }
+  .fenext-use-select-options-pos[fenext-direction-pos=top] .fenext-select-list-options {
+    max-height: calc(var(--element-top) - 0.5rem);
+    rotate: 180deg;
+  }
+  .fenext-use-select-options-pos[fenext-direction-pos=top] .fenext-select-list-options > * {
+    rotate: 180deg;
+  }
 }
-.fenext-use-select-options-pos[fenext-direction-pos=top] .fenext-select-list-options {
-  max-height: calc(var(--element-top) - 0.5rem);
-  rotate: 180deg;
-}
-.fenext-use-select-options-pos[fenext-direction-pos=top] .fenext-select-list-options > * {
-  rotate: 180deg;
+@media (max-width: 575px) {
+  .fenext-use-select-options-pos {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0.5rem;
+    background: var(--fenext-color-light);
+    transition: transform 0.1s 0.1s;
+    transition-delay: calc((1.4 - var(--list-scaleY, 0)) * 0.25s);
+    transform: scaleY(var(--list-scaleY, 0));
+    transform-origin: top center;
+  }
+  .fenext-use-select-options-pos:has(.fenext-input-content-input:focus) {
+    --list-scaleY: 1;
+  }
+  .fenext-use-select-options-pos .fenext-select-content-search {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+  .fenext-use-select-options-pos .fenext-select-content-search .fenext-input-content-input {
+    padding-right: 3rem;
+  }
+  .fenext-use-select-options-pos .fenext-select-content-search .fenext-error {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  }
+  .fenext-use-select-options-pos .fenext-select-list-options {
+    --list-scaleY: 1;
+    height: 100%;
+    max-height: none;
+    position: relative;
+  }
+  .fenext-use-select-options-pos .fenext-select-option-btn {
+    margin-inline: 0;
+    width: 100%;
+  }
 }
 
 .fenext-select-csc {
