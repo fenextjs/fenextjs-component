@@ -1,5 +1,5 @@
-import React, { ReactNode, useEffect, useMemo, useState } from "react";
-import * as ReactDOM from "react-dom";
+import { useRender } from "fenextjs-hook";
+import { ReactNode, useEffect, useMemo, useState } from "react";
 
 export interface useSelectOptionsPosProps {
     id: string;
@@ -15,10 +15,10 @@ export const useSelectOptionsPos = <ELEMENT extends HTMLElement>({
     target,
 }: useSelectOptionsPosProps) => {
     const [ref, setRef] = useState<ELEMENT | undefined>(undefined);
-    const uuid = useMemo(
-        () => `${Math.ceil(new Date().getTime() * Math.random())}`,
-        [],
-    );
+    const { uuid } = useRender({
+        children,
+        ref,
+    });
 
     const onLoadRef = () => {
         const ID = id + "-" + uuid;
@@ -38,13 +38,6 @@ export const useSelectOptionsPos = <ELEMENT extends HTMLElement>({
         }
     };
     useEffect(onLoadRef, []);
-
-    const onLoadChildren = () => {
-        if (ref) {
-            ReactDOM.render(<>{children}</>, ref);
-        }
-    };
-    useEffect(onLoadChildren, [children, ref]);
 
     const onLoadPos = () => {
         if (ref && target) {
