@@ -1,7 +1,6 @@
 import React, { ReactNode, useCallback, useMemo, useState } from "react";
 
 import { ModalBaseBaseProps, ModalBaseClassProps, ModalBase } from "../Base";
-import { _tValidate } from "fenextjs-functions";
 
 /**
  * Properties for the class of the Modal component.
@@ -27,7 +26,6 @@ export interface ModalProps
             | "type"
             | "active"
             | "onClose"
-            | "_t"
             | "typeClose"
             | "disabledClose"
         >,
@@ -61,7 +59,6 @@ export const Modal = ({
     onActive: onActiveProps,
     type = "center",
     typeClose = "out",
-    _t,
 }: ModalProps) => {
     const [activeValue, setActiveValue] = useState(false);
 
@@ -88,14 +85,13 @@ export const Modal = ({
                 onClick={onActive}
                 className={`fenext-modal-element-active ${classNameElementActionModalActive}`}
             >
-                {_tValidate(ElementActionModalActive, _t)}
+                {ElementActionModalActive}
             </div>
             <ModalBase
                 {...classNameModal}
                 onClose={onClose}
                 active={active}
                 type={type}
-                _t={_t}
                 typeClose={typeClose}
                 disabledClose={disabledClose}
             >

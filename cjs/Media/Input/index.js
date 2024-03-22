@@ -69,7 +69,7 @@ const MediaInput = ({ className = "", titleView = "Upload Image", textView = "Cl
                 }) }),
             multiple ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement(Button_1.Button, { ...ButtonUploadProps, onClick: onOpen, _t: _t }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
-            react_1.default.createElement(Base_1.ModalBase, { ...ModalProps, onClose: onClose, active: modalActive, _t: _t },
+            react_1.default.createElement(Base_1.ModalBase, { ...ModalProps, onClose: onClose, active: modalActive },
                 react_1.default.createElement(Page_1.MediaPage, { ...MediaPageProps, key: JSON.stringify(data), multiple: multiple, onChange: onAddImg, defaultValue: data, onAcepte: onAcepteImg, isPage: false, _t: _t })))));
 };
 exports.MediaInput = MediaInput;

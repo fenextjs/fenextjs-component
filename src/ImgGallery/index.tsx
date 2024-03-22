@@ -78,12 +78,7 @@ export const ImgGallery = ({
     return (
         <>
             <div className={`fenext-img-gallery ${className} `}>
-                <ModalBase
-                    active={activeModal}
-                    onClose={onClose}
-                    type="full"
-                    _t={_t}
-                >
+                <ModalBase active={activeModal} onClose={onClose} type="full">
                     <ImgSlider
                         imgs={imgs}
                         step={steps}

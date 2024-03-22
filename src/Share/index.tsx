@@ -114,7 +114,6 @@ export const Share = ({
                             <Button {...ButtonProps} />
                         </>
                     }
-                    _t={_t}
                 >
                     <Title {...TitleProps} _t={_t} />
 

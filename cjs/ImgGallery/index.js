@@ -25,7 +25,7 @@ const ImgGallery = ({ className = "", imgs, buttonShowMoreImg = {
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-img-gallery ${className} ` },
-            react_1.default.createElement(Base_1.ModalBase, { active: activeModal, onClose: onClose, type: "full", _t: _t },
+            react_1.default.createElement(Base_1.ModalBase, { active: activeModal, onClose: onClose, type: "full" },
                 react_1.default.createElement(ImgSlider_1.ImgSlider, { imgs: imgs, step: steps, setStep: setSteps, _t: _t })),
             loader ? (react_1.default.createElement(GridGallery_1.GridGallery, { items: new Array(nLoader).fill(1).map((e, i) => {
                     return (react_1.default.createElement(Img_1.Img, { key: i * e, src: "", loader: true, _t: _t }));

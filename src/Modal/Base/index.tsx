@@ -1,12 +1,10 @@
 import React, { PropsWithChildren, useMemo } from "react";
 import { Close } from "fenextjs-svg/cjs/Close";
-import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
 import { useModalPos } from "./useModalPos";
 /**
  * Properties for the base ModalBase component.
  */
-export interface ModalBaseBaseProps extends PropsWithChildren, _TProps {
+export interface ModalBaseBaseProps extends PropsWithChildren {
     /**
      * If active modal.
      */
@@ -82,7 +80,6 @@ export const ModalBase = ({
     typeClose = "out",
     onClose,
     children,
-    _t,
 }: ModalBaseProps) => {
     const uuid = useMemo(() => new Date().getTime(), [active]);
 
@@ -101,7 +98,7 @@ export const ModalBase = ({
         );
     }, [onClose, type, active, classNameClose, disabledClose]);
 
-    const {} = useModalPos({
+    useModalPos({
         id: "fenext-modal",
         children: (
             <>

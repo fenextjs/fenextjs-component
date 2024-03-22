@@ -44,7 +44,7 @@ const Share = ({ className = "", share = "", ButtonProps = {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-share ${className} ` },
             react_1.default.createElement(Modal_1.Modal, { ElementActionModalActive: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(Button_1.Button, { ...ButtonProps })), _t: _t },
+                    react_1.default.createElement(Button_1.Button, { ...ButtonProps })) },
                 react_1.default.createElement(Title_1.Title, { ...TitleProps, _t: _t }),
                 react_1.default.createElement("div", { className: "fenext-share-items" }, shareList.map((e, i) => {
                     const key = e;

@@ -1,13 +1,16 @@
 import React, { PropsWithChildren } from "react";
-import { _TProps } from "fenextjs-interface";
 /**
  * Properties for the base ModalBase component.
  */
-export interface ModalBaseBaseProps extends PropsWithChildren, _TProps {
+export interface ModalBaseBaseProps extends PropsWithChildren {
     /**
      * If active modal.
      */
     active?: boolean;
+    /**
+     * If active modal.
+     */
+    childrenUseActiveForShowHidden?: boolean;
     /**
      * If disabled close modal.
      */
@@ -51,4 +54,4 @@ export interface ModalBaseClassProps {
  */
 export interface ModalBaseProps extends ModalBaseBaseProps, ModalBaseClassProps {
 }
-export declare const ModalBase: ({ className, classNameBg, classNameContent, classNameClose, active, disabledClose, type, typeClose, onClose, children, _t, }: ModalBaseProps) => React.JSX.Element;
+export declare const ModalBase: ({ className, classNameBg, classNameContent, classNameClose, active, childrenUseActiveForShowHidden, disabledClose, type, typeClose, onClose, children, }: ModalBaseProps) => React.JSX.Element;

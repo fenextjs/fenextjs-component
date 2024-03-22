@@ -184,7 +184,6 @@ export const MediaInput = ({
                     {...ModalProps}
                     onClose={onClose}
                     active={modalActive}
-                    _t={_t}
                 >
                     <MediaPage
                         {...MediaPageProps}
