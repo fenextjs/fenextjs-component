@@ -479,7 +479,7 @@ export const InputSelect = <T = any,>({
         selectRef,
     ]);
 
-    const { ref, uuid, onLoadPos } = useSelectOptionsPos({
+    const { uuid, onLoadPos } = useSelectOptionsPos({
         id: "fenext-select",
         children: (
             <>
@@ -530,7 +530,6 @@ export const InputSelect = <T = any,>({
         ),
         target: selectRef?.current,
     });
-    console.log(ref);
 
     return (
         <>
@@ -552,12 +551,15 @@ export const InputSelect = <T = any,>({
             >
                 <div
                     className={`fenext-select-content-search`}
-                    onClick={()=>{
-                        onLoadPos?.()
-                        if(window?.innerWidth <= 575){
-                            const ele = document?.querySelector?.<HTMLInputElement>(`#fenext-select-${uuid} .fenext-input-content-input`)
-                            ele?.click()
-                            ele?.focus()
+                    onClick={() => {
+                        onLoadPos?.();
+                        if (window?.innerWidth <= 575) {
+                            const ele =
+                                document?.querySelector?.<HTMLInputElement>(
+                                    `#fenext-select-${uuid} .fenext-input-content-input`,
+                                );
+                            ele?.click();
+                            ele?.focus();
                         }
                     }}
                     onMouseEnter={onLoadPos}

@@ -284,7 +284,6 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
     }
 }
 
-
 .fenext-use-select-options-pos {
     position: fixed;
     width: var(--element-width);
@@ -294,19 +293,19 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
     left: var(--element-left);
 
     .fenext-select-list-options {
-        max-height: calc(100dvh - var(--element-bottom) - .5rem);
+        max-height: calc(100dvh - var(--element-bottom) - 0.5rem);
     }
-    
+
     @media (min-width: $breakSelectModalMovilTop) {
-        .fenext-select-content-search{
+        .fenext-select-content-search {
             display: none;
         }
-        &[fenext-direction-pos="top"]{
+        &[fenext-direction-pos="top"] {
             top: var(--element-top);
             .fenext-select-list-options {
-                max-height: calc(var(--element-top) - .5rem);
+                max-height: calc(var(--element-top) - 0.5rem);
                 rotate: 180deg;
-                >*{
+                > * {
                     rotate: 180deg;
                 }
             }
@@ -321,16 +320,16 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
         padding: 1rem;
         display: grid;
         grid-template-rows: auto 1fr;
-        gap: .5rem;
+        gap: 0.5rem;
         background: var(--fenext-color-light);
         transition: transform 0.1s 0.1s;
         transition-delay: calc(calc(1.4 - var(--list-scaleY, 0)) * 0.25s);
         transform: scaleY(var(--list-scaleY, 0));
         transform-origin: top center;
-        &:has(.fenext-input-content-input:focus){
+        &:has(.fenext-input-content-input:focus) {
             --list-scaleY: 1;
         }
-        .fenext-select-content-search{
+        .fenext-select-content-search {
             position: relative;
             .fenext-input-content-input {
                 padding-right: 3rem;
@@ -341,7 +340,6 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
                 grid-column: 1/-1;
                 grid-row: 2/3;
             }
-
         }
         .fenext-select-list-options {
             --list-scaleY: 1;
@@ -349,10 +347,9 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
             max-height: none;
             position: relative;
         }
-        .fenext-select-option-btn{
+        .fenext-select-option-btn {
             margin-inline: 0;
             width: 100%;
         }
     }
-
 }
