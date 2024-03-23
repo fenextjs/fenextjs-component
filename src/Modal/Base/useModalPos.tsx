@@ -27,7 +27,8 @@ export const useModalPos = <ELEMENT extends HTMLElement>({
             ele.classList.value = `
                 fenext-use-modal-pos
             `;
-            document.body.append(ele);
+            const root = document?.getElementById?.("__next") ??document?.getElementById?.("storybook-root") ?? document.body
+            root.append(ele);
         }
         ele = document.getElementById(ID);
         if (ele) {
