@@ -18,7 +18,10 @@ const useModalPos = ({ id, tag = "div", children, }) => {
             ele.classList.value = `
                 fenext-use-modal-pos
             `;
-            document.body.append(ele);
+            const root = document?.getElementById?.("__next") ??
+                document?.getElementById?.("storybook-root") ??
+                document.body;
+            root.append(ele);
         }
         ele = document.getElementById(ID);
         if (ele) {
