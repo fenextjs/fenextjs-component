@@ -7,7 +7,7 @@ class ContextProvider extends React.Component {
     }
 
     render() {
-        return (this.props  as any).children;
+        return (this.props as any).children;
     }
 }
 export interface useModalPosProps {
@@ -22,7 +22,7 @@ export const useModalPos = <ELEMENT extends HTMLElement>({
     children,
 }: useModalPosProps) => {
     const [ref, setRef] = useState<ELEMENT | undefined>(undefined);
-    
+
     const { uuid } = useRender({
         // children,
         children: (
