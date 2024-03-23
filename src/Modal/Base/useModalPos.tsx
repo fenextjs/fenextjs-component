@@ -1,6 +1,15 @@
 import { useRender } from "fenextjs-hook";
-import { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 
+class ContextProvider extends React.Component {
+    getChildContext() {
+        return this.context;
+    }
+
+    render() {
+        return (this.props  as any).children;
+    }
+}
 export interface useModalPosProps {
     id: string;
     tag?: keyof HTMLElementTagNameMap;
@@ -13,8 +22,14 @@ export const useModalPos = <ELEMENT extends HTMLElement>({
     children,
 }: useModalPosProps) => {
     const [ref, setRef] = useState<ELEMENT | undefined>(undefined);
+    
     const { uuid } = useRender({
-        children,
+        // children,
+        children: (
+            <>
+                <ContextProvider>{children}</ContextProvider>
+            </>
+        ),
         ref,
     });
 
@@ -27,11 +42,7 @@ export const useModalPos = <ELEMENT extends HTMLElement>({
             ele.classList.value = `
                 fenext-use-modal-pos
             `;
-            const root =
-                document?.getElementById?.("__next") ??
-                document?.getElementById?.("storybook-root") ??
-                document.body;
-            root.append(ele);
+            document.body.append(ele);
         }
         ele = document.getElementById(ID);
         if (ele) {
