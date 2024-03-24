@@ -234,4 +234,12 @@
 html:has(.fenext-modal-base-active),
 body:has(.fenext-modal-base-active) {
     overflow: hidden !important;
+    .fenext-layout-grid {
+        &-mt-children {
+            container-type: initial;
+        }
+        &-ml-children {
+            container-type: initial;
+        }
+    }
 }
