@@ -1,15 +1,6 @@
 import { useRender } from "fenextjs-hook";
-import React, { ReactNode, useEffect, useState } from "react";
+import  { ReactNode, useEffect, useState } from "react";
 
-class ContextProvider extends React.Component {
-    getChildContext() {
-        return this.context;
-    }
-
-    render() {
-        return (this.props as any).children;
-    }
-}
 export interface useModalPosProps {
     id: string;
     tag?: keyof HTMLElementTagNameMap;
@@ -24,12 +15,7 @@ export const useModalPos = <ELEMENT extends HTMLElement>({
     const [ref, setRef] = useState<ELEMENT | undefined>(undefined);
 
     const { uuid } = useRender({
-        // children,
-        children: (
-            <>
-                <ContextProvider>{children}</ContextProvider>
-            </>
-        ),
+        children,
         ref,
     });
 

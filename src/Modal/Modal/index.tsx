@@ -28,6 +28,7 @@ export interface ModalProps
             | "onClose"
             | "typeClose"
             | "disabledClose"
+            | "useRender"
         >,
         ModalClassProps {
     /**
@@ -59,6 +60,7 @@ export const Modal = ({
     onActive: onActiveProps,
     type = "center",
     typeClose = "out",
+    useRender = false,
 }: ModalProps) => {
     const [activeValue, setActiveValue] = useState(false);
 
@@ -94,6 +96,7 @@ export const Modal = ({
                 type={type}
                 typeClose={typeClose}
                 disabledClose={disabledClose}
+                useRender={useRender}
             >
                 {children}
             </ModalBase>

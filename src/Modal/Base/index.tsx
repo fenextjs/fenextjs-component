@@ -1,5 +1,6 @@
 import React, { PropsWithChildren, useMemo } from "react";
 import { Close } from "fenextjs-svg/cjs/Close";
+import { useModalPos } from "./useModalPos";
 /**
  * Properties for the base ModalBase component.
  */
@@ -16,6 +17,10 @@ export interface ModalBaseBaseProps extends PropsWithChildren {
      * If disabled close modal.
      */
     disabledClose?: boolean;
+    /**
+     * If disabled close modal.
+     */
+    useRender?: boolean;
     /**
      * Type of modal.
      */
@@ -79,6 +84,7 @@ export const ModalBase = ({
     typeClose = "out",
     onClose,
     children,
+    useRender = false,
 }: ModalBaseProps) => {
     const uuid = useMemo(() => new Date().getTime(), [active]);
 
@@ -97,48 +103,70 @@ export const ModalBase = ({
         );
     }, [onClose, type, active, classNameClose, disabledClose]);
 
-    return (
-        <>
-            <dialog
-                open={active}
-                className={`fenext-modal-base-dialog fenext-modal-base-dialog-close-${typeClose} fenext-modal-base-dialog-${
-                    active ? "active" : "inactive"
-                } fenext-modal-base-dialog-disabled-close-${
-                    disabledClose ? "active" : "inactive"
-                }`}
-            >
-                <div
-                    className={`fenext-modal-base-bg fenext-modal-base-bg-${
+    const CONTENT = useMemo(() => {
+        return (
+            <>
+                <dialog
+                    open={active}
+                    className={`fenext-modal-base-dialog fenext-modal-base-dialog-close-${typeClose} fenext-modal-base-dialog-${
                         active ? "active" : "inactive"
-                    } ${classNameBg} `}
-                ></div>
-                <div
-                    className={`fenext-modal-base fenext-modal-base-bg-close fenext-modal-base-bg-close-${uuid} fenext-modal-base-${
-                        active ? "active" : "inactive"
-                    } fenext-modal-base-${type} ${className} `}
-                    onClick={(e) => {
-                        const ele = e.target as HTMLDivElement;
-                        if (
-                            ele.classList.value.includes(
-                                `fenext-modal-base-bg-close-${uuid}`,
-                            ) &&
-                            !disabledClose
-                        ) {
-                            onClose?.();
-                        }
-                    }}
+                    } fenext-modal-base-dialog-disabled-close-${
+                        disabledClose ? "active" : "inactive"
+                    }`}
                 >
                     <div
-                        className={`fenext-modal-base-content ${classNameContent} `}
+                        className={`fenext-modal-base-bg fenext-modal-base-bg-${
+                            active ? "active" : "inactive"
+                        } ${classNameBg} `}
+                    ></div>
+                    <div
+                        className={`fenext-modal-base fenext-modal-base-bg-close fenext-modal-base-bg-close-${uuid} fenext-modal-base-${
+                            active ? "active" : "inactive"
+                        } fenext-modal-base-${type} ${className} `}
+                        onClick={(e) => {
+                            const ele = e.target as HTMLDivElement;
+                            if (
+                                ele.classList.value.includes(
+                                    `fenext-modal-base-bg-close-${uuid}`,
+                                ) &&
+                                !disabledClose
+                            ) {
+                                onClose?.();
+                            }
+                        }}
                     >
-                        {((childrenUseActiveForShowHidden && active) ||
-                            !childrenUseActiveForShowHidden) &&
-                            children}
-                        {CLOSECOMPONENTE}
+                        <div
+                            className={`fenext-modal-base-content ${classNameContent} `}
+                        >
+                            {((childrenUseActiveForShowHidden && active) ||
+                                !childrenUseActiveForShowHidden) &&
+                                children}
+                            {CLOSECOMPONENTE}
+                        </div>
                     </div>
-                </div>
-                {CLOSECOMPONENTE}
-            </dialog>
-        </>
-    );
+                    {CLOSECOMPONENTE}
+                </dialog>
+            </>
+        );
+    }, [
+        CLOSECOMPONENTE,
+        CLOSECOMPONENTE,
+        childrenUseActiveForShowHidden,
+        active,
+        children,
+        uuid,
+        classNameContent,
+        className,
+        type,
+        classNameBg,
+        disabledClose,
+        typeClose,
+    ]);
+
+    useModalPos({
+        id: "fenext-modal",
+        children: <>{useRender && CONTENT}</>,
+    });
+
+    return <>{!useRender && CONTENT}</>;
 };

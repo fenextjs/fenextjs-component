@@ -171,4 +171,6 @@ const ModalInModal_: Story<PropsWithChildren<ModalProps>> = (args) => (
 );
 
 export const ModalInModal = ModalInModal_.bind({});
-ModalInModal.args = {} as ModalProps;
+ModalInModal.args = {
+    useRender:true
+} as ModalProps;
