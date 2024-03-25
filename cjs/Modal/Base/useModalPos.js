@@ -1,24 +1,14 @@
-import { useRender } from "fenextjs-hook";
-import { ReactNode, useEffect, useState } from "react";
-
-export interface useModalPosProps {
-    id: string;
-    tag?: keyof HTMLElementTagNameMap;
-    children?: ReactNode;
-}
-
-export const useModalPos = <ELEMENT extends HTMLElement>({
-    id,
-    tag = "div",
-    children,
-}: useModalPosProps) => {
-    const [ref, setRef] = useState<ELEMENT | undefined>(undefined);
-
-    const { uuid } = useRender({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useModalPos = void 0;
+const fenextjs_hook_1 = require("fenextjs-hook");
+const react_1 = require("react");
+const useModalPos = ({ id, tag = "div", children, }) => {
+    const [ref, setRef] = (0, react_1.useState)(undefined);
+    const { uuid } = (0, fenextjs_hook_1.useRender)({
         children,
         ref,
     });
-
     const onLoadRef = () => {
         const ID = id + "-" + uuid;
         let ele = document.getElementById(ID);
@@ -33,13 +23,14 @@ export const useModalPos = <ELEMENT extends HTMLElement>({
         ele = document.getElementById(ID);
         if (ele) {
             ele.setAttribute("uuid", uuid);
-            setRef(ele as ELEMENT);
+            setRef(ele);
         }
     };
-    useEffect(onLoadRef, []);
-
+    (0, react_1.useEffect)(onLoadRef, []);
     return {
         ref,
         uuid,
     };
 };
+exports.useModalPos = useModalPos;
+//# sourceMappingURL=useModalPos.js.map

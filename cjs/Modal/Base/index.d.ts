@@ -16,6 +16,10 @@ export interface ModalBaseBaseProps extends PropsWithChildren {
      */
     disabledClose?: boolean;
     /**
+     * If disabled close modal.
+     */
+    useRender?: boolean;
+    /**
      * Type of modal.
      */
     type?: "top" | "left" | "right" | "bottom" | "center" | "full" | "layout-grid";
@@ -54,4 +58,4 @@ export interface ModalBaseClassProps {
  */
 export interface ModalBaseProps extends ModalBaseBaseProps, ModalBaseClassProps {
 }
-export declare const ModalBase: ({ className, classNameBg, classNameContent, classNameClose, active, childrenUseActiveForShowHidden, disabledClose, type, typeClose, onClose, children, }: ModalBaseProps) => React.JSX.Element;
+export declare const ModalBase: ({ className, classNameBg, classNameContent, classNameClose, active, childrenUseActiveForShowHidden, disabledClose, type, typeClose, onClose, children, useRender, }: ModalBaseProps) => React.JSX.Element;

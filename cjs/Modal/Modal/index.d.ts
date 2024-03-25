@@ -16,7 +16,7 @@ export interface ModalClassProps {
 /**
  * Properties for the Modal component.
  */
-export interface ModalProps extends Pick<ModalBaseBaseProps, "children" | "type" | "active" | "onClose" | "typeClose" | "disabledClose">, ModalClassProps {
+export interface ModalProps extends Pick<ModalBaseBaseProps, "children" | "type" | "active" | "onClose" | "typeClose" | "disabledClose" | "useRender">, ModalClassProps {
     /**
      * The element with onClick for active modal.
      */
@@ -30,4 +30,4 @@ export interface ModalProps extends Pick<ModalBaseBaseProps, "children" | "type"
      */
     onActive?: () => void;
 }
-export declare const Modal: ({ classNameElementActionModalActive, classNameModal, ElementActionModalActive, disabledElementActionModalActive, children, active: activeProps, disabledClose, onClose: onCloseProps, onActive: onActiveProps, type, typeClose, }: ModalProps) => React.JSX.Element;
+export declare const Modal: ({ classNameElementActionModalActive, classNameModal, ElementActionModalActive, disabledElementActionModalActive, children, active: activeProps, disabledClose, onClose: onCloseProps, onActive: onActiveProps, type, typeClose, useRender, }: ModalProps) => React.JSX.Element;
