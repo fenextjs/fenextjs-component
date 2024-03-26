@@ -399,7 +399,8 @@ const MaxLengthOptionsArgs: InputSelectProps = {
             throw new ErrorInputRequired();
         }
     },
-    maxLengthShowOptions:20
+    maxLengthShowOptions:20,
+    // disabled:true
 };
 
 MaxLengthOptions.args = MaxLengthOptionsArgs;
