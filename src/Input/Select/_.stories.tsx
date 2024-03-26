@@ -367,3 +367,39 @@ const Checkboxarg: InputSelectProps = {
 };
 
 Checkbox.args = Checkboxarg;
+
+
+
+
+export const MaxLengthOptions = Profile.bind({});
+
+const MaxLengthOptionsArgs: InputSelectProps = {
+    id: "select",
+    name: "select",
+    label: "Select",
+    placeholder: "Select",
+    datalist: "listOption",
+    options: new Array(1000).fill(1).map((e,i)=>{
+        const n =  e * i + 1
+        return  {
+            id: n,
+            text: `Option ${n}`,
+            children: <>Option {n}</>,
+            img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
+        }
+    }),
+    create: {
+        id: "create",
+        text: "Create",
+    },
+    onCreate: () => alert("Create"),
+
+    onChangeValidate: (e: InputSelectItemOptionBaseProps | undefined) => {
+        if (!e) {
+            throw new ErrorInputRequired();
+        }
+    },
+    maxLengthShowOptions:20
+};
+
+MaxLengthOptions.args = MaxLengthOptionsArgs;

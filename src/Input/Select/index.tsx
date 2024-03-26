@@ -161,6 +161,10 @@ export interface InputSelectBaseProps<T = any>
      * changeByFirstOptionInOnBlur in select.
      */
     changeByFirstOptionInOnBlur?: boolean;
+    /**
+     * maxLengthShowOptions in select.
+     */
+    maxLengthShowOptions?: number;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -209,6 +213,7 @@ export const InputSelect = <T = any,>({
     useSwichtypeSelectStyle = false,
     changeByFirstOptionInOnBlur = false,
     _t,
+    maxLengthShowOptions = undefined,
     ...props
 }: InputSelectProps<T>) => {
     const options = useMemo(
@@ -319,11 +324,15 @@ export const InputSelect = <T = any,>({
         );
     }, [options, dataMemo, searchById]);
     const OPTIONS = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
+        let list = options;
         if (typeSelect == "div") {
-            return OPTIONSSEARCH;
+            list = OPTIONSSEARCH;
         }
-        return options;
-    }, [typeSelect, OPTIONSSEARCH, options]);
+        if (maxLengthShowOptions) {
+            list = list.splice(0, maxLengthShowOptions);
+        }
+        return list;
+    }, [typeSelect, OPTIONSSEARCH, options, maxLengthShowOptions]);
 
     const onEnter = () => {
         const optionSect = OPTIONSSEARCH[0];
