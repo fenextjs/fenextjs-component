@@ -19,7 +19,15 @@ const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", clas
                     ${classNameOption}
                 `, onClick: () => {
                 if (!disabled) {
-                    onClick?.({ id, text, children, data, img });
+                    onClick?.({
+                        id,
+                        text,
+                        children,
+                        data,
+                        img,
+                        icon,
+                        imgComponent,
+                    });
                 }
             }, disabled: disabled, selected: selected, value: text },
             img ? (react_1.default.createElement(react_1.default.Fragment, null,

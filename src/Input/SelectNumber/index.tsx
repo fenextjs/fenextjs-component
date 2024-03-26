@@ -3,7 +3,10 @@ import React from "react";
 import { InputSelect, InputSelectProps } from "../..";
 
 export interface InputSelectNumberProps
-    extends Omit<InputSelectProps, "options" | "onChange" | "defaultValue"> {
+    extends Omit<
+        InputSelectProps,
+        "options" | "onChange" | "defaultValue" | "parseText"
+    > {
     onChange?: (n: number) => void;
     defaultValue?: number;
     min?: number;

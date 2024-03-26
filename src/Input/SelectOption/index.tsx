@@ -131,7 +131,15 @@ export const InputSelectOption = <T = any,>({
                 `}
                 onClick={() => {
                     if (!disabled) {
-                        onClick?.({ id, text, children, data, img,icon,imgComponent, });
+                        onClick?.({
+                            id,
+                            text,
+                            children,
+                            data,
+                            img,
+                            icon,
+                            imgComponent,
+                        });
                     }
                 }}
                 disabled={disabled}

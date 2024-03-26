@@ -283,7 +283,7 @@ export interface InputTextBaseProps extends _TProps {
     /**
      * parseText of Input.
      */
-    parseText?: (data:string) =>string;
+    parseText?: (data: string) => string;
     /**
      * onChangeEvent of Input.
      */
@@ -596,7 +596,10 @@ export const InputText = ({
                         ref={ref}
                         className={`fenext-input-content-input ${classNameInput} fenext-input-validator-status-${FenextInputValidatorStatus} ${statusInput}`}
                         placeholder={_tValidate(placeholder, _t)}
-                        value={(parseText ? parseText(valueInput) : valueInput) ?? valueInput}
+                        value={
+                            (parseText ? parseText(valueInput) : valueInput) ??
+                            valueInput
+                        }
                         onChange={onChangeInput}
                         onBlur={blurInput}
                         disabled={disabled}
