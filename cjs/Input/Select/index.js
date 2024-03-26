@@ -103,6 +103,9 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                     textSearch?.includes(`${option.id}`?.toLowerCase()))));
     }, [options, dataMemo, searchById]);
     const OPTIONS = (0, react_1.useMemo)(() => {
+        if (props?.disabled) {
+            return [];
+        }
         let list = options;
         if (typeSelect == "div") {
             list = OPTIONSSEARCH;
@@ -111,7 +114,13 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
             list = list.splice(0, maxLengthShowOptions);
         }
         return list;
-    }, [typeSelect, OPTIONSSEARCH, options, maxLengthShowOptions]);
+    }, [
+        typeSelect,
+        OPTIONSSEARCH,
+        options,
+        maxLengthShowOptions,
+        props?.disabled,
+    ]);
     const onEnter = () => {
         const optionSect = OPTIONSSEARCH[0];
         if (optionSect) {

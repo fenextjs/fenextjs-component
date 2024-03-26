@@ -324,8 +324,8 @@ export const InputSelect = <T = any,>({
         );
     }, [options, dataMemo, searchById]);
     const OPTIONS = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
-        if(props?.disabled){
-            return []
+        if (props?.disabled) {
+            return [];
         }
         let list = options;
         if (typeSelect == "div") {
@@ -335,7 +335,13 @@ export const InputSelect = <T = any,>({
             list = list.splice(0, maxLengthShowOptions);
         }
         return list;
-    }, [typeSelect, OPTIONSSEARCH, options, maxLengthShowOptions,props?.disabled]);
+    }, [
+        typeSelect,
+        OPTIONSSEARCH,
+        options,
+        maxLengthShowOptions,
+        props?.disabled,
+    ]);
 
     const onEnter = () => {
         const optionSect = OPTIONSSEARCH[0];
