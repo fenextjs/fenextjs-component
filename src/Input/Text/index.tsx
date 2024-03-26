@@ -281,6 +281,10 @@ export interface InputTextBaseProps extends _TProps {
      */
     regExpReplace?: string;
     /**
+     * parseText of Input.
+     */
+    parseText?: (data:string) =>string;
+    /**
      * onChangeEvent of Input.
      */
     onChangeEvent?: (e: InputTextChangeEvent) => void;
@@ -313,7 +317,7 @@ export const InputText = ({
     onBlur = () => {},
     onEnter = () => {},
     onChangeValidate = async (e: string) => e,
-
+    parseText,
     onChangeValidateBeforeYup = async (e) => {
         env_log(e, {
             name: "onChangeValidateBeforeYup",
@@ -592,7 +596,7 @@ export const InputText = ({
                         ref={ref}
                         className={`fenext-input-content-input ${classNameInput} fenext-input-validator-status-${FenextInputValidatorStatus} ${statusInput}`}
                         placeholder={_tValidate(placeholder, _t)}
-                        value={valueInput}
+                        value={(parseText ? parseText(valueInput) : valueInput) ?? valueInput}
                         onChange={onChangeInput}
                         onBlur={blurInput}
                         disabled={disabled}

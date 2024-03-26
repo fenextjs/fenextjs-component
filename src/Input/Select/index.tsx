@@ -549,6 +549,9 @@ export const InputSelect = <T = any,>({
         target: selectRef?.current,
     });
 
+    console.log(data);
+    
+
     return (
         <>
             <div

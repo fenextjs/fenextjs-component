@@ -16,9 +16,18 @@ export const Index = Profile.bind({});
 
 const args  : InputTextSelectProps = {
     label:"Label",
-    options:[
-        
-    ]
+    options:new Array(10).fill(1).map((e,i)=>{
+        const n =  e * i + 1
+        return  {
+            id: n,
+            text: `Option ${n}`,
+            children: <>Option {n}</>,
+            // img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg",
+            icon:<>
+                <img src="https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"/>
+            </>
+        }
+    }),
 }
 
 Index.args= args
