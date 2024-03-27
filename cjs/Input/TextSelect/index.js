@@ -33,9 +33,9 @@ const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultVal
         react_1.default.createElement("div", { className: `fenext-input-text-select fenext-input-text-select-${posSelect}` },
             react_1.default.createElement("div", { className: `fenext-input-text-select-label fenext-input-label  ` }, (0, fenextjs_functions_1._tValidate)(label, _t)),
             react_1.default.createElement("div", { className: `fenext-input-text-select-select ` },
-                react_1.default.createElement(Select_1.InputSelect, { ...props, placeholder: placeholderSelect, onChange: onChangeData("select"), validator: undefined, value: value.select, _t: _t })),
+                react_1.default.createElement(Select_1.InputSelect, { ...props, placeholder: placeholderSelect, onChange: onChangeData("select"), validator: undefined, value: value.select, _t: _t, parseText: (e) => e })),
             react_1.default.createElement("div", { className: `fenext-input-text-select-text ` },
-                react_1.default.createElement(Text_1.InputText, { ...props, placeholder: placeholderText, onChange: onChangeData("text"), validator: undefined, value: value.text, _t: _t, parseText: (e) => e })),
+                react_1.default.createElement(Text_1.InputText, { ...props, placeholder: placeholderText, onChange: onChangeData("text"), validator: undefined, value: value.text, _t: _t })),
             errorInput && (react_1.default.createElement(Error_1.ErrorComponent, { error: errorInput, className: `fenext-input-error `, _t: _t })))));
 };
 exports.InputTextSelect = InputTextSelect;
