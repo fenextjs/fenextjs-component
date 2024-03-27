@@ -156,6 +156,7 @@ export const InputTextSelect = ({
                         validator={undefined}
                         value={value.text}
                         _t={_t}
+                        parseText={(e) => e}
                     />
                 </div>
                 {errorInput && (
