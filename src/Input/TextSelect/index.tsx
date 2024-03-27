@@ -146,6 +146,7 @@ export const InputTextSelect = ({
                         validator={undefined}
                         value={value.select}
                         _t={_t}
+                        parseText={(e) => e}
                     />
                 </div>
                 <div className={`fenext-input-text-select-text `}>
@@ -156,7 +157,6 @@ export const InputTextSelect = ({
                         validator={undefined}
                         value={value.text}
                         _t={_t}
-                        parseText={(e) => e}
                     />
                 </div>
                 {errorInput && (
