@@ -49,6 +49,7 @@ export const InputSelectState = ({
                 options={options}
                 loader={loader}
                 useLoader={true}
+                maxLengthShowOptions={50}
             />
         </>
     );

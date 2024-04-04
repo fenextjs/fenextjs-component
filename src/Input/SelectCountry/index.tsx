@@ -58,6 +58,7 @@ export const InputSelectCountry = ({
                 options={options}
                 loader={loader}
                 useLoader={true}
+                maxLengthShowOptions={50}
             />
         </>
     );

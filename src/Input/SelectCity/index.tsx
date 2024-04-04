@@ -49,6 +49,7 @@ export const InputSelectCity = ({
                 options={options}
                 loader={loader}
                 useLoader={true}
+                maxLengthShowOptions={50}
             />
         </>
     );
