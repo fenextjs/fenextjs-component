@@ -20,7 +20,7 @@ const InputSelectState = ({ countryId = undefined, ...props }) => {
         onLoad();
     }, []);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(Select_1.InputSelect, { ...props, options: options, loader: loader, useLoader: true })));
+        react_1.default.createElement(Select_1.InputSelect, { ...props, options: options, loader: loader, useLoader: true, maxLengthShowOptions: 50 })));
 };
 exports.InputSelectState = InputSelectState;
 //# sourceMappingURL=index.js.map
