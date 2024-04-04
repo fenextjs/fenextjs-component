@@ -4,7 +4,7 @@ import {
     InputSelectBaseProps,
     InputSelectClassProps,
 } from "../Select";
-import { loadCitys } from "country-state-city-nextjs";
+import { getDataCitys } from "country-state-city-nextjs";
 /**
  * Interface that defines CSS class properties for a SelectCity input component.
  */
@@ -31,7 +31,7 @@ export const InputSelectCity = ({
     const [loader, setLoader] = useState(false);
     const [options, setOptions] = useState<InputSelectBaseProps["options"]>([]);
     const onLoad = async () => {
-        let r = await loadCitys();
+        let r = await getDataCitys();
         if (stateId) {
             r = [...r].filter((e) => e.id_state === stateId);
         }

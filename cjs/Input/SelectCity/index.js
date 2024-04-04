@@ -9,7 +9,7 @@ const InputSelectCity = ({ stateId = undefined, ...props }) => {
     const [loader, setLoader] = (0, react_1.useState)(false);
     const [options, setOptions] = (0, react_1.useState)([]);
     const onLoad = async () => {
-        let r = await (0, country_state_city_nextjs_1.loadCitys)();
+        let r = await (0, country_state_city_nextjs_1.getDataCitys)();
         if (stateId) {
             r = [...r].filter((e) => e.id_state === stateId);
         }

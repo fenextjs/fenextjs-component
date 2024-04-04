@@ -9,7 +9,7 @@ const InputSelectCountryMultiple = ({ ...props }) => {
     const [loader, setLoader] = (0, react_1.useState)(false);
     const [options, setOptions] = (0, react_1.useState)([]);
     const onLoad = async () => {
-        const r = await (0, country_state_city_nextjs_1.loadCountrys)();
+        const r = await (0, country_state_city_nextjs_1.getDataCountrys)();
         setOptions(r);
         setLoader(false);
     };

@@ -11,10 +11,10 @@ const InputSelectCountry = ({ ifLoadImgCountry = false, ...props }) => {
     const onLoad = async () => {
         let countrys = [];
         if (ifLoadImgCountry) {
-            countrys = await (0, country_state_city_nextjs_1.loadCountrysWidthImg)();
+            countrys = await (0, country_state_city_nextjs_1.getDataCountrysWithImg)();
         }
         else {
-            countrys = await (0, country_state_city_nextjs_1.loadCountrys)();
+            countrys = await (0, country_state_city_nextjs_1.getDataCountrys)();
         }
         setOptions(countrys);
         setLoader(false);

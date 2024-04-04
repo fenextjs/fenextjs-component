@@ -4,7 +4,10 @@ import {
     InputSelectBaseProps,
     InputSelectClassProps,
 } from "../Select";
-import { loadCountrys, loadCountrysWidthImg } from "country-state-city-nextjs";
+import {
+    getDataCountrys,
+    getDataCountrysWithImg,
+} from "country-state-city-nextjs";
 import { CountryProps } from "fenextjs-interface";
 /**
  * Interface that defines CSS class properties for a SelectCountry input component.
@@ -37,9 +40,9 @@ export const InputSelectCountry = ({
     const onLoad = async () => {
         let countrys: CountryProps[] = [];
         if (ifLoadImgCountry) {
-            countrys = await loadCountrysWidthImg();
+            countrys = await getDataCountrysWithImg();
         } else {
-            countrys = await loadCountrys();
+            countrys = await getDataCountrys();
         }
         setOptions(countrys);
         setLoader(false);

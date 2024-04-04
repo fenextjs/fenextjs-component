@@ -4,7 +4,7 @@ import {
     InputSelectMultipleBaseProps,
     InputSelectMultipleClassProps,
 } from "../SelectMultiple";
-import { loadCountrys } from "country-state-city-nextjs";
+import { getDataCountrys } from "country-state-city-nextjs";
 /**
  * Interface that defines CSS class properties for a SelectCountryMultiple input component.
  */
@@ -34,7 +34,7 @@ export const InputSelectCountryMultiple = ({
         InputSelectMultipleBaseProps["options"]
     >([]);
     const onLoad = async () => {
-        const r = await loadCountrys();
+        const r = await getDataCountrys();
         setOptions(r);
         setLoader(false);
     };
