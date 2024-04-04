@@ -110,6 +110,7 @@ export const InputSelectCSC = ({
                     })}
                     onChangeData={onChangeCSC("country")}
                     defaultValue={value?.country}
+                    maxLengthShowOptions={50}
                 />
                 <InputSelect<StateProps>
                     {...props}
@@ -123,6 +124,7 @@ export const InputSelectCSC = ({
                     })}
                     onChangeData={onChangeCSC("state")}
                     defaultValue={value?.state}
+                    maxLengthShowOptions={50}
                 />
                 <InputSelect<CityProps>
                     {...props}
@@ -136,6 +138,7 @@ export const InputSelectCSC = ({
                     })}
                     onChangeData={onChangeCSC("city")}
                     defaultValue={value?.city}
+                    maxLengthShowOptions={50}
                 />
             </>
         );

@@ -111,6 +111,10 @@ export interface InputSelectBaseProps<T = any>
      */
     create?: InputSelectItemOptionBaseProps<T>;
     /**
+     * Value of Create of select.
+     */
+    itemMaxLengthShowOptions?: InputSelectItemOptionBaseProps<T>;
+    /**
      * onCreate of select.
      */
     onCreate?: () => void;
@@ -214,6 +218,10 @@ export const InputSelect = <T = any,>({
     changeByFirstOptionInOnBlur = false,
     _t,
     maxLengthShowOptions = undefined,
+    itemMaxLengthShowOptions={
+        id:"fenext-item-max-length-show-options",
+        text:"More ..."
+    },
     ...props
 }: InputSelectProps<T>) => {
     const options = useMemo(
@@ -327,12 +335,19 @@ export const InputSelect = <T = any,>({
         if (props?.disabled) {
             return [];
         }
-        let list = options;
+        let list = [...options];
         if (typeSelect == "div") {
             list = OPTIONSSEARCH;
         }
         if (maxLengthShowOptions) {
+            const nMax = list.length > maxLengthShowOptions
             list = list.splice(0, maxLengthShowOptions);
+            if(nMax && itemMaxLengthShowOptions){
+                list.push({
+                    ...itemMaxLengthShowOptions,
+                    disabled:true
+                })
+            }
         }
         return list;
     }, [
@@ -341,6 +356,7 @@ export const InputSelect = <T = any,>({
         options,
         maxLengthShowOptions,
         props?.disabled,
+        itemMaxLengthShowOptions
     ]);
 
     const onEnter = () => {
