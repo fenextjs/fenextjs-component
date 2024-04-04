@@ -218,9 +218,9 @@ export const InputSelect = <T = any,>({
     changeByFirstOptionInOnBlur = false,
     _t,
     maxLengthShowOptions = undefined,
-    itemMaxLengthShowOptions={
-        id:"fenext-item-max-length-show-options",
-        text:"More ..."
+    itemMaxLengthShowOptions = {
+        id: "fenext-item-max-length-show-options",
+        text: "More ...",
     },
     ...props
 }: InputSelectProps<T>) => {
@@ -340,13 +340,13 @@ export const InputSelect = <T = any,>({
             list = OPTIONSSEARCH;
         }
         if (maxLengthShowOptions) {
-            const nMax = list.length > maxLengthShowOptions
+            const nMax = list.length > maxLengthShowOptions;
             list = list.splice(0, maxLengthShowOptions);
-            if(nMax && itemMaxLengthShowOptions){
+            if (nMax && itemMaxLengthShowOptions) {
                 list.push({
                     ...itemMaxLengthShowOptions,
-                    disabled:true
-                })
+                    disabled: true,
+                });
             }
         }
         return list;
@@ -356,7 +356,7 @@ export const InputSelect = <T = any,>({
         options,
         maxLengthShowOptions,
         props?.disabled,
-        itemMaxLengthShowOptions
+        itemMaxLengthShowOptions,
     ]);
 
     const onEnter = () => {

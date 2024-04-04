@@ -27,19 +27,19 @@ const InputSelectCSC = ({ classNameSelectCSC = "", defaultValue = undefined, use
                         ...e,
                         data: e,
                     };
-                }), onChangeData: onChangeCSC("country"), defaultValue: value?.country }),
+                }), onChangeData: onChangeCSC("country"), defaultValue: value?.country, maxLengthShowOptions: 50 }),
             react_1.default.createElement(Select_1.InputSelect, { ...props, ...state, key: value?.state?.id, options: states?.map((e) => {
                     return {
                         ...e,
                         data: e,
                     };
-                }), onChangeData: onChangeCSC("state"), defaultValue: value?.state }),
+                }), onChangeData: onChangeCSC("state"), defaultValue: value?.state, maxLengthShowOptions: 50 }),
             react_1.default.createElement(Select_1.InputSelect, { ...props, ...city, key: value?.city?.id, options: citys?.map((e) => {
                     return {
                         ...e,
                         data: e,
                     };
-                }), onChangeData: onChangeCSC("city"), defaultValue: value?.city })));
+                }), onChangeData: onChangeCSC("city"), defaultValue: value?.city, maxLengthShowOptions: 50 })));
         if (useContainer) {
             C = (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("div", { className: `fenext-select-csc ${classNameSelectCSC}` }, C)));

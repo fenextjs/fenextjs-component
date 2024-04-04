@@ -15,7 +15,10 @@ const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_svg_1 = require("fenextjs-svg");
 const Img_1 = require("../../Img");
 const useSelectOptionsPos_1 = require("./useSelectOptionsPos");
-const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(Arrow_1.Arrow, null), iconSearch = react_1.default.createElement(fenextjs_svg_1.SVGSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(cancel_1.Cancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, _t, maxLengthShowOptions = undefined, ...props }) => {
+const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(Arrow_1.Arrow, null), iconSearch = react_1.default.createElement(fenextjs_svg_1.SVGSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(cancel_1.Cancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, _t, maxLengthShowOptions = undefined, itemMaxLengthShowOptions = {
+    id: "fenext-item-max-length-show-options",
+    text: "More ...",
+}, ...props }) => {
     const options = (0, react_1.useMemo)(() => (filterOptions ? filterOptions(optionsProps) : optionsProps), [optionsProps, filterOptions]);
     const checkboxClose = (0, react_1.useRef)(null);
     const selectRef = (0, react_1.useRef)(null);
@@ -106,12 +109,19 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
         if (props?.disabled) {
             return [];
         }
-        let list = options;
+        let list = [...options];
         if (typeSelect == "div") {
             list = OPTIONSSEARCH;
         }
         if (maxLengthShowOptions) {
+            const nMax = list.length > maxLengthShowOptions;
             list = list.splice(0, maxLengthShowOptions);
+            if (nMax && itemMaxLengthShowOptions) {
+                list.push({
+                    ...itemMaxLengthShowOptions,
+                    disabled: true,
+                });
+            }
         }
         return list;
     }, [
@@ -120,6 +130,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
         options,
         maxLengthShowOptions,
         props?.disabled,
+        itemMaxLengthShowOptions,
     ]);
     const onEnter = () => {
         const optionSect = OPTIONSSEARCH[0];
