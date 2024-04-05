@@ -25,6 +25,11 @@ const useSelectOptionsPos = ({ id, tag = "div", children, target, }) => {
             ele.setAttribute("uuid", uuid);
             setRef(ele);
         }
+        return () => {
+            if (ele) {
+                ele.outerHTML = "";
+            }
+        };
     };
     (0, react_1.useEffect)(onLoadRef, []);
     const onLoadPos = () => {

@@ -38,7 +38,7 @@ export const useSelectOptionsPos = <ELEMENT extends HTMLElement>({
         }
         return () => {
             if (ele) {
-                ele.outerHTML = ""
+                ele.outerHTML = "";
             }
         };
     };
