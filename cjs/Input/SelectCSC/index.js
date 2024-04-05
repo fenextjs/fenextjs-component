@@ -15,7 +15,7 @@ const InputSelectCSC = ({ classNameSelectCSC = "", defaultValue = undefined, use
     label: "City",
     placeholder: "City",
 }, ...props }) => {
-    const { countrys, states, citys, onChangeCSC, value } = (0, useCSC_1.useCSC)({
+    const { countrys, states, citys, onChangeCSC, value, loadCitys, loadCountrys, loadStates, } = (0, useCSC_1.useCSC)({
         defaultValue,
         onChange,
     });
@@ -28,25 +28,37 @@ const InputSelectCSC = ({ classNameSelectCSC = "", defaultValue = undefined, use
                         ...e,
                         data: e,
                     };
-                }), onChangeData: onChangeCSC("country"), defaultValue: value?.country, maxLengthShowOptions: 50 }),
+                }), onChangeData: onChangeCSC("country"), defaultValue: value?.country, maxLengthShowOptions: 50, loader: !loadCountrys }),
             react_1.default.createElement(Select_1.InputSelect, { ...props, ...state, key: value?.country?.id, options: states?.map((e) => {
                     return {
                         ...e,
                         data: e,
                     };
-                }), onChangeData: onChangeCSC("state"), defaultValue: value?.state, maxLengthShowOptions: 50 }),
+                }), onChangeData: onChangeCSC("state"), defaultValue: value?.state, maxLengthShowOptions: 50, loader: !loadStates }),
             react_1.default.createElement(Select_1.InputSelect, { ...props, ...city, key: value?.state?.id, options: citys?.map((e) => {
                     return {
                         ...e,
                         data: e,
                     };
-                }), onChangeData: onChangeCSC("city"), defaultValue: value?.city, maxLengthShowOptions: 50 })));
+                }), onChangeData: onChangeCSC("city"), defaultValue: value?.city, maxLengthShowOptions: 50, loader: !loadCitys })));
         if (useContainer) {
             C = (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("div", { className: `fenext-select-csc ${classNameSelectCSC}` }, C)));
         }
         return C;
-    }, [value, countrys, states, citys, useContainer, country, state, city]);
+    }, [
+        value,
+        countrys,
+        states,
+        citys,
+        useContainer,
+        country,
+        state,
+        city,
+        loadCitys,
+        loadCountrys,
+        loadStates,
+    ]);
     return react_1.default.createElement(react_1.default.Fragment, null, CONTENT);
 };
 exports.InputSelectCSC = InputSelectCSC;

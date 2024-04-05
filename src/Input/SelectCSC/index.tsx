@@ -84,7 +84,16 @@ export const InputSelectCSC = ({
     },
     ...props
 }: InputSelectCSCProps) => {
-    const { countrys, states, citys, onChangeCSC, value ,loadCitys,loadCountrys,loadStates} = useCSC({
+    const {
+        countrys,
+        states,
+        citys,
+        onChangeCSC,
+        value,
+        loadCitys,
+        loadCountrys,
+        loadStates,
+    } = useCSC({
         defaultValue,
         onChange,
     });
@@ -151,6 +160,18 @@ export const InputSelectCSC = ({
         }
 
         return C;
-    }, [value, countrys, states, citys, useContainer, country, state, city,loadCitys,loadCountrys,loadStates]);
+    }, [
+        value,
+        countrys,
+        states,
+        citys,
+        useContainer,
+        country,
+        state,
+        city,
+        loadCitys,
+        loadCountrys,
+        loadStates,
+    ]);
     return <>{CONTENT}</>;
 };
