@@ -14,11 +14,10 @@ const InputSelectCSC = ({ classNameSelectCSC = "", defaultValue = undefined, use
 }, city = {
     label: "City",
     placeholder: "City",
-}, ifLoadImgCountry = false, ...props }) => {
+}, ...props }) => {
     const { countrys, states, citys, onChangeCSC, value } = (0, useCSC_1.useCSC)({
         defaultValue,
         onChange,
-        ifLoadImgCountry,
     });
     const CONTENT = (0, react_1.useMemo)(() => {
         let C = (react_1.default.createElement(react_1.default.Fragment, null,

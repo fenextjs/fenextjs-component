@@ -9,14 +9,10 @@ export interface InputSelectCountryClassProps extends InputSelectClassProps {
  * Interface that defines the base properties for a text input component.
  */
 export interface InputSelectCountryBaseProps extends Omit<InputSelectBaseProps, "options" | "useLoader" | "loader"> {
-    /**
-     * ifLoadImgCountry.
-     */
-    ifLoadImgCountry?: boolean;
 }
 /**
  * Props interface for the InputSelectCountry component. Extends both InputSelectCountryBaseProps and InputSelectCountryClassProps interfaces.
  */
 export interface InputSelectCountryProps extends InputSelectCountryBaseProps, InputSelectCountryClassProps {
 }
-export declare const InputSelectCountry: ({ ifLoadImgCountry, ...props }: InputSelectCountryProps) => React.JSX.Element;
+export declare const InputSelectCountry: ({ ...props }: InputSelectCountryProps) => React.JSX.Element;

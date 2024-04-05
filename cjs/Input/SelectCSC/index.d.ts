@@ -36,14 +36,10 @@ export interface InputSelectCSCBaseProps extends useCSCProps, Omit<InputSelectBa
      * city Input Label and Placeholder.
      */
     city?: Pick<InputTextBaseProps, "label" | "placeholder">;
-    /**
-     * ifLoadImgCountry.
-     */
-    ifLoadImgCountry?: boolean;
 }
 /**
  * Props interface for the InputSelectCSC component. Extends both InputSelectCSCBaseProps and InputSelectCSCClassProps interfaces.
  */
 export interface InputSelectCSCProps extends InputSelectCSCBaseProps, InputSelectCSCClassProps {
 }
-export declare const InputSelectCSC: ({ classNameSelectCSC, defaultValue, useContainer, onChange, country, state, city, ifLoadImgCountry, ...props }: InputSelectCSCProps) => React.JSX.Element;
+export declare const InputSelectCSC: ({ classNameSelectCSC, defaultValue, useContainer, onChange, country, state, city, ...props }: InputSelectCSCProps) => React.JSX.Element;

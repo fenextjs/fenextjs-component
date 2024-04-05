@@ -5,18 +5,17 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Select_1 = require("../Select");
 const country_state_city_nextjs_1 = require("country-state-city-nextjs");
-const InputSelectCountry = ({ ifLoadImgCountry = false, ...props }) => {
+const InputSelectCountry = ({ ...props }) => {
     const [loader, setLoader] = (0, react_1.useState)(false);
     const [options, setOptions] = (0, react_1.useState)([]);
     const onLoad = async () => {
-        let countrys = [];
-        if (ifLoadImgCountry) {
-            countrys = await (0, country_state_city_nextjs_1.getDataCountrysWithImg)();
-        }
-        else {
-            countrys = await (0, country_state_city_nextjs_1.getDataCountrys)();
-        }
-        setOptions(countrys);
+        const countrys = await (0, country_state_city_nextjs_1.getDataCountrys)();
+        setOptions(countrys.map((e) => {
+            return {
+                ...e,
+                img: `${(0, country_state_city_nextjs_1.getRuteCountryImg)(e)}`,
+            };
+        }));
         setLoader(false);
     };
     (0, react_1.useEffect)(() => {

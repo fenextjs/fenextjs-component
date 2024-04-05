@@ -4,10 +4,7 @@ import {
     InputSelectBaseProps,
     InputSelectClassProps,
 } from "../Select";
-import {
-    getDataCountrys,
-    getRuteCountryImg,
-} from "country-state-city-nextjs";
+import { getDataCountrys, getRuteCountryImg } from "country-state-city-nextjs";
 import { CountryProps } from "fenextjs-interface";
 /**
  * Interface that defines CSS class properties for a SelectCountry input component.
@@ -18,12 +15,7 @@ export interface InputSelectCountryClassProps extends InputSelectClassProps {}
  * Interface that defines the base properties for a text input component.
  */
 export interface InputSelectCountryBaseProps
-    extends Omit<InputSelectBaseProps, "options" | "useLoader" | "loader"> {
-    /**
-     * ifLoadImgCountry.
-     */
-    ifLoadImgCountry?: boolean;
-}
+    extends Omit<InputSelectBaseProps, "options" | "useLoader" | "loader"> {}
 /**
  * Props interface for the InputSelectCountry component. Extends both InputSelectCountryBaseProps and InputSelectCountryClassProps interfaces.
  */
@@ -31,10 +23,7 @@ export interface InputSelectCountryProps
     extends InputSelectCountryBaseProps,
         InputSelectCountryClassProps {}
 
-export const InputSelectCountry = ({
-    ifLoadImgCountry = false,
-    ...props
-}: InputSelectCountryProps) => {
+export const InputSelectCountry = ({ ...props }: InputSelectCountryProps) => {
     const [loader, setLoader] = useState(false);
     const [options, setOptions] = useState<InputSelectBaseProps["options"]>([]);
     const onLoad = async () => {
