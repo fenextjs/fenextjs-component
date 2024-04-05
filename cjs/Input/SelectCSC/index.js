@@ -21,19 +21,21 @@ const InputSelectCSC = ({ classNameSelectCSC = "", defaultValue = undefined, use
     });
     const CONTENT = (0, react_1.useMemo)(() => {
         let C = (react_1.default.createElement(react_1.default.Fragment, null,
-            react_1.default.createElement(Select_1.InputSelect, { ...props, ...country, key: value?.country?.id, options: countrys?.map((e) => {
+            react_1.default.createElement(Select_1.InputSelect, { ...props, ...country, 
+                // key={value?.country?.id}
+                options: countrys?.map((e) => {
                     return {
                         ...e,
                         data: e,
                     };
                 }), onChangeData: onChangeCSC("country"), defaultValue: value?.country, maxLengthShowOptions: 50 }),
-            react_1.default.createElement(Select_1.InputSelect, { ...props, ...state, key: value?.state?.id, options: states?.map((e) => {
+            react_1.default.createElement(Select_1.InputSelect, { ...props, ...state, key: value?.country?.id, options: states?.map((e) => {
                     return {
                         ...e,
                         data: e,
                     };
                 }), onChangeData: onChangeCSC("state"), defaultValue: value?.state, maxLengthShowOptions: 50 }),
-            react_1.default.createElement(Select_1.InputSelect, { ...props, ...city, key: value?.city?.id, options: citys?.map((e) => {
+            react_1.default.createElement(Select_1.InputSelect, { ...props, ...city, key: value?.state?.id, options: citys?.map((e) => {
                     return {
                         ...e,
                         data: e,
