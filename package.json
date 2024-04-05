@@ -28,7 +28,7 @@
     "remove-bun-lockb": "rm -r bun.lockb",
     "remove-node-module": "rm -r node_modules",
     "remove": "npm run remove-node-module && npm run remove-bun-lockb",
-    "update-package": "ncu -u !next",
+    "update-package": "ncu -u '/^fenextjs.*$/' country-state-city-nextjs uselocalstoragenextjs",
     "update": "npm run update-package && npm run remove && npm run bun-i && npm run flb",
     "u": "npm run update"
   },
@@ -49,10 +49,10 @@
   "homepage": "https://github.com/franciscoblancojn/fenextjs-component#readme",
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
-    "country-state-city-nextjs": "^7.0.0",
+    "country-state-city-nextjs": "^8.1.0",
     "fenextjs-error": "^2.0.0",
     "fenextjs-functions": "^3.1.0",
-    "fenextjs-hook": "^5.3.2",
+    "fenextjs-hook": "^7.0.0",
     "fenextjs-img-placeholder": "^2.0.0",
     "fenextjs-interface": "^2.5.0",
     "fenextjs-svg": "3.2.0",

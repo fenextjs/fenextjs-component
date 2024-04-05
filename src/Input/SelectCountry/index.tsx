@@ -6,7 +6,7 @@ import {
 } from "../Select";
 import {
     getDataCountrys,
-    getDataCountrysWithImg,
+    getRuteCountryImg,
 } from "country-state-city-nextjs";
 import { CountryProps } from "fenextjs-interface";
 /**
@@ -38,13 +38,16 @@ export const InputSelectCountry = ({
     const [loader, setLoader] = useState(false);
     const [options, setOptions] = useState<InputSelectBaseProps["options"]>([]);
     const onLoad = async () => {
-        let countrys: CountryProps[] = [];
-        if (ifLoadImgCountry) {
-            countrys = await getDataCountrysWithImg();
-        } else {
-            countrys = await getDataCountrys();
-        }
-        setOptions(countrys);
+        const countrys: CountryProps[] = await getDataCountrys();
+
+        setOptions(
+            countrys.map((e) => {
+                return {
+                    ...e,
+                    img: `${getRuteCountryImg(e)}`,
+                };
+            }),
+        );
         setLoader(false);
     };
     useEffect(() => {

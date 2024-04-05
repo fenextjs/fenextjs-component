@@ -57,10 +57,6 @@ export interface InputSelectCSCBaseProps
      * city Input Label and Placeholder.
      */
     city?: Pick<InputTextBaseProps, "label" | "placeholder">;
-    /**
-     * ifLoadImgCountry.
-     */
-    ifLoadImgCountry?: boolean;
 }
 /**
  * Props interface for the InputSelectCSC component. Extends both InputSelectCSCBaseProps and InputSelectCSCClassProps interfaces.
@@ -86,13 +82,11 @@ export const InputSelectCSC = ({
         label: "City",
         placeholder: "City",
     },
-    ifLoadImgCountry = false,
     ...props
 }: InputSelectCSCProps) => {
     const { countrys, states, citys, onChangeCSC, value } = useCSC({
         defaultValue,
         onChange,
-        ifLoadImgCountry,
     });
 
     const CONTENT = useMemo(() => {
