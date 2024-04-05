@@ -36,6 +36,11 @@ export const useSelectOptionsPos = <ELEMENT extends HTMLElement>({
             ele.setAttribute("uuid", uuid);
             setRef(ele as ELEMENT);
         }
+        return () => {
+            if (ele) {
+                ele.outerHTML = ""
+            }
+        };
     };
     useEffect(onLoadRef, []);
 

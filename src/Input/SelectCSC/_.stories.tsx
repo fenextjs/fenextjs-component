@@ -15,10 +15,12 @@ const Profile: Story<InputSelectCSCProps> = (args) => (
 export const Index = Profile.bind({});
 
 const args: InputSelectCSCProps = {
-    defaultValueString:{
-        country:"Albania",
-        state:"Fier",
-        city:"Lagjja e Re"
+    defaultValue:{
+        country:{
+            id:-1,
+            text:"Colombia",
+            code:"CO"
+        }
     }
 };
 
