@@ -217,7 +217,7 @@ export const InputSelect = <T = any,>({
     useSwichtypeSelectStyle = false,
     changeByFirstOptionInOnBlur = false,
     _t,
-    maxLengthShowOptions = undefined,
+    maxLengthShowOptions = 20,
     itemMaxLengthShowOptions = {
         id: "fenext-item-max-length-show-options",
         text: "More ...",

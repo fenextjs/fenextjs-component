@@ -22,11 +22,11 @@ export interface BoxClassProps {
  */
 export interface BoxProps extends BoxBaseProps, BoxClassProps {}
 
-export const Box = ({ className = "", children, _t }: BoxProps) => {
+export const Box = ({ className = "", children }: BoxProps) => {
     return (
         <>
             <div className={`fenext-box ${className} `}>
-                {_tValidate(children, _t)}
+                {children}
             </div>
         </>
     );

@@ -3,7 +3,8 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 0px;
-    transition: 0.25s;
+    --transition:.1s;
+    transition: var(--transition);
     box-shadow: var(--box-shadow);
     --box-shadow-color: transparent;
     --box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
@@ -15,23 +16,27 @@
             --box-shadow-color: var(--fenext-color-primary);
         }
     }
+    @mixin fenext-collapse-active-csc {
+        grid-template-rows: auto auto;
+        > .fenext-collapse-header {
+            .fenext-collapse-header-icon {
+                transform: rotateZ(180deg);
+            }
+            .fenext-collapse-header-uncheck {
+                display: block;
+            }
+        }
+        > .fenext-collapse-body {
+            transform: scaleY(1);
+        }
+    }
+
     &-checked {
         &:has(
                 > .fenext-collapse-header
                     > .fenext-collapse-header-checkbox:checked
             ) {
-            grid-template-rows: auto auto;
-            > .fenext-collapse-header {
-                .fenext-collapse-header-icon {
-                    transform: rotateZ(180deg);
-                }
-                .fenext-collapse-header-uncheck {
-                    display: block;
-                }
-            }
-            > .fenext-collapse-body {
-                transform: scaleY(1);
-            }
+                @include fenext-collapse-active-csc;
         }
     }
     &-focus {
@@ -40,31 +45,14 @@
                     > .fenext-collapse-header-checkbox:focus
             ),
         &:has(> .fenext-collapse-body:hover) {
-            grid-template-rows: auto auto;
-            > .fenext-collapse-header {
-                .fenext-collapse-header-icon {
-                    transform: rotateZ(180deg);
-                }
-            }
-            > .fenext-collapse-body {
-                transform: scaleY(1);
-            }
+            @include fenext-collapse-active-csc;
         }
         @media (max-width: 767px) {
             &:has(
                     > .fenext-collapse-header
                         > .fenext-collapse-header-checkbox:hover
-                ),
-            &:has(> .fenext-collapse-body:hover) {
-                grid-template-rows: auto auto;
-                > .fenext-collapse-header {
-                    .fenext-collapse-header-icon {
-                        transform: rotateZ(180deg);
-                    }
-                }
-                > .fenext-collapse-body {
-                    transform: scaleY(1);
-                }
+                ) {
+                @include fenext-collapse-active-csc;
             }
         }
     }
@@ -113,7 +101,7 @@
         }
     }
     &-body {
-        transition: 0.25s;
+        transition:var(--transition);
         transform: scaleY(0);
         transform-origin: center top;
 
