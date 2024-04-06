@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 0px;
-    --transition:.1s;
+    --transition: 0.1s;
     transition: var(--transition);
     box-shadow: var(--box-shadow);
     --box-shadow-color: transparent;
@@ -36,7 +36,7 @@
                 > .fenext-collapse-header
                     > .fenext-collapse-header-checkbox:checked
             ) {
-                @include fenext-collapse-active-csc;
+            @include fenext-collapse-active-csc;
         }
     }
     &-focus {
@@ -101,7 +101,7 @@
         }
     }
     &-body {
-        transition:var(--transition);
+        transition: var(--transition);
         transform: scaleY(0);
         transform-origin: center top;
 

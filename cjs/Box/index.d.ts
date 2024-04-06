@@ -19,4 +19,4 @@ export interface BoxClassProps {
  */
 export interface BoxProps extends BoxBaseProps, BoxClassProps {
 }
-export declare const Box: ({ className, children, _t }: BoxProps) => React.JSX.Element;
+export declare const Box: ({ className, children }: BoxProps) => React.JSX.Element;

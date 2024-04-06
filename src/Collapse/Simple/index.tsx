@@ -161,7 +161,7 @@ export const Collapse = ({
                     )}
                 </label>
                 <div className={`fenext-collapse-body ${classNameBody}`}>
-                   {children}
+                    {children}
                 </div>
             </div>
         </>

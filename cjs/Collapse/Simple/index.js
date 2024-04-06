@@ -24,7 +24,7 @@ const Collapse = ({ className = "", classNameHeader = "", classNameHeaderContent
                     react_1.default.createElement("input", { type: type, className: `fenext-collapse-header-uncheck`, name: name, disabled: disabled || loader, onChange: (e) => {
                             onChange?.(e.target.checked);
                         } }))) : (react_1.default.createElement(react_1.default.Fragment, null))),
-            react_1.default.createElement("div", { className: `fenext-collapse-body ${classNameBody}` }, (0, fenextjs_functions_1._tValidate)(children, _t)))));
+            react_1.default.createElement("div", { className: `fenext-collapse-body ${classNameBody}` }, children))));
 };
 exports.Collapse = Collapse;
 //# sourceMappingURL=index.js.map

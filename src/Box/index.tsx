@@ -1,4 +1,3 @@
-import { _tValidate } from "fenextjs-functions";
 import { _TProps } from "fenextjs-interface";
 import React, { PropsWithChildren } from "react";
 
@@ -25,9 +24,7 @@ export interface BoxProps extends BoxBaseProps, BoxClassProps {}
 export const Box = ({ className = "", children }: BoxProps) => {
     return (
         <>
-            <div className={`fenext-box ${className} `}>
-                {children}
-            </div>
+            <div className={`fenext-box ${className} `}>{children}</div>
         </>
     );
 };
