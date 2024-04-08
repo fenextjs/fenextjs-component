@@ -99,7 +99,10 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
     };
     const OPTIONSSEARCH = (0, react_1.useMemo)(() => {
         const textSearch = dataMemo?.textSearch?.toLowerCase() ?? "";
-        return options.filter((option) => option.text?.toLowerCase()?.includes(textSearch) ||
+        if (textSearch == "") {
+            return [...options];
+        }
+        return [...options].filter((option) => option.text?.toLowerCase()?.includes(textSearch) ||
             textSearch?.includes(option.text?.toLowerCase()) ||
             (searchById &&
                 (`${option.id}`?.toLowerCase()?.includes(textSearch) ||
@@ -111,7 +114,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
         }
         let list = [...options];
         if (typeSelect == "div") {
-            list = OPTIONSSEARCH;
+            list = [...OPTIONSSEARCH];
         }
         if (maxLengthShowOptions) {
             const nMax = list.length > maxLengthShowOptions;
