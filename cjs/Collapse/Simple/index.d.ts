@@ -1,9 +1,8 @@
-import React, { PropsWithChildren, ReactNode } from "react";
-import { _TProps } from "fenextjs-interface";
+import React, { ReactNode } from "react";
 /**
  * Properties for the base Collapse component.
  */
-export interface CollapseBaseProps extends PropsWithChildren, _TProps {
+export interface CollapseBaseProps {
     /**
      * Indicates whether the Collapse is currently in the loading state.
      */
@@ -49,6 +48,10 @@ export interface CollapseBaseProps extends PropsWithChildren, _TProps {
      * @default ArrowCollapse
      */
     iconArrow?: ReactNode;
+    /**
+     * children of Collapse.
+     */
+    children?: ReactNode;
 }
 /**
  * Properties for the class of the Collapse component.
@@ -80,4 +83,4 @@ export interface CollapseClassProps {
  */
 export interface CollapseProps extends CollapseBaseProps, CollapseClassProps {
 }
-export declare const Collapse: ({ className, classNameHeader, classNameHeaderContent, classNameHeaderIcon, classNameBody, children, loader, header, disabled, defaultActive, active, name, type, show, status, onChange, iconArrow, _t, }: CollapseProps) => React.JSX.Element;
+export declare const Collapse: ({ className, classNameHeader, classNameHeaderContent, classNameHeaderIcon, classNameBody, children, loader, header, disabled, defaultActive, active, name, type, show, status, onChange, iconArrow, }: CollapseProps) => React.JSX.Element;
