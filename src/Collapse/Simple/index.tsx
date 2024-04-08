@@ -1,13 +1,11 @@
-import React, { PropsWithChildren, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { Loader } from "../../Loader";
 import { Arrow } from "fenextjs-svg/cjs/Arrow";
-import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
 
 /**
  * Properties for the base Collapse component.
  */
-export interface CollapseBaseProps extends PropsWithChildren, _TProps {
+export interface CollapseBaseProps {
     /**
      * Indicates whether the Collapse is currently in the loading state.
      */
@@ -53,6 +51,11 @@ export interface CollapseBaseProps extends PropsWithChildren, _TProps {
      * @default ArrowCollapse
      */
     iconArrow?: ReactNode;
+
+    /**
+     * children of Collapse.
+     */
+    children?: ReactNode;
 }
 
 /**
@@ -105,7 +108,6 @@ export const Collapse = ({
     status = "none",
     onChange,
     iconArrow = <Arrow />,
-    _t,
 }: CollapseProps) => {
     return (
         <>
@@ -131,7 +133,7 @@ export const Collapse = ({
                     <div
                         className={`fenext-collapse-header-content ${classNameHeaderContent}`}
                     >
-                        {_tValidate(header, _t)}
+                        {header}
                     </div>
                     <div
                         className={`fenext-collapse-header-icon ${classNameHeaderIcon}`}

@@ -1,11 +1,11 @@
 import React from "react";
-import { Collapse, CollapseClassProps, CollapseBaseProps } from "..";
+import { Collapse, CollapseClassProps, CollapseBaseProps } from "../Simple";
 
 /**
  * Properties for the base CollapseMultiple component.
  */
 export interface CollapseMultipleBaseProps
-    extends Pick<CollapseBaseProps, "name" | "type" | "_t"> {
+    extends Pick<CollapseBaseProps, "name" | "type"> {
     /**
      * items of Collapse.
      */
