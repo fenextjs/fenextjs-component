@@ -322,7 +322,11 @@ export const InputSelect = <T = any,>({
 
     const OPTIONSSEARCH = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
         const textSearch = dataMemo?.textSearch?.toLowerCase() ?? "";
-        return options.filter(
+
+        if (textSearch == "") {
+            return [...options];
+        }
+        return [...options].filter(
             (option) =>
                 option.text?.toLowerCase()?.includes(textSearch) ||
                 textSearch?.includes(option.text?.toLowerCase()) ||
@@ -336,8 +340,9 @@ export const InputSelect = <T = any,>({
             return [];
         }
         let list = [...options];
+
         if (typeSelect == "div") {
-            list = OPTIONSSEARCH;
+            list = [...OPTIONSSEARCH];
         }
         if (maxLengthShowOptions) {
             const nMax = list.length > maxLengthShowOptions;
