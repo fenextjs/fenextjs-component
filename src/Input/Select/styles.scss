@@ -310,10 +310,9 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
             top: var(--element-top);
             .fenext-select-list-options {
                 max-height: calc(var(--element-top) - 0.5rem);
-                rotate: 1 0 0 180deg;
-                > * {
-                    rotate: 1 0 0 180deg;
-                }
+                top: initial;
+                bottom: 0;
+                transform-origin:bottom center ;
             }
         }
     }
