@@ -296,9 +296,9 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
         max-height: calc(100dvh - var(--element-bottom) - 0.5rem);
     }
     .fenext-select-option {
-        z-index: var(--fenext-z-index-select-option);
+        z-index: calc(var(--fenext-z-index-select-option) + 1);
         &-btn {
-            z-index: calc(var(--fenext-z-index-select-option) + 1);
+            z-index: calc(var(--fenext-z-index-select-option) + 2);
         }
     }
 
@@ -310,9 +310,9 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
             top: var(--element-top);
             .fenext-select-list-options {
                 max-height: calc(var(--element-top) - 0.5rem);
-                rotate: 180deg;
+                rotate: 1 0 0 180deg;
                 > * {
-                    rotate: 180deg;
+                    rotate:1 0 0 180deg ;
                 }
             }
         }

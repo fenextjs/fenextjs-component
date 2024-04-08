@@ -87,7 +87,10 @@
         background: var(--fenext-color-dark);
         z-index: 2;
         --box-shadow-color: var(--fenext-color-light);
-        box-shadow: 0 -9rem 0 10rem var(--box-shadow-color);
+        box-shadow:
+            0 0 0 1rem var(--box-shadow-color),
+            5rem 0 0 1rem var(--box-shadow-color),
+            -5rem 0 0 1rem var(--box-shadow-color);
         &:hover {
             background: var(--fenext-color-dark-light);
             color: var(--fenext-color-white);
