@@ -1,6 +1,7 @@
-import React, { ReactNode, useCallback, useMemo, useState } from "react";
+import React, { ReactNode } from "react";
 
 import { ModalBaseBaseProps, ModalBaseClassProps, ModalBase } from "../Base";
+import { useModal } from "fenextjs-hook";
 
 /**
  * Properties for the class of the Modal component.
@@ -43,6 +44,10 @@ export interface ModalProps
      * onActive Modal.
      */
     onActive?: () => void;
+    /**
+     * name of Modal.
+     */
+    name?: string;
 }
 
 export const Modal = ({
@@ -61,26 +66,15 @@ export const Modal = ({
     type = "center",
     typeClose = "out",
     useRender = false,
+    name,
 }: ModalProps) => {
-    const [activeValue, setActiveValue] = useState(false);
-
-    const active = useMemo(
-        () => activeProps ?? activeValue,
-        [activeProps, activeValue],
-    );
-
-    const onActive = useCallback(() => {
-        if (disabledElementActionModalActive) {
-            return;
-        }
-        setActiveValue(true);
-        onActiveProps?.();
-    }, [disabledElementActionModalActive]);
-
-    const onClose = () => {
-        setActiveValue(false);
-        onCloseProps?.();
-    };
+    const { active, onActive, onClose } = useModal({
+        active: activeProps,
+        disabled: disabledElementActionModalActive,
+        onActive: onActiveProps,
+        onClose: onCloseProps,
+        name,
+    });
     return (
         <>
             <div

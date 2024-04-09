@@ -4,6 +4,7 @@ import { Story, Meta } from "@storybook/react";
 import { Modal, ModalProps } from "./index";
 import { LayoutGridMenuTopLeft } from "./../../Layout/Grid/GridMenuTopLeft";
 import { Button } from "../../Button";
+import { useModal } from "fenextjs-hook";
 
 export default {
     title: "Modal/Modal",
@@ -19,9 +20,7 @@ Index.args = {
     ElementActionModalActive: (
         <>
             <Button>Button Modal</Button>
-            <div style={{width:"10px",height:"200vh"}}>
-
-            </div>
+            <div style={{ width: "10px", height: "200vh" }}></div>
         </>
     ),
     children: (
@@ -35,9 +34,8 @@ Index.args = {
             </p>
         </>
     ),
-    typeClose:'inset',
-    disabledClose:false
-
+    typeClose: "inset",
+    disabledClose: false,
 } as ModalProps;
 
 const WithLayout_: Story<PropsWithChildren<ModalProps>> = (args) => (
@@ -172,5 +170,50 @@ const ModalInModal_: Story<PropsWithChildren<ModalProps>> = (args) => (
 
 export const ModalInModal = ModalInModal_.bind({});
 ModalInModal.args = {
-    useRender:true
+    useRender: true,
+} as ModalProps;
+
+export const BtnUseModalName = ({ name }: { name: string }) => {
+    const { onActive } = useModal({
+        name,
+    });
+    return (
+        <>
+            <Button onClick={onActive}>Button useModal</Button>
+        </>
+    );
+};
+
+const ProfileUseModal: Story<PropsWithChildren<ModalProps>> = (args) => {
+    return (
+        <>
+            <BtnUseModalName name={args?.name ?? "modal-test"} />
+            <br />
+            <br />
+            <Modal {...args} />
+        </>
+    );
+};
+
+export const UseModalName = ProfileUseModal.bind({});
+UseModalName.args = {
+    name: "modal-test",
+    ElementActionModalActive: (
+        <>
+            <Button>Button Modal</Button>
+        </>
+    ),
+    children: (
+        <>
+            <h1>Title</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestias error illo iusto, ex esse ullam aliquam officia
+                praesentium labore reprehenderit nostrum quidem exercitationem
+                blanditiis est illum pariatur veritatis magni corporis!
+            </p>
+        </>
+    ),
+    typeClose: "inset",
+    disabledClose: false,
 } as ModalProps;
