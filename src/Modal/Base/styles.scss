@@ -231,15 +231,18 @@
     }
 }
 
-html:has(.fenext-modal-base-active),
-body:has(.fenext-modal-base-active) {
-    overflow: hidden !important;
-    .fenext-layout-grid {
-        &-mt-children {
-            container-type: initial;
-        }
-        &-ml-children {
-            container-type: initial;
+html,
+body {
+    &:has(.fenext-modal-base-active) {
+        overflow: hidden !important;
+        .fenext-layout-grid {
+            &-mt-children,
+            &-ml-children {
+                container-type: initial;
+                height: calc(100dvh - var(--fenext-size-menu-top, 0px));
+                overflow: hidden;
+                z-index: var(--fenext-z-index-modal);
+            }
         }
     }
 }
