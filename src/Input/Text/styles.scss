@@ -15,6 +15,11 @@
         font-size: 0.75em;
         color: color-mix(in srgb, currentColor 50%, #fff 0%);
     }
+    &-required {
+        margin-left: 0.5rem;
+        font-size: 0.75em;
+        color: color-mix(in srgb, currentColor 50%, #fff 0%);
+    }
     &-validator-status-error {
         box-shadow: var(--box-shadow);
     }

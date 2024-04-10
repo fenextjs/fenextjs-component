@@ -232,6 +232,14 @@ export interface InputTextBaseProps extends _TProps {
      */
     optionalText?: string;
     /**
+     * Optional of Input.
+     */
+    required?: boolean;
+    /**
+     * Optional text of Input.
+     */
+    requiredText?: string;
+    /**
      * Loader of Input.
      */
     loader?: boolean;
@@ -338,6 +346,8 @@ export const InputText = ({
     errorWithIsChange = true,
     optional = false,
     optionalText = "(optional)",
+    required = false,
+    requiredText = "*",
     loader = false,
     autoComplete = false,
     useLoader = true,
@@ -581,6 +591,13 @@ export const InputText = ({
                         <>
                             <small className="fenext-input-optional">
                                 {_tValidate(optionalText, _t)}
+                            </small>
+                        </>
+                    )}
+                    {required && (
+                        <>
+                            <small className="fenext-input-required">
+                                {_tValidate(requiredText, _t)}
                             </small>
                         </>
                     )}

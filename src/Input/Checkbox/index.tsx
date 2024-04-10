@@ -115,6 +115,22 @@ export interface InputCheckboxBaseProps extends _TProps {
      * Should return a promise or void.
      */
     onValidateCheck?: () => Promise<void> | void;
+    /**
+     * Optional of Input.
+     */
+    optional?: boolean;
+    /**
+     * Optional text of Input.
+     */
+    optionalText?: string;
+    /**
+     * Optional of Input.
+     */
+    required?: boolean;
+    /**
+     * Optional text of Input.
+     */
+    requiredText?: string;
 }
 
 /**
@@ -157,6 +173,10 @@ export const InputCheckbox = ({
     disabled = false,
     icon = <Check />,
     onValidateCheck = async () => {},
+    optional = false,
+    optionalText = "(optional)",
+    required = false,
+    requiredText = "*",
     _t,
 }: InputCheckboxProps) => {
     const [checked_, setChecked] = useState(defaultValue === true);
@@ -210,6 +230,20 @@ export const InputCheckbox = ({
             </span>
             <span className={`fenext-input-checkbox-text ${classNameText}`}>
                 {_tValidate(label, _t)}
+                {optional && (
+                    <>
+                        <small className="fenext-input-optional">
+                            {_tValidate(optionalText, _t)}
+                        </small>
+                    </>
+                )}
+                {required && (
+                    <>
+                        <small className="fenext-input-required">
+                            {_tValidate(requiredText, _t)}
+                        </small>
+                    </>
+                )}
             </span>
         </label>
     );
