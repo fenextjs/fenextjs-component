@@ -1,6 +1,10 @@
 import React, { useCallback } from "react";
 
-import { InputSelect, InputSelectItemOptionBaseProps, InputSelectProps } from "../..";
+import {
+    InputSelect,
+    InputSelectItemOptionBaseProps,
+    InputSelectProps,
+} from "../..";
 
 export interface InputSelectNumberProps
     extends Omit<
@@ -23,7 +27,7 @@ export const InputSelectNumber = ({
     ...props
 }: InputSelectNumberProps) => {
     const parseOption = useCallback(
-        (n: number):InputSelectItemOptionBaseProps<number> => {
+        (n: number): InputSelectItemOptionBaseProps<number> => {
             return {
                 id: `${n}`,
                 text: parseText(n),

@@ -1,7 +1,7 @@
 import React from "react";
 import { InputSelectProps } from "../..";
 export interface InputSelectNumberProps extends Omit<InputSelectProps, "options" | "onChange" | "defaultValue" | "parseText"> {
-    onChange?: (n: number) => void;
+    onChange?: (n?: number) => void;
     defaultValue?: number;
     min?: number;
     max?: number;
