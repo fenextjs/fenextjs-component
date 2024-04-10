@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useCallback } from "react";
 
-import { InputSelect, InputSelectProps } from "../..";
+import { InputSelect, InputSelectItemOptionBaseProps, InputSelectProps } from "../..";
 
 export interface InputSelectNumberProps
     extends Omit<
         InputSelectProps,
         "options" | "onChange" | "defaultValue" | "parseText"
     > {
-    onChange?: (n: number) => void;
+    onChange?: (n?: number) => void;
     defaultValue?: number;
     min?: number;
     max?: number;
@@ -22,33 +22,34 @@ export const InputSelectNumber = ({
     parseText = (e) => `${e}`,
     ...props
 }: InputSelectNumberProps) => {
+    const parseOption = useCallback(
+        (n: number):InputSelectItemOptionBaseProps<number> => {
+            return {
+                id: `${n}`,
+                text: parseText(n),
+                data: n,
+            };
+        },
+        [parseText],
+    );
+
     return (
         <>
-            <InputSelect
+            <InputSelect<number>
                 {...props}
                 classNameSelect={`fenext-select-number ${props?.classNameSelect}`}
                 defaultValue={
-                    defaultValue
-                        ? {
-                              id: `${defaultValue}`,
-                              text: `${defaultValue}`,
-                              data: defaultValue,
-                          }
+                    defaultValue != undefined
+                        ? parseOption(defaultValue)
                         : undefined
                 }
                 options={new Array(Math.abs(max - min + 1))
                     .fill(1)
                     .map((e, i) => {
                         const n = e * i + min;
-                        return {
-                            id: `${n}`,
-                            text: parseText(n),
-                            data: n,
-                        };
+                        return parseOption(n);
                     })}
-                onChange={(e) => {
-                    onChange?.(e?.data);
-                }}
+                onChangeData={onChange}
             />
         </>
     );
