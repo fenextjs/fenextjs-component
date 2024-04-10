@@ -91,6 +91,22 @@ export interface InputCheckboxBaseProps extends _TProps {
      * Should return a promise or void.
      */
     onValidateCheck?: () => Promise<void> | void;
+    /**
+     * Optional of Input.
+     */
+    optional?: boolean;
+    /**
+     * Optional text of Input.
+     */
+    optionalText?: string;
+    /**
+     * Optional of Input.
+     */
+    required?: boolean;
+    /**
+     * Optional text of Input.
+     */
+    requiredText?: string;
 }
 /**
  * Interface that defines all properties for a checkbox input component.
@@ -102,4 +118,4 @@ export interface InputCheckboxProps extends InputCheckboxBaseProps, InputCheckbo
  * Component that renders a checkbox input.
  * Takes an InputCheckboxProps object as props.
  */
-export declare const InputCheckbox: ({ classNameLabel, classNameLabelActive, classNameLabelInactive, classNameText, classNameContentCheckbox, classNameContentCheckboxActive, classNameContentCheckboxInactive, classNameCheckbox, classNameCheckboxActive, classNameCheckboxInactive, label, labelPosition, name, onChange, defaultValue, useValue, value, disabled, icon, onValidateCheck, _t, }: InputCheckboxProps) => React.JSX.Element;
+export declare const InputCheckbox: ({ classNameLabel, classNameLabelActive, classNameLabelInactive, classNameText, classNameContentCheckbox, classNameContentCheckboxActive, classNameContentCheckboxInactive, classNameCheckbox, classNameCheckboxActive, classNameCheckboxInactive, label, labelPosition, name, onChange, defaultValue, useValue, value, disabled, icon, onValidateCheck, optional, optionalText, required, requiredText, _t, }: InputCheckboxProps) => React.JSX.Element;

@@ -181,6 +181,14 @@ export interface InputTextBaseProps extends _TProps {
      */
     optionalText?: string;
     /**
+     * Optional of Input.
+     */
+    required?: boolean;
+    /**
+     * Optional text of Input.
+     */
+    requiredText?: string;
+    /**
      * Loader of Input.
      */
     loader?: boolean;
@@ -230,4 +238,4 @@ export interface InputTextBaseProps extends _TProps {
  */
 export interface InputTextProps extends InputTextBaseProps, InputTextClassProps {
 }
-export declare const InputText: ({ id, datalist, name, yup, label, placeholder, defaultValue, value, type, className, classNameLabel, classNameContentInput, classNameInput, classNameIcon, classNameLoaderValidate, iconLoader, onChange, onBlur, onEnter, onChangeValidate, parseText, onChangeValidateBeforeYup, onChangeValidateAfterYup, props, icon, extraInContentInput, extraInLabel, disabled, showIcon, error, errorWithIsChange, optional, optionalText, loader, autoComplete, useLoader, isChange: isChangeProps, onKeyDown, iconPos, inputMode, validator, maxLength, regExp, regExpReplace, onChangeEvent, _t, }: InputTextProps) => React.JSX.Element;
+export declare const InputText: ({ id, datalist, name, yup, label, placeholder, defaultValue, value, type, className, classNameLabel, classNameContentInput, classNameInput, classNameIcon, classNameLoaderValidate, iconLoader, onChange, onBlur, onEnter, onChangeValidate, parseText, onChangeValidateBeforeYup, onChangeValidateAfterYup, props, icon, extraInContentInput, extraInLabel, disabled, showIcon, error, errorWithIsChange, optional, optionalText, required, requiredText, loader, autoComplete, useLoader, isChange: isChangeProps, onKeyDown, iconPos, inputMode, validator, maxLength, regExp, regExpReplace, onChangeEvent, _t, }: InputTextProps) => React.JSX.Element;
