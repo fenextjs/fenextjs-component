@@ -12,7 +12,10 @@ import {
     CityProps,
 } from "fenextjs-interface/cjs/CSC";
 import { InputTextBaseProps } from "../Text";
-import { parseCSCString_to_CSC, parseCSC_to_CSCString } from "fenextjs-functions";
+import {
+    parseCSCString_to_CSC,
+    parseCSC_to_CSCString,
+} from "fenextjs-functions";
 
 /**
  * Interface that defines CSS class properties for a select input component.
@@ -81,7 +84,6 @@ export const InputSelectCSC = ({
         label: "City",
         placeholder: "City",
     },
-
 
     defaultValue: defaultValueProps,
     value: valueProps,

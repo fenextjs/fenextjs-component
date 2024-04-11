@@ -5,7 +5,8 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Select_1 = require("../Select");
 const useCSC_1 = require("fenextjs-hook/cjs/useCSC");
-const InputSelectCSC = ({ classNameSelectCSC = "", defaultValue = undefined, useContainer = true, onChange, country = {
+const fenextjs_functions_1 = require("fenextjs-functions");
+const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country = {
     label: "Country",
     placeholder: "Country",
 }, state = {
@@ -14,10 +15,16 @@ const InputSelectCSC = ({ classNameSelectCSC = "", defaultValue = undefined, use
 }, city = {
     label: "City",
     placeholder: "City",
-}, ...props }) => {
+}, defaultValue: defaultValueProps, value: valueProps, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, ...props }) => {
     const { countrys, states, citys, onChangeCSC, value, loadCitys, loadCountrys, loadStates, } = (0, useCSC_1.useCSC)({
-        defaultValue,
-        onChange,
+        defaultValue: defaultValueProps,
+        value: valueProps,
+        onChange: onChangeProps,
+        defaultValueJsonString,
+        valueJsonString,
+        onChangeJsonString,
+        parseJson_to_String: parseJson_to_String ?? fenextjs_functions_1.parseCSC_to_CSCString,
+        parseString_to_Json: parseString_to_Json ?? fenextjs_functions_1.parseCSCString_to_CSC,
     });
     const CONTENT = (0, react_1.useMemo)(() => {
         let C = (react_1.default.createElement(react_1.default.Fragment, null,

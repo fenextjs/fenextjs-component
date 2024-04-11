@@ -42,4 +42,4 @@ export interface InputSelectCSCBaseProps extends useCSCProps, Omit<InputSelectBa
  */
 export interface InputSelectCSCProps extends InputSelectCSCBaseProps, InputSelectCSCClassProps {
 }
-export declare const InputSelectCSC: ({ classNameSelectCSC, defaultValue, useContainer, onChange, country, state, city, ...props }: InputSelectCSCProps) => React.JSX.Element;
+export declare const InputSelectCSC: ({ classNameSelectCSC, useContainer, country, state, city, defaultValue: defaultValueProps, value: valueProps, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, ...props }: InputSelectCSCProps) => React.JSX.Element;
