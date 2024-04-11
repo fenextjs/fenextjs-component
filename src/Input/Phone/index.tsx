@@ -10,7 +10,15 @@ import { ErrorComponent } from "../../Error";
 import { ErrorCode } from "fenextjs-interface";
 import { useValidator } from "fenextjs-hook";
 import { FenextjsValidator, FenextjsValidatorClass } from "fenextjs-validator";
-import { _tValidate } from "fenextjs-functions";
+import {
+    _tValidate,
+    parsePhone_to_String,
+    parseString_to_Phone,
+} from "fenextjs-functions";
+import {
+    useJsonString,
+    useJsonStringProps,
+} from "fenextjs-hook/cjs/useJsonString";
 
 /**
  * Interface that defines CSS class properties for a checkbox input component.
@@ -51,14 +59,15 @@ export interface InputPhoneClassProps {
  */
 export interface InputPhoneBaseProps
     extends Omit<
-        InputTextBaseProps,
-        | "type"
-        | "value"
-        | "onChange"
-        | "defaultValue"
-        | "datalist"
-        | "validator"
-    > {
+            InputTextBaseProps,
+            | "type"
+            | "value"
+            | "onChange"
+            | "defaultValue"
+            | "datalist"
+            | "validator"
+        >,
+        useJsonStringProps<Partial<PhoneProps>> {
     /**
      * disabled select code.
      */
@@ -67,18 +76,6 @@ export interface InputPhoneBaseProps
      * Placeholder select code.
      */
     placeholderCode?: string;
-    /**
-     * Default Value of Phone.
-     */
-    defaultValue?: Partial<PhoneProps>;
-    /**
-     * Value of Phone.
-     */
-    value?: Partial<PhoneProps>;
-    /**
-     * onChange of Phone.
-     */
-    onChange?: (data: Partial<PhoneProps>) => void;
     /**
      * FenextjsValidatorClass used for input validation.
      */
@@ -116,20 +113,38 @@ export const InputPhone = ({
     }),
     placeholderCode = "+57",
     placeholder = "xxx-xx-xx-xxxx",
-    defaultValue = {
+    validator = undefined,
+    _t = (e) => e,
+    optional = false,
+    optionalText = "(optional)",
+
+    defaultValue : defaultValueProps = {
         code: "+57",
         number: "",
         tel: "",
         img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png",
     },
-    value = undefined,
-    onChange,
-    validator = undefined,
-    _t = (e) => e,
-    optional = false,
-    optionalText = "(optional)",
+    value :valueProps = undefined,
+    onChange : onChangeProps,
+    defaultValueJsonString,
+    valueJsonString,
+    onChangeJsonString,
+    parseJson_to_String,
+    parseString_to_Json,
+
     ...props
 }: InputPhoneProps) => {
+    const {value,defaultValue,onChange} = useJsonString<Partial<PhoneProps>>({
+        parseJson_to_String: parseJson_to_String ?? parsePhone_to_String,
+        parseString_to_Json: parseString_to_Json ?? parseString_to_Phone,
+        defaultValueJsonString,
+        valueJsonString,
+        onChangeJsonString,
+        value:valueProps,
+        defaultValue:defaultValueProps,
+        onChange:onChangeProps
+    });
+
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
     const [loadPhoneCodes, setlLoadPhoneCodes] = useState(false);
     const {
@@ -137,7 +152,7 @@ export const InputPhone = ({
         onChangeData,
         onConcatData,
         isChange,
-    } = useData<Partial<PhoneProps>, Partial<PhoneProps>>(defaultValue, {
+    } = useData<Partial<PhoneProps>, Partial<PhoneProps>>(defaultValue ?? {}, {
         onChangeDataMemoAfter: onChange,
         onMemo: (d: Partial<PhoneProps>) => {
             const v = value ?? d;
