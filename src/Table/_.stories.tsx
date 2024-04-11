@@ -41,6 +41,7 @@ Index.args = {
             parse: (data: TestItemTable) => {
                 return <a href={`#${data.id}`}>{data.id}</a>;
             },
+            className:"id"
         },
         {
             id: "name",
