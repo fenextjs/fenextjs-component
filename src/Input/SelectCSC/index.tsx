@@ -12,6 +12,7 @@ import {
     CityProps,
 } from "fenextjs-interface/cjs/CSC";
 import { InputTextBaseProps } from "../Text";
+import { parseCSCString_to_CSC, parseCSC_to_CSCString } from "fenextjs-functions";
 
 /**
  * Interface that defines CSS class properties for a select input component.
@@ -67,9 +68,7 @@ export interface InputSelectCSCProps
 
 export const InputSelectCSC = ({
     classNameSelectCSC = "",
-    defaultValue = undefined,
     useContainer = true,
-    onChange,
     country = {
         label: "Country",
         placeholder: "Country",
@@ -82,6 +81,16 @@ export const InputSelectCSC = ({
         label: "City",
         placeholder: "City",
     },
+
+
+    defaultValue: defaultValueProps,
+    value: valueProps,
+    onChange: onChangeProps,
+    defaultValueJsonString,
+    valueJsonString,
+    onChangeJsonString,
+    parseJson_to_String,
+    parseString_to_Json,
     ...props
 }: InputSelectCSCProps) => {
     const {
@@ -94,8 +103,14 @@ export const InputSelectCSC = ({
         loadCountrys,
         loadStates,
     } = useCSC({
-        defaultValue,
-        onChange,
+        defaultValue: defaultValueProps,
+        value: valueProps,
+        onChange: onChangeProps,
+        defaultValueJsonString,
+        valueJsonString,
+        onChangeJsonString,
+        parseJson_to_String: parseJson_to_String ?? parseCSC_to_CSCString,
+        parseString_to_Json: parseString_to_Json ?? parseCSCString_to_CSC,
     });
 
     const CONTENT = useMemo(() => {
