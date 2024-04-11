@@ -10,7 +10,10 @@ import {
 import { ErrorFenextjs, ErrorGoogleKeyInvalid } from "fenextjs-error";
 import { FenextjsValidatorClass } from "fenextjs-validator";
 import { useJsonString, useJsonStringProps } from "fenextjs-hook";
-import { parseAddress_to_String, parseString_to_Address } from "fenextjs-functions";
+import {
+    parseAddress_to_String,
+    parseString_to_Address,
+} from "fenextjs-functions";
 
 /**
  * Properties for the base InputGoogleAutocomplete component.
@@ -24,9 +27,8 @@ export interface InputGoogleAutocompleteBaseProps
             | "onChangeValidate"
             | "value"
             | "validator"
-        > ,
-        useJsonStringProps<AddressGoogle | undefined>
-        {
+        >,
+        useJsonStringProps<AddressGoogle | undefined> {
     /**
      * FenextjsValidatorClass used for input validation.
      */
@@ -51,9 +53,9 @@ export const InputGoogleAutocomplete = ({
     valueJsonString,
     onChangeJsonString,
 
-    defaultValue:defaultValueProps = undefined,
-    value:valueProps = undefined,
-    onChange:onChangeProps,
+    defaultValue: defaultValueProps = undefined,
+    value: valueProps = undefined,
+    onChange: onChangeProps,
 
     parseJson_to_String,
     parseString_to_Json,
@@ -62,17 +64,18 @@ export const InputGoogleAutocomplete = ({
     validator,
     ...props
 }: InputGoogleAutocompleteProps) => {
-
-    const {defaultValue,onChange} = useJsonString<AddressGoogle | undefined>({
-        parseJson_to_String: parseJson_to_String ?? parseAddress_to_String,
-        parseString_to_Json: parseString_to_Json ?? parseString_to_Address,
-        defaultValueJsonString,
-        valueJsonString,
-        onChangeJsonString,
-        value:valueProps,
-        defaultValue:defaultValueProps,
-        onChange:onChangeProps
-    });
+    const { defaultValue, onChange } = useJsonString<AddressGoogle | undefined>(
+        {
+            parseJson_to_String: parseJson_to_String ?? parseAddress_to_String,
+            parseString_to_Json: parseString_to_Json ?? parseString_to_Address,
+            defaultValueJsonString,
+            valueJsonString,
+            onChangeJsonString,
+            value: valueProps,
+            defaultValue: defaultValueProps,
+            onChange: onChangeProps,
+        },
+    );
 
     const [valueText, setValueText] = useState(
         defaultValue?.formatted_address ?? "",

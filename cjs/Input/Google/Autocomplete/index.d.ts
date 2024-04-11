@@ -3,19 +3,11 @@ import { InputTextBaseProps, InputTextClassProps } from "../../Text";
 import { AutocompleteProps } from "@react-google-maps/api";
 import { AddressGoogle } from "fenextjs-interface/cjs/AddressGoogle";
 import { FenextjsValidatorClass } from "fenextjs-validator";
+import { useJsonStringProps } from "fenextjs-hook";
 /**
  * Properties for the base InputGoogleAutocomplete component.
  */
-export interface InputGoogleAutocompleteBaseProps extends Omit<AutocompleteProps, "children">, Omit<InputTextBaseProps, "defaultValue" | "onChange" | "onChangeValidate" | "value" | "validator"> {
-    /**
-     * defaultValue of input.
-     * @default undefined
-     */
-    defaultValue?: AddressGoogle | undefined;
-    /**
-     * Function to call when the input value changes.
-     */
-    onChange?: (v: AddressGoogle | undefined) => void;
+export interface InputGoogleAutocompleteBaseProps extends Omit<AutocompleteProps, "children">, Omit<InputTextBaseProps, "defaultValue" | "onChange" | "onChangeValidate" | "value" | "validator">, useJsonStringProps<AddressGoogle | undefined> {
     /**
      * FenextjsValidatorClass used for input validation.
      */
@@ -31,4 +23,4 @@ export interface InputGoogleAutocompleteClassProps extends InputTextClassProps {
  */
 export interface InputGoogleAutocompleteProps extends InputGoogleAutocompleteBaseProps, InputGoogleAutocompleteClassProps {
 }
-export declare const InputGoogleAutocomplete: ({ onChange, defaultValue, className, validator, ...props }: InputGoogleAutocompleteProps) => React.JSX.Element;
+export declare const InputGoogleAutocomplete: ({ defaultValueJsonString, valueJsonString, onChangeJsonString, defaultValue: defaultValueProps, value: valueProps, onChange: onChangeProps, parseJson_to_String, parseString_to_Json, className, validator, ...props }: InputGoogleAutocompleteProps) => React.JSX.Element;

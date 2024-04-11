@@ -13,6 +13,7 @@ const fenextjs_interface_1 = require("fenextjs-interface");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_validator_1 = require("fenextjs-validator");
 const fenextjs_functions_1 = require("fenextjs-functions");
+const useJsonString_1 = require("fenextjs-hook/cjs/useJsonString");
 /**
  * Component that renders a checkbox input.
  * Takes an InputPhoneProps object as props.
@@ -20,15 +21,25 @@ const fenextjs_functions_1 = require("fenextjs-functions");
 const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, yup = Yup.object().shape({
     code: Yup.string().required(),
     number: Yup.string().required(),
-}), placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", defaultValue = {
+}), placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, _t = (e) => e, optional = false, optionalText = "(optional)", defaultValue: defaultValueProps = {
     code: "+57",
     number: "",
     tel: "",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png",
-}, value = undefined, onChange, validator = undefined, _t = (e) => e, optional = false, optionalText = "(optional)", ...props }) => {
+}, value: valueProps = undefined, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, ...props }) => {
+    const { value, defaultValue, onChange } = (0, useJsonString_1.useJsonString)({
+        parseJson_to_String: parseJson_to_String ?? fenextjs_functions_1.parsePhone_to_String,
+        parseString_to_Json: parseString_to_Json ?? fenextjs_functions_1.parseString_to_Phone,
+        defaultValueJsonString,
+        valueJsonString,
+        onChangeJsonString,
+        value: valueProps,
+        defaultValue: defaultValueProps,
+        onChange: onChangeProps,
+    });
     const [error, setError] = (0, react_1.useState)(undefined);
     const [loadPhoneCodes, setlLoadPhoneCodes] = (0, react_1.useState)(false);
-    const { dataMemo: data, onChangeData, onConcatData, isChange, } = (0, useData_1.useData)(defaultValue, {
+    const { dataMemo: data, onChangeData, onConcatData, isChange, } = (0, useData_1.useData)(defaultValue ?? {}, {
         onChangeDataMemoAfter: onChange,
         onMemo: (d) => {
             const v = value ?? d;

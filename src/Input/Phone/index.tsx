@@ -118,14 +118,14 @@ export const InputPhone = ({
     optional = false,
     optionalText = "(optional)",
 
-    defaultValue : defaultValueProps = {
+    defaultValue: defaultValueProps = {
         code: "+57",
         number: "",
         tel: "",
         img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png",
     },
-    value :valueProps = undefined,
-    onChange : onChangeProps,
+    value: valueProps = undefined,
+    onChange: onChangeProps,
     defaultValueJsonString,
     valueJsonString,
     onChangeJsonString,
@@ -134,15 +134,17 @@ export const InputPhone = ({
 
     ...props
 }: InputPhoneProps) => {
-    const {value,defaultValue,onChange} = useJsonString<Partial<PhoneProps>>({
+    const { value, defaultValue, onChange } = useJsonString<
+        Partial<PhoneProps>
+    >({
         parseJson_to_String: parseJson_to_String ?? parsePhone_to_String,
         parseString_to_Json: parseString_to_Json ?? parseString_to_Phone,
         defaultValueJsonString,
         valueJsonString,
         onChangeJsonString,
-        value:valueProps,
-        defaultValue:defaultValueProps,
-        onChange:onChangeProps
+        value: valueProps,
+        defaultValue: defaultValueProps,
+        onChange: onChangeProps,
     });
 
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
