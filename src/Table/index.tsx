@@ -361,7 +361,7 @@ export const Table = <T,>({
                         {headerNotTr.map((h, j) => (
                             <td
                                 key={`${i}-${j}`}
-                                className={`fenext-table-content-table-td ${classNameTd} ${h?.className ?? ''}`}
+                                className={`fenext-table-content-table-td ${classNameTd} ${h?.className ?? ""}`}
                                 style={
                                     {
                                         ["--fenext-table-head-th"]: `"${h?.th}"`,
@@ -379,7 +379,7 @@ export const Table = <T,>({
                             <>
                                 <tr
                                     key={`${i}_tr_${j}`}
-                                    className={`fenext-table-content-table-tr ${classNameTr} ${new_tr?.className ?? ''}`}
+                                    className={`fenext-table-content-table-tr ${classNameTr} ${new_tr?.className ?? ""}`}
                                 >
                                     <td
                                         key={`${i}-${j}`}
@@ -475,7 +475,7 @@ export const Table = <T,>({
                                 {headerNotTr.map((h, i) => (
                                     <th
                                         key={i}
-                                        className={`fenext-table-content-table-th ${classNameTh} ${h?.className ?? ''}`}
+                                        className={`fenext-table-content-table-th ${classNameTh} ${h?.className ?? ""}`}
                                         data-col-id={h?.id}
                                         data-col-text={h?.th}
                                     >

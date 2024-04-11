@@ -88,6 +88,10 @@ export type TableHeader<T> = {
      * The column width : 100% in new tr;
      */
     colNewTr?: boolean;
+    /**
+     * The className of de column;
+     */
+    className?: string;
 }[];
 /**
  * Represents the base properties that can be passed to a table component.
