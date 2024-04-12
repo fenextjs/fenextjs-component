@@ -117,6 +117,8 @@ export const InputPhone = ({
     _t = (e) => e,
     optional = false,
     optionalText = "(optional)",
+    required = false,
+    requiredText = "*",
 
     defaultValue: defaultValueProps = {
         code: "+57",
@@ -208,6 +210,13 @@ export const InputPhone = ({
                         <>
                             <small className="fenext-input-optional">
                                 {_tValidate(optionalText, _t)}
+                            </small>
+                        </>
+                    )}
+                    {required && (
+                        <>
+                            <small className="fenext-input-required">
+                                {_tValidate(requiredText, _t)}
                             </small>
                         </>
                     )}
