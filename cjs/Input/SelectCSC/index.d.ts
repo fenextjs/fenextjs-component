@@ -27,15 +27,15 @@ export interface InputSelectCSCBaseProps extends useCSCProps, Omit<InputSelectBa
     /**
      * country Input Label and Placeholder.
      */
-    country?: Pick<InputTextBaseProps, "label" | "placeholder">;
+    country?: Pick<InputTextBaseProps, "label" | "placeholder" | "disabled">;
     /**
      * state Input Label and Placeholder.
      */
-    state?: Pick<InputTextBaseProps, "label" | "placeholder">;
+    state?: Pick<InputTextBaseProps, "label" | "placeholder" | "disabled">;
     /**
      * city Input Label and Placeholder.
      */
-    city?: Pick<InputTextBaseProps, "label" | "placeholder">;
+    city?: Pick<InputTextBaseProps, "label" | "placeholder" | "disabled">;
 }
 /**
  * Props interface for the InputSelectCSC component. Extends both InputSelectCSCBaseProps and InputSelectCSCClassProps interfaces.
