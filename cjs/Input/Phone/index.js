@@ -21,7 +21,7 @@ const useJsonString_1 = require("fenextjs-hook/cjs/useJsonString");
 const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, yup = Yup.object().shape({
     code: Yup.string().required(),
     number: Yup.string().required(),
-}), placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, _t = (e) => e, optional = false, optionalText = "(optional)", defaultValue: defaultValueProps = {
+}), placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, _t = (e) => e, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultValue: defaultValueProps = {
     code: "+57",
     number: "",
     tel: "",
@@ -82,7 +82,9 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
             react_1.default.createElement("div", { className: `fenext-input-phone-label fenext-input-label ${classNamePhoneLabel} ` },
                 (0, fenextjs_functions_1._tValidate)(label, _t),
                 optional && (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement("small", { className: "fenext-input-optional" }, (0, fenextjs_functions_1._tValidate)(optionalText, _t))))),
+                    react_1.default.createElement("small", { className: "fenext-input-optional" }, (0, fenextjs_functions_1._tValidate)(optionalText, _t)))),
+                required && (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement("small", { className: "fenext-input-required" }, (0, fenextjs_functions_1._tValidate)(requiredText, _t))))),
             react_1.default.createElement("div", { className: `fenext-input-phone-code ${classNamePhoneCode}` },
                 react_1.default.createElement(Select_1.InputSelect, { ...classNameSelectCode, key: data.code, placeholder: placeholderCode, _t: _t, options: phones.map((phone) => {
                         return {
