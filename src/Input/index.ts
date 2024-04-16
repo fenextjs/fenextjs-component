@@ -13,6 +13,7 @@ export * from "./SelectCity";
 export * from "./SelectMultiple";
 export * from "./SelectNumber";
 export * from "./SelectCSC";
+export * from "./SelectT";
 export * from "./NumberCount";
 export * from "./Radio";
 export * from "./Phone";
