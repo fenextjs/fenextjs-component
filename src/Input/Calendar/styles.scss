@@ -23,7 +23,7 @@
         &-content {
         }
         &-month {
-            --padding:.5rem;
+            --padding: 0.5rem;
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             width: min(100%, calc(2rem * 7 + calc(var(--padding) * 2)));
@@ -34,28 +34,28 @@
             background-color: var(--fenext-color-dark);
             font-size: 1rem;
         }
-        &-top{
+        &-top {
             grid-column: 1 /-1;
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            &-info{
+            &-info {
                 grid-column: span 5;
                 display: grid;
                 place-items: center;
                 text-transform: capitalize;
             }
         }
-        &-days{
+        &-days {
             grid-column: 1 /-1;
             background: var(--fenext-color-dark-light);
             border-radius: var(--padding);
             display: grid;
             grid-template-columns: repeat(7, 1fr);
         }
-        &-btn{
+        &-btn {
             cursor: pointer;
-            svg{
-                width: .7em;
+            svg {
+                width: 0.7em;
             }
         }
         &-day {

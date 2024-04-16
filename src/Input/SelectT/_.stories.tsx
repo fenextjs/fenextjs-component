@@ -4,25 +4,31 @@ import {
     InputSelectT,
     InputSelectTProps,
 } from "./index";
-import { ErrorInputRequired } from "fenextjs-error";
 
 export default {
     title: "Input/InputSelectT",
     component: InputSelectT,
 } as Meta;
 
-const Profile: Story<InputSelectTProps> = (args) => (
+const Profile: Story<InputSelectTProps<any>> = (args) => (
     <InputSelectT {...args}>Test Children</InputSelectT>
 );
 
 export const Index = Profile.bind({});
 
-const args: InputSelectTProps = {
+const args: InputSelectTProps<any> = {
     id: "SelectT",
     name: "SelectT",
     label: "SelectT",
     placeholder: "SelectT",
     datalist: "listOption",
+    onParse:(e=>{
+        return {
+            id:"1",
+            text:"test",
+            data:e
+        }
+    }),
     options: [
         {
             id: "1",

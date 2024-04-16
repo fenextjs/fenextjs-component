@@ -1,5 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
-import { DaysEnum, _TProps } from "fenextjs-interface";
+import { DaysEnum } from "fenextjs-interface";
 import React, { useMemo } from "react";
 import { InputText, InputTextProps } from "../Text";
 import { Date } from "fenextjs-svg/cjs/Date";
@@ -31,27 +30,33 @@ export const InputCalendar = ({
     const date = new FenextjsDate();
 
     const onPreMonth = () => {
-        date.addMonth(-1)
-    }
+        date.addMonth(-1);
+    };
 
     const onNextMonth = () => {
-        date.addMonth(1)
-    }
+        date.addMonth(1);
+    };
 
     const getMonthCalendar = (DATE?: Date) => {
         return (
             <>
                 <div className={`fenext-input-calendar-month`}>
                     <div className={`fenext-input-calendar-top`}>
-                        <div className={`fenext-input-calendar-btn`} onClick={onPreMonth}>
+                        <div
+                            className={`fenext-input-calendar-btn`}
+                            onClick={onPreMonth}
+                        >
                             <PaginationPre />
                         </div>
                         <div className={`fenext-input-calendar-top-info`}>
                             {date?.onFormat({
-                                month:"long"
+                                month: "long",
                             })}
                         </div>
-                        <div className={`fenext-input-calendar-btn`} onClick={onNextMonth}>
+                        <div
+                            className={`fenext-input-calendar-btn`}
+                            onClick={onNextMonth}
+                        >
                             <PaginationNext />
                         </div>
                     </div>
