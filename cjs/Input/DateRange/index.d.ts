@@ -65,4 +65,4 @@ export interface InputDateRangeClassProps extends InputDateClassProps {
  */
 export interface InputDateRangeProps extends InputDateRangeBaseProps, InputDateRangeClassProps {
 }
-export declare const InputDateRange: ({ classNameInputDateRange, classNameInputDateRangeContentInputDate, classNameLabel, _t, label, min, max, defaultValue, value, onChange, propsStart, propsEnd, ...props }: InputDateRangeProps) => React.JSX.Element;
+export declare const InputDateRange: ({ classNameInputDateRange, classNameInputDateRangeContentInputDate, classNameLabel, _t, label, min, max, defaultValue, value, onChange, optional, optionalText, required, requiredText, propsStart, propsEnd, ...props }: InputDateRangeProps) => React.JSX.Element;

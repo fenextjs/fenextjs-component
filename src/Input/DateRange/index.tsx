@@ -96,7 +96,7 @@ export const InputDateRange = ({
     defaultValue = undefined,
     value = undefined,
     onChange,
-    optional=false,
+    optional = false,
     optionalText = "(optional)",
     required = false,
     requiredText = "*",
