@@ -96,6 +96,10 @@ export const InputDateRange = ({
     defaultValue = undefined,
     value = undefined,
     onChange,
+    optional=false,
+    optionalText = "(optional)",
+    required = false,
+    requiredText = "*",
 
     propsStart = {},
     propsEnd = {},
@@ -131,6 +135,20 @@ export const InputDateRange = ({
             >
                 <div className={`fenext-input-label ${classNameLabel}`}>
                     {_tValidate(label, _t)}
+                    {optional && (
+                        <>
+                            <small className="fenext-input-optional">
+                                {_tValidate(optionalText, _t)}
+                            </small>
+                        </>
+                    )}
+                    {required && (
+                        <>
+                            <small className="fenext-input-required">
+                                {_tValidate(requiredText, _t)}
+                            </small>
+                        </>
+                    )}
                 </div>
                 <div
                     className={`fenext-input-date-range-content-input-date ${classNameInputDateRangeContentInputDate}`}
