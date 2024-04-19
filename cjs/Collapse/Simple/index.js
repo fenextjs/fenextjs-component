@@ -16,13 +16,14 @@ const Collapse = ({ className = "", classNameHeader = "", classNameHeaderContent
                         : {}), onChange: (e) => {
                         onChange?.(e.target.checked);
                     } }),
-                react_1.default.createElement("div", { className: `fenext-collapse-header-content ${classNameHeaderContent}` }, header),
+                react_1.default.createElement("div", { className: `fenext-collapse-header-content ${classNameHeaderContent}` },
+                    header,
+                    type == "radio" && !disabled ? (react_1.default.createElement(react_1.default.Fragment, null,
+                        react_1.default.createElement("input", { type: type, className: `fenext-collapse-header-uncheck`, name: name, disabled: loader, onChange: (e) => {
+                                onChange?.(e.target.checked);
+                            } }))) : (react_1.default.createElement(react_1.default.Fragment, null))),
                 react_1.default.createElement("div", { className: `fenext-collapse-header-icon ${classNameHeaderIcon}` }, loader ? (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(Loader_1.Loader, null))) : (react_1.default.createElement(react_1.default.Fragment, null, iconArrow))),
-                type == "radio" ? (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement("input", { type: type, className: `fenext-collapse-header-uncheck`, name: name, disabled: disabled || loader, onChange: (e) => {
-                            onChange?.(e.target.checked);
-                        } }))) : (react_1.default.createElement(react_1.default.Fragment, null))),
+                    react_1.default.createElement(Loader_1.Loader, null))) : (react_1.default.createElement(react_1.default.Fragment, null, iconArrow)))),
             react_1.default.createElement("div", { className: `fenext-collapse-body ${classNameBody}` }, children))));
 };
 exports.Collapse = Collapse;
