@@ -134,6 +134,21 @@ export const Collapse = ({
                         className={`fenext-collapse-header-content ${classNameHeaderContent}`}
                     >
                         {header}
+                        {type == "radio" && !disabled ? (
+                            <>
+                                <input
+                                    type={type}
+                                    className={`fenext-collapse-header-uncheck`}
+                                    name={name}
+                                    disabled={loader}
+                                    onChange={(e) => {
+                                        onChange?.(e.target.checked);
+                                    }}
+                                />
+                            </>
+                        ) : (
+                            <></>
+                        )}
                     </div>
                     <div
                         className={`fenext-collapse-header-icon ${classNameHeaderIcon}`}
@@ -146,21 +161,6 @@ export const Collapse = ({
                             <>{iconArrow}</>
                         )}
                     </div>
-                    {type == "radio" ? (
-                        <>
-                            <input
-                                type={type}
-                                className={`fenext-collapse-header-uncheck`}
-                                name={name}
-                                disabled={disabled || loader}
-                                onChange={(e) => {
-                                    onChange?.(e.target.checked);
-                                }}
-                            />
-                        </>
-                    ) : (
-                        <></>
-                    )}
                 </label>
                 <div className={`fenext-collapse-body ${classNameBody}`}>
                     {children}
