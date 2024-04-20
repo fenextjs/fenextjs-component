@@ -41,7 +41,8 @@ export const InputSelectCountryMultiple = ({
                     ...e,
                     img: `${getRuteCountryImg(e)}`,
                 };
-            }),);
+            }),
+        );
         setLoader(false);
     };
     useEffect(() => {

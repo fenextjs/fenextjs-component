@@ -9,8 +9,13 @@ const InputSelectCountryMultiple = ({ ...props }) => {
     const [loader, setLoader] = (0, react_1.useState)(false);
     const [options, setOptions] = (0, react_1.useState)([]);
     const onLoad = async () => {
-        const r = await (0, country_state_city_nextjs_1.getDataCountrys)();
-        setOptions(r);
+        const countrys = await (0, country_state_city_nextjs_1.getDataCountrys)();
+        setOptions(countrys.map((e) => {
+            return {
+                ...e,
+                img: `${(0, country_state_city_nextjs_1.getRuteCountryImg)(e)}`,
+            };
+        }));
         setLoader(false);
     };
     (0, react_1.useEffect)(() => {

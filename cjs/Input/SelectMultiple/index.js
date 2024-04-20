@@ -63,7 +63,7 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
                     fenext-select-multiple-${typeSelectMultipleStyle}
                     ${classNameSelectMultiple}
                 ` },
-            react_1.default.createElement(Select_1.InputSelect, { ...props, onChange: onAddItemSelect, options: OPTIONS, error: props?.error ?? error, isSelectClearText: true, extraInLabel: react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement(Select_1.InputSelect, { ...props, onChange: onAddItemSelect, options: OPTIONS, error: props?.error ?? error, isSelectClearText: true, showOptionIconImg: false, extraInLabel: react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectMultipleList} ` }, dataMemo.map((option) => {
                         return (react_1.default.createElement(SelectOption_1.InputSelectOption, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete }));
                     })),
