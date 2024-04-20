@@ -169,6 +169,10 @@ export interface InputSelectBaseProps<T = any>
      * maxLengthShowOptions in select.
      */
     maxLengthShowOptions?: number;
+    /**
+     * showOptionIconImg in select.
+     */
+    showOptionIconImg?: boolean;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -222,6 +226,7 @@ export const InputSelect = <T = any,>({
         id: "fenext-item-max-length-show-options",
         text: "More ...",
     },
+    showOptionIconImg = true,
     ...props
 }: InputSelectProps<T>) => {
     const options = useMemo(
@@ -633,30 +638,40 @@ export const InputSelect = <T = any,>({
                                 >
                                     {_tValidate(clearContent, _t)}
                                 </button>
-                                {data?.option?.img ? (
+                                {showOptionIconImg && (
                                     <>
-                                        <div className="fenext-select-option-selected-img">
-                                            <img src={data?.option?.img} />
-                                        </div>
-                                    </>
-                                ) : (
-                                    <>
-                                        {data?.option?.imgComponent ? (
+                                        {data?.option?.img ? (
                                             <>
                                                 <div className="fenext-select-option-selected-img">
-                                                    <Img
-                                                        {...data?.option
-                                                            ?.imgComponent}
+                                                    <img
+                                                        src={data?.option?.img}
                                                     />
                                                 </div>
                                             </>
                                         ) : (
                                             <>
-                                                {data?.option?.icon && (
+                                                {data?.option?.imgComponent ? (
                                                     <>
                                                         <div className="fenext-select-option-selected-img">
-                                                            {data?.option?.icon}
+                                                            <Img
+                                                                {...data?.option
+                                                                    ?.imgComponent}
+                                                            />
                                                         </div>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        {data?.option?.icon && (
+                                                            <>
+                                                                <div className="fenext-select-option-selected-img">
+                                                                    {
+                                                                        data
+                                                                            ?.option
+                                                                            ?.icon
+                                                                    }
+                                                                </div>
+                                                            </>
+                                                        )}
                                                     </>
                                                 )}
                                             </>

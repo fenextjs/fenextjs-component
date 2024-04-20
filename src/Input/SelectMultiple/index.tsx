@@ -153,6 +153,7 @@ export const InputSelectMultiple = <T = any,>({
                     options={OPTIONS}
                     error={props?.error ?? error}
                     isSelectClearText={true}
+                    showOptionIconImg={false}
                     extraInLabel={
                         <>
                             <div
