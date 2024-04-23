@@ -24,8 +24,8 @@ const args: InputSelectTProps<any> = {
     datalist: "listOption",
     onParse:(e=>{
         return {
-            id:"1",
-            text:"test",
+            id:e?.id,
+            text:"test " + e?.id,
             data:e
         }
     }),

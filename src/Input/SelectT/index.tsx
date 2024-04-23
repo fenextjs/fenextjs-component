@@ -44,8 +44,8 @@ export const InputSelectT = <T,>({
         <>
             <InputSelect
                 {...props}
-                defaultValue={onParse(defaultValue)}
-                value={onParse(value)}
+                defaultValue={defaultValue ? onParse(defaultValue) : undefined}
+                value={value ? onParse(value) : undefined}
                 options={options.map(onParse)}
                 onChangeData={onChange}
             />
