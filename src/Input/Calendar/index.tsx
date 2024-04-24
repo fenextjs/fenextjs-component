@@ -1,10 +1,8 @@
-import { DaysEnum } from "fenextjs-interface";
 import React, { useMemo, useState } from "react";
 import { InputText, InputTextProps } from "../Text";
 import { Date as SvgDate } from "fenextjs-svg/cjs/Date";
 import { Collapse } from "../../Collapse";
 import { useDate } from "fenextjs-hook/cjs/useDate";
-import { PaginationNext, PaginationPre } from "fenextjs-svg";
 import { useData } from "fenextjs-hook";
 import { InputCalendarMonth, InputCalendarMonthProps } from "./Month";
 import { FenextjsDate } from "fenextjs-date";
@@ -24,17 +22,13 @@ export interface InputCalendarProps
             | "icon"
             | "iconPos"
         >,
-        Pick<
-            InputCalendarMonthProps,
-            | "_t"
-            | "type"
-        > {
-            defaultValue?: Date;
-            value?: Date;
-            defaultValueRange?: Date[];
-            valueRange?: Date[];
-            onChange?:(d:Date | undefined)=>void
-            onChangeRange?:(d:Date[])=>void
+        Pick<InputCalendarMonthProps, "_t" | "type"> {
+    defaultValue?: Date;
+    value?: Date;
+    defaultValueRange?: Date[];
+    valueRange?: Date[];
+    onChange?: (d: Date | undefined) => void;
+    onChangeRange?: (d: Date[]) => void;
     nMonthShow?: number;
 }
 
@@ -52,8 +46,8 @@ export const InputCalendar = ({
 }: InputCalendarProps) => {
     const { data: dataSelectDate, setData: setSelectDate } = useData<
         Date | undefined
-    >(defaultValue,{
-        onChangeDataAfter:onChange
+    >(defaultValue, {
+        onChangeDataAfter: onChange,
     });
     const selectDate = useMemo(
         () => value ?? dataSelectDate,
@@ -62,8 +56,8 @@ export const InputCalendar = ({
 
     const [dataNSelect, setDataNSelect] = useState(true);
     const { data: dataSelectDateRange, setDataFunction: setSelectDateRange } =
-        useData<Date[]>(defaultValueRange ?? [],{
-            onChangeDataAfter:onChangeRange
+        useData<Date[]>(defaultValueRange ?? [], {
+            onChangeDataAfter: onChangeRange,
         });
     const selectDateRange = useMemo(
         () => valueRange ?? dataSelectDateRange,
@@ -86,25 +80,26 @@ export const InputCalendar = ({
                 <Collapse
                     header={
                         <>
-                            <InputText {...props} icon={icon} 
-                            
+                            <InputText
+                                {...props}
+                                icon={icon}
                                 value={
-                                    type == "normal"?
-                                    `${selectDate ? date.onFormat({},selectDate) :""}`
-                                    :
-                                    `${
-                                        selectDateRange && selectDateRange.length == 2
-                                        ?
-                                        `${date.onFormat({},selectDateRange[0])} - ${date.onFormat({},selectDateRange[1])}`
-                                        :
-                                        ""
-                                    }`
-                                }   
+                                    type == "normal"
+                                        ? `${selectDate ? date.onFormat({}, selectDate) : ""}`
+                                        : `${
+                                              selectDateRange &&
+                                              selectDateRange.length == 2
+                                                  ? `${date.onFormat({}, selectDateRange[0])} - ${date.onFormat({}, selectDateRange[1])}`
+                                                  : ""
+                                          }`
+                                }
                             />
                         </>
                     }
                 >
-                    <div className={`fenext-input-calendar-content fenext-input-calendar-content-${nMonthShow>1?"multiple":""}`}>
+                    <div
+                        className={`fenext-input-calendar-content fenext-input-calendar-content-${nMonthShow > 1 ? "multiple" : ""}`}
+                    >
                         <InputCalendarMonth
                             _t={props?._t}
                             type={type}
@@ -125,13 +120,12 @@ export const InputCalendar = ({
                                     .map((e, i) => {
                                         const n = e * i + 1;
 
-                                        const d = new Date(date?.date ?? 0)
-                                        d.setMonth(d.getMonth() + n)
+                                        const d = new Date(date?.date ?? 0);
+                                        d.setMonth(d.getMonth() + n);
                                         const dateN = new FenextjsDate({
                                             defaultDate: d,
                                         });
-                                        
-                                        
+
                                         return (
                                             <>
                                                 <InputCalendarMonth

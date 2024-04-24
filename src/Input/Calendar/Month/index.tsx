@@ -1,29 +1,25 @@
 import { DaysEnum } from "fenextjs-interface";
-import React, { useMemo, useState } from "react";
-import { useDate } from "fenextjs-hook/cjs/useDate";
+import React from "react";
 import { PaginationNext, PaginationPre } from "fenextjs-svg";
-import { useData } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";
 import { FenextjsDate } from "fenextjs-date";
 
-
-
 export interface InputCalendarMonthProps extends _TProps {
     type?: "normal" | "range";
 
-    date?:FenextjsDate
-    onPreMonth?:()=>void
-    onNextMonth?:()=>void
+    date?: FenextjsDate;
+    onPreMonth?: () => void;
+    onNextMonth?: () => void;
 
-    selectDate:Date | undefined
-    selectDateRange:Date[]
+    selectDate: Date | undefined;
+    selectDateRange: Date[];
 
-    setSelectDate:(d:Date)=>void
-    setSelectDateRange:(d:(d:Date[])=>Date[])=>void
+    setSelectDate: (d: Date) => void;
+    setSelectDateRange: (d: (d: Date[]) => Date[]) => void;
 
-    dataNSelect:boolean
-    setDataNSelect:(d:(d:boolean)=>boolean)=>void
+    dataNSelect: boolean;
+    setDataNSelect: (d: (d: boolean) => boolean) => void;
 }
 export const InputCalendarMonth = ({
     type = "normal",
@@ -38,7 +34,6 @@ export const InputCalendarMonth = ({
     dataNSelect,
     setDataNSelect,
 }: InputCalendarMonthProps) => {
-
     return (
         <>
             <div className={`fenext-input-calendar-month`}>
