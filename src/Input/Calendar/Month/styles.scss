@@ -1,4 +1,5 @@
-.fenext-input-calendar {
+.fenext-input {
+    &-calendar {
         .fenext-collapse {
             &-header {
                 padding: 0;
@@ -20,11 +21,6 @@
             }
         }
         &-content {
-            &-multiple{
-                display: flex;
-                gap: 1rem;
-                flex-wrap: wrap;
-            }
         }
         &-month {
             --padding: 0.5rem;
@@ -72,8 +68,6 @@
             &-other-month {
                 background: var(--fenext-color-dark-light);
                 border-radius: var(--padding);
-                filter: grayscale(1);
-                opacity: .2;
 
                 &:has( + .fenext-input-calendar-date-other-month  ){
                     border-top-right-radius: 0;
@@ -115,3 +109,4 @@
             cursor: pointer;
         }
     }
+}

@@ -1,33 +1,76 @@
 import { DaysEnum } from "fenextjs-interface";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { InputText, InputTextProps } from "../Text";
-import { Date } from "fenextjs-svg/cjs/Date";
-import { Collapse } from "@/Collapse";
-import { FenextjsDate } from "fenextjs-date";
+import { Date as SvgDate } from "fenextjs-svg/cjs/Date";
+import { Collapse } from "../../Collapse";
+import { useDate } from "fenextjs-hook/cjs/useDate";
 import { PaginationNext, PaginationPre } from "fenextjs-svg";
+import { useData } from "fenextjs-hook";
+import { InputCalendarMonth, InputCalendarMonthProps } from "./Month";
+import { FenextjsDate } from "fenextjs-date";
 
 /**
  * All props for the InputCalendar component.
  */
 export interface InputCalendarProps
     extends Pick<
-        InputTextProps,
-        | "label"
-        | "placeholder"
-        | "_t"
-        | "optional"
-        | "optionalText"
-        | "required"
-        | "requiredText"
-        | "icon"
-        | "iconPos"
-    > {}
+            InputTextProps,
+            | "label"
+            | "placeholder"
+            | "optional"
+            | "optionalText"
+            | "required"
+            | "requiredText"
+            | "icon"
+            | "iconPos"
+        >,
+        Pick<
+            InputCalendarMonthProps,
+            | "_t"
+            | "type"
+        > {
+            defaultValue?: Date;
+            value?: Date;
+            defaultValueRange?: Date[];
+            valueRange?: Date[];
+            onChange?:(d:Date | undefined)=>void
+            onChangeRange?:(d:Date[])=>void
+    nMonthShow?: number;
+}
 
 export const InputCalendar = ({
-    icon = <Date />,
+    nMonthShow = 1,
+    icon = <SvgDate />,
+    type = "normal",
+    defaultValue,
+    value,
+    defaultValueRange,
+    valueRange,
+    onChange,
+    onChangeRange,
     ...props
 }: InputCalendarProps) => {
-    const date = new FenextjsDate();
+    const { data: dataSelectDate, setData: setSelectDate } = useData<
+        Date | undefined
+    >(defaultValue,{
+        onChangeDataAfter:onChange
+    });
+    const selectDate = useMemo(
+        () => value ?? dataSelectDate,
+        [value, dataSelectDate],
+    );
+
+    const [dataNSelect, setDataNSelect] = useState(true);
+    const { data: dataSelectDateRange, setDataFunction: setSelectDateRange } =
+        useData<Date[]>(defaultValueRange ?? [],{
+            onChangeDataAfter:onChangeRange
+        });
+    const selectDateRange = useMemo(
+        () => valueRange ?? dataSelectDateRange,
+        [valueRange, dataSelectDateRange],
+    );
+
+    const date = useDate({});
 
     const onPreMonth = () => {
         date.addMonth(-1);
@@ -37,88 +80,87 @@ export const InputCalendar = ({
         date.addMonth(1);
     };
 
-    const getMonthCalendar = (DATE?: Date) => {
-        return (
-            <>
-                <div className={`fenext-input-calendar-month`}>
-                    <div className={`fenext-input-calendar-top`}>
-                        <div
-                            className={`fenext-input-calendar-btn`}
-                            onClick={onPreMonth}
-                        >
-                            <PaginationPre />
-                        </div>
-                        <div className={`fenext-input-calendar-top-info`}>
-                            {date?.onFormat({
-                                month: "long",
-                            })}
-                        </div>
-                        <div
-                            className={`fenext-input-calendar-btn`}
-                            onClick={onNextMonth}
-                        >
-                            <PaginationNext />
-                        </div>
-                    </div>
-                    <div className={`fenext-input-calendar-days`}>
-                        {[
-                            DaysEnum.Sunday,
-                            DaysEnum.Monday,
-                            DaysEnum.Tuesday,
-                            DaysEnum.Wednesday,
-                            DaysEnum.Thursday,
-                            DaysEnum.Friday,
-                            DaysEnum.Saturday,
-                        ].map((day, i) => {
-                            return (
-                                <>
-                                    <div
-                                        key={i}
-                                        data-day={day}
-                                        className={`fenext-input-calendar-day`}
-                                    >
-                                        {(props?._t?.(day) ?? day)[0]}
-                                    </div>
-                                </>
-                            );
-                        })}
-                    </div>
-                    {date.onGenerateDateByCalendar(DATE)?.map((d, i) => {
-                        return (
-                            <>
-                                <div
-                                    key={i}
-                                    data-date={d.getDate()}
-                                    data-month={d.getMonth() + 1}
-                                    data-year={d.getFullYear()}
-                                    className={`fenext-input-calendar-date`}
-                                >
-                                    {d?.getDate()}
-                                </div>
-                            </>
-                        );
-                    })}
-                </div>
-            </>
-        );
-    };
-
-    const CalendarMonth = useMemo(() => {
-        return <>{getMonthCalendar(date)}</>;
-    }, [date]);
     return (
         <>
             <div className={`fenext-input-calendar`}>
                 <Collapse
                     header={
                         <>
-                            <InputText {...props} icon={icon} />
+                            <InputText {...props} icon={icon} 
+                            
+                                value={
+                                    type == "normal"?
+                                    `${selectDate ? date.onFormat({},selectDate) :""}`
+                                    :
+                                    `${
+                                        selectDateRange && selectDateRange.length == 2
+                                        ?
+                                        `${date.onFormat({},selectDateRange[0])} - ${date.onFormat({},selectDateRange[1])}`
+                                        :
+                                        ""
+                                    }`
+                                }   
+                            />
                         </>
                     }
                 >
-                    <div className={`fenext-input-calendar-content`}>
-                        {date?.toISOString()}
-                        {CalendarMonth}
+                    <div className={`fenext-input-calendar-content fenext-input-calendar-content-${nMonthShow>1?"multiple":""}`}>
+                        <InputCalendarMonth
+                            _t={props?._t}
+                            type={type}
+                            dataNSelect={dataNSelect}
+                            selectDate={selectDate}
+                            selectDateRange={selectDateRange}
+                            setDataNSelect={setDataNSelect}
+                            setSelectDate={setSelectDate}
+                            setSelectDateRange={setSelectDateRange}
+                            date={date}
+                            onNextMonth={onNextMonth}
+                            onPreMonth={onPreMonth}
+                        />
+                        {nMonthShow > 1 && (
+                            <>
+                                {new Array(nMonthShow - 1)
+                                    .fill(1)
+                                    .map((e, i) => {
+                                        const n = e * i + 1;
+
+                                        const d = new Date(date?.date ?? 0)
+                                        d.setMonth(d.getMonth() + n)
+                                        const dateN = new FenextjsDate({
+                                            defaultDate: d,
+                                        });
+                                        
+                                        
+                                        return (
+                                            <>
+                                                <InputCalendarMonth
+                                                    key={n}
+                                                    _t={props?._t}
+                                                    type={type}
+                                                    dataNSelect={dataNSelect}
+                                                    selectDate={selectDate}
+                                                    selectDateRange={
+                                                        selectDateRange
+                                                    }
+                                                    setDataNSelect={
+                                                        setDataNSelect
+                                                    }
+                                                    setSelectDate={
+                                                        setSelectDate
+                                                    }
+                                                    setSelectDateRange={
+                                                        setSelectDateRange
+                                                    }
+                                                    date={dateN}
+                                                    onNextMonth={onNextMonth}
+                                                    onPreMonth={onPreMonth}
+                                                />
+                                            </>
+                                        );
+                                    })}
+                            </>
+                        )}
                     </div>
                 </Collapse>
             </div>
