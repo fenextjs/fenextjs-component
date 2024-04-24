@@ -40,6 +40,10 @@ export interface ModalBaseBaseProps extends PropsWithChildren {
      * onClose ModalBase.
      */
     onClose?: () => void;
+    /**
+     * name of Modal.
+     */
+    name?: string;
 }
 
 /**
@@ -85,6 +89,7 @@ export const ModalBase = ({
     onClose,
     children,
     useRender = false,
+    name
 }: ModalBaseProps) => {
     const uuid = useMemo(() => new Date().getTime(), [active]);
 
@@ -113,6 +118,7 @@ export const ModalBase = ({
                     } fenext-modal-base-dialog-disabled-close-${
                         disabledClose ? "active" : "inactive"
                     }`}
+                    data-name={name}
                 >
                     <div
                         className={`fenext-modal-base-bg fenext-modal-base-bg-${

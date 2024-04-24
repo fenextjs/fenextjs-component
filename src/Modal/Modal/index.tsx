@@ -30,6 +30,7 @@ export interface ModalProps
             | "typeClose"
             | "disabledClose"
             | "useRender"
+            |"name"
         >,
         ModalClassProps {
     /**
@@ -44,10 +45,6 @@ export interface ModalProps
      * onActive Modal.
      */
     onActive?: () => void;
-    /**
-     * name of Modal.
-     */
-    name?: string;
 }
 
 export const Modal = ({
@@ -91,6 +88,7 @@ export const Modal = ({
                 typeClose={typeClose}
                 disabledClose={disabledClose}
                 useRender={useRender}
+                name={name}
             >
                 {children}
             </ModalBase>
