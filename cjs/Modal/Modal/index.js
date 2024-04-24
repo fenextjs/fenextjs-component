@@ -15,7 +15,7 @@ const Modal = ({ classNameElementActionModalActive = "", classNameModal = {}, El
     });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { onClick: onActive, className: `fenext-modal-element-active ${classNameElementActionModalActive}` }, ElementActionModalActive),
-        react_1.default.createElement(Base_1.ModalBase, { ...classNameModal, onClose: onClose, active: active, type: type, typeClose: typeClose, disabledClose: disabledClose, useRender: useRender }, children)));
+        react_1.default.createElement(Base_1.ModalBase, { ...classNameModal, onClose: onClose, active: active, type: type, typeClose: typeClose, disabledClose: disabledClose, useRender: useRender, name: name }, children)));
 };
 exports.Modal = Modal;
 //# sourceMappingURL=index.js.map

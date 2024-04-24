@@ -31,6 +31,10 @@ export interface ModalBaseBaseProps extends PropsWithChildren {
      * onClose ModalBase.
      */
     onClose?: () => void;
+    /**
+     * name of Modal.
+     */
+    name?: string;
 }
 /**
  * Properties for the class of the ModalBase component.
@@ -58,4 +62,4 @@ export interface ModalBaseClassProps {
  */
 export interface ModalBaseProps extends ModalBaseBaseProps, ModalBaseClassProps {
 }
-export declare const ModalBase: ({ className, classNameBg, classNameContent, classNameClose, active, childrenUseActiveForShowHidden, disabledClose, type, typeClose, onClose, children, useRender, }: ModalBaseProps) => React.JSX.Element;
+export declare const ModalBase: ({ className, classNameBg, classNameContent, classNameClose, active, childrenUseActiveForShowHidden, disabledClose, type, typeClose, onClose, children, useRender, name, }: ModalBaseProps) => React.JSX.Element;

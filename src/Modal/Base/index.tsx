@@ -89,7 +89,7 @@ export const ModalBase = ({
     onClose,
     children,
     useRender = false,
-    name
+    name,
 }: ModalBaseProps) => {
     const uuid = useMemo(() => new Date().getTime(), [active]);
 

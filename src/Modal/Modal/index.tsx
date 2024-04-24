@@ -30,7 +30,7 @@ export interface ModalProps
             | "typeClose"
             | "disabledClose"
             | "useRender"
-            |"name"
+            | "name"
         >,
         ModalClassProps {
     /**
