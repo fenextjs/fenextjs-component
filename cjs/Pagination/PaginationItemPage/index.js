@@ -11,7 +11,7 @@ const PaginationItemPage = ({ classNameContent = "", classNameUp = "", className
     down: react_1.default.createElement(Pagination_1.PaginationDown, null),
 }, defaultPage = 0, nItems, nItemsPage = 10, disabled = false, onChangePage, hiddenIfNItemsSmallerThanOrEqualNItemsPage = true, }) => {
     const [page, setPage_] = (0, react_1.useState)(defaultPage);
-    const maxPage = (0, react_1.useMemo)(() => Math.ceil(nItems / nItemsPage) - 1, [nItems, nItemsPage]);
+    const maxPage = (0, react_1.useMemo)(() => (nItemsPage == 0 ? 0 : Math.ceil(nItems / nItemsPage) - 1), [nItems, nItemsPage]);
     const minMaxValue = (v) => {
         return Math.max(0, Math.min(maxPage, v));
     };
