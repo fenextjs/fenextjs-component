@@ -136,7 +136,7 @@ export const PaginationItemPage = ({
     const [page, setPage_] = useState(defaultPage);
 
     const maxPage = useMemo(
-        () => Math.ceil(nItems / nItemsPage) - 1,
+        () => nItemsPage ==0 ? 0 : Math.ceil(nItems / nItemsPage) - 1,
         [nItems, nItemsPage],
     );
 
