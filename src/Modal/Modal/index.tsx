@@ -48,7 +48,7 @@ export interface ModalProps
     /**
      * onActive Modal.
      */
-    activeByNameLocalStorage?:boolean
+    activeByNameLocalStorage?: boolean;
 }
 
 export const Modal = ({
@@ -68,7 +68,7 @@ export const Modal = ({
     typeClose = "out",
     useRender = false,
     name,
-    activeByNameLocalStorage = false
+    activeByNameLocalStorage = false,
 }: ModalProps) => {
     const { active, onActive, onClose } = useModal({
         active: activeProps,
@@ -76,7 +76,7 @@ export const Modal = ({
         onActive: onActiveProps,
         onClose: onCloseProps,
         name,
-        activeByNameLocalStorage
+        activeByNameLocalStorage,
     });
     return (
         <>
