@@ -1,6 +1,6 @@
 {
   "name": "fenextjs-component",
-  "version": "8.14.4",
+  "version": "8.14.5",
   "description": "",
   "main": "./cjs/index.js",
   "module": "./cjs/index.js",
@@ -54,7 +54,7 @@
     "fenextjs-date": "^2.0.0",
     "fenextjs-error": "^2.0.0",
     "fenextjs-functions": "^3.3.2",
-    "fenextjs-hook": "^8.4.4",
+    "fenextjs-hook": "^8.4.6",
     "fenextjs-img-placeholder": "^2.0.0",
     "fenextjs-interface": "^2.7.0",
     "fenextjs-svg": "3.2.0",
