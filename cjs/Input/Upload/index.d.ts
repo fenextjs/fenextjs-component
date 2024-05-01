@@ -3,6 +3,7 @@ import { InputFileBaseProps } from "../File";
 import { TitleProps } from "../../Title";
 import { ButtonProps } from "../../Button";
 import { TextProps } from "../../Text";
+import { FileProps } from "fenextjs-interface/cjs/File";
 /**
  * Properties for the base InputUpload component.
  */
@@ -30,7 +31,11 @@ export interface InputUploadBaseProps extends InputFileBaseProps {
     /**
      * The tagPreview for the component.
      */
-    tagPreview?: "iframe" | "img";
+    tagPreview?: "embed" | "img";
+    /**
+     * The tagPreview for the component.
+     */
+    customPreview?: (data: FileProps) => React.ReactNode;
     /**
      * The loader for the component.
      */
@@ -86,4 +91,4 @@ export interface InputUploadClassProps {
  */
 export interface InputUploadProps extends InputUploadBaseProps, InputUploadClassProps {
 }
-export declare const InputUpload: ({ className, classNameBtn, classNameContentIcon, classNameText, classNamePreview, classNameTitle, classNameUp, classNameProgress, classNameRemove, btn, icon, text, title, textPreview, defaultValue, parseProgress, onChange, tagPreview, loader, iconLoader, _t, ...props }: InputUploadProps) => React.JSX.Element;
+export declare const InputUpload: ({ className, classNameBtn, classNameContentIcon, classNameText, classNamePreview, classNameTitle, classNameUp, classNameProgress, classNameRemove, btn, icon, text, title, textPreview, defaultValue, parseProgress, onChange, tagPreview, loader, iconLoader, customPreview, _t, ...props }: InputUploadProps) => React.JSX.Element;
