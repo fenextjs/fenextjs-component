@@ -256,7 +256,7 @@ export const InputSelect = <T = any,>({
             },
         },
     );
-
+    
     const dataMemo = useMemo(() => {
         if (value) {
             return {

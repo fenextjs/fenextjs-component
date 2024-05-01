@@ -105,6 +105,9 @@ export const Pagination = ({
                         {...classNameNPage}
                         {...props}
                         listNpage={listNpage}
+                        defaultValue={props?.nItemsPage ? listNpage.find(
+                            (e) => `${e.id}` == `${props?.nItemsPage}`,
+                        ) : undefined}
                         _t={_t}
                     />
                 )}

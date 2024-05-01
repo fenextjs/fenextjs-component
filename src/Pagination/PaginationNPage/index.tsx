@@ -21,6 +21,10 @@ export interface PaginationNPageBaseProps
      */
     listNpage?: InputSelectBaseProps["options"];
     /**
+     * List NPage for select.
+     */
+    defaultValueNpage?: InputSelectBaseProps["defaultValue"];
+    /**
      * onChange of nPage.
      */
     onChangeNPage?: InputSelectBaseProps["onChange"];
@@ -34,7 +38,7 @@ export interface PaginationNPageProps
 
 export const PaginationNPage = ({
     className = "",
-
+    defaultValueNpage,
     listNpage = [
         {
             id: "10",
@@ -63,11 +67,11 @@ export const PaginationNPage = ({
     return (
         <div className={`fenext-pagination-npage ${className}`}>
             <InputSelect
+                {...props}
                 options={listNpage}
                 onChange={onChangeNPage}
-                defaultValue={listNpage[0]}
                 isSelectChangeText={false}
-                {...props}
+                defaultValue={defaultValueNpage ?? listNpage[0]}
             />
         </div>
     );
