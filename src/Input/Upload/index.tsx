@@ -39,7 +39,11 @@ export interface InputUploadBaseProps extends InputFileBaseProps {
     /**
      * The tagPreview for the component.
      */
-    tagPreview?: "iframe" | "img";
+    tagPreview?: "embed" | "img";
+    /**
+     * The tagPreview for the component.
+     */
+    customPreview?: (data: FileProps) => React.ReactNode;
     /**
      * The loader for the component.
      */
@@ -128,9 +132,10 @@ export const InputUpload = ({
     parseProgress = (e) => `Uploading . . . ${e.toFixed(0)}%`,
     onChange,
 
-    tagPreview = "iframe",
+    tagPreview = "embed",
     loader = false,
     iconLoader = <LoaderSpinner />,
+    customPreview = undefined,
     _t,
     ...props
 }: InputUploadProps) => {
@@ -193,10 +198,14 @@ export const InputUpload = ({
                                     </>
                                 }
                             >
-                                <TAGPREVIEW
-                                    src={data.fileData}
-                                    className={`fenext-input-upload-preview ${classNamePreview}`}
-                                />
+                                {customPreview ? (
+                                    <>{customPreview(data)}</>
+                                ) : (
+                                    <TAGPREVIEW
+                                        src={data.fileData}
+                                        className={`fenext-input-upload-preview ${classNamePreview}`}
+                                    />
+                                )}
                             </Collapse>
                             {!props.disabled && (
                                 <div

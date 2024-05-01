@@ -24,3 +24,13 @@ Error.args = {
         throw "Error custom"
     },
 } as InputUploadProps;
+
+
+export const CustomPreview = Profile.bind({});
+CustomPreview.args = {
+   customPreview:(data)=>{
+    return <>
+        Custom Prview : {data.text}
+    </>
+   }
+} as InputUploadProps;
