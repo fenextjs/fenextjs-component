@@ -153,7 +153,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                                                 });
                                             } }))) : (react_1.default.createElement(react_1.default.Fragment, null)))))))),
                     react_1.default.createElement("tbody", { className: `fenext-table-content-table-tbody ${classNameTBody}` }, CONTENT))),
-            pagination && showPagination && (react_1.default.createElement("div", { className: `fenext-table-content-pagination ${classNameContentPagination}` },
+            pagination && showPagination && !loader && (react_1.default.createElement("div", { className: `fenext-table-content-pagination ${classNameContentPagination}` },
                 react_1.default.createElement(Pagination_1.Pagination, { ...pagination, disabled: loader, _t: _t }))))));
 };
 exports.Table = Table;
