@@ -557,7 +557,7 @@ export const Table = <T,>({
                         </tbody>
                     </table>
                 </div>
-                {pagination && showPagination && !loader && (
+                {pagination && showPagination  && (
                     <div
                         className={`fenext-table-content-pagination ${classNameContentPagination}`}
                     >

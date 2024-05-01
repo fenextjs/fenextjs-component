@@ -21,10 +21,6 @@ export interface PaginationNPageBaseProps
      */
     listNpage?: InputSelectBaseProps["options"];
     /**
-     * List NPage for select.
-     */
-    defaultValueNpage?: InputSelectBaseProps["defaultValue"];
-    /**
      * onChange of nPage.
      */
     onChangeNPage?: InputSelectBaseProps["onChange"];
@@ -38,7 +34,7 @@ export interface PaginationNPageProps
 
 export const PaginationNPage = ({
     className = "",
-    defaultValueNpage,
+    defaultValue,
     listNpage = [
         {
             id: "10",
@@ -71,7 +67,7 @@ export const PaginationNPage = ({
                 options={listNpage}
                 onChange={onChangeNPage}
                 isSelectChangeText={false}
-                defaultValue={defaultValueNpage ?? listNpage[0]}
+                defaultValue={defaultValue ?? listNpage[0]}
             />
         </div>
     );

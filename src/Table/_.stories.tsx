@@ -140,6 +140,7 @@ Index.args = {
     }),
     pagination: {
         nItems: 20,
+        // nItemsPage:20
     },
     loader: false,
     onOrderBy:(a)=>{
