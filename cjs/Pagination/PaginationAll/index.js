@@ -39,7 +39,9 @@ const Pagination = ({ className = "", classNameItemPage = {}, classNameNPage = {
     }, [listNpage]);
     return (react_1.default.createElement("div", { className: `fenext-pagination ${className}` },
         react_1.default.createElement("div", { className: `fenext-pagination-content-item-page ${className}` }, showItemPage && (react_1.default.createElement(PaginationItemPage_1.PaginationItemPage, { ...classNameItemPage, ...props, _t: _t }))),
-        react_1.default.createElement("div", { className: `fenext-pagination-content-n-page ${className}` }, showNPage && minPage < (props?.nItems ?? minPage + 1) && (react_1.default.createElement(PaginationNPage_1.PaginationNPage, { ...classNameNPage, ...props, listNpage: listNpage, _t: _t })))));
+        react_1.default.createElement("div", { className: `fenext-pagination-content-n-page ${className}` }, showNPage && minPage < (props?.nItems ?? minPage + 1) && (react_1.default.createElement(PaginationNPage_1.PaginationNPage, { ...classNameNPage, ...props, listNpage: listNpage, defaultValue: props?.nItemsPage
+                ? listNpage.find((e) => `${e.id}` == `${props?.nItemsPage}`)
+                : undefined, _t: _t })))));
 };
 exports.Pagination = Pagination;
 //# sourceMappingURL=index.js.map

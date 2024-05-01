@@ -18,6 +18,10 @@ export interface PaginationNPageBaseProps extends Omit<InputSelectBaseProps, "op
      */
     listNpage?: InputSelectBaseProps["options"];
     /**
+     * List NPage for select.
+     */
+    defaultValueNpage?: InputSelectBaseProps["defaultValue"];
+    /**
      * onChange of nPage.
      */
     onChangeNPage?: InputSelectBaseProps["onChange"];
@@ -27,4 +31,4 @@ export interface PaginationNPageBaseProps extends Omit<InputSelectBaseProps, "op
  */
 export interface PaginationNPageProps extends PaginationNPageClassProps, PaginationNPageBaseProps {
 }
-export declare const PaginationNPage: ({ className, listNpage, onChangeNPage, ...props }: PaginationNPageProps) => React.JSX.Element;
+export declare const PaginationNPage: ({ className, defaultValueNpage, listNpage, onChangeNPage, ...props }: PaginationNPageProps) => React.JSX.Element;
