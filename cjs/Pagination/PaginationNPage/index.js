@@ -4,7 +4,7 @@ exports.PaginationNPage = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importDefault(require("react"));
 const Select_1 = require("../../Input/Select");
-const PaginationNPage = ({ className = "", defaultValueNpage, listNpage = [
+const PaginationNPage = ({ className = "", defaultValue, listNpage = [
     {
         id: "10",
         text: "10",
@@ -27,7 +27,7 @@ const PaginationNPage = ({ className = "", defaultValueNpage, listNpage = [
     },
 ], onChangeNPage, ...props }) => {
     return (react_1.default.createElement("div", { className: `fenext-pagination-npage ${className}` },
-        react_1.default.createElement(Select_1.InputSelect, { ...props, options: listNpage, onChange: onChangeNPage, isSelectChangeText: false, defaultValue: defaultValueNpage ?? listNpage[0] })));
+        react_1.default.createElement(Select_1.InputSelect, { ...props, options: listNpage, onChange: onChangeNPage, isSelectChangeText: false, defaultValue: defaultValue ?? listNpage[0] })));
 };
 exports.PaginationNPage = PaginationNPage;
 //# sourceMappingURL=index.js.map
