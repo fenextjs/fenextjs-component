@@ -44,13 +44,13 @@ export const InputSelectCountry = ({ ...props }: InputSelectCountryProps) => {
                 {...props}
                 options={options}
                 onParse={(e) => {
-                    const r : InputSelectItemOptionBaseProps<CountryProps> =  {
-                        id:e?.id ?? '',
-                        text:e?.text ?? '',
+                    const r: InputSelectItemOptionBaseProps<CountryProps> = {
+                        id: e?.id ?? "",
+                        text: e?.text ?? "",
                         img: e ? `${getRuteCountryImg(e)}` : undefined,
                         data: e,
                     };
-                    return r
+                    return r;
                 }}
                 loader={loader}
                 useLoader={true}
