@@ -18,6 +18,7 @@ const Profile: Story<InputSelectCountryProps> = (args) => (
 export const Index = Profile.bind({});
 
 const args: InputSelectCountryProps = {
+    
 };
 
 Index.args = args;
