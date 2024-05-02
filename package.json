@@ -50,11 +50,11 @@
   "homepage": "https://github.com/franciscoblancojn/fenextjs-component#readme",
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
-    "country-state-city-nextjs": "^8.1.0",
+    "country-state-city-nextjs": "^8.2.2",
     "fenextjs-date": "^2.0.0",
     "fenextjs-error": "^2.0.0",
     "fenextjs-functions": "^3.4.0",
-    "fenextjs-hook": "^8.5.0",
+    "fenextjs-hook": "^8.6.2",
     "fenextjs-img-placeholder": "^2.0.0",
     "fenextjs-interface": "^2.7.0",
     "fenextjs-svg": "3.2.0",

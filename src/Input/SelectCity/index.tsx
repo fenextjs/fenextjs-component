@@ -1,40 +1,43 @@
 import React, { useEffect, useState } from "react";
+import { InputSelectItemOptionBaseProps } from "../Select";
 import {
-    InputSelect,
-    InputSelectBaseProps,
-    InputSelectClassProps,
-} from "../Select";
-import { getDataCitys } from "country-state-city-nextjs";
-/**
- * Interface that defines CSS class properties for a SelectCity input component.
- */
-export interface InputSelectCityClassProps extends InputSelectClassProps {}
+    getDataCitys,
+    getDataCitysByStateAndCountry,
+    getDataCitysByCountry,
+} from "country-state-city-nextjs";
+import { InputSelectT, InputSelectTProps } from "../SelectT";
+import { CityProps, CountryProps, StateProps } from "fenextjs-interface";
 
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectCityBaseProps
-    extends Omit<InputSelectBaseProps, "options" | "useLoader" | "loader"> {
-    stateId?: number;
-}
-/**
- * Props interface for the InputSelectCity component. Extends both InputSelectCityBaseProps and InputSelectCityClassProps interfaces.
- */
 export interface InputSelectCityProps
-    extends InputSelectCityBaseProps,
-        InputSelectCityClassProps {}
+    extends Omit<
+        InputSelectTProps<CityProps>,
+        "options" | "onParce" | "useLoader" | "loader"
+    > {
+    country?: CountryProps;
+    state?: StateProps;
+}
 
 export const InputSelectCity = ({
-    stateId = undefined,
+    country = undefined,
+    state = undefined,
     ...props
 }: InputSelectCityProps) => {
-    const [loader, setLoader] = useState(false);
-    const [options, setOptions] = useState<InputSelectBaseProps["options"]>([]);
+    const [loader, setLoader] = useState(true);
+    const [options, setOptions] = useState<CityProps[]>([]);
     const onLoad = async () => {
-        let r = await getDataCitys();
-        if (stateId) {
-            r = [...r].filter((e) => e.id_state === stateId);
-        }
+        const getData = async () => {
+            if (country && state) {
+                return await getDataCitysByStateAndCountry(country, state);
+            }
+            if (country) {
+                return await getDataCitysByCountry(country);
+            }
+            return await getDataCitys();
+        };
+        const r = await getData();
         setOptions(r);
         setLoader(false);
     };
@@ -44,12 +47,19 @@ export const InputSelectCity = ({
 
     return (
         <>
-            <InputSelect
+            <InputSelectT<CityProps>
                 {...props}
                 options={options}
+                onParse={(e) => {
+                    const r: InputSelectItemOptionBaseProps<CityProps> = {
+                        id: e?.id ?? "",
+                        text: e?.text ?? "",
+                        data: e,
+                    };
+                    return r;
+                }}
                 loader={loader}
                 useLoader={true}
-                maxLengthShowOptions={50}
             />
         </>
     );

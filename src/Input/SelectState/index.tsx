@@ -1,40 +1,37 @@
 import React, { useEffect, useState } from "react";
+import { InputSelectItemOptionBaseProps } from "../Select";
 import {
-    InputSelect,
-    InputSelectBaseProps,
-    InputSelectClassProps,
-} from "../Select";
-import { getDataStates } from "country-state-city-nextjs";
-/**
- * Interface that defines CSS class properties for a SelectState input component.
- */
-export interface InputSelectStateClassProps extends InputSelectClassProps {}
+    getDataStates,
+    getDataStatesByCountry,
+} from "country-state-city-nextjs";
+import { InputSelectT, InputSelectTProps } from "../SelectT";
+import { StateProps, CountryProps } from "fenextjs-interface";
 
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectStateBaseProps
-    extends Omit<InputSelectBaseProps, "options" | "useLoader" | "loader"> {
-    countryId?: number;
-}
-/**
- * Props interface for the InputSelectState component. Extends both InputSelectStateBaseProps and InputSelectStateClassProps interfaces.
- */
 export interface InputSelectStateProps
-    extends InputSelectStateBaseProps,
-        InputSelectStateClassProps {}
+    extends Omit<
+        InputSelectTProps<StateProps>,
+        "options" | "onParce" | "useLoader" | "loader"
+    > {
+    country?: CountryProps;
+}
 
 export const InputSelectState = ({
-    countryId = undefined,
+    country = undefined,
     ...props
 }: InputSelectStateProps) => {
-    const [loader, setLoader] = useState(false);
-    const [options, setOptions] = useState<InputSelectBaseProps["options"]>([]);
+    const [loader, setLoader] = useState(true);
+    const [options, setOptions] = useState<StateProps[]>([]);
     const onLoad = async () => {
-        let r = await getDataStates();
-        if (countryId) {
-            r = [...r].filter((e) => e.id_country === countryId);
-        }
+        const getData = async () => {
+            if (country) {
+                return await getDataStatesByCountry(country);
+            }
+            return await getDataStates();
+        };
+        const r = await getData();
         setOptions(r);
         setLoader(false);
     };
@@ -44,12 +41,19 @@ export const InputSelectState = ({
 
     return (
         <>
-            <InputSelect
+            <InputSelectT<StateProps>
                 {...props}
                 options={options}
+                onParse={(e) => {
+                    const r: InputSelectItemOptionBaseProps<StateProps> = {
+                        id: e?.id ?? "",
+                        text: e?.text ?? "",
+                        data: e,
+                    };
+                    return r;
+                }}
                 loader={loader}
                 useLoader={true}
-                maxLengthShowOptions={50}
             />
         </>
     );
