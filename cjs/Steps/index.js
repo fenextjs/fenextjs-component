@@ -11,16 +11,16 @@ const Steps = ({ className = "", classNameContentItems = "", classNameContentSte
     const [loader, setLoader] = (0, react_1.useState)(false);
     const parseCurrentStep = (0, react_1.useCallback)((n) => {
         return Math.max(0, Math.min(n, items.length - 1));
-    }, [items]);
+    }, [items.length]);
     const [currentStep___, setCurrentStep__] = (0, react_1.useState)(defaultStep);
     const setCurrentStep = (e) => {
         setCurrentStep__(e);
         onSetStep?.(e);
     };
-    const currentStep = (0, react_1.useMemo)(() => parseCurrentStep(useStep ? step ?? currentStep___ : currentStep___), [currentStep___, useStep, step]);
+    const currentStep = (0, react_1.useMemo)(() => parseCurrentStep(useStep ? step ?? currentStep___ : currentStep___), [currentStep___, useStep, step, items.length]);
     const getNumberSum = (0, react_1.useCallback)((a) => {
         return parseCurrentStep(currentStep + a);
-    }, [currentStep]);
+    }, [currentStep, items.length]);
     const onMoveStep = async (add, fn) => {
         if (ref &&
             ref?.current &&
@@ -61,7 +61,13 @@ const Steps = ({ className = "", classNameContentItems = "", classNameContentSte
         if (e.keyCode == 39) {
             onNext_();
         }
-    }, [currentStep, useArrowKey, disabledBtnNext, disabledBtnPrev]);
+    }, [
+        currentStep,
+        useArrowKey,
+        disabledBtnNext,
+        disabledBtnPrev,
+        items.length,
+    ]);
     (0, useDocumentEvent_1.useDocumentEvent)({
         keydown,
     });
