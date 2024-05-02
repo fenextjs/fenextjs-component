@@ -4,7 +4,7 @@ import { CityProps, CountryProps, StateProps } from "fenextjs-interface";
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectCityProps extends Omit<InputSelectTProps<CityProps>, "options" | "onParce" | "useLoader" | "loader"> {
+export interface InputSelectCityProps extends Omit<InputSelectTProps<CityProps>, "options" | "onParse" | "useLoader" | "loader"> {
     country?: CountryProps;
     state?: StateProps;
 }
