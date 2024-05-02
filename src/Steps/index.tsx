@@ -207,7 +207,7 @@ export const Steps = ({
         (n: number) => {
             return Math.max(0, Math.min(n, items.length - 1));
         },
-        [items],
+        [items.length],
     );
     const [currentStep___, setCurrentStep__] = useState(defaultStep);
 
@@ -219,14 +219,14 @@ export const Steps = ({
     const currentStep = useMemo(
         () =>
             parseCurrentStep(useStep ? step ?? currentStep___ : currentStep___),
-        [currentStep___, useStep, step],
+        [currentStep___, useStep, step,items.length],
     );
 
     const getNumberSum = useCallback(
         (a: number) => {
             return parseCurrentStep(currentStep + a);
         },
-        [currentStep],
+        [currentStep,items.length],
     );
 
     const onMoveStep = async (add: number, fn?: (n: number) => any) => {
@@ -275,7 +275,7 @@ export const Steps = ({
                 onNext_();
             }
         },
-        [currentStep, useArrowKey, disabledBtnNext, disabledBtnPrev],
+        [currentStep, useArrowKey, disabledBtnNext, disabledBtnPrev,items.length],
     );
 
     useDocumentEvent({
