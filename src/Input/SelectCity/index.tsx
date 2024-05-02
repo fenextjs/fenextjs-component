@@ -14,7 +14,7 @@ import { CityProps, CountryProps, StateProps } from "fenextjs-interface";
 export interface InputSelectCityProps
     extends Omit<
         InputSelectTProps<CityProps>,
-        "options" | "onParce" | "useLoader" | "loader"
+        "options" | "onParse" | "useLoader" | "loader"
     > {
     country?: CountryProps;
     state?: StateProps;
