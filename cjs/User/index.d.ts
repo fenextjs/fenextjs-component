@@ -50,6 +50,6 @@ export interface UserClassProps {
 /**
  * Properties for the User component.
  */
-export interface UserProps extends UserBaseProps, UserClassProps {
+export interface UserComponentProps extends UserBaseProps, UserClassProps {
 }
-export declare const User: ({ className, classNameEmail, classNamePicture, classNameImg, classNameName, classNameLetter, classNameLoader, user, loader, }: UserProps) => React.JSX.Element;
+export declare const User: ({ className, classNameEmail, classNamePicture, classNameImg, classNameName, classNameLetter, classNameLoader, user, loader, }: UserComponentProps) => React.JSX.Element;
