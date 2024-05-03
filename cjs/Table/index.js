@@ -117,7 +117,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                                 react_1.default.createElement(Checkbox_1.InputCheckbox, { onChange: onCheckedAll, value: checkbox.every((e) => e?.__checkbox ?? false), useValue: true, _t: _t }))),
                             headerNotTr.map((h, i) => (react_1.default.createElement("th", { key: i, className: `fenext-table-content-table-th ${classNameTh} ${h?.className ?? ""}`, "data-col-id": h?.id, "data-col-text": h?.th },
                                 react_1.default.createElement(DropDown_1.DropDown, { header: react_1.default.createElement(react_1.default.Fragment, null, (0, fenextjs_functions_1._tValidate)(h.th, _t)) },
-                                    h.columnOptions?.orderBy ? (react_1.default.createElement(react_1.default.Fragment, null,
+                                    h?.columnOptions?.orderBy ? (react_1.default.createElement(react_1.default.Fragment, null,
                                         react_1.default.createElement("div", { onClick: () => {
                                                 onOrderBy?.({
                                                     id: h.id,
@@ -130,7 +130,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                                                     order: "DESC",
                                                 });
                                             }, className: `fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by` }, _t("Order DESC")))) : (react_1.default.createElement(react_1.default.Fragment, null)),
-                                    h.columnOptions?.showHidden ? (react_1.default.createElement(react_1.default.Fragment, null,
+                                    h?.columnOptions?.showHidden ? (react_1.default.createElement(react_1.default.Fragment, null,
                                         react_1.default.createElement(__1.InputRadio, { name: `${h.th}-${i}-show-hidden`, _t: _t, items: [
                                                 {
                                                     id: "show",
@@ -143,7 +143,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                                             ], defaultValue: {
                                                 id: "show",
                                                 label: "Show",
-                                            }, labelPosition: "left", onChange: (e) => {
+                                            }, labelPosition: "right", onChange: (e) => {
                                                 onShowHidden?.({
                                                     id: h.id,
                                                     showHidden: e?.id ==
