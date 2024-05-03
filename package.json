@@ -1,6 +1,6 @@
 {
   "name": "fenextjs-component",
-  "version": "8.19.0",
+  "version": "8.19.1",
   "description": "",
   "main": "./cjs/index.js",
   "module": "./cjs/index.js",
@@ -53,8 +53,8 @@
     "country-state-city-nextjs": "^8.2.2",
     "fenextjs-date": "^2.0.0",
     "fenextjs-error": "^2.0.0",
-    "fenextjs-functions": "^3.5.0",
-    "fenextjs-hook": "^8.6.2",
+    "fenextjs-functions": "^3.5.1",
+    "fenextjs-hook": "^8.6.3",
     "fenextjs-img-placeholder": "^2.0.0",
     "fenextjs-interface": "^2.7.0",
     "fenextjs-svg": "4.0.0",
