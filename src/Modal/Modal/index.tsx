@@ -31,6 +31,7 @@ export interface ModalProps
             | "disabledClose"
             | "useRender"
             | "name"
+            | "closeComponent"
         >,
         ModalClassProps {
     /**
@@ -69,6 +70,7 @@ export const Modal = ({
     useRender = false,
     name,
     activeByNameLocalStorage = false,
+    closeComponent,
 }: ModalProps) => {
     const { active, onActive, onClose } = useModal({
         active: activeProps,
@@ -88,6 +90,7 @@ export const Modal = ({
             </div>
             <ModalBase
                 {...classNameModal}
+                closeComponent={closeComponent}
                 onClose={onClose}
                 active={active}
                 type={type}
