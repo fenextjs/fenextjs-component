@@ -3,6 +3,7 @@ import { Story, Meta } from "@storybook/react";
 
 import { InputSearch, InputSearchProps, InputSearchResultProps, InputSearchTabFilterProps } from "./index";
 import { env_log } from "fenextjs-functions/cjs/env_log";
+import { sleep } from "fenextjs-functions";
 
 export default {
     title: "Input/InputSearch",
@@ -95,7 +96,7 @@ const Profile: Story<PropsWithChildren<InputSearchProps>> = (args) => (
 export const Index = Profile.bind({});
 Index.args = {
     onSearch: async (a:string,tabFilter?: InputSearchTabFilterProps[]) => {
-        await new Promise((r) => setTimeout(r, 500));
+        await sleep(500)
         if(tabFilter?.find(e=>e.id == "tab1")){
             return[
                 {

@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from "react";
 import { Story, Meta } from "@storybook/react";
 
 import { Steps, StepsProps } from "./index";
+import { sleep } from "fenextjs-functions";
 
 export default {
     title: "Steps/Steps",
@@ -15,7 +16,7 @@ const Profile: Story<PropsWithChildren<StepsProps>> = (args) => (
 export const Index = Profile.bind({});
 Index.args = {
     onNext: async () => {
-        await new Promise((r) => setTimeout(r, 1000));
+        await sleep(1000)
     },
     items: [
         {
@@ -250,7 +251,7 @@ Index.args = {
 export const useStep = Profile.bind({});
 useStep.args = {
     onNext: async () => {
-        await new Promise((r) => setTimeout(r, 1000));
+        await sleep(1000)
     },
     items: [
         {

@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import { parseNumberCount } from "fenextjs-functions/cjs/parse/NumberCount";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { _tValidate, sleep } from "fenextjs-functions";
 
 /**
  * Properties for the base Counter component.
@@ -74,7 +74,7 @@ export const Counter = ({
         const inc = dis / (time / 50);
         for (let i = 0; i < Math.abs(dis); i += Math.abs(inc)) {
             setNumberShow((pre) => pre + inc);
-            await new Promise((r) => setTimeout(r, 50));
+            await sleep(50)
         }
         setNumberShow(number);
     };
