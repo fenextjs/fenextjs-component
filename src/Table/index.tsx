@@ -482,7 +482,7 @@ export const Table = <T,>({
                                         <DropDown
                                             header={<>{_tValidate(h.th, _t)}</>}
                                         >
-                                            {h.columnOptions?.orderBy ? (
+                                            {h?.columnOptions?.orderBy ? (
                                                 <>
                                                     <div
                                                         onClick={() => {
@@ -510,7 +510,7 @@ export const Table = <T,>({
                                             ) : (
                                                 <></>
                                             )}
-                                            {h.columnOptions?.showHidden ? (
+                                            {h?.columnOptions?.showHidden ? (
                                                 <>
                                                     <InputRadio
                                                         name={`${h.th}-${i}-show-hidden`}
@@ -529,7 +529,7 @@ export const Table = <T,>({
                                                             id: "show",
                                                             label: "Show",
                                                         }}
-                                                        labelPosition="left"
+                                                        labelPosition="right"
                                                         onChange={(e) => {
                                                             onShowHidden?.({
                                                                 id: h.id,
