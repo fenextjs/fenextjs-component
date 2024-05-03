@@ -22,7 +22,7 @@ export interface ModalBaseBaseProps extends PropsWithChildren {
     /**
      * Type of modal.
      */
-    type?: "top" | "left" | "right" | "bottom" | "center" | "full" | "layout-grid";
+    type?: "top" | "left" | "right" | "bottom" | "center" | "full" | "layout-grid" | "top-right" | "top-left" | "bottom-right" | "bottom-left";
     /**
      * Type of btn close for modal.
      */
