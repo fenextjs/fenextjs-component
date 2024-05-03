@@ -74,7 +74,7 @@ export const Counter = ({
         const inc = dis / (time / 50);
         for (let i = 0; i < Math.abs(dis); i += Math.abs(inc)) {
             setNumberShow((pre) => pre + inc);
-            await sleep(50)
+            await sleep(50);
         }
         setNumberShow(number);
     };

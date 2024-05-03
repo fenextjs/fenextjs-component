@@ -12,7 +12,7 @@ const Counter = ({ className = "", classNameNumber = "", classNameText = "", num
         const inc = dis / (time / 50);
         for (let i = 0; i < Math.abs(dis); i += Math.abs(inc)) {
             setNumberShow((pre) => pre + inc);
-            await new Promise((r) => setTimeout(r, 50));
+            await (0, fenextjs_functions_1.sleep)(50);
         }
         setNumberShow(number);
     };
