@@ -7,7 +7,7 @@ import { AlertProps as AlertInterface } from "fenextjs-interface";
 /**
  * Properties for the Alert component.
  */
-export interface AlertProps extends _TProps, AlertInterface {
+export interface AlertComponentProps extends _TProps, AlertInterface {
     /**
      * The class name for the component.
      */
@@ -30,7 +30,7 @@ export const Alert = ({
     data,
     _t,
     onClose,
-}: AlertProps) => {
+}: AlertComponentProps) => {
     return (
         <>
             <div

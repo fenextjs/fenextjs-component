@@ -54,7 +54,7 @@ export interface UserClassProps {
 /**
  * Properties for the User component.
  */
-export interface UserProps extends UserBaseProps, UserClassProps {}
+export interface UserComponentProps extends UserBaseProps, UserClassProps {}
 
 export const User = ({
     className = "",
@@ -66,7 +66,7 @@ export const User = ({
     classNameLoader = {},
     user,
     loader = false,
-}: UserProps) => {
+}: UserComponentProps) => {
     if (loader) {
         return (
             <>

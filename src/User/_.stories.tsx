@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import { Story, Meta } from "@storybook/react";
 
-import { User, UserProps } from "./index";
+import { User, UserComponentProps } from "./index";
 import { UserRoleProps, UserStatusProps } from "fenextjs-interface/cjs/User";
 
 export default {
@@ -9,15 +9,19 @@ export default {
     component: User,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<UserProps>> = (args) => (
+const Profile: Story<PropsWithChildren<UserComponentProps>> = (args) => (
     <User {...args}/>
 );
 
 export const Index = Profile.bind({});
-Index.args = {
+
+const args :UserComponentProps = {
+
     user:{
         id:"1",
-        img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/02.jpg",
+        img:{
+            src:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/02.jpg",
+        },
         dateCreate:new Date(),
         email:"email@gmail.com",
         name:"Jhon Doe",
@@ -27,7 +31,9 @@ Index.args = {
         
 
     }
-} as UserProps;
+}
+
+Index.args = args
 
 export const NotImg = Profile.bind({});
 NotImg.args = {
@@ -42,4 +48,4 @@ NotImg.args = {
         
 
     }
-} as UserProps;
+} as UserComponentProps;
