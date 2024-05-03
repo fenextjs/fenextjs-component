@@ -5,13 +5,12 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Close_1 = require("fenextjs-svg/cjs/Close");
 const useModalPos_1 = require("./useModalPos");
-const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", classNameClose = "", active = false, childrenUseActiveForShowHidden = false, disabledClose = false, type = "center", typeClose = "out", onClose, children, useRender = false, name, }) => {
+const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", classNameClose = "", active = false, childrenUseActiveForShowHidden = false, disabledClose = false, type = "center", typeClose = "out", onClose, children, useRender = false, name, closeComponent = react_1.default.createElement(Close_1.Close, null), }) => {
     const uuid = (0, react_1.useMemo)(() => new Date().getTime(), [active]);
     const CLOSECOMPONENTE = (0, react_1.useMemo)(() => {
         return (react_1.default.createElement(react_1.default.Fragment, null,
-            react_1.default.createElement("div", { onClick: disabledClose ? () => { } : onClose, className: `fenext-modal-base-close fenext-modal-base-close-${type}  fenext-modal-base-close-${active ? "active" : "inactive"} ${classNameClose}` },
-                react_1.default.createElement(Close_1.Close, null))));
-    }, [onClose, type, active, classNameClose, disabledClose]);
+            react_1.default.createElement("div", { onClick: disabledClose ? () => { } : onClose, className: `fenext-modal-base-close fenext-modal-base-close-${type}  fenext-modal-base-close-${active ? "active" : "inactive"} ${classNameClose}` }, closeComponent)));
+    }, [onClose, type, active, classNameClose, disabledClose, closeComponent]);
     const CONTENT = (0, react_1.useMemo)(() => {
         return (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement("dialog", { open: active, className: `fenext-modal-base-dialog fenext-modal-base-dialog-close-${typeClose} fenext-modal-base-dialog-${active ? "active" : "inactive"} fenext-modal-base-dialog-disabled-close-${disabledClose ? "active" : "inactive"}`, "data-name": name },
@@ -24,13 +23,12 @@ const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", cl
                         }
                     } },
                     react_1.default.createElement("div", { className: `fenext-modal-base-content ${classNameContent} ` },
+                        CLOSECOMPONENTE,
                         ((childrenUseActiveForShowHidden && active) ||
                             !childrenUseActiveForShowHidden) &&
-                            children,
-                        CLOSECOMPONENTE)),
+                            children)),
                 CLOSECOMPONENTE)));
     }, [
-        CLOSECOMPONENTE,
         CLOSECOMPONENTE,
         childrenUseActiveForShowHidden,
         active,

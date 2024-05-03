@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, ReactNode } from "react";
 /**
  * Properties for the base ModalBase component.
  */
@@ -35,6 +35,10 @@ export interface ModalBaseBaseProps extends PropsWithChildren {
      * name of Modal.
      */
     name?: string;
+    /**
+     * closeComponent of Modal.
+     */
+    closeComponent?: ReactNode;
 }
 /**
  * Properties for the class of the ModalBase component.
@@ -62,4 +66,4 @@ export interface ModalBaseClassProps {
  */
 export interface ModalBaseProps extends ModalBaseBaseProps, ModalBaseClassProps {
 }
-export declare const ModalBase: ({ className, classNameBg, classNameContent, classNameClose, active, childrenUseActiveForShowHidden, disabledClose, type, typeClose, onClose, children, useRender, name, }: ModalBaseProps) => React.JSX.Element;
+export declare const ModalBase: ({ className, classNameBg, classNameContent, classNameClose, active, childrenUseActiveForShowHidden, disabledClose, type, typeClose, onClose, children, useRender, name, closeComponent, }: ModalBaseProps) => React.JSX.Element;
