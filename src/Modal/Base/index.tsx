@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useMemo } from "react";
+import React, { PropsWithChildren, ReactNode, useMemo } from "react";
 import { Close } from "fenextjs-svg/cjs/Close";
 import { useModalPos } from "./useModalPos";
 /**
@@ -44,6 +44,10 @@ export interface ModalBaseBaseProps extends PropsWithChildren {
      * name of Modal.
      */
     name?: string;
+    /**
+     * closeComponent of Modal.
+     */
+    closeComponent?: ReactNode;
 }
 
 /**
@@ -90,6 +94,7 @@ export const ModalBase = ({
     children,
     useRender = false,
     name,
+    closeComponent = <Close />,
 }: ModalBaseProps) => {
     const uuid = useMemo(() => new Date().getTime(), [active]);
 
@@ -102,11 +107,11 @@ export const ModalBase = ({
                         active ? "active" : "inactive"
                     } ${classNameClose}`}
                 >
-                    <Close />
+                    {closeComponent}
                 </div>
             </>
         );
-    }, [onClose, type, active, classNameClose, disabledClose]);
+    }, [onClose, type, active, classNameClose, disabledClose, closeComponent]);
 
     const CONTENT = useMemo(() => {
         return (
@@ -144,10 +149,10 @@ export const ModalBase = ({
                         <div
                             className={`fenext-modal-base-content ${classNameContent} `}
                         >
+                            {CLOSECOMPONENTE}
                             {((childrenUseActiveForShowHidden && active) ||
                                 !childrenUseActiveForShowHidden) &&
                                 children}
-                            {CLOSECOMPONENTE}
                         </div>
                     </div>
                     {CLOSECOMPONENTE}
@@ -155,7 +160,6 @@ export const ModalBase = ({
             </>
         );
     }, [
-        CLOSECOMPONENTE,
         CLOSECOMPONENTE,
         childrenUseActiveForShowHidden,
         active,
