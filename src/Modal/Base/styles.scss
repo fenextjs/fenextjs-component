@@ -219,20 +219,28 @@
         }
     }
     &-top-right {
+        align-items: flex-start;
         align-content: flex-start;
         justify-items: flex-end;
+        justify-content: flex-end;
     }
     &-top-left {
+        align-items: flex-start;
         align-content: flex-start;
         justify-items: flex-start;
+        justify-content: flex-start;
     }
     &-bottom-right {
+        align-items: flex-end;
         align-content: flex-end;
         justify-items: flex-end;
+        justify-content: flex-end;
     }
     &-bottom-left {
+        align-items: flex-end;
         align-content: flex-end;
         justify-items: flex-start;
+        justify-content: flex-start;
     }
 
     &-full {
