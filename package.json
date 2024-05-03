@@ -57,7 +57,7 @@
     "fenextjs-hook": "^8.6.2",
     "fenextjs-img-placeholder": "^2.0.0",
     "fenextjs-interface": "^2.7.0",
-    "fenextjs-svg": "3.2.1",
+    "fenextjs-svg": "4.0.0",
     "fenextjs-validator": "^3.1.0",
     "next": "13.5.1",
     "qr-scanner": "^1.4.2",

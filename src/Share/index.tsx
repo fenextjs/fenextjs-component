@@ -7,7 +7,7 @@ import { WhatsappBox } from "fenextjs-svg/cjs/Whatsapp";
 import { FacebookBox } from "fenextjs-svg/cjs/Facebook";
 import { TwitterBox } from "fenextjs-svg/cjs/Twitter";
 import { EmailBox } from "fenextjs-svg/cjs/Email";
-import { CopyBox as SvgCopyBox } from "fenextjs-svg/cjs/Copy";
+import { SvgCopyBox } from "fenextjs-svg/cjs/Copy";
 import { Copy } from "../Copy";
 import { _TProps } from "fenextjs-interface";
 import { _tValidate } from "fenextjs-functions";

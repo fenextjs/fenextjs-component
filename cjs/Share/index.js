@@ -38,7 +38,7 @@ const Share = ({ className = "", share = "", ButtonProps = {
         },
         copy: {
             urlShare: "",
-            icon: react_1.default.createElement(Copy_1.CopyBox, null),
+            icon: react_1.default.createElement(Copy_1.SvgCopyBox, null),
         },
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,

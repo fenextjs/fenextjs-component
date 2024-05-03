@@ -1,5 +1,5 @@
 import React from "react";
-import { Theme as SvgTheme } from "fenextjs-svg/cjs/Theme";
+import { SvgTheme } from "fenextjs-svg/cjs/Theme";
 import { ThemeConst } from "fenextjs-interface/cjs/Theme";
 import { useTheme } from "fenextjs-hook/cjs/useTheme";
 import { _TProps } from "fenextjs-interface";

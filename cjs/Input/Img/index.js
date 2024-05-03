@@ -13,7 +13,7 @@ const fenextjs_functions_1 = require("fenextjs-functions");
 const InputImg = ({ className = "", classNameContentIcon = "", classNameText = {}, classNameTitle = {
     tag: "h2",
 }, classNameUp = "", classNameProgress = "", classNameRemove = "", classNameImg = "", icon = (react_1.default.createElement(react_1.default.Fragment, null,
-    react_1.default.createElement(Img_1.Img, null))), text = "Drag Image", title = "Add Image", defaultValue = {
+    react_1.default.createElement(Img_1.SvgImg, null))), text = "Drag Image", title = "Add Image", defaultValue = {
     fileData: "",
     text: "",
 }, parseProgress = (e) => `Imging . . . ${e.toFixed(0)}%`, onChange, onRemove, _t, ...props }) => {

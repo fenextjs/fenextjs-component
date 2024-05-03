@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { InputFile, InputFileBaseProps } from "../File";
 import { Title, TitleProps } from "../../Title";
 import { Text, TextProps } from "../../Text";
-import { Img as SvgImg } from "fenextjs-svg/cjs/Img";
+import { SvgImg } from "fenextjs-svg/cjs/Img";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { FileProps } from "fenextjs-interface/cjs/File";
 import { ErrorProps } from "fenextjs-interface/cjs/Error";
