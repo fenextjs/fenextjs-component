@@ -48,7 +48,7 @@ Index.args = {
         },
         {
             id: "name",
-            th: "Name",
+            th: <>Name</>,
             parse: (data: TestItemTable) => {
                 return <a href={`#${data.id}`}>{data.name}</a>;
             },
@@ -62,7 +62,7 @@ Index.args = {
             th: "Date",
             parse: (data: TestItemTable) => data.date.toDateString(),
             columnOptions:{
-                orderBy:true,
+                // orderBy:true,
                 showHidden:true
             }
         },
@@ -70,7 +70,7 @@ Index.args = {
             id: "dni",
             th: "Documento",
             columnOptions:{
-                orderBy:true,
+                // orderBy:true,
                 showHidden:true
             }
         },
@@ -78,7 +78,7 @@ Index.args = {
             id: "amount",
             th: "Monto",
             columnOptions:{
-                orderBy:true,
+                // orderBy:true,
                 showHidden:true
             }
         },
@@ -86,7 +86,7 @@ Index.args = {
             id: "quanty",
             th: "Cantidad",
             columnOptions:{
-                orderBy:true,
+                // orderBy:true,
                 showHidden:true
             }
         },
@@ -97,7 +97,7 @@ Index.args = {
                 return <a href={`#${org?.id}`}>{org?.name}</a>;
             },
             columnOptions:{
-                orderBy:true,
+                // orderBy:true,
                 showHidden:true
             },
             defaultShowHidden:"hidden"
@@ -109,7 +109,7 @@ Index.args = {
                 return <a href={`#${org?.id}`}>{org?.name}</a>;
             },
             columnOptions:{
-                orderBy:true,
+                // orderBy:true,
                 showHidden:true
             }
         },
@@ -119,10 +119,10 @@ Index.args = {
             parse: ({ org }: TestItemTable) => {
                 return <a href={`#${org?.id}`}>{org?.name}</a>;
             },
-            columnOptions:{
-                orderBy:true,
-                showHidden:true
-            }
+            // columnOptions:{
+            //     orderBy:true,
+            //     showHidden:true
+            // }
         },
     ],
     items: new Array(50).fill(1).map((e, i) => {
@@ -146,11 +146,11 @@ Index.args = {
         // nItemsPage:20
     },
     loader: false,
-    onOrderBy:(a)=>{
-        env_log(a,{
-            name:"Order By"
-        })
-    },
+    // onOrderBy:(a)=>{
+    //     env_log(a,{
+    //         name:"Order By"
+    //     })
+    // },
 } as TableProps<TestItemTable>
 
 export const OneItem = TableIndex.bind({});

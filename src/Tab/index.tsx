@@ -70,6 +70,11 @@ export interface TabBaseProps<T = string> extends _TProps {
     defaultTab?: number;
 
     /**
+     * Index of the tab to be shown by default.
+     */
+    activeTab?: number;
+
+    /**
      * Component of before list  Tabs Header;
      */
     beforeTabs?: React.ReactNode;
@@ -189,6 +194,7 @@ export const Tab = <T = string,>({
 
     items = [],
     defaultTab = 0,
+    activeTab = undefined,
     afterTabs = undefined,
     beforeTabs = undefined,
     onChange,
@@ -197,9 +203,10 @@ export const Tab = <T = string,>({
     _t,
     useCount = false,
 }: TabProps<T>) => {
-    const [tabSelect, setTabSelect] = useState(
+    const [_tabSelect, setTabSelect] = useState(
         Math.max(0, Math.min(defaultTab, items.length - 1)),
     );
+    const tabSelect = useMemo(() => activeTab ?? _tabSelect, [activeTab,_tabSelect])
 
     const CHead = useMemo(() => {
         return items.map((item, i) => {
