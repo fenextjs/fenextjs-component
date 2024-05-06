@@ -29,8 +29,9 @@ exports.parseTabCount = parseTabCount;
  * @param items Array of `TabItemProps` objects representing the tabs.
  * @param defaultTab Index of the tab to be shown by default.
  */
-const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", classNameHeadItem = "", classNameHeadItemActive = "", classNameBody = "", classNameBodyItem = "", classNameContentAfterHead = "", classNameContentBeforeHead = "", items = [], defaultTab = 0, afterTabs = undefined, beforeTabs = undefined, onChange, tabScrollActive = false, validataTabOneHiddenHeader = true, _t, useCount = false, }) => {
-    const [tabSelect, setTabSelect] = (0, react_1.useState)(Math.max(0, Math.min(defaultTab, items.length - 1)));
+const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", classNameHeadItem = "", classNameHeadItemActive = "", classNameBody = "", classNameBodyItem = "", classNameContentAfterHead = "", classNameContentBeforeHead = "", items = [], defaultTab = 0, activeTab = undefined, afterTabs = undefined, beforeTabs = undefined, onChange, tabScrollActive = false, validataTabOneHiddenHeader = true, _t, useCount = false, }) => {
+    const [_tabSelect, setTabSelect] = (0, react_1.useState)(Math.max(0, Math.min(defaultTab, items.length - 1)));
+    const tabSelect = (0, react_1.useMemo)(() => activeTab ?? _tabSelect, [activeTab, _tabSelect]);
     const CHead = (0, react_1.useMemo)(() => {
         return items.map((item, i) => {
             const ITEM = (0, exports.parseTabCount)({

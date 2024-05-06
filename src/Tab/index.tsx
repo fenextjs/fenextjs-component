@@ -206,7 +206,10 @@ export const Tab = <T = string,>({
     const [_tabSelect, setTabSelect] = useState(
         Math.max(0, Math.min(defaultTab, items.length - 1)),
     );
-    const tabSelect = useMemo(() => activeTab ?? _tabSelect, [activeTab,_tabSelect])
+    const tabSelect = useMemo(
+        () => activeTab ?? _tabSelect,
+        [activeTab, _tabSelect],
+    );
 
     const CHead = useMemo(() => {
         return items.map((item, i) => {

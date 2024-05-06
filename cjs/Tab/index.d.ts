@@ -58,6 +58,10 @@ export interface TabBaseProps<T = string> extends _TProps {
      */
     defaultTab?: number;
     /**
+     * Index of the tab to be shown by default.
+     */
+    activeTab?: number;
+    /**
      * Component of before list  Tabs Header;
      */
     beforeTabs?: React.ReactNode;
@@ -139,4 +143,4 @@ export declare const parseTabCount: <T>(d: TabItemProps<T>) => TabItemProps<T>;
  * @param items Array of `TabItemProps` objects representing the tabs.
  * @param defaultTab Index of the tab to be shown by default.
  */
-export declare const Tab: <T = string>({ className, classNameContentHead, classNameHead, classNameHeadItem, classNameHeadItemActive, classNameBody, classNameBodyItem, classNameContentAfterHead, classNameContentBeforeHead, items, defaultTab, afterTabs, beforeTabs, onChange, tabScrollActive, validataTabOneHiddenHeader, _t, useCount, }: TabProps<T>) => React.JSX.Element;
+export declare const Tab: <T = string>({ className, classNameContentHead, classNameHead, classNameHeadItem, classNameHeadItemActive, classNameBody, classNameBodyItem, classNameContentAfterHead, classNameContentBeforeHead, items, defaultTab, activeTab, afterTabs, beforeTabs, onChange, tabScrollActive, validataTabOneHiddenHeader, _t, useCount, }: TabProps<T>) => React.JSX.Element;
