@@ -238,13 +238,17 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                             react_1.default.createElement("div", { className: "fenext-select-content-icon-arrow" }, icon),
                             react_1.default.createElement("div", { className: "fenext-select-content-icon-search" }, iconSearch))), onBlur: onBlur, onChange: onChangeText_, value: dataMemo?.text ?? "", onEnter: onEnter, error: errorInput, autoComplete: false, errorWithIsChange: errorWithIsChange, extraInContentInput: react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("button", { className: `fenext-select-clear`, onClick: onClear }, (0, fenextjs_functions_1._tValidate)(clearContent, _t)),
-                        showOptionIconImg && (react_1.default.createElement(react_1.default.Fragment, null, data?.option?.img ? (react_1.default.createElement(react_1.default.Fragment, null,
+                        showOptionIconImg && (react_1.default.createElement(react_1.default.Fragment, null, dataMemo?.option?.img ? (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement("div", { className: "fenext-select-option-selected-img" },
-                                react_1.default.createElement("img", { src: data?.option?.img })))) : (react_1.default.createElement(react_1.default.Fragment, null, data?.option?.imgComponent ? (react_1.default.createElement(react_1.default.Fragment, null,
+                                react_1.default.createElement("img", { src: dataMemo?.option
+                                        ?.img })))) : (react_1.default.createElement(react_1.default.Fragment, null, dataMemo?.option
+                            ?.imgComponent ? (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement("div", { className: "fenext-select-option-selected-img" },
-                                react_1.default.createElement(Img_1.Img, { ...data?.option
-                                        ?.imgComponent })))) : (react_1.default.createElement(react_1.default.Fragment, null, data?.option?.icon && (react_1.default.createElement(react_1.default.Fragment, null,
-                            react_1.default.createElement("div", { className: "fenext-select-option-selected-img" }, data
+                                react_1.default.createElement(Img_1.Img, { ...dataMemo
+                                        ?.option
+                                        ?.imgComponent })))) : (react_1.default.createElement(react_1.default.Fragment, null, dataMemo?.option
+                            ?.icon && (react_1.default.createElement(react_1.default.Fragment, null,
+                            react_1.default.createElement("div", { className: "fenext-select-option-selected-img" }, dataMemo
                                 ?.option
                                 ?.icon)))))))))), validator: undefined })),
             typeSelect == "div" &&

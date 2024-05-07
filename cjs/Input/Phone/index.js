@@ -5,7 +5,6 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Yup = tslib_1.__importStar(require("yup"));
 const Text_1 = require("../Text");
-const Select_1 = require("../Select");
 const useData_1 = require("fenextjs-hook/cjs/useData");
 const fenextjs_error_1 = require("fenextjs-error");
 const Error_1 = require("../../Error");
@@ -14,6 +13,8 @@ const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_validator_1 = require("fenextjs-validator");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const useJsonString_1 = require("fenextjs-hook/cjs/useJsonString");
+const country_state_city_nextjs_1 = require("country-state-city-nextjs");
+const SelectT_1 = require("../SelectT");
 /**
  * Component that renders a checkbox input.
  * Takes an InputPhoneProps object as props.
@@ -25,7 +26,6 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
     code: "+57",
     number: "",
     tel: "",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png",
 }, value: valueProps = undefined, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, ...props }) => {
     const { value, defaultValue, onChange } = (0, useJsonString_1.useJsonString)({
         parseJson_to_String: parseJson_to_String ?? fenextjs_functions_1.parsePhone_to_String,
@@ -66,8 +66,8 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
         }
     };
     const loadPhones = async () => {
-        const { phones } = await Promise.resolve().then(() => tslib_1.__importStar(require("./options")));
-        setPhones(phones);
+        const countrys = await (0, country_state_city_nextjs_1.getDataCountrys)();
+        setPhones(countrys);
         setlLoadPhoneCodes(true);
     };
     (0, react_1.useEffect)(() => {
@@ -86,28 +86,27 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                 required && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement("small", { className: "fenext-input-required" }, (0, fenextjs_functions_1._tValidate)(requiredText, _t))))),
             react_1.default.createElement("div", { className: `fenext-input-phone-code ${classNamePhoneCode}` },
-                react_1.default.createElement(Select_1.InputSelect, { ...classNameSelectCode, key: data.code, placeholder: placeholderCode, _t: _t, options: phones.map((phone) => {
+                react_1.default.createElement(SelectT_1.InputSelectT, { ...classNameSelectCode, classNameList: `fenext-input-phone-select-code ${classNameSelectCode?.classNameList ?? ""}`, key: `${defaultValue?.code}-${value?.code}-${phones.length}`, placeholder: placeholderCode, _t: _t, options: phones, onParse: (e) => {
                         return {
-                            id: phone.code,
-                            text: phone.code,
-                            img: phone.img,
-                            data: phone,
+                            id: e?.code_phone ?? "",
+                            text: e?.code_phone ?? "",
+                            data: e,
+                            img: e ? `${(0, country_state_city_nextjs_1.getRuteCountryImg)(e)}` : undefined,
                         };
-                    }), disabled: !loadPhoneCodes || disabled || disabledSelectCode, defaultValue: data?.code
-                        ? {
-                            id: data.code,
-                            text: data.code,
-                            img: data.img,
-                            data: data,
-                        }
-                        : undefined, onChange: (option) => {
-                        if (option?.data?.code) {
+                    }, disabled: !loadPhoneCodes || disabled || disabledSelectCode, defaultValue: phones.find((e) => e.code_phone == defaultValue?.code), value: value
+                        ? phones.find((e) => e.code_phone == value?.code)
+                        : undefined, onChange: (e) => {
+                        if (e?.code_phone) {
                             onConcatData({
-                                code: option?.data?.code,
-                                img: option?.data?.img,
+                                code: e?.code_phone,
+                                img: e
+                                    ? `${(0, country_state_city_nextjs_1.getRuteCountryImg)(e)}`
+                                    : undefined,
                             });
                         }
-                    }, regExp: /[^0-9+-]/g, regExpReplace: "", icon: react_1.default.createElement(react_1.default.Fragment, null), changeByFirstOptionInOnBlur: true, optional: false })),
+                    }, regExp: /[^0-9+-]/g, regExpReplace: "", icon: react_1.default.createElement(react_1.default.Fragment, null), 
+                    // changeByFirstOptionInOnBlur={true}
+                    optional: false, showOptionIconImg: true })),
             react_1.default.createElement("div", { className: `fenext-input-phone-text ${classNamePhoneNumber}` },
                 react_1.default.createElement(Text_1.InputText, { ...classNameInputNumber, ...props, type: "text", onChange: onChangeData("number"), loader: !loadPhoneCodes || loader, disabled: !loadPhoneCodes || disabled, placeholder: placeholder, defaultValue: data?.number, value: value?.number, _t: _t, validator: validator?.getObjectValidator?.()?.number, inputMode: "numeric", regExpReplace: "", regExp: /[^0-9]/g, optional: false })),
             ((props?.error ?? error) || (errorFenext && isChange)) && (react_1.default.createElement(Error_1.ErrorComponent, { error: errorFenext ?? props?.error ?? error, className: `fenext-input-error ${classNameError}`, _t: _t })))));
