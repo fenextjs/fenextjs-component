@@ -640,32 +640,38 @@ export const InputSelect = <T = any,>({
                                 </button>
                                 {showOptionIconImg && (
                                     <>
-                                        {data?.option?.img ? (
+                                        {dataMemo?.option?.img ? (
                                             <>
                                                 <div className="fenext-select-option-selected-img">
                                                     <img
-                                                        src={data?.option?.img}
+                                                        src={
+                                                            dataMemo?.option
+                                                                ?.img
+                                                        }
                                                     />
                                                 </div>
                                             </>
                                         ) : (
                                             <>
-                                                {data?.option?.imgComponent ? (
+                                                {dataMemo?.option
+                                                    ?.imgComponent ? (
                                                     <>
                                                         <div className="fenext-select-option-selected-img">
                                                             <Img
-                                                                {...data?.option
+                                                                {...dataMemo
+                                                                    ?.option
                                                                     ?.imgComponent}
                                                             />
                                                         </div>
                                                     </>
                                                 ) : (
                                                     <>
-                                                        {data?.option?.icon && (
+                                                        {dataMemo?.option
+                                                            ?.icon && (
                                                             <>
                                                                 <div className="fenext-select-option-selected-img">
                                                                     {
-                                                                        data
+                                                                        dataMemo
                                                                             ?.option
                                                                             ?.icon
                                                                     }

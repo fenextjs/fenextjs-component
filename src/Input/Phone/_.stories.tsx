@@ -18,6 +18,11 @@ export const Index = Profile.bind({});
 const args  : InputPhoneProps = {
     label:"Label",
     // onChange:console.log,
+    // value:{
+    //     code: "+58",
+    //     number: "22222",
+    //     tel: "+58 22222",
+    // },
     // onChangeJsonString:console.log,
     // defaultValueJsonString:`{"code":"+57","number":"2123123","tel":"+57 2123123","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png"}`
 }

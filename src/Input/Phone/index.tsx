@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
 
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../Text";
-import { InputSelect, InputSelectClassProps } from "../Select";
+import { InputSelectClassProps } from "../Select";
 import { PhoneProps } from "fenextjs-interface/cjs/Phone";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorComponent } from "../../Error";
-import { ErrorCode } from "fenextjs-interface";
+import { CountryProps, ErrorCode } from "fenextjs-interface";
 import { useValidator } from "fenextjs-hook";
 import { FenextjsValidator, FenextjsValidatorClass } from "fenextjs-validator";
 import {
@@ -19,6 +19,8 @@ import {
     useJsonString,
     useJsonStringProps,
 } from "fenextjs-hook/cjs/useJsonString";
+import { getDataCountrys, getRuteCountryImg } from "country-state-city-nextjs";
+import { InputSelectT } from "../SelectT";
 
 /**
  * Interface that defines CSS class properties for a checkbox input component.
@@ -124,7 +126,6 @@ export const InputPhone = ({
         code: "+57",
         number: "",
         tel: "",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png",
     },
     value: valueProps = undefined,
     onChange: onChangeProps,
@@ -167,9 +168,7 @@ export const InputPhone = ({
         },
         onChangeDataAfter: (data: Partial<PhoneProps>) => onValidatePhone(data),
     });
-    const [phones, setPhones] = useState<Pick<PhoneProps, "code" | "img">[]>(
-        [],
-    );
+    const [phones, setPhones] = useState<CountryProps[]>([]);
     const onValidatePhone = async (data: Partial<PhoneProps>) => {
         try {
             const valid = await yup.validate(data);
@@ -186,8 +185,8 @@ export const InputPhone = ({
         }
     };
     const loadPhones = async () => {
-        const { phones } = await import("./options");
-        setPhones(phones);
+        const countrys: CountryProps[] = await getDataCountrys();
+        setPhones(countrys);
         setlLoadPhoneCodes(true);
     };
     useEffect(() => {
@@ -224,45 +223,50 @@ export const InputPhone = ({
                 <div
                     className={`fenext-input-phone-code ${classNamePhoneCode}`}
                 >
-                    <InputSelect<Partial<PhoneProps>>
+                    <InputSelectT<CountryProps>
                         {...classNameSelectCode}
-                        key={data.code}
+                        classNameList={`fenext-input-phone-select-code ${classNameSelectCode?.classNameList ?? ""}`}
+                        key={`${defaultValue?.code}-${value?.code}-${phones.length}`}
                         placeholder={placeholderCode}
                         _t={_t}
-                        options={phones.map((phone) => {
+                        options={phones}
+                        onParse={(e) => {
                             return {
-                                id: phone.code,
-                                text: phone.code,
-                                img: phone.img,
-                                data: phone,
+                                id: e?.code_phone ?? "",
+                                text: e?.code_phone ?? "",
+                                data: e,
+                                img: e ? `${getRuteCountryImg(e)}` : undefined,
                             };
-                        })}
+                        }}
                         disabled={
                             !loadPhoneCodes || disabled || disabledSelectCode
                         }
-                        defaultValue={
-                            data?.code
-                                ? {
-                                      id: data.code,
-                                      text: data.code,
-                                      img: data.img,
-                                      data: data,
-                                  }
+                        defaultValue={phones.find(
+                            (e) => e.code_phone == defaultValue?.code,
+                        )}
+                        value={
+                            value
+                                ? phones.find(
+                                      (e) => e.code_phone == value?.code,
+                                  )
                                 : undefined
                         }
-                        onChange={(option) => {
-                            if (option?.data?.code) {
+                        onChange={(e) => {
+                            if (e?.code_phone) {
                                 onConcatData({
-                                    code: option?.data?.code,
-                                    img: option?.data?.img,
+                                    code: e?.code_phone,
+                                    img: e
+                                        ? `${getRuteCountryImg(e)}`
+                                        : undefined,
                                 });
                             }
                         }}
                         regExp={/[^0-9+-]/g}
                         regExpReplace=""
                         icon={<></>}
-                        changeByFirstOptionInOnBlur={true}
+                        // changeByFirstOptionInOnBlur={true}
                         optional={false}
+                        showOptionIconImg={true}
                     />
                 </div>
                 <div

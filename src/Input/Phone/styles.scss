@@ -20,4 +20,13 @@
     .fenext-error {
         grid-column: 1/-1;
     }
+    .fenext-select-option-selected-img {
+        left: 1rem;
+        max-width: 1.5rem;
+    }
+    &-select-code {
+        .fenext-select-option-img {
+            max-width: 1.5rem;
+        }
+    }
 }
