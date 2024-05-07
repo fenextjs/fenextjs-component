@@ -186,7 +186,7 @@ export const InputPhone = ({
         }
     };
     const loadPhones = async () => {
-        const { phones } = await import("world-phones");
+        const { phones } = await import("./options");
         setPhones(phones);
         setlLoadPhoneCodes(true);
     };

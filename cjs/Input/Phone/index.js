@@ -66,7 +66,7 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
         }
     };
     const loadPhones = async () => {
-        const { phones } = await Promise.resolve().then(() => tslib_1.__importStar(require("world-phones")));
+        const { phones } = await Promise.resolve().then(() => tslib_1.__importStar(require("./options")));
         setPhones(phones);
         setlLoadPhoneCodes(true);
     };
