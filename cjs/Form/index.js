@@ -85,5 +85,4 @@ const Form = ({ id = "", data, disabled = true, onChangeDisable, onChangeLoader,
         react_1.default.createElement("form", { className: `fenext-form ${className}`, onSubmit: onSubmit }, (0, fenextjs_functions_1._tValidate)(children, _t))));
 };
 exports.Form = Form;
-exports.default = exports.Form;
 //# sourceMappingURL=index.js.map

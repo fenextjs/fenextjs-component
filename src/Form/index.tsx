@@ -173,4 +173,3 @@ export const Form = <D = any, R = any, E = any>({
         </>
     );
 };
-export default Form;
