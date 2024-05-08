@@ -1,7 +1,7 @@
 import { _TProps } from "fenextjs-interface";
 import React, { ReactNode } from "react";
 /**
- * Properties of a tab item.
+ * Properties of a tab item?.
  */
 export interface TabItemProps<T = string> {
     /**

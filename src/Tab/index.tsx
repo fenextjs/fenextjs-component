@@ -230,7 +230,7 @@ export const Tab = <T = string,>({
                         onChange?.(ITEM);
                     }}
                 >
-                    {_tValidate(ITEM?.head, _t) ?? ''}
+                    {_tValidate(ITEM?.head, _t) ?? ""}
                 </div>
             );
         });
@@ -248,7 +248,7 @@ export const Tab = <T = string,>({
                                         i == tabSelect ? "active" : ""
                                     } ${classNameBodyItem}`}
                                 >
-                                {item?.body ?? ''}
+                                    {item?.body ?? ""}
                                 </div>
                             </>
                         );
@@ -259,7 +259,7 @@ export const Tab = <T = string,>({
         const item = items?.[tabSelect];
         return (
             <div className={`fenext-tab-body-item ${classNameBodyItem}`}>
-            {item?.body ?? ''}
+                {item?.body ?? ""}
             </div>
         );
     }, [tabSelect, items, tabScrollActive]);
