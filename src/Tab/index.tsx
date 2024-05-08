@@ -3,7 +3,7 @@ import { _TProps } from "fenextjs-interface";
 import React, { ReactNode, useMemo, useState } from "react";
 
 /**
- * Properties of a tab item.
+ * Properties of a tab item?.
  */
 export interface TabItemProps<T = string> {
     /**
@@ -204,7 +204,7 @@ export const Tab = <T = string,>({
     useCount = false,
 }: TabProps<T>) => {
     const [_tabSelect, setTabSelect] = useState(
-        Math.max(0, Math.min(defaultTab, items.length - 1)),
+        Math.max(0, Math.min(defaultTab, items?.length - 1)),
     );
     const tabSelect = useMemo(
         () => activeTab ?? _tabSelect,
@@ -212,7 +212,7 @@ export const Tab = <T = string,>({
     );
 
     const CHead = useMemo(() => {
-        return items.map((item, i) => {
+        return items?.map((item, i) => {
             const ITEM = parseTabCount<T>({
                 ...item,
                 useCount: item?.useCount ?? useCount ?? false,
@@ -224,13 +224,13 @@ export const Tab = <T = string,>({
                         i == tabSelect
                             ? `fenext-tab-head-item-active ${classNameHeadItemActive}`
                             : ""
-                    } fenext-tab-head-item-id-${ITEM.id}`}
+                    } fenext-tab-head-item-id-${item?.id}`}
                     onClick={() => {
                         setTabSelect(i);
                         onChange?.(ITEM);
                     }}
                 >
-                    {_tValidate(ITEM.head, _t)}
+                    {_tValidate(ITEM?.head, _t) ?? ''}
                 </div>
             );
         });
@@ -240,7 +240,7 @@ export const Tab = <T = string,>({
         if (tabScrollActive) {
             return (
                 <>
-                    {items.map((item, i) => {
+                    {items?.map((item, i) => {
                         return (
                             <>
                                 <div
@@ -248,7 +248,7 @@ export const Tab = <T = string,>({
                                         i == tabSelect ? "active" : ""
                                     } ${classNameBodyItem}`}
                                 >
-                                    {_tValidate(item.body, _t)}
+                                {item?.body ?? ''}
                                 </div>
                             </>
                         );
@@ -256,19 +256,19 @@ export const Tab = <T = string,>({
                 </>
             );
         }
-        const item = items[tabSelect];
+        const item = items?.[tabSelect];
         return (
             <div className={`fenext-tab-body-item ${classNameBodyItem}`}>
-                {item.body}
+            {item?.body ?? ''}
             </div>
         );
     }, [tabSelect, items, tabScrollActive]);
 
     const BEFORETAB = useMemo(() => {
         let b = beforeTabs;
-        const item = items[tabSelect];
-        if (item.beforeTab) {
-            b = item.beforeTab;
+        const item = items?.[tabSelect];
+        if (item?.beforeTab) {
+            b = item?.beforeTab;
         }
         return (
             <>
@@ -285,9 +285,9 @@ export const Tab = <T = string,>({
 
     const AFTERTAB = useMemo(() => {
         let a = afterTabs;
-        const item = items[tabSelect];
-        if (item.beforeTab) {
-            a = item.afterTab;
+        const item = items?.[tabSelect];
+        if (item?.beforeTab) {
+            a = item?.afterTab;
         }
         return (
             <>
