@@ -1,4 +1,11 @@
-import React, { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+    ReactNode,
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from "react";
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../Text";
 import {
     InputSelectOption,
@@ -369,16 +376,13 @@ export const InputSelect = <T = any,>({
         itemMaxLengthShowOptions,
     ]);
 
-    const onEnter = useCallback(
-        () => {
-            const optionSect = OPTIONSSEARCH[0];
-            if (optionSect) {
-                onChangeOption(optionSect);
-            }
-        },
-      [OPTIONSSEARCH],
-    )
-    
+    const onEnter = useCallback(() => {
+        const optionSect = OPTIONSSEARCH[0];
+        if (optionSect) {
+            onChangeOption(optionSect);
+        }
+    }, [OPTIONSSEARCH]);
+
     const { error: errorFenext } = useValidator({
         data: data.option,
         validator,

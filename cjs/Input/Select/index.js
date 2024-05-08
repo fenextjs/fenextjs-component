@@ -135,12 +135,12 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
         props?.disabled,
         itemMaxLengthShowOptions,
     ]);
-    const onEnter = () => {
+    const onEnter = (0, react_1.useCallback)(() => {
         const optionSect = OPTIONSSEARCH[0];
         if (optionSect) {
             onChangeOption(optionSect);
         }
-    };
+    }, [OPTIONSSEARCH]);
     const { error: errorFenext } = (0, fenextjs_hook_1.useValidator)({
         data: data.option,
         validator,
