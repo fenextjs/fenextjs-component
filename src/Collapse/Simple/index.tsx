@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo, useState } from "react";
+import React, { ReactNode } from "react";
 import { Loader } from "../../Loader";
 import { Arrow } from "fenextjs-svg/cjs/Arrow";
 
@@ -56,10 +56,6 @@ export interface CollapseBaseProps {
      * children of Collapse.
      */
     children?: ReactNode;
-    /**
-     * Indicates whether the Collapse is active for show.
-     */
-    renderContentDependingOnActive?: boolean;
 }
 
 /**
@@ -105,31 +101,18 @@ export const Collapse = ({
     header,
     disabled = false,
     defaultActive = false,
-    active: activeProps = undefined,
+    active = undefined,
     name = "",
     type = "checkbox",
     show = "checked",
     status = "none",
     onChange,
     iconArrow = <Arrow />,
-    renderContentDependingOnActive = false,
 }: CollapseProps) => {
-    const [_active, setActive] = useState(defaultActive);
-    const active = useMemo(
-        () => activeProps ?? _active,
-        [activeProps, _active],
-    );
-
     return (
         <>
             <div
-                className={`
-                    fenext-collapse
-                    fenext-collapse-status-${status}
-                    fenext-collapse-${show}
-                    fenext-collapse-render-${renderContentDependingOnActive ? "active" : "inactive"}
-                    ${className}
-                `}
+                className={`fenext-collapse fenext-collapse-status-${status} fenext-collapse-${show} ${className}`}
             >
                 <label className={`fenext-collapse-header ${classNameHeader}`}>
                     <input
@@ -137,10 +120,14 @@ export const Collapse = ({
                         className={`fenext-collapse-header-checkbox`}
                         name={name}
                         disabled={disabled || loader}
-                        checked={active}
+                        defaultChecked={defaultActive}
+                        {...(active !== undefined
+                            ? {
+                                  checked: active,
+                              }
+                            : {})}
                         onChange={(e) => {
                             onChange?.(e.target.checked);
-                            setActive(e.target.checked);
                         }}
                     />
                     <div
@@ -154,9 +141,8 @@ export const Collapse = ({
                                     className={`fenext-collapse-header-uncheck`}
                                     name={name}
                                     disabled={loader}
-                                    onChange={() => {
-                                        onChange?.(false);
-                                        setActive(false);
+                                    onChange={(e) => {
+                                        onChange?.(e.target.checked);
                                     }}
                                 />
                             </>
@@ -177,11 +163,7 @@ export const Collapse = ({
                     </div>
                 </label>
                 <div className={`fenext-collapse-body ${classNameBody}`}>
-                    {renderContentDependingOnActive ? (
-                        <>{active && <>{children}</>}</>
-                    ) : (
-                        <>{children}</>
-                    )}
+                    {children}
                 </div>
             </div>
         </>

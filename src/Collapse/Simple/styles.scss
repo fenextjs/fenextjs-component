@@ -114,11 +114,9 @@
         }
     }
     &:has(> .fenext-collapse-body:empty) {
-        &:not(.fenext-collapse-render-active) {
-            > .fenext-collapse-header {
-                .fenext-collapse-header-icon {
-                    display: none;
-                }
+        > .fenext-collapse-header {
+            .fenext-collapse-header-icon {
+                display: none;
             }
         }
         > .fenext-collapse-body {

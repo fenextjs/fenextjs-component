@@ -1,30 +1,20 @@
-import React, { useMemo, useState } from "react";
+import React from "react";
 import { Collapse, CollapseClassProps, CollapseBaseProps } from "../Simple";
 
 /**
  * Properties for the base CollapseMultiple component.
  */
 export interface CollapseMultipleBaseProps
-    extends Pick<
-        CollapseBaseProps,
-        "name" | "type" | "renderContentDependingOnActive"
-    > {
+    extends Pick<CollapseBaseProps, "name" | "type"> {
     /**
      * items of Collapse.
      */
-    items?: Omit<
-        CollapseBaseProps,
-        "checkbox" | "name" | "renderContentDependingOnActive"
-    >[];
+    items?: Omit<CollapseBaseProps, "checkbox" | "name">[];
 
     /**
      * defaultActive of Collapse.
      */
     defaultActive?: number | number[];
-    /**
-     * defaultActive of Collapse.
-     */
-    active?: number | number[];
 }
 
 /**
@@ -50,15 +40,8 @@ export const CollapseMultiple = ({
     items = [],
     type = "checkbox",
     defaultActive = [],
-    active: activeProps = undefined,
     ...props
 }: CollapseMultipleProps) => {
-    const [_active, setActive] = useState([defaultActive].flat(2));
-    const active = useMemo(
-        () => [activeProps ?? _active].flat(2),
-        [activeProps, _active],
-    );
-
     return (
         <>
             <div className={`fenext-collapse-multiple ${classNameMultiple}`}>
@@ -67,27 +50,7 @@ export const CollapseMultiple = ({
                         key={i}
                         name={name}
                         type={type}
-                        active={active.includes(i)}
-                        onChange={(e) => {
-                            setActive((old) => {
-                                if (e) {
-                                    if (type == "checkbox") {
-                                        return [...old, i];
-                                    }
-                                    if (type == "radio") {
-                                        return [i];
-                                    }
-                                } else {
-                                    if (type == "checkbox") {
-                                        return [...old].filter((a) => a != i);
-                                    }
-                                    if (type == "radio") {
-                                        return [];
-                                    }
-                                }
-                                return old;
-                            });
-                        }}
+                        defaultActive={[defaultActive].flat(2).includes(i)}
                         {...props}
                         {...item}
                     />
