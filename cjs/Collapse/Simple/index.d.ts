@@ -52,10 +52,6 @@ export interface CollapseBaseProps {
      * children of Collapse.
      */
     children?: ReactNode;
-    /**
-     * Indicates whether the Collapse is active for show.
-     */
-    renderContentDependingOnActive?: boolean;
 }
 /**
  * Properties for the class of the Collapse component.
@@ -87,4 +83,4 @@ export interface CollapseClassProps {
  */
 export interface CollapseProps extends CollapseBaseProps, CollapseClassProps {
 }
-export declare const Collapse: ({ className, classNameHeader, classNameHeaderContent, classNameHeaderIcon, classNameBody, children, loader, header, disabled, defaultActive, active: activeProps, name, type, show, status, onChange, iconArrow, renderContentDependingOnActive, }: CollapseProps) => React.JSX.Element;
+export declare const Collapse: ({ className, classNameHeader, classNameHeaderContent, classNameHeaderIcon, classNameBody, children, loader, header, disabled, defaultActive, active, name, type, show, status, onChange, iconArrow, }: CollapseProps) => React.JSX.Element;
