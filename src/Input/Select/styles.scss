@@ -368,13 +368,23 @@ body:has(.fenext-select.focus-hover .fenext-input-content-input:focus) {
         --list-scaleY: 1;
     }
 }
-body:not(:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-normal:checked)) {
+body:not(
+        :has(
+                .fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-normal:checked
+            )
+    ) {
     &:has(.fenext-select-use-swich-select-style.hover:hover),
-    &:has(.fenext-select-use-swich-select-style.focus .fenext-input-content-input:focus),
+    &:has(
+            .fenext-select-use-swich-select-style.focus
+                .fenext-input-content-input:focus
+        ),
     &:has(.fenext-select-use-swich-select-style.focus-hover:hover),
-    &:has(.fenext-select-use-swich-select-style.focus-hover .fenext-input-content-input:focus) {
+    &:has(
+            .fenext-select-use-swich-select-style.focus-hover
+                .fenext-input-content-input:focus
+        ) {
         #fenext-select {
-            display:none;
+            display: none;
         }
     }
 }

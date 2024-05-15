@@ -97,16 +97,22 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
             checkboxClose?.current?.focus?.();
         }, 100);
     };
+    const parseTextSearch = (e) => {
+        return `${e ?? ""}`
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase();
+    };
     const OPTIONSSEARCH = (0, react_1.useMemo)(() => {
-        const textSearch = dataMemo?.textSearch?.toLowerCase() ?? "";
+        const textSearch = parseTextSearch(dataMemo?.textSearch);
         if (textSearch == "") {
             return [...options];
         }
-        return [...options].filter((option) => option.text?.toLowerCase()?.includes(textSearch) ||
-            textSearch?.includes(option.text?.toLowerCase()) ||
+        return [...options].filter((option) => parseTextSearch(option.text)?.includes(textSearch) ||
+            textSearch?.includes(parseTextSearch(option.text)) ||
             (searchById &&
-                (`${option.id}`?.toLowerCase()?.includes(textSearch) ||
-                    textSearch?.includes(`${option.id}`?.toLowerCase()))));
+                (parseTextSearch(option.id)?.includes(textSearch) ||
+                    textSearch?.includes(parseTextSearch(option.id)))));
     }, [options, dataMemo, searchById]);
     const OPTIONS = (0, react_1.useMemo)(() => {
         if (props?.disabled) {
@@ -202,8 +208,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
         loaderOption,
         selectRef,
     ]);
-    const { uuid, onLoadPos } = (0, useSelectOptionsPos_1.useSelectOptionsPos)({
-        id: "fenext-select",
+    const { onLoadPos, onLoadChildren } = (0, useSelectOptionsPos_1.useSelectOptionsPos)({
         children: (react_1.default.createElement(react_1.default.Fragment, null, typeSelect == "div" && typeSelectStyle == "normal" ? (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement("div", { className: `fenext-select-content-search` },
                 react_1.default.createElement(Text_1.InputText, { ...props, _t: _t, icon: react_1.default.createElement(react_1.default.Fragment, null,
@@ -215,7 +220,8 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
         target: selectRef?.current,
     });
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { ref: selectRef, className: `fenext-select
+        react_1.default.createElement("div", { ref: selectRef, className: `
+                    fenext-select
                     fenext-select-type-${typeSelect}
                     fenext-select-type-style-${typeSelectStyle}
                     fenext-select-${useSwichtypeSelectStyle ? "use-swich-select-style" : ""}
@@ -224,19 +230,22 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                 : "is-not-change-text"}
                     ${classNameSelect} ${showOptions}
                     ${hiddenOptions}
-                `, "data-uuid": uuid },
+                ` },
             react_1.default.createElement("div", { className: `fenext-select-content-search`, onClick: () => {
                     onLoadPos?.();
                     if (window?.innerWidth <= 575) {
-                        const ele = document?.querySelector?.(`#fenext-select-${uuid} .fenext-input-content-input`);
+                        const ele = selectRef.current?.querySelector(".fenext-input-content-input");
                         ele?.click();
                         ele?.focus();
                     }
-                }, onMouseEnter: onLoadPos },
+                } },
                 react_1.default.createElement(Text_1.InputText, { ...props, _t: _t, icon: react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("div", { className: "fenext-select-content-icon" },
                             react_1.default.createElement("div", { className: "fenext-select-content-icon-arrow" }, icon),
-                            react_1.default.createElement("div", { className: "fenext-select-content-icon-search" }, iconSearch))), onBlur: onBlur, onChange: onChangeText_, value: dataMemo?.text ?? "", onEnter: onEnter, error: errorInput, autoComplete: false, errorWithIsChange: errorWithIsChange, extraInContentInput: react_1.default.createElement(react_1.default.Fragment, null,
+                            react_1.default.createElement("div", { className: "fenext-select-content-icon-search" }, iconSearch))), onBlur: onBlur, onChange: (e) => {
+                        onChangeText_(e);
+                        onLoadChildren();
+                    }, value: dataMemo?.text ?? "", onEnter: onEnter, error: errorInput, autoComplete: false, errorWithIsChange: errorWithIsChange, extraInContentInput: react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("button", { className: `fenext-select-clear`, onClick: onClear }, (0, fenextjs_functions_1._tValidate)(clearContent, _t)),
                         showOptionIconImg && (react_1.default.createElement(react_1.default.Fragment, null, dataMemo?.option?.img ? (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement("div", { className: "fenext-select-option-selected-img" },
@@ -253,28 +262,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                                 ?.icon)))))))))), validator: undefined })),
             typeSelect == "div" &&
                 typeSelectStyle == "normal" &&
-                !useSwichtypeSelectStyle ? (react_1.default.createElement(react_1.default.Fragment, null)) : (react_1.default.createElement(react_1.default.Fragment, null, TAGLIST))),
-        react_1.default.createElement("style", null, `
-                    body:has([data-uuid="${uuid}"].hover:hover),
-                    body:has([data-uuid="${uuid}"].focus .fenext-input-content-input:focus),
-                    body:has([data-uuid="${uuid}"].focus-hover:hover),
-                    body:has([data-uuid="${uuid}"].focus-hover .fenext-input-content-input:focus) {
-                        #fenext-select-${uuid} {
-                            --list-scaleY: 1;
-                        }
-
-                    }
-                    ${useSwichtypeSelectStyle
-            ? `
-                    body:not(:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-normal:checked)) {
-                        #fenext-select-${uuid} {
-                            display:none;
-                        }
-                    }
-            
-                    `
-            : ""}
-                `)));
+                !useSwichtypeSelectStyle ? (react_1.default.createElement(react_1.default.Fragment, null)) : (react_1.default.createElement(react_1.default.Fragment, null, TAGLIST)))));
 };
 exports.InputSelect = InputSelect;
 //# sourceMappingURL=index.js.map

@@ -332,11 +332,11 @@ export const InputSelect = <T = any,>({
         }, 100);
     };
 
-    const parseTextSearch = (e?:string | number) => {
-        return `${e ?? ''}`
+    const parseTextSearch = (e?: string | number) => {
+        return `${e ?? ""}`
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
-            .toLowerCase()
+            .toLowerCase();
     };
     const OPTIONSSEARCH = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
         const textSearch = parseTextSearch(dataMemo?.textSearch);
@@ -537,7 +537,7 @@ export const InputSelect = <T = any,>({
         selectRef,
     ]);
 
-    const {  onLoadPos ,onLoadChildren} = useSelectOptionsPos({
+    const { onLoadPos, onLoadChildren } = useSelectOptionsPos({
         children: (
             <>
                 {typeSelect == "div" && typeSelectStyle == "normal" ? (
@@ -610,8 +610,11 @@ export const InputSelect = <T = any,>({
                     onClick={() => {
                         onLoadPos?.();
                         if (window?.innerWidth <= 575) {
-                            const ele =selectRef.current?.querySelector<HTMLInputElement>(".fenext-input-content-input")
-                            
+                            const ele =
+                                selectRef.current?.querySelector<HTMLInputElement>(
+                                    ".fenext-input-content-input",
+                                );
+
                             ele?.click();
                             ele?.focus();
                         }
@@ -634,9 +637,9 @@ export const InputSelect = <T = any,>({
                             </>
                         }
                         onBlur={onBlur}
-                        onChange={(e)=>{
-                            onChangeText_(e)
-                            onLoadChildren()
+                        onChange={(e) => {
+                            onChangeText_(e);
+                            onLoadChildren();
                         }}
                         value={dataMemo?.text ?? ""}
                         onEnter={onEnter}
