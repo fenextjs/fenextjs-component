@@ -16,7 +16,6 @@ export const Index = Profile.bind({});
 
 Index.args = {
     name:"name",
-    renderContentDependingOnActive:false,
     type:"checkbox",
     items:[
         {
