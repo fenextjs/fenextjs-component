@@ -332,19 +332,25 @@ export const InputSelect = <T = any,>({
         }, 100);
     };
 
+    const parseTextSearch = (e?:string | number) => {
+        return `${e ?? ''}`
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase()
+    };
     const OPTIONSSEARCH = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
-        const textSearch = dataMemo?.textSearch?.toLowerCase() ?? "";
+        const textSearch = parseTextSearch(dataMemo?.textSearch);
 
         if (textSearch == "") {
             return [...options];
         }
         return [...options].filter(
             (option) =>
-                option.text?.toLowerCase()?.includes(textSearch) ||
-                textSearch?.includes(option.text?.toLowerCase()) ||
+                parseTextSearch(option.text)?.includes(textSearch) ||
+                textSearch?.includes(parseTextSearch(option.text)) ||
                 (searchById &&
-                    (`${option.id}`?.toLowerCase()?.includes(textSearch) ||
-                        textSearch?.includes(`${option.id}`?.toLowerCase()))),
+                    (parseTextSearch(option.id)?.includes(textSearch) ||
+                        textSearch?.includes(parseTextSearch(option.id)))),
         );
     }, [options, dataMemo, searchById]);
     const OPTIONS = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
@@ -531,8 +537,7 @@ export const InputSelect = <T = any,>({
         selectRef,
     ]);
 
-    const { uuid, onLoadPos } = useSelectOptionsPos({
-        id: "fenext-select",
+    const {  onLoadPos ,onLoadChildren} = useSelectOptionsPos({
         children: (
             <>
                 {typeSelect == "div" && typeSelectStyle == "normal" ? (
@@ -582,12 +587,12 @@ export const InputSelect = <T = any,>({
         ),
         target: selectRef?.current,
     });
-
     return (
         <>
             <div
                 ref={selectRef}
-                className={`fenext-select
+                className={`
+                    fenext-select
                     fenext-select-type-${typeSelect}
                     fenext-select-type-style-${typeSelectStyle}
                     fenext-select-${useSwichtypeSelectStyle ? "use-swich-select-style" : ""}
@@ -599,22 +604,19 @@ export const InputSelect = <T = any,>({
                     ${classNameSelect} ${showOptions}
                     ${hiddenOptions}
                 `}
-                data-uuid={uuid}
             >
                 <div
                     className={`fenext-select-content-search`}
                     onClick={() => {
                         onLoadPos?.();
                         if (window?.innerWidth <= 575) {
-                            const ele =
-                                document?.querySelector?.<HTMLInputElement>(
-                                    `#fenext-select-${uuid} .fenext-input-content-input`,
-                                );
+                            const ele =selectRef.current?.querySelector<HTMLInputElement>(".fenext-input-content-input")
+                            
                             ele?.click();
                             ele?.focus();
                         }
                     }}
-                    onMouseEnter={onLoadPos}
+                    // onMouseEnter={onLoadPos}
                 >
                     <InputText
                         {...props}
@@ -632,7 +634,10 @@ export const InputSelect = <T = any,>({
                             </>
                         }
                         onBlur={onBlur}
-                        onChange={onChangeText_}
+                        onChange={(e)=>{
+                            onChangeText_(e)
+                            onLoadChildren()
+                        }}
                         value={dataMemo?.text ?? ""}
                         onEnter={onEnter}
                         error={errorInput}
@@ -705,32 +710,6 @@ export const InputSelect = <T = any,>({
                     <>{TAGLIST}</>
                 )}
             </div>
-
-            <style>
-                {`
-                    body:has([data-uuid="${uuid}"].hover:hover),
-                    body:has([data-uuid="${uuid}"].focus .fenext-input-content-input:focus),
-                    body:has([data-uuid="${uuid}"].focus-hover:hover),
-                    body:has([data-uuid="${uuid}"].focus-hover .fenext-input-content-input:focus) {
-                        #fenext-select-${uuid} {
-                            --list-scaleY: 1;
-                        }
-
-                    }
-                    ${
-                        useSwichtypeSelectStyle
-                            ? `
-                    body:not(:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select-normal:checked)) {
-                        #fenext-select-${uuid} {
-                            display:none;
-                        }
-                    }
-            
-                    `
-                            : ""
-                    }
-                `}
-            </style>
         </>
     );
 };
