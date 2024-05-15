@@ -69,9 +69,7 @@ export const CollapseMultiple = ({
                         type={type}
                         active={active.includes(i)}
                         onChange={(e) => {
-                            
                             setActive((old) => {
-                                console.log({e,i,old,active});
                                 if (e) {
                                     if (type == "checkbox") {
                                         return [...old, i];
@@ -81,9 +79,7 @@ export const CollapseMultiple = ({
                                     }
                                 } else {
                                     if (type == "checkbox") {
-                                        return [...old].filter(
-                                            (a) => a != i,
-                                        );
+                                        return [...old].filter((a) => a != i);
                                     }
                                     if (type == "radio") {
                                         return [];

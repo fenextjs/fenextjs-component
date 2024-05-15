@@ -127,7 +127,7 @@ export const Collapse = ({
                     fenext-collapse
                     fenext-collapse-status-${status}
                     fenext-collapse-${show}
-                    fenext-collapse-render-${renderContentDependingOnActive ? "active":"inactive"}
+                    fenext-collapse-render-${renderContentDependingOnActive ? "active" : "inactive"}
                     ${className}
                 `}
             >
