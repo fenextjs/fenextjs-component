@@ -114,9 +114,11 @@
         }
     }
     &:has(> .fenext-collapse-body:empty) {
-        > .fenext-collapse-header {
-            .fenext-collapse-header-icon {
-                display: none;
+        &:not(.fenext-collapse-render-active) {
+            > .fenext-collapse-header {
+                .fenext-collapse-header-icon {
+                    display: none;
+                }
             }
         }
         > .fenext-collapse-body {
