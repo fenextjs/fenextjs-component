@@ -11,7 +11,10 @@ export type LinkTypeOnLink = "history" | "router" | "link" | "none";
 export interface LinkBaseProps
     extends PropsWithChildren,
         LinkNextProps,
-        Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "target" | "referrerPolicy" | "rel">,
+        Pick<
+            AnchorHTMLAttributes<HTMLAnchorElement>,
+            "target" | "referrerPolicy" | "rel"
+        >,
         _TProps {}
 
 /**

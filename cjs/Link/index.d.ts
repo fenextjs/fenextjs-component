@@ -5,7 +5,7 @@ export type LinkTypeOnLink = "history" | "router" | "link" | "none";
 /**
  * Properties for the base Link component.
  */
-export interface LinkBaseProps extends PropsWithChildren, LinkNextProps, Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "target">, _TProps {
+export interface LinkBaseProps extends PropsWithChildren, LinkNextProps, Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "target" | "referrerPolicy" | "rel">, _TProps {
 }
 /**
  * Properties for the class of the Link component.
