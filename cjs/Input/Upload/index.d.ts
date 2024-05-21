@@ -17,6 +17,14 @@ export interface InputUploadBaseProps extends InputFileBaseProps {
      */
     text?: React.ReactNode;
     /**
+     * The Title for the component.
+     */
+    titleFile?: React.ReactNode;
+    /**
+     * The Text for the component.
+     */
+    textFile?: React.ReactNode;
+    /**
      * The Text for the component.
      */
     textPreview?: React.ReactNode;
@@ -24,6 +32,10 @@ export interface InputUploadBaseProps extends InputFileBaseProps {
      * The Icon for the component.
      */
     icon?: React.ReactNode;
+    /**
+     * The Icon for the component.
+     */
+    iconFile?: React.ReactNode;
     /**
      * The Buton for the component.
      */
@@ -91,4 +103,4 @@ export interface InputUploadClassProps {
  */
 export interface InputUploadProps extends InputUploadBaseProps, InputUploadClassProps {
 }
-export declare const InputUpload: ({ className, classNameBtn, classNameContentIcon, classNameText, classNamePreview, classNameTitle, classNameUp, classNameProgress, classNameRemove, btn, icon, text, title, textPreview, defaultValue, parseProgress, onChange, tagPreview, loader, iconLoader, customPreview, _t, ...props }: InputUploadProps) => React.JSX.Element;
+export declare const InputUpload: ({ className, classNameBtn, classNameContentIcon, classNameText, classNamePreview, classNameTitle, classNameUp, classNameProgress, classNameRemove, btn, icon, text, title, titleFile, textFile, iconFile, textPreview, defaultValue, parseProgress, onChange, tagPreview, loader, iconLoader, customPreview, _t, ...props }: InputUploadProps) => React.JSX.Element;
