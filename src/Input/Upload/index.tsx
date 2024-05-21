@@ -25,6 +25,14 @@ export interface InputUploadBaseProps extends InputFileBaseProps {
      */
     text?: React.ReactNode;
     /**
+     * The Title for the component.
+     */
+    titleFile?: React.ReactNode;
+    /**
+     * The Text for the component.
+     */
+    textFile?: React.ReactNode;
+    /**
      * The Text for the component.
      */
     textPreview?: React.ReactNode;
@@ -32,6 +40,10 @@ export interface InputUploadBaseProps extends InputFileBaseProps {
      * The Icon for the component.
      */
     icon?: React.ReactNode;
+    /**
+     * The Icon for the component.
+     */
+    iconFile?: React.ReactNode;
     /**
      * The Buton for the component.
      */
@@ -123,6 +135,10 @@ export const InputUpload = ({
     ),
     text = "Drag and drop your file or template here.",
     title = "Drag and drop here",
+    titleFile = undefined,
+    textFile = undefined,
+    iconFile = "",
+
     textPreview = "Preview File",
 
     defaultValue = {
@@ -179,12 +195,20 @@ export const InputUpload = ({
                                 {...classNameTitle}
                                 className={`fenext-input-upload-title ${classNameTitle.className}`}
                             >
-                                {_tValidate(data?.text, _t)}
+                                {_tValidate(titleFile ?? data?.text, _t)}
                             </Title>
+                            {textFile && (
+                                <Text
+                                    {...classNameText}
+                                    className={`fenext-input-upload-text ${classNameText.className}`}
+                                >
+                                    {_tValidate(textFile, _t)}
+                                </Text>
+                            )}
                             <div
                                 className={`fenext-input-upload-content-icon ${classNameContentIcon}`}
                             >
-                                {loader ? iconLoader : ""}
+                                {loader ? iconLoader : iconFile}
                             </div>
                             <Collapse
                                 header={
