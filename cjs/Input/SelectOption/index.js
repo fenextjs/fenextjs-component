@@ -38,7 +38,15 @@ const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", clas
             (0, fenextjs_functions_1._tValidate)(TAG == "option" ? text : children ?? text, _t),
             type == "multiple" ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("span", { className: `fenext-select-option-delete ${classNameOptionDelete} `, onClick: () => {
-                        onDelete?.({ id, text, children, data, img });
+                        if (!disabled) {
+                            onDelete?.({
+                                id,
+                                text,
+                                children,
+                                data,
+                                img,
+                            });
+                        }
                     } }, iconDelete))) : (react_1.default.createElement(react_1.default.Fragment, null)))));
 };
 exports.InputSelectOption = InputSelectOption;

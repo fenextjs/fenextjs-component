@@ -183,9 +183,14 @@ export const InputSelectOption = <T = any,>({
                         <span
                             className={`fenext-select-option-delete ${classNameOptionDelete} `}
                             onClick={() => {
-                                if(!disabled){
-
-                                onDelete?.({ id, text, children, data, img });
+                                if (!disabled) {
+                                    onDelete?.({
+                                        id,
+                                        text,
+                                        children,
+                                        data,
+                                        img,
+                                    });
                                 }
                             }}
                         >

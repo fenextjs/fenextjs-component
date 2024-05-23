@@ -168,7 +168,10 @@ export const InputSelectMultiple = <T = any,>({
                                             iconDelete={
                                                 option?.iconDelete ?? iconDelete
                                             }
-                                            disabled={props?.disabled}
+                                            disabled={
+                                                props?.disabled ??
+                                                option?.disabled
+                                            }
                                         />
                                     );
                                 })}
