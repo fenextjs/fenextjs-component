@@ -22,6 +22,20 @@ const args: InputSelectMultipleProps = {
     //     id:"create",
     //     text:"Create"
     // },
+    disabled:true,
+    defaultValue:[
+        {
+            id: "1",
+            text: "Option 1",
+            children: <>Option 1</>,
+            img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
+        },
+        {
+            id: "2",
+            text: "Option 2",
+            children: <>Option 2</>,
+        },
+    ],
     options: [
         {
             id: "1",
