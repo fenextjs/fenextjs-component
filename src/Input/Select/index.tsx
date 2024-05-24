@@ -587,13 +587,13 @@ export const InputSelect = <T = any,>({
         ),
         target: selectRef?.current,
     });
-    const [isFocus, setIsFocus] = useState(false)
+    const [isFocus, setIsFocus] = useState(false);
     useEffect(() => {
-        if(isFocus){
-            onLoadChildren()
+        if (isFocus) {
+            onLoadChildren();
         }
-    }, [props?.loader,options])
-    
+    }, [props?.loader, options]);
+
     return (
         <>
             <div
@@ -611,14 +611,14 @@ export const InputSelect = <T = any,>({
                     ${classNameSelect} ${showOptions}
                     ${hiddenOptions}
                 `}
-                onMouseLeave={()=>{
-                    setIsFocus(false)
+                onMouseLeave={() => {
+                    setIsFocus(false);
                 }}
             >
                 <div
                     className={`fenext-select-content-search`}
                     onClick={() => {
-                        setIsFocus(true)
+                        setIsFocus(true);
                         onLoadPos?.();
                         if (window?.innerWidth <= 575) {
                             const ele =

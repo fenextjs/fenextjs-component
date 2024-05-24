@@ -219,6 +219,12 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
             TAGLIST)) : (react_1.default.createElement(react_1.default.Fragment, null)))),
         target: selectRef?.current,
     });
+    const [isFocus, setIsFocus] = (0, react_1.useState)(false);
+    (0, react_1.useEffect)(() => {
+        if (isFocus) {
+            onLoadChildren();
+        }
+    }, [props?.loader, options]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { ref: selectRef, className: `
                     fenext-select
@@ -230,8 +236,11 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                 : "is-not-change-text"}
                     ${classNameSelect} ${showOptions}
                     ${hiddenOptions}
-                ` },
+                `, onMouseLeave: () => {
+                setIsFocus(false);
+            } },
             react_1.default.createElement("div", { className: `fenext-select-content-search`, onClick: () => {
+                    setIsFocus(true);
                     onLoadPos?.();
                     if (window?.innerWidth <= 575) {
                         const ele = selectRef.current?.querySelector(".fenext-input-content-input");
