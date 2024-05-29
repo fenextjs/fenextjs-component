@@ -16,6 +16,10 @@ export const Index = Profile.bind({});
 
 const args  : InputCheckboxProps = {
     label:"Label",
+    // onActiveValue:console.log,
+    // onInactiveValue:console.log,
+    valueActive:"SI",
+    valueInactive:"NO"
 }
 
 Index.args= args

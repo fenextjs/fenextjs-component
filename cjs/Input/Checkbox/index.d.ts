@@ -52,7 +52,7 @@ export interface InputCheckboxClassProps {
 /**
  * Interface that defines base properties for a checkbox input component.
  */
-export interface InputCheckboxBaseProps extends _TProps {
+export interface InputCheckboxBaseProps<VT = any, VF = any> extends _TProps {
     /**
      * The label to display next to the checkbox.
      */
@@ -70,6 +70,12 @@ export interface InputCheckboxBaseProps extends _TProps {
      * Receives a boolean value indicating whether the checkbox is checked or not.
      */
     onChange?: (e: boolean) => void;
+    onActive?: () => void;
+    onInactive?: () => void;
+    onActiveValue?: (data?: VT) => void;
+    onInactiveValue?: (data?: VF) => void;
+    valueActive?: VT;
+    valueInactive?: VF;
     /**
      * The default value of the checkbox when it is first rendered.
      */
@@ -112,10 +118,10 @@ export interface InputCheckboxBaseProps extends _TProps {
  * Interface that defines all properties for a checkbox input component.
  * Extends InputCheckboxBaseProps and InputCheckboxClassProps.
  */
-export interface InputCheckboxProps extends InputCheckboxBaseProps, InputCheckboxClassProps {
+export interface InputCheckboxProps<VT = any, VF = any> extends InputCheckboxBaseProps<VT, VF>, InputCheckboxClassProps {
 }
 /**
  * Component that renders a checkbox input.
  * Takes an InputCheckboxProps object as props.
  */
-export declare const InputCheckbox: ({ classNameLabel, classNameLabelActive, classNameLabelInactive, classNameText, classNameContentCheckbox, classNameContentCheckboxActive, classNameContentCheckboxInactive, classNameCheckbox, classNameCheckboxActive, classNameCheckboxInactive, label, labelPosition, name, onChange, defaultValue, useValue, value, disabled, icon, onValidateCheck, optional, optionalText, required, requiredText, _t, }: InputCheckboxProps) => React.JSX.Element;
+export declare const InputCheckbox: <VT = any, VF = any>({ classNameLabel, classNameLabelActive, classNameLabelInactive, classNameText, classNameContentCheckbox, classNameContentCheckboxActive, classNameContentCheckboxInactive, classNameCheckbox, classNameCheckboxActive, classNameCheckboxInactive, label, labelPosition, name, onChange, defaultValue, useValue, value, disabled, icon, onValidateCheck, optional, optionalText, required, requiredText, _t, onActive, onActiveValue, onInactive, onInactiveValue, valueActive, valueInactive, }: InputCheckboxProps<VT, VF>) => React.JSX.Element;

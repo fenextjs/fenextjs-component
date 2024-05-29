@@ -14,18 +14,27 @@ const InputCheckbox = ({ classNameLabel = "", classNameLabelActive = "", classNa
     (0, env_log_1.env_log)(e, {
         name: "input checkbox onchange",
     });
-}, defaultValue = false, useValue = false, value = false, disabled = false, icon = react_1.default.createElement(Check_1.Check, null), onValidateCheck = async () => { }, optional = false, optionalText = "(optional)", required = false, requiredText = "*", _t, }) => {
+}, defaultValue = false, useValue = false, value = false, disabled = false, icon = react_1.default.createElement(Check_1.Check, null), onValidateCheck = async () => { }, optional = false, optionalText = "(optional)", required = false, requiredText = "*", _t, onActive, onActiveValue, onInactive, onInactiveValue, valueActive, valueInactive, }) => {
     const [checked_, setChecked] = (0, react_1.useState)(defaultValue === true);
     const checked = (0, react_1.useMemo)(() => (useValue ? value : checked_), [useValue, value, checked_]);
     const onChecked = async () => {
         if (disabled) {
             return;
         }
-        if (!checked) {
+        const v = !checked;
+        if (v) {
             await onValidateCheck();
         }
-        setChecked(!checked);
-        onChange(!checked);
+        setChecked(v);
+        onChange(v);
+        if (v) {
+            onActive?.();
+            onActiveValue?.(valueActive);
+        }
+        else {
+            onInactive?.();
+            onInactiveValue?.(valueInactive);
+        }
     };
     return (react_1.default.createElement("label", { className: `fenext-input-checkbox ${labelPosition} ${classNameLabel}  ${checked ? classNameLabelActive : classNameLabelInactive}` },
         react_1.default.createElement("input", { type: "checkbox", name: name, checked: checked, onChange: onChecked, className: "fenext-input-checkbox-input" }),
