@@ -68,7 +68,7 @@ export interface InputCheckboxClassProps {
 /**
  * Interface that defines base properties for a checkbox input component.
  */
-export interface InputCheckboxBaseProps extends _TProps {
+export interface InputCheckboxBaseProps<VT = any, VF = any> extends _TProps {
     /**
      * The label to display next to the checkbox.
      */
@@ -89,6 +89,13 @@ export interface InputCheckboxBaseProps extends _TProps {
      * Receives a boolean value indicating whether the checkbox is checked or not.
      */
     onChange?: (e: boolean) => void;
+
+    onActive?: () => void;
+    onInactive?: () => void;
+    onActiveValue?: (data?: VT) => void;
+    onInactiveValue?: (data?: VF) => void;
+    valueActive?: VT;
+    valueInactive?: VF;
 
     /**
      * The default value of the checkbox when it is first rendered.
@@ -137,15 +144,15 @@ export interface InputCheckboxBaseProps extends _TProps {
  * Interface that defines all properties for a checkbox input component.
  * Extends InputCheckboxBaseProps and InputCheckboxClassProps.
  */
-export interface InputCheckboxProps
-    extends InputCheckboxBaseProps,
+export interface InputCheckboxProps<VT = any, VF = any>
+    extends InputCheckboxBaseProps<VT, VF>,
         InputCheckboxClassProps {}
 
 /**
  * Component that renders a checkbox input.
  * Takes an InputCheckboxProps object as props.
  */
-export const InputCheckbox = ({
+export const InputCheckbox = <VT = any, VF = any>({
     classNameLabel = "",
     classNameLabelActive = "",
     classNameLabelInactive = "",
@@ -178,7 +185,13 @@ export const InputCheckbox = ({
     required = false,
     requiredText = "*",
     _t,
-}: InputCheckboxProps) => {
+    onActive,
+    onActiveValue,
+    onInactive,
+    onInactiveValue,
+    valueActive,
+    valueInactive,
+}: InputCheckboxProps<VT, VF>) => {
     const [checked_, setChecked] = useState(defaultValue === true);
     const checked = useMemo(
         () => (useValue ? value : checked_),
@@ -189,11 +202,19 @@ export const InputCheckbox = ({
         if (disabled) {
             return;
         }
-        if (!checked) {
+        const v = !checked;
+        if (v) {
             await onValidateCheck();
         }
-        setChecked(!checked);
-        onChange(!checked);
+        setChecked(v);
+        onChange(v);
+        if (v) {
+            onActive?.();
+            onActiveValue?.(valueActive);
+        } else {
+            onInactive?.();
+            onInactiveValue?.(valueInactive);
+        }
     };
 
     return (
