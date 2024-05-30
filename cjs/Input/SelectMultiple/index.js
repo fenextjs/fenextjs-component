@@ -34,16 +34,17 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
     (0, react_1.useEffect)(() => {
         validateOptions();
     }, [dataMemo]);
-    const onAddItemSelect = (newItem) => {
+    const onAddItemSelect = (0, react_1.useCallback)((newItem) => {
         if (newItem) {
-            setDataFunction((old) => {
+            setDataFunction(() => {
+                const old = [...dataMemo];
                 if (old.find((e) => e.id == newItem.id)) {
                     return old.filter((e) => e.id != newItem.id);
                 }
                 return [...old, newItem];
             });
         }
-    };
+    }, [dataMemo]);
     const onRemoveItemSelect = (deleteItem) => {
         setData(dataMemo.filter((option) => option.id != deleteItem.id));
     };
