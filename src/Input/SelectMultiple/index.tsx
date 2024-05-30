@@ -1,4 +1,10 @@
-import React, { ReactNode, useEffect, useMemo, useState } from "react";
+import React, {
+    ReactNode,
+    useCallback,
+    useEffect,
+    useMemo,
+    useState,
+} from "react";
 
 import {
     InputSelect,
@@ -112,18 +118,20 @@ export const InputSelectMultiple = <T = any,>({
     useEffect(() => {
         validateOptions();
     }, [dataMemo]);
-    const onAddItemSelect = (
-        newItem: InputSelectItemOptionBaseProps<T> | undefined,
-    ) => {
-        if (newItem) {
-            setDataFunction((old) => {
-                if (old.find((e) => e.id == newItem.id)) {
-                    return old.filter((e) => e.id != newItem.id);
-                }
-                return [...old, newItem];
-            });
-        }
-    };
+    const onAddItemSelect = useCallback(
+        (newItem: InputSelectItemOptionBaseProps<T> | undefined) => {
+            if (newItem) {
+                setDataFunction(() => {
+                    const old = [...dataMemo];
+                    if (old.find((e) => e.id == newItem.id)) {
+                        return old.filter((e) => e.id != newItem.id);
+                    }
+                    return [...old, newItem];
+                });
+            }
+        },
+        [dataMemo],
+    );
 
     const onRemoveItemSelect = (deleteItem: InputSelectItemOptionBaseProps) => {
         setData(dataMemo.filter((option) => option.id != deleteItem.id));
