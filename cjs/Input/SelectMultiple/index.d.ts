@@ -41,7 +41,7 @@ export interface InputSelectMultipleBaseProps<T = any> extends Omit<InputSelectB
      */
     iconDelete?: ReactNode;
     typeSelectMultipleStyle?: "normal" | "checkbox";
-    CustomOptionsSelected?: typeof InputSelectOption;
+    CustomOptionsSelected?: typeof InputSelectOption<T>;
 }
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
