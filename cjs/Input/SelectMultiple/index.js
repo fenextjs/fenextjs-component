@@ -9,7 +9,7 @@ const SelectOption_1 = require("../SelectOption");
 const fenextjs_error_1 = require("fenextjs-error");
 const fenextjs_interface_1 = require("fenextjs-interface");
 const fenextjs_svg_1 = require("fenextjs-svg");
-const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMultipleList = "", onChange, value = undefined, defaultValue = [], onChangeValidate, options = [], iconDelete = react_1.default.createElement(fenextjs_svg_1.Trash, null), typeSelectMultipleStyle = "normal", ...props }) => {
+const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMultipleList = "", onChange, value = undefined, defaultValue = [], onChangeValidate, options = [], iconDelete = react_1.default.createElement(fenextjs_svg_1.Trash, null), typeSelectMultipleStyle = "normal", CustomOptionsSelected = undefined, ...props }) => {
     const [error, setError] = (0, react_1.useState)(undefined);
     const { data, setData, setDataFunction } = (0, useData_1.useData)(defaultValue, {
         onChangeDataAfter: (e) => {
@@ -65,7 +65,9 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
                 ` },
             react_1.default.createElement(Select_1.InputSelect, { ...props, onChange: onAddItemSelect, options: OPTIONS, error: props?.error ?? error, isSelectClearText: true, showOptionIconImg: false, extraInLabel: react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectMultipleList} ` }, dataMemo.map((option) => {
-                        return (react_1.default.createElement(SelectOption_1.InputSelectOption, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete, disabled: props?.disabled ??
+                        const OptionTag = CustomOptionsSelected ??
+                            SelectOption_1.InputSelectOption;
+                        return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete, disabled: props?.disabled ??
                                 option?.disabled }));
                     })),
                     props?.extraInLabel) }))));

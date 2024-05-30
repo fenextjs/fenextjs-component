@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { InputSelectBaseProps, InputSelectClassProps } from "../Select";
 import { InputSelectItemOptionBaseProps } from "../Select";
+import { InputSelectOption } from "../SelectOption";
 /**
  * Interface that defines CSS class properties for a select-multiple input component.
  */
@@ -40,10 +41,11 @@ export interface InputSelectMultipleBaseProps<T = any> extends Omit<InputSelectB
      */
     iconDelete?: ReactNode;
     typeSelectMultipleStyle?: "normal" | "checkbox";
+    CustomOptionsSelected?: typeof InputSelectOption;
 }
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
  */
 export interface InputSelectMultipleProps<T = any> extends InputSelectMultipleBaseProps<T>, InputSelectMultipleClassProps {
 }
-export declare const InputSelectMultiple: <T = any>({ classNameSelectMultiple, classNameSelectMultipleList, onChange, value, defaultValue, onChangeValidate, options, iconDelete, typeSelectMultipleStyle, ...props }: InputSelectMultipleProps<T>) => React.JSX.Element;
+export declare const InputSelectMultiple: <T = any>({ classNameSelectMultiple, classNameSelectMultipleList, onChange, value, defaultValue, onChangeValidate, options, iconDelete, typeSelectMultipleStyle, CustomOptionsSelected, ...props }: InputSelectMultipleProps<T>) => React.JSX.Element;
