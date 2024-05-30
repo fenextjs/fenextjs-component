@@ -92,7 +92,7 @@ export const InputSelectMultiple = <T = any,>({
         },
     });
 
-    const dataMemo = useMemo(() => value ?? data, [data,value]);
+    const dataMemo = useMemo(() => value ?? data, [data, value]);
 
     const validateOptions = async () => {
         if (onChangeValidate) {

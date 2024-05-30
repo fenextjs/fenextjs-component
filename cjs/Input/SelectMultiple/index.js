@@ -16,7 +16,7 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
             onChange?.(e);
         },
     });
-    const dataMemo = (0, react_1.useMemo)(() => value ?? data, [data]);
+    const dataMemo = (0, react_1.useMemo)(() => value ?? data, [data, value]);
     const validateOptions = async () => {
         if (onChangeValidate) {
             setError(undefined);
