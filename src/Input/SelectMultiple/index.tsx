@@ -60,6 +60,8 @@ export interface InputSelectMultipleBaseProps<T = any>
     iconDelete?: ReactNode;
 
     typeSelectMultipleStyle?: "normal" | "checkbox";
+
+    CustomOptionsSelected?: typeof InputSelectOption;
 }
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
@@ -78,6 +80,7 @@ export const InputSelectMultiple = <T = any,>({
     options = [],
     iconDelete = <Trash />,
     typeSelectMultipleStyle = "normal",
+    CustomOptionsSelected = undefined,
     ...props
 }: InputSelectMultipleProps<T>) => {
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
@@ -160,8 +163,11 @@ export const InputSelectMultiple = <T = any,>({
                                 className={`fenext-select-multiple-list ${classNameSelectMultipleList} `}
                             >
                                 {dataMemo.map((option) => {
+                                    const OptionTag =
+                                        CustomOptionsSelected ??
+                                        InputSelectOption;
                                     return (
-                                        <InputSelectOption
+                                        <OptionTag
                                             {...option}
                                             type={"multiple"}
                                             onDelete={onRemoveItemSelect}

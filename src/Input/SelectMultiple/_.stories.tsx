@@ -22,7 +22,7 @@ const args: InputSelectMultipleProps = {
     //     id:"create",
     //     text:"Create"
     // },
-    disabled:true,
+    // disabled:true,
     defaultValue:[
         {
             id: "1",
@@ -64,3 +64,18 @@ const args: InputSelectMultipleProps = {
 };
 
 Index.args = args;
+
+
+
+export const CustomOptionsSelected = Profile.bind({});
+
+const CustomOptionsSelectedArgs: InputSelectMultipleProps = {
+    ...args,
+    CustomOptionsSelected:({text})=>{
+        return <>
+            Custom Option = {text}
+        </>
+    }
+};
+
+CustomOptionsSelected.args = CustomOptionsSelectedArgs;
