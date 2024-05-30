@@ -61,7 +61,7 @@ export interface InputSelectMultipleBaseProps<T = any>
 
     typeSelectMultipleStyle?: "normal" | "checkbox";
 
-    CustomOptionsSelected?: typeof InputSelectOption;
+    CustomOptionsSelected?: typeof InputSelectOption<T>;
 }
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
@@ -150,7 +150,7 @@ export const InputSelectMultiple = <T = any,>({
                     ${classNameSelectMultiple}
                 `}
             >
-                <InputSelect
+                <InputSelect<T>
                     {...props}
                     onChange={onAddItemSelect}
                     options={OPTIONS}
@@ -165,7 +165,7 @@ export const InputSelectMultiple = <T = any,>({
                                 {dataMemo.map((option) => {
                                     const OptionTag =
                                         CustomOptionsSelected ??
-                                        InputSelectOption;
+                                        InputSelectOption<T>;
                                     return (
                                         <OptionTag
                                             {...option}
