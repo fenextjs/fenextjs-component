@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import { InputSelectBaseProps, InputSelectClassProps } from "../Select";
 import { InputSelectItemOptionBaseProps } from "../Select";
 import { InputSelectOption } from "../SelectOption";
+import { FenextjsValidatorClass } from "fenextjs-validator";
 /**
  * Interface that defines CSS class properties for a select-multiple input component.
  */
@@ -18,7 +19,7 @@ export interface InputSelectMultipleClassProps extends InputSelectClassProps {
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectMultipleBaseProps<T = any> extends Omit<InputSelectBaseProps<T>, "defaultValue" | "value" | "onChange" | "onChangeValidate"> {
+export interface InputSelectMultipleBaseProps<T = any> extends Omit<InputSelectBaseProps<T>, "defaultValue" | "value" | "onChange" | "onChangeValidate" | "validatorData"> {
     /**
      * Default Options of select.
      */
@@ -42,10 +43,14 @@ export interface InputSelectMultipleBaseProps<T = any> extends Omit<InputSelectB
     iconDelete?: ReactNode;
     typeSelectMultipleStyle?: "normal" | "checkbox";
     CustomOptionsSelected?: typeof InputSelectOption<T>;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validatorData?: FenextjsValidatorClass<T[]>;
 }
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
  */
 export interface InputSelectMultipleProps<T = any> extends InputSelectMultipleBaseProps<T>, InputSelectMultipleClassProps {
 }
-export declare const InputSelectMultiple: <T = any>({ classNameSelectMultiple, classNameSelectMultipleList, onChange, value, defaultValue, onChangeValidate, options, iconDelete, typeSelectMultipleStyle, CustomOptionsSelected, ...props }: InputSelectMultipleProps<T>) => React.JSX.Element;
+export declare const InputSelectMultiple: <T = any>({ classNameSelectMultiple, classNameSelectMultipleList, onChange, value, defaultValue, onChangeValidate, options, iconDelete, typeSelectMultipleStyle, CustomOptionsSelected, validatorData, ...props }: InputSelectMultipleProps<T>) => React.JSX.Element;

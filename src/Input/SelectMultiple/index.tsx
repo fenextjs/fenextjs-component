@@ -40,7 +40,11 @@ export interface InputSelectMultipleClassProps extends InputSelectClassProps {
 export interface InputSelectMultipleBaseProps<T = any>
     extends Omit<
         InputSelectBaseProps<T>,
-        "defaultValue" | "value" | "onChange" | "onChangeValidate" | "validatorData"
+        | "defaultValue"
+        | "value"
+        | "onChange"
+        | "onChangeValidate"
+        | "validatorData"
     > {
     /**
      * Default Options of select.
@@ -157,7 +161,7 @@ export const InputSelectMultiple = <T = any,>({
     }, [options, dataMemo]);
 
     const { error: errorFenextVD } = useValidator({
-        data: dataMemo?.map(e=>e?.data),
+        data: dataMemo?.map((e) => e?.data),
         validator: validatorData,
     });
     return (

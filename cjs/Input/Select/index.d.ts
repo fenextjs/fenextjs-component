@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { InputTextBaseProps, InputTextClassProps } from "../Text";
 import { InputSelectOptionBaseProps, InputSelectOptionClassProps } from "../SelectOption";
+import { FenextjsValidatorClass } from "fenextjs-validator";
 export type InputSelectTypeStyle = "normal" | "box" | "list" | "checkbox";
 /**
  * Interface that defines CSS class properties for a select input component.
@@ -133,6 +134,10 @@ export interface InputSelectBaseProps<T = any> extends Omit<InputTextBaseProps, 
      * showOptionIconImg in select.
      */
     showOptionIconImg?: boolean;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validatorData?: FenextjsValidatorClass<T>;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -144,4 +149,4 @@ export interface InputSelectValue<T = any> {
     text?: string;
     textSearch?: string;
 }
-export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, _t, maxLengthShowOptions, itemMaxLengthShowOptions, showOptionIconImg, ...props }: InputSelectProps<T>) => React.JSX.Element;
+export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, _t, maxLengthShowOptions, itemMaxLengthShowOptions, showOptionIconImg, validatorData, ...props }: InputSelectProps<T>) => React.JSX.Element;
