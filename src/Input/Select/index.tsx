@@ -22,6 +22,7 @@ import { useValidator } from "fenextjs-hook";
 import { SVGSearch } from "fenextjs-svg";
 import { Img } from "../../Img";
 import { useSelectOptionsPos } from "./useSelectOptionsPos";
+import { FenextjsValidatorClass } from "fenextjs-validator";
 
 export type InputSelectTypeStyle = "normal" | "box" | "list" | "checkbox";
 
@@ -180,6 +181,10 @@ export interface InputSelectBaseProps<T = any>
      * showOptionIconImg in select.
      */
     showOptionIconImg?: boolean;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validatorData?: FenextjsValidatorClass<T>;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -234,6 +239,7 @@ export const InputSelect = <T = any,>({
         text: "More ...",
     },
     showOptionIconImg = true,
+    validatorData,
     ...props
 }: InputSelectProps<T>) => {
     const options = useMemo(
@@ -389,10 +395,20 @@ export const InputSelect = <T = any,>({
         }
     }, [OPTIONSSEARCH]);
 
-    const { error: errorFenext } = useValidator({
+    const { error: errorFenextV } = useValidator({
         data: data.option,
         validator,
     });
+    const { error: errorFenextVD } = useValidator({
+        data: data?.option?.data,
+        validator: validatorData,
+    });
+
+    const errorFenext = useMemo(
+        () => errorFenextV ?? errorFenextVD,
+        [errorFenextV, errorFenextVD],
+    );
+
     const errorInput = useMemo<ErrorFenextjs | undefined>(() => {
         if (errorWithIsChange && !isChange) {
             return undefined;

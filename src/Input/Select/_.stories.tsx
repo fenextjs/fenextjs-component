@@ -24,6 +24,7 @@ const Profile: Story<InputSelectProps> = (args) => (
 
 export const Index = Profile.bind({});
 
+
 const args: InputSelectProps = {
     id: "select",
     name: "select",
@@ -386,6 +387,7 @@ const MaxLengthOptionsArgs: InputSelectProps = {
             id: n,
             text: `Option ${n}`,
             children: <>Option {n}</>,
+            data:n,
             img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
         }
     }),
@@ -407,7 +409,15 @@ const MaxLengthOptionsArgs: InputSelectProps = {
 MaxLengthOptions.args = MaxLengthOptionsArgs;
 
 
+const FV = FenextjsValidator().isNumber().isMin(5)
 
+const ValidatorDataArgs: InputSelectProps = {
+    ...MaxLengthOptionsArgs,
+    validatorData:FV,
+};
+
+export const ValidatorData = Profile.bind({});
+ValidatorData.args = ValidatorDataArgs;
 
 const WithLoaderProfile: Story<InputSelectProps> = (args) => {
     const [options, setOptions] = useState<InputSelectItemOptionBaseProps[]>([])

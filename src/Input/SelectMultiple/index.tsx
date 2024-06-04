@@ -17,6 +17,8 @@ import { InputSelectOption } from "../SelectOption";
 import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorCode } from "fenextjs-interface";
 import { Trash } from "fenextjs-svg";
+import { useValidator } from "fenextjs-hook";
+import { FenextjsValidatorClass } from "fenextjs-validator";
 /**
  * Interface that defines CSS class properties for a select-multiple input component.
  */
@@ -38,7 +40,7 @@ export interface InputSelectMultipleClassProps extends InputSelectClassProps {
 export interface InputSelectMultipleBaseProps<T = any>
     extends Omit<
         InputSelectBaseProps<T>,
-        "defaultValue" | "value" | "onChange" | "onChangeValidate"
+        "defaultValue" | "value" | "onChange" | "onChangeValidate" | "validatorData"
     > {
     /**
      * Default Options of select.
@@ -68,6 +70,10 @@ export interface InputSelectMultipleBaseProps<T = any>
     typeSelectMultipleStyle?: "normal" | "checkbox";
 
     CustomOptionsSelected?: typeof InputSelectOption<T>;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validatorData?: FenextjsValidatorClass<T[]>;
 }
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
@@ -87,6 +93,7 @@ export const InputSelectMultiple = <T = any,>({
     iconDelete = <Trash />,
     typeSelectMultipleStyle = "normal",
     CustomOptionsSelected = undefined,
+    validatorData,
     ...props
 }: InputSelectMultipleProps<T>) => {
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
@@ -149,6 +156,10 @@ export const InputSelectMultiple = <T = any,>({
         });
     }, [options, dataMemo]);
 
+    const { error: errorFenextVD } = useValidator({
+        data: dataMemo?.map(e=>e?.data),
+        validator: validatorData,
+    });
     return (
         <>
             <div
@@ -162,7 +173,7 @@ export const InputSelectMultiple = <T = any,>({
                     {...props}
                     onChange={onAddItemSelect}
                     options={OPTIONS}
-                    error={props?.error ?? error}
+                    error={props?.error ?? errorFenextVD ?? error}
                     isSelectClearText={true}
                     showOptionIconImg={false}
                     extraInLabel={
