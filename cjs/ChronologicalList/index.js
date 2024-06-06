@@ -17,7 +17,7 @@ const ChronologicalList = ({ className = "", items, market = undefined, parseDat
             i_[date][time].push(element);
         });
         return i_;
-    }, [items]);
+    }, [items, parseDateYYYYMMDDProps, parseDateHHMMSSProps]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-chronological-list ${className} ` }, Object.keys(ITEMS).map((key_Day, i) => {
             const items_day = ITEMS[key_Day];
