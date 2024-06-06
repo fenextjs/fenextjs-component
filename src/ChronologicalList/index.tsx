@@ -85,7 +85,7 @@ export const ChronologicalList = ({
             i_[date][time].push(element);
         });
         return i_;
-    }, [items]);
+    }, [items,parseDateYYYYMMDDProps,parseDateHHMMSSProps]);
 
     return (
         <>
