@@ -180,7 +180,7 @@ export const InputSearch = ({
 
     placeholder = "Search",
     icon = <SVGSearch />,
-    iconClear =  <Close/>,
+    iconClear = <Close />,
     loader = false,
 
     onSearch,
