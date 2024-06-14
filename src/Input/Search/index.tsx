@@ -136,6 +136,11 @@ export interface InputSearchBaseProps extends Omit<InputTextBaseProps, "type"> {
      * @default true
      */
     useLoseFocusInEnter?: boolean;
+    /**
+     * iconClear .
+     * @default <Close/>
+     */
+    iconClear?: ReactNode;
 }
 
 /**
@@ -175,6 +180,7 @@ export const InputSearch = ({
 
     placeholder = "Search",
     icon = <SVGSearch />,
+    iconClear =  <Close/>,
     loader = false,
 
     onSearch,
@@ -382,7 +388,7 @@ export const InputSearch = ({
                                 className="fenext-input-search-clear"
                                 onClick={onClearSearch}
                             >
-                                <Close />
+                                {iconClear}
                             </div>
                         </>
                     }
