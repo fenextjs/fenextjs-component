@@ -1,8 +1,7 @@
 import React from "react";
-import { InputSelectBaseProps, InputSelectClassProps } from "../Select";
+import { InputSelectBaseProps, InputSelectClassProps, InputSelectProps } from "../Select";
 import { useCSCProps } from "fenextjs-hook/cjs/useCSC";
 import { CSCProps } from "fenextjs-interface/cjs/CSC";
-import { InputTextBaseProps } from "../Text";
 /**
  * Interface that defines CSS class properties for a select input component.
  */
@@ -27,15 +26,15 @@ export interface InputSelectCSCBaseProps extends useCSCProps, Omit<InputSelectBa
     /**
      * country Input Label and Placeholder.
      */
-    country?: Pick<InputTextBaseProps, "label" | "placeholder" | "disabled">;
+    country?: Pick<InputSelectProps, "label" | "placeholder" | "disabled" | "classNameSelect">;
     /**
      * state Input Label and Placeholder.
      */
-    state?: Pick<InputTextBaseProps, "label" | "placeholder" | "disabled">;
+    state?: Pick<InputSelectProps, "label" | "placeholder" | "disabled" | "classNameSelect">;
     /**
      * city Input Label and Placeholder.
      */
-    city?: Pick<InputTextBaseProps, "label" | "placeholder" | "disabled">;
+    city?: Pick<InputSelectProps, "label" | "placeholder" | "disabled" | "classNameSelect">;
 }
 /**
  * Props interface for the InputSelectCSC component. Extends both InputSelectCSCBaseProps and InputSelectCSCClassProps interfaces.
