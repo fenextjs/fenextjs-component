@@ -3,6 +3,7 @@ import {
     InputSelect,
     InputSelectBaseProps,
     InputSelectClassProps,
+    InputSelectProps,
 } from "../Select";
 import { useCSC, useCSCProps } from "fenextjs-hook/cjs/useCSC";
 import {
@@ -52,15 +53,15 @@ export interface InputSelectCSCBaseProps
     /**
      * country Input Label and Placeholder.
      */
-    country?: Pick<InputTextBaseProps, "label" | "placeholder" | "disabled">;
+    country?: Pick<InputSelectProps, "label" | "placeholder" | "disabled" | "classNameSelect">;
     /**
      * state Input Label and Placeholder.
      */
-    state?: Pick<InputTextBaseProps, "label" | "placeholder" | "disabled">;
+    state?: Pick<InputSelectProps, "label" | "placeholder" | "disabled"| "classNameSelect">;
     /**
      * city Input Label and Placeholder.
      */
-    city?: Pick<InputTextBaseProps, "label" | "placeholder" | "disabled">;
+    city?: Pick<InputSelectProps, "label" | "placeholder" | "disabled"| "classNameSelect">;
 }
 /**
  * Props interface for the InputSelectCSC component. Extends both InputSelectCSCBaseProps and InputSelectCSCClassProps interfaces.
