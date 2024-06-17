@@ -17,6 +17,7 @@ tslib_1.__exportStar(require("./SelectMultiple"), exports);
 tslib_1.__exportStar(require("./SelectNumber"), exports);
 tslib_1.__exportStar(require("./SelectCSC"), exports);
 tslib_1.__exportStar(require("./SelectT"), exports);
+tslib_1.__exportStar(require("./SelectTimeZone"), exports);
 tslib_1.__exportStar(require("./NumberCount"), exports);
 tslib_1.__exportStar(require("./Radio"), exports);
 tslib_1.__exportStar(require("./Phone"), exports);
