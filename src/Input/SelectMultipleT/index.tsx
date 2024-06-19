@@ -7,7 +7,7 @@ import { InputSelectItemOptionBaseProps } from "../Select";
 
 export interface InputSelectMultipleTProps<T>
     extends Omit<
-    InputSelectMultipleProps<T>,
+        InputSelectMultipleProps<T>,
         "defaultValue" | "value" | "options" | "onChange"
     > {
     /**
@@ -44,7 +44,9 @@ export const InputSelectMultipleT = <T,>({
         <>
             <InputSelectMultiple<T>
                 {...props}
-                defaultValue={defaultValue ? defaultValue.map(onParse) : undefined}
+                defaultValue={
+                    defaultValue ? defaultValue.map(onParse) : undefined
+                }
                 value={value ? value.map(onParse) : undefined}
                 options={options.map(onParse)}
                 onChangeData={onChange}

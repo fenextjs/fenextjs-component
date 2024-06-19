@@ -1,18 +1,6 @@
 import React from "react";
-import { InputSelectMultipleBaseProps, InputSelectMultipleClassProps } from "../SelectMultiple";
-/**
- * Interface that defines CSS class properties for a SelectCountryMultiple input component.
- */
-export interface InputSelectCountryMultipleClassProps extends InputSelectMultipleClassProps {
-}
-/**
- * Interface that defines the base properties for a text input component.
- */
-export interface InputSelectCountryMultipleBaseProps extends Omit<InputSelectMultipleBaseProps, "options" | "useLoader" | "loader"> {
-}
-/**
- * Props interface for the InputSelectCountryMultiple component. Extends both InputSelectCountryMultipleBaseProps and InputSelectCountryMultipleClassProps interfaces.
- */
-export interface InputSelectCountryMultipleProps extends InputSelectCountryMultipleBaseProps, InputSelectCountryMultipleClassProps {
+import { InputSelectMultipleTProps } from "../SelectMultipleT";
+import { CountryProps } from "fenextjs-interface";
+export interface InputSelectCountryMultipleProps extends Omit<InputSelectMultipleTProps<CountryProps>, "options" | "useLoader" | "loader" | "onParse"> {
 }
 export declare const InputSelectCountryMultiple: ({ ...props }: InputSelectCountryMultipleProps) => React.JSX.Element;

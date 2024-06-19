@@ -112,7 +112,7 @@ export const InputSelectMultiple = <T = any,>({
     >(defaultValue, {
         onChangeDataAfter: (e) => {
             onChange?.(e);
-            onChangeData?.(e?.map(e=>e.data as T))
+            onChangeData?.(e?.map((e) => e.data as T));
         },
     });
 

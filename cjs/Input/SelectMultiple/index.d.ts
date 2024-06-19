@@ -19,7 +19,7 @@ export interface InputSelectMultipleClassProps extends InputSelectClassProps {
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectMultipleBaseProps<T = any> extends Omit<InputSelectBaseProps<T>, "defaultValue" | "value" | "onChange" | "onChangeValidate" | "validatorData"> {
+export interface InputSelectMultipleBaseProps<T = any> extends Omit<InputSelectBaseProps<T>, "defaultValue" | "value" | "onChange" | "onChangeData" | "onChangeValidate" | "validatorData"> {
     /**
      * Default Options of select.
      */
@@ -32,6 +32,10 @@ export interface InputSelectMultipleBaseProps<T = any> extends Omit<InputSelectB
      * Function to call when the input value changes.
      */
     onChange?: (v?: InputSelectItemOptionBaseProps<T>[]) => void;
+    /**
+     * Function to call when the input value changes.
+     */
+    onChangeData?: (v?: T[]) => void;
     /**
      * Function to call for custom input validation.
      */
@@ -53,4 +57,4 @@ export interface InputSelectMultipleBaseProps<T = any> extends Omit<InputSelectB
  */
 export interface InputSelectMultipleProps<T = any> extends InputSelectMultipleBaseProps<T>, InputSelectMultipleClassProps {
 }
-export declare const InputSelectMultiple: <T = any>({ classNameSelectMultiple, classNameSelectMultipleList, onChange, value, defaultValue, onChangeValidate, options, iconDelete, typeSelectMultipleStyle, CustomOptionsSelected, validatorData, ...props }: InputSelectMultipleProps<T>) => React.JSX.Element;
+export declare const InputSelectMultiple: <T = any>({ classNameSelectMultiple, classNameSelectMultipleList, onChange, onChangeData, value, defaultValue, onChangeValidate, options, iconDelete, typeSelectMultipleStyle, CustomOptionsSelected, validatorData, ...props }: InputSelectMultipleProps<T>) => React.JSX.Element;

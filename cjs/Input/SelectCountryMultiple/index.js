@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InputSelectCountryMultiple = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
-const SelectMultiple_1 = require("../SelectMultiple");
+const SelectMultipleT_1 = require("../SelectMultipleT");
 const country_state_city_nextjs_1 = require("country-state-city-nextjs");
 const InputSelectCountryMultiple = ({ ...props }) => {
     const [loader, setLoader] = (0, react_1.useState)(false);
@@ -22,7 +22,12 @@ const InputSelectCountryMultiple = ({ ...props }) => {
         onLoad();
     }, []);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(SelectMultiple_1.InputSelectMultiple, { ...props, options: options, loader: loader, useLoader: true })));
+        react_1.default.createElement(SelectMultipleT_1.InputSelectMultipleT, { ...props, options: options, loader: loader, useLoader: true, onParse: (e) => ({
+                ...e,
+                text: e?.text ?? "",
+                id: e?.id ?? "",
+                data: e,
+            }) })));
 };
 exports.InputSelectCountryMultiple = InputSelectCountryMultiple;
 //# sourceMappingURL=index.js.map
