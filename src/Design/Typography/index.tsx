@@ -2,11 +2,11 @@ import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../Input/SelectT";
 import { InputNumberCount } from "../../Input/NumberCount";
 import { _TProps } from "fenextjs-interface";
-import React, { useMemo } from "react";
+import React, { CSSProperties, useMemo } from "react";
 import { Edit } from "fenextjs-svg";
 import { Collapse } from "../../Collapse/Simple";
 import { Text } from "../../Text";
-import { ConstDesignTypographyDecorationUnit, ConstDesignTypographyFontSizeUnit, ConstDesignTypographyLetterSpacingUnit, ConstDesignTypographyLineHeightUnit, ConstDesignTypographyStyleUnit, ConstDesignTypographyTransformUnit, ConstDesignTypographyWeightUnit, ConstDesignTypographyWordSpacingUnit, DesignTypographyValue } from './fontUnit'
+import { ConstDesignTypographyDecorationUnit, ConstDesignTypographyFontSizeUnit, ConstDesignTypographyLetterSpacingUnit, ConstDesignTypographyLineHeightUnit, ConstDesignTypographyStyleUnit, ConstDesignTypographyTextAlignUnit, ConstDesignTypographyTransformUnit, ConstDesignTypographyWeightUnit, ConstDesignTypographyWordSpacingUnit, DesignTypographyValue } from './fontUnit'
 import { useData } from "fenextjs-hook";
 
 
@@ -31,9 +31,14 @@ export interface DesignTypographyProps extends _TProps {
     defaultValue?: DesignTypographyValueProps
     value?: DesignTypographyValueProps
     onChange?: (data: DesignTypographyValueProps) => void
+    onChangeStyles?: (data: CSSProperties) => void
 
     textTypography?: string
+    textExample?: string
+    textExampleValue?: string
+    textColor?: string
     textSize?: string
+    textAlign?: string
     textWeight?: string
     textTransform?: string
     textStyle?: string
@@ -49,7 +54,11 @@ export interface DesignTypographyProps extends _TProps {
 export const DesignTypography = ({ className = "", _t,
 
     textTypography = "Typography",
+    textExample = "Example",
+    textExampleValue = "Lorem ipsum dolor sit",
+    textColor="Color",
     textSize = "Size",
+    textAlign="Alignment",
     textWeight = "Weight",
     textTransform = "Transform",
     textStyle = "Style",
@@ -61,29 +70,46 @@ export const DesignTypography = ({ className = "", _t,
     defaultValue = {
         fontSize: 20,
         fontSizeUnit: "px",
+        textAlign:"left",
         weight: 400,
         transform: "none",
         style: "normal",
         decoration: "normal",
-        lineHeight: 1,
+        lineHeight: 1.2,
         lineHeightUnit: "normal",
         letterSpacing: 0,
         letterSpacingUnit: "px",
-        wordSpacing: 5,
+        wordSpacing: 0,
         wordSpacingUnit: "px",
     },
     value,
-    onChange
+    onChange,
+    onChangeStyles
 
 }: DesignTypographyProps) => {
 
-    const { data: data_, onChangeData } = useData<DesignTypographyValueProps>(defaultValue, {
-        onChangeDataAfter: onChange
+    const { data: data_, onChangeData, dataMemo } = useData<DesignTypographyValueProps, CSSProperties>(defaultValue, {
+        onChangeDataAfter: onChange,
+        onChangeDataMemoAfter: onChangeStyles,
+        onMemo: (d) => {
+            return {
+                fontSize: `${d.fontSize}${d.fontSizeUnit}`,
+                textAlign: d.textAlign,
+                fontWeight: d.weight,
+                textTransform: d.transform,
+                fontStyle: d.style,
+                textDecoration: d.decoration,
+                lineHeight: `${d.lineHeight}${d.lineHeightUnit == "normal" ? "" : d.lineHeightUnit}`,
+                letterSpacing: `${d.letterSpacing}${d.letterSpacingUnit}`,
+                wordSpacing: `${d.wordSpacing}${d.wordSpacingUnit}`,
+                color:d.color
+            }
+        }
     })
 
     const data = useMemo(() => value ?? data_, [value, data_])
 
-    const _p = (e) => ({ id: `${e}`, text: `${e}`,data:e })
+    const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e })
 
     return (
         <>
@@ -98,6 +124,24 @@ export const DesignTypography = ({ className = "", _t,
                     rotateIcon={false}
                 >
                     <div className={`fenext-design-typography-content `}>
+                        <div className={`fenext-design-typography-item fenext-design-typography-item-2`}>
+                            <Text>
+                                {_tValidate(textExample, _t)}
+                            </Text>
+                            <div className={`fenext-design-typography-content-example `}>
+                                <Text>
+                                    <div style={dataMemo} >
+                                        {_tValidate(textExampleValue, _t)}
+                                    </div>
+                                </Text>
+                            </div>
+                        </div>
+                        <div className={`fenext-design-typography-item `}>
+                            <Text>
+                                {_tValidate(textColor, _t)}
+                            </Text>
+                            {/* <InputColo/> */}
+                        </div>
                         <div className={`fenext-design-typography-item fenext-design-typography-item-3`}>
                             <Text>
                                 {_tValidate(textSize, _t)}
@@ -115,6 +159,17 @@ export const DesignTypography = ({ className = "", _t,
                                 options={[...ConstDesignTypographyFontSizeUnit]}
                                 defaultValue={data.fontSizeUnit}
                                 onChange={onChangeData("fontSizeUnit")}
+                            />
+                        </div>
+                        <div className={`fenext-design-typography-item `}>
+                            <Text>
+                                {_tValidate(textAlign, _t)}
+                            </Text>
+                            <InputSelectT<DesignTypographyValue['textAlign']>
+                                onParse={_p}
+                                options={[...ConstDesignTypographyTextAlignUnit]}
+                                defaultValue={data.textAlign}
+                                onChange={onChangeData("textAlign")}
                             />
                         </div>
                         <div className={`fenext-design-typography-item `}>
@@ -167,7 +222,7 @@ export const DesignTypography = ({ className = "", _t,
                             </Text>
                             <InputNumberCount
                                 symbolInit=""
-                                symbolFinal={data.lineHeightUnit == "normal" ? "" :data.lineHeightUnit}
+                                symbolFinal={data.lineHeightUnit == "normal" ? "" : data.lineHeightUnit}
                                 defaultValue={data.lineHeight}
                                 onChange={onChangeData("lineHeight")}
                             />

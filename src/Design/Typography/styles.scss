@@ -2,12 +2,28 @@
     &-content{
         display: grid;
         gap: 1rem;
+        .fenext-input-content-input{
+            padding: .5rem 1rem;
+        }
+        &-example{
+            &,*{
+                white-space: nowrap;
+                overflow: hidden;
+                max-width: 100%;
+                display: block;
+                text-overflow: ellipsis;
+
+            }
+        }
     }
     &-item{
         display: grid;
         grid-template-columns: 1fr auto;
         gap: 1rem;
         align-items: center;
+        &-2{
+            grid-template-columns: 1fr 1fr;
+        }
         &-3{
             grid-template-columns: 1fr auto auto;
         }

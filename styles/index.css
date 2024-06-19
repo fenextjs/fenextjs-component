@@ -2675,6 +2675,14 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   cursor: pointer;
 }
 
+.fenext-input-color-input {
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.7rem;
+  width: 5rem;
+  height: 3.36rem;
+  border: 0;
+}
+
 .fenext-pagination {
   display: flex;
   flex-wrap: wrap;
@@ -6310,11 +6318,24 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
   display: grid;
   gap: 1rem;
 }
+.fenext-design-typography-content .fenext-input-content-input {
+  padding: 0.5rem 1rem;
+}
+.fenext-design-typography-content-example, .fenext-design-typography-content-example * {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  display: block;
+  text-overflow: ellipsis;
+}
 .fenext-design-typography-item {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 1rem;
   align-items: center;
+}
+.fenext-design-typography-item-2 {
+  grid-template-columns: 1fr 1fr;
 }
 .fenext-design-typography-item-3 {
   grid-template-columns: 1fr auto auto;
