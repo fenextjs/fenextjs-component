@@ -1,5 +1,6 @@
 import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../Input/SelectT";
+import { InputColor } from "../../Input/Color";
 import { InputNumberCount } from "../../Input/NumberCount";
 import { _TProps } from "fenextjs-interface";
 import React, { CSSProperties, useMemo } from "react";
@@ -56,9 +57,9 @@ export const DesignTypography = ({ className = "", _t,
     textTypography = "Typography",
     textExample = "Example",
     textExampleValue = "Lorem ipsum dolor sit",
-    textColor="Color",
+    textColor = "Color",
     textSize = "Size",
-    textAlign="Alignment",
+    textAlign = "Alignment",
     textWeight = "Weight",
     textTransform = "Transform",
     textStyle = "Style",
@@ -70,7 +71,7 @@ export const DesignTypography = ({ className = "", _t,
     defaultValue = {
         fontSize: 20,
         fontSizeUnit: "px",
-        textAlign:"left",
+        textAlign: "left",
         weight: 400,
         transform: "none",
         style: "normal",
@@ -102,7 +103,7 @@ export const DesignTypography = ({ className = "", _t,
                 lineHeight: `${d.lineHeight}${d.lineHeightUnit == "normal" ? "" : d.lineHeightUnit}`,
                 letterSpacing: `${d.letterSpacing}${d.letterSpacingUnit}`,
                 wordSpacing: `${d.wordSpacing}${d.wordSpacingUnit}`,
-                color:d.color
+                color: d.color
             }
         }
     })
@@ -140,7 +141,10 @@ export const DesignTypography = ({ className = "", _t,
                             <Text>
                                 {_tValidate(textColor, _t)}
                             </Text>
-                            {/* <InputColo/> */}
+                            <InputColor
+                                defaultValue={data.color}
+                                onChange={onChangeData("color")}
+                            />
                         </div>
                         <div className={`fenext-design-typography-item fenext-design-typography-item-3`}>
                             <Text>

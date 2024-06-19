@@ -2681,6 +2681,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   width: 5rem;
   height: 3.36rem;
   border: 0;
+  outline: none;
 }
 
 .fenext-pagination {
@@ -6317,6 +6318,9 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
 .fenext-design-typography-content {
   display: grid;
   gap: 1rem;
+}
+.fenext-design-typography-content .fenext-input-color-input {
+  height: 2.36rem;
 }
 .fenext-design-typography-content .fenext-input-content-input {
   padding: 0.5rem 1rem;
