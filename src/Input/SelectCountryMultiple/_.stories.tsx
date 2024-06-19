@@ -18,6 +18,7 @@ const Profile: Story<InputSelectCountryMultipleProps> = (args) => (
 export const Index = Profile.bind({});
 
 const args: InputSelectCountryMultipleProps = {
+    onChange:console.log
 };
 
 Index.args = args;

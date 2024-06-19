@@ -1,37 +1,24 @@
 import React, { useEffect, useState } from "react";
 import {
-    InputSelectMultiple,
-    InputSelectMultipleBaseProps,
-    InputSelectMultipleClassProps,
-} from "../SelectMultiple";
+    InputSelectMultipleT,
+    InputSelectMultipleTProps
+} from "../SelectMultipleT";
 import { getDataCountrys, getRuteCountryImg } from "country-state-city-nextjs";
-/**
- * Interface that defines CSS class properties for a SelectCountryMultiple input component.
- */
-export interface InputSelectCountryMultipleClassProps
-    extends InputSelectMultipleClassProps {}
+import { CountryProps } from "fenextjs-interface";
 
-/**
- * Interface that defines the base properties for a text input component.
- */
-export interface InputSelectCountryMultipleBaseProps
-    extends Omit<
-        InputSelectMultipleBaseProps,
-        "options" | "useLoader" | "loader"
-    > {}
-/**
- * Props interface for the InputSelectCountryMultiple component. Extends both InputSelectCountryMultipleBaseProps and InputSelectCountryMultipleClassProps interfaces.
- */
 export interface InputSelectCountryMultipleProps
-    extends InputSelectCountryMultipleBaseProps,
-        InputSelectCountryMultipleClassProps {}
+    extends Omit<
+    InputSelectMultipleTProps<CountryProps>,
+        "options" | "useLoader" | "loader" | "onParse"
+    > {}
+    
 
 export const InputSelectCountryMultiple = ({
     ...props
 }: InputSelectCountryMultipleProps) => {
     const [loader, setLoader] = useState(false);
     const [options, setOptions] = useState<
-        InputSelectMultipleBaseProps["options"]
+    CountryProps[]
     >([]);
     const onLoad = async () => {
         const countrys = await getDataCountrys();
@@ -51,11 +38,17 @@ export const InputSelectCountryMultiple = ({
 
     return (
         <>
-            <InputSelectMultiple
+            <InputSelectMultipleT<CountryProps>
                 {...props}
                 options={options}
                 loader={loader}
                 useLoader={true}
+                onParse={e=>({
+                    ...e,
+                    text:e?.text ?? '',
+                    id:e?.id ?? '',
+                    data:e
+                })}
             />
         </>
     );
