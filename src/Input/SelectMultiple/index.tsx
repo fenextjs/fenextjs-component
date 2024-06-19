@@ -43,6 +43,7 @@ export interface InputSelectMultipleBaseProps<T = any>
         | "defaultValue"
         | "value"
         | "onChange"
+        | "onChangeData"
         | "onChangeValidate"
         | "validatorData"
     > {
@@ -58,6 +59,10 @@ export interface InputSelectMultipleBaseProps<T = any>
      * Function to call when the input value changes.
      */
     onChange?: (v?: InputSelectItemOptionBaseProps<T>[]) => void;
+    /**
+     * Function to call when the input value changes.
+     */
+    onChangeData?: (v?: T[]) => void;
 
     /**
      * Function to call for custom input validation.
@@ -90,6 +95,7 @@ export const InputSelectMultiple = <T = any,>({
     classNameSelectMultiple = "",
     classNameSelectMultipleList = "",
     onChange,
+    onChangeData,
     value = undefined,
     defaultValue = [],
     onChangeValidate,
@@ -106,6 +112,7 @@ export const InputSelectMultiple = <T = any,>({
     >(defaultValue, {
         onChangeDataAfter: (e) => {
             onChange?.(e);
+            onChangeData?.(e?.map(e=>e.data as T))
         },
     });
 
