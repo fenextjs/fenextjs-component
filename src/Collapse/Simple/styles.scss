@@ -18,10 +18,15 @@
     }
     @mixin fenext-collapse-active-csc {
         grid-template-rows: auto auto;
-        > .fenext-collapse-header {
-            .fenext-collapse-header-icon {
-                transform: rotateZ(180deg);
+        &.fenext-collapse-rotate-icon-yes {
+            > .fenext-collapse-header {
+                .fenext-collapse-header-icon {
+                    transform: rotateZ(180deg);
+                }
             }
+
+        }
+        > .fenext-collapse-header {
             .fenext-collapse-header-uncheck {
                 display: block;
             }

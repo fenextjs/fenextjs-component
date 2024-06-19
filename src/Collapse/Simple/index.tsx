@@ -56,6 +56,11 @@ export interface CollapseBaseProps {
      * children of Collapse.
      */
     children?: ReactNode;
+
+    /**
+     * rotateIcon of Collapse.
+     */
+    rotateIcon?: boolean;
 }
 
 /**
@@ -108,11 +113,12 @@ export const Collapse = ({
     status = "none",
     onChange,
     iconArrow = <Arrow />,
+    rotateIcon=true,
 }: CollapseProps) => {
     return (
         <>
             <div
-                className={`fenext-collapse fenext-collapse-status-${status} fenext-collapse-${show} ${className}`}
+                className={`fenext-collapse fenext-collapse-status-${status} fenext-collapse-rotate-icon-${rotateIcon?"yes":"no"} fenext-collapse-${show} ${className}`}
             >
                 <label className={`fenext-collapse-header ${classNameHeader}`}>
                     <input
