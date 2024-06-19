@@ -6306,6 +6306,20 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
   display: none;
 }
 
+.fenext-design-typography-content {
+  display: grid;
+  gap: 1rem;
+}
+.fenext-design-typography-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+.fenext-design-typography-item-3 {
+  grid-template-columns: 1fr auto auto;
+}
+
 @keyframes to-rotate {
   to {
     transform: rotate(360deg);

@@ -1,2 +1,15 @@
 .fenext-design-typography{
+    &-content{
+        display: grid;
+        gap: 1rem;
+    }
+    &-item{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+        align-items: center;
+        &-3{
+            grid-template-columns: 1fr auto auto;
+        }
+    }
 }
