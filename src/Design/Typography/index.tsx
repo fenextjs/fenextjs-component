@@ -5,7 +5,7 @@ import { InputNumberCount } from "../../Input/NumberCount";
 import { _TProps } from "fenextjs-interface";
 import React, { CSSProperties, useMemo } from "react";
 import { Edit } from "fenextjs-svg";
-import { Collapse } from "../../Collapse/Simple";
+import { Collapse, CollapseProps } from "../../Collapse/Simple";
 import { Text } from "../../Text";
 import {
     ConstDesignTypographyDecorationUnit,
@@ -20,6 +20,7 @@ import {
     DesignTypographyValue,
 } from "./fontUnit";
 import { useData } from "fenextjs-hook";
+import {parseDesignTypographyValueProps_to_CSSProperties} from './parse'
 
 /**
  * Properties for the base DesignTypography component.
@@ -54,6 +55,9 @@ export interface DesignTypographyProps extends _TProps {
     textLineHeight?: string;
     textLetterSpacing?: string;
     textWordSpacing?: string;
+
+    collapseName?:CollapseProps['name']
+    collapseType?:CollapseProps['type']
 }
 
 export const DesignTypography = ({
@@ -92,6 +96,9 @@ export const DesignTypography = ({
     value,
     onChange,
     onChangeStyles,
+
+    collapseName,
+    collapseType
 }: DesignTypographyProps) => {
     const {
         data: data_,
@@ -100,20 +107,7 @@ export const DesignTypography = ({
     } = useData<DesignTypographyValueProps, CSSProperties>(defaultValue, {
         onChangeDataAfter: onChange,
         onChangeDataMemoAfter: onChangeStyles,
-        onMemo: (d) => {
-            return {
-                fontSize: `${d.fontSize}${d.fontSizeUnit}`,
-                textAlign: d.textAlign,
-                fontWeight: d.weight,
-                textTransform: d.transform,
-                fontStyle: d.style,
-                textDecoration: d.decoration,
-                lineHeight: `${d.lineHeight}${d.lineHeightUnit == "normal" ? "" : d.lineHeightUnit}`,
-                letterSpacing: `${d.letterSpacing}${d.letterSpacingUnit}`,
-                wordSpacing: `${d.wordSpacing}${d.wordSpacingUnit}`,
-                color: d.color,
-            };
-        },
+        onMemo: parseDesignTypographyValueProps_to_CSSProperties
     });
 
     const data = useMemo(() => value ?? data_, [value, data_]);
@@ -131,6 +125,8 @@ export const DesignTypography = ({
                         </>
                     }
                     rotateIcon={false}
+                    name={collapseName}
+                    type={collapseType}
                 >
                     <div className={`fenext-design-typography-content `}>
                         <div
