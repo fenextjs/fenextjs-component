@@ -20,7 +20,7 @@ import {
     DesignTypographyValue,
 } from "./fontUnit";
 import { useData } from "fenextjs-hook";
-import {parseDesignTypographyValueProps_to_CSSProperties} from './parse'
+import { parseDesignTypographyValueProps_to_CSSProperties } from "./parse";
 
 /**
  * Properties for the base DesignTypography component.
@@ -56,8 +56,8 @@ export interface DesignTypographyProps extends _TProps {
     textLetterSpacing?: string;
     textWordSpacing?: string;
 
-    collapseName?:CollapseProps['name']
-    collapseType?:CollapseProps['type']
+    collapseName?: CollapseProps["name"];
+    collapseType?: CollapseProps["type"];
 }
 
 export const DesignTypography = ({
@@ -98,7 +98,7 @@ export const DesignTypography = ({
     onChangeStyles,
 
     collapseName,
-    collapseType
+    collapseType,
 }: DesignTypographyProps) => {
     const {
         data: data_,
@@ -107,7 +107,7 @@ export const DesignTypography = ({
     } = useData<DesignTypographyValueProps, CSSProperties>(defaultValue, {
         onChangeDataAfter: onChange,
         onChangeDataMemoAfter: onChangeStyles,
-        onMemo: parseDesignTypographyValueProps_to_CSSProperties
+        onMemo: parseDesignTypographyValueProps_to_CSSProperties,
     });
 
     const data = useMemo(() => value ?? data_, [value, data_]);

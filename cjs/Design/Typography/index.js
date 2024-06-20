@@ -12,6 +12,7 @@ const Simple_1 = require("../../Collapse/Simple");
 const Text_1 = require("../../Text");
 const fontUnit_1 = require("./fontUnit");
 const fenextjs_hook_1 = require("fenextjs-hook");
+const parse_1 = require("./parse");
 const DesignTypography = ({ className = "", _t, textTypography = "Typography", textExample = "Example", textExampleValue = "Lorem ipsum dolor sit", textColor = "Color", textSize = "Size", textAlign = "Alignment", textWeight = "Weight", textTransform = "Transform", textStyle = "Style", textDecoration = "Decoration", textLineHeight = "Line Height", textLetterSpacing = "Letter Spacing", textWordSpacing = "Word Spacing", defaultValue = {
     fontSize: 20,
     fontSizeUnit: "px",
@@ -26,31 +27,18 @@ const DesignTypography = ({ className = "", _t, textTypography = "Typography", t
     letterSpacingUnit: "px",
     wordSpacing: 0,
     wordSpacingUnit: "px",
-}, value, onChange, onChangeStyles, }) => {
+}, value, onChange, onChangeStyles, collapseName, collapseType, }) => {
     const { data: data_, onChangeData, dataMemo, } = (0, fenextjs_hook_1.useData)(defaultValue, {
         onChangeDataAfter: onChange,
         onChangeDataMemoAfter: onChangeStyles,
-        onMemo: (d) => {
-            return {
-                fontSize: `${d.fontSize}${d.fontSizeUnit}`,
-                textAlign: d.textAlign,
-                fontWeight: d.weight,
-                textTransform: d.transform,
-                fontStyle: d.style,
-                textDecoration: d.decoration,
-                lineHeight: `${d.lineHeight}${d.lineHeightUnit == "normal" ? "" : d.lineHeightUnit}`,
-                letterSpacing: `${d.letterSpacing}${d.letterSpacingUnit}`,
-                wordSpacing: `${d.wordSpacing}${d.wordSpacingUnit}`,
-                color: d.color,
-            };
-        },
+        onMemo: parse_1.parseDesignTypographyValueProps_to_CSSProperties,
     });
     const data = (0, react_1.useMemo)(() => value ?? data_, [value, data_]);
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-design-typography ${className} ` },
             react_1.default.createElement(Simple_1.Collapse, { header: react_1.default.createElement(react_1.default.Fragment, null, (0, fenextjs_functions_1._tValidate)(textTypography, _t)), iconArrow: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(fenextjs_svg_1.Edit, null)), rotateIcon: false },
+                    react_1.default.createElement(fenextjs_svg_1.Edit, null)), rotateIcon: false, name: collapseName, type: collapseType },
                 react_1.default.createElement("div", { className: `fenext-design-typography-content ` },
                     react_1.default.createElement("div", { className: `fenext-design-typography-item fenext-design-typography-item-2` },
                         react_1.default.createElement(Text_1.Text, null, (0, fenextjs_functions_1._tValidate)(textExample, _t)),

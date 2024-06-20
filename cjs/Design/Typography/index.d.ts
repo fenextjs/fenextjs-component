@@ -1,5 +1,6 @@
 import { _TProps } from "fenextjs-interface";
 import React, { CSSProperties } from "react";
+import { CollapseProps } from "../../Collapse/Simple";
 import { DesignTypographyValue } from "./fontUnit";
 /**
  * Properties for the base DesignTypography component.
@@ -31,5 +32,7 @@ export interface DesignTypographyProps extends _TProps {
     textLineHeight?: string;
     textLetterSpacing?: string;
     textWordSpacing?: string;
+    collapseName?: CollapseProps["name"];
+    collapseType?: CollapseProps["type"];
 }
-export declare const DesignTypography: ({ className, _t, textTypography, textExample, textExampleValue, textColor, textSize, textAlign, textWeight, textTransform, textStyle, textDecoration, textLineHeight, textLetterSpacing, textWordSpacing, defaultValue, value, onChange, onChangeStyles, }: DesignTypographyProps) => React.JSX.Element;
+export declare const DesignTypography: ({ className, _t, textTypography, textExample, textExampleValue, textColor, textSize, textAlign, textWeight, textTransform, textStyle, textDecoration, textLineHeight, textLetterSpacing, textWordSpacing, defaultValue, value, onChange, onChangeStyles, collapseName, collapseType, }: DesignTypographyProps) => React.JSX.Element;

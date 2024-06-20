@@ -1,9 +1,7 @@
-import { CSSProperties } from "react";
-import { DesignTypographyValue } from "./fontUnit";
-
-export const parseDesignTypographyValueProps_to_CSSProperties = (
-    d: Partial<DesignTypographyValue>,
-): CSSProperties => {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.parseDesignTypographyValueProps_to_CSSProperties = void 0;
+const parseDesignTypographyValueProps_to_CSSProperties = (d) => {
     return {
         fontSize: `${d.fontSize}${d.fontSizeUnit}`,
         textAlign: d.textAlign,
@@ -17,3 +15,5 @@ export const parseDesignTypographyValueProps_to_CSSProperties = (
         color: d.color,
     };
 };
+exports.parseDesignTypographyValueProps_to_CSSProperties = parseDesignTypographyValueProps_to_CSSProperties;
+//# sourceMappingURL=parse.js.map
