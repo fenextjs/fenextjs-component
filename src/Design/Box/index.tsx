@@ -25,10 +25,7 @@ import { DesignBoxGap, DesignBoxGapProps } from "./Gap";
  */
 export interface DesignBoxValueProps extends Partial<DesignBoxValue> {}
 
-/**
- * Properties for the base DesignBox component.
- */
-export interface DesignBoxProps
+export interface DesignBoxTextProps
     extends DesignBoxPaddingProps,
         DesignBoxMarginProps,
         DesignBoxBorderProps,
@@ -39,7 +36,16 @@ export interface DesignBoxProps
         DesignBoxHeightProps,
         DesignBoxGapProps,
         DesignBoxAlignProps,
-        DesignBoxBorderStyleProps {
+        DesignBoxBorderStyleProps {}
+
+/**
+ * Properties for the base DesignBox component.
+ */
+export interface DesignBoxProps
+    extends Omit<
+        DesignBoxTextProps,
+        "setDataFunction" | "data" | "onChangeData"
+    > {
     /**
      * The class name for the component.
      */
@@ -52,7 +58,6 @@ export interface DesignBoxProps
     collapseUseActiveForShowChildren?: CollapseProps["useActiveForShowChildren"];
 
     textBox?: string;
-
 
     defaultValue?: DesignBoxValueProps;
     value?: DesignBoxValueProps;
@@ -131,8 +136,8 @@ export const DesignBox = ({
         borderRightStyle: "hidden",
         borderBottomStyle: "hidden",
 
-        justifyContent:"stretch",
-        alignItems:"start"
+        justifyContent: "stretch",
+        alignItems: "start",
     },
     value,
     onChange,
@@ -142,22 +147,21 @@ export const DesignBox = ({
     collapseType,
     collapseUseActiveForShowChildren = true,
 }: DesignBoxProps) => {
-    const { onChangeData ,dataMemo,data:data_,setDataFunction} = useData<DesignBoxValueProps, CSSProperties>(
-        defaultValue,
-        {
-            onChangeDataAfter: onChange,
-            onChangeDataMemoAfter: onChangeStyles,
-            onMemo: parseDesignBoxValueProps_to_CSSProperties,
-        },
-    );
-    console.log({borderLeftStyle:dataMemo?.borderLeftStyle});
+    const {
+        onChangeData,
+        data: data_,
+        setDataFunction,
+    } = useData<DesignBoxValueProps, CSSProperties>(defaultValue, {
+        onChangeDataAfter: onChange,
+        onChangeDataMemoAfter: onChangeStyles,
+        onMemo: parseDesignBoxValueProps_to_CSSProperties,
+    });
 
     const data = useMemo(() => value ?? data_, [value, data_]);
-    
+
     return (
         <>
             <div className={`fenext-design-box ${className} `}>
-                <div style={dataMemo}></div>
                 <Collapse
                     header={<>{_tValidate(textBox, _t)}</>}
                     iconArrow={

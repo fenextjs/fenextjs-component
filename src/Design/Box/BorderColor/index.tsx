@@ -18,7 +18,6 @@ export const DesignBoxBorderColor = ({
     data,
     onChangeData,
 }: DesignBoxBorderColorProps) => {
-
     return (
         <>
             <div

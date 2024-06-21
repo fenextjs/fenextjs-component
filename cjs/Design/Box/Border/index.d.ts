@@ -10,4 +10,4 @@ export interface DesignBoxBorderProps extends DesignBoxUseDataProps {
     textBorderRight?: string;
     textBorderBottom?: string;
 }
-export declare const DesignBoxBorder: ({ _t, textBorder, textBorderBottom, textBorderLeft, textBorderRight, textBorderTop, defaultValue, value, onChange, }: DesignBoxBorderProps) => React.JSX.Element;
+export declare const DesignBoxBorder: ({ _t, textBorder, textBorderBottom, textBorderLeft, textBorderRight, textBorderTop, data, setDataFunction, onChangeData, }: DesignBoxBorderProps) => React.JSX.Element;

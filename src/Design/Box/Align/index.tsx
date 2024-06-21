@@ -25,7 +25,6 @@ export const DesignBoxAlign = ({
     data,
     onChangeData,
 }: DesignBoxAlignProps) => {
-
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     return (

@@ -5,16 +5,11 @@ const tslib_1 = require("tslib");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const SelectT_1 = require("../../../Input/SelectT");
 const Checkbox_1 = require("../../../Input/Checkbox");
-const react_1 = tslib_1.__importStar(require("react"));
+const react_1 = tslib_1.__importDefault(require("react"));
 const Text_1 = require("../../../Text");
 const boxUnit_1 = require("../boxUnit");
-const fenextjs_hook_1 = require("fenextjs-hook");
 const Link_1 = require("fenextjs-svg/cjs/Link");
-const DesignBoxBorderStyle = ({ _t, textBorderStyle = "Border Style", textBorderStyleTop = "Top", textBorderStyleLeft = "Left", textBorderStyleRight = "Right", textBorderStyleBottom = "Bottom", defaultValue = {}, value, onChange, }) => {
-    const { data: data_, onConcatData, setDataFunction, } = (0, fenextjs_hook_1.useData)(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
-    const data = (0, react_1.useMemo)(() => value ?? data_, [value, data_]);
+const DesignBoxBorderStyle = ({ _t, textBorderStyle = "Border Style", textBorderStyleTop = "Top", textBorderStyleLeft = "Left", textBorderStyleRight = "Right", textBorderStyleBottom = "Bottom", data, setDataFunction, }) => {
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
     const onChangeBorderStyle = (borderStyle) => (e) => {
         setDataFunction((old) => {
@@ -31,16 +26,16 @@ const DesignBoxBorderStyle = ({ _t, textBorderStyle = "Border Style", textBorder
         });
     };
     const onChangeBorderStyleTogether = (e) => {
-        onConcatData({
-            borderStyleTogether: e,
-            ...(e
-                ? {
-                    borderTopStyle: "hidden",
-                    borderLeftStyle: "hidden",
-                    borderRightStyle: "hidden",
-                    borderBottomStyle: "hidden",
-                }
-                : {}),
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.borderStyleTogether = e;
+            if (e) {
+                n.borderTopStyle = "hidden";
+                n.borderLeftStyle = "hidden";
+                n.borderRightStyle = "hidden";
+                n.borderBottomStyle = "hidden";
+            }
+            return n;
         });
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,

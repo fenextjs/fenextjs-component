@@ -32,9 +32,8 @@ export const DesignBoxBorder = ({
 
     data,
     setDataFunction,
-    onChangeData
+    onChangeData,
 }: DesignBoxBorderProps) => {
-
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeBorder = useCallback(
@@ -53,18 +52,18 @@ export const DesignBoxBorder = ({
                     return n;
                 });
             },
-      [data],
-    )
-    
+        [data],
+    );
+
     const onChangeBorderTogether = (e: boolean) => {
         setDataFunction((old) => {
             const n = { ...old };
             n.borderTogether = e;
             if (e) {
-                n.borderBottom = 0
-                n.borderLeft =0
-                n.borderRight =0
-                n.borderTop = 0
+                n.borderBottom = 0;
+                n.borderLeft = 0;
+                n.borderRight = 0;
+                n.borderTop = 0;
             }
             return n;
         });

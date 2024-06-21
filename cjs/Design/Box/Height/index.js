@@ -5,15 +5,10 @@ const tslib_1 = require("tslib");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const SelectT_1 = require("../../../Input/SelectT");
 const NumberCount_1 = require("../../../Input/NumberCount");
-const react_1 = tslib_1.__importStar(require("react"));
+const react_1 = tslib_1.__importDefault(require("react"));
 const Text_1 = require("../../../Text");
 const boxUnit_1 = require("../boxUnit");
-const fenextjs_hook_1 = require("fenextjs-hook");
-const DesignBoxHeight = ({ _t, textHeight = "Height", textMinHeight = "Min Height", textMaxHeight = "Max Height", defaultValue = {}, value, onChange, }) => {
-    const { data: data_, onChangeData } = (0, fenextjs_hook_1.useData)(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
-    const data = (0, react_1.useMemo)(() => value ?? data_, [value, data_]);
+const DesignBoxHeight = ({ _t, textHeight = "Height", textMinHeight = "Min Height", textMaxHeight = "Max Height", data, onChangeData, }) => {
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-design-box-item fenext-design-box-item-2-2` },

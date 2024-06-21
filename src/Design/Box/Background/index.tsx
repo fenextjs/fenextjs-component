@@ -15,9 +15,8 @@ export const DesignBoxBackground = ({
     _t,
     textBackground = "Background",
     data,
-    onChangeData
+    onChangeData,
 }: DesignBoxBackgroundProps) => {
-    
     return (
         <>
             <div

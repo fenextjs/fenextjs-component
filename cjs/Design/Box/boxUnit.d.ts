@@ -1,3 +1,4 @@
+import { useData } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 export declare const ConstDesignBoxMarginUnit: readonly ["px", "em", "rem"];
 export type DesignBoxMarginUnit = (typeof ConstDesignBoxMarginUnit)[number];
@@ -71,8 +72,6 @@ export interface DesignBoxValue {
     gapUnit?: DesignBoxGapsUnit;
 }
 export type DesignBoxValueProps = Partial<DesignBoxValue>;
-export interface DesignBoxUseDataProps extends _TProps {
-    defaultValue?: DesignBoxValueProps;
-    value?: DesignBoxValueProps;
-    onChange?: (data: DesignBoxValueProps) => void;
+export type useDataDesignBoxUseDataProps = Pick<ReturnType<typeof useData<DesignBoxValueProps>>, "setDataFunction" | "data" | "onChangeData">;
+export interface DesignBoxUseDataProps extends _TProps, useDataDesignBoxUseDataProps {
 }

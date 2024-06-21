@@ -6,4 +6,4 @@ import { DesignBoxUseDataProps } from "../boxUnit";
 export interface DesignBoxBorderColorProps extends DesignBoxUseDataProps {
     textBorderColor?: string;
 }
-export declare const DesignBoxBorderColor: ({ _t, textBorderColor, defaultValue, value, onChange, }: DesignBoxBorderColorProps) => React.JSX.Element;
+export declare const DesignBoxBorderColor: ({ _t, textBorderColor, data, onChangeData, }: DesignBoxBorderColorProps) => React.JSX.Element;

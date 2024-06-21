@@ -6,16 +6,11 @@ const fenextjs_functions_1 = require("fenextjs-functions");
 const SelectT_1 = require("../../../Input/SelectT");
 const Checkbox_1 = require("../../../Input/Checkbox");
 const NumberCount_1 = require("../../../Input/NumberCount");
-const react_1 = tslib_1.__importStar(require("react"));
+const react_1 = tslib_1.__importDefault(require("react"));
 const Text_1 = require("../../../Text");
 const boxUnit_1 = require("../boxUnit");
-const fenextjs_hook_1 = require("fenextjs-hook");
 const Link_1 = require("fenextjs-svg/cjs/Link");
-const DesignBoxMargin = ({ _t, textMargin = "Margin", textMarginBottom = "Bottom", textMarginLeft = "Left", textMarginRight = "Right", textMarginTop = "Top", defaultValue = {}, value, onChange, }) => {
-    const { data: data_, onChangeData, onConcatData, setDataFunction, } = (0, fenextjs_hook_1.useData)(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
-    const data = (0, react_1.useMemo)(() => value ?? data_, [value, data_]);
+const DesignBoxMargin = ({ _t, textMargin = "Margin", textMarginBottom = "Bottom", textMarginLeft = "Left", textMarginRight = "Right", textMarginTop = "Top", data, onChangeData, setDataFunction, }) => {
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
     const onChangeMargin = (margin) => (e) => {
         setDataFunction((old) => {
@@ -32,16 +27,16 @@ const DesignBoxMargin = ({ _t, textMargin = "Margin", textMarginBottom = "Bottom
         });
     };
     const onChangeMarginTogether = (e) => {
-        onConcatData({
-            marginTogether: e,
-            ...(e
-                ? {
-                    marginBottom: 0,
-                    marginLeft: 0,
-                    marginRight: 0,
-                    marginTop: 0,
-                }
-                : {}),
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.marginTogether = e;
+            if (n.marginTogether) {
+                n.marginTop = 0;
+                n.marginRight = 0;
+                n.marginBottom = 0;
+                n.marginLeft = 0;
+            }
+            return n;
         });
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,

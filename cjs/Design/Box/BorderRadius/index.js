@@ -6,16 +6,11 @@ const fenextjs_functions_1 = require("fenextjs-functions");
 const SelectT_1 = require("../../../Input/SelectT");
 const Checkbox_1 = require("../../../Input/Checkbox");
 const NumberCount_1 = require("../../../Input/NumberCount");
-const react_1 = tslib_1.__importStar(require("react"));
+const react_1 = tslib_1.__importDefault(require("react"));
 const Text_1 = require("../../../Text");
 const boxUnit_1 = require("../boxUnit");
-const fenextjs_hook_1 = require("fenextjs-hook");
 const Link_1 = require("fenextjs-svg/cjs/Link");
-const DesignBoxBorderRadius = ({ _t, textBorderRadius = "Border Radius", textBorderRadiusTopLeft = "Top Left", textBorderRadiusTopRight = "Top Right", textBorderRadiusBottomLeft = "Bottom Left", textBorderRadiusBottomRight = "Bottom Right", defaultValue = {}, value, onChange, }) => {
-    const { data: data_, onChangeData, onConcatData, setDataFunction, } = (0, fenextjs_hook_1.useData)(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
-    const data = (0, react_1.useMemo)(() => value ?? data_, [value, data_]);
+const DesignBoxBorderRadius = ({ _t, textBorderRadius = "Border Radius", textBorderRadiusTopLeft = "Top Left", textBorderRadiusTopRight = "Top Right", textBorderRadiusBottomLeft = "Bottom Left", textBorderRadiusBottomRight = "Bottom Right", data, onChangeData, setDataFunction, }) => {
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
     const onChangeBorderRadius = (borderRadius) => (e) => {
         setDataFunction((old) => {
@@ -32,16 +27,16 @@ const DesignBoxBorderRadius = ({ _t, textBorderRadius = "Border Radius", textBor
         });
     };
     const onChangeBorderRadiusTogether = (e) => {
-        onConcatData({
-            borderRadiusTogether: e,
-            ...(e
-                ? {
-                    borderTopLeftRadius: 0,
-                    borderTopRightRadius: 0,
-                    borderBottomLeftRadius: 0,
-                    borderBottomRightRadius: 0,
-                }
-                : {}),
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.borderRadiusTogether = e;
+            if (e) {
+                n.borderTopLeftRadius = 0;
+                n.borderTopRightRadius = 0;
+                n.borderBottomLeftRadius = 0;
+                n.borderBottomRightRadius = 0;
+            }
+            return n;
         });
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,

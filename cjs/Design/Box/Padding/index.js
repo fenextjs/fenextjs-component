@@ -6,16 +6,11 @@ const fenextjs_functions_1 = require("fenextjs-functions");
 const SelectT_1 = require("../../../Input/SelectT");
 const Checkbox_1 = require("../../../Input/Checkbox");
 const NumberCount_1 = require("../../../Input/NumberCount");
-const react_1 = tslib_1.__importStar(require("react"));
+const react_1 = tslib_1.__importDefault(require("react"));
 const Text_1 = require("../../../Text");
 const boxUnit_1 = require("../boxUnit");
-const fenextjs_hook_1 = require("fenextjs-hook");
 const Link_1 = require("fenextjs-svg/cjs/Link");
-const DesignBoxPadding = ({ _t, textPadding = "Padding", textPaddingBottom = "Bottom", textPaddingLeft = "Left", textPaddingRight = "Right", textPaddingTop = "Top", defaultValue = {}, value, onChange, }) => {
-    const { data: data_, onChangeData, onConcatData, setDataFunction, } = (0, fenextjs_hook_1.useData)(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
-    const data = (0, react_1.useMemo)(() => value ?? data_, [value, data_]);
+const DesignBoxPadding = ({ _t, textPadding = "Padding", textPaddingBottom = "Bottom", textPaddingLeft = "Left", textPaddingRight = "Right", textPaddingTop = "Top", data, onChangeData, setDataFunction, }) => {
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
     const onChangePadding = (padding) => (e) => {
         setDataFunction((old) => {
@@ -32,16 +27,16 @@ const DesignBoxPadding = ({ _t, textPadding = "Padding", textPaddingBottom = "Bo
         });
     };
     const onChangePaddingTogether = (e) => {
-        onConcatData({
-            paddingTogether: e,
-            ...(e
-                ? {
-                    paddingBottom: 0,
-                    paddingLeft: 0,
-                    paddingRight: 0,
-                    paddingTop: 0,
-                }
-                : {}),
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.paddingTogether = e;
+            if (n.paddingTogether) {
+                n.paddingTop = 0;
+                n.paddingRight = 0;
+                n.paddingBottom = 0;
+                n.paddingLeft = 0;
+            }
+            return n;
         });
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,

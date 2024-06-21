@@ -26,7 +26,6 @@ export const DesignBoxHeight = ({
     data,
     onChangeData,
 }: DesignBoxHeightProps) => {
-
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     return (

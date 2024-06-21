@@ -32,9 +32,8 @@ export const DesignBoxPadding = ({
 
     data,
     onChangeData,
-    setDataFunction
+    setDataFunction,
 }: DesignBoxPaddingProps) => {
-
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangePadding =
@@ -45,29 +44,29 @@ export const DesignBoxPadding = ({
                 | "paddingBottom"
                 | "paddingLeft",
         ) =>
-            (e: number | "") => {
-                setDataFunction((old) => {
-                    const n = { ...old };
-                    const v = e == "" ? undefined : e;
-                    n[padding] = v;
-                    if (n.paddingTogether) {
-                        n.paddingTop = v;
-                        n.paddingRight = v;
-                        n.paddingBottom = v;
-                        n.paddingLeft = v;
-                    }
-                    return n;
-                });
-            };
+        (e: number | "") => {
+            setDataFunction((old) => {
+                const n = { ...old };
+                const v = e == "" ? undefined : e;
+                n[padding] = v;
+                if (n.paddingTogether) {
+                    n.paddingTop = v;
+                    n.paddingRight = v;
+                    n.paddingBottom = v;
+                    n.paddingLeft = v;
+                }
+                return n;
+            });
+        };
     const onChangePaddingTogether = (e: boolean) => {
         setDataFunction((old) => {
             const n = { ...old };
-            n.paddingTogether = e
+            n.paddingTogether = e;
             if (n.paddingTogether) {
-                n.paddingTop = 0
-                n.paddingRight = 0
-                n.paddingBottom = 0
-                n.paddingLeft = 0
+                n.paddingTop = 0;
+                n.paddingRight = 0;
+                n.paddingBottom = 0;
+                n.paddingLeft = 0;
             }
             return n;
         });

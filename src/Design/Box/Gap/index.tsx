@@ -28,9 +28,8 @@ export const DesignBoxGap = ({
 
     data,
     onChangeData,
-    setDataFunction
+    setDataFunction,
 }: DesignBoxGapProps) => {
-
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeGap = (gap: "gapColumn" | "gapRow") => (e: number | "") => {
@@ -48,10 +47,10 @@ export const DesignBoxGap = ({
     const onChangeGapTogether = (e: boolean) => {
         setDataFunction((old) => {
             const n = { ...old };
-            n.gapTogether = e
+            n.gapTogether = e;
             if (n.gapTogether) {
-                n.gapColumn = 0
-                n.gapRow = 0
+                n.gapColumn = 0;
+                n.gapRow = 0;
             }
             return n;
         });

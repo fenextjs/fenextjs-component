@@ -10,4 +10,4 @@ export interface DesignBoxPaddingProps extends DesignBoxUseDataProps {
     textPaddingRight?: string;
     textPaddingBottom?: string;
 }
-export declare const DesignBoxPadding: ({ _t, textPadding, textPaddingBottom, textPaddingLeft, textPaddingRight, textPaddingTop, defaultValue, value, onChange, }: DesignBoxPaddingProps) => React.JSX.Element;
+export declare const DesignBoxPadding: ({ _t, textPadding, textPaddingBottom, textPaddingLeft, textPaddingRight, textPaddingTop, data, onChangeData, setDataFunction, }: DesignBoxPaddingProps) => React.JSX.Element;

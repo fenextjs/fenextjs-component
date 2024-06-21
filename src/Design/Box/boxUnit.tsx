@@ -141,9 +141,11 @@ export interface DesignBoxValue {
 
 export type DesignBoxValueProps = Partial<DesignBoxValue>;
 
+export type useDataDesignBoxUseDataProps = Pick<
+    ReturnType<typeof useData<DesignBoxValueProps>>,
+    "setDataFunction" | "data" | "onChangeData"
+>;
 
-export type useDataDesignBoxUseDataProps = Pick<ReturnType<typeof useData<DesignBoxValueProps>>,"setDataFunction" | "data" | "onChangeData">
-
-
-export interface DesignBoxUseDataProps extends _TProps,useDataDesignBoxUseDataProps {
-}
+export interface DesignBoxUseDataProps
+    extends _TProps,
+        useDataDesignBoxUseDataProps {}

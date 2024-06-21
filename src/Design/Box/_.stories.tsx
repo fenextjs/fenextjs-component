@@ -15,5 +15,6 @@ const Profile: Story<PropsWithChildren<DesignBoxProps>> = (args) => (
 export const Index = Profile.bind({});
 const args : DesignBoxProps = {
     // onChangeStyles:console.log
+    
 }
 Index.args = args

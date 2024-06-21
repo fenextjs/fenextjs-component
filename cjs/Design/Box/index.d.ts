@@ -17,10 +17,12 @@ import { DesignBoxGapProps } from "./Gap";
  */
 export interface DesignBoxValueProps extends Partial<DesignBoxValue> {
 }
+export interface DesignBoxTextProps extends DesignBoxPaddingProps, DesignBoxMarginProps, DesignBoxBorderProps, DesignBoxBorderRadiusProps, DesignBoxBorderColorProps, DesignBoxBackgroundProps, DesignBoxWidthProps, DesignBoxHeightProps, DesignBoxGapProps, DesignBoxAlignProps, DesignBoxBorderStyleProps {
+}
 /**
  * Properties for the base DesignBox component.
  */
-export interface DesignBoxProps extends DesignBoxPaddingProps, DesignBoxMarginProps, DesignBoxBorderProps, DesignBoxBorderRadiusProps, DesignBoxBorderColorProps, DesignBoxBackgroundProps, DesignBoxWidthProps, DesignBoxHeightProps, DesignBoxGapProps, DesignBoxAlignProps, DesignBoxBorderStyleProps {
+export interface DesignBoxProps extends Omit<DesignBoxTextProps, "setDataFunction" | "data" | "onChangeData"> {
     /**
      * The class name for the component.
      */
@@ -30,5 +32,8 @@ export interface DesignBoxProps extends DesignBoxPaddingProps, DesignBoxMarginPr
     collapseType?: CollapseProps["type"];
     collapseUseActiveForShowChildren?: CollapseProps["useActiveForShowChildren"];
     textBox?: string;
+    defaultValue?: DesignBoxValueProps;
+    value?: DesignBoxValueProps;
+    onChange?: (data: DesignBoxValueProps) => void;
 }
 export declare const DesignBox: ({ className, _t, textBox, textBackground, textPadding, textPaddingBottom, textPaddingLeft, textPaddingRight, textPaddingTop, textMargin, textMarginBottom, textMarginLeft, textMarginRight, textMarginTop, textBorder, textBorderBottom, textBorderLeft, textBorderRight, textBorderTop, textBorderRadius, textBorderRadiusTopLeft, textBorderRadiusTopRight, textBorderRadiusBottomLeft, textBorderRadiusBottomRight, textBorderStyle, textBorderStyleTop, textBorderStyleLeft, textBorderStyleRight, textBorderStyleBottom, textBorderColor, textWidth, textMinWidth, textMaxWidth, textHeight, textMinHeight, textMaxHeight, textAlignItems, textJustifyContent, textGap, textGapRow, textGapColumn, defaultValue, value, onChange, onChangeStyles, collapseName, collapseType, collapseUseActiveForShowChildren, }: DesignBoxProps) => React.JSX.Element;

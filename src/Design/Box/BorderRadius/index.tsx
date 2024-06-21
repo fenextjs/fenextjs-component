@@ -32,9 +32,8 @@ export const DesignBoxBorderRadius = ({
 
     data,
     onChangeData,
-    setDataFunction
+    setDataFunction,
 }: DesignBoxBorderRadiusProps) => {
-
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeBorderRadius =
@@ -64,10 +63,10 @@ export const DesignBoxBorderRadius = ({
             const n = { ...old };
             n.borderRadiusTogether = e;
             if (e) {
-                n.borderTopLeftRadius = 0
-                n.borderTopRightRadius = 0
-                n.borderBottomLeftRadius = 0
-                n.borderBottomRightRadius = 0
+                n.borderTopLeftRadius = 0;
+                n.borderTopRightRadius = 0;
+                n.borderBottomLeftRadius = 0;
+                n.borderBottomRightRadius = 0;
             }
             return n;
         });

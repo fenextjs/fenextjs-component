@@ -8,4 +8,4 @@ export interface DesignBoxWidthProps extends DesignBoxUseDataProps {
     textMinWidth?: string;
     textMaxWidth?: string;
 }
-export declare const DesignBoxWidth: ({ _t, textWidth, textMinWidth, textMaxWidth, defaultValue, value, onChange, }: DesignBoxWidthProps) => React.JSX.Element;
+export declare const DesignBoxWidth: ({ _t, textWidth, textMinWidth, textMaxWidth, data, onChangeData, }: DesignBoxWidthProps) => React.JSX.Element;

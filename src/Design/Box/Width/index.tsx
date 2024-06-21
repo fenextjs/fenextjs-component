@@ -27,7 +27,6 @@ export const DesignBoxWidth = ({
     data,
     onChangeData,
 }: DesignBoxWidthProps) => {
-
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     return (

@@ -10,4 +10,4 @@ export interface DesignBoxBorderRadiusProps extends DesignBoxUseDataProps {
     textBorderRadiusBottomLeft?: string;
     textBorderRadiusBottomRight?: string;
 }
-export declare const DesignBoxBorderRadius: ({ _t, textBorderRadius, textBorderRadiusTopLeft, textBorderRadiusTopRight, textBorderRadiusBottomLeft, textBorderRadiusBottomRight, defaultValue, value, onChange, }: DesignBoxBorderRadiusProps) => React.JSX.Element;
+export declare const DesignBoxBorderRadius: ({ _t, textBorderRadius, textBorderRadiusTopLeft, textBorderRadiusTopRight, textBorderRadiusBottomLeft, textBorderRadiusBottomRight, data, onChangeData, setDataFunction, }: DesignBoxBorderRadiusProps) => React.JSX.Element;

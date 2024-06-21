@@ -31,9 +31,8 @@ export const DesignBoxBorderStyle = ({
     textBorderStyleBottom = "Bottom",
 
     data,
-    setDataFunction
+    setDataFunction,
 }: DesignBoxBorderStyleProps) => {
-
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeBorderStyle =
@@ -44,20 +43,20 @@ export const DesignBoxBorderStyle = ({
                 | "borderRightStyle"
                 | "borderBottomStyle",
         ) =>
-            (e?: DesignBoxBorderStylesUnit) => {
-                setDataFunction((old) => {
-                    const n = { ...old };
-                    const v = e;
-                    n[borderStyle] = v;
-                    if (n.borderStyleTogether) {
-                        n.borderTopStyle = v;
-                        n.borderLeftStyle = v;
-                        n.borderRightStyle = v;
-                        n.borderBottomStyle = v;
-                    }
-                    return n;
-                });
-            };
+        (e?: DesignBoxBorderStylesUnit) => {
+            setDataFunction((old) => {
+                const n = { ...old };
+                const v = e;
+                n[borderStyle] = v;
+                if (n.borderStyleTogether) {
+                    n.borderTopStyle = v;
+                    n.borderLeftStyle = v;
+                    n.borderRightStyle = v;
+                    n.borderBottomStyle = v;
+                }
+                return n;
+            });
+        };
     const onChangeBorderStyleTogether = (e: boolean) => {
         setDataFunction((old) => {
             const n = { ...old };

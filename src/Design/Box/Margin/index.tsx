@@ -32,9 +32,8 @@ export const DesignBoxMargin = ({
 
     data,
     onChangeData,
-    setDataFunction
+    setDataFunction,
 }: DesignBoxMarginProps) => {
-
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeMargin =
@@ -56,12 +55,12 @@ export const DesignBoxMargin = ({
     const onChangeMarginTogether = (e: boolean) => {
         setDataFunction((old) => {
             const n = { ...old };
-            n.marginTogether = e
+            n.marginTogether = e;
             if (n.marginTogether) {
-                n.marginTop = 0
-                n.marginRight =0
-                n.marginBottom =0
-                n.marginLeft = 0
+                n.marginTop = 0;
+                n.marginRight = 0;
+                n.marginBottom = 0;
+                n.marginLeft = 0;
             }
             return n;
         });
