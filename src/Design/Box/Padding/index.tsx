@@ -80,6 +80,7 @@ export const DesignBoxPadding = ({
                     options={[...ConstDesignBoxPaddingUnit]}
                     defaultValue={data.paddingUnit}
                     onChange={onChangeData("paddingUnit")}
+                    placeholder="Unit"
                 />
                 <InputCheckbox
                     defaultValue={data.paddingTogether}

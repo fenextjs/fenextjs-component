@@ -80,6 +80,7 @@ export const DesignBoxBorder = ({
                     options={[...ConstDesignBoxBorderUnit]}
                     defaultValue={data.borderUnit}
                     onChange={onChangeData("borderUnit")}
+                    placeholder="Unit"
                 />
                 <InputCheckbox
                     defaultValue={data.borderTogether}

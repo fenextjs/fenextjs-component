@@ -6368,6 +6368,9 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
   display: block;
   text-overflow: ellipsis;
 }
+.fenext-design-box-content .fenext-select .fenext-input-content-icon {
+  right: 1rem;
+}
 .fenext-design-box-item {
   display: grid;
   grid-template-columns: 1fr 8rem auto;
@@ -6390,6 +6393,9 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
 }
 .fenext-design-box-item-1-2 {
   grid-template-columns: 1fr auto;
+}
+.fenext-design-box-item-2-2 {
+  grid-template-columns: 1fr 8rem 10rem;
 }
 .fenext-design-box-item-2 {
   grid-template-columns: 1fr 1fr;

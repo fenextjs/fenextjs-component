@@ -80,6 +80,7 @@ export const DesignBoxMargin = ({
                     options={[...ConstDesignBoxMarginUnit]}
                     defaultValue={data.marginUnit}
                     onChange={onChangeData("marginUnit")}
+                    placeholder="Unit"
                 />
                 <InputCheckbox
                     defaultValue={data.marginTogether}

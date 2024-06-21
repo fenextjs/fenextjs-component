@@ -1,13 +1,10 @@
 import { _tValidate } from "fenextjs-functions";
-import { InputSelectT } from "../../Input/SelectT";
-import { InputCheckbox } from "../../Input/Checkbox";
-import { InputNumberCount } from "../../Input/NumberCount";
 import { _TProps } from "fenextjs-interface";
 import React, { CSSProperties, useMemo } from "react";
 import { Edit } from "fenextjs-svg";
 import { Collapse, CollapseProps } from "../../Collapse/Simple";
 import { Text } from "../../Text";
-import { ConstDesignBoxPaddingUnit, DesignBoxValue } from "./boxUnit";
+import {  DesignBoxValue } from "./boxUnit";
 import { useData } from "fenextjs-hook";
 import { parseDesignBoxValueProps_to_CSSProperties } from "./parse";
 import { DesignBoxPadding,DesignBoxPaddingProps } from "./Padding";
@@ -16,6 +13,9 @@ import { DesignBoxBorder,DesignBoxBorderProps } from "./Border";
 import { DesignBoxBorderRadius,DesignBoxBorderRadiusProps } from "./BorderRadius";
 import { DesignBoxBorderColor,DesignBoxBorderColorProps } from "./BorderColor";
 import { DesignBoxBackground,DesignBoxBackgroundProps} from "./Background";
+import { DesignBoxWidth,DesignBoxWidthProps} from "./Width";
+import { DesignBoxHeight,DesignBoxHeightProps} from "./Height";
+import { DesignBoxGap,DesignBoxGapProps} from "./Gap";
 
 /**
  * Properties for the base DesignBox component.
@@ -25,7 +25,7 @@ export interface DesignBoxValueProps extends Partial<DesignBoxValue> {}
 /**
  * Properties for the base DesignBox component.
  */
-export interface DesignBoxProps extends DesignBoxPaddingProps,DesignBoxMarginProps,DesignBoxBorderProps ,DesignBoxBorderRadiusProps,DesignBoxBorderColorProps, DesignBoxBackgroundProps{
+export interface DesignBoxProps extends DesignBoxPaddingProps,DesignBoxMarginProps,DesignBoxBorderProps ,DesignBoxBorderRadiusProps,DesignBoxBorderColorProps, DesignBoxBackgroundProps,DesignBoxWidthProps,DesignBoxHeightProps,DesignBoxGapProps{
     /**
      * The class name for the component.
      */
@@ -73,6 +73,18 @@ export const DesignBox = ({
 
     textBorderColor = "Border Color",
 
+    textWidth = "Width",
+    textMinWidth = "Min Width",
+    textMaxWidth = "Max Width",
+
+    textHeight = "Height",
+    textMinHeight = "Min Height",
+    textMaxHeight = "Max Height",
+
+    textGap = "Gap",
+    textGapRow = "Gap Row",
+    textGapColumn = "Gap Column",
+
     defaultValue = {},
     value,
     onChange,
@@ -82,20 +94,14 @@ export const DesignBox = ({
     collapseType,
 }: DesignBoxProps) => {
     const {
-        data: data_,
-        onChangeData,
+        data,
         dataMemo,
-        onConcatData,
-        setDataFunction
+        onConcatData
     } = useData<DesignBoxValueProps, CSSProperties>(defaultValue, {
         onChangeDataAfter: onChange,
         onChangeDataMemoAfter: onChangeStyles,
         onMemo: parseDesignBoxValueProps_to_CSSProperties,
     });
-
-    const data = useMemo(() => value ?? data_, [value, data_]);
-
-    const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     return (
         <>
@@ -169,6 +175,30 @@ export const DesignBox = ({
                             onChange={onConcatData}
                             textBorderColor={textBorderColor}
                             _t={_t}
+                        />
+                        <DesignBoxWidth
+                            defaultValue={defaultValue}
+                            value={value}
+                            onChange={onConcatData}
+                            textWidth={textWidth}
+                            textMaxWidth={textMaxWidth}
+                            textMinWidth={textMinWidth}
+                        />
+                        <DesignBoxHeight
+                            defaultValue={defaultValue}
+                            value={value}
+                            onChange={onConcatData}
+                            textHeight={textHeight}
+                            textMaxHeight={textMaxHeight}
+                            textMinHeight={textMinHeight}
+                        />
+                        <DesignBoxGap
+                            defaultValue={defaultValue}
+                            value={value}
+                            onChange={onConcatData}
+                            textGap={textGap}
+                            textGapRow={textGapRow}
+                            textGapColumn={textGapColumn}
                         />
                     </div>
                 </Collapse>

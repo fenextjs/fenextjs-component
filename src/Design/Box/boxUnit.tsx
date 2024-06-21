@@ -111,8 +111,9 @@ export interface DesignBoxValue {
     justifyContent?: DesignBoxJustifyCountentUnit;
     alignItems?: DesignBoxAlignItemsUnit;
 
-    rowGap?: number;
-    columnGap?: number;
+    gapTogether?: boolean;
+    gapRow?: number;
+    gapColumn?: number;
     gapUnit?: DesignBoxGapsUnit;
 }
 
