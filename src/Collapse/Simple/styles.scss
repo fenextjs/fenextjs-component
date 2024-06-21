@@ -117,12 +117,16 @@
             padding: 0;
         }
     }
-    &:has(> .fenext-collapse-body:empty) {
-        > .fenext-collapse-header {
-            .fenext-collapse-header-icon {
-                display: none;
+    &:not(.fenext-collapse-active-for-show-children):has(
+            > .fenext-collapse-body:empty
+        ) {
+            > .fenext-collapse-header {
+                .fenext-collapse-header-icon {
+                    display: none;
+                }
             }
-        }
+    }
+    &:has(> .fenext-collapse-body:empty) {
         > .fenext-collapse-body {
             display: none;
         }

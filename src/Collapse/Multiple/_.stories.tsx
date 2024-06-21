@@ -17,6 +17,7 @@ export const Index = Profile.bind({});
 Index.args = {
     name:"name",
     type:"checkbox",
+    useActiveForShowChildren:true,
     items:[
         {
             header:"Item 1",

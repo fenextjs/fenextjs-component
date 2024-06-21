@@ -47,6 +47,7 @@ export interface DesignBoxProps
 
     collapseName?: CollapseProps["name"];
     collapseType?: CollapseProps["type"];
+    collapseUseActiveForShowChildren?: CollapseProps["useActiveForShowChildren"];
 
     textBox?: string;
 }
@@ -119,6 +120,7 @@ export const DesignBox = ({
 
     collapseName,
     collapseType,
+    collapseUseActiveForShowChildren=true
 }: DesignBoxProps) => {
     const { onConcatData } = useData<DesignBoxValueProps, CSSProperties>(
         defaultValue,
@@ -142,6 +144,7 @@ export const DesignBox = ({
                     rotateIcon={false}
                     name={collapseName}
                     type={collapseType}
+                    useActiveForShowChildren={collapseUseActiveForShowChildren}
                 >
                     <div className={`fenext-design-box-content `}>
                         <DesignBoxBackground

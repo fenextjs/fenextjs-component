@@ -1,6 +1,8 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useMemo, useState } from "react";
 import { Loader } from "../../Loader";
 import { Arrow } from "fenextjs-svg/cjs/Arrow";
+import { useAction } from "fenextjs-hook";
+import { sleep } from "fenextjs-functions";
 
 /**
  * Properties for the base Collapse component.
@@ -61,6 +63,11 @@ export interface CollapseBaseProps {
      * rotateIcon of Collapse.
      */
     rotateIcon?: boolean;
+
+    /**
+     * useActiveForShowChildren of Collapse.
+     */
+    useActiveForShowChildren?: boolean;
 }
 
 /**
@@ -92,7 +99,7 @@ export interface CollapseClassProps {
 /**
  * Properties for the Collapse component.
  */
-export interface CollapseProps extends CollapseBaseProps, CollapseClassProps {}
+export interface CollapseProps extends CollapseBaseProps, CollapseClassProps { }
 
 export const Collapse = ({
     className = "",
@@ -106,7 +113,7 @@ export const Collapse = ({
     header,
     disabled = false,
     defaultActive = false,
-    active = undefined,
+    active: activeProps = undefined,
     name = "",
     type = "checkbox",
     show = "checked",
@@ -114,11 +121,42 @@ export const Collapse = ({
     onChange,
     iconArrow = <Arrow />,
     rotateIcon = true,
+    useActiveForShowChildren = false,
 }: CollapseProps) => {
+    const [active_, setActive_] = useState(defaultActive);
+
+
+    const active = useMemo(() => activeProps ?? active_, [activeProps, active_])
+
+    const {onAction} = useAction({
+        name:`fenext-collapse-${name}`,
+        onActionExecute:()=>{
+            if(type == "radio"){
+                setActive_(false)
+                onChange?.(false)
+            }
+        }
+    })
+
+    const setActive = async (e : boolean)=>{
+        onAction()
+        if(type == "radio"){
+            await sleep(50)
+        }
+        setActive_(e)
+        onChange?.(e)
+    }
     return (
         <>
             <div
-                className={`fenext-collapse fenext-collapse-status-${status} fenext-collapse-rotate-icon-${rotateIcon ? "yes" : "no"} fenext-collapse-${show} ${className}`}
+                className={`
+                    fenext-collapse
+                    fenext-collapse-status-${status}
+                    fenext-collapse-rotate-icon-${rotateIcon ? "yes" : "no"}
+                    fenext-collapse-${show}
+                    fenext-collapse-${useActiveForShowChildren?"active-for-show-children":""}
+                    ${className}
+                `}
             >
                 <label className={`fenext-collapse-header ${classNameHeader}`}>
                     <input
@@ -129,11 +167,11 @@ export const Collapse = ({
                         defaultChecked={defaultActive}
                         {...(active !== undefined
                             ? {
-                                  checked: active,
-                              }
+                                checked: active,
+                            }
                             : {})}
                         onChange={(e) => {
-                            onChange?.(e.target.checked);
+                            setActive?.(e.target.checked);
                         }}
                     />
                     <div
@@ -147,8 +185,8 @@ export const Collapse = ({
                                     className={`fenext-collapse-header-uncheck`}
                                     name={name}
                                     disabled={loader}
-                                    onChange={(e) => {
-                                        onChange?.(e.target.checked);
+                                    onChange={() => {
+                                        setActive?.(false);
                                     }}
                                 />
                             </>
@@ -169,7 +207,23 @@ export const Collapse = ({
                     </div>
                 </label>
                 <div className={`fenext-collapse-body ${classNameBody}`}>
-                    {children}
+                    {
+                        useActiveForShowChildren
+                            ?
+                            <>
+                                {
+                                    active
+                                    &&
+                                    <>
+                                        {children}
+                                    </>
+                                }
+                            </>
+                            :
+                            <>
+                                {children}
+                            </>
+                    }
                 </div>
             </div>
         </>

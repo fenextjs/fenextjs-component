@@ -58,6 +58,7 @@ export interface DesignTypographyProps extends _TProps {
 
     collapseName?: CollapseProps["name"];
     collapseType?: CollapseProps["type"];
+    collapseUseActiveForShowChildren?: CollapseProps["useActiveForShowChildren"];
 }
 
 export const DesignTypography = ({
@@ -99,6 +100,7 @@ export const DesignTypography = ({
 
     collapseName,
     collapseType,
+    collapseUseActiveForShowChildren = true
 }: DesignTypographyProps) => {
     const {
         data: data_,
@@ -127,6 +129,7 @@ export const DesignTypography = ({
                     rotateIcon={false}
                     name={collapseName}
                     type={collapseType}
+                    useActiveForShowChildren={collapseUseActiveForShowChildren}
                 >
                     <div className={`fenext-design-typography-content `}>
                         <div

@@ -17,5 +17,6 @@ export const Index = Profile.bind({});
 Index.args = {
     header:<>
         Collapse
-    </>
+    </>,
+    // useActiveForShowChildren:true
 }as CollapseProps;
