@@ -1,54 +1,42 @@
 import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../Input/SelectT";
-import { InputColor } from "../../Input/Color";
+import { InputCheckbox } from "../../Input/Checkbox";
 import { InputNumberCount } from "../../Input/NumberCount";
 import { _TProps } from "fenextjs-interface";
 import React, { CSSProperties, useMemo } from "react";
 import { Edit } from "fenextjs-svg";
 import { Collapse, CollapseProps } from "../../Collapse/Simple";
 import { Text } from "../../Text";
-import {
-    DesignBoxValue,
-} from "./fontUnit";
+import { ConstDesignBoxPaddingUnit, DesignBoxValue } from "./boxUnit";
 import { useData } from "fenextjs-hook";
 import { parseDesignBoxValueProps_to_CSSProperties } from "./parse";
+import { DesignBoxPadding,DesignBoxPaddingProps } from "./Padding";
+import { DesignBoxMargin,DesignBoxMarginProps } from "./Margin";
+import { DesignBoxBorder,DesignBoxBorderProps } from "./Border";
+import { DesignBoxBorderRadius,DesignBoxBorderRadiusProps } from "./BorderRadius";
+import { DesignBoxBorderColor,DesignBoxBorderColorProps } from "./BorderColor";
+import { DesignBoxBackground,DesignBoxBackgroundProps} from "./Background";
 
 /**
  * Properties for the base DesignBox component.
  */
-export interface DesignBoxValueProps
-    extends Partial<DesignBoxValue> {}
+export interface DesignBoxValueProps extends Partial<DesignBoxValue> {}
 
 /**
  * Properties for the base DesignBox component.
  */
-export interface DesignBoxProps extends _TProps {
+export interface DesignBoxProps extends DesignBoxPaddingProps,DesignBoxMarginProps,DesignBoxBorderProps ,DesignBoxBorderRadiusProps,DesignBoxBorderColorProps, DesignBoxBackgroundProps{
     /**
      * The class name for the component.
      */
     className?: string;
 
-    defaultValue?: DesignBoxValueProps;
-    value?: DesignBoxValueProps;
-    onChange?: (data: DesignBoxValueProps) => void;
     onChangeStyles?: (data: CSSProperties) => void;
-
-    textBox?: string;
-    textExample?: string;
-    textExampleValue?: string;
-    textColor?: string;
-    textSize?: string;
-    textAlign?: string;
-    textWeight?: string;
-    textTransform?: string;
-    textStyle?: string;
-    textDecoration?: string;
-    textLineHeight?: string;
-    textLetterSpacing?: string;
-    textWordSpacing?: string;
 
     collapseName?: CollapseProps["name"];
     collapseType?: CollapseProps["type"];
+
+    textBox?:string
 }
 
 export const DesignBox = ({
@@ -56,34 +44,36 @@ export const DesignBox = ({
     _t,
 
     textBox = "Box",
-    textExample = "Example",
-    textExampleValue = "Lorem ipsum dolor sit",
-    textColor = "Color",
-    textSize = "Size",
-    textAlign = "Alignment",
-    textWeight = "Weight",
-    textTransform = "Transform",
-    textStyle = "Style",
-    textDecoration = "Decoration",
-    textLineHeight = "Line Height",
-    textLetterSpacing = "Letter Spacing",
-    textWordSpacing = "Word Spacing",
 
-    defaultValue = {
-        fontSize: 20,
-        fontSizeUnit: "px",
-        textAlign: "left",
-        weight: 400,
-        transform: "none",
-        style: "normal",
-        decoration: "normal",
-        lineHeight: 1.2,
-        lineHeightUnit: "normal",
-        letterSpacing: 0,
-        letterSpacingUnit: "px",
-        wordSpacing: 0,
-        wordSpacingUnit: "px",
-    },
+    textBackground = "Background",
+
+    textPadding = "Padding",
+    textPaddingBottom = "Bottom",
+    textPaddingLeft = "Left",
+    textPaddingRight = "Right",
+    textPaddingTop = "Top",
+
+    textMargin = "Margin",
+    textMarginBottom = "Bottom",
+    textMarginLeft = "Left",
+    textMarginRight = "Right",
+    textMarginTop = "Top",
+
+    textBorder = "Border",
+    textBorderBottom = "Bottom",
+    textBorderLeft = "Left",
+    textBorderRight = "Right",
+    textBorderTop = "Top",
+
+    textBorderRadius = "Border Radius",
+    textBorderRadiusTopLeft = "Top Left",
+    textBorderRadiusTopRight = "Top Right",
+    textBorderRadiusBottomLeft = "Bottom Left",
+    textBorderRadiusBottomRight = "Bottom Right",
+
+    textBorderColor = "Border Color",
+
+    defaultValue = {},
     value,
     onChange,
     onChangeStyles,
@@ -95,6 +85,8 @@ export const DesignBox = ({
         data: data_,
         onChangeData,
         dataMemo,
+        onConcatData,
+        setDataFunction
     } = useData<DesignBoxValueProps, CSSProperties>(defaultValue, {
         onChangeDataAfter: onChange,
         onChangeDataMemoAfter: onChangeStyles,
@@ -120,24 +112,64 @@ export const DesignBox = ({
                     type={collapseType}
                 >
                     <div className={`fenext-design-box-content `}>
-                        <div
-                            className={`fenext-design-box-item fenext-design-box-item-2`}
-                        >
-                            <Text>{_tValidate(textExample, _t)}</Text>
-                            <div
-                                className={`fenext-design-box-content-example `}
-                                style={{
-                                    alignItems:"center",
-                                    
-                                }}
-                            >
-                                <Text>
-                                    <div style={dataMemo}>
-                                        {_tValidate(textExampleValue, _t)}
-                                    </div>
-                                </Text>
-                            </div>
-                        </div>
+                        <DesignBoxBackground
+                            defaultValue={defaultValue}
+                            value={value}
+                            onChange={onConcatData}
+                            textBackground={textBackground}
+                            _t={_t}
+                        />
+                        <DesignBoxPadding
+                            defaultValue={defaultValue}
+                            value={value}
+                            onChange={onConcatData}
+                            textPadding={textPadding}
+                            textPaddingBottom={textPaddingBottom}
+                            textPaddingLeft={textPaddingLeft}
+                            textPaddingRight={textPaddingRight}
+                            textPaddingTop={textPaddingTop}
+                            _t={_t}
+                        />
+                        <DesignBoxMargin
+                            defaultValue={defaultValue}
+                            value={value}
+                            onChange={onConcatData}
+                            textMargin={textMargin}
+                            textMarginBottom={textMarginBottom}
+                            textMarginLeft={textMarginLeft}
+                            textMarginRight={textMarginRight}
+                            textMarginTop={textMarginTop}
+                            _t={_t}
+                        />
+                        <DesignBoxBorder
+                            defaultValue={defaultValue}
+                            value={value}
+                            onChange={onConcatData}
+                            textBorder={textBorder}
+                            textBorderBottom={textBorderBottom}
+                            textBorderLeft={textBorderLeft}
+                            textBorderRight={textBorderRight}
+                            textBorderTop={textBorderTop}
+                            _t={_t}
+                        />
+                        <DesignBoxBorderRadius
+                            defaultValue={defaultValue}
+                            value={value}
+                            onChange={onConcatData}
+                            textBorderRadius={textBorderRadius}
+                            textBorderRadiusBottomLeft={textBorderRadiusBottomLeft}
+                            textBorderRadiusBottomRight={textBorderRadiusBottomRight}
+                            textBorderRadiusTopLeft={textBorderRadiusTopLeft}
+                            textBorderRadiusTopRight={textBorderRadiusTopRight}
+                            _t={_t}
+                        />
+                        <DesignBoxBorderColor
+                            defaultValue={defaultValue}
+                            value={value}
+                            onChange={onConcatData}
+                            textBorderColor={textBorderColor}
+                            _t={_t}
+                        />
                     </div>
                 </Collapse>
             </div>
