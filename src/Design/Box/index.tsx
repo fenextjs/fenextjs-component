@@ -12,6 +12,7 @@ import {
     DesignBoxBorderRadius,
     DesignBoxBorderRadiusProps,
 } from "./BorderRadius";
+import { DesignBoxBorderStyle,DesignBoxBorderStyleProps} from "./BorderStyle";
 import { DesignBoxBorderColor, DesignBoxBorderColorProps } from "./BorderColor";
 import { DesignBoxBackground, DesignBoxBackgroundProps } from "./Background";
 import { DesignBoxWidth, DesignBoxWidthProps } from "./Width";
@@ -37,7 +38,8 @@ export interface DesignBoxProps
         DesignBoxWidthProps,
         DesignBoxHeightProps,
         DesignBoxGapProps,
-        DesignBoxAlignProps {
+        DesignBoxAlignProps,
+        DesignBoxBorderStyleProps {
     /**
      * The class name for the component.
      */
@@ -84,6 +86,12 @@ export const DesignBox = ({
     textBorderRadiusBottomLeft = "Bottom Left",
     textBorderRadiusBottomRight = "Bottom Right",
 
+    textBorderStyle = "Border Style",
+    textBorderStyleTop = "Top",
+    textBorderStyleLeft = "Left",
+    textBorderStyleRight = "Right",
+    textBorderStyleBottom = "Bottom",
+
     textBorderColor = "Border Color",
 
     textWidth = "Width",
@@ -113,6 +121,10 @@ export const DesignBox = ({
         borderUnit: "px",
         borderUnitRadius: "px",
         gapUnit: "px",
+        borderTopStyle:"hidden",
+        borderLeftStyle:"hidden",
+        borderRightStyle:"hidden",
+        borderBottomStyle:"hidden",
     },
     value,
     onChange,
@@ -200,6 +212,17 @@ export const DesignBox = ({
                             }
                             textBorderRadiusTopLeft={textBorderRadiusTopLeft}
                             textBorderRadiusTopRight={textBorderRadiusTopRight}
+                            _t={_t}
+                        />
+                        <DesignBoxBorderStyle
+                            defaultValue={defaultValue}
+                            value={value}
+                            onChange={onConcatData}
+                            textBorderStyle={textBorderStyle}
+                            textBorderStyleBottom={textBorderStyleBottom}
+                            textBorderStyleLeft={textBorderStyleLeft}
+                            textBorderStyleRight={textBorderStyleRight}
+                            textBorderStyleTop={textBorderStyleTop}
                             _t={_t}
                         />
                         <DesignBoxBorderColor

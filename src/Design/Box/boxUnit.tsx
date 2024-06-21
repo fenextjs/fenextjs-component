@@ -13,6 +13,14 @@ export const ConstDesignBoxBorderRadiusUnit = ["px", "em", "rem"] as const;
 export type DesignBoxBorderRadiusUnit =
     (typeof ConstDesignBoxBorderRadiusUnit)[number];
 
+
+
+export const ConstDesignBoxBorderStylesUnit = [
+    "dashed" , "dotted" , "double" ,"groove","hidden" ,"inset" , "none" , "outset" , "ridge" , "solid"
+] as const;
+export type DesignBoxBorderStylesUnit =
+    (typeof ConstDesignBoxBorderStylesUnit)[number];
+
 export const ConstDesignBoxWidthUnit = [
     "px",
     "em",
@@ -84,6 +92,12 @@ export interface DesignBoxValue {
     borderBottom?: number;
     borderLeft?: number;
     borderUnit?: DesignBoxBorderUnit;
+
+    borderStyleTogether?:boolean
+    borderTopStyle?: DesignBoxBorderStylesUnit;
+    borderRightStyle?: DesignBoxBorderStylesUnit;
+    borderBottomStyle: DesignBoxBorderStylesUnit;
+    borderLeftStyle?: DesignBoxBorderStylesUnit;
 
     borderRadiusTogether?: boolean;
     borderTopLeftRadius?: number;
