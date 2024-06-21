@@ -1,5 +1,5 @@
 import { _tValidate } from "fenextjs-functions";
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useMemo } from "react";
 import { Edit } from "fenextjs-svg";
 import { Collapse, CollapseProps } from "../../Collapse/Simple";
 import { DesignBoxValue } from "./boxUnit";
@@ -52,6 +52,11 @@ export interface DesignBoxProps
     collapseUseActiveForShowChildren?: CollapseProps["useActiveForShowChildren"];
 
     textBox?: string;
+
+
+    defaultValue?: DesignBoxValueProps;
+    value?: DesignBoxValueProps;
+    onChange?: (data: DesignBoxValueProps) => void;
 }
 
 export const DesignBox = ({
@@ -125,6 +130,9 @@ export const DesignBox = ({
         borderLeftStyle: "hidden",
         borderRightStyle: "hidden",
         borderBottomStyle: "hidden",
+
+        justifyContent:"stretch",
+        alignItems:"start"
     },
     value,
     onChange,
@@ -134,7 +142,7 @@ export const DesignBox = ({
     collapseType,
     collapseUseActiveForShowChildren = true,
 }: DesignBoxProps) => {
-    const { onConcatData } = useData<DesignBoxValueProps, CSSProperties>(
+    const { onChangeData ,dataMemo,data:data_,setDataFunction} = useData<DesignBoxValueProps, CSSProperties>(
         defaultValue,
         {
             onChangeDataAfter: onChange,
@@ -142,10 +150,14 @@ export const DesignBox = ({
             onMemo: parseDesignBoxValueProps_to_CSSProperties,
         },
     );
+    console.log({borderLeftStyle:dataMemo?.borderLeftStyle});
 
+    const data = useMemo(() => value ?? data_, [value, data_]);
+    
     return (
         <>
             <div className={`fenext-design-box ${className} `}>
+                <div style={dataMemo}></div>
                 <Collapse
                     header={<>{_tValidate(textBox, _t)}</>}
                     iconArrow={
@@ -160,16 +172,16 @@ export const DesignBox = ({
                 >
                     <div className={`fenext-design-box-content `}>
                         <DesignBoxBackground
-                            defaultValue={defaultValue}
-                            value={value}
-                            onChange={onConcatData}
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
                             textBackground={textBackground}
                             _t={_t}
                         />
                         <DesignBoxPadding
-                            defaultValue={defaultValue}
-                            value={value}
-                            onChange={onConcatData}
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
                             textPadding={textPadding}
                             textPaddingBottom={textPaddingBottom}
                             textPaddingLeft={textPaddingLeft}
@@ -178,9 +190,9 @@ export const DesignBox = ({
                             _t={_t}
                         />
                         <DesignBoxMargin
-                            defaultValue={defaultValue}
-                            value={value}
-                            onChange={onConcatData}
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
                             textMargin={textMargin}
                             textMarginBottom={textMarginBottom}
                             textMarginLeft={textMarginLeft}
@@ -189,9 +201,9 @@ export const DesignBox = ({
                             _t={_t}
                         />
                         <DesignBoxBorder
-                            defaultValue={defaultValue}
-                            value={value}
-                            onChange={onConcatData}
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
                             textBorder={textBorder}
                             textBorderBottom={textBorderBottom}
                             textBorderLeft={textBorderLeft}
@@ -200,9 +212,9 @@ export const DesignBox = ({
                             _t={_t}
                         />
                         <DesignBoxBorderRadius
-                            defaultValue={defaultValue}
-                            value={value}
-                            onChange={onConcatData}
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
                             textBorderRadius={textBorderRadius}
                             textBorderRadiusBottomLeft={
                                 textBorderRadiusBottomLeft
@@ -215,9 +227,9 @@ export const DesignBox = ({
                             _t={_t}
                         />
                         <DesignBoxBorderStyle
-                            defaultValue={defaultValue}
-                            value={value}
-                            onChange={onConcatData}
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
                             textBorderStyle={textBorderStyle}
                             textBorderStyleBottom={textBorderStyleBottom}
                             textBorderStyleLeft={textBorderStyleLeft}
@@ -226,42 +238,42 @@ export const DesignBox = ({
                             _t={_t}
                         />
                         <DesignBoxBorderColor
-                            defaultValue={defaultValue}
-                            value={value}
-                            onChange={onConcatData}
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
                             textBorderColor={textBorderColor}
                             _t={_t}
                         />
                         <DesignBoxWidth
-                            defaultValue={defaultValue}
-                            value={value}
-                            onChange={onConcatData}
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
                             textWidth={textWidth}
                             textMaxWidth={textMaxWidth}
                             textMinWidth={textMinWidth}
                             _t={_t}
                         />
                         <DesignBoxHeight
-                            defaultValue={defaultValue}
-                            value={value}
-                            onChange={onConcatData}
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
                             textHeight={textHeight}
                             textMaxHeight={textMaxHeight}
                             textMinHeight={textMinHeight}
                             _t={_t}
                         />
                         <DesignBoxAlign
-                            defaultValue={defaultValue}
-                            value={value}
-                            onChange={onConcatData}
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
                             textAlignItems={textAlignItems}
                             textJustifyContent={textJustifyContent}
                             _t={_t}
                         />
                         <DesignBoxGap
-                            defaultValue={defaultValue}
-                            value={value}
-                            onChange={onConcatData}
+                            data={data}
+                            onChangeData={onChangeData}
+                            setDataFunction={setDataFunction}
                             textGap={textGap}
                             textGapRow={textGapRow}
                             textGapColumn={textGapColumn}

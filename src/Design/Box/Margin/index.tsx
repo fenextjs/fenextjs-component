@@ -2,15 +2,13 @@ import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import React, { useMemo } from "react";
+import React from "react";
 import { Text } from "../../../Text";
 import {
     ConstDesignBoxMarginUnit,
     DesignBoxUseDataProps,
     DesignBoxValue,
-    DesignBoxValueProps,
 } from "../boxUnit";
-import { useData } from "fenextjs-hook";
 import { SvgLink } from "fenextjs-svg/cjs/Link";
 
 /**
@@ -32,20 +30,10 @@ export const DesignBoxMargin = ({
     textMarginRight = "Right",
     textMarginTop = "Top",
 
-    defaultValue = {},
-    value,
-    onChange,
+    data,
+    onChangeData,
+    setDataFunction
 }: DesignBoxMarginProps) => {
-    const {
-        data: data_,
-        onChangeData,
-        onConcatData,
-        setDataFunction,
-    } = useData<DesignBoxValueProps>(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
-
-    const data = useMemo(() => value ?? data_, [value, data_]);
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
@@ -66,16 +54,16 @@ export const DesignBoxMargin = ({
             });
         };
     const onChangeMarginTogether = (e: boolean) => {
-        onConcatData({
-            marginTogether: e,
-            ...(e
-                ? {
-                      marginBottom: 0,
-                      marginLeft: 0,
-                      marginRight: 0,
-                      marginTop: 0,
-                  }
-                : {}),
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.marginTogether = e
+            if (n.marginTogether) {
+                n.marginTop = 0
+                n.marginRight =0
+                n.marginBottom =0
+                n.marginLeft = 0
+            }
+            return n;
         });
     };
 

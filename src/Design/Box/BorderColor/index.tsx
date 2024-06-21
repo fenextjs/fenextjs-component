@@ -1,8 +1,7 @@
 import { _tValidate } from "fenextjs-functions";
-import React, { useMemo } from "react";
+import React from "react";
 import { Text } from "../../../Text";
-import { DesignBoxUseDataProps, DesignBoxValueProps } from "../boxUnit";
-import { useData } from "fenextjs-hook";
+import { DesignBoxUseDataProps } from "../boxUnit";
 import { InputColor } from "../../../Input/Color";
 
 /**
@@ -16,18 +15,9 @@ export const DesignBoxBorderColor = ({
     _t,
     textBorderColor = "Border Color",
 
-    defaultValue = {},
-    value,
-    onChange,
+    data,
+    onChangeData,
 }: DesignBoxBorderColorProps) => {
-    const { data: data_, onChangeData } = useData<DesignBoxValueProps>(
-        defaultValue,
-        {
-            onChangeDataAfter: onChange,
-        },
-    );
-
-    const data = useMemo(() => value ?? data_, [value, data_]);
 
     return (
         <>

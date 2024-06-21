@@ -2,15 +2,13 @@ import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import React, { useMemo } from "react";
+import React from "react";
 import { Text } from "../../../Text";
 import {
     ConstDesignBoxBorderRadiusUnit,
     DesignBoxUseDataProps,
     DesignBoxValue,
-    DesignBoxValueProps,
 } from "../boxUnit";
-import { useData } from "fenextjs-hook";
 import { SvgLink } from "fenextjs-svg/cjs/Link";
 
 /**
@@ -32,20 +30,10 @@ export const DesignBoxBorderRadius = ({
     textBorderRadiusBottomLeft = "Bottom Left",
     textBorderRadiusBottomRight = "Bottom Right",
 
-    defaultValue = {},
-    value,
-    onChange,
+    data,
+    onChangeData,
+    setDataFunction
 }: DesignBoxBorderRadiusProps) => {
-    const {
-        data: data_,
-        onChangeData,
-        onConcatData,
-        setDataFunction,
-    } = useData<DesignBoxValueProps>(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
-
-    const data = useMemo(() => value ?? data_, [value, data_]);
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
@@ -72,16 +60,16 @@ export const DesignBoxBorderRadius = ({
             });
         };
     const onChangeBorderRadiusTogether = (e: boolean) => {
-        onConcatData({
-            borderRadiusTogether: e,
-            ...(e
-                ? {
-                      borderTopLeftRadius: 0,
-                      borderTopRightRadius: 0,
-                      borderBottomLeftRadius: 0,
-                      borderBottomRightRadius: 0,
-                  }
-                : {}),
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.borderRadiusTogether = e;
+            if (e) {
+                n.borderTopLeftRadius = 0
+                n.borderTopRightRadius = 0
+                n.borderBottomLeftRadius = 0
+                n.borderBottomRightRadius = 0
+            }
+            return n;
         });
     };
 

@@ -1,8 +1,7 @@
 import { _tValidate } from "fenextjs-functions";
-import React, { useMemo } from "react";
+import React from "react";
 import { Text } from "../../../Text";
-import { DesignBoxUseDataProps, DesignBoxValueProps } from "../boxUnit";
-import { useData } from "fenextjs-hook";
+import { DesignBoxUseDataProps } from "../boxUnit";
 import { InputColor } from "../../../Input/Color";
 
 /**
@@ -15,20 +14,10 @@ export interface DesignBoxBackgroundProps extends DesignBoxUseDataProps {
 export const DesignBoxBackground = ({
     _t,
     textBackground = "Background",
-
-    defaultValue = {},
-    value,
-    onChange,
+    data,
+    onChangeData
 }: DesignBoxBackgroundProps) => {
-    const { data: data_, onChangeData } = useData<DesignBoxValueProps>(
-        defaultValue,
-        {
-            onChangeDataAfter: onChange,
-        },
-    );
-
-    const data = useMemo(() => value ?? data_, [value, data_]);
-
+    
     return (
         <>
             <div

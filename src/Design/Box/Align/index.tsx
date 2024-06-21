@@ -1,15 +1,13 @@
 import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
-import React, { useMemo } from "react";
+import React from "react";
 import { Text } from "../../../Text";
 import {
     DesignBoxUseDataProps,
     DesignBoxValue,
-    DesignBoxValueProps,
     ConstDesignBoxJustifyContentUnit,
     ConstDesignBoxAlignItemsUnit,
 } from "../boxUnit";
-import { useData } from "fenextjs-hook";
 
 /**
  * Properties for the base DesignBoxAlign component.
@@ -24,18 +22,9 @@ export const DesignBoxAlign = ({
     textAlignItems = "Align Vertical",
     textJustifyContent = "Align Horizontal",
 
-    defaultValue = {},
-    value,
-    onChange,
+    data,
+    onChangeData,
 }: DesignBoxAlignProps) => {
-    const { data: data_, onChangeData } = useData<DesignBoxValueProps>(
-        defaultValue,
-        {
-            onChangeDataAfter: onChange,
-        },
-    );
-
-    const data = useMemo(() => value ?? data_, [value, data_]);
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 

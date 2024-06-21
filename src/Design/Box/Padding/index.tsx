@@ -2,15 +2,13 @@ import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import React, { useMemo } from "react";
+import React from "react";
 import { Text } from "../../../Text";
 import {
     ConstDesignBoxPaddingUnit,
     DesignBoxUseDataProps,
     DesignBoxValue,
-    DesignBoxValueProps,
 } from "../boxUnit";
-import { useData } from "fenextjs-hook";
 import { SvgLink } from "fenextjs-svg/cjs/Link";
 
 /**
@@ -32,20 +30,10 @@ export const DesignBoxPadding = ({
     textPaddingRight = "Right",
     textPaddingTop = "Top",
 
-    defaultValue = {},
-    value,
-    onChange,
+    data,
+    onChangeData,
+    setDataFunction
 }: DesignBoxPaddingProps) => {
-    const {
-        data: data_,
-        onChangeData,
-        onConcatData,
-        setDataFunction,
-    } = useData<DesignBoxValueProps>(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
-
-    const data = useMemo(() => value ?? data_, [value, data_]);
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
@@ -57,31 +45,31 @@ export const DesignBoxPadding = ({
                 | "paddingBottom"
                 | "paddingLeft",
         ) =>
-        (e: number | "") => {
-            setDataFunction((old) => {
-                const n = { ...old };
-                const v = e == "" ? undefined : e;
-                n[padding] = v;
-                if (n.paddingTogether) {
-                    n.paddingTop = v;
-                    n.paddingRight = v;
-                    n.paddingBottom = v;
-                    n.paddingLeft = v;
-                }
-                return n;
-            });
-        };
+            (e: number | "") => {
+                setDataFunction((old) => {
+                    const n = { ...old };
+                    const v = e == "" ? undefined : e;
+                    n[padding] = v;
+                    if (n.paddingTogether) {
+                        n.paddingTop = v;
+                        n.paddingRight = v;
+                        n.paddingBottom = v;
+                        n.paddingLeft = v;
+                    }
+                    return n;
+                });
+            };
     const onChangePaddingTogether = (e: boolean) => {
-        onConcatData({
-            paddingTogether: e,
-            ...(e
-                ? {
-                      paddingBottom: 0,
-                      paddingLeft: 0,
-                      paddingRight: 0,
-                      paddingTop: 0,
-                  }
-                : {}),
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.paddingTogether = e
+            if (n.paddingTogether) {
+                n.paddingTop = 0
+                n.paddingRight = 0
+                n.paddingBottom = 0
+                n.paddingLeft = 0
+            }
+            return n;
         });
     };
 

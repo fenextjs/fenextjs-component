@@ -2,15 +2,13 @@ import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import React, { useMemo } from "react";
+import React from "react";
 import { Text } from "../../../Text";
 import {
     ConstDesignBoxGapsUnit,
     DesignBoxUseDataProps,
     DesignBoxValue,
-    DesignBoxValueProps,
 } from "../boxUnit";
-import { useData } from "fenextjs-hook";
 import { SvgLink } from "fenextjs-svg/cjs/Link";
 
 /**
@@ -28,20 +26,10 @@ export const DesignBoxGap = ({
     textGapRow = "Gap Row",
     textGapColumn = "Gap Column",
 
-    defaultValue = {},
-    value,
-    onChange,
+    data,
+    onChangeData,
+    setDataFunction
 }: DesignBoxGapProps) => {
-    const {
-        data: data_,
-        onChangeData,
-        onConcatData,
-        setDataFunction,
-    } = useData<DesignBoxValueProps>(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
-
-    const data = useMemo(() => value ?? data_, [value, data_]);
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
@@ -58,14 +46,14 @@ export const DesignBoxGap = ({
         });
     };
     const onChangeGapTogether = (e: boolean) => {
-        onConcatData({
-            gapTogether: e,
-            ...(e
-                ? {
-                      gapColumn: 0,
-                      gapRow: 0,
-                  }
-                : {}),
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.gapTogether = e
+            if (n.gapTogether) {
+                n.gapColumn = 0
+                n.gapRow = 0
+            }
+            return n;
         });
     };
 

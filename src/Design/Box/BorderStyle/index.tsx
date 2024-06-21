@@ -1,16 +1,14 @@
 import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
-import React, { useMemo } from "react";
+import React from "react";
 import { Text } from "../../../Text";
 import {
     ConstDesignBoxBorderStylesUnit,
     DesignBoxBorderStylesUnit,
     DesignBoxUseDataProps,
     DesignBoxValue,
-    DesignBoxValueProps,
 } from "../boxUnit";
-import { useData } from "fenextjs-hook";
 import { SvgLink } from "fenextjs-svg/cjs/Link";
 
 /**
@@ -32,19 +30,9 @@ export const DesignBoxBorderStyle = ({
     textBorderStyleRight = "Right",
     textBorderStyleBottom = "Bottom",
 
-    defaultValue = {},
-    value,
-    onChange,
+    data,
+    setDataFunction
 }: DesignBoxBorderStyleProps) => {
-    const {
-        data: data_,
-        onConcatData,
-        setDataFunction,
-    } = useData<DesignBoxValueProps>(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
-
-    const data = useMemo(() => value ?? data_, [value, data_]);
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
@@ -56,31 +44,31 @@ export const DesignBoxBorderStyle = ({
                 | "borderRightStyle"
                 | "borderBottomStyle",
         ) =>
-        (e?: DesignBoxBorderStylesUnit) => {
-            setDataFunction((old) => {
-                const n = { ...old };
-                const v = e;
-                n[borderStyle] = v;
-                if (n.borderStyleTogether) {
-                    n.borderTopStyle = v;
-                    n.borderLeftStyle = v;
-                    n.borderRightStyle = v;
-                    n.borderBottomStyle = v;
-                }
-                return n;
-            });
-        };
+            (e?: DesignBoxBorderStylesUnit) => {
+                setDataFunction((old) => {
+                    const n = { ...old };
+                    const v = e;
+                    n[borderStyle] = v;
+                    if (n.borderStyleTogether) {
+                        n.borderTopStyle = v;
+                        n.borderLeftStyle = v;
+                        n.borderRightStyle = v;
+                        n.borderBottomStyle = v;
+                    }
+                    return n;
+                });
+            };
     const onChangeBorderStyleTogether = (e: boolean) => {
-        onConcatData({
-            borderStyleTogether: e,
-            ...(e
-                ? {
-                      borderTopStyle: "hidden",
-                      borderLeftStyle: "hidden",
-                      borderRightStyle: "hidden",
-                      borderBottomStyle: "hidden",
-                  }
-                : {}),
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.borderStyleTogether = e;
+            if (e) {
+                n.borderTopStyle = "hidden";
+                n.borderLeftStyle = "hidden";
+                n.borderRightStyle = "hidden";
+                n.borderBottomStyle = "hidden";
+            }
+            return n;
         });
     };
 

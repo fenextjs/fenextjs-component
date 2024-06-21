@@ -1,16 +1,13 @@
 import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import React, { useMemo } from "react";
+import React from "react";
 import { Text } from "../../../Text";
 import {
     ConstDesignBoxHeightUnit,
     DesignBoxUseDataProps,
     DesignBoxValue,
-    DesignBoxValueProps,
 } from "../boxUnit";
-import { useData } from "fenextjs-hook";
-
 /**
  * Properties for the base DesignBoxHeight component.
  */
@@ -26,18 +23,9 @@ export const DesignBoxHeight = ({
     textMinHeight = "Min Height",
     textMaxHeight = "Max Height",
 
-    defaultValue = {},
-    value,
-    onChange,
+    data,
+    onChangeData,
 }: DesignBoxHeightProps) => {
-    const { data: data_, onChangeData } = useData<DesignBoxValueProps>(
-        defaultValue,
-        {
-            onChangeDataAfter: onChange,
-        },
-    );
-
-    const data = useMemo(() => value ?? data_, [value, data_]);
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 

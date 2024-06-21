@@ -1,15 +1,13 @@
 import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import React, { useMemo } from "react";
+import React from "react";
 import { Text } from "../../../Text";
 import {
     ConstDesignBoxWidthUnit,
     DesignBoxUseDataProps,
     DesignBoxValue,
-    DesignBoxValueProps,
 } from "../boxUnit";
-import { useData } from "fenextjs-hook";
 
 /**
  * Properties for the base DesignBoxWidth component.
@@ -26,18 +24,9 @@ export const DesignBoxWidth = ({
     textMinWidth = "Min Width",
     textMaxWidth = "Max Width",
 
-    defaultValue = {},
-    value,
-    onChange,
+    data,
+    onChangeData,
 }: DesignBoxWidthProps) => {
-    const { data: data_, onChangeData } = useData<DesignBoxValueProps>(
-        defaultValue,
-        {
-            onChangeDataAfter: onChange,
-        },
-    );
-
-    const data = useMemo(() => value ?? data_, [value, data_]);
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 

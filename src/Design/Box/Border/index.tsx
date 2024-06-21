@@ -2,15 +2,13 @@ import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import React, { useMemo } from "react";
+import React, { useCallback } from "react";
 import { Text } from "../../../Text";
 import {
     ConstDesignBoxBorderUnit,
     DesignBoxUseDataProps,
     DesignBoxValue,
-    DesignBoxValueProps,
 } from "../boxUnit";
-import { useData } from "fenextjs-hook";
 import { SvgLink } from "fenextjs-svg/cjs/Link";
 
 /**
@@ -32,50 +30,43 @@ export const DesignBoxBorder = ({
     textBorderRight = "Right",
     textBorderTop = "Top",
 
-    defaultValue = {},
-    value,
-    onChange,
+    data,
+    setDataFunction,
+    onChangeData
 }: DesignBoxBorderProps) => {
-    const {
-        data: data_,
-        onChangeData,
-        onConcatData,
-        setDataFunction,
-    } = useData<DesignBoxValueProps>(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
-
-    const data = useMemo(() => value ?? data_, [value, data_]);
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
-    const onChangeBorder =
+    const onChangeBorder = useCallback(
         (border: "borderTop" | "borderRight" | "borderBottom" | "borderLeft") =>
-        (e: number | "") => {
-            setDataFunction((old) => {
-                const n = { ...old };
-                const v = e == "" ? undefined : e;
-                n[border] = v;
-                if (n.borderTogether) {
-                    n.borderTop = v;
-                    n.borderRight = v;
-                    n.borderBottom = v;
-                    n.borderLeft = v;
-                }
-                return n;
-            });
-        };
+            (e: number | "") => {
+                setDataFunction((old) => {
+                    const n = { ...old };
+                    const v = e == "" ? undefined : e;
+                    n[border] = v;
+                    if (n.borderTogether) {
+                        n.borderTop = v;
+                        n.borderRight = v;
+                        n.borderBottom = v;
+                        n.borderLeft = v;
+                    }
+                    return n;
+                });
+            },
+      [data],
+    )
+    
     const onChangeBorderTogether = (e: boolean) => {
-        onConcatData({
-            borderTogether: e,
-            ...(e
-                ? {
-                      borderBottom: 0,
-                      borderLeft: 0,
-                      borderRight: 0,
-                      borderTop: 0,
-                  }
-                : {}),
+        setDataFunction((old) => {
+            const n = { ...old };
+            n.borderTogether = e;
+            if (e) {
+                n.borderBottom = 0
+                n.borderLeft =0
+                n.borderRight =0
+                n.borderTop = 0
+            }
+            return n;
         });
     };
 
