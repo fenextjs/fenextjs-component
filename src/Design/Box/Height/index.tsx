@@ -1,10 +1,14 @@
 import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import { _TProps } from "fenextjs-interface";
 import React, { useMemo } from "react";
 import { Text } from "../../../Text";
-import { ConstDesignBoxHeightUnit, DesignBoxUseDataProps, DesignBoxValue, DesignBoxValueProps } from "../boxUnit";
+import {
+    ConstDesignBoxHeightUnit,
+    DesignBoxUseDataProps,
+    DesignBoxValue,
+    DesignBoxValueProps,
+} from "../boxUnit";
 import { useData } from "fenextjs-hook";
 
 /**
@@ -26,21 +30,22 @@ export const DesignBoxHeight = ({
     value,
     onChange,
 }: DesignBoxHeightProps) => {
-    const {
-        data: data_,
-        onChangeData,
-    } = useData<DesignBoxValueProps>(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
+    const { data: data_, onChangeData } = useData<DesignBoxValueProps>(
+        defaultValue,
+        {
+            onChangeDataAfter: onChange,
+        },
+    );
 
     const data = useMemo(() => value ?? data_, [value, data_]);
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
-
     return (
         <>
-            <div className={`fenext-design-box-item fenext-design-box-item-2-2`}>
+            <div
+                className={`fenext-design-box-item fenext-design-box-item-2-2`}
+            >
                 <Text>{_tValidate(textHeight, _t)}</Text>
                 <InputNumberCount
                     defaultValue={data.height}
@@ -57,7 +62,9 @@ export const DesignBoxHeight = ({
                     placeholder="Height"
                 />
             </div>
-            <div className={`fenext-design-box-item fenext-design-box-item-2-2`}>
+            <div
+                className={`fenext-design-box-item fenext-design-box-item-2-2`}
+            >
                 <Text>{_tValidate(textMaxHeight, _t)}</Text>
                 <InputNumberCount
                     defaultValue={data.maxHeight}
@@ -74,7 +81,9 @@ export const DesignBoxHeight = ({
                     placeholder="Max Height"
                 />
             </div>
-            <div className={`fenext-design-box-item fenext-design-box-item-2-2`}>
+            <div
+                className={`fenext-design-box-item fenext-design-box-item-2-2`}
+            >
                 <Text>{_tValidate(textMinHeight, _t)}</Text>
                 <InputNumberCount
                     defaultValue={data.minHeight}

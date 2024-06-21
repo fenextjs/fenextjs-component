@@ -1,6 +1,6 @@
 .fenext-design-box {
-    --together-color:var(--fenext-color-black);
-    --together-active-color:var(--fenext-color-blue);
+    --together-color: var(--fenext-color-black);
+    --together-active-color: var(--fenext-color-blue);
     &-content {
         display: grid;
         gap: 1rem;
@@ -20,7 +20,7 @@
                 text-overflow: ellipsis;
             }
         }
-        .fenext-select{
+        .fenext-select {
             .fenext-input-content-icon {
                 right: 1rem;
             }
@@ -31,9 +31,9 @@
         grid-template-columns: 1fr 8rem auto;
         gap: 1rem;
         align-items: center;
-        &-together{
+        &-together {
             grid-template: 1fr;
-            .fenext-input-checkbox-box  {
+            .fenext-input-checkbox-box {
                 position: fixed;
                 scale: 0;
             }
@@ -41,14 +41,14 @@
                 width: 2rem;
                 color: var(--together-color);
             }
-            &:has(.fenext-input-checkbox-input:checked){
-                --together-color:var(--together-active-color);
+            &:has(.fenext-input-checkbox-input:checked) {
+                --together-color: var(--together-active-color);
             }
         }
-        &-1-2{
+        &-1-2 {
             grid-template-columns: 1fr auto;
         }
-        &-2-2{
+        &-2-2 {
             grid-template-columns: 1fr 8rem 10rem;
         }
         &-2 {
@@ -60,5 +60,4 @@
             grid-column: 1/-1;
         }
     }
-
 }

@@ -9,9 +9,9 @@ export type DesignBoxPaddingUnit = (typeof ConstDesignBoxPaddingUnit)[number];
 export const ConstDesignBoxBorderUnit = ["px", "em", "rem"] as const;
 export type DesignBoxBorderUnit = (typeof ConstDesignBoxBorderUnit)[number];
 
-
 export const ConstDesignBoxBorderRadiusUnit = ["px", "em", "rem"] as const;
-export type DesignBoxBorderRadiusUnit = (typeof ConstDesignBoxBorderRadiusUnit)[number];
+export type DesignBoxBorderRadiusUnit =
+    (typeof ConstDesignBoxBorderRadiusUnit)[number];
 
 export const ConstDesignBoxWidthUnit = [
     "px",
@@ -91,7 +91,7 @@ export interface DesignBoxValue {
     borderBottomLeftRadius?: number;
     borderBottomRightRadius?: number;
     borderUnitRadius?: DesignBoxBorderRadiusUnit;
-    
+
     borderColor?: string;
 
     width?: number;
@@ -117,8 +117,7 @@ export interface DesignBoxValue {
     gapUnit?: DesignBoxGapsUnit;
 }
 
-
-export type DesignBoxValueProps = Partial<DesignBoxValue>
+export type DesignBoxValueProps = Partial<DesignBoxValue>;
 
 export interface DesignBoxUseDataProps extends _TProps {
     defaultValue?: DesignBoxValueProps;

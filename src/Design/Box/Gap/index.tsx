@@ -2,10 +2,14 @@ import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import { _TProps } from "fenextjs-interface";
 import React, { useMemo } from "react";
 import { Text } from "../../../Text";
-import { ConstDesignBoxGapsUnit, DesignBoxUseDataProps, DesignBoxValue, DesignBoxValueProps } from "../boxUnit";
+import {
+    ConstDesignBoxGapsUnit,
+    DesignBoxUseDataProps,
+    DesignBoxValue,
+    DesignBoxValueProps,
+} from "../boxUnit";
 import { useData } from "fenextjs-hook";
 import { SvgLink } from "fenextjs-svg/cjs/Link";
 
@@ -32,7 +36,7 @@ export const DesignBoxGap = ({
         data: data_,
         onChangeData,
         onConcatData,
-        setDataFunction
+        setDataFunction,
     } = useData<DesignBoxValueProps>(defaultValue, {
         onChangeDataAfter: onChange,
     });
@@ -42,26 +46,28 @@ export const DesignBoxGap = ({
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeGap = (gap: "gapColumn" | "gapRow") => (e: number | "") => {
-        setDataFunction(old => {
-            const n = { ...old }
-            const v = e == "" ? undefined : e
-            n[gap] = v
+        setDataFunction((old) => {
+            const n = { ...old };
+            const v = e == "" ? undefined : e;
+            n[gap] = v;
             if (n.gapTogether) {
-                n.gapColumn = v
-                n.gapRow = v
+                n.gapColumn = v;
+                n.gapRow = v;
             }
-            return n
-        })
-    }
+            return n;
+        });
+    };
     const onChangeGapTogether = (e: boolean) => {
         onConcatData({
             gapTogether: e,
-            ...(e ? {
-                gapColumn: 0,
-                gapRow: 0,
-            } : {})
-        })
-    }
+            ...(e
+                ? {
+                      gapColumn: 0,
+                      gapRow: 0,
+                  }
+                : {}),
+        });
+    };
 
     return (
         <>
@@ -77,7 +83,11 @@ export const DesignBoxGap = ({
                 <InputCheckbox
                     defaultValue={data.gapTogether}
                     onChange={onChangeGapTogether}
-                    label={<><SvgLink /></>}
+                    label={
+                        <>
+                            <SvgLink />
+                        </>
+                    }
                     classNameLabel="fenext-design-box-item-together"
                 />
                 <div

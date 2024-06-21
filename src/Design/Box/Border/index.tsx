@@ -2,10 +2,14 @@ import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import { _TProps } from "fenextjs-interface";
 import React, { useMemo } from "react";
 import { Text } from "../../../Text";
-import { ConstDesignBoxBorderUnit, DesignBoxUseDataProps, DesignBoxValue, DesignBoxValueProps } from "../boxUnit";
+import {
+    ConstDesignBoxBorderUnit,
+    DesignBoxUseDataProps,
+    DesignBoxValue,
+    DesignBoxValueProps,
+} from "../boxUnit";
 import { useData } from "fenextjs-hook";
 import { SvgLink } from "fenextjs-svg/cjs/Link";
 
@@ -36,7 +40,7 @@ export const DesignBoxBorder = ({
         data: data_,
         onChangeData,
         onConcatData,
-        setDataFunction
+        setDataFunction,
     } = useData<DesignBoxValueProps>(defaultValue, {
         onChangeDataAfter: onChange,
     });
@@ -45,31 +49,35 @@ export const DesignBoxBorder = ({
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
-    const onChangeBorder = (border: "borderTop" | "borderRight" | "borderBottom" | "borderLeft") => (e: number | "") => {
-        setDataFunction(old => {
-            const n = { ...old }
-            const v = e == "" ? undefined : e
-            n[border] = v
-            if (n.borderTogether) {
-                n.borderTop = v
-                n.borderRight = v
-                n.borderBottom = v
-                n.borderLeft = v
-            }
-            return n
-        })
-    }
+    const onChangeBorder =
+        (border: "borderTop" | "borderRight" | "borderBottom" | "borderLeft") =>
+        (e: number | "") => {
+            setDataFunction((old) => {
+                const n = { ...old };
+                const v = e == "" ? undefined : e;
+                n[border] = v;
+                if (n.borderTogether) {
+                    n.borderTop = v;
+                    n.borderRight = v;
+                    n.borderBottom = v;
+                    n.borderLeft = v;
+                }
+                return n;
+            });
+        };
     const onChangeBorderTogether = (e: boolean) => {
         onConcatData({
             borderTogether: e,
-            ...(e ? {
-                borderBottom: 0,
-                borderLeft: 0,
-                borderRight: 0,
-                borderTop: 0
-            } : {})
-        })
-    }
+            ...(e
+                ? {
+                      borderBottom: 0,
+                      borderLeft: 0,
+                      borderRight: 0,
+                      borderTop: 0,
+                  }
+                : {}),
+        });
+    };
 
     return (
         <>
@@ -85,7 +93,11 @@ export const DesignBoxBorder = ({
                 <InputCheckbox
                     defaultValue={data.borderTogether}
                     onChange={onChangeBorderTogether}
-                    label={<><SvgLink /></>}
+                    label={
+                        <>
+                            <SvgLink />
+                        </>
+                    }
                     classNameLabel="fenext-design-box-item-together"
                 />
                 <div

@@ -1,5 +1,4 @@
 import { _tValidate } from "fenextjs-functions";
-import { _TProps } from "fenextjs-interface";
 import React, { CSSProperties } from "react";
 import { Edit } from "fenextjs-svg";
 import { Collapse, CollapseProps } from "../../Collapse/Simple";
@@ -9,7 +8,10 @@ import { parseDesignBoxValueProps_to_CSSProperties } from "./parse";
 import { DesignBoxPadding, DesignBoxPaddingProps } from "./Padding";
 import { DesignBoxMargin, DesignBoxMarginProps } from "./Margin";
 import { DesignBoxBorder, DesignBoxBorderProps } from "./Border";
-import { DesignBoxBorderRadius, DesignBoxBorderRadiusProps } from "./BorderRadius";
+import {
+    DesignBoxBorderRadius,
+    DesignBoxBorderRadiusProps,
+} from "./BorderRadius";
 import { DesignBoxBorderColor, DesignBoxBorderColorProps } from "./BorderColor";
 import { DesignBoxBackground, DesignBoxBackgroundProps } from "./Background";
 import { DesignBoxWidth, DesignBoxWidthProps } from "./Width";
@@ -20,12 +22,22 @@ import { DesignBoxGap, DesignBoxGapProps } from "./Gap";
 /**
  * Properties for the base DesignBox component.
  */
-export interface DesignBoxValueProps extends Partial<DesignBoxValue> { }
+export interface DesignBoxValueProps extends Partial<DesignBoxValue> {}
 
 /**
  * Properties for the base DesignBox component.
  */
-export interface DesignBoxProps extends DesignBoxPaddingProps, DesignBoxMarginProps, DesignBoxBorderProps, DesignBoxBorderRadiusProps, DesignBoxBorderColorProps, DesignBoxBackgroundProps, DesignBoxWidthProps, DesignBoxHeightProps, DesignBoxGapProps, DesignBoxAlignProps {
+export interface DesignBoxProps
+    extends DesignBoxPaddingProps,
+        DesignBoxMarginProps,
+        DesignBoxBorderProps,
+        DesignBoxBorderRadiusProps,
+        DesignBoxBorderColorProps,
+        DesignBoxBackgroundProps,
+        DesignBoxWidthProps,
+        DesignBoxHeightProps,
+        DesignBoxGapProps,
+        DesignBoxAlignProps {
     /**
      * The class name for the component.
      */
@@ -36,7 +48,7 @@ export interface DesignBoxProps extends DesignBoxPaddingProps, DesignBoxMarginPr
     collapseName?: CollapseProps["name"];
     collapseType?: CollapseProps["type"];
 
-    textBox?: string
+    textBox?: string;
 }
 
 export const DesignBox = ({
@@ -89,17 +101,17 @@ export const DesignBox = ({
     textGapColumn = "Gap Column",
 
     defaultValue = {
-        widthUnit:"auto",
-        minWidthUnit:"auto",
-        maxWidthUnit:"auto",
-        heightUnit:"auto",
-        minHeightUnit:"auto",
-        maxHeightUnit:"auto",
-        paddingUnit:"px",
-        marginUnit:"px",
-        borderUnit:"px",
-        borderUnitRadius:"px",
-        gapUnit:"px"
+        widthUnit: "auto",
+        minWidthUnit: "auto",
+        maxWidthUnit: "auto",
+        heightUnit: "auto",
+        minHeightUnit: "auto",
+        maxHeightUnit: "auto",
+        paddingUnit: "px",
+        marginUnit: "px",
+        borderUnit: "px",
+        borderUnitRadius: "px",
+        gapUnit: "px",
     },
     value,
     onChange,
@@ -108,13 +120,14 @@ export const DesignBox = ({
     collapseName,
     collapseType,
 }: DesignBoxProps) => {
-    const {
-        onConcatData
-    } = useData<DesignBoxValueProps, CSSProperties>(defaultValue, {
-        onChangeDataAfter: onChange,
-        onChangeDataMemoAfter: onChangeStyles,
-        onMemo: parseDesignBoxValueProps_to_CSSProperties,
-    });
+    const { onConcatData } = useData<DesignBoxValueProps, CSSProperties>(
+        defaultValue,
+        {
+            onChangeDataAfter: onChange,
+            onChangeDataMemoAfter: onChangeStyles,
+            onMemo: parseDesignBoxValueProps_to_CSSProperties,
+        },
+    );
 
     return (
         <>
@@ -176,8 +189,12 @@ export const DesignBox = ({
                             value={value}
                             onChange={onConcatData}
                             textBorderRadius={textBorderRadius}
-                            textBorderRadiusBottomLeft={textBorderRadiusBottomLeft}
-                            textBorderRadiusBottomRight={textBorderRadiusBottomRight}
+                            textBorderRadiusBottomLeft={
+                                textBorderRadiusBottomLeft
+                            }
+                            textBorderRadiusBottomRight={
+                                textBorderRadiusBottomRight
+                            }
                             textBorderRadiusTopLeft={textBorderRadiusTopLeft}
                             textBorderRadiusTopRight={textBorderRadiusTopRight}
                             _t={_t}

@@ -2,10 +2,14 @@ import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import { _TProps } from "fenextjs-interface";
 import React, { useMemo } from "react";
 import { Text } from "../../../Text";
-import { ConstDesignBoxMarginUnit, DesignBoxUseDataProps, DesignBoxValue, DesignBoxValueProps } from "../boxUnit";
+import {
+    ConstDesignBoxMarginUnit,
+    DesignBoxUseDataProps,
+    DesignBoxValue,
+    DesignBoxValueProps,
+} from "../boxUnit";
 import { useData } from "fenextjs-hook";
 import { SvgLink } from "fenextjs-svg/cjs/Link";
 
@@ -36,7 +40,7 @@ export const DesignBoxMargin = ({
         data: data_,
         onChangeData,
         onConcatData,
-        setDataFunction
+        setDataFunction,
     } = useData<DesignBoxValueProps>(defaultValue, {
         onChangeDataAfter: onChange,
     });
@@ -45,31 +49,35 @@ export const DesignBoxMargin = ({
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
-    const onChangeMargin = (margin: "marginTop" | "marginRight" | "marginBottom" | "marginLeft") => (e: number | "") => {
-        setDataFunction(old => {
-            const n = { ...old }
-            const v = e == "" ? undefined : e
-            n[margin] = v
-            if (n.marginTogether) {
-                n.marginTop = v
-                n.marginRight = v
-                n.marginBottom = v
-                n.marginLeft = v
-            }
-            return n
-        })
-    }
+    const onChangeMargin =
+        (margin: "marginTop" | "marginRight" | "marginBottom" | "marginLeft") =>
+        (e: number | "") => {
+            setDataFunction((old) => {
+                const n = { ...old };
+                const v = e == "" ? undefined : e;
+                n[margin] = v;
+                if (n.marginTogether) {
+                    n.marginTop = v;
+                    n.marginRight = v;
+                    n.marginBottom = v;
+                    n.marginLeft = v;
+                }
+                return n;
+            });
+        };
     const onChangeMarginTogether = (e: boolean) => {
         onConcatData({
             marginTogether: e,
-            ...(e ? {
-                marginBottom: 0,
-                marginLeft: 0,
-                marginRight: 0,
-                marginTop: 0
-            } : {})
-        })
-    }
+            ...(e
+                ? {
+                      marginBottom: 0,
+                      marginLeft: 0,
+                      marginRight: 0,
+                      marginTop: 0,
+                  }
+                : {}),
+        });
+    };
 
     return (
         <>
@@ -85,7 +93,11 @@ export const DesignBoxMargin = ({
                 <InputCheckbox
                     defaultValue={data.marginTogether}
                     onChange={onChangeMarginTogether}
-                    label={<><SvgLink /></>}
+                    label={
+                        <>
+                            <SvgLink />
+                        </>
+                    }
                     classNameLabel="fenext-design-box-item-together"
                 />
                 <div

@@ -2,10 +2,14 @@ import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import { _TProps } from "fenextjs-interface";
 import React, { useMemo } from "react";
 import { Text } from "../../../Text";
-import { ConstDesignBoxPaddingUnit, DesignBoxUseDataProps, DesignBoxValue, DesignBoxValueProps } from "../boxUnit";
+import {
+    ConstDesignBoxPaddingUnit,
+    DesignBoxUseDataProps,
+    DesignBoxValue,
+    DesignBoxValueProps,
+} from "../boxUnit";
 import { useData } from "fenextjs-hook";
 import { SvgLink } from "fenextjs-svg/cjs/Link";
 
@@ -36,7 +40,7 @@ export const DesignBoxPadding = ({
         data: data_,
         onChangeData,
         onConcatData,
-        setDataFunction
+        setDataFunction,
     } = useData<DesignBoxValueProps>(defaultValue, {
         onChangeDataAfter: onChange,
     });
@@ -45,31 +49,41 @@ export const DesignBoxPadding = ({
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
-    const onChangePadding = (padding: "paddingTop" | "paddingRight" | "paddingBottom" | "paddingLeft") => (e: number | "") => {
-        setDataFunction(old => {
-            const n = { ...old }
-            const v = e == "" ? undefined : e
-            n[padding] = v
-            if (n.paddingTogether) {
-                n.paddingTop = v
-                n.paddingRight = v
-                n.paddingBottom = v
-                n.paddingLeft = v
-            }
-            return n
-        })
-    }
+    const onChangePadding =
+        (
+            padding:
+                | "paddingTop"
+                | "paddingRight"
+                | "paddingBottom"
+                | "paddingLeft",
+        ) =>
+        (e: number | "") => {
+            setDataFunction((old) => {
+                const n = { ...old };
+                const v = e == "" ? undefined : e;
+                n[padding] = v;
+                if (n.paddingTogether) {
+                    n.paddingTop = v;
+                    n.paddingRight = v;
+                    n.paddingBottom = v;
+                    n.paddingLeft = v;
+                }
+                return n;
+            });
+        };
     const onChangePaddingTogether = (e: boolean) => {
         onConcatData({
             paddingTogether: e,
-            ...(e ? {
-                paddingBottom: 0,
-                paddingLeft: 0,
-                paddingRight: 0,
-                paddingTop: 0
-            } : {})
-        })
-    }
+            ...(e
+                ? {
+                      paddingBottom: 0,
+                      paddingLeft: 0,
+                      paddingRight: 0,
+                      paddingTop: 0,
+                  }
+                : {}),
+        });
+    };
 
     return (
         <>
@@ -85,7 +99,11 @@ export const DesignBoxPadding = ({
                 <InputCheckbox
                     defaultValue={data.paddingTogether}
                     onChange={onChangePaddingTogether}
-                    label={<><SvgLink /></>}
+                    label={
+                        <>
+                            <SvgLink />
+                        </>
+                    }
                     classNameLabel="fenext-design-box-item-together"
                 />
                 <div

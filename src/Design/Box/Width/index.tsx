@@ -1,10 +1,14 @@
 import { _tValidate } from "fenextjs-functions";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputNumberCount } from "../../../Input/NumberCount";
-import { _TProps } from "fenextjs-interface";
 import React, { useMemo } from "react";
 import { Text } from "../../../Text";
-import { ConstDesignBoxWidthUnit, DesignBoxUseDataProps, DesignBoxValue, DesignBoxValueProps } from "../boxUnit";
+import {
+    ConstDesignBoxWidthUnit,
+    DesignBoxUseDataProps,
+    DesignBoxValue,
+    DesignBoxValueProps,
+} from "../boxUnit";
 import { useData } from "fenextjs-hook";
 
 /**
@@ -26,21 +30,22 @@ export const DesignBoxWidth = ({
     value,
     onChange,
 }: DesignBoxWidthProps) => {
-    const {
-        data: data_,
-        onChangeData,
-    } = useData<DesignBoxValueProps>(defaultValue, {
-        onChangeDataAfter: onChange,
-    });
+    const { data: data_, onChangeData } = useData<DesignBoxValueProps>(
+        defaultValue,
+        {
+            onChangeDataAfter: onChange,
+        },
+    );
 
     const data = useMemo(() => value ?? data_, [value, data_]);
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
-
     return (
         <>
-            <div className={` fenext-design-box-item fenext-design-box-item-2-2`}>
+            <div
+                className={` fenext-design-box-item fenext-design-box-item-2-2`}
+            >
                 <Text>{_tValidate(textWidth, _t)}</Text>
                 <InputNumberCount
                     defaultValue={data.width}
@@ -57,7 +62,9 @@ export const DesignBoxWidth = ({
                     placeholder="Width"
                 />
             </div>
-            <div className={`fenext-design-box-item fenext-design-box-item-2-2`}>
+            <div
+                className={`fenext-design-box-item fenext-design-box-item-2-2`}
+            >
                 <Text>{_tValidate(textMaxWidth, _t)}</Text>
                 <InputNumberCount
                     defaultValue={data.maxWidth}
@@ -74,7 +81,9 @@ export const DesignBoxWidth = ({
                     placeholder="Max Width"
                 />
             </div>
-            <div className={`fenext-design-box-item fenext-design-box-item-2-2`}>
+            <div
+                className={`fenext-design-box-item fenext-design-box-item-2-2`}
+            >
                 <Text>{_tValidate(textMinWidth, _t)}</Text>
                 <InputNumberCount
                     defaultValue={data.minWidth}
