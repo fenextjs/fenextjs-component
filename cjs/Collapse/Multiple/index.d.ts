@@ -3,7 +3,7 @@ import { CollapseClassProps, CollapseBaseProps } from "../Simple";
 /**
  * Properties for the base CollapseMultiple component.
  */
-export interface CollapseMultipleBaseProps extends Pick<CollapseBaseProps, "name" | "type"> {
+export interface CollapseMultipleBaseProps extends Pick<CollapseBaseProps, "name" | "type" | "useActiveForShowChildren"> {
     /**
      * items of Collapse.
      */

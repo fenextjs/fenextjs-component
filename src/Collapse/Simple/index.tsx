@@ -99,7 +99,7 @@ export interface CollapseClassProps {
 /**
  * Properties for the Collapse component.
  */
-export interface CollapseProps extends CollapseBaseProps, CollapseClassProps { }
+export interface CollapseProps extends CollapseBaseProps, CollapseClassProps {}
 
 export const Collapse = ({
     className = "",
@@ -125,27 +125,29 @@ export const Collapse = ({
 }: CollapseProps) => {
     const [active_, setActive_] = useState(defaultActive);
 
+    const active = useMemo(
+        () => activeProps ?? active_,
+        [activeProps, active_],
+    );
 
-    const active = useMemo(() => activeProps ?? active_, [activeProps, active_])
-
-    const {onAction} = useAction({
-        name:`fenext-collapse-${name}`,
-        onActionExecute:()=>{
-            if(type == "radio"){
-                setActive_(false)
-                onChange?.(false)
+    const { onAction } = useAction({
+        name: `fenext-collapse-${name}`,
+        onActionExecute: () => {
+            if (type == "radio") {
+                setActive_(false);
+                onChange?.(false);
             }
-        }
-    })
+        },
+    });
 
-    const setActive = async (e : boolean)=>{
-        onAction()
-        if(type == "radio"){
-            await sleep(50)
+    const setActive = async (e: boolean) => {
+        onAction();
+        if (type == "radio") {
+            await sleep(50);
         }
-        setActive_(e)
-        onChange?.(e)
-    }
+        setActive_(e);
+        onChange?.(e);
+    };
     return (
         <>
             <div
@@ -154,7 +156,7 @@ export const Collapse = ({
                     fenext-collapse-status-${status}
                     fenext-collapse-rotate-icon-${rotateIcon ? "yes" : "no"}
                     fenext-collapse-${show}
-                    fenext-collapse-${useActiveForShowChildren?"active-for-show-children":""}
+                    fenext-collapse-${useActiveForShowChildren ? "active-for-show-children" : ""}
                     ${className}
                 `}
             >
@@ -167,8 +169,8 @@ export const Collapse = ({
                         defaultChecked={defaultActive}
                         {...(active !== undefined
                             ? {
-                                checked: active,
-                            }
+                                  checked: active,
+                              }
                             : {})}
                         onChange={(e) => {
                             setActive?.(e.target.checked);
@@ -207,23 +209,11 @@ export const Collapse = ({
                     </div>
                 </label>
                 <div className={`fenext-collapse-body ${classNameBody}`}>
-                    {
-                        useActiveForShowChildren
-                            ?
-                            <>
-                                {
-                                    active
-                                    &&
-                                    <>
-                                        {children}
-                                    </>
-                                }
-                            </>
-                            :
-                            <>
-                                {children}
-                            </>
-                    }
+                    {useActiveForShowChildren ? (
+                        <>{active && <>{children}</>}</>
+                    ) : (
+                        <>{children}</>
+                    )}
                 </div>
             </div>
         </>

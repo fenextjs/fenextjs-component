@@ -120,7 +120,7 @@ export const DesignBox = ({
 
     collapseName,
     collapseType,
-    collapseUseActiveForShowChildren=true
+    collapseUseActiveForShowChildren = true,
 }: DesignBoxProps) => {
     const { onConcatData } = useData<DesignBoxValueProps, CSSProperties>(
         defaultValue,

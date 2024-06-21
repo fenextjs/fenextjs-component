@@ -34,5 +34,6 @@ export interface DesignTypographyProps extends _TProps {
     textWordSpacing?: string;
     collapseName?: CollapseProps["name"];
     collapseType?: CollapseProps["type"];
+    collapseUseActiveForShowChildren?: CollapseProps["useActiveForShowChildren"];
 }
-export declare const DesignTypography: ({ className, _t, textTypography, textExample, textExampleValue, textColor, textSize, textAlign, textWeight, textTransform, textStyle, textDecoration, textLineHeight, textLetterSpacing, textWordSpacing, defaultValue, value, onChange, onChangeStyles, collapseName, collapseType, }: DesignTypographyProps) => React.JSX.Element;
+export declare const DesignTypography: ({ className, _t, textTypography, textExample, textExampleValue, textColor, textSize, textAlign, textWeight, textTransform, textStyle, textDecoration, textLineHeight, textLetterSpacing, textWordSpacing, defaultValue, value, onChange, onChangeStyles, collapseName, collapseType, collapseUseActiveForShowChildren, }: DesignTypographyProps) => React.JSX.Element;

@@ -30,7 +30,7 @@ const DesignBox = ({ className = "", _t, textBox = "Box", textBackground = "Back
     borderUnit: "px",
     borderUnitRadius: "px",
     gapUnit: "px",
-}, value, onChange, onChangeStyles, collapseName, collapseType, }) => {
+}, value, onChange, onChangeStyles, collapseName, collapseType, collapseUseActiveForShowChildren = true, }) => {
     const { onConcatData } = (0, fenextjs_hook_1.useData)(defaultValue, {
         onChangeDataAfter: onChange,
         onChangeDataMemoAfter: onChangeStyles,
@@ -39,7 +39,7 @@ const DesignBox = ({ className = "", _t, textBox = "Box", textBackground = "Back
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-design-box ${className} ` },
             react_1.default.createElement(Simple_1.Collapse, { header: react_1.default.createElement(react_1.default.Fragment, null, (0, fenextjs_functions_1._tValidate)(textBox, _t)), iconArrow: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(fenextjs_svg_1.Edit, null)), rotateIcon: false, name: collapseName, type: collapseType },
+                    react_1.default.createElement(fenextjs_svg_1.Edit, null)), rotateIcon: false, name: collapseName, type: collapseType, useActiveForShowChildren: collapseUseActiveForShowChildren },
                 react_1.default.createElement("div", { className: `fenext-design-box-content ` },
                     react_1.default.createElement(Background_1.DesignBoxBackground, { defaultValue: defaultValue, value: value, onChange: onConcatData, textBackground: textBackground, _t: _t }),
                     react_1.default.createElement(Padding_1.DesignBoxPadding, { defaultValue: defaultValue, value: value, onChange: onConcatData, textPadding: textPadding, textPaddingBottom: textPaddingBottom, textPaddingLeft: textPaddingLeft, textPaddingRight: textPaddingRight, textPaddingTop: textPaddingTop, _t: _t }),

@@ -120,11 +120,11 @@
     &:not(.fenext-collapse-active-for-show-children):has(
             > .fenext-collapse-body:empty
         ) {
-            > .fenext-collapse-header {
-                .fenext-collapse-header-icon {
-                    display: none;
-                }
+        > .fenext-collapse-header {
+            .fenext-collapse-header-icon {
+                display: none;
             }
+        }
     }
     &:has(> .fenext-collapse-body:empty) {
         > .fenext-collapse-body {

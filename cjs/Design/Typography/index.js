@@ -27,7 +27,7 @@ const DesignTypography = ({ className = "", _t, textTypography = "Typography", t
     letterSpacingUnit: "px",
     wordSpacing: 0,
     wordSpacingUnit: "px",
-}, value, onChange, onChangeStyles, collapseName, collapseType, }) => {
+}, value, onChange, onChangeStyles, collapseName, collapseType, collapseUseActiveForShowChildren = true, }) => {
     const { data: data_, onChangeData, dataMemo, } = (0, fenextjs_hook_1.useData)(defaultValue, {
         onChangeDataAfter: onChange,
         onChangeDataMemoAfter: onChangeStyles,
@@ -38,7 +38,7 @@ const DesignTypography = ({ className = "", _t, textTypography = "Typography", t
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-design-typography ${className} ` },
             react_1.default.createElement(Simple_1.Collapse, { header: react_1.default.createElement(react_1.default.Fragment, null, (0, fenextjs_functions_1._tValidate)(textTypography, _t)), iconArrow: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(fenextjs_svg_1.Edit, null)), rotateIcon: false, name: collapseName, type: collapseType },
+                    react_1.default.createElement(fenextjs_svg_1.Edit, null)), rotateIcon: false, name: collapseName, type: collapseType, useActiveForShowChildren: collapseUseActiveForShowChildren },
                 react_1.default.createElement("div", { className: `fenext-design-typography-content ` },
                     react_1.default.createElement("div", { className: `fenext-design-typography-item fenext-design-typography-item-2` },
                         react_1.default.createElement(Text_1.Text, null, (0, fenextjs_functions_1._tValidate)(textExample, _t)),

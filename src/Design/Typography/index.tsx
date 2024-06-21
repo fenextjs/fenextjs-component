@@ -100,7 +100,7 @@ export const DesignTypography = ({
 
     collapseName,
     collapseType,
-    collapseUseActiveForShowChildren = true
+    collapseUseActiveForShowChildren = true,
 }: DesignTypographyProps) => {
     const {
         data: data_,
