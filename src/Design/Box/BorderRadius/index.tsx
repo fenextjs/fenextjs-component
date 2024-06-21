@@ -45,16 +45,16 @@ export const DesignBoxBorderRadius = ({
 
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
-    const onChangeBorderRadius = (borderRadius: "borderRadiusTopLeft" | "borderRadiusTopRight" | "borderRadiusBottomLeft" | "borderRadiusBottomRight") => (e: number | "") => {
+    const onChangeBorderRadius = (borderRadius: "borderTopLeftRadius" | "borderTopRightRadius" | "borderBottomLeftRadius" | "borderBottomRightRadius") => (e: number | "") => {
         setDataFunction(old => {
             const n = { ...old }
             const v = e == "" ? undefined : e
             n[borderRadius] = v
             if (n.borderRadiusTogether) {
-                n.borderRadiusTopLeft = v
-                n.borderRadiusTopRight = v
-                n.borderRadiusBottomLeft = v
-                n.borderRadiusBottomRight = v
+                n.borderTopLeftRadius = v
+                n.borderTopRightRadius = v
+                n.borderBottomLeftRadius = v
+                n.borderBottomRightRadius = v
             }
             return n
         })
@@ -63,10 +63,10 @@ export const DesignBoxBorderRadius = ({
         onConcatData({
             borderRadiusTogether: e,
             ...(e ? {
-                borderRadiusTopLeft:0,
-                borderRadiusTopRight :0,
-                borderRadiusBottomLeft :0,
-                borderRadiusBottomRight :0,
+                borderTopLeftRadius:0,
+                borderTopRightRadius :0,
+                borderBottomLeftRadius :0,
+                borderBottomRightRadius :0,
             } : {})
         })
     }
@@ -75,11 +75,11 @@ export const DesignBoxBorderRadius = ({
         <>
             <div className={`fenext-design-box-item`}>
                 <Text>{_tValidate(textBorderRadius, _t)}</Text>
-                <InputSelectT<DesignBoxValue["borderRadiusUnit"]>
+                <InputSelectT<DesignBoxValue["borderUnitRadius"]>
                     onParse={_p}
                     options={[...ConstDesignBoxBorderRadiusUnit]}
-                    defaultValue={data.borderRadiusUnit}
-                    onChange={onChangeData("borderRadiusUnit")}
+                    defaultValue={data.borderUnitRadius}
+                    onChange={onChangeData("borderUnitRadius")}
                     placeholder="Unit"
                 />
                 <InputCheckbox
@@ -93,31 +93,31 @@ export const DesignBoxBorderRadius = ({
                 >
                     <InputNumberCount
                         placeholder={textBorderRadiusTopLeft}
-                        onChange={onChangeBorderRadius("borderRadiusTopLeft")}
-                        value={data.borderRadiusTopLeft}
+                        onChange={onChangeBorderRadius("borderTopLeftRadius")}
+                        value={data.borderTopLeftRadius}
                         symbolInit=""
-                        symbolFinal={data.borderRadiusUnit}
+                        symbolFinal={data.borderUnitRadius}
                     />
                     <InputNumberCount
                         placeholder={textBorderRadiusTopRight}
-                        onChange={onChangeBorderRadius("borderRadiusTopRight")}
-                        value={data.borderRadiusTopRight}
+                        onChange={onChangeBorderRadius("borderTopRightRadius")}
+                        value={data.borderTopRightRadius}
                         symbolInit=""
-                        symbolFinal={data.borderRadiusUnit}
+                        symbolFinal={data.borderUnitRadius}
                     />
                     <InputNumberCount
                         placeholder={textBorderRadiusBottomLeft}
-                        onChange={onChangeBorderRadius("borderRadiusBottomLeft")}
-                        value={data.borderRadiusBottomLeft}
+                        onChange={onChangeBorderRadius("borderBottomLeftRadius")}
+                        value={data.borderBottomLeftRadius}
                         symbolInit=""
-                        symbolFinal={data.borderRadiusUnit}
+                        symbolFinal={data.borderUnitRadius}
                     />
                     <InputNumberCount
                         placeholder={textBorderRadiusBottomRight}
-                        onChange={onChangeBorderRadius("borderRadiusBottomRight")}
-                        value={data.borderRadiusBottomRight}
+                        onChange={onChangeBorderRadius("borderBottomRightRadius")}
+                        value={data.borderBottomRightRadius}
                         symbolInit=""
-                        symbolFinal={data.borderRadiusUnit}
+                        symbolFinal={data.borderUnitRadius}
                     />
                 </div>
             </div>

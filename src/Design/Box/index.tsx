@@ -1,9 +1,8 @@
 import { _tValidate } from "fenextjs-functions";
 import { _TProps } from "fenextjs-interface";
-import React, { CSSProperties, useMemo } from "react";
+import React, { CSSProperties } from "react";
 import { Edit } from "fenextjs-svg";
 import { Collapse, CollapseProps } from "../../Collapse/Simple";
-import { Text } from "../../Text";
 import { DesignBoxValue } from "./boxUnit";
 import { useData } from "fenextjs-hook";
 import { parseDesignBoxValueProps_to_CSSProperties } from "./parse";
@@ -89,7 +88,19 @@ export const DesignBox = ({
     textGapRow = "Gap Row",
     textGapColumn = "Gap Column",
 
-    defaultValue = {},
+    defaultValue = {
+        widthUnit:"auto",
+        minWidthUnit:"auto",
+        maxWidthUnit:"auto",
+        heightUnit:"auto",
+        minHeightUnit:"auto",
+        maxHeightUnit:"auto",
+        paddingUnit:"px",
+        marginUnit:"px",
+        borderUnit:"px",
+        borderUnitRadius:"px",
+        gapUnit:"px"
+    },
     value,
     onChange,
     onChangeStyles,
@@ -98,8 +109,6 @@ export const DesignBox = ({
     collapseType,
 }: DesignBoxProps) => {
     const {
-        data,
-        dataMemo,
         onConcatData
     } = useData<DesignBoxValueProps, CSSProperties>(defaultValue, {
         onChangeDataAfter: onChange,

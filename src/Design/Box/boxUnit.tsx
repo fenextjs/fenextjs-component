@@ -86,11 +86,11 @@ export interface DesignBoxValue {
     borderUnit?: DesignBoxBorderUnit;
 
     borderRadiusTogether?: boolean;
-    borderRadiusTopLeft?: number;
-    borderRadiusTopRight?: number;
-    borderRadiusBottomLeft?: number;
-    borderRadiusBottomRight?: number;
-    borderRadiusUnit?: DesignBoxBorderRadiusUnit;
+    borderTopLeftRadius?: number;
+    borderTopRightRadius?: number;
+    borderBottomLeftRadius?: number;
+    borderBottomRightRadius?: number;
+    borderUnitRadius?: DesignBoxBorderRadiusUnit;
     
     borderColor?: string;
 
