@@ -4,28 +4,29 @@ import React, { CSSProperties, useMemo } from "react";
 import { Edit } from "fenextjs-svg";
 import { Collapse, CollapseProps } from "../../Collapse/Simple";
 import { Text } from "../../Text";
-import {  DesignBoxValue } from "./boxUnit";
+import { DesignBoxValue } from "./boxUnit";
 import { useData } from "fenextjs-hook";
 import { parseDesignBoxValueProps_to_CSSProperties } from "./parse";
-import { DesignBoxPadding,DesignBoxPaddingProps } from "./Padding";
-import { DesignBoxMargin,DesignBoxMarginProps } from "./Margin";
-import { DesignBoxBorder,DesignBoxBorderProps } from "./Border";
-import { DesignBoxBorderRadius,DesignBoxBorderRadiusProps } from "./BorderRadius";
-import { DesignBoxBorderColor,DesignBoxBorderColorProps } from "./BorderColor";
-import { DesignBoxBackground,DesignBoxBackgroundProps} from "./Background";
-import { DesignBoxWidth,DesignBoxWidthProps} from "./Width";
-import { DesignBoxHeight,DesignBoxHeightProps} from "./Height";
-import { DesignBoxGap,DesignBoxGapProps} from "./Gap";
+import { DesignBoxPadding, DesignBoxPaddingProps } from "./Padding";
+import { DesignBoxMargin, DesignBoxMarginProps } from "./Margin";
+import { DesignBoxBorder, DesignBoxBorderProps } from "./Border";
+import { DesignBoxBorderRadius, DesignBoxBorderRadiusProps } from "./BorderRadius";
+import { DesignBoxBorderColor, DesignBoxBorderColorProps } from "./BorderColor";
+import { DesignBoxBackground, DesignBoxBackgroundProps } from "./Background";
+import { DesignBoxWidth, DesignBoxWidthProps } from "./Width";
+import { DesignBoxHeight, DesignBoxHeightProps } from "./Height";
+import { DesignBoxAlign, DesignBoxAlignProps } from "./Align";
+import { DesignBoxGap, DesignBoxGapProps } from "./Gap";
 
 /**
  * Properties for the base DesignBox component.
  */
-export interface DesignBoxValueProps extends Partial<DesignBoxValue> {}
+export interface DesignBoxValueProps extends Partial<DesignBoxValue> { }
 
 /**
  * Properties for the base DesignBox component.
  */
-export interface DesignBoxProps extends DesignBoxPaddingProps,DesignBoxMarginProps,DesignBoxBorderProps ,DesignBoxBorderRadiusProps,DesignBoxBorderColorProps, DesignBoxBackgroundProps,DesignBoxWidthProps,DesignBoxHeightProps,DesignBoxGapProps{
+export interface DesignBoxProps extends DesignBoxPaddingProps, DesignBoxMarginProps, DesignBoxBorderProps, DesignBoxBorderRadiusProps, DesignBoxBorderColorProps, DesignBoxBackgroundProps, DesignBoxWidthProps, DesignBoxHeightProps, DesignBoxGapProps, DesignBoxAlignProps {
     /**
      * The class name for the component.
      */
@@ -36,7 +37,7 @@ export interface DesignBoxProps extends DesignBoxPaddingProps,DesignBoxMarginPro
     collapseName?: CollapseProps["name"];
     collapseType?: CollapseProps["type"];
 
-    textBox?:string
+    textBox?: string
 }
 
 export const DesignBox = ({
@@ -80,6 +81,9 @@ export const DesignBox = ({
     textHeight = "Height",
     textMinHeight = "Min Height",
     textMaxHeight = "Max Height",
+
+    textAlignItems = "Align Vertical",
+    textJustifyContent = "Align Horizontal",
 
     textGap = "Gap",
     textGapRow = "Gap Row",
@@ -183,6 +187,7 @@ export const DesignBox = ({
                             textWidth={textWidth}
                             textMaxWidth={textMaxWidth}
                             textMinWidth={textMinWidth}
+                            _t={_t}
                         />
                         <DesignBoxHeight
                             defaultValue={defaultValue}
@@ -191,6 +196,15 @@ export const DesignBox = ({
                             textHeight={textHeight}
                             textMaxHeight={textMaxHeight}
                             textMinHeight={textMinHeight}
+                            _t={_t}
+                        />
+                        <DesignBoxAlign
+                            defaultValue={defaultValue}
+                            value={value}
+                            onChange={onConcatData}
+                            textAlignItems={textAlignItems}
+                            textJustifyContent={textJustifyContent}
+                            _t={_t}
                         />
                         <DesignBoxGap
                             defaultValue={defaultValue}
@@ -199,6 +213,7 @@ export const DesignBox = ({
                             textGap={textGap}
                             textGapRow={textGapRow}
                             textGapColumn={textGapColumn}
+                            _t={_t}
                         />
                     </div>
                 </Collapse>

@@ -35,7 +35,7 @@ export const ConstDesignBoxHeightUnit = [
 ] as const;
 export type DesignBoxHeightUnit = (typeof ConstDesignBoxHeightUnit)[number];
 
-export const ConstDesignBoxJustifyCountentUnit = [
+export const ConstDesignBoxJustifyContentUnit = [
     "center",
     "end",
     "start",
@@ -44,8 +44,8 @@ export const ConstDesignBoxJustifyCountentUnit = [
     "space-evenly",
     "stretch",
 ] as const;
-export type DesignBoxJustifyCountentUnit =
-    (typeof ConstDesignBoxJustifyCountentUnit)[number];
+export type DesignBoxJustifyContentUnit =
+    (typeof ConstDesignBoxJustifyContentUnit)[number];
 
 export const ConstDesignBoxAlignItemsUnit = [
     "baseline",
@@ -108,7 +108,7 @@ export interface DesignBoxValue {
     minHeight?: number;
     minHeightUnit?: DesignBoxHeightUnit;
 
-    justifyContent?: DesignBoxJustifyCountentUnit;
+    justifyContent?: DesignBoxJustifyContentUnit;
     alignItems?: DesignBoxAlignItemsUnit;
 
     gapTogether?: boolean;
