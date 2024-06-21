@@ -56,30 +56,30 @@ export const DesignBoxBorderStyle = ({
                 | "borderRightStyle"
                 | "borderBottomStyle",
         ) =>
-            (e?: DesignBoxBorderStylesUnit) => {
-                setDataFunction((old) => {
-                    const n = { ...old };
-                    const v = e
-                    n[borderStyle] = v;
-                    if (n.borderStyleTogether) {
-                        n.borderTopStyle = v;
-                        n.borderLeftStyle = v;
-                        n.borderRightStyle = v;
-                        n.borderBottomStyle = v;
-                    }
-                    return n;
-                });
-            };
+        (e?: DesignBoxBorderStylesUnit) => {
+            setDataFunction((old) => {
+                const n = { ...old };
+                const v = e;
+                n[borderStyle] = v;
+                if (n.borderStyleTogether) {
+                    n.borderTopStyle = v;
+                    n.borderLeftStyle = v;
+                    n.borderRightStyle = v;
+                    n.borderBottomStyle = v;
+                }
+                return n;
+            });
+        };
     const onChangeBorderStyleTogether = (e: boolean) => {
         onConcatData({
             borderStyleTogether: e,
             ...(e
                 ? {
-                    borderTopStyle: "hidden",
-                    borderLeftStyle: "hidden",
-                    borderRightStyle: "hidden",
-                    borderBottomStyle: "hidden",
-                }
+                      borderTopStyle: "hidden",
+                      borderLeftStyle: "hidden",
+                      borderRightStyle: "hidden",
+                      borderBottomStyle: "hidden",
+                  }
                 : {}),
         });
     };
@@ -102,7 +102,6 @@ export const DesignBoxBorderStyle = ({
                 <div
                     className={`fenext-design-box-item fenext-design-box-item-4`}
                 >
-
                     <InputSelectT<DesignBoxValue["borderTopStyle"]>
                         onParse={_p}
                         options={[...ConstDesignBoxBorderStylesUnit]}
@@ -127,7 +126,6 @@ export const DesignBoxBorderStyle = ({
                         value={data.borderRightStyle}
                     />
 
-
                     <InputSelectT<DesignBoxValue["borderBottomStyle"]>
                         onParse={_p}
                         options={[...ConstDesignBoxBorderStylesUnit]}
@@ -135,7 +133,6 @@ export const DesignBoxBorderStyle = ({
                         onChange={onChangeBorderStyle("borderBottomStyle")}
                         value={data.borderBottomStyle}
                     />
-
                 </div>
             </div>
         </>

@@ -12,13 +12,14 @@ const Padding_1 = require("./Padding");
 const Margin_1 = require("./Margin");
 const Border_1 = require("./Border");
 const BorderRadius_1 = require("./BorderRadius");
+const BorderStyle_1 = require("./BorderStyle");
 const BorderColor_1 = require("./BorderColor");
 const Background_1 = require("./Background");
 const Width_1 = require("./Width");
 const Height_1 = require("./Height");
 const Align_1 = require("./Align");
 const Gap_1 = require("./Gap");
-const DesignBox = ({ className = "", _t, textBox = "Box", textBackground = "Background", textPadding = "Padding", textPaddingBottom = "Bottom", textPaddingLeft = "Left", textPaddingRight = "Right", textPaddingTop = "Top", textMargin = "Margin", textMarginBottom = "Bottom", textMarginLeft = "Left", textMarginRight = "Right", textMarginTop = "Top", textBorder = "Border", textBorderBottom = "Bottom", textBorderLeft = "Left", textBorderRight = "Right", textBorderTop = "Top", textBorderRadius = "Border Radius", textBorderRadiusTopLeft = "Top Left", textBorderRadiusTopRight = "Top Right", textBorderRadiusBottomLeft = "Bottom Left", textBorderRadiusBottomRight = "Bottom Right", textBorderColor = "Border Color", textWidth = "Width", textMinWidth = "Min Width", textMaxWidth = "Max Width", textHeight = "Height", textMinHeight = "Min Height", textMaxHeight = "Max Height", textAlignItems = "Align Vertical", textJustifyContent = "Align Horizontal", textGap = "Gap", textGapRow = "Gap Row", textGapColumn = "Gap Column", defaultValue = {
+const DesignBox = ({ className = "", _t, textBox = "Box", textBackground = "Background", textPadding = "Padding", textPaddingBottom = "Bottom", textPaddingLeft = "Left", textPaddingRight = "Right", textPaddingTop = "Top", textMargin = "Margin", textMarginBottom = "Bottom", textMarginLeft = "Left", textMarginRight = "Right", textMarginTop = "Top", textBorder = "Border", textBorderBottom = "Bottom", textBorderLeft = "Left", textBorderRight = "Right", textBorderTop = "Top", textBorderRadius = "Border Radius", textBorderRadiusTopLeft = "Top Left", textBorderRadiusTopRight = "Top Right", textBorderRadiusBottomLeft = "Bottom Left", textBorderRadiusBottomRight = "Bottom Right", textBorderStyle = "Border Style", textBorderStyleTop = "Top", textBorderStyleLeft = "Left", textBorderStyleRight = "Right", textBorderStyleBottom = "Bottom", textBorderColor = "Border Color", textWidth = "Width", textMinWidth = "Min Width", textMaxWidth = "Max Width", textHeight = "Height", textMinHeight = "Min Height", textMaxHeight = "Max Height", textAlignItems = "Align Vertical", textJustifyContent = "Align Horizontal", textGap = "Gap", textGapRow = "Gap Row", textGapColumn = "Gap Column", defaultValue = {
     widthUnit: "auto",
     minWidthUnit: "auto",
     maxWidthUnit: "auto",
@@ -30,6 +31,10 @@ const DesignBox = ({ className = "", _t, textBox = "Box", textBackground = "Back
     borderUnit: "px",
     borderUnitRadius: "px",
     gapUnit: "px",
+    borderTopStyle: "hidden",
+    borderLeftStyle: "hidden",
+    borderRightStyle: "hidden",
+    borderBottomStyle: "hidden",
 }, value, onChange, onChangeStyles, collapseName, collapseType, collapseUseActiveForShowChildren = true, }) => {
     const { onConcatData } = (0, fenextjs_hook_1.useData)(defaultValue, {
         onChangeDataAfter: onChange,
@@ -46,6 +51,7 @@ const DesignBox = ({ className = "", _t, textBox = "Box", textBackground = "Back
                     react_1.default.createElement(Margin_1.DesignBoxMargin, { defaultValue: defaultValue, value: value, onChange: onConcatData, textMargin: textMargin, textMarginBottom: textMarginBottom, textMarginLeft: textMarginLeft, textMarginRight: textMarginRight, textMarginTop: textMarginTop, _t: _t }),
                     react_1.default.createElement(Border_1.DesignBoxBorder, { defaultValue: defaultValue, value: value, onChange: onConcatData, textBorder: textBorder, textBorderBottom: textBorderBottom, textBorderLeft: textBorderLeft, textBorderRight: textBorderRight, textBorderTop: textBorderTop, _t: _t }),
                     react_1.default.createElement(BorderRadius_1.DesignBoxBorderRadius, { defaultValue: defaultValue, value: value, onChange: onConcatData, textBorderRadius: textBorderRadius, textBorderRadiusBottomLeft: textBorderRadiusBottomLeft, textBorderRadiusBottomRight: textBorderRadiusBottomRight, textBorderRadiusTopLeft: textBorderRadiusTopLeft, textBorderRadiusTopRight: textBorderRadiusTopRight, _t: _t }),
+                    react_1.default.createElement(BorderStyle_1.DesignBoxBorderStyle, { defaultValue: defaultValue, value: value, onChange: onConcatData, textBorderStyle: textBorderStyle, textBorderStyleBottom: textBorderStyleBottom, textBorderStyleLeft: textBorderStyleLeft, textBorderStyleRight: textBorderStyleRight, textBorderStyleTop: textBorderStyleTop, _t: _t }),
                     react_1.default.createElement(BorderColor_1.DesignBoxBorderColor, { defaultValue: defaultValue, value: value, onChange: onConcatData, textBorderColor: textBorderColor, _t: _t }),
                     react_1.default.createElement(Width_1.DesignBoxWidth, { defaultValue: defaultValue, value: value, onChange: onConcatData, textWidth: textWidth, textMaxWidth: textMaxWidth, textMinWidth: textMinWidth, _t: _t }),
                     react_1.default.createElement(Height_1.DesignBoxHeight, { defaultValue: defaultValue, value: value, onChange: onConcatData, textHeight: textHeight, textMaxHeight: textMaxHeight, textMinHeight: textMinHeight, _t: _t }),

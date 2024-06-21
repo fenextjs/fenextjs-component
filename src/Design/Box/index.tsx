@@ -12,7 +12,7 @@ import {
     DesignBoxBorderRadius,
     DesignBoxBorderRadiusProps,
 } from "./BorderRadius";
-import { DesignBoxBorderStyle,DesignBoxBorderStyleProps} from "./BorderStyle";
+import { DesignBoxBorderStyle, DesignBoxBorderStyleProps } from "./BorderStyle";
 import { DesignBoxBorderColor, DesignBoxBorderColorProps } from "./BorderColor";
 import { DesignBoxBackground, DesignBoxBackgroundProps } from "./Background";
 import { DesignBoxWidth, DesignBoxWidthProps } from "./Width";
@@ -121,10 +121,10 @@ export const DesignBox = ({
         borderUnit: "px",
         borderUnitRadius: "px",
         gapUnit: "px",
-        borderTopStyle:"hidden",
-        borderLeftStyle:"hidden",
-        borderRightStyle:"hidden",
-        borderBottomStyle:"hidden",
+        borderTopStyle: "hidden",
+        borderLeftStyle: "hidden",
+        borderRightStyle: "hidden",
+        borderBottomStyle: "hidden",
     },
     value,
     onChange,
