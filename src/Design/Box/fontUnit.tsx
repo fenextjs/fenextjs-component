@@ -56,37 +56,44 @@ export const ConstDesignBoxAlignItemsUnit = [
 export type DesignBoxAlignItemsUnit =
     (typeof ConstDesignBoxAlignItemsUnit)[number];
 
-
-
-    export const ConstDesignBoxGapsUnit = [
-        "px",
-        "em",
-        "rem",
-    ] as const;
-    export type DesignBoxGapsUnit =
-        (typeof ConstDesignBoxGapsUnit)[number];
+export const ConstDesignBoxGapsUnit = [
+    "px",
+    "em",
+    "rem",
+] as const;
+export type DesignBoxGapsUnit =
+    (typeof ConstDesignBoxGapsUnit)[number];
 
 
 export interface DesignBoxValue {
-    background?:string
+    background?: string
 
+    marginTogether?:boolean
     marginTop?: number
     marginRight?: number
     marginBottom?: number
     marginLeft?: number
     marginUnit?: DesignBoxMarginUnit
 
+    paddingTogether?:boolean
     paddingTop?: number
     paddingRight?: number
     paddingBottom?: number
     paddingLeft?: number
     paddingUnit?: DesignBoxPaddingUnit
 
+    borderTogether?:boolean
     borderTop?: number
     borderRight?: number
     borderBottom?: number
     borderLeft?: number
     borderUnit?: DesignBoxBorderUnit
+    borderRadiusTogether?:boolean
+    borderRadiusTop?: number
+    borderRadiusRight?: number
+    borderRadiusBottom?: number
+    borderRadiusLeft?: number
+    borderRadiusUnit?: DesignBoxBorderUnit
     borderColor?: string
 
     width?: number
@@ -106,7 +113,7 @@ export interface DesignBoxValue {
     justifyContent?: DesignBoxJustifyCountentUnit
     alignItems?: DesignBoxAlignItemsUnit
 
-    rowGap?:number
-    columnGap?:number
-    gapUnit?:DesignBoxGapsUnit
+    rowGap?: number
+    columnGap?: number
+    gapUnit?: DesignBoxGapsUnit
 }
