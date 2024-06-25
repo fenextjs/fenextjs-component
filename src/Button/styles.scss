@@ -48,7 +48,7 @@
         margin: auto;
         color: var(--fenext-color-white);
     }
-    &:has(.fenext-loader) {
+    &.fenext-btn-loader {
         color: transparent;
         > *:not(.fenext-loader) {
             opacity: 0;

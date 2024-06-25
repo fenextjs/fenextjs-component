@@ -63,7 +63,7 @@ export interface ButtonClassProps extends LoaderClassProps {
 /**
  * Properties for the button component.
  */
-export interface ButtonProps extends ButtonBaseProps, ButtonClassProps {}
+export interface ButtonProps extends ButtonBaseProps, ButtonClassProps { }
 
 export const Button = ({
     className = "",
@@ -72,8 +72,8 @@ export const Button = ({
     children,
     loader = false,
     disabled = false,
-    onClick = () => {},
-    onClickDisabled = () => {},
+    onClick = () => { },
+    onClickDisabled = () => { },
     icon = "",
     isBtn = true,
     full = false,
@@ -86,9 +86,13 @@ export const Button = ({
         <>
             <Tag
                 onClick={disabled ? onClickDisabled : onClick}
-                className={`fenext-btn fenext-btn-size-${size}  ${
-                    full ? "fenext-btn-size-full" : ""
-                } ${className} `}
+                className={`
+                    fenext-btn
+                    fenext-btn-${loader ? "loader" : ""}
+                    fenext-btn-size-${size}
+                    ${full ? "fenext-btn-size-full" : ""}
+                    ${className}
+                `}
                 disabled={loader || disabled}
             >
                 {loader && <Loader classNameLoader={classNameLoader} />}
