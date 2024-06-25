@@ -63,7 +63,7 @@ export interface ButtonClassProps extends LoaderClassProps {
 /**
  * Properties for the button component.
  */
-export interface ButtonProps extends ButtonBaseProps, ButtonClassProps { }
+export interface ButtonProps extends ButtonBaseProps, ButtonClassProps {}
 
 export const Button = ({
     className = "",
@@ -72,8 +72,8 @@ export const Button = ({
     children,
     loader = false,
     disabled = false,
-    onClick = () => { },
-    onClickDisabled = () => { },
+    onClick = () => {},
+    onClickDisabled = () => {},
     icon = "",
     isBtn = true,
     full = false,
