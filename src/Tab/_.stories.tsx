@@ -16,7 +16,7 @@ export const Index = Profile.bind({});
 const args: TabProps = {
     beforeTabs:"Name Tabs",
     afterTabs:"Total Items 3",
-    useCount:false,
+    // useCount:true,
     items: [
         {
             id: "1",
@@ -77,6 +77,15 @@ const args: TabProps = {
             ),
         },
     ],
+    // _t:(e)=>{
+    //     if(e=="Head"){
+    //         return "______Head_____"
+    //     }
+    //     if(e=="Heads"){
+    //         return "--------Head-----"
+    //     }
+    //     return e
+    // }
 };
 
 Index.args = args;
