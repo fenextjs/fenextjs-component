@@ -1,4 +1,4 @@
-import { _TProps } from "fenextjs-interface";
+import { _TFunciton, _TProps } from "fenextjs-interface";
 import React, { ReactNode } from "react";
 /**
  * Properties of a tab item?.
@@ -131,7 +131,7 @@ export interface TabClassProps {
  */
 export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps {
 }
-export declare const parseTabCount: <T>(d: TabItemProps<T>) => TabItemProps<T>;
+export declare const parseTabCount: <T>(d: TabItemProps<T>, _t?: _TFunciton) => TabItemProps<T>;
 /**
  * Tab component that displays a set of tabs with content.
  * @param className CSS class name for the component.

@@ -4,15 +4,16 @@ exports.Tab = exports.parseTabCount = void 0;
 const tslib_1 = require("tslib");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const react_1 = tslib_1.__importStar(require("react"));
-const parseTabCount = (d) => {
+const parseTabCount = (d, _t) => {
     if (!d.useCount) {
         return d;
     }
     return {
         ...d,
         head: (react_1.default.createElement(react_1.default.Fragment, null,
-            ((d.count ?? 0) > 1 ? d.plural : d.singular) ?? d.head,
-            " (",
+            (0, fenextjs_functions_1._tValidate)(((d.count ?? 0) > 1 ? d.plural : d.singular) ?? d.head, _t) ?? "",
+            " ",
+            "(",
             (0, fenextjs_functions_1.parseNumberCount)(d.count ?? 0),
             ")")),
     };
@@ -37,7 +38,7 @@ const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", cl
             const ITEM = (0, exports.parseTabCount)({
                 ...item,
                 useCount: item?.useCount ?? useCount ?? false,
-            });
+            }, _t);
             return (react_1.default.createElement("div", { key: i, className: `fenext-tab-head-item ${classNameHeadItem} ${i == tabSelect
                     ? `fenext-tab-head-item-active ${classNameHeadItemActive}`
                     : ""} fenext-tab-head-item-id-${item?.id}`, onClick: () => {
@@ -45,7 +46,7 @@ const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", cl
                     onChange?.(ITEM);
                 } }, (0, fenextjs_functions_1._tValidate)(ITEM?.head, _t) ?? ""));
         });
-    }, [tabSelect, items, useCount]);
+    }, [tabSelect, items, useCount, _t]);
     const CBody = (0, react_1.useMemo)(() => {
         if (tabScrollActive) {
             return (react_1.default.createElement(react_1.default.Fragment, null, items?.map((item, i) => {

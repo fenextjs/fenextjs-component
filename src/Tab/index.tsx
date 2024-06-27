@@ -153,9 +153,12 @@ export interface TabClassProps {
  * Properties for a tab component.
  * Combines `TabBaseProps` and `TabClassProps`.
  */
-export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps { }
+export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps {}
 
-export const parseTabCount = <T,>(d: TabItemProps<T>, _t?: _TFunciton): TabItemProps<T> => {
+export const parseTabCount = <T,>(
+    d: TabItemProps<T>,
+    _t?: _TFunciton,
+): TabItemProps<T> => {
     if (!d.useCount) {
         return d;
     }
@@ -163,8 +166,10 @@ export const parseTabCount = <T,>(d: TabItemProps<T>, _t?: _TFunciton): TabItemP
         ...d,
         head: (
             <>
-                {_tValidate(((d.count ?? 0) > 1 ? d.plural : d.singular) ?? d.head, _t) ?? ""}
-                {" "}
+                {_tValidate(
+                    ((d.count ?? 0) > 1 ? d.plural : d.singular) ?? d.head,
+                    _t,
+                ) ?? ""}{" "}
                 ({parseNumberCount(d.count ?? 0)})
             </>
         ),
@@ -214,17 +219,21 @@ export const Tab = <T = string,>({
 
     const CHead = useMemo(() => {
         return items?.map((item, i) => {
-            const ITEM = parseTabCount<T>({
-                ...item,
-                useCount: item?.useCount ?? useCount ?? false,
-            }, _t);
+            const ITEM = parseTabCount<T>(
+                {
+                    ...item,
+                    useCount: item?.useCount ?? useCount ?? false,
+                },
+                _t,
+            );
             return (
                 <div
                     key={i}
-                    className={`fenext-tab-head-item ${classNameHeadItem} ${i == tabSelect
+                    className={`fenext-tab-head-item ${classNameHeadItem} ${
+                        i == tabSelect
                             ? `fenext-tab-head-item-active ${classNameHeadItemActive}`
                             : ""
-                        } fenext-tab-head-item-id-${item?.id}`}
+                    } fenext-tab-head-item-id-${item?.id}`}
                     onClick={() => {
                         setTabSelect(i);
                         onChange?.(ITEM);
@@ -234,7 +243,7 @@ export const Tab = <T = string,>({
                 </div>
             );
         });
-    }, [tabSelect, items, useCount,_t]);
+    }, [tabSelect, items, useCount, _t]);
 
     const CBody = useMemo(() => {
         if (tabScrollActive) {
@@ -244,8 +253,9 @@ export const Tab = <T = string,>({
                         return (
                             <>
                                 <div
-                                    className={`fenext-tab-body-item fenext-tab-body-item-${i == tabSelect ? "active" : ""
-                                        } ${classNameBodyItem}`}
+                                    className={`fenext-tab-body-item fenext-tab-body-item-${
+                                        i == tabSelect ? "active" : ""
+                                    } ${classNameBodyItem}`}
                                 >
                                     {item?.body ?? ""}
                                 </div>
@@ -303,10 +313,12 @@ export const Tab = <T = string,>({
     return (
         <>
             <div
-                className={`fenext-tab fenext-tab-${tabScrollActive ? "scroll-active" : ""
-                    } 
-                fenext-tab-${validataTabOneHiddenHeader ? "validate-one-tab" : ""
-                    }
+                className={`fenext-tab fenext-tab-${
+                    tabScrollActive ? "scroll-active" : ""
+                } 
+                fenext-tab-${
+                    validataTabOneHiddenHeader ? "validate-one-tab" : ""
+                }
                 
                 ${className}`}
             >
