@@ -131,6 +131,7 @@ export const InputSelectCSC = ({
                     {...props}
                     {...country}
                     // key={value?.country?.id}
+                useTOption={false}
                     options={countrys?.map((e) => {
                         return {
                             ...e,
@@ -144,6 +145,7 @@ export const InputSelectCSC = ({
                 <InputSelect<StateProps>
                     {...props}
                     {...state}
+                    useTOption={false}
                     key={value?.country?.id}
                     options={states?.map((e) => {
                         return {
@@ -158,6 +160,7 @@ export const InputSelectCSC = ({
                 <InputSelect<CityProps>
                     {...props}
                     {...city}
+                    useTOption={false}
                     key={value?.state?.id}
                     options={citys?.map((e) => {
                         return {

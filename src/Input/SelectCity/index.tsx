@@ -49,6 +49,7 @@ export const InputSelectCity = ({
         <>
             <InputSelectT<CityProps>
                 {...props}
+                useTOption={false}
                 options={options}
                 onParse={(e) => {
                     const r: InputSelectItemOptionBaseProps<CityProps> = {

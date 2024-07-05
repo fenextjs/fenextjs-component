@@ -54,6 +54,7 @@ export const InputSelectState = ({
                 }}
                 loader={loader}
                 useLoader={true}
+                useTOption={false}
             />
         </>
     );

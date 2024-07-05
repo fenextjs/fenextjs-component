@@ -99,6 +99,10 @@ export interface InputSelectBaseProps<T = any>
      */
     useSwichtypeSelectStyle?: boolean;
     /**
+     * useTOption.
+     */
+    useTOption?: boolean;
+    /**
      * Value Options of select.
      */
     value?: InputSelectItemOptionBaseProps<T>;
@@ -240,6 +244,7 @@ export const InputSelect = <T = any,>({
     },
     showOptionIconImg = true,
     validatorData,
+    useTOption,
     ...props
 }: InputSelectProps<T>) => {
     const { _t } = use_T({ ...props });
@@ -454,6 +459,8 @@ export const InputSelect = <T = any,>({
                                 text={create?.text ?? "Create"}
                                 children={create?.children ?? undefined}
                                 _t={_t}
+                                useT={useTOption}
+                                
                                 isBtn={true}
                                 onClick={create?.onClick ?? onCreate}
                             />
@@ -473,6 +480,7 @@ export const InputSelect = <T = any,>({
                                 )}
                                 children={selected?.children ?? undefined}
                                 _t={_t}
+                                useT={useTOption}
                             />
                         </>
                     ) : (
@@ -493,6 +501,7 @@ export const InputSelect = <T = any,>({
                                 }}
                                 type={typeSelect == "div" ? "div" : "option"}
                                 _t={_t}
+                                useT={useTOption}
                             />
                         );
                     })}
@@ -505,6 +514,7 @@ export const InputSelect = <T = any,>({
                                 children={loaderOption?.children ?? undefined}
                                 classNameOption="fenext-select-option-loading"
                                 _t={_t}
+                                useT={useTOption}
                                 disabled={true}
                             />
                         </>
@@ -525,6 +535,7 @@ export const InputSelect = <T = any,>({
                                         }
                                         classNameOption="fenext-select-option-not-result"
                                         _t={_t}
+                                        useT={useTOption}
                                         disabled={true}
                                     />
                                 </>

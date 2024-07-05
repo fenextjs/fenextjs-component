@@ -24,6 +24,7 @@ export const InputSelectNumber = ({
     min = 0,
     max = 100,
     parseText = (e) => `${e}`,
+    useTOption=false,
     ...props
 }: InputSelectNumberProps) => {
     const parseOption = useCallback(
@@ -54,6 +55,7 @@ export const InputSelectNumber = ({
                         return parseOption(n);
                     })}
                 onChangeData={onChange}
+                useTOption={useTOption}
             />
         </>
     );

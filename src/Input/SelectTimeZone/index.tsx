@@ -23,7 +23,7 @@ export interface InputSelectTimeZoneProps
     extends InputSelectTimeZoneBaseProps,
         InputSelectTimeZoneClassProps {}
 
-export const InputSelectTimeZone = ({ ...props }: InputSelectTimeZoneProps) => {
+export const InputSelectTimeZone = ({useTOption=false, ...props }: InputSelectTimeZoneProps) => {
     return (
         <>
             <InputSelectT<TimeZoneProps>
@@ -37,6 +37,7 @@ export const InputSelectTimeZone = ({ ...props }: InputSelectTimeZoneProps) => {
                     };
                     return r;
                 }}
+                useTOption={useTOption}
             />
         </>
     );

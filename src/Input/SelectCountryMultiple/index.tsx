@@ -37,6 +37,7 @@ export const InputSelectCountryMultiple = ({
         <>
             <InputSelectMultipleT<CountryProps>
                 {...props}
+                useTOption={false}
                 options={options}
                 loader={loader}
                 useLoader={true}

@@ -104,6 +104,7 @@ export const InputSelectMultiple = <T = any,>({
     typeSelectMultipleStyle = "normal",
     CustomOptionsSelected = undefined,
     validatorData,
+    useTOption,
     ...props
 }: InputSelectMultipleProps<T>) => {
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
@@ -187,6 +188,7 @@ export const InputSelectMultiple = <T = any,>({
                     error={props?.error ?? errorFenextVD ?? error}
                     isSelectClearText={true}
                     showOptionIconImg={false}
+                    useTOption={useTOption}
                     extraInLabel={
                         <>
                             <div
@@ -208,6 +210,7 @@ export const InputSelectMultiple = <T = any,>({
                                                 props?.disabled ??
                                                 option?.disabled
                                             }
+                                            useT={useTOption}
                                         />
                                     );
                                 })}
