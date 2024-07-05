@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, ReactNode } from "react";
 import { Trash } from "fenextjs-svg/cjs/Trash";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { Img, ImgProps } from "../../Img";
 /**
  * Interface that defines CSS class properties for a select input component.
@@ -109,10 +109,11 @@ export const InputSelectOption = <T = any,>({
     selected = false,
     hidden = false,
     isBtn = false,
-    _t = (e) => e,
     data,
     iconDelete = <Trash />,
+    ...props
 }: InputSelectOptionProps<T>) => {
+    const {_t} = use_T({...props})
     const TAG = type == "option" ? "option" : "div";
 
     return (
@@ -177,7 +178,7 @@ export const InputSelectOption = <T = any,>({
                 ) : (
                     <></>
                 )}
-                {_tValidate(TAG == "option" ? text : children ?? text, _t)}
+                {_t(TAG == "option" ? text : children ?? text)}
                 {type == "multiple" ? (
                     <>
                         <span

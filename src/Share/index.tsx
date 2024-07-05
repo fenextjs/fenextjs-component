@@ -10,7 +10,7 @@ import { EmailBox } from "fenextjs-svg/cjs/Email";
 import { SvgCopyBox } from "fenextjs-svg/cjs/Copy";
 import { Copy } from "../Copy";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 export type ShareListType =
     | "whatsapp"
@@ -75,8 +75,9 @@ export const Share = ({
     },
     shareList = ["whatsapp", "facebook", "twitter", "email", "copy"],
     showShareCopy = false,
-    _t,
+    ...props
 }: ShareProps) => {
+    const {_t} = use_T({...props})
     const LISTSHARE: {
         [id in ShareListType]: {
             urlShare: string;
@@ -144,7 +145,7 @@ export const Share = ({
                                     className={`fenext-share-item fenext-share-item-${key}`}
                                     target="_blank"
                                 >
-                                    {_tValidate(item.icon, _t)}
+                                    {_t(item.icon)}
                                 </a>
                             );
                         })}

@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 import React, { ReactNode } from "react";
 
@@ -61,8 +61,9 @@ export const TwoColSticky = ({
     children,
     colSticky,
     posCol = "left",
-    _t,
+    ...props
 }: TwoColStickyProps) => {
+    const {_t} = use_T({...props})
     return (
         <>
             {/* The wrapper div for the TwoColSticky component */}
@@ -73,13 +74,13 @@ export const TwoColSticky = ({
                 <div
                     className={`fenext-two-col-sticky-col-sticky ${classNameColSticky} `}
                 >
-                    {_tValidate(colSticky, _t)}
+                    {_t(colSticky)}
                 </div>
                 {/* The scrollable children column */}
                 <div
                     className={`fenext-two-col-sticky-children ${classNameChildren} `}
                 >
-                    {_tValidate(children, _t)}
+                    {_t(children)}
                 </div>
             </div>
         </>

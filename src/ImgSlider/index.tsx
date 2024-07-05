@@ -45,7 +45,8 @@ export const ImgSlider = ({
 
     setStep: setStepProps,
     step: stepProps,
-    _t,
+   
+    ...props
 }: ImgSliderProps) => {
     const [step__, setStep__] = useState(0);
 
@@ -62,7 +63,7 @@ export const ImgSlider = ({
                     items={imgs.map((e, i) => {
                         return {
                             label: e.name ?? "",
-                            content: <Img key={i} {...e} _t={_t} />,
+                            content: <Img key={i} {...e}  />,
                         };
                     })}
                     stepPos="top"
@@ -80,7 +81,7 @@ export const ImgSlider = ({
                         </>
                     }
                     useDogs={true}
-                    _t={_t}
+                    {...props}
                 />
             </div>
         </>

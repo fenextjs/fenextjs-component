@@ -3,7 +3,7 @@ import React, { ReactNode, useState } from "react";
 import { Check } from "fenextjs-svg/cjs/Check";
 import { env_log } from "fenextjs-functions/cjs/env_log";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Interface that defines CSS class properties for a radio input component.
@@ -175,8 +175,9 @@ export const InputRadio = <T = any,>({
     icon = <Check />,
 
     items = [],
-    _t,
+    ...props
 }: InputRadioProps<T>) => {
+    const {_t} = use_T({...props})
     const [checked, setChecked] = useState(defaultValue);
 
     const onChecked = (i: InputRadioItemProps<T>) => () => {
@@ -229,7 +230,7 @@ export const InputRadio = <T = any,>({
                         <span
                             className={`fenext-input-radio-text ${classNameText}`}
                         >
-                            {_tValidate(item.label, _t)}
+                            {_t(item.label)}
                         </span>
                     </label>
                 );

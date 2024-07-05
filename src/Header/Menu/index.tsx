@@ -50,7 +50,7 @@ export const Menu = ({
     defaultShowSubMenu = false,
     iconArrow = <Arrow />,
     typeCollapse,
-    _t,
+   ...props
 }: MenuProps) => {
     return (
         <>
@@ -58,10 +58,10 @@ export const Menu = ({
                 {items?.map((item, i) => (
                     <ItemMenu
                         key={i}
+                        {...props}
                         {...item}
                         defaultActive={item.defaultActive ?? defaultShowSubMenu}
                         iconArrow={item?.iconArrow ?? iconArrow}
-                        _t={_t}
                         typeCollapse={item?.typeCollapse ?? typeCollapse}
                     />
                 ))}

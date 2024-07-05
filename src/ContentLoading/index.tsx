@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { LoaderSpinner } from "../Loader/Spinner";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 /**
  * Properties for the base ContentLoading component.
@@ -50,8 +50,9 @@ export const ContentLoading = ({
     componentLoader = <LoaderSpinner />,
     loader = false,
     isPage = false,
-    _t,
+    ...props
 }: ContentLoadingProps) => {
+    const {_t} = use_T({...props})
     return (
         <>
             <div
@@ -59,7 +60,7 @@ export const ContentLoading = ({
                     loader ? "loader" : ""
                 } fenext-content-loading-${isPage ? "page" : ""} ${className} `}
             >
-                {loader ? componentLoader : _tValidate(children, _t)}
+                {loader ? componentLoader : _t(children)}
             </div>
         </>
     );

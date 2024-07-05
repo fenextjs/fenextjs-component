@@ -1,7 +1,7 @@
 import { _TProps } from "fenextjs-interface";
 import { Loader } from "../../Loader";
 import React, { PropsWithChildren, useEffect, useState } from "react";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Properties for the base ButtonMenu component.
@@ -60,8 +60,9 @@ export const ButtonMenu = ({
     disabled = false,
     defaultActive: defaultActiveProps = undefined,
     children,
-    _t,
+    ...props
 }: ButtonMenuProps) => {
+    const {_t} = use_T({...props})
     const [defaultActive, setDefaultActive] = useState(true);
     const onLoad = () => {
         if (typeof window == "undefined") {
@@ -99,7 +100,7 @@ export const ButtonMenu = ({
                         <div
                             className={`fenext-btn-menu-content ${classNameContent}`}
                         >
-                            {_tValidate(children, _t)}
+                            {_t(children)}
                         </div>
                     </>
                 )}

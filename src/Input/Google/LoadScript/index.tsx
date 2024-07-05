@@ -40,7 +40,8 @@ export const InputGoogleLoadScript = ({
     googleMapsApiKey = process.env["NEXT_PUBLIC_GOOGLE_KEY"],
     children,
     className = "",
-    _t,
+   _t,
+   useT,
     ...props
 }: InputGoogleLoadScriptProps) => {
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
@@ -57,7 +58,7 @@ export const InputGoogleLoadScript = ({
             >
                 {children}
             </LoadScript>
-            {error && <ErrorComponent error={error} _t={_t} />}
+            {error && <ErrorComponent error={error} _t={_t} useT={useT} />}
         </div>
     );
 };

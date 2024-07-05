@@ -10,7 +10,7 @@ import { FenextjsValidatorClass, FenextjsValidator } from "fenextjs-validator";
 import { useValidator } from "fenextjs-hook/cjs/useValidator";
 import { ErrorComponent } from "../../Error";
 import { ErrorCode, _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 export type InputTextChangeEvent =
     | React.ChangeEvent<HTMLTextAreaElement>
@@ -363,8 +363,9 @@ export const InputText = ({
 
     onChangeEvent,
 
-    _t = (e) => e,
+    ...p
 }: InputTextProps) => {
+    const {_t} = use_T({...p})
     const [statusInput, setStateInput] = useState("");
 
     const { dataMemo: dataErrorInput, setData: setErrorInput } = useData<
@@ -586,18 +587,18 @@ export const InputText = ({
                 }
             >
                 <div className={`fenext-input-label ${classNameLabel}`}>
-                    {_tValidate(label, _t)}
+                    {_t(label)}
                     {optional && (
                         <>
                             <small className="fenext-input-optional">
-                                {_tValidate(optionalText, _t)}
+                                {_t(optionalText)}
                             </small>
                         </>
                     )}
                     {required && (
                         <>
                             <small className="fenext-input-required">
-                                {_tValidate(requiredText, _t)}
+                                {_t(requiredText)}
                             </small>
                         </>
                     )}
@@ -612,7 +613,7 @@ export const InputText = ({
                         type={type}
                         ref={ref}
                         className={`fenext-input-content-input ${classNameInput} fenext-input-validator-status-${FenextInputValidatorStatus} ${statusInput}`}
-                        placeholder={_tValidate(placeholder, _t)}
+                        placeholder={_t(placeholder)}
                         value={
                             (parseText ? parseText(valueInput) : valueInput) ??
                             valueInput

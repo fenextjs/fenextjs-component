@@ -11,7 +11,7 @@ import {
     RequestResultTypeProps,
 } from "fenextjs-interface/cjs/Request";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 export type onError = (error: string) => void;
 export type onOk = () => Promise<void> | void;
 
@@ -88,9 +88,9 @@ export const Form = <D = any, R = any, E = any>({
     yup = Yup.object().shape({}),
     validateAfterYup,
     className = "",
-    _t = (e) => e,
     ...props
 }: PropsWithChildren<FormProps<D, R, E>>) => {
+    const {_t} = use_T({...props})
     const { pop } = useNotification({});
     const onSendForm = async () => {
         onChangeLoader?.(true);
@@ -168,7 +168,7 @@ export const Form = <D = any, R = any, E = any>({
     return (
         <>
             <form className={`fenext-form ${className}`} onSubmit={onSubmit}>
-                {_tValidate(children, _t)}
+                {_t(children)}
             </form>
         </>
     );

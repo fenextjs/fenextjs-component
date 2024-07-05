@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 import Link from "next/link";
 import React, { ReactNode } from "react";
@@ -60,8 +60,9 @@ export const Breadcrumb = ({
     classNameItem = "",
     classNameLink = "",
     links,
-    _t,
+    ...props
 }: BreadcrumbProps) => {
+    const {_t} = use_T({...props})
     return (
         <>
             <ul className={`fenext-breadcrumb ${className} `}>
@@ -77,7 +78,7 @@ export const Breadcrumb = ({
                                         className={`fenext-breadcrumb-item-link ${classNameLink}`}
                                         onClick={link?.onClick}
                                     >
-                                        {_tValidate(link.children, _t)}
+                                        {_t(link.children)}
                                     </a>
                                 </Link>
                             </li>

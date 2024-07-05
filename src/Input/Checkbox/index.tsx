@@ -3,7 +3,7 @@ import React, { useMemo, useState } from "react";
 import { Check } from "fenextjs-svg/cjs/Check";
 import { env_log } from "fenextjs-functions/cjs/env_log";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Interface that defines CSS class properties for a checkbox input component.
@@ -184,14 +184,17 @@ export const InputCheckbox = <VT = any, VF = any>({
     optionalText = "(optional)",
     required = false,
     requiredText = "*",
-    _t,
+   
     onActive,
     onActiveValue,
     onInactive,
     onInactiveValue,
     valueActive,
     valueInactive,
+
+    ...props
 }: InputCheckboxProps<VT, VF>) => {
+    const {_t} = use_T({...props})
     const [checked_, setChecked] = useState(defaultValue === true);
     const checked = useMemo(
         () => (useValue ? value : checked_),
@@ -250,18 +253,18 @@ export const InputCheckbox = <VT = any, VF = any>({
                 </span>
             </span>
             <span className={`fenext-input-checkbox-text ${classNameText}`}>
-                {_tValidate(label, _t)}
+                {_t(label)}
                 {optional && (
                     <>
                         <small className="fenext-input-optional">
-                            {_tValidate(optionalText, _t)}
+                            {_t(optionalText)}
                         </small>
                     </>
                 )}
                 {required && (
                     <>
                         <small className="fenext-input-required">
-                            {_tValidate(requiredText, _t)}
+                            {_t(requiredText)}
                         </small>
                     </>
                 )}

@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import { LoaderLine } from "../Loader/Line";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Properties for the base Title component.
@@ -37,13 +37,14 @@ export const Title = ({
     tag = "h1",
     loader = false,
     children,
-    _t,
+    ...props
 }: TitleProps) => {
+    const {_t} = use_T({...props})
     const Tag = tag;
     return (
         <>
             <Tag className={`fenext-title fenext-title-${tag} ${className} `}>
-                {loader ? <LoaderLine /> : <>{_tValidate(children, _t)}</>}
+                {loader ? <LoaderLine /> : <>{_t(children)}</>}
             </Tag>
         </>
     );

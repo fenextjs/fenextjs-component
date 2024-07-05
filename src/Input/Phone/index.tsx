@@ -8,10 +8,10 @@ import { useData } from "fenextjs-hook/cjs/useData";
 import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorComponent } from "../../Error";
 import { CountryProps, ErrorCode } from "fenextjs-interface";
-import { useValidator } from "fenextjs-hook";
+import { useValidator, use_T } from "fenextjs-hook";
 import { FenextjsValidator, FenextjsValidatorClass } from "fenextjs-validator";
 import {
-    _tValidate,
+    
     parsePhone_to_String,
     parseString_to_Phone,
 } from "fenextjs-functions";
@@ -116,7 +116,6 @@ export const InputPhone = ({
     placeholderCode = "+57",
     placeholder = "xxx-xx-xx-xxxx",
     validator = undefined,
-    _t = (e) => e,
     optional = false,
     optionalText = "(optional)",
     required = false,
@@ -137,6 +136,7 @@ export const InputPhone = ({
 
     ...props
 }: InputPhoneProps) => {
+    const {_t} = use_T({...props})
     const { value, defaultValue, onChange } = useJsonString<
         Partial<PhoneProps>
     >({
@@ -204,18 +204,18 @@ export const InputPhone = ({
                 <div
                     className={`fenext-input-phone-label fenext-input-label ${classNamePhoneLabel} `}
                 >
-                    {_tValidate(label, _t)}
+                    {_t(label)}
                     {optional && (
                         <>
                             <small className="fenext-input-optional">
-                                {_tValidate(optionalText, _t)}
+                                {_t(optionalText)}
                             </small>
                         </>
                     )}
                     {required && (
                         <>
                             <small className="fenext-input-required">
-                                {_tValidate(requiredText, _t)}
+                                {_t(requiredText)}
                             </small>
                         </>
                     )}

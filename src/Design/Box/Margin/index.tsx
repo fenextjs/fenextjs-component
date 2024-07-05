@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
@@ -23,7 +23,7 @@ export interface DesignBoxMarginProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxMargin = ({
-    _t,
+   
     textMargin = "Margin",
     textMarginBottom = "Bottom",
     textMarginLeft = "Left",
@@ -32,8 +32,9 @@ export const DesignBoxMargin = ({
 
     data,
     onChangeData,
-    setDataFunction,
+    setDataFunction,...props
 }: DesignBoxMarginProps) => {
+    const {_t} = use_T({...props})
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeMargin =
@@ -69,7 +70,7 @@ export const DesignBoxMargin = ({
     return (
         <>
             <div className={`fenext-design-box-item`}>
-                <Text>{_tValidate(textMargin, _t)}</Text>
+                <Text>{_t(textMargin)}</Text>
                 <InputSelectT<DesignBoxValue["marginUnit"]>
                     onParse={_p}
                     options={[...ConstDesignBoxMarginUnit]}

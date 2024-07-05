@@ -5,7 +5,7 @@ import {
     InputDateRangeClassProps,
     InputDateRangeValueType,
 } from "../../Input/DateRange";
-import { useData } from "fenextjs-hook";
+import { useData, use_T } from "fenextjs-hook";
 import { Close } from "fenextjs-svg/cjs/Close";
 import { Button, ButtonProps } from "../../Button";
 import { _TProps } from "fenextjs-interface";
@@ -73,9 +73,10 @@ export const ScheduleDay = ({
     ButtonProps = {
         children: "Add Time Range",
     },
-    _t,
+   
     ...props
 }: ScheduleDayProps) => {
+    const {_t} = use_T({...props})
     const { data, onChangeData, setData, onDeleteData } =
         useData<ScheduleDayValueType>(defaultValue, {
             onChangeDataAfter: onChange,

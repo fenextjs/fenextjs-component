@@ -8,7 +8,7 @@ import { Check } from "fenextjs-svg/cjs/Check";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { FileProps, FileStatus } from "fenextjs-interface/cjs/File";
 import { Close } from "fenextjs-svg/cjs/Close";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { LoaderSpinner } from "../../Loader";
 import { ErrorComponent } from "../../Error";
 import { Link } from "../../Link";
@@ -85,11 +85,12 @@ export const InputFileStatus = ({
     onChange,
 
     iconLoader = <LoaderSpinner />,
-    _t,
+   
     onUploadFile,
     contentByStatus: contentByStatusProps = {},
     ...props
 }: InputFileStatusProps) => {
+    const {_t} = use_T({...props})
     const contentByStatus = useMemo(
         () => ({
             APPROVED: {
@@ -135,10 +136,10 @@ export const InputFileStatus = ({
                             <Title
                                 className={`fenext-input-file-status-title `}
                             >
-                                {_tValidate(
+                                {_t(
                                     contentByStatus?.[data?.status ?? "NONE"]
                                         ?.title ?? title,
-                                    _t,
+                                   
                                 )}
                             </Title>
                             <div
@@ -149,11 +150,11 @@ export const InputFileStatus = ({
                             </div>
                             <div className={`fenext-input-file-status-tag`}>
                                 <Text>
-                                    {_tValidate(
+                                    {_t(
                                         contentByStatus?.[
                                             data?.status ?? "NONE"
                                         ]?.tag,
-                                        _t,
+                                       
                                     )}
                                 </Text>
                             </div>
@@ -200,7 +201,7 @@ export const InputFileStatus = ({
                                 <Title
                                     className={`fenext-input-file-status-title `}
                                 >
-                                    {_tValidate(title, _t)}
+                                    {_t(title)}
                                 </Title>
                                 <div
                                     className={`fenext-input-file-status-content-icon`}
@@ -210,12 +211,12 @@ export const InputFileStatus = ({
                                 <Button
                                     className={`fenext-input-file-status-btn `}
                                 >
-                                    {_tValidate(btn, _t)}
+                                    {_t(btn)}
                                 </Button>
                                 <Text
                                     className={`fenext-input-file-status-text `}
                                 >
-                                    {_tValidate(text, _t)}
+                                    {_t(text)}
                                 </Text>
                                 {dataError && (
                                     <ErrorComponent error={dataError} />

@@ -15,14 +15,14 @@ export interface AlertHookProps extends _TProps {
 export const AlertHook = ({
     className = "",
     configHook = {},
-    _t,
+    ...props
 }: AlertHookProps) => {
     const { alert, onClearAlert } = useAlert(configHook);
     return (
         <>
             {alert && (
                 <div className={`fenext-alert-hook ${className}`}>
-                    <Alert _t={_t} {...alert} onClose={onClearAlert} />
+                    <Alert {...props} {...alert} onClose={onClearAlert} />
                 </div>
             )}
         </>

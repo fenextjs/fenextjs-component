@@ -48,7 +48,7 @@ export interface ImgGalleryClassProps {
  */
 export interface ImgGalleryProps
     extends ImgGalleryBaseProps,
-        ImgGalleryClassProps {}
+    ImgGalleryClassProps { }
 
 export const ImgGallery = ({
     className = "",
@@ -61,7 +61,7 @@ export const ImgGallery = ({
     },
     loader = false,
     nLoader = 5,
-    _t,
+    ...props
 }: ImgGalleryProps) => {
     const [showAllImg, setShowAllImg] = useState(false);
     const [activeModal, setActiveModal] = useState(false);
@@ -83,22 +83,24 @@ export const ImgGallery = ({
                         imgs={imgs}
                         step={steps}
                         setStep={setSteps}
-                        _t={_t}
+                        {...props}
                     />
                 </ModalBase>
                 {loader ? (
                     <GridGallery
                         items={new Array(nLoader).fill(1).map((e, i) => {
                             return (
-                                <Img key={i * e} src="" loader={true} _t={_t} />
+                                <Img key={i * e} src="" loader={true} />
                             );
                         })}
-                        _t={_t}
+
+                        {...props}
                     />
                 ) : (
                     <>
                         <GridGallery
-                            _t={_t}
+
+                            {...props}
                             items={[...imgs]
                                 .splice(0, showAllImg ? imgs.length + 1 : 5)
                                 .map((e, i) => {
@@ -107,7 +109,7 @@ export const ImgGallery = ({
                                             key={i}
                                             {...e}
                                             onClick={onClickImg(i)}
-                                            _t={_t}
+
                                         />
                                     );
                                 })}
@@ -122,7 +124,8 @@ export const ImgGallery = ({
                                         onClick={() => {
                                             setShowAllImg(true);
                                         }}
-                                        _t={_t}
+
+                                        {...props}
                                     />
                                 </div>
                             </>
@@ -133,7 +136,8 @@ export const ImgGallery = ({
                             <div className={`fenext-img-gallery-content-btn`}>
                                 <Button
                                     {...buttonHiddenMoreImg}
-                                    _t={_t}
+
+                                    {...props}
                                     onClick={() => {
                                         setShowAllImg(false);
                                     }}

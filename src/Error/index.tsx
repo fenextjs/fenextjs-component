@@ -1,5 +1,5 @@
 import { ErrorFenextjs } from "fenextjs-error/cjs/Fenextjs";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 import React, { PropsWithChildren, useMemo } from "react";
 
@@ -44,29 +44,30 @@ export const ErrorComponent = ({
     className = "",
     useDataError = true,
     useErrorInput = true,
-    _t,
+    ...props
 }: ErrorComponentProps) => {
+    const {_t} = use_T({...props})
     const content = useMemo(() => {
         return (
             <>
                 {error ? (
                     <>
-                        {_tValidate(error?.msg ?? "", _t)}
+                        {_t(error?.msg ?? "")}
                         {useErrorInput && error?.input && (
                             <>
                                 {" "}
                                 <span className="fenext-error-input">
-                                    {_tValidate(`[${error?.input ?? ""}]`, _t)}
+                                    {_t(`[${error?.input ?? ""}]`)}
                                 </span>
                             </>
                         )}
                     </>
                 ) : (
-                    _tValidate(children, _t)
+                    _t(children)
                 )}
             </>
         );
-    }, [error, _t, children, useErrorInput]);
+    }, [error, children, useErrorInput]);
 
     const dataError = useMemo(() => {
         const err = useDataError ? error?.data : undefined;

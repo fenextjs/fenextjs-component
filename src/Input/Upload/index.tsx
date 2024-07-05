@@ -9,7 +9,7 @@ import { FileProps } from "fenextjs-interface/cjs/File";
 import { ErrorProps } from "fenextjs-interface/cjs/Error";
 import { Close } from "fenextjs-svg/cjs/Close";
 import { Collapse } from "../../Collapse";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { LoaderSpinner } from "../../Loader";
 
 /**
@@ -152,9 +152,10 @@ export const InputUpload = ({
     loader = false,
     iconLoader = <LoaderSpinner />,
     customPreview = undefined,
-    _t,
+   
     ...props
 }: InputUploadProps) => {
+    const {_t} = use_T({...props})
     const { data, setData } = useData<FileProps>(defaultValue, {
         onChangeDataAfter: onChange,
     });
@@ -195,14 +196,14 @@ export const InputUpload = ({
                                 {...classNameTitle}
                                 className={`fenext-input-upload-title ${classNameTitle.className}`}
                             >
-                                {_tValidate(titleFile ?? data?.text, _t)}
+                                {_t(titleFile ?? data?.text)}
                             </Title>
                             {textFile && (
                                 <Text
                                     {...classNameText}
                                     className={`fenext-input-upload-text ${classNameText.className}`}
                                 >
-                                    {_tValidate(textFile, _t)}
+                                    {_t(textFile)}
                                 </Text>
                             )}
                             <div
@@ -217,7 +218,7 @@ export const InputUpload = ({
                                             {...classNameText}
                                             className={`fenext-input-upload-text ${classNameText.className}`}
                                         >
-                                            {_tValidate(textPreview, _t)}
+                                            {_t(textPreview)}
                                         </Text>
                                     </>
                                 }
@@ -271,7 +272,7 @@ export const InputUpload = ({
                                         {...classNameTitle}
                                         className={`fenext-input-upload-title ${classNameTitle.className}`}
                                     >
-                                        {_tValidate(title, _t)}
+                                        {_t(title)}
                                     </Title>
                                 )}
                                 <div
@@ -283,13 +284,13 @@ export const InputUpload = ({
                                     {...classNameBtn}
                                     className={`fenext-input-upload-btn ${classNameBtn.className}`}
                                 >
-                                    {_tValidate(btn, _t)}
+                                    {_t(btn)}
                                 </Button>
                                 <Text
                                     {...classNameText}
                                     className={`fenext-input-upload-text ${classNameText.className}`}
                                 >
-                                    {_tValidate(text, _t)}
+                                    {_t(text)}
                                 </Text>
                             </div>
                         </InputFile>

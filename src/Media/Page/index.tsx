@@ -12,7 +12,7 @@ import { parseBase64ToImgData } from "fenextjs-functions/cjs/parse/Img/Base64ToI
 import { env_log } from "fenextjs-functions/cjs/env_log";
 import { Trash } from "fenextjs-svg/cjs/Trash";
 import { Save } from "fenextjs-svg/cjs/Save";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Properties for the base MediaPage component.
@@ -139,8 +139,9 @@ export const MediaPage = ({
     isPage = true,
     extraContentImgs = undefined,
     onRenderImg = undefined,
-    _t,
+    ...props
 }: MediaPageProps) => {
+    const {_t} = use_T({...props})
     const [keyInputUpload, setKeyInputUpload] = useState(0);
     const { data, onConcatData, onDeleteData, setData } = useData<
         ImgDataProps[]
@@ -214,8 +215,8 @@ export const MediaPage = ({
                                     {(onRenderImg ? (
                                         onRenderImg(img)
                                     ) : (
-                                        <Img {...img} _t={_t} />
-                                    )) ?? <Img {...img} _t={_t} />}
+                                        <Img {...img}  />
+                                    )) ?? <Img {...img} />}
                                 </div>
                                 <div
                                     className={`fenext-media-page-img-capa`}
@@ -253,7 +254,7 @@ export const MediaPage = ({
             <div className={`fenext-media-page ${className} `}>
                 <div className={`fenext-media-page-top`}>
                     <div className={`fenext-media-page-top-header`}>
-                        {_tValidate(HeaderPage, _t)}
+                        {_t(HeaderPage)}
                     </div>
                     <div className={`fenext-media-page-top-btn-acepte`}>
                         {data.length != 0 && !isPage && (
@@ -297,7 +298,7 @@ export const MediaPage = ({
                     {LISTIMAGES}
                     {extraContentImgs && (
                         <div className={`fenext-media-page-extra-content-imgs`}>
-                            {_tValidate(extraContentImgs, _t)}
+                            {_t(extraContentImgs)}
                         </div>
                     )}
                 </div>

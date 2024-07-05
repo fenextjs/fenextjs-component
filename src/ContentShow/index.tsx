@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 import React, { ReactNode } from "react";
 
@@ -37,8 +37,9 @@ export const ContentShow = ({
     className = "",
     children,
     show = true,
-    _t,
+    ...props
 }: ContentShowProps) => {
+    const {_t} = use_T({...props})
     return (
         <>
             <div
@@ -46,7 +47,7 @@ export const ContentShow = ({
                     show ? "show" : "hidden"
                 } ${className} `}
             >
-                {_tValidate(children, _t)}
+                {_t(children)}
             </div>
         </>
     );

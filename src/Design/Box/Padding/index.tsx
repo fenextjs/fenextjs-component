@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
@@ -23,7 +23,7 @@ export interface DesignBoxPaddingProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxPadding = ({
-    _t,
+   
     textPadding = "Padding",
     textPaddingBottom = "Bottom",
     textPaddingLeft = "Left",
@@ -32,8 +32,9 @@ export const DesignBoxPadding = ({
 
     data,
     onChangeData,
-    setDataFunction,
+    setDataFunction,...props
 }: DesignBoxPaddingProps) => {
+    const {_t} = use_T({...props})
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangePadding =
@@ -75,7 +76,7 @@ export const DesignBoxPadding = ({
     return (
         <>
             <div className={`fenext-design-box-item`}>
-                <Text>{_tValidate(textPadding, _t)}</Text>
+                <Text>{_t(textPadding)}</Text>
                 <InputSelectT<DesignBoxValue["paddingUnit"]>
                     onParse={_p}
                     options={[...ConstDesignBoxPaddingUnit]}

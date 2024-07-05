@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { Close } from "fenextjs-svg";
 import { AlertProps as AlertInterface } from "fenextjs-interface";
 
@@ -28,9 +28,10 @@ export const Alert = ({
     iconClose = <Close />,
     type,
     data,
-    _t,
     onClose,
+    ...props
 }: AlertComponentProps) => {
+    const {_t} = use_T({...props})
     return (
         <>
             <div
@@ -39,7 +40,7 @@ export const Alert = ({
                 meta-data={data}
             >
                 <div className={`fenext-alert-content`}>
-                    {_tValidate(message, _t)}
+                    {_t(message)}
                 </div>
                 <div className={`fenext-alert-close`} onClick={onClose}>
                     {iconClose}

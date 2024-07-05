@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 import React, { CSSProperties, ReactNode } from "react";
 
@@ -41,8 +41,9 @@ export const Cols = ({
     children,
     nCols = 2,
     breakInside = true,
-    _t,
+    ...props
 }: ColsProps) => {
+    const {_t} = use_T({...props})
     return (
         <>
             <div
@@ -55,7 +56,7 @@ export const Cols = ({
                     } as CSSProperties
                 }
             >
-                {_tValidate(children, _t)}
+                {_t(children)}
             </div>
         </>
     );

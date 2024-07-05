@@ -2,7 +2,7 @@ import { DaysEnum } from "fenextjs-interface";
 import React from "react";
 import { PaginationNext, PaginationPre } from "fenextjs-svg";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { FenextjsDate } from "fenextjs-date";
 
 export interface InputCalendarMonthProps extends _TProps {
@@ -23,7 +23,7 @@ export interface InputCalendarMonthProps extends _TProps {
 }
 export const InputCalendarMonth = ({
     type = "normal",
-    _t,
+   
     onPreMonth,
     onNextMonth,
     date,
@@ -33,7 +33,9 @@ export const InputCalendarMonth = ({
     setSelectDateRange,
     dataNSelect,
     setDataNSelect,
+    ...props
 }: InputCalendarMonthProps) => {
+    const {_t} = use_T({...props})
     return (
         <>
             <div className={`fenext-input-calendar-month`}>
@@ -74,7 +76,7 @@ export const InputCalendarMonth = ({
                                     data-day={day}
                                     className={`fenext-input-calendar-day`}
                                 >
-                                    {_tValidate(day, _t)[0]}
+                                    {_t(day)[0]}
                                 </div>
                             </>
                         );

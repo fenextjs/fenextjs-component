@@ -11,6 +11,7 @@ import {
     PaginationNPageClassProps,
 } from "../PaginationNPage";
 import { _TProps } from "fenextjs-interface";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Class properties to customize the style of the pagination.
@@ -74,9 +75,10 @@ export const Pagination = ({
             text: "All",
         },
     ],
-    _t,
+   
     ...props
 }: PaginationProps) => {
+    const {_t} = use_T({...props})
     const minPage = useMemo(() => {
         let m = Infinity;
         listNpage?.forEach((e) => {

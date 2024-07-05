@@ -7,7 +7,7 @@ import { useData } from "fenextjs-hook/cjs/useData";
 import { FileProps } from "fenextjs-interface/cjs/File";
 import { ErrorProps } from "fenextjs-interface/cjs/Error";
 import { Close } from "fenextjs-svg/cjs/Close";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Properties for the base InputImg component.
@@ -101,9 +101,10 @@ export const InputImg = ({
     onChange,
     onRemove,
 
-    _t,
+   
     ...props
 }: InputImgProps) => {
+    const {_t} = use_T({...props})
     const { data, setData } = useData<FileProps>(defaultValue, {
         onChangeDataAfter: onChange,
     });
@@ -185,14 +186,14 @@ export const InputImg = ({
                                         {...classNameTitle}
                                         className={`fenext-input-img-title ${classNameTitle.className}`}
                                     >
-                                        {_tValidate(title, _t)}
+                                        {_t(title)}
                                     </Title>
                                 )}
                                 <Text
                                     {...classNameText}
                                     className={`fenext-input-img-text ${classNameText.className}`}
                                 >
-                                    {_tValidate(text, _t)}
+                                    {_t(text)}
                                 </Text>
                             </div>
                         </InputFile>

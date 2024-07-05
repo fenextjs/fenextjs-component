@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import React from "react";
 import { Text } from "../../../Text";
 import { DesignBoxUseDataProps } from "../boxUnit";
@@ -12,18 +12,19 @@ export interface DesignBoxBorderColorProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxBorderColor = ({
-    _t,
+   
     textBorderColor = "Border Color",
 
     data,
-    onChangeData,
+    onChangeData,...props
 }: DesignBoxBorderColorProps) => {
+    const {_t} = use_T({...props})
     return (
         <>
             <div
                 className={`fenext-design-box-item fenext-design-box-item-1-2`}
             >
-                <Text>{_tValidate(textBorderColor, _t)}</Text>
+                <Text>{_t(textBorderColor)}</Text>
                 <InputColor
                     value={data.borderColor}
                     onChange={onChangeData("borderColor")}

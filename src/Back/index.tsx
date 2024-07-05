@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Loader, LoaderClassProps } from "../Loader";
 import { PaginationPre } from "fenextjs-svg/cjs/Pagination";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 export type BackTypeOnBack = "history" | "router" | "link" | "none";
 
@@ -94,8 +94,9 @@ export const Back = ({
     link = "",
     minLenght = 2,
     useHistoryMinLenght = false,
-    _t,
+    ...props
 }: BackProps) => {
+    const {_t} = use_T({...props})
     const router = useRouter();
     const onBack = () => {
         if (loader || disabled) {
@@ -141,7 +142,7 @@ export const Back = ({
                     )}
                 </div>
                 <div className={`fenext-back-content ${classNameContent}`}>
-                    {_tValidate(children, _t)}
+                    {_t(children)}
                 </div>
             </div>
         </>

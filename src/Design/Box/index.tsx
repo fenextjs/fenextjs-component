@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import React, { CSSProperties, useMemo } from "react";
 import { Edit } from "fenextjs-svg";
 import { Collapse, CollapseProps } from "../../Collapse/Simple";
@@ -66,7 +66,7 @@ export interface DesignBoxProps
 
 export const DesignBox = ({
     className = "",
-    _t,
+   
 
     textBox = "Box",
 
@@ -163,7 +163,7 @@ export const DesignBox = ({
         <>
             <div className={`fenext-design-box ${className} `}>
                 <Collapse
-                    header={<>{_tValidate(textBox, _t)}</>}
+                    header={<>{_t(textBox)}</>}
                     iconArrow={
                         <>
                             <Edit />

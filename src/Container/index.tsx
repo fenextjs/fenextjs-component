@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 import React, { PropsWithChildren } from "react";
 
@@ -38,8 +38,9 @@ export const Container = ({
     customSize = undefined,
     usePaddingInline = true,
     children,
-    _t,
+    ...props
 }: ContainerProps) => {
+    const {_t} = use_T({...props})
     return (
         <>
             <div
@@ -58,7 +59,7 @@ export const Container = ({
                         : {}
                 }
             >
-                {_tValidate(children, _t)}
+                {_t(children)}
             </div>
         </>
     );

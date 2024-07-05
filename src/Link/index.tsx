@@ -1,7 +1,7 @@
 import React, { AnchorHTMLAttributes, PropsWithChildren } from "react";
 import LinkNext, { LinkProps as LinkNextProps } from "next/link";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 export type LinkTypeOnLink = "history" | "router" | "link" | "none";
 
@@ -36,13 +36,14 @@ export const Link = ({
     className = "",
 
     children = "Link",
-    _t,
+   
     ...props
 }: LinkProps) => {
+    const {_t} = use_T({...props})
     return (
         <>
             <LinkNext {...props} className={`fenext-link ${className}`}>
-                <>{_tValidate(children, _t)}</>
+                <>{_t(children)}</>
             </LinkNext>
         </>
     );

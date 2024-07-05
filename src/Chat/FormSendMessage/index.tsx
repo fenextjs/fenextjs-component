@@ -6,7 +6,7 @@ import {
     RequestProps,
     RequestResultProps,
 } from "fenextjs-interface/cjs/Request";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 
 export interface ChatFormSendMessageDataProps {
@@ -24,9 +24,10 @@ export const ChatFormSendMessage = ({
     useSubmitInEnter = true,
     btnChildren = "Send",
     placeholderMessage = "Message",
-    _t,
+   
     ...props
 }: ChatFormSendMessageProps) => {
+    const {_t} = use_T({...props})
     const [__key, set__key] = useState(0);
     const [loader, setLoader] = useState(false);
 
@@ -54,7 +55,7 @@ export const ChatFormSendMessage = ({
             >
                 <InputText
                     type="textarea"
-                    placeholder={_tValidate(placeholderMessage, _t)}
+                    placeholder={_t(placeholderMessage)}
                     className="fenext-chat-form-send-message-input-message"
                     onChange={onChangeData("message")}
                     value={data.message}
@@ -72,7 +73,7 @@ export const ChatFormSendMessage = ({
                     loader={loader || props?.loader}
                     disabled={!data.message || data.message == ""}
                 >
-                    {_tValidate(btnChildren, _t)}
+                    {_t(btnChildren)}
                 </Button>
             </form>
         </>

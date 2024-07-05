@@ -4,7 +4,7 @@ import {
     useNotification,
 } from "fenextjs-hook/cjs/useNotification";
 import { RequestResultTypeProps, _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 /**
  * Properties for the base Copy component.
  */
@@ -52,8 +52,9 @@ export const Copy = ({
         message: "Copy",
         type: RequestResultTypeProps.OK,
     },
-    _t,
+    ...props
 }: CopyProps) => {
+    const {_t} = use_T({...props})
     const { pop } = useNotification({});
 
     const onCopy = () => {
@@ -67,7 +68,7 @@ export const Copy = ({
     return (
         <>
             <div className={`fenext-copy ${className} `} onClick={onCopy}>
-                {_tValidate(children, _t)}
+                {_t(children)}
             </div>
         </>
     );

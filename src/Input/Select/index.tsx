@@ -17,7 +17,7 @@ import { Cancel } from "fenextjs-svg/cjs/cancel";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorCode } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { useValidator } from "fenextjs-hook";
 import { SVGSearch } from "fenextjs-svg";
 import { Img } from "../../Img";
@@ -232,7 +232,7 @@ export const InputSelect = <T = any,>({
     searchById = false,
     useSwichtypeSelectStyle = false,
     changeByFirstOptionInOnBlur = false,
-    _t,
+   
     maxLengthShowOptions = 20,
     itemMaxLengthShowOptions = {
         id: "fenext-item-max-length-show-options",
@@ -242,6 +242,7 @@ export const InputSelect = <T = any,>({
     validatorData,
     ...props
 }: InputSelectProps<T>) => {
+    const {_t} = use_T({...props})
     const options = useMemo(
         () => (filterOptions ? filterOptions(optionsProps) : optionsProps),
         [optionsProps, filterOptions],
@@ -465,11 +466,11 @@ export const InputSelect = <T = any,>({
                             <InputSelectOption
                                 type={"option"}
                                 id={noResult?.id ?? "selected"}
-                                text={_tValidate(
+                                text={_t(
                                     selected?.text ??
                                         props?.placeholder ??
                                         "Select",
-                                    _t,
+                                   
                                 )}
                                 children={selected?.children ?? undefined}
                                 _t={_t}
@@ -548,7 +549,7 @@ export const InputSelect = <T = any,>({
         props?.placeholder,
         OPTIONS,
         data,
-        _t,
+       
         props.loader,
         loaderOption,
         selectRef,
@@ -585,7 +586,7 @@ export const InputSelect = <T = any,>({
                                             className={`fenext-select-clear`}
                                             onClick={onClear}
                                         >
-                                            {_tValidate(clearContent, _t)}
+                                            {_t(clearContent)}
                                         </button>
                                     </>
                                 }
@@ -680,7 +681,7 @@ export const InputSelect = <T = any,>({
                                     className={`fenext-select-clear`}
                                     onClick={onClear}
                                 >
-                                    {_tValidate(clearContent, _t)}
+                                    {_t(clearContent)}
                                 </button>
                                 {showOptionIconImg && (
                                     <>

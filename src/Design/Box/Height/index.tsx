@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputNumberCount } from "../../../Input/NumberCount";
 import React from "react";
@@ -18,14 +18,15 @@ export interface DesignBoxHeightProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxHeight = ({
-    _t,
+   
     textHeight = "Height",
     textMinHeight = "Min Height",
     textMaxHeight = "Max Height",
 
     data,
-    onChangeData,
+    onChangeData,...props
 }: DesignBoxHeightProps) => {
+    const {_t} = use_T({...props})
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     return (
@@ -33,7 +34,7 @@ export const DesignBoxHeight = ({
             <div
                 className={`fenext-design-box-item fenext-design-box-item-2-2`}
             >
-                <Text>{_tValidate(textHeight, _t)}</Text>
+                <Text>{_t(textHeight)}</Text>
                 <InputNumberCount
                     defaultValue={data.height}
                     onChange={onChangeData("height")}
@@ -52,7 +53,7 @@ export const DesignBoxHeight = ({
             <div
                 className={`fenext-design-box-item fenext-design-box-item-2-2`}
             >
-                <Text>{_tValidate(textMaxHeight, _t)}</Text>
+                <Text>{_t(textMaxHeight)}</Text>
                 <InputNumberCount
                     defaultValue={data.maxHeight}
                     onChange={onChangeData("maxHeight")}
@@ -71,7 +72,7 @@ export const DesignBoxHeight = ({
             <div
                 className={`fenext-design-box-item fenext-design-box-item-2-2`}
             >
-                <Text>{_tValidate(textMinHeight, _t)}</Text>
+                <Text>{_t(textMinHeight)}</Text>
                 <InputNumberCount
                     defaultValue={data.minHeight}
                     onChange={onChangeData("minHeight")}

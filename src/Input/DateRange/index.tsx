@@ -7,7 +7,7 @@ import {
     InputDateValueType,
 } from "../Date";
 import { useData } from "fenextjs-hook/cjs/useData";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Props for the InputDateValueType
@@ -88,7 +88,6 @@ export const InputDateRange = ({
     classNameInputDateRangeContentInputDate = "",
     classNameLabel = "",
 
-    _t = (e) => e,
     label,
     min,
     max,
@@ -106,6 +105,7 @@ export const InputDateRange = ({
 
     ...props
 }: InputDateRangeProps) => {
+    const {_t} = use_T({...props})
     const { dataMemo: data, onChangeData } = useData<
         InputDateRangeDataProps,
         InputDateRangeDataProps
@@ -134,18 +134,18 @@ export const InputDateRange = ({
                 className={`fenext-input-date-range ${classNameInputDateRange}`}
             >
                 <div className={`fenext-input-label ${classNameLabel}`}>
-                    {_tValidate(label, _t)}
+                    {_t(label)}
                     {optional && (
                         <>
                             <small className="fenext-input-optional">
-                                {_tValidate(optionalText, _t)}
+                                {_t(optionalText)}
                             </small>
                         </>
                     )}
                     {required && (
                         <>
                             <small className="fenext-input-required">
-                                {_tValidate(requiredText, _t)}
+                                {_t(requiredText)}
                             </small>
                         </>
                     )}

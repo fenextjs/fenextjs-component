@@ -12,7 +12,7 @@ import {
 } from "../Day";
 import { useData } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 export type ScheduleWeeklyValueType = {
     [id in DaysEnum]?: ScheduleDayValueType;
@@ -78,9 +78,10 @@ export const ScheduleWeekly = ({
         defaultActive: 0,
     },
     onParseHeaderDay,
-    _t,
+   
     ...props
 }: ScheduleWeeklyProps) => {
+    const {_t} = use_T({...props})
     const { data, onChangeData } = useData<ScheduleWeeklyValueType>(
         defaultValue,
         {
@@ -92,7 +93,7 @@ export const ScheduleWeekly = ({
     return (
         <>
             <div className={`fenext-schedule-weekly ${className} `}>
-                <Title tag="h4">{_tValidate(title, _t)}</Title>
+                <Title tag="h4">{_t(title)}</Title>
 
                 <CollapseMultiple
                     {...CollapseMultipleProps}

@@ -11,7 +11,7 @@ import {
     TableActionCheckboxProps,
 } from "../TableActionCheckbox";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Represents the properties that can be passed to a table component to specify CSS class names.
@@ -229,8 +229,9 @@ export const Table = <T,>({
     notResult = <div>There is not results</div>,
     actionsCheckbox,
     actionsCheckboxSelectAll = "Select All",
-    _t = (e) => e,
+    ...props
 }: TableProps<T>) => {
+    const {_t} = use_T({...props})
     const checkboxItems = useMemo(
         () => items.map((item: T) => ({ ...item, __checkbox: false })),
         [items],
@@ -334,7 +335,7 @@ export const Table = <T,>({
                         className={`fenext-table-content-table-td fenext-table-not-result ${classNameTd}`}
                         colSpan={999}
                     >
-                        {_tValidate(notResult, _t)}
+                        {_t(notResult)}
                     </td>
                 </tr>
             );
@@ -480,7 +481,7 @@ export const Table = <T,>({
                                         data-col-text={h?.th}
                                     >
                                         <DropDown
-                                            header={<>{_tValidate(h.th, _t)}</>}
+                                            header={<>{_t(h.th)}</>}
                                         >
                                             {h?.columnOptions?.orderBy ? (
                                                 <>

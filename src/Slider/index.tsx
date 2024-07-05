@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { PaginationPre, PaginationNext } from "fenextjs-svg/cjs/Pagination";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Properties for the base Slider component.
@@ -102,8 +102,9 @@ export const Slider = ({
     timeAnimation = 500,
     loop = true,
     separationItems = 16,
-    _t,
+    ...props
 }: SliderProps) => {
+    const {_t} = use_T({...props})
     const SliderRef = useRef<HTMLDivElement>(null);
     const [currentDog, setCurrentDog] = useState(0);
     const [isHover, setIsHover] = useState(false);
@@ -226,7 +227,7 @@ export const Slider = ({
                                     } as React.CSSProperties
                                 }
                             >
-                                {_tValidate(item, _t)}
+                                {_t(item)}
                             </div>
                         );
                     })}

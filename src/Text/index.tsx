@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import { LoaderLine } from "../Loader/Line";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Properties for the base Text component.
@@ -53,8 +53,9 @@ export const Text = ({
     loader = false,
     children,
     nLineLoader = 3,
-    _t,
+    ...props
 }: TextProps) => {
+    const {_t} = use_T({...props})
     const Tag = tag;
     return (
         <>
@@ -66,7 +67,7 @@ export const Text = ({
                         </div>
                     </>
                 ) : (
-                    <>{_tValidate(children, _t)}</>
+                    <>{_t(children)}</>
                 )}
             </Tag>
         </>

@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
@@ -21,15 +21,16 @@ export interface DesignBoxGapProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxGap = ({
-    _t,
+   
     textGap = "Gap",
     textGapRow = "Gap Row",
     textGapColumn = "Gap Column",
 
     data,
     onChangeData,
-    setDataFunction,
+    setDataFunction,...props
 }: DesignBoxGapProps) => {
+    const {_t} = use_T({...props})
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeGap = (gap: "gapColumn" | "gapRow") => (e: number | "") => {
@@ -59,7 +60,7 @@ export const DesignBoxGap = ({
     return (
         <>
             <div className={`fenext-design-box-item`}>
-                <Text>{_tValidate(textGap, _t)}</Text>
+                <Text>{_t(textGap)}</Text>
                 <InputSelectT<DesignBoxValue["gapUnit"]>
                     onParse={_p}
                     options={[...ConstDesignBoxGapsUnit]}

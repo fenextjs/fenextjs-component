@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { InputSelectT } from "../../Input/SelectT";
 import { InputColor } from "../../Input/Color";
 import { InputNumberCount } from "../../Input/NumberCount";
@@ -63,7 +63,7 @@ export interface DesignTypographyProps extends _TProps {
 
 export const DesignTypography = ({
     className = "",
-    _t,
+   
 
     textTypography = "Typography",
     textExample = "Example",
@@ -100,8 +100,9 @@ export const DesignTypography = ({
 
     collapseName,
     collapseType,
-    collapseUseActiveForShowChildren = true,
+    collapseUseActiveForShowChildren = true,...props
 }: DesignTypographyProps) => {
+    const {_t} = use_T({...props})
     const {
         data: data_,
         onChangeData,
@@ -120,7 +121,7 @@ export const DesignTypography = ({
         <>
             <div className={`fenext-design-typography ${className} `}>
                 <Collapse
-                    header={<>{_tValidate(textTypography, _t)}</>}
+                    header={<>{_t(textTypography)}</>}
                     iconArrow={
                         <>
                             <Edit />
@@ -135,19 +136,19 @@ export const DesignTypography = ({
                         <div
                             className={`fenext-design-typography-item fenext-design-typography-item-2`}
                         >
-                            <Text>{_tValidate(textExample, _t)}</Text>
+                            <Text>{_t(textExample)}</Text>
                             <div
                                 className={`fenext-design-typography-content-example `}
                             >
                                 <Text>
                                     <div style={dataMemo}>
-                                        {_tValidate(textExampleValue, _t)}
+                                        {_t(textExampleValue)}
                                     </div>
                                 </Text>
                             </div>
                         </div>
                         <div className={`fenext-design-typography-item `}>
-                            <Text>{_tValidate(textColor, _t)}</Text>
+                            <Text>{_t(textColor)}</Text>
                             <InputColor
                                 defaultValue={data.color}
                                 onChange={onChangeData("color")}
@@ -156,7 +157,7 @@ export const DesignTypography = ({
                         <div
                             className={`fenext-design-typography-item fenext-design-typography-item-3`}
                         >
-                            <Text>{_tValidate(textSize, _t)}</Text>
+                            <Text>{_t(textSize)}</Text>
                             <InputNumberCount
                                 symbolInit=""
                                 symbolFinal={data.fontSizeUnit}
@@ -173,7 +174,7 @@ export const DesignTypography = ({
                             />
                         </div>
                         <div className={`fenext-design-typography-item `}>
-                            <Text>{_tValidate(textAlign, _t)}</Text>
+                            <Text>{_t(textAlign)}</Text>
                             <InputSelectT<DesignTypographyValue["textAlign"]>
                                 onParse={_p}
                                 options={[
@@ -184,7 +185,7 @@ export const DesignTypography = ({
                             />
                         </div>
                         <div className={`fenext-design-typography-item `}>
-                            <Text>{_tValidate(textWeight, _t)}</Text>
+                            <Text>{_t(textWeight)}</Text>
                             <InputSelectT<DesignTypographyValue["weight"]>
                                 onParse={_p}
                                 options={[...ConstDesignTypographyWeightUnit]}
@@ -193,7 +194,7 @@ export const DesignTypography = ({
                             />
                         </div>
                         <div className={`fenext-design-typography-item `}>
-                            <Text>{_tValidate(textTransform, _t)}</Text>
+                            <Text>{_t(textTransform)}</Text>
                             <InputSelectT<DesignTypographyValue["transform"]>
                                 onParse={_p}
                                 options={[
@@ -204,7 +205,7 @@ export const DesignTypography = ({
                             />
                         </div>
                         <div className={`fenext-design-typography-item `}>
-                            <Text>{_tValidate(textStyle, _t)}</Text>
+                            <Text>{_t(textStyle)}</Text>
                             <InputSelectT<DesignTypographyValue["style"]>
                                 onParse={_p}
                                 options={[...ConstDesignTypographyStyleUnit]}
@@ -213,7 +214,7 @@ export const DesignTypography = ({
                             />
                         </div>
                         <div className={`fenext-design-typography-item `}>
-                            <Text>{_tValidate(textDecoration, _t)}</Text>
+                            <Text>{_t(textDecoration)}</Text>
                             <InputSelectT<DesignTypographyValue["decoration"]>
                                 onParse={_p}
                                 options={[
@@ -226,7 +227,7 @@ export const DesignTypography = ({
                         <div
                             className={`fenext-design-typography-item fenext-design-typography-item-3`}
                         >
-                            <Text>{_tValidate(textLineHeight, _t)}</Text>
+                            <Text>{_t(textLineHeight)}</Text>
                             <InputNumberCount
                                 symbolInit=""
                                 symbolFinal={
@@ -251,7 +252,7 @@ export const DesignTypography = ({
                         <div
                             className={`fenext-design-typography-item fenext-design-typography-item-3`}
                         >
-                            <Text>{_tValidate(textLetterSpacing, _t)}</Text>
+                            <Text>{_t(textLetterSpacing)}</Text>
                             <InputNumberCount
                                 symbolInit=""
                                 symbolFinal={data.letterSpacingUnit}
@@ -272,7 +273,7 @@ export const DesignTypography = ({
                         <div
                             className={`fenext-design-typography-item fenext-design-typography-item-3`}
                         >
-                            <Text>{_tValidate(textWordSpacing, _t)}</Text>
+                            <Text>{_t(textWordSpacing)}</Text>
                             <InputNumberCount
                                 symbolInit=""
                                 symbolFinal={data.wordSpacingUnit}

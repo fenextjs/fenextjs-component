@@ -5,7 +5,7 @@ import {
 } from "fenextjs-hook/cjs/useDocumentEvent";
 import { Button } from "../Button";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Properties for the base Steps component.
@@ -199,8 +199,9 @@ export const Steps = ({
     useArrowKey = true,
     useDogs = false,
     onSetStep,
-    _t,
+    ...props
 }: StepsProps) => {
+    const {_t} = use_T({...props})
     const ref = useRef<HTMLDivElement>(null);
     const [loader, setLoader] = useState(false);
     const parseCurrentStep = useCallback(
@@ -328,7 +329,7 @@ export const Steps = ({
                                     <div
                                         className={`fenext-steps-step-label ${classNameStepLabel} `}
                                     >
-                                        {_tValidate(item.label, _t)}
+                                        {_t(item.label)}
                                     </div>
                                 </div>
                             );
@@ -348,7 +349,7 @@ export const Steps = ({
                                         : ""
                                 } `}
                             >
-                                {_tValidate(item.content, _t)}
+                                {_t(item.content)}
                             </div>
                         );
                     })}

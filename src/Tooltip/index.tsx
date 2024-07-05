@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 import React, { ReactNode, useCallback, useMemo, useRef } from "react";
 import * as ReactDOM from "react-dom";
@@ -49,8 +49,9 @@ export const Tooltip = ({
     tooltip,
     positionX = "center",
     positionY = "top",
-    _t,
+    ...props
 }: TooltipProps) => {
+    const {_t} = use_T({...props})
     const ref = useRef<HTMLDivElement>(null);
     const uuid = useMemo(
         () => `${Math.ceil(new Date().getTime() * Math.random())}`,
@@ -134,7 +135,7 @@ export const Tooltip = ({
                 onClick={onShowTooltip}
             >
                 <div className={`fenext-tooltip-children`}>
-                    {_tValidate(children, _t)}
+                    {_t(children)}
                 </div>
             </div>
         </>

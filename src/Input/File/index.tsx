@@ -6,7 +6,7 @@ import { useData } from "fenextjs-hook/cjs/useData";
 import { ErrorProps } from "fenextjs-interface/cjs/Error";
 import { FileProps } from "fenextjs-interface/cjs/File";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Properties for styling the various elements of the input file component
@@ -137,7 +137,6 @@ export const InputFile = ({
     children,
     clearAfterUpload = false,
     MAX_SIZE_FILE = 5000000,
-    _t = (e) => e,
     parseProgress = (e) => e,
     onChangeProgress,
     onChangeError,
@@ -145,6 +144,7 @@ export const InputFile = ({
     textMaxSizeFile = "File max size",
     ...props
 }: InputFileProps) => {
+    const {_t} = use_T({...props})
     const onUploadFile = async (
         data: InputFileUploadDataProps,
     ): Promise<FileProps> => {
@@ -205,7 +205,7 @@ export const InputFile = ({
             }
 
             if (file?.size > MAX_SIZE_FILE) {
-                throw `${_tValidate(textMaxSizeFile, _t)} ${
+                throw `${_t(textMaxSizeFile)} ${
                     MAX_SIZE_FILE / 1000000
                 }mb`;
             }

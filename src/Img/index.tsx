@@ -1,13 +1,11 @@
 import React, { SyntheticEvent } from "react";
 import { ImgDataProps } from "fenextjs-interface/cjs/Img";
 import { LoaderLine } from "../Loader/Line";
-import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
 
 /**
  * Properties for the base Img component.
  */
-export interface ImgBaseProps extends ImgDataProps, _TProps {
+export interface ImgBaseProps extends ImgDataProps {
     /**
      * Url of Img if img not load.
      */
@@ -71,7 +69,7 @@ export const Img = ({
     onErrorImg: onErrorImg_,
     onClick,
     loader = false,
-    _t,
+   
 }: ImgProps) => {
     const onErrorImg = (e: SyntheticEvent<HTMLImageElement, Event>) => {
         const img: any = e.target;
@@ -159,7 +157,7 @@ export const Img = ({
                 <img
                     src={`${src}`}
                     data-src={`${src}`}
-                    alt={_tValidate(name, _t)}
+                    alt={(name)}
                     className={`fenext-img ${classNameImg}`}
                     onError={onErrorImg}
                 />

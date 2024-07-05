@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, ReactNode } from "react";
 import { Loader, LoaderClassProps } from "../Loader";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 export type ButtonBaseSize =
     | "extra-small"
@@ -78,8 +78,9 @@ export const Button = ({
     isBtn = true,
     full = false,
     size = "normal",
-    _t,
+    ...props
 }: ButtonProps) => {
+    const {_t} = use_T({...props})
     const Tag = isBtn ? "button" : "div";
 
     return (
@@ -98,7 +99,7 @@ export const Button = ({
                 {loader && <Loader classNameLoader={classNameLoader} />}
 
                 {icon}
-                {_tValidate(children, _t)}
+                {_t(children)}
             </Tag>
         </>
     );

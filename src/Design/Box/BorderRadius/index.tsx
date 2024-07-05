@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
@@ -23,7 +23,7 @@ export interface DesignBoxBorderRadiusProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxBorderRadius = ({
-    _t,
+   
     textBorderRadius = "Border Radius",
     textBorderRadiusTopLeft = "Top Left",
     textBorderRadiusTopRight = "Top Right",
@@ -32,8 +32,9 @@ export const DesignBoxBorderRadius = ({
 
     data,
     onChangeData,
-    setDataFunction,
+    setDataFunction,...props
 }: DesignBoxBorderRadiusProps) => {
+    const {_t} = use_T({...props})
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeBorderRadius =
@@ -75,7 +76,7 @@ export const DesignBoxBorderRadius = ({
     return (
         <>
             <div className={`fenext-design-box-item`}>
-                <Text>{_tValidate(textBorderRadius, _t)}</Text>
+                <Text>{_t(textBorderRadius)}</Text>
                 <InputSelectT<DesignBoxValue["borderUnitRadius"]>
                     onParse={_p}
                     options={[...ConstDesignBoxBorderRadiusUnit]}

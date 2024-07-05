@@ -1,7 +1,8 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import { parseNumberCount } from "fenextjs-functions/cjs/parse/NumberCount";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate, sleep } from "fenextjs-functions";
+import {  sleep } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Properties for the base Counter component.
@@ -66,8 +67,9 @@ export const Counter = ({
     time = 1000,
     decimal = 2,
     parseNumber = parseNumberCount,
-    _t,
+    ...props
 }: CounterProps) => {
+    const {_t} = use_T({...props})
     const [numberShow, setNumberShow] = useState(0);
     const onIncrementeNumber = async () => {
         const dis = number - numberShow;
@@ -94,7 +96,7 @@ export const Counter = ({
             <div className={`fenext-counter ${className} `}>
                 {text && (
                     <div className={`fenext-counter-text ${classNameText} `}>
-                        {_tValidate(text, _t)}
+                        {_t(text)}
                     </div>
                 )}
                 <div className={`fenext-counter-number ${classNameNumber} `}>

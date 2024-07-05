@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { InputSelectT } from "../../../Input/SelectT";
 import React from "react";
 import { Text } from "../../../Text";
@@ -18,13 +18,15 @@ export interface DesignBoxAlignProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxAlign = ({
-    _t,
+   
     textAlignItems = "Align Vertical",
     textJustifyContent = "Align Horizontal",
 
     data,
     onChangeData,
+    ...props
 }: DesignBoxAlignProps) => {
+    const {_t} = use_T({...props})
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     return (
@@ -32,7 +34,7 @@ export const DesignBoxAlign = ({
             <div
                 className={` fenext-design-box-item fenext-design-box-item-1-2`}
             >
-                <Text>{_tValidate(textAlignItems, _t)}</Text>
+                <Text>{_t(textAlignItems)}</Text>
                 <InputSelectT<DesignBoxValue["alignItems"]>
                     onParse={_p}
                     options={[...ConstDesignBoxAlignItemsUnit]}
@@ -44,7 +46,7 @@ export const DesignBoxAlign = ({
             <div
                 className={` fenext-design-box-item fenext-design-box-item-1-2`}
             >
-                <Text>{_tValidate(textJustifyContent, _t)}</Text>
+                <Text>{_t(textJustifyContent)}</Text>
                 <InputSelectT<DesignBoxValue["justifyContent"]>
                     onParse={_p}
                     options={[...ConstDesignBoxJustifyContentUnit]}

@@ -2,7 +2,7 @@ import React, { ReactNode, useCallback, useMemo } from "react";
 import { useRouter } from "next/router";
 import { Collapse } from "../../Collapse/Simple";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { Arrow } from "fenextjs-svg/cjs/Arrow";
 import { Link } from "../../Link";
 
@@ -97,8 +97,9 @@ export const ItemMenu = ({
     typeCollapse,
     isLink = true,
     onClick,
-    _t,
+    ...props
 }: ItemMenuProps) => {
+    const {_t} = use_T({...props})
     const router = useRouter();
 
     const urlInter = useMemo(() => {
@@ -166,7 +167,7 @@ export const ItemMenu = ({
                                 <div
                                     className={`fenext-menu-item-a-text ${classNameText}`}
                                 >
-                                    {_tValidate(text, _t)}
+                                    {_t(text)}
                                 </div>
                             </Tag>
                         </>

@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import React from "react";
 import { Text } from "../../../Text";
 import { DesignBoxUseDataProps } from "../boxUnit";
@@ -12,17 +12,19 @@ export interface DesignBoxBackgroundProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxBackground = ({
-    _t,
+   
     textBackground = "Background",
     data,
     onChangeData,
+    ...props
 }: DesignBoxBackgroundProps) => {
+    const {_t} = use_T({...props})
     return (
         <>
             <div
                 className={`fenext-design-box-item fenext-design-box-item-1-2`}
             >
-                <Text>{_tValidate(textBackground, _t)}</Text>
+                <Text>{_t(textBackground)}</Text>
                 <InputColor
                     value={data.background}
                     onChange={onChangeData("background")}

@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 import React from "react";
 
@@ -37,8 +37,9 @@ export const GridGallery = ({
     className = "",
     classNameItem = "",
     items,
-    _t,
+    ...props
 }: GridGalleryProps) => {
+    const {_t} = use_T({...props})
     return (
         <>
             <div className={`fenext-grid-gallery ${className} `}>
@@ -48,7 +49,7 @@ export const GridGallery = ({
                             key={i}
                             className={`fenext-grid-gallery-item ${classNameItem} `}
                         >
-                            {_tValidate(item, _t)}
+                            {_t(item)}
                         </div>
                     );
                 })}

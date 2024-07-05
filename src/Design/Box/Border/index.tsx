@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import { InputNumberCount } from "../../../Input/NumberCount";
@@ -23,7 +23,7 @@ export interface DesignBoxBorderProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxBorder = ({
-    _t,
+   
     textBorder = "Border",
     textBorderBottom = "Bottom",
     textBorderLeft = "Left",
@@ -32,8 +32,9 @@ export const DesignBoxBorder = ({
 
     data,
     setDataFunction,
-    onChangeData,
+    onChangeData,...props
 }: DesignBoxBorderProps) => {
+    const {_t} = use_T({...props})
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeBorder = useCallback(
@@ -72,7 +73,7 @@ export const DesignBoxBorder = ({
     return (
         <>
             <div className={`fenext-design-box-item`}>
-                <Text>{_tValidate(textBorder, _t)}</Text>
+                <Text>{_t(textBorder)}</Text>
                 <InputSelectT<DesignBoxValue["borderUnit"]>
                     onParse={_p}
                     options={[...ConstDesignBoxBorderUnit]}

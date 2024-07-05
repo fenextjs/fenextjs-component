@@ -10,7 +10,7 @@ import { useData } from "fenextjs-hook/cjs/useData";
 import { ErrorComponent } from "../../Error";
 import { useValidator } from "fenextjs-hook";
 import { FenextjsValidator } from "fenextjs-validator";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { ErrorFenextjs } from "fenextjs-error";
 
 export interface TextSelectProps {
@@ -103,11 +103,11 @@ export const InputTextSelect = ({
     onChange,
     validator = undefined,
     posSelect = "left",
-    _t = (e) => e,
     errorWithIsChange = false,
     error,
     ...props
 }: InputTextSelectProps) => {
+    const {_t} = use_T({...props})
     const { data, onChangeData, isChange } = useData<
         Partial<TextSelectProps>,
         Partial<TextSelectProps>
@@ -136,7 +136,7 @@ export const InputTextSelect = ({
                 <div
                     className={`fenext-input-text-select-label fenext-input-label  `}
                 >
-                    {_tValidate(label, _t)}
+                    {_t(label)}
                 </div>
                 <div className={`fenext-input-text-select-select `}>
                     <InputSelect

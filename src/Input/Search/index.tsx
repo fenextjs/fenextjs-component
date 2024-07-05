@@ -6,7 +6,7 @@ import { Title } from "../../Title";
 import { InputSelectOption, InputSelectOptionProps } from "../SelectOption";
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../Text";
 import { Button, ButtonProps } from "../../Button";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Properties for the base InputSearch component.
@@ -217,10 +217,11 @@ export const InputSearch = ({
     onChangeTabFilterSelected,
     selectMultipleTabFilter = false,
     iconPos = "left",
-    _t,
+   
 
     ...props
 }: InputSearchProps) => {
+    const {_t} = use_T({...props})
     const SEARCH = useRef<HTMLInputElement>(null);
     const BG = useRef<HTMLInputElement>(null);
     const {
@@ -431,9 +432,9 @@ export const InputSearch = ({
                                             setSearchText(item.text);
                                         }}
                                     >
-                                        {_tValidate(
+                                        {_t(
                                             item?.content ?? item?.text,
-                                            _t,
+                                           
                                         )}
                                     </div>
                                 );
@@ -447,9 +448,9 @@ export const InputSearch = ({
                                             <div
                                                 className={`fenext-input-search-content-result-pre-search `}
                                             >
-                                                {_tValidate(
+                                                {_t(
                                                     resultPreSearch,
-                                                    _t,
+                                                   
                                                 )}
                                             </div>
                                         </>
@@ -458,7 +459,7 @@ export const InputSearch = ({
                                             <div
                                                 className={`fenext-input-search-content-result-empty `}
                                             >
-                                                {_tValidate(resultEmpty, _t)}
+                                                {_t(resultEmpty)}
                                             </div>
                                         </>
                                     )}

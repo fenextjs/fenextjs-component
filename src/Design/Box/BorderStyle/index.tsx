@@ -1,4 +1,4 @@
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 import { InputSelectT } from "../../../Input/SelectT";
 import { InputCheckbox } from "../../../Input/Checkbox";
 import React from "react";
@@ -23,7 +23,7 @@ export interface DesignBoxBorderStyleProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxBorderStyle = ({
-    _t,
+   
     textBorderStyle = "Border Style",
     textBorderStyleTop = "Top",
     textBorderStyleLeft = "Left",
@@ -31,8 +31,9 @@ export const DesignBoxBorderStyle = ({
     textBorderStyleBottom = "Bottom",
 
     data,
-    setDataFunction,
+    setDataFunction,...props
 }: DesignBoxBorderStyleProps) => {
+    const {_t} = use_T({...props})
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeBorderStyle =
@@ -74,7 +75,7 @@ export const DesignBoxBorderStyle = ({
     return (
         <>
             <div className={`fenext-design-box-item`}>
-                <Text>{_tValidate(textBorderStyle, _t)}</Text>
+                <Text>{_t(textBorderStyle)}</Text>
                 <div></div>
                 <InputCheckbox
                     defaultValue={data.borderStyleTogether}

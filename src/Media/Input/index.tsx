@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from "react";
-import { useData } from "fenextjs-hook";
+import { useData, use_T } from "fenextjs-hook";
 import { ModalBase, ModalBaseBaseProps } from "../../Modal/Base";
 import { InputUpload } from "../../Input/Upload";
 import { Button, ButtonProps } from "../../Button";
@@ -86,8 +86,9 @@ export const MediaInput = ({
     ModalProps = {
         type: "full",
     },
-    _t,
+    ...props
 }: MediaInputProps) => {
+    const {_t} = use_T({...props})
     const [modalActive, setModalActive] = useState(false);
     const { data, onChangeData, onDeleteData, setData } = useData<
         ImgDataProps[]

@@ -4,7 +4,7 @@ import { Button, ButtonClassProps } from "../../Button";
 import { InputImg, InputImgBaseProps } from "../Img";
 import React, { useMemo, useState } from "react";
 import { _TProps } from "fenextjs-interface";
-import { _tValidate } from "fenextjs-functions";
+import { use_T } from "fenextjs-hook";
 
 /**
  * Properties for the base InputGallery component.
@@ -85,9 +85,10 @@ export const InputGallery = ({
     ],
     value = undefined,
     onChange,
-    _t,
+   
     ...props
 }: InputGalleryProps) => {
+    const {_t} = use_T({...props})
     const [items_, setItems] = useState<FileProps[]>(defaultValue);
 
     const onChangeItem = (i: number) => (data: FileProps) => {
@@ -150,7 +151,7 @@ export const InputGallery = ({
                                     className={`fenext-input-gallery-btn-add ${classNameButton.className}`}
                                     onClick={onAddItem}
                                 >
-                                    {_tValidate(textBtn, _t)}
+                                    {_t(textBtn)}
                                 </Button>
                             </div>
                         </>,
