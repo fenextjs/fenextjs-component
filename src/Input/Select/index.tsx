@@ -460,7 +460,6 @@ export const InputSelect = <T = any,>({
                                 children={create?.children ?? undefined}
                                 _t={_t}
                                 useT={useTOption}
-                                
                                 isBtn={true}
                                 onClick={create?.onClick ?? onCreate}
                             />

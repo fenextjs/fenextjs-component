@@ -22,7 +22,7 @@ const InputSelectCountryMultiple = ({ ...props }) => {
         onLoad();
     }, []);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(SelectMultipleT_1.InputSelectMultipleT, { ...props, options: options, loader: loader, useLoader: true, onParse: (e) => ({
+        react_1.default.createElement(SelectMultipleT_1.InputSelectMultipleT, { ...props, useTOption: false, options: options, loader: loader, useLoader: true, onParse: (e) => ({
                 ...e,
                 text: e?.text ?? "",
                 id: e?.id ?? "",

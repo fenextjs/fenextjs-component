@@ -30,19 +30,19 @@ const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country 
         let C = (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(Select_1.InputSelect, { ...props, ...country, 
                 // key={value?.country?.id}
-                options: countrys?.map((e) => {
+                useTOption: false, options: countrys?.map((e) => {
                     return {
                         ...e,
                         data: e,
                     };
                 }), onChangeData: onChangeCSC("country"), defaultValue: value?.country, loader: !loadCountrys }),
-            react_1.default.createElement(Select_1.InputSelect, { ...props, ...state, key: value?.country?.id, options: states?.map((e) => {
+            react_1.default.createElement(Select_1.InputSelect, { ...props, ...state, useTOption: false, key: value?.country?.id, options: states?.map((e) => {
                     return {
                         ...e,
                         data: e,
                     };
                 }), onChangeData: onChangeCSC("state"), defaultValue: value?.state, loader: !loadStates }),
-            react_1.default.createElement(Select_1.InputSelect, { ...props, ...city, key: value?.state?.id, options: citys?.map((e) => {
+            react_1.default.createElement(Select_1.InputSelect, { ...props, ...city, useTOption: false, key: value?.state?.id, options: citys?.map((e) => {
                     return {
                         ...e,
                         data: e,

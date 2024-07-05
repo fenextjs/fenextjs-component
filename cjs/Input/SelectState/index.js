@@ -30,7 +30,7 @@ const InputSelectState = ({ country = undefined, ...props }) => {
                     data: e,
                 };
                 return r;
-            }, loader: loader, useLoader: true })));
+            }, loader: loader, useLoader: true, useTOption: false })));
 };
 exports.InputSelectState = InputSelectState;
 //# sourceMappingURL=index.js.map

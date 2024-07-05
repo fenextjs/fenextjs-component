@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importDefault(require("react"));
 const SelectT_1 = require("../SelectT");
 const options_1 = require("./options");
-const InputSelectTimeZone = ({ ...props }) => {
+const InputSelectTimeZone = ({ useTOption = false, ...props }) => {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(SelectT_1.InputSelectT, { ...props, options: options_1.TimeZoneList, onParse: (e) => {
                 const r = {
@@ -14,7 +14,7 @@ const InputSelectTimeZone = ({ ...props }) => {
                     data: e,
                 };
                 return r;
-            } })));
+            }, useTOption: useTOption })));
 };
 exports.InputSelectTimeZone = InputSelectTimeZone;
 //# sourceMappingURL=index.js.map

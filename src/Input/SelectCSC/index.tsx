@@ -131,7 +131,7 @@ export const InputSelectCSC = ({
                     {...props}
                     {...country}
                     // key={value?.country?.id}
-                useTOption={false}
+                    useTOption={false}
                     options={countrys?.map((e) => {
                         return {
                             ...e,

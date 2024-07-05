@@ -17,4 +17,4 @@ export interface InputSelectTimeZoneBaseProps extends Omit<InputSelectTProps<Tim
  */
 export interface InputSelectTimeZoneProps extends InputSelectTimeZoneBaseProps, InputSelectTimeZoneClassProps {
 }
-export declare const InputSelectTimeZone: ({ ...props }: InputSelectTimeZoneProps) => React.JSX.Element;
+export declare const InputSelectTimeZone: ({ useTOption, ...props }: InputSelectTimeZoneProps) => React.JSX.Element;

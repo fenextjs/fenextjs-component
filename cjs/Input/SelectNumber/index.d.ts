@@ -7,4 +7,4 @@ export interface InputSelectNumberProps extends Omit<InputSelectProps, "options"
     max?: number;
     parseText?: (e: number) => string;
 }
-export declare const InputSelectNumber: ({ onChange, defaultValue, min, max, parseText, ...props }: InputSelectNumberProps) => React.JSX.Element;
+export declare const InputSelectNumber: ({ onChange, defaultValue, min, max, parseText, useTOption, ...props }: InputSelectNumberProps) => React.JSX.Element;

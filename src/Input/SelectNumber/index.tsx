@@ -24,7 +24,7 @@ export const InputSelectNumber = ({
     min = 0,
     max = 100,
     parseText = (e) => `${e}`,
-    useTOption=false,
+    useTOption = false,
     ...props
 }: InputSelectNumberProps) => {
     const parseOption = useCallback(

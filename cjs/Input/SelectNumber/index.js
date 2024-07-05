@@ -4,7 +4,7 @@ exports.InputSelectNumber = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const __1 = require("../..");
-const InputSelectNumber = ({ onChange, defaultValue = undefined, min = 0, max = 100, parseText = (e) => `${e}`, ...props }) => {
+const InputSelectNumber = ({ onChange, defaultValue = undefined, min = 0, max = 100, parseText = (e) => `${e}`, useTOption = false, ...props }) => {
     const parseOption = (0, react_1.useCallback)((n) => {
         return {
             id: `${n}`,
@@ -20,7 +20,7 @@ const InputSelectNumber = ({ onChange, defaultValue = undefined, min = 0, max = 
                 .map((e, i) => {
                 const n = e * i + min;
                 return parseOption(n);
-            }), onChangeData: onChange })));
+            }), onChangeData: onChange, useTOption: useTOption })));
 };
 exports.InputSelectNumber = InputSelectNumber;
 //# sourceMappingURL=index.js.map

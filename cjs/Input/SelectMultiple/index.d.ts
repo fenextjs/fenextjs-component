@@ -57,4 +57,4 @@ export interface InputSelectMultipleBaseProps<T = any> extends Omit<InputSelectB
  */
 export interface InputSelectMultipleProps<T = any> extends InputSelectMultipleBaseProps<T>, InputSelectMultipleClassProps {
 }
-export declare const InputSelectMultiple: <T = any>({ classNameSelectMultiple, classNameSelectMultipleList, onChange, onChangeData, value, defaultValue, onChangeValidate, options, iconDelete, typeSelectMultipleStyle, CustomOptionsSelected, validatorData, ...props }: InputSelectMultipleProps<T>) => React.JSX.Element;
+export declare const InputSelectMultiple: <T = any>({ classNameSelectMultiple, classNameSelectMultipleList, onChange, onChangeData, value, defaultValue, onChangeValidate, options, iconDelete, typeSelectMultipleStyle, CustomOptionsSelected, validatorData, useTOption, ...props }: InputSelectMultipleProps<T>) => React.JSX.Element;
