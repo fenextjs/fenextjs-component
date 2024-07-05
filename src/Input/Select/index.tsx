@@ -465,11 +465,12 @@ export const InputSelect = <T = any,>({
                             <InputSelectOption
                                 type={"option"}
                                 id={noResult?.id ?? "selected"}
-                                text={
-                                    _tValidate(selected?.text ??
+                                text={_tValidate(
+                                    selected?.text ??
                                         props?.placeholder ??
-                                        "Select",_t)
-                                }
+                                        "Select",
+                                    _t,
+                                )}
                                 children={selected?.children ?? undefined}
                                 _t={_t}
                             />

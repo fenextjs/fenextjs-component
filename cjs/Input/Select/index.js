@@ -181,9 +181,9 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                 create && typeSelect == "div" ? (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(SelectOption_1.InputSelectOption, { type: "div", id: create?.id ?? "create", text: create?.text ?? "Create", children: create?.children ?? undefined, _t: _t, isBtn: true, onClick: create?.onClick ?? onCreate }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
                 OPTIONSLENGTH != 0 && typeSelect == "select" ? (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(SelectOption_1.InputSelectOption, { type: "option", id: noResult?.id ?? "selected", text: selected?.text ??
+                    react_1.default.createElement(SelectOption_1.InputSelectOption, { type: "option", id: noResult?.id ?? "selected", text: (0, fenextjs_functions_1._tValidate)(selected?.text ??
                             props?.placeholder ??
-                            "Select", children: selected?.children ?? undefined, _t: _t }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
+                            "Select", _t), children: selected?.children ?? undefined, _t: _t }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
                 OPTIONS.map((option, i) => {
                     return (react_1.default.createElement(SelectOption_1.InputSelectOption, { key: i, selected: data.option?.id != undefined &&
                             data.option?.id === option?.id, ...option, onClick: (e) => {
