@@ -20,6 +20,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
     text: "More ...",
 }, showOptionIconImg = true, validatorData, useTOption, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
+    const { _t: _tValue } = (0, fenextjs_hook_1.use_T)({ ...props, useT: useTOption });
     const options = (0, react_1.useMemo)(() => (filterOptions ? filterOptions(optionsProps) : optionsProps), [optionsProps, filterOptions]);
     const checkboxClose = (0, react_1.useRef)(null);
     const selectRef = (0, react_1.useRef)(null);
@@ -218,7 +219,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
             react_1.default.createElement("div", { className: `fenext-select-content-search` },
                 react_1.default.createElement(Text_1.InputText, { ...props, _t: _t, icon: react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("div", { className: "fenext-select-content-icon" },
-                            react_1.default.createElement("div", { className: "fenext-select-content-icon-search" }, iconSearch))), onBlur: onBlur, onChange: onChangeText_, value: dataMemo?.text ?? "", onEnter: onEnter, error: errorInput, autoComplete: false, errorWithIsChange: errorWithIsChange, extraInContentInput: react_1.default.createElement(react_1.default.Fragment, null,
+                            react_1.default.createElement("div", { className: "fenext-select-content-icon-search" }, iconSearch))), onBlur: onBlur, onChange: onChangeText_, value: _tValue(dataMemo?.text ?? ""), onEnter: onEnter, error: errorInput, autoComplete: false, errorWithIsChange: errorWithIsChange, extraInContentInput: react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("button", { className: `fenext-select-clear`, onClick: onClear }, _t(clearContent))), validator: undefined }),
                 react_1.default.createElement("button", { className: `fenext-select-close` }, iconCloseMovil)),
             TAGLIST)) : (react_1.default.createElement(react_1.default.Fragment, null)))),

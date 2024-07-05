@@ -43,6 +43,7 @@ export const CollapseMultiple = ({
     items = [],
     type = "checkbox",
     defaultActive = [],
+
     ...props
 }: CollapseMultipleProps) => {
     return (

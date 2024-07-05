@@ -27,9 +27,9 @@ const ScheduleWeekly = ({ title = "Schedule Weekly", className = "", defaultValu
                     return {
                         children: (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement(Day_1.ScheduleDay, { ...props, defaultValue: defaultValue?.[day], value: data?.[day], onChange: onChangeData(day), _t: _t }))),
-                        header: (react_1.default.createElement(react_1.default.Fragment, null, (onParseHeaderDay
+                        header: (react_1.default.createElement(react_1.default.Fragment, null, _t((onParseHeaderDay
                             ? onParseHeaderDay(day)
-                            : day) ?? day)),
+                            : day) ?? day))),
                     };
                 }) }))));
 };

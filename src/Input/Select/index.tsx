@@ -248,6 +248,7 @@ export const InputSelect = <T = any,>({
     ...props
 }: InputSelectProps<T>) => {
     const { _t } = use_T({ ...props });
+    const { _t: _tValue } = use_T({ ...props, useT: useTOption });
     const options = useMemo(
         () => (filterOptions ? filterOptions(optionsProps) : optionsProps),
         [optionsProps, filterOptions],
@@ -583,7 +584,7 @@ export const InputSelect = <T = any,>({
                                 }
                                 onBlur={onBlur}
                                 onChange={onChangeText_}
-                                value={dataMemo?.text ?? ""}
+                                value={_tValue(dataMemo?.text ?? "")}
                                 onEnter={onEnter}
                                 error={errorInput}
                                 autoComplete={false}

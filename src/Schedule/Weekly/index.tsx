@@ -113,9 +113,11 @@ export const ScheduleWeekly = ({
                             ),
                             header: (
                                 <>
-                                    {(onParseHeaderDay
-                                        ? onParseHeaderDay(day)
-                                        : day) ?? day}
+                                    {_t(
+                                        (onParseHeaderDay
+                                            ? onParseHeaderDay(day)
+                                            : day) ?? day,
+                                    )}
                                 </>
                             ),
                         };
