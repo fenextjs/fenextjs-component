@@ -7,8 +7,9 @@ const react_1 = tslib_1.__importStar(require("react"));
 const env_log_1 = require("fenextjs-functions/cjs/env_log");
 const useNotification_1 = require("fenextjs-hook/cjs/useNotification");
 const Request_1 = require("fenextjs-interface/cjs/Request");
-const fenextjs_functions_1 = require("fenextjs-functions");
-const Form = ({ id = "", data, disabled = true, onChangeDisable, onChangeLoader, children, yup = Yup.object().shape({}), validateAfterYup, className = "", _t = (e) => e, ...props }) => {
+const fenextjs_hook_1 = require("fenextjs-hook");
+const Form = ({ id = "", data, disabled = true, onChangeDisable, onChangeLoader, children, yup = Yup.object().shape({}), validateAfterYup, className = "", ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const { pop } = (0, useNotification_1.useNotification)({});
     const onSendForm = async () => {
         onChangeLoader?.(true);
@@ -82,7 +83,7 @@ const Form = ({ id = "", data, disabled = true, onChangeDisable, onChangeLoader,
         onValidateData(null, null);
     }, [data, yup]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("form", { className: `fenext-form ${className}`, onSubmit: onSubmit }, (0, fenextjs_functions_1._tValidate)(children, _t))));
+        react_1.default.createElement("form", { className: `fenext-form ${className}`, onSubmit: onSubmit }, _t(children))));
 };
 exports.Form = Form;
 //# sourceMappingURL=index.js.map

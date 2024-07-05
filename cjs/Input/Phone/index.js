@@ -22,11 +22,12 @@ const SelectT_1 = require("../SelectT");
 const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, yup = Yup.object().shape({
     code: Yup.string().required(),
     number: Yup.string().required(),
-}), placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, _t = (e) => e, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultValue: defaultValueProps = {
+}), placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultValue: defaultValueProps = {
     code: "+57",
     number: "",
     tel: "",
 }, value: valueProps = undefined, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const { value, defaultValue, onChange } = (0, useJsonString_1.useJsonString)({
         parseJson_to_String: parseJson_to_String ?? fenextjs_functions_1.parsePhone_to_String,
         parseString_to_Json: parseString_to_Json ?? fenextjs_functions_1.parseString_to_Phone,
@@ -80,11 +81,11 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-input-phone ${classNamePhone}` },
             react_1.default.createElement("div", { className: `fenext-input-phone-label fenext-input-label ${classNamePhoneLabel} ` },
-                (0, fenextjs_functions_1._tValidate)(label, _t),
+                _t(label),
                 optional && (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement("small", { className: "fenext-input-optional" }, (0, fenextjs_functions_1._tValidate)(optionalText, _t)))),
+                    react_1.default.createElement("small", { className: "fenext-input-optional" }, _t(optionalText)))),
                 required && (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement("small", { className: "fenext-input-required" }, (0, fenextjs_functions_1._tValidate)(requiredText, _t))))),
+                    react_1.default.createElement("small", { className: "fenext-input-required" }, _t(requiredText))))),
             react_1.default.createElement("div", { className: `fenext-input-phone-code ${classNamePhoneCode}` },
                 react_1.default.createElement(SelectT_1.InputSelectT, { ...classNameSelectCode, classNameList: `fenext-input-phone-select-code ${classNameSelectCode?.classNameList ?? ""}`, key: `${defaultValue?.code}-${value?.code}-${phones.length}`, placeholder: placeholderCode, _t: _t, options: phones, onParse: (e) => {
                         return {

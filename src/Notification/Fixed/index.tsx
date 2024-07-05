@@ -36,9 +36,9 @@ export const Notification = ({
     className = "",
     type = RequestResultTypeProps.NORMAL,
     children,
-   ...props
+    ...props
 }: NotificationProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const { reset } = useNotification({});
     return (
         <>

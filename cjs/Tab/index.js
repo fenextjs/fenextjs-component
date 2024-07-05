@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tab = exports.parseTabCount = void 0;
 const tslib_1 = require("tslib");
 const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_1 = require("fenextjs-hook");
 const react_1 = tslib_1.__importStar(require("react"));
 const parseTabCount = (d, _t) => {
     if (!d.useCount) {
@@ -11,7 +12,8 @@ const parseTabCount = (d, _t) => {
     return {
         ...d,
         head: (react_1.default.createElement(react_1.default.Fragment, null,
-            (0, fenextjs_functions_1._tValidate)(((d.count ?? 0) > 1 ? d.plural : d.singular) ?? d.head, _t) ?? "",
+            _t(((d.count ?? 0) > 1 ? d.plural : d.singular) ?? d.head) ??
+                "",
             " ",
             "(",
             (0, fenextjs_functions_1.parseNumberCount)(d.count ?? 0),
@@ -30,7 +32,8 @@ exports.parseTabCount = parseTabCount;
  * @param items Array of `TabItemProps` objects representing the tabs.
  * @param defaultTab Index of the tab to be shown by default.
  */
-const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", classNameHeadItem = "", classNameHeadItemActive = "", classNameBody = "", classNameBodyItem = "", classNameContentAfterHead = "", classNameContentBeforeHead = "", items = [], defaultTab = 0, activeTab = undefined, afterTabs = undefined, beforeTabs = undefined, onChange, tabScrollActive = false, validataTabOneHiddenHeader = true, _t, useCount = false, }) => {
+const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", classNameHeadItem = "", classNameHeadItemActive = "", classNameBody = "", classNameBodyItem = "", classNameContentAfterHead = "", classNameContentBeforeHead = "", items = [], defaultTab = 0, activeTab = undefined, afterTabs = undefined, beforeTabs = undefined, onChange, tabScrollActive = false, validataTabOneHiddenHeader = true, useCount = false, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const [_tabSelect, setTabSelect] = (0, react_1.useState)(Math.max(0, Math.min(defaultTab, items?.length - 1)));
     const tabSelect = (0, react_1.useMemo)(() => activeTab ?? _tabSelect, [activeTab, _tabSelect]);
     const CHead = (0, react_1.useMemo)(() => {
@@ -44,7 +47,7 @@ const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", cl
                     : ""} fenext-tab-head-item-id-${item?.id}`, onClick: () => {
                     setTabSelect(i);
                     onChange?.(ITEM);
-                } }, (0, fenextjs_functions_1._tValidate)(ITEM?.head, _t) ?? ""));
+                } }, _t(ITEM?.head) ?? ""));
         });
     }, [tabSelect, items, useCount, _t]);
     const CBody = (0, react_1.useMemo)(() => {
@@ -63,7 +66,7 @@ const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", cl
         if (item?.beforeTab) {
             b = item?.beforeTab;
         }
-        return (react_1.default.createElement(react_1.default.Fragment, null, b && (react_1.default.createElement("div", { className: `fenext-tab-content-head-before ${classNameContentBeforeHead}` }, (0, fenextjs_functions_1._tValidate)(b, _t)))));
+        return (react_1.default.createElement(react_1.default.Fragment, null, b && (react_1.default.createElement("div", { className: `fenext-tab-content-head-before ${classNameContentBeforeHead}` }, _t(b)))));
     }, [beforeTabs, classNameContentBeforeHead, tabSelect, items, _t]);
     const AFTERTAB = (0, react_1.useMemo)(() => {
         let a = afterTabs;
@@ -71,7 +74,7 @@ const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", cl
         if (item?.beforeTab) {
             a = item?.afterTab;
         }
-        return (react_1.default.createElement(react_1.default.Fragment, null, a && (react_1.default.createElement("div", { className: `fenext-tab-content-head-after ${classNameContentAfterHead}` }, (0, fenextjs_functions_1._tValidate)(a, _t)))));
+        return (react_1.default.createElement(react_1.default.Fragment, null, a && (react_1.default.createElement("div", { className: `fenext-tab-content-head-after ${classNameContentAfterHead}` }, _t(a)))));
     }, [afterTabs, classNameContentAfterHead, tabSelect, items, _t]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-tab fenext-tab-${tabScrollActive ? "scroll-active" : ""} 

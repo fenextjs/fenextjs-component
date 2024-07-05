@@ -5,7 +5,9 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const NumberCount_1 = require("fenextjs-functions/cjs/parse/NumberCount");
 const fenextjs_functions_1 = require("fenextjs-functions");
-const Counter = ({ className = "", classNameNumber = "", classNameText = "", number = 0, text = undefined, time = 1000, decimal = 2, parseNumber = NumberCount_1.parseNumberCount, _t, }) => {
+const fenextjs_hook_1 = require("fenextjs-hook");
+const Counter = ({ className = "", classNameNumber = "", classNameText = "", number = 0, text = undefined, time = 1000, decimal = 2, parseNumber = NumberCount_1.parseNumberCount, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const [numberShow, setNumberShow] = (0, react_1.useState)(0);
     const onIncrementeNumber = async () => {
         const dis = number - numberShow;
@@ -27,7 +29,7 @@ const Counter = ({ className = "", classNameNumber = "", classNameText = "", num
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-counter ${className} ` },
-            text && (react_1.default.createElement("div", { className: `fenext-counter-text ${classNameText} ` }, (0, fenextjs_functions_1._tValidate)(text, _t))),
+            text && (react_1.default.createElement("div", { className: `fenext-counter-text ${classNameText} ` }, _t(text))),
             react_1.default.createElement("div", { className: `fenext-counter-number ${classNameNumber} ` },
                 react_1.default.createElement("span", { className: `fenext-counter-number-rel ` }, parseNumber(formatNumber(number))),
                 react_1.default.createElement("span", { className: `fenext-counter-number-abs ` }, parseNumber(formatNumber(numberShow)))))));

@@ -50,7 +50,7 @@ export const Menu = ({
     defaultShowSubMenu = false,
     iconArrow = <Arrow />,
     typeCollapse,
-   ...props
+    ...props
 }: MenuProps) => {
     return (
         <>

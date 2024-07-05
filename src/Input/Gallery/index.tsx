@@ -85,10 +85,10 @@ export const InputGallery = ({
     ],
     value = undefined,
     onChange,
-   
+
     ...props
 }: InputGalleryProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const [items_, setItems] = useState<FileProps[]>(defaultValue);
 
     const onChangeItem = (i: number) => (data: FileProps) => {

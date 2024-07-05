@@ -42,4 +42,4 @@ export interface ImgGalleryClassProps {
  */
 export interface ImgGalleryProps extends ImgGalleryBaseProps, ImgGalleryClassProps {
 }
-export declare const ImgGallery: ({ className, imgs, buttonShowMoreImg, buttonHiddenMoreImg, loader, nLoader, _t, }: ImgGalleryProps) => React.JSX.Element;
+export declare const ImgGallery: ({ className, imgs, buttonShowMoreImg, buttonHiddenMoreImg, loader, nLoader, ...props }: ImgGalleryProps) => React.JSX.Element;

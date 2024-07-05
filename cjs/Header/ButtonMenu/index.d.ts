@@ -43,4 +43,4 @@ export interface ButtonMenuClassProps {
  */
 export interface ButtonMenuProps extends ButtonMenuBaseProps, ButtonMenuClassProps {
 }
-export declare const ButtonMenu: ({ className, classNameIcon, classNameIconBarClose, classNameContent, loader, disabled, defaultActive: defaultActiveProps, children, _t, }: ButtonMenuProps) => React.JSX.Element;
+export declare const ButtonMenu: ({ className, classNameIcon, classNameIconBarClose, classNameContent, loader, disabled, defaultActive: defaultActiveProps, children, ...props }: ButtonMenuProps) => React.JSX.Element;

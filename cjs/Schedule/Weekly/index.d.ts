@@ -49,4 +49,4 @@ export interface ScheduleWeeklyClassProps {
  */
 export interface ScheduleWeeklyProps extends ScheduleWeeklyBaseProps, ScheduleWeeklyClassProps {
 }
-export declare const ScheduleWeekly: ({ title, className, defaultValue, value, onChange, CollapseMultipleProps, onParseHeaderDay, _t, ...props }: ScheduleWeeklyProps) => React.JSX.Element;
+export declare const ScheduleWeekly: ({ title, className, defaultValue, value, onChange, CollapseMultipleProps, onParseHeaderDay, ...props }: ScheduleWeeklyProps) => React.JSX.Element;

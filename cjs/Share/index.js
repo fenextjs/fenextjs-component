@@ -12,13 +12,14 @@ const Twitter_1 = require("fenextjs-svg/cjs/Twitter");
 const Email_1 = require("fenextjs-svg/cjs/Email");
 const Copy_1 = require("fenextjs-svg/cjs/Copy");
 const Copy_2 = require("../Copy");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_1 = require("fenextjs-hook");
 const Share = ({ className = "", share = "", ButtonProps = {
     children: "Share",
 }, TitleProps = {
     children: "Share",
     tag: "h2",
-}, shareList = ["whatsapp", "facebook", "twitter", "email", "copy"], showShareCopy = false, _t, }) => {
+}, shareList = ["whatsapp", "facebook", "twitter", "email", "copy"], showShareCopy = false, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const LISTSHARE = {
         whatsapp: {
             urlShare: "https://web.whatsapp.com/share?url=",
@@ -53,7 +54,7 @@ const Share = ({ className = "", share = "", ButtonProps = {
                         return (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement(Copy_2.Copy, { key: i, className: `fenext-share-item fenext-share-item-${key}`, text: share, _t: _t }, item.icon)));
                     }
-                    return (react_1.default.createElement("a", { href: `${item.urlShare}${share}`, key: i, className: `fenext-share-item fenext-share-item-${key}`, target: "_blank" }, (0, fenextjs_functions_1._tValidate)(item.icon, _t)));
+                    return (react_1.default.createElement("a", { href: `${item.urlShare}${share}`, key: i, className: `fenext-share-item fenext-share-item-${key}`, target: "_blank" }, _t(item.icon)));
                 })),
                 showShareCopy && (react_1.default.createElement("div", { className: "fenext-share-copy" },
                     react_1.default.createElement(Copy_2.Copy, { className: `fenext-share-copy`, text: share, _t: _t }, share)))))));

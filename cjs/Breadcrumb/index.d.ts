@@ -48,4 +48,4 @@ export interface BreadcrumbClassProps {
  */
 export interface BreadcrumbProps extends BreadcrumbBaseProps, BreadcrumbClassProps {
 }
-export declare const Breadcrumb: ({ className, classNameItem, classNameLink, links, _t, }: BreadcrumbProps) => React.JSX.Element;
+export declare const Breadcrumb: ({ className, classNameItem, classNameLink, links, ...props }: BreadcrumbProps) => React.JSX.Element;

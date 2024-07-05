@@ -1,4 +1,5 @@
-import { _TFunciton, _TProps } from "fenextjs-interface";
+import { use_T } from "fenextjs-hook";
+import { _TProps } from "fenextjs-interface";
 import React, { ReactNode } from "react";
 /**
  * Properties of a tab item?.
@@ -131,7 +132,7 @@ export interface TabClassProps {
  */
 export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps {
 }
-export declare const parseTabCount: <T>(d: TabItemProps<T>, _t?: _TFunciton) => TabItemProps<T>;
+export declare const parseTabCount: <T>(d: TabItemProps<T>, _t: ReturnType<typeof use_T>["_t"]) => TabItemProps<T>;
 /**
  * Tab component that displays a set of tabs with content.
  * @param className CSS class name for the component.
@@ -143,4 +144,4 @@ export declare const parseTabCount: <T>(d: TabItemProps<T>, _t?: _TFunciton) => 
  * @param items Array of `TabItemProps` objects representing the tabs.
  * @param defaultTab Index of the tab to be shown by default.
  */
-export declare const Tab: <T = string>({ className, classNameContentHead, classNameHead, classNameHeadItem, classNameHeadItemActive, classNameBody, classNameBodyItem, classNameContentAfterHead, classNameContentBeforeHead, items, defaultTab, activeTab, afterTabs, beforeTabs, onChange, tabScrollActive, validataTabOneHiddenHeader, _t, useCount, }: TabProps<T>) => React.JSX.Element;
+export declare const Tab: <T = string>({ className, classNameContentHead, classNameHead, classNameHeadItem, classNameHeadItemActive, classNameBody, classNameBodyItem, classNameContentAfterHead, classNameContentBeforeHead, items, defaultTab, activeTab, afterTabs, beforeTabs, onChange, tabScrollActive, validataTabOneHiddenHeader, useCount, ...props }: TabProps<T>) => React.JSX.Element;

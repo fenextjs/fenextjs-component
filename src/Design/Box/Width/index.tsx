@@ -19,15 +19,15 @@ export interface DesignBoxWidthProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxWidth = ({
-   
     textWidth = "Width",
     textMinWidth = "Min Width",
     textMaxWidth = "Max Width",
 
     data,
-    onChangeData,...props
+    onChangeData,
+    ...props
 }: DesignBoxWidthProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     return (

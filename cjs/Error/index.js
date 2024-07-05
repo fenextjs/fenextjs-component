@@ -2,16 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ErrorComponent = void 0;
 const tslib_1 = require("tslib");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_1 = require("fenextjs-hook");
 const react_1 = tslib_1.__importStar(require("react"));
-const ErrorComponent = ({ error, children, className = "", useDataError = true, useErrorInput = true, _t, }) => {
+const ErrorComponent = ({ error, children, className = "", useDataError = true, useErrorInput = true, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const content = (0, react_1.useMemo)(() => {
         return (react_1.default.createElement(react_1.default.Fragment, null, error ? (react_1.default.createElement(react_1.default.Fragment, null,
-            (0, fenextjs_functions_1._tValidate)(error?.msg ?? "", _t),
+            _t(error?.msg ?? ""),
             useErrorInput && error?.input && (react_1.default.createElement(react_1.default.Fragment, null,
                 " ",
-                react_1.default.createElement("span", { className: "fenext-error-input" }, (0, fenextjs_functions_1._tValidate)(`[${error?.input ?? ""}]`, _t)))))) : ((0, fenextjs_functions_1._tValidate)(children, _t))));
-    }, [error, _t, children, useErrorInput]);
+                react_1.default.createElement("span", { className: "fenext-error-input" }, _t(`[${error?.input ?? ""}]`)))))) : (_t(children))));
+    }, [error, children, useErrorInput]);
     const dataError = (0, react_1.useMemo)(() => {
         const err = useDataError ? error?.data : undefined;
         return err ? JSON.stringify(error) : undefined;

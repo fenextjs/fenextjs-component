@@ -27,4 +27,4 @@ export interface GridGalleryClassProps {
  */
 export interface GridGalleryProps extends GridGalleryBaseProps, GridGalleryClassProps {
 }
-export declare const GridGallery: ({ className, classNameItem, items, _t, }: GridGalleryProps) => React.JSX.Element;
+export declare const GridGallery: ({ className, classNameItem, items, ...props }: GridGalleryProps) => React.JSX.Element;

@@ -7,4 +7,4 @@ export interface DesignBoxAlignProps extends DesignBoxUseDataProps {
     textAlignItems?: string;
     textJustifyContent?: string;
 }
-export declare const DesignBoxAlign: ({ _t, textAlignItems, textJustifyContent, data, onChangeData, }: DesignBoxAlignProps) => React.JSX.Element;
+export declare const DesignBoxAlign: ({ textAlignItems, textJustifyContent, data, onChangeData, ...props }: DesignBoxAlignProps) => React.JSX.Element;

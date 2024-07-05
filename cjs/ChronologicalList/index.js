@@ -3,8 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ChronologicalList = void 0;
 const tslib_1 = require("tslib");
 const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_1 = require("fenextjs-hook");
 const react_1 = tslib_1.__importStar(require("react"));
-const ChronologicalList = ({ className = "", items, market = undefined, parseDateHHMMSS: parseDateHHMMSSProps, parseDateYYYYMMDD: parseDateYYYYMMDDProps, _t, }) => {
+const ChronologicalList = ({ className = "", items, market = undefined, parseDateHHMMSS: parseDateHHMMSSProps, parseDateYYYYMMDD: parseDateYYYYMMDDProps, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const ITEMS = (0, react_1.useMemo)(() => {
         const i_ = {};
         items.forEach((element) => {
@@ -31,7 +33,7 @@ const ChronologicalList = ({ className = "", items, market = undefined, parseDat
                                 react_1.default.createElement("div", { key: `${j}-${k}`, className: `fenext-chronological-list-item ${item?.className}` },
                                     react_1.default.createElement("div", { className: `fenext-chronological-list-item-market` }, item?.market ??
                                         market ?? (react_1.default.createElement("div", { className: `fenext-chronological-list-item-market-default` }))),
-                                    react_1.default.createElement("div", { className: `fenext-chronological-list-item-children` }, (0, fenextjs_functions_1._tValidate)(item?.children, _t)),
+                                    react_1.default.createElement("div", { className: `fenext-chronological-list-item-children` }, _t(item?.children)),
                                     react_1.default.createElement("div", { className: `fenext-chronological-list-item-time` }, key_time))));
                         })));
                     })))));

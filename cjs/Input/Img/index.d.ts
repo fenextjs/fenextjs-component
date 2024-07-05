@@ -65,4 +65,4 @@ export interface InputImgClassProps {
  */
 export interface InputImgProps extends InputImgBaseProps, InputImgClassProps {
 }
-export declare const InputImg: ({ className, classNameContentIcon, classNameText, classNameTitle, classNameUp, classNameProgress, classNameRemove, classNameImg, icon, text, title, defaultValue, parseProgress, onChange, onRemove, _t, ...props }: InputImgProps) => React.JSX.Element;
+export declare const InputImg: ({ className, classNameContentIcon, classNameText, classNameTitle, classNameUp, classNameProgress, classNameRemove, classNameImg, icon, text, title, defaultValue, parseProgress, onChange, onRemove, ...props }: InputImgProps) => React.JSX.Element;

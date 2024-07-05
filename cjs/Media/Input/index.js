@@ -14,7 +14,8 @@ const MediaInput = ({ className = "", titleView = "Upload Image", textView = "Cl
     full: true,
 }, MediaPageProps = {}, ModalProps = {
     type: "full",
-}, _t, }) => {
+}, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const [modalActive, setModalActive] = (0, react_1.useState)(false);
     const { data, onChangeData, onDeleteData, setData } = (0, fenextjs_hook_1.useData)([defaultValue ?? []].flat(2), {
         onChangeDataAfter: (d) => {

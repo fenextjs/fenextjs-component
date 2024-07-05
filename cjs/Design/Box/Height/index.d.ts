@@ -8,4 +8,4 @@ export interface DesignBoxHeightProps extends DesignBoxUseDataProps {
     textMinHeight?: string;
     textMaxHeight?: string;
 }
-export declare const DesignBoxHeight: ({ _t, textHeight, textMinHeight, textMaxHeight, data, onChangeData, }: DesignBoxHeightProps) => React.JSX.Element;
+export declare const DesignBoxHeight: ({ textHeight, textMinHeight, textMaxHeight, data, onChangeData, ...props }: DesignBoxHeightProps) => React.JSX.Element;

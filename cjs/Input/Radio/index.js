@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Check_1 = require("fenextjs-svg/cjs/Check");
 const env_log_1 = require("fenextjs-functions/cjs/env_log");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_1 = require("fenextjs-hook");
 /**
  * Component that renders a radio input.
  * Takes an InputRadioProps object as props.
@@ -14,7 +14,8 @@ const InputRadio = ({ classNameContent = "", classNameLabel = "", classNameLabel
     (0, env_log_1.env_log)(e, {
         name: "input radio onchange",
     });
-}, defaultValue = undefined, useValue = false, value = undefined, disabled = false, icon = react_1.default.createElement(Check_1.Check, null), items = [], _t, }) => {
+}, defaultValue = undefined, useValue = false, value = undefined, disabled = false, icon = react_1.default.createElement(Check_1.Check, null), items = [], ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const [checked, setChecked] = (0, react_1.useState)(defaultValue);
     const onChecked = (i) => () => {
         if (disabled) {
@@ -37,7 +38,7 @@ const InputRadio = ({ classNameContent = "", classNameLabel = "", classNameLabel
                                 ${classNameRadio} ${isCheck
                         ? classNameRadioActive
                         : classNameRadioInactive}` }, isCheck && icon)),
-            react_1.default.createElement("span", { className: `fenext-input-radio-text ${classNameText}` }, (0, fenextjs_functions_1._tValidate)(item.label, _t))));
+            react_1.default.createElement("span", { className: `fenext-input-radio-text ${classNameText}` }, _t(item.label))));
     })));
 };
 exports.InputRadio = InputRadio;

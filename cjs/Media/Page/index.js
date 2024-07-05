@@ -14,7 +14,7 @@ const Base64ToImgData_1 = require("fenextjs-functions/cjs/parse/Img/Base64ToImgD
 const env_log_1 = require("fenextjs-functions/cjs/env_log");
 const Trash_1 = require("fenextjs-svg/cjs/Trash");
 const Save_1 = require("fenextjs-svg/cjs/Save");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_2 = require("fenextjs-hook");
 const MediaPage = ({ className = "", multiple = false, onChange, onUploadImg, onDeleteImg, onAcepte, HeaderPage = (react_1.default.createElement(react_1.default.Fragment, null,
     react_1.default.createElement(Title_1.Title, { tag: "h3" }, "Media"),
     react_1.default.createElement(Text_1.Text, null, "Upload or Select Imagen."))), defaultValue, images = [], loaderImages = false, disabledSelectImg = false, InputUploadProps = {
@@ -25,7 +25,8 @@ const MediaPage = ({ className = "", multiple = false, onChange, onUploadImg, on
     children: "Acepte",
 }, ButtonCancelProps = {
     children: "Cancel",
-}, isPage = true, extraContentImgs = undefined, onRenderImg = undefined, _t, }) => {
+}, isPage = true, extraContentImgs = undefined, onRenderImg = undefined, ...props }) => {
+    const { _t } = (0, fenextjs_hook_2.use_T)({ ...props });
     const [keyInputUpload, setKeyInputUpload] = (0, react_1.useState)(0);
     const { data, onConcatData, onDeleteData, setData } = (0, fenextjs_hook_1.useData)([defaultValue ?? []].flat(2), {
         onChangeDataAfter: (d) => {
@@ -83,7 +84,7 @@ const MediaPage = ({ className = "", multiple = false, onChange, onUploadImg, on
             const active = data.find((e) => e.src == img.src) !== undefined;
             return (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("div", { key: `${i}-${img.src}-${img?.id ?? ""}`, className: `fenext-media-page-img fenext-media-page-img-${active ? "active" : ""}`, onClick: onSelectImg(i) },
-                    react_1.default.createElement("div", { className: `fenext-media-page-img-element` }, (onRenderImg ? (onRenderImg(img)) : (react_1.default.createElement(Img_1.Img, { ...img, _t: _t }))) ?? react_1.default.createElement(Img_1.Img, { ...img, _t: _t })),
+                    react_1.default.createElement("div", { className: `fenext-media-page-img-element` }, (onRenderImg ? (onRenderImg(img)) : (react_1.default.createElement(Img_1.Img, { ...img }))) ?? react_1.default.createElement(Img_1.Img, { ...img })),
                     react_1.default.createElement("div", { className: `fenext-media-page-img-capa` }),
                     react_1.default.createElement("div", { className: `fenext-media-page-img-actions` },
                         react_1.default.createElement("a", { className: `fenext-media-page-img-action fenext-media-page-img-download`, href: img.src, download: img.name ?? "download.png", target: "_blank" },
@@ -97,7 +98,7 @@ const MediaPage = ({ className = "", multiple = false, onChange, onUploadImg, on
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-media-page ${className} ` },
             react_1.default.createElement("div", { className: `fenext-media-page-top` },
-                react_1.default.createElement("div", { className: `fenext-media-page-top-header` }, (0, fenextjs_functions_1._tValidate)(HeaderPage, _t)),
+                react_1.default.createElement("div", { className: `fenext-media-page-top-header` }, _t(HeaderPage)),
                 react_1.default.createElement("div", { className: `fenext-media-page-top-btn-acepte` }, data.length != 0 && !isPage && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(Button_1.Button, { ...ButtonCancelProps, onClick: onClickCancel, _t: _t }),
                     react_1.default.createElement(Button_1.Button, { ...ButtonAcceptProps, onClick: onClickAcepte, _t: _t }))))),
@@ -108,7 +109,7 @@ const MediaPage = ({ className = "", multiple = false, onChange, onUploadImg, on
                     react_1.default.createElement("div", { className: `fenext-media-page-img fenext-media-page-img-loader` },
                         react_1.default.createElement(Loader_1.LoaderSpinner, null)))) : (react_1.default.createElement(react_1.default.Fragment, null)),
                 LISTIMAGES,
-                extraContentImgs && (react_1.default.createElement("div", { className: `fenext-media-page-extra-content-imgs` }, (0, fenextjs_functions_1._tValidate)(extraContentImgs, _t)))))));
+                extraContentImgs && (react_1.default.createElement("div", { className: `fenext-media-page-extra-content-imgs` }, _t(extraContentImgs)))))));
 };
 exports.MediaPage = MediaPage;
 //# sourceMappingURL=index.js.map

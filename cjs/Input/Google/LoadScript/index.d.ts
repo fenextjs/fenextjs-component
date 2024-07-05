@@ -26,4 +26,4 @@ export interface InputGoogleLoadScriptClassProps {
  */
 export interface InputGoogleLoadScriptProps extends InputGoogleLoadScriptBaseProps, InputGoogleLoadScriptClassProps {
 }
-export declare const InputGoogleLoadScript: ({ googleMapsApiKey, children, className, _t, ...props }: InputGoogleLoadScriptProps) => React.JSX.Element;
+export declare const InputGoogleLoadScript: ({ googleMapsApiKey, children, className, _t, useT, ...props }: InputGoogleLoadScriptProps) => React.JSX.Element;

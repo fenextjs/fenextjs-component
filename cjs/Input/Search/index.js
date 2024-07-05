@@ -10,12 +10,13 @@ const Title_1 = require("../../Title");
 const SelectOption_1 = require("../SelectOption");
 const Text_1 = require("../Text");
 const Button_1 = require("../../Button");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_2 = require("fenextjs-hook");
 const InputSearch = ({ classNameSearch = "", classNameSearchBg = "", classNameSearchContentResult = "", classNameSearchResult = "", placeholder = "Search", icon = react_1.default.createElement(Search_1.SVGSearch, null), iconClear = react_1.default.createElement(Close_1.Close, null), loader = false, onSearch, onChange, onClickSearch, onEnterSearch, onClearSearch: onClearSearchProps, useLoseFocusInEnter = true, defaultValue = undefined, value = undefined, useResult = false, useLoadMore = true, ButtonLoadMoreProps = {
     children: "Load More",
 }, onLoadMore: onLoadMore_, useSearchFixed = false, useTabFilter = false, resultList = undefined, resultEmpty = (react_1.default.createElement(react_1.default.Fragment, null,
     react_1.default.createElement(Title_1.Title, { tag: "h4" }, "Not Results"))), resultPreSearch = (react_1.default.createElement(react_1.default.Fragment, null,
-    react_1.default.createElement(Title_1.Title, { tag: "h4" }, "Search"))), listTabFilter = [], defaultTabFilterSelected = [], onChangeTabFilterSelected, selectMultipleTabFilter = false, iconPos = "left", _t, ...props }) => {
+    react_1.default.createElement(Title_1.Title, { tag: "h4" }, "Search"))), listTabFilter = [], defaultTabFilterSelected = [], onChangeTabFilterSelected, selectMultipleTabFilter = false, iconPos = "left", ...props }) => {
+    const { _t } = (0, fenextjs_hook_2.use_T)({ ...props });
     const SEARCH = (0, react_1.useRef)(null);
     const BG = (0, react_1.useRef)(null);
     const { data: listTabFilterSelected, onDeleteData: onDeleteTabFilter, onConcatData: onAddTabFilter, setData: setTabFilter, } = (0, fenextjs_hook_1.useData)(defaultTabFilterSelected, {
@@ -129,13 +130,13 @@ const InputSearch = ({ classNameSearch = "", classNameSearchBg = "", classNameSe
                         return (react_1.default.createElement("div", { key: i, className: `fenext-input-search-result ${classNameSearchResult} `, onClick: () => {
                                 onClickSearch?.(item);
                                 setSearchText(item.text);
-                            } }, (0, fenextjs_functions_1._tValidate)(item?.content ?? item?.text, _t)));
+                            } }, _t(item?.content ?? item?.text)));
                     }),
                     resultSearch.length == 0 ? (react_1.default.createElement(react_1.default.Fragment, null, searchText === undefined ||
                         loader ||
                         loaderSearch ? (react_1.default.createElement(react_1.default.Fragment, null,
-                        react_1.default.createElement("div", { className: `fenext-input-search-content-result-pre-search ` }, (0, fenextjs_functions_1._tValidate)(resultPreSearch, _t)))) : (react_1.default.createElement(react_1.default.Fragment, null,
-                        react_1.default.createElement("div", { className: `fenext-input-search-content-result-empty ` }, (0, fenextjs_functions_1._tValidate)(resultEmpty, _t)))))) : (react_1.default.createElement(react_1.default.Fragment, null, useLoadMore ? (react_1.default.createElement(react_1.default.Fragment, null,
+                        react_1.default.createElement("div", { className: `fenext-input-search-content-result-pre-search ` }, _t(resultPreSearch)))) : (react_1.default.createElement(react_1.default.Fragment, null,
+                        react_1.default.createElement("div", { className: `fenext-input-search-content-result-empty ` }, _t(resultEmpty)))))) : (react_1.default.createElement(react_1.default.Fragment, null, useLoadMore ? (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("div", { className: "fenext-input-search-content-load-more " },
                             react_1.default.createElement(Button_1.Button, { ...ButtonLoadMoreProps, onClick: onLoadMore, _t: _t, className: `fenext-input-search-load-more ${ButtonLoadMoreProps?.className ??
                                     ""}` })))) : (react_1.default.createElement(react_1.default.Fragment, null))))))))));

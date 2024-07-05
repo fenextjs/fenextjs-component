@@ -32,4 +32,4 @@ export interface ErrorComponentClassProps {
  */
 export interface ErrorComponentProps extends ErrorComponentBaseProps, ErrorComponentClassProps {
 }
-export declare const ErrorComponent: ({ error, children, className, useDataError, useErrorInput, _t, }: ErrorComponentProps) => React.JSX.Element;
+export declare const ErrorComponent: ({ error, children, className, useDataError, useErrorInput, ...props }: ErrorComponentProps) => React.JSX.Element;

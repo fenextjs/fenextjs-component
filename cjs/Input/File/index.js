@@ -6,7 +6,7 @@ const react_1 = tslib_1.__importStar(require("react"));
 const env_log_1 = require("fenextjs-functions/cjs/env_log");
 const File_1 = require("fenextjs-functions/cjs/parse/File");
 const useData_1 = require("fenextjs-hook/cjs/useData");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_1 = require("fenextjs-hook");
 const InputFile = ({ defaultValue = {
     fileData: "",
     text: "",
@@ -14,7 +14,8 @@ const InputFile = ({ defaultValue = {
     (0, env_log_1.env_log)(v, {
         name: "onChange File",
     });
-}, accept = [], children, clearAfterUpload = false, MAX_SIZE_FILE = 5000000, _t = (e) => e, parseProgress = (e) => e, onChangeProgress, onChangeError, disabled = false, textMaxSizeFile = "File max size", ...props }) => {
+}, accept = [], children, clearAfterUpload = false, MAX_SIZE_FILE = 5000000, parseProgress = (e) => e, onChangeProgress, onChangeError, disabled = false, textMaxSizeFile = "File max size", ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const onUploadFile = async (data) => {
         if (props?.onUploadFile) {
             const r = await props?.onUploadFile(data);
@@ -64,7 +65,7 @@ const InputFile = ({ defaultValue = {
                 return;
             }
             if (file?.size > MAX_SIZE_FILE) {
-                throw `${(0, fenextjs_functions_1._tValidate)(textMaxSizeFile, _t)} ${MAX_SIZE_FILE / 1000000}mb`;
+                throw `${_t(textMaxSizeFile)} ${MAX_SIZE_FILE / 1000000}mb`;
             }
             const nameFile = e.target.value.split("\\").pop();
             (0, env_log_1.env_log)(nameFile, {

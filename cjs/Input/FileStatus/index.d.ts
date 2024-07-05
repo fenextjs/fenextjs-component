@@ -48,4 +48,4 @@ export interface InputFileStatusProps extends Omit<InputFileBaseProps, "onUpload
     onUploadFile: (data: FileProps) => Promise<FileProps>;
     contentByStatus?: InputFileStatusContentByStatus;
 }
-export declare const InputFileStatus: ({ className, btn, icon, text, title, defaultValue, onChange, iconLoader, _t, onUploadFile, contentByStatus: contentByStatusProps, ...props }: InputFileStatusProps) => React.JSX.Element;
+export declare const InputFileStatus: ({ className, btn, icon, text, title, defaultValue, onChange, iconLoader, onUploadFile, contentByStatus: contentByStatusProps, ...props }: InputFileStatusProps) => React.JSX.Element;

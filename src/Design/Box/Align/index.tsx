@@ -18,7 +18,6 @@ export interface DesignBoxAlignProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxAlign = ({
-   
     textAlignItems = "Align Vertical",
     textJustifyContent = "Align Horizontal",
 
@@ -26,7 +25,7 @@ export const DesignBoxAlign = ({
     onChangeData,
     ...props
 }: DesignBoxAlignProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     return (

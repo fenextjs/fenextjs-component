@@ -90,7 +90,7 @@ export const Form = <D = any, R = any, E = any>({
     className = "",
     ...props
 }: PropsWithChildren<FormProps<D, R, E>>) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const { pop } = useNotification({});
     const onSendForm = async () => {
         onChangeLoader?.(true);

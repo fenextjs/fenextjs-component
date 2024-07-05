@@ -18,15 +18,15 @@ export interface DesignBoxHeightProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxHeight = ({
-   
     textHeight = "Height",
     textMinHeight = "Min Height",
     textMaxHeight = "Max Height",
 
     data,
-    onChangeData,...props
+    onChangeData,
+    ...props
 }: DesignBoxHeightProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     return (

@@ -5,6 +5,7 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const PaginationItemPage_1 = require("../PaginationItemPage");
 const PaginationNPage_1 = require("../PaginationNPage");
+const fenextjs_hook_1 = require("fenextjs-hook");
 const Pagination = ({ className = "", classNameItemPage = {}, classNameNPage = {}, showItemPage = true, showNPage = true, listNpage = [
     {
         id: "10",
@@ -26,7 +27,8 @@ const Pagination = ({ className = "", classNameItemPage = {}, classNameNPage = {
         id: "all",
         text: "All",
     },
-], _t, ...props }) => {
+], ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const minPage = (0, react_1.useMemo)(() => {
         let m = Infinity;
         listNpage?.forEach((e) => {

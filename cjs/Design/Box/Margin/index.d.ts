@@ -10,4 +10,4 @@ export interface DesignBoxMarginProps extends DesignBoxUseDataProps {
     textMarginRight?: string;
     textMarginBottom?: string;
 }
-export declare const DesignBoxMargin: ({ _t, textMargin, textMarginBottom, textMarginLeft, textMarginRight, textMarginTop, data, onChangeData, setDataFunction, }: DesignBoxMarginProps) => React.JSX.Element;
+export declare const DesignBoxMargin: ({ textMargin, textMarginBottom, textMarginLeft, textMarginRight, textMarginTop, data, onChangeData, setDataFunction, ...props }: DesignBoxMarginProps) => React.JSX.Element;

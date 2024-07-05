@@ -80,7 +80,7 @@ export const Button = ({
     size = "normal",
     ...props
 }: ButtonProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const Tag = isBtn ? "button" : "div";
 
     return (

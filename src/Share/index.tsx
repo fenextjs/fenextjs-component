@@ -77,7 +77,7 @@ export const Share = ({
     showShareCopy = false,
     ...props
 }: ShareProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const LISTSHARE: {
         [id in ShareListType]: {
             urlShare: string;

@@ -59,4 +59,4 @@ export interface MediaInputClassProps {
  */
 export interface MediaInputProps extends MediaInputBaseProps, MediaInputClassProps {
 }
-export declare const MediaInput: ({ className, titleView, textView, iconView, defaultValue, multiple, onChange, ButtonUploadProps, MediaPageProps, ModalProps, _t, }: MediaInputProps) => React.JSX.Element;
+export declare const MediaInput: ({ className, titleView, textView, iconView, defaultValue, multiple, onChange, ButtonUploadProps, MediaPageProps, ModalProps, ...props }: MediaInputProps) => React.JSX.Element;

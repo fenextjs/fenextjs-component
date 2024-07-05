@@ -66,7 +66,6 @@ export interface DesignBoxProps
 
 export const DesignBox = ({
     className = "",
-   
 
     textBox = "Box",
 
@@ -146,7 +145,9 @@ export const DesignBox = ({
     collapseName,
     collapseType,
     collapseUseActiveForShowChildren = true,
+    ...props
 }: DesignBoxProps) => {
+    const { _t } = use_T({ ...props });
     const {
         onChangeData,
         data: data_,

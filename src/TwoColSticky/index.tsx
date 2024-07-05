@@ -63,7 +63,7 @@ export const TwoColSticky = ({
     posCol = "left",
     ...props
 }: TwoColStickyProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     return (
         <>
             {/* The wrapper div for the TwoColSticky component */}

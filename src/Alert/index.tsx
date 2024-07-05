@@ -31,7 +31,7 @@ export const Alert = ({
     onClose,
     ...props
 }: AlertComponentProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     return (
         <>
             <div
@@ -39,9 +39,7 @@ export const Alert = ({
                 data-type={type}
                 meta-data={data}
             >
-                <div className={`fenext-alert-content`}>
-                    {_t(message)}
-                </div>
+                <div className={`fenext-alert-content`}>{_t(message)}</div>
                 <div className={`fenext-alert-close`} onClick={onClose}>
                     {iconClose}
                 </div>

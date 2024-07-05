@@ -78,10 +78,10 @@ export const ScheduleWeekly = ({
         defaultActive: 0,
     },
     onParseHeaderDay,
-   
+
     ...props
 }: ScheduleWeeklyProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const { data, onChangeData } = useData<ScheduleWeeklyValueType>(
         defaultValue,
         {

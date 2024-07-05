@@ -23,7 +23,6 @@ export interface DesignBoxPaddingProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxPadding = ({
-   
     textPadding = "Padding",
     textPaddingBottom = "Bottom",
     textPaddingLeft = "Left",
@@ -32,9 +31,10 @@ export const DesignBoxPadding = ({
 
     data,
     onChangeData,
-    setDataFunction,...props
+    setDataFunction,
+    ...props
 }: DesignBoxPaddingProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangePadding =

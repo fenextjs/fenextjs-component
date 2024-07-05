@@ -31,4 +31,4 @@ export interface TextClassProps {
  */
 export interface TextProps extends TextBaseProps, TextClassProps {
 }
-export declare const Text: ({ className, tag, loader, children, nLineLoader, _t, }: TextProps) => React.JSX.Element;
+export declare const Text: ({ className, tag, loader, children, nLineLoader, ...props }: TextProps) => React.JSX.Element;

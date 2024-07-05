@@ -88,7 +88,7 @@ export const MediaInput = ({
     },
     ...props
 }: MediaInputProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const [modalActive, setModalActive] = useState(false);
     const { data, onChangeData, onDeleteData, setData } = useData<
         ImgDataProps[]

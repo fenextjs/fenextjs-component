@@ -31,4 +31,4 @@ export interface ColsClassProps {
  */
 export interface ColsProps extends ColsBaseProps, ColsClassProps {
 }
-export declare const Cols: ({ className, children, nCols, breakInside, _t, }: ColsProps) => React.JSX.Element;
+export declare const Cols: ({ className, children, nCols, breakInside, ...props }: ColsProps) => React.JSX.Element;

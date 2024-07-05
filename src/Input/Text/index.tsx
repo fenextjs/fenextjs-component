@@ -365,7 +365,7 @@ export const InputText = ({
 
     ...p
 }: InputTextProps) => {
-    const {_t} = use_T({...p})
+    const { _t } = use_T({ ...p });
     const [statusInput, setStateInput] = useState("");
 
     const { dataMemo: dataErrorInput, setData: setErrorInput } = useData<

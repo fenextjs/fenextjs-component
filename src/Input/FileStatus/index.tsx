@@ -85,12 +85,12 @@ export const InputFileStatus = ({
     onChange,
 
     iconLoader = <LoaderSpinner />,
-   
+
     onUploadFile,
     contentByStatus: contentByStatusProps = {},
     ...props
 }: InputFileStatusProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const contentByStatus = useMemo(
         () => ({
             APPROVED: {
@@ -139,7 +139,6 @@ export const InputFileStatus = ({
                                 {_t(
                                     contentByStatus?.[data?.status ?? "NONE"]
                                         ?.title ?? title,
-                                   
                                 )}
                             </Title>
                             <div
@@ -154,7 +153,6 @@ export const InputFileStatus = ({
                                         contentByStatus?.[
                                             data?.status ?? "NONE"
                                         ]?.tag,
-                                       
                                     )}
                                 </Text>
                             </div>

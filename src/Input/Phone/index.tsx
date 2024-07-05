@@ -10,11 +10,7 @@ import { ErrorComponent } from "../../Error";
 import { CountryProps, ErrorCode } from "fenextjs-interface";
 import { useValidator, use_T } from "fenextjs-hook";
 import { FenextjsValidator, FenextjsValidatorClass } from "fenextjs-validator";
-import {
-    
-    parsePhone_to_String,
-    parseString_to_Phone,
-} from "fenextjs-functions";
+import { parsePhone_to_String, parseString_to_Phone } from "fenextjs-functions";
 import {
     useJsonString,
     useJsonStringProps,
@@ -136,7 +132,7 @@ export const InputPhone = ({
 
     ...props
 }: InputPhoneProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const { value, defaultValue, onChange } = useJsonString<
         Partial<PhoneProps>
     >({

@@ -40,7 +40,7 @@ export const Container = ({
     children,
     ...props
 }: ContainerProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     return (
         <>
             <div

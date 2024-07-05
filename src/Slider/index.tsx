@@ -104,7 +104,7 @@ export const Slider = ({
     separationItems = 16,
     ...props
 }: SliderProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const SliderRef = useRef<HTMLDivElement>(null);
     const [currentDog, setCurrentDog] = useState(0);
     const [isHover, setIsHover] = useState(false);

@@ -69,7 +69,6 @@ export const Img = ({
     onErrorImg: onErrorImg_,
     onClick,
     loader = false,
-   
 }: ImgProps) => {
     const onErrorImg = (e: SyntheticEvent<HTMLImageElement, Event>) => {
         const img: any = e.target;
@@ -157,7 +156,7 @@ export const Img = ({
                 <img
                     src={`${src}`}
                     data-src={`${src}`}
-                    alt={(name)}
+                    alt={name}
                     className={`fenext-img ${classNameImg}`}
                     onError={onErrorImg}
                 />

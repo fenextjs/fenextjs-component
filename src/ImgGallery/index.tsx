@@ -48,7 +48,7 @@ export interface ImgGalleryClassProps {
  */
 export interface ImgGalleryProps
     extends ImgGalleryBaseProps,
-    ImgGalleryClassProps { }
+        ImgGalleryClassProps {}
 
 export const ImgGallery = ({
     className = "",
@@ -89,17 +89,13 @@ export const ImgGallery = ({
                 {loader ? (
                     <GridGallery
                         items={new Array(nLoader).fill(1).map((e, i) => {
-                            return (
-                                <Img key={i * e} src="" loader={true} />
-                            );
+                            return <Img key={i * e} src="" loader={true} />;
                         })}
-
                         {...props}
                     />
                 ) : (
                     <>
                         <GridGallery
-
                             {...props}
                             items={[...imgs]
                                 .splice(0, showAllImg ? imgs.length + 1 : 5)
@@ -109,7 +105,6 @@ export const ImgGallery = ({
                                             key={i}
                                             {...e}
                                             onClick={onClickImg(i)}
-
                                         />
                                     );
                                 })}
@@ -124,7 +119,6 @@ export const ImgGallery = ({
                                         onClick={() => {
                                             setShowAllImg(true);
                                         }}
-
                                         {...props}
                                     />
                                 </div>
@@ -136,7 +130,6 @@ export const ImgGallery = ({
                             <div className={`fenext-img-gallery-content-btn`}>
                                 <Button
                                     {...buttonHiddenMoreImg}
-
                                     {...props}
                                     onClick={() => {
                                         setShowAllImg(false);

@@ -46,4 +46,4 @@ export interface InputGalleryClassProps {
  */
 export interface InputGalleryProps extends InputGalleryBaseProps, InputGalleryClassProps {
 }
-export declare const InputGallery: ({ className, classNameContentButton, classNameButton, textBtn, defaultValue, value, onChange, _t, ...props }: InputGalleryProps) => React.JSX.Element;
+export declare const InputGallery: ({ className, classNameContentButton, classNameButton, textBtn, defaultValue, value, onChange, ...props }: InputGalleryProps) => React.JSX.Element;

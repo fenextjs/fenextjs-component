@@ -2,10 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tooltip = void 0;
 const tslib_1 = require("tslib");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_1 = require("fenextjs-hook");
 const react_1 = tslib_1.__importStar(require("react"));
 const ReactDOM = tslib_1.__importStar(require("react-dom"));
-const Tooltip = ({ className = "", children, tooltip, positionX = "center", positionY = "top", _t, }) => {
+const Tooltip = ({ className = "", children, tooltip, positionX = "center", positionY = "top", ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const ref = (0, react_1.useRef)(null);
     const uuid = (0, react_1.useMemo)(() => `${Math.ceil(new Date().getTime() * Math.random())}`, []);
     const onDefTooltipPos = (target) => {
@@ -48,7 +49,7 @@ const Tooltip = ({ className = "", children, tooltip, positionX = "center", posi
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { ref: ref, className: `fenext-tooltip ${className} `, onMouseEnter: onShowTooltip, onClick: onShowTooltip },
-            react_1.default.createElement("div", { className: `fenext-tooltip-children` }, (0, fenextjs_functions_1._tValidate)(children, _t)))));
+            react_1.default.createElement("div", { className: `fenext-tooltip-children` }, _t(children)))));
 };
 exports.Tooltip = Tooltip;
 //# sourceMappingURL=index.js.map

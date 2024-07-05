@@ -144,7 +144,7 @@ export const InputFile = ({
     textMaxSizeFile = "File max size",
     ...props
 }: InputFileProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const onUploadFile = async (
         data: InputFileUploadDataProps,
     ): Promise<FileProps> => {
@@ -205,9 +205,7 @@ export const InputFile = ({
             }
 
             if (file?.size > MAX_SIZE_FILE) {
-                throw `${_t(textMaxSizeFile)} ${
-                    MAX_SIZE_FILE / 1000000
-                }mb`;
+                throw `${_t(textMaxSizeFile)} ${MAX_SIZE_FILE / 1000000}mb`;
             }
 
             const nameFile = e.target.value.split("\\").pop();

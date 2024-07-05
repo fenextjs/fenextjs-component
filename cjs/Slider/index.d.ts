@@ -79,4 +79,4 @@ export interface SliderClassProps {
  */
 export interface SliderProps extends SliderBaseProps, SliderClassProps {
 }
-export declare const Slider: ({ className, classNameContent, classNameItem, classNameDogs, classNameDog, classNameArrows, classNameArrowPre, classNameArrowNext, items, nItemsDesktop, nItemsTable, nItemsPhone, timeDelay, timeAnimation, loop, separationItems, _t, }: SliderProps) => React.JSX.Element;
+export declare const Slider: ({ className, classNameContent, classNameItem, classNameDogs, classNameDog, classNameArrows, classNameArrowPre, classNameArrowNext, items, nItemsDesktop, nItemsTable, nItemsPhone, timeDelay, timeAnimation, loop, separationItems, ...props }: SliderProps) => React.JSX.Element;

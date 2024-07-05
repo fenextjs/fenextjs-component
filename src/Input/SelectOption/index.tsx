@@ -113,7 +113,7 @@ export const InputSelectOption = <T = any,>({
     iconDelete = <Trash />,
     ...props
 }: InputSelectOptionProps<T>) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const TAG = type == "option" ? "option" : "div";
 
     return (

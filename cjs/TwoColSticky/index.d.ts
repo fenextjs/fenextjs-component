@@ -48,4 +48,4 @@ export interface TwoColStickyProps extends TwoColStickyBaseProps, TwoColStickyCl
  * @param {TwoColStickyProps} props - The props for the TwoColSticky component.
  * @returns {JSX.Element} - The TwoColSticky JSX Element.
  */
-export declare const TwoColSticky: ({ className, classNameChildren, classNameColSticky, children, colSticky, posCol, _t, }: TwoColStickyProps) => React.JSX.Element;
+export declare const TwoColSticky: ({ className, classNameChildren, classNameColSticky, children, colSticky, posCol, ...props }: TwoColStickyProps) => React.JSX.Element;

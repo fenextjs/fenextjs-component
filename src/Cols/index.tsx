@@ -43,7 +43,7 @@ export const Cols = ({
     breakInside = true,
     ...props
 }: ColsProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     return (
         <>
             <div

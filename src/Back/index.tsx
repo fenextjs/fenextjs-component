@@ -96,7 +96,7 @@ export const Back = ({
     useHistoryMinLenght = false,
     ...props
 }: BackProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const router = useRouter();
     const onBack = () => {
         if (loader || disabled) {

@@ -31,4 +31,4 @@ export interface PaginationBaseProps extends PaginationItemPageBaseProps, Pagina
  */
 export interface PaginationProps extends PaginationClassProps, PaginationBaseProps {
 }
-export declare const Pagination: ({ className, classNameItemPage, classNameNPage, showItemPage, showNPage, listNpage, _t, ...props }: PaginationProps) => React.JSX.Element;
+export declare const Pagination: ({ className, classNameItemPage, classNameNPage, showItemPage, showNPage, listNpage, ...props }: PaginationProps) => React.JSX.Element;

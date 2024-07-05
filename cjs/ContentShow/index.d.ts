@@ -27,4 +27,4 @@ export interface ContentShowClassProps {
  */
 export interface ContentShowProps extends ContentShowBaseProps, ContentShowClassProps {
 }
-export declare const ContentShow: ({ className, children, show, _t, }: ContentShowProps) => React.JSX.Element;
+export declare const ContentShow: ({ className, children, show, ...props }: ContentShowProps) => React.JSX.Element;

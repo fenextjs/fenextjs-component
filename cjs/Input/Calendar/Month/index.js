@@ -5,8 +5,9 @@ const tslib_1 = require("tslib");
 const fenextjs_interface_1 = require("fenextjs-interface");
 const react_1 = tslib_1.__importDefault(require("react"));
 const fenextjs_svg_1 = require("fenextjs-svg");
-const fenextjs_functions_1 = require("fenextjs-functions");
-const InputCalendarMonth = ({ type = "normal", _t, onPreMonth, onNextMonth, date, selectDate, selectDateRange, setSelectDate, setSelectDateRange, dataNSelect, setDataNSelect, }) => {
+const fenextjs_hook_1 = require("fenextjs-hook");
+const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, selectDate, selectDateRange, setSelectDate, setSelectDateRange, dataNSelect, setDataNSelect, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-input-calendar-month` },
             react_1.default.createElement("div", { className: `fenext-input-calendar-top` },
@@ -28,7 +29,7 @@ const InputCalendarMonth = ({ type = "normal", _t, onPreMonth, onNextMonth, date
                 fenextjs_interface_1.DaysEnum.Saturday,
             ].map((day, i) => {
                 return (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement("div", { key: i, "data-day": day, className: `fenext-input-calendar-day` }, (0, fenextjs_functions_1._tValidate)(day, _t)[0])));
+                    react_1.default.createElement("div", { key: i, "data-day": day, className: `fenext-input-calendar-day` }, _t(day)[0])));
             })),
             date?.onGenerateDateByCalendar()?.map((d, i) => {
                 return (react_1.default.createElement(react_1.default.Fragment, null,

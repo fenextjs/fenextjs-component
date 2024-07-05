@@ -23,7 +23,6 @@ export interface DesignBoxMarginProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxMargin = ({
-   
     textMargin = "Margin",
     textMarginBottom = "Bottom",
     textMarginLeft = "Left",
@@ -32,9 +31,10 @@ export const DesignBoxMargin = ({
 
     data,
     onChangeData,
-    setDataFunction,...props
+    setDataFunction,
+    ...props
 }: DesignBoxMarginProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeMargin =

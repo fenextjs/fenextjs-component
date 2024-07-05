@@ -23,7 +23,6 @@ export interface DesignBoxBorderProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxBorder = ({
-   
     textBorder = "Border",
     textBorderBottom = "Bottom",
     textBorderLeft = "Left",
@@ -32,9 +31,10 @@ export const DesignBoxBorder = ({
 
     data,
     setDataFunction,
-    onChangeData,...props
+    onChangeData,
+    ...props
 }: DesignBoxBorderProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeBorder = useCallback(

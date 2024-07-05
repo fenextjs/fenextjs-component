@@ -12,13 +12,13 @@ export interface DesignBoxBorderColorProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxBorderColor = ({
-   
     textBorderColor = "Border Color",
 
     data,
-    onChangeData,...props
+    onChangeData,
+    ...props
 }: DesignBoxBorderColorProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     return (
         <>
             <div

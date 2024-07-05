@@ -38,4 +38,4 @@ export interface ScheduleDayClassProps extends InputDateRangeClassProps {
  */
 export interface ScheduleDayProps extends ScheduleDayBaseProps, ScheduleDayClassProps {
 }
-export declare const ScheduleDay: ({ className, defaultValue, value, onChange, propsStart, propsEnd, ButtonProps, _t, ...props }: ScheduleDayProps) => React.JSX.Element;
+export declare const ScheduleDay: ({ className, defaultValue, value, onChange, propsStart, propsEnd, ButtonProps, ...props }: ScheduleDayProps) => React.JSX.Element;

@@ -27,4 +27,4 @@ export interface TitleClassProps {
  */
 export interface TitleProps extends TitleBaseProps, TitleClassProps {
 }
-export declare const Title: ({ className, tag, loader, children, _t, }: TitleProps) => React.JSX.Element;
+export declare const Title: ({ className, tag, loader, children, ...props }: TitleProps) => React.JSX.Element;

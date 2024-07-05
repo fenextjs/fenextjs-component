@@ -55,7 +55,7 @@ export const Text = ({
     nLineLoader = 3,
     ...props
 }: TextProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const Tag = tag;
     return (
         <>

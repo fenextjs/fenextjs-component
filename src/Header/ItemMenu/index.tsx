@@ -99,7 +99,7 @@ export const ItemMenu = ({
     onClick,
     ...props
 }: ItemMenuProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const router = useRouter();
 
     const urlInter = useMemo(() => {

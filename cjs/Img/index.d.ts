@@ -1,10 +1,9 @@
 import React, { SyntheticEvent } from "react";
 import { ImgDataProps } from "fenextjs-interface/cjs/Img";
-import { _TProps } from "fenextjs-interface";
 /**
  * Properties for the base Img component.
  */
-export interface ImgBaseProps extends ImgDataProps, _TProps {
+export interface ImgBaseProps extends ImgDataProps {
     /**
      * Url of Img if img not load.
      */
@@ -44,4 +43,4 @@ export interface ImgClassProps {
  */
 export interface ImgProps extends ImgBaseProps, ImgClassProps {
 }
-export declare const Img: ({ className, classNameImg, id, name, src, srcMin1920, srcMin1680, srcMin1440, srcMin1024, srcMin992, srcMin768, srcMin575, imgIf404, layers, onErrorImg: onErrorImg_, onClick, loader, _t, }: ImgProps) => React.JSX.Element;
+export declare const Img: ({ className, classNameImg, id, name, src, srcMin1920, srcMin1680, srcMin1440, srcMin1024, srcMin992, srcMin768, srcMin575, imgIf404, layers, onErrorImg: onErrorImg_, onClick, loader, }: ImgProps) => React.JSX.Element;

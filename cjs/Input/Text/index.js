@@ -13,7 +13,7 @@ const fenextjs_validator_1 = require("fenextjs-validator");
 const useValidator_1 = require("fenextjs-hook/cjs/useValidator");
 const Error_1 = require("../../Error");
 const fenextjs_interface_1 = require("fenextjs-interface");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_2 = require("fenextjs-hook");
 const InputText = ({ id = "", datalist = undefined, name = "", yup = Yup.string(), label = "", placeholder = "", defaultValue = undefined, value = undefined, type = "text", className = "", classNameLabel = "", classNameContentInput = "", classNameInput = "", classNameIcon = "", classNameLoaderValidate = "", iconLoader = react_1.default.createElement(Loader_1.Loader, null), onChange = () => { }, onBlur = () => { }, onEnter = () => { }, onChangeValidate = async (e) => e, parseText, onChangeValidateBeforeYup = async (e) => {
     (0, env_log_1.env_log)(e, {
         name: "onChangeValidateBeforeYup",
@@ -22,7 +22,8 @@ const InputText = ({ id = "", datalist = undefined, name = "", yup = Yup.string(
     (0, env_log_1.env_log)(e, {
         name: "onChangeValidateAfterYup",
     });
-}, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", required = false, requiredText = "*", loader = false, autoComplete = false, useLoader = true, isChange: isChangeProps = undefined, onKeyDown, iconPos = "right", inputMode, validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, _t = (e) => e, }) => {
+}, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", required = false, requiredText = "*", loader = false, autoComplete = false, useLoader = true, isChange: isChangeProps = undefined, onKeyDown, iconPos = "right", inputMode, validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, ...p }) => {
+    const { _t } = (0, fenextjs_hook_2.use_T)({ ...p });
     const [statusInput, setStateInput] = (0, react_1.useState)("");
     const { dataMemo: dataErrorInput, setData: setErrorInput } = (0, fenextjs_hook_1.useData)(undefined);
     const errorInput = (0, react_1.useMemo)(() => error ?? dataErrorInput, [error, dataErrorInput]);
@@ -191,13 +192,13 @@ const InputText = ({ id = "", datalist = undefined, name = "", yup = Yup.string(
                     : {}),
             } },
             react_1.default.createElement("div", { className: `fenext-input-label ${classNameLabel}` },
-                (0, fenextjs_functions_1._tValidate)(label, _t),
+                _t(label),
                 optional && (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement("small", { className: "fenext-input-optional" }, (0, fenextjs_functions_1._tValidate)(optionalText, _t)))),
+                    react_1.default.createElement("small", { className: "fenext-input-optional" }, _t(optionalText)))),
                 required && (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement("small", { className: "fenext-input-required" }, (0, fenextjs_functions_1._tValidate)(requiredText, _t))))),
+                    react_1.default.createElement("small", { className: "fenext-input-required" }, _t(requiredText))))),
             react_1.default.createElement("div", { className: `fenext-input-content fenext-input-icon-pos-${iconPos} ${classNameContentInput}` },
-                react_1.default.createElement(TagInput, { id: id, name: name, list: datalist, type: type, ref: ref, className: `fenext-input-content-input ${classNameInput} fenext-input-validator-status-${FenextInputValidatorStatus} ${statusInput}`, placeholder: (0, fenextjs_functions_1._tValidate)(placeholder, _t), value: (parseText ? parseText(valueInput) : valueInput) ??
+                react_1.default.createElement(TagInput, { id: id, name: name, list: datalist, type: type, ref: ref, className: `fenext-input-content-input ${classNameInput} fenext-input-validator-status-${FenextInputValidatorStatus} ${statusInput}`, placeholder: _t(placeholder), value: (parseText ? parseText(valueInput) : valueInput) ??
                         valueInput, onChange: onChangeInput, onBlur: blurInput, disabled: disabled, onKeyUp: (event) => {
                         if (event.keyCode === 13) {
                             onEnter();

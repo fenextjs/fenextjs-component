@@ -5,8 +5,9 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const useDocumentEvent_1 = require("fenextjs-hook/cjs/useDocumentEvent");
 const Button_1 = require("../Button");
-const fenextjs_functions_1 = require("fenextjs-functions");
-const Steps = ({ className = "", classNameContentItems = "", classNameContentSteps = "", classNameListSteps = "", classNameItem = "", classNameItemActive = "", classNameStep = "", classNameStepActive = "", classNameStepCircle = "", classNameStepLabel = "", classNameContentBtn = "", classNameBtn = "", classNameBtnNext = "", classNameBtnPrev = "", defaultStep = 0, step = undefined, useStep = false, items = [], btnNext = "Next", btnPrev = "Previous", disabledBtnNext = false, disabledBtnPrev = false, onNext, onPrev, stepPos = "left", showCurrentStepNStep = false, useArrowKey = true, useDogs = false, onSetStep, _t, }) => {
+const fenextjs_hook_1 = require("fenextjs-hook");
+const Steps = ({ className = "", classNameContentItems = "", classNameContentSteps = "", classNameListSteps = "", classNameItem = "", classNameItemActive = "", classNameStep = "", classNameStepActive = "", classNameStepCircle = "", classNameStepLabel = "", classNameContentBtn = "", classNameBtn = "", classNameBtnNext = "", classNameBtnPrev = "", defaultStep = 0, step = undefined, useStep = false, items = [], btnNext = "Next", btnPrev = "Previous", disabledBtnNext = false, disabledBtnPrev = false, onNext, onPrev, stepPos = "left", showCurrentStepNStep = false, useArrowKey = true, useDogs = false, onSetStep, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const ref = (0, react_1.useRef)(null);
     const [loader, setLoader] = (0, react_1.useState)(false);
     const parseCurrentStep = (0, react_1.useCallback)((n) => {
@@ -87,12 +88,12 @@ const Steps = ({ className = "", classNameContentItems = "", classNameContentSte
                                         fenext-steps-step-status-${item?.status ?? "none"} 
                                     ` },
                         react_1.default.createElement("div", { className: `fenext-steps-step-circle ${classNameStepCircle} ` }, item.icon ?? i + 1),
-                        react_1.default.createElement("div", { className: `fenext-steps-step-label ${classNameStepLabel} ` }, (0, fenextjs_functions_1._tValidate)(item.label, _t))));
+                        react_1.default.createElement("div", { className: `fenext-steps-step-label ${classNameStepLabel} ` }, _t(item.label))));
                 }))),
             react_1.default.createElement("div", { className: `fenext-steps-content-items ${classNameContentItems} ` }, items.map((item, i) => {
                 return (react_1.default.createElement("div", { key: i, className: `fenext-steps-item ${classNameItem} ${currentStep == i
                         ? `fenext-steps-item-active ${classNameItemActive}`
-                        : ""} ` }, (0, fenextjs_functions_1._tValidate)(item.content, _t)));
+                        : ""} ` }, _t(item.content)));
             })),
             react_1.default.createElement("div", { className: `fenext-steps-content-btn ${classNameContentBtn} ` },
                 currentStep != 0 && (react_1.default.createElement(Button_1.Button, { className: `fenext-steps-btn fenext-steps-btn-prev ${classNameBtn} ${classNameBtnPrev}`, disabled: disabledBtnPrev, onClick: onPrev_, loader: loader, _t: _t }, btnPrev)),

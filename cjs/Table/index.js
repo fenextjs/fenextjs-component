@@ -10,8 +10,9 @@ const Loader_1 = require("../Loader");
 const Line_1 = require("../Loader/Line");
 const __1 = require("..");
 const TableActionCheckbox_1 = require("../TableActionCheckbox");
-const fenextjs_functions_1 = require("fenextjs-functions");
-const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameContentPagination = "", classNameLoader = "", name, items, header, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, onShowHidden, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), actionsCheckbox, actionsCheckboxSelectAll = "Select All", _t = (e) => e, }) => {
+const fenextjs_hook_1 = require("fenextjs-hook");
+const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameContentPagination = "", classNameLoader = "", name, items, header, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, onShowHidden, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), actionsCheckbox, actionsCheckboxSelectAll = "Select All", ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const checkboxItems = (0, react_1.useMemo)(() => items.map((item) => ({ ...item, __checkbox: false })), [items]);
     const [checkbox, setCheckbox] = (0, react_1.useState)(checkboxItems);
     const onCheckedAll = (v) => {
@@ -63,7 +64,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
         }
         if (items.length == 0) {
             return (react_1.default.createElement("tr", { className: `fenext-table-content-table-tr ${classNameTr}` },
-                react_1.default.createElement("td", { className: `fenext-table-content-table-td fenext-table-not-result ${classNameTd}`, colSpan: 999 }, (0, fenextjs_functions_1._tValidate)(notResult, _t))));
+                react_1.default.createElement("td", { className: `fenext-table-content-table-td fenext-table-not-result ${classNameTd}`, colSpan: 999 }, _t(notResult))));
         }
         return items.map((item, i) => {
             return (react_1.default.createElement(react_1.default.Fragment, null,
@@ -116,7 +117,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                             useCheckbox && (react_1.default.createElement("th", { className: `fenext-table-content-table-th ${classNameTh}` },
                                 react_1.default.createElement(Checkbox_1.InputCheckbox, { onChange: onCheckedAll, value: checkbox.every((e) => e?.__checkbox ?? false), useValue: true, _t: _t }))),
                             headerNotTr.map((h, i) => (react_1.default.createElement("th", { key: i, className: `fenext-table-content-table-th ${classNameTh} ${h?.className ?? ""}`, "data-col-id": h?.id, "data-col-text": h?.th },
-                                react_1.default.createElement(DropDown_1.DropDown, { header: react_1.default.createElement(react_1.default.Fragment, null, (0, fenextjs_functions_1._tValidate)(h.th, _t)) },
+                                react_1.default.createElement(DropDown_1.DropDown, { header: react_1.default.createElement(react_1.default.Fragment, null, _t(h.th)) },
                                     h?.columnOptions?.orderBy ? (react_1.default.createElement(react_1.default.Fragment, null,
                                         react_1.default.createElement("div", { onClick: () => {
                                                 onOrderBy?.({

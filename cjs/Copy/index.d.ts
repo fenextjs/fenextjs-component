@@ -36,4 +36,4 @@ export interface CopyClassProps {
  */
 export interface CopyProps extends CopyBaseProps, CopyClassProps {
 }
-export declare const Copy: ({ className, children, text, onClickForCopy, notification, _t, }: CopyProps) => React.JSX.Element;
+export declare const Copy: ({ className, children, text, onClickForCopy, notification, ...props }: CopyProps) => React.JSX.Element;

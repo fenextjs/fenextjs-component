@@ -18,4 +18,4 @@ export interface AlertComponentProps extends _TProps, AlertInterface {
      */
     onClose?: () => void;
 }
-export declare const Alert: ({ className, message, iconClose, type, data, _t, onClose, }: AlertComponentProps) => React.JSX.Element;
+export declare const Alert: ({ className, message, iconClose, type, data, onClose, ...props }: AlertComponentProps) => React.JSX.Element;

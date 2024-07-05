@@ -141,7 +141,7 @@ export const MediaPage = ({
     onRenderImg = undefined,
     ...props
 }: MediaPageProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const [keyInputUpload, setKeyInputUpload] = useState(0);
     const { data, onConcatData, onDeleteData, setData } = useData<
         ImgDataProps[]
@@ -215,7 +215,7 @@ export const MediaPage = ({
                                     {(onRenderImg ? (
                                         onRenderImg(img)
                                     ) : (
-                                        <Img {...img}  />
+                                        <Img {...img} />
                                     )) ?? <Img {...img} />}
                                 </div>
                                 <div

@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import { parseNumberCount } from "fenextjs-functions/cjs/parse/NumberCount";
 import { _TProps } from "fenextjs-interface";
-import {  sleep } from "fenextjs-functions";
+import { sleep } from "fenextjs-functions";
 import { use_T } from "fenextjs-hook";
 
 /**
@@ -69,7 +69,7 @@ export const Counter = ({
     parseNumber = parseNumberCount,
     ...props
 }: CounterProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const [numberShow, setNumberShow] = useState(0);
     const onIncrementeNumber = async () => {
         const dis = number - numberShow;

@@ -39,7 +39,7 @@ export const GridGallery = ({
     items,
     ...props
 }: GridGalleryProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     return (
         <>
             <div className={`fenext-grid-gallery ${className} `}>

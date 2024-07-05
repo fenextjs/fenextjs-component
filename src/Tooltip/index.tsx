@@ -51,7 +51,7 @@ export const Tooltip = ({
     positionY = "top",
     ...props
 }: TooltipProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const ref = useRef<HTMLDivElement>(null);
     const uuid = useMemo(
         () => `${Math.ceil(new Date().getTime() * Math.random())}`,
@@ -134,9 +134,7 @@ export const Tooltip = ({
                 onMouseEnter={onShowTooltip}
                 onClick={onShowTooltip}
             >
-                <div className={`fenext-tooltip-children`}>
-                    {_t(children)}
-                </div>
+                <div className={`fenext-tooltip-children`}>{_t(children)}</div>
             </div>
         </>
     );

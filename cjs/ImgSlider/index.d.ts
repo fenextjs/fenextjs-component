@@ -32,4 +32,4 @@ export interface ImgSliderClassProps {
  */
 export interface ImgSliderProps extends ImgSliderBaseProps, ImgSliderClassProps {
 }
-export declare const ImgSlider: ({ className, imgs, setStep: setStepProps, step: stepProps, _t, }: ImgSliderProps) => React.JSX.Element;
+export declare const ImgSlider: ({ className, imgs, setStep: setStepProps, step: stepProps, ...props }: ImgSliderProps) => React.JSX.Element;

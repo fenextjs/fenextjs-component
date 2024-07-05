@@ -232,7 +232,7 @@ export const InputSelect = <T = any,>({
     searchById = false,
     useSwichtypeSelectStyle = false,
     changeByFirstOptionInOnBlur = false,
-   
+
     maxLengthShowOptions = 20,
     itemMaxLengthShowOptions = {
         id: "fenext-item-max-length-show-options",
@@ -242,7 +242,7 @@ export const InputSelect = <T = any,>({
     validatorData,
     ...props
 }: InputSelectProps<T>) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const options = useMemo(
         () => (filterOptions ? filterOptions(optionsProps) : optionsProps),
         [optionsProps, filterOptions],
@@ -470,7 +470,6 @@ export const InputSelect = <T = any,>({
                                     selected?.text ??
                                         props?.placeholder ??
                                         "Select",
-                                   
                                 )}
                                 children={selected?.children ?? undefined}
                                 _t={_t}
@@ -549,7 +548,7 @@ export const InputSelect = <T = any,>({
         props?.placeholder,
         OPTIONS,
         data,
-       
+
         props.loader,
         loaderOption,
         selectRef,

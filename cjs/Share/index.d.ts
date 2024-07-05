@@ -42,4 +42,4 @@ export interface ShareClassProps {
  */
 export interface ShareProps extends ShareBaseProps, ShareClassProps {
 }
-export declare const Share: ({ className, share, ButtonProps, TitleProps, shareList, showShareCopy, _t, }: ShareProps) => React.JSX.Element;
+export declare const Share: ({ className, share, ButtonProps, TitleProps, shareList, showShareCopy, ...props }: ShareProps) => React.JSX.Element;

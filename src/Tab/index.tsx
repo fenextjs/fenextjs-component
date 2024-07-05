@@ -1,6 +1,6 @@
-import {  parseNumberCount } from "fenextjs-functions";
+import { parseNumberCount } from "fenextjs-functions";
 import { use_T } from "fenextjs-hook";
-import { _TFunciton, _TProps } from "fenextjs-interface";
+import { _TProps } from "fenextjs-interface";
 import React, { ReactNode, useMemo, useState } from "react";
 
 /**
@@ -158,7 +158,7 @@ export interface TabProps<T = string> extends TabBaseProps<T>, TabClassProps {}
 
 export const parseTabCount = <T,>(
     d: TabItemProps<T>,
-    _t: ReturnType<typeof use_T>['_t'],
+    _t: ReturnType<typeof use_T>["_t"],
 ): TabItemProps<T> => {
     if (!d.useCount) {
         return d;
@@ -167,10 +167,8 @@ export const parseTabCount = <T,>(
         ...d,
         head: (
             <>
-                {_t(
-                    ((d.count ?? 0) > 1 ? d.plural : d.singular) ?? d.head,
-                   
-                ) ?? ""}{" "}
+                {_t(((d.count ?? 0) > 1 ? d.plural : d.singular) ?? d.head) ??
+                    ""}{" "}
                 ({parseNumberCount(d.count ?? 0)})
             </>
         ),
@@ -207,11 +205,11 @@ export const Tab = <T = string,>({
     onChange,
     tabScrollActive = false,
     validataTabOneHiddenHeader = true,
-   
+
     useCount = false,
     ...props
 }: TabProps<T>) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const [_tabSelect, setTabSelect] = useState(
         Math.max(0, Math.min(defaultTab, items?.length - 1)),
     );
@@ -224,11 +222,10 @@ export const Tab = <T = string,>({
         return items?.map((item, i) => {
             const ITEM = parseTabCount<T>(
                 {
-                    
                     ...item,
                     useCount: item?.useCount ?? useCount ?? false,
                 },
-                _t
+                _t,
             );
             return (
                 <div

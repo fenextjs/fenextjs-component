@@ -177,7 +177,7 @@ export const InputRadio = <T = any,>({
     items = [],
     ...props
 }: InputRadioProps<T>) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const [checked, setChecked] = useState(defaultValue);
 
     const onChecked = (i: InputRadioItemProps<T>) => () => {

@@ -4,8 +4,9 @@ exports.Slider = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Pagination_1 = require("fenextjs-svg/cjs/Pagination");
-const fenextjs_functions_1 = require("fenextjs-functions");
-const Slider = ({ className = "", classNameContent = "", classNameItem = "", classNameDogs = "", classNameDog = "", classNameArrows = "", classNameArrowPre = "", classNameArrowNext = "", items = [], nItemsDesktop = 3, nItemsTable = 2, nItemsPhone = 1, timeDelay = 4000, timeAnimation = 500, loop = true, separationItems = 16, _t, }) => {
+const fenextjs_hook_1 = require("fenextjs-hook");
+const Slider = ({ className = "", classNameContent = "", classNameItem = "", classNameDogs = "", classNameDog = "", classNameArrows = "", classNameArrowPre = "", classNameArrowNext = "", items = [], nItemsDesktop = 3, nItemsTable = 2, nItemsPhone = 1, timeDelay = 4000, timeAnimation = 500, loop = true, separationItems = 16, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const SliderRef = (0, react_1.useRef)(null);
     const [currentDog, setCurrentDog] = (0, react_1.useState)(0);
     const [isHover, setIsHover] = (0, react_1.useState)(false);
@@ -93,7 +94,7 @@ const Slider = ({ className = "", classNameContent = "", classNameItem = "", cla
             react_1.default.createElement("div", { ref: SliderRef, className: `fenext-slider-content fenext-slider-content-${isHover ? "hover" : ""} ${classNameContent}` }, items?.map?.((item, i) => {
                 return (react_1.default.createElement("div", { key: i, className: `fenext-slider-item ${classNameItem}`, style: {
                         ["--i"]: i + 1,
-                    } }, (0, fenextjs_functions_1._tValidate)(item, _t)));
+                    } }, _t(item)));
             })),
             react_1.default.createElement("div", { className: `fenext-slider-dogs ${classNameDogs}` }, new Array(Math.max(1, Math.ceil(items.length - getNItems() + 1)))
                 .fill(1)

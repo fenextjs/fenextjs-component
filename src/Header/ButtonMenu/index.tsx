@@ -62,7 +62,7 @@ export const ButtonMenu = ({
     children,
     ...props
 }: ButtonMenuProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const [defaultActive, setDefaultActive] = useState(true);
     const onLoad = () => {
         if (typeof window == "undefined") {

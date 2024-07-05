@@ -6,7 +6,7 @@ const GridGallery_1 = require("../../GridGallery");
 const Button_1 = require("../../Button");
 const Img_1 = require("../Img");
 const react_1 = tslib_1.__importStar(require("react"));
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_1 = require("fenextjs-hook");
 const InputGallery = ({ className = "", classNameContentButton = "", classNameButton = {}, textBtn = "Add More Images", defaultValue = [
     {
         fileData: "",
@@ -28,7 +28,8 @@ const InputGallery = ({ className = "", classNameContentButton = "", classNameBu
         fileData: "",
         text: "",
     },
-], value = undefined, onChange, _t, ...props }) => {
+], value = undefined, onChange, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const [items_, setItems] = (0, react_1.useState)(defaultValue);
     const onChangeItem = (i) => (data) => {
         setItems((pre) => {
@@ -70,7 +71,7 @@ const InputGallery = ({ className = "", classNameContentButton = "", classNameBu
                     ...items,
                     react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("div", { className: `fenext-input-gallery-content-btn ${classNameContentButton}` },
-                            react_1.default.createElement(Button_1.Button, { ...classNameButton, className: `fenext-input-gallery-btn-add ${classNameButton.className}`, onClick: onAddItem }, (0, fenextjs_functions_1._tValidate)(textBtn, _t)))),
+                            react_1.default.createElement(Button_1.Button, { ...classNameButton, className: `fenext-input-gallery-btn-add ${classNameButton.className}`, onClick: onAddItem }, _t(textBtn)))),
                 ], _t: _t }))));
 };
 exports.InputGallery = InputGallery;

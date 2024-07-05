@@ -36,10 +36,10 @@ export const Link = ({
     className = "",
 
     children = "Link",
-   
+
     ...props
 }: LinkProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     return (
         <>
             <LinkNext {...props} className={`fenext-link ${className}`}>

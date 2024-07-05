@@ -1,8 +1,4 @@
-import {
-    
-    getTimeToText,
-    parseDateYYYYMMDD,
-} from "fenextjs-functions";
+import { getTimeToText, parseDateYYYYMMDD } from "fenextjs-functions";
 import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 import React, { ReactNode, useMemo } from "react";
@@ -64,7 +60,7 @@ export const ChronologicalList = ({
     parseDateYYYYMMDD: parseDateYYYYMMDDProps,
     ...props
 }: ChronologicalListProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const ITEMS = useMemo(() => {
         const i_: {
             [id: string]: {
@@ -138,7 +134,6 @@ export const ChronologicalList = ({
                                                                         >
                                                                             {_t(
                                                                                 item?.children,
-                                                                               
                                                                             )}
                                                                         </div>
                                                                         <div

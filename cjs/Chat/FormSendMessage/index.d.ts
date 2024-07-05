@@ -11,4 +11,4 @@ export interface ChatFormSendMessageProps extends _TProps {
     btnChildren?: ReactNode;
     placeholderMessage?: string;
 }
-export declare const ChatFormSendMessage: ({ useSubmitInEnter, btnChildren, placeholderMessage, _t, ...props }: ChatFormSendMessageProps) => React.JSX.Element;
+export declare const ChatFormSendMessage: ({ useSubmitInEnter, btnChildren, placeholderMessage, ...props }: ChatFormSendMessageProps) => React.JSX.Element;

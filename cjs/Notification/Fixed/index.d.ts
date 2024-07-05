@@ -24,4 +24,4 @@ export interface NotificationClassProps {
  */
 export interface NotificationProps extends NotificationBaseProps, NotificationClassProps {
 }
-export declare const Notification: ({ className, type, children, _t, }: NotificationProps) => React.JSX.Element;
+export declare const Notification: ({ className, type, children, ...props }: NotificationProps) => React.JSX.Element;

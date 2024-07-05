@@ -39,7 +39,7 @@ export const ContentShow = ({
     show = true,
     ...props
 }: ContentShowProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     return (
         <>
             <div

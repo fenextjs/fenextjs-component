@@ -9,14 +9,15 @@ const Text_1 = require("../../Text");
 const Img_1 = require("fenextjs-svg/cjs/Img");
 const useData_1 = require("fenextjs-hook/cjs/useData");
 const Close_1 = require("fenextjs-svg/cjs/Close");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_1 = require("fenextjs-hook");
 const InputImg = ({ className = "", classNameContentIcon = "", classNameText = {}, classNameTitle = {
     tag: "h2",
 }, classNameUp = "", classNameProgress = "", classNameRemove = "", classNameImg = "", icon = (react_1.default.createElement(react_1.default.Fragment, null,
     react_1.default.createElement(Img_1.SvgImg, null))), text = "Drag Image", title = "Add Image", defaultValue = {
     fileData: "",
     text: "",
-}, parseProgress = (e) => `Imging . . . ${e.toFixed(0)}%`, onChange, onRemove, _t, ...props }) => {
+}, parseProgress = (e) => `Imging . . . ${e.toFixed(0)}%`, onChange, onRemove, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const { data, setData } = (0, useData_1.useData)(defaultValue, {
         onChangeDataAfter: onChange,
     });
@@ -49,8 +50,8 @@ const InputImg = ({ className = "", classNameContentIcon = "", classNameText = {
                 ], ...props, _t: _t },
                 react_1.default.createElement("div", { className: `fenext-input-img-up ${classNameUp}` },
                     react_1.default.createElement("div", { className: `fenext-input-img-content-icon ${classNameContentIcon}` }, icon),
-                    progress > 0 && progress < 100 ? (react_1.default.createElement(Title_1.Title, { ...classNameTitle, className: `fenext-input-img-progress ${classNameProgress}` }, parseProgress(progress))) : (react_1.default.createElement(Title_1.Title, { ...classNameTitle, className: `fenext-input-img-title ${classNameTitle.className}` }, (0, fenextjs_functions_1._tValidate)(title, _t))),
-                    react_1.default.createElement(Text_1.Text, { ...classNameText, className: `fenext-input-img-text ${classNameText.className}` }, (0, fenextjs_functions_1._tValidate)(text, _t)))))))));
+                    progress > 0 && progress < 100 ? (react_1.default.createElement(Title_1.Title, { ...classNameTitle, className: `fenext-input-img-progress ${classNameProgress}` }, parseProgress(progress))) : (react_1.default.createElement(Title_1.Title, { ...classNameTitle, className: `fenext-input-img-title ${classNameTitle.className}` }, _t(title))),
+                    react_1.default.createElement(Text_1.Text, { ...classNameText, className: `fenext-input-img-text ${classNameText.className}` }, _t(text)))))))));
 };
 exports.InputImg = InputImg;
 //# sourceMappingURL=index.js.map

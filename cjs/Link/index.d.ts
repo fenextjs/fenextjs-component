@@ -21,4 +21,4 @@ export interface LinkClassProps {
  */
 export interface LinkProps extends LinkBaseProps, LinkClassProps {
 }
-export declare const Link: ({ className, children, _t, ...props }: LinkProps) => React.JSX.Element;
+export declare const Link: ({ className, children, ...props }: LinkProps) => React.JSX.Element;

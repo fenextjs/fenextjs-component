@@ -24,10 +24,10 @@ export const ChatFormSendMessage = ({
     useSubmitInEnter = true,
     btnChildren = "Send",
     placeholderMessage = "Message",
-   
+
     ...props
 }: ChatFormSendMessageProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const [__key, set__key] = useState(0);
     const [loader, setLoader] = useState(false);
 

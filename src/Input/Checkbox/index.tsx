@@ -184,7 +184,7 @@ export const InputCheckbox = <VT = any, VF = any>({
     optionalText = "(optional)",
     required = false,
     requiredText = "*",
-   
+
     onActive,
     onActiveValue,
     onInactive,
@@ -194,7 +194,7 @@ export const InputCheckbox = <VT = any, VF = any>({
 
     ...props
 }: InputCheckboxProps<VT, VF>) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const [checked_, setChecked] = useState(defaultValue === true);
     const checked = useMemo(
         () => (useValue ? value : checked_),

@@ -53,4 +53,4 @@ export interface InputTextSelectProps extends InputTextSelectBaseProps, InputTex
  * Component that renders a checkbox input.
  * Takes an InputTextSelectProps object as props.
  */
-export declare const InputTextSelect: ({ label, placeholderSelect, placeholderText, defaultValue, value: valueProps, onChange, validator, posSelect, _t, errorWithIsChange, error, ...props }: InputTextSelectProps) => React.JSX.Element;
+export declare const InputTextSelect: ({ label, placeholderSelect, placeholderText, defaultValue, value: valueProps, onChange, validator, posSelect, errorWithIsChange, error, ...props }: InputTextSelectProps) => React.JSX.Element;

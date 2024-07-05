@@ -11,7 +11,7 @@ const Upload_1 = require("fenextjs-svg/cjs/Upload");
 const Check_1 = require("fenextjs-svg/cjs/Check");
 const useData_1 = require("fenextjs-hook/cjs/useData");
 const Close_1 = require("fenextjs-svg/cjs/Close");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_1 = require("fenextjs-hook");
 const Loader_1 = require("../../Loader");
 const Error_1 = require("../../Error");
 const Link_1 = require("../../Link");
@@ -19,7 +19,8 @@ const InputFileStatus = ({ className = "", btn = "Choose File", icon = (react_1.
     react_1.default.createElement(Upload_1.Upload2, null))), text = "Drag and drop your file or template here.", title = "Drag and drop here", defaultValue = {
     fileData: "",
     text: "",
-}, onChange, iconLoader = react_1.default.createElement(Loader_1.LoaderSpinner, null), _t, onUploadFile, contentByStatus: contentByStatusProps = {}, ...props }) => {
+}, onChange, iconLoader = react_1.default.createElement(Loader_1.LoaderSpinner, null), onUploadFile, contentByStatus: contentByStatusProps = {}, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const contentByStatus = (0, react_1.useMemo)(() => ({
         APPROVED: {
             title: "Approved!",
@@ -48,12 +49,12 @@ const InputFileStatus = ({ className = "", btn = "Choose File", icon = (react_1.
             data?.fileData &&
             data?.fileData != "" ? (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement("div", { className: `fenext-input-file-status-up ` },
-                react_1.default.createElement(Title_1.Title, { className: `fenext-input-file-status-title ` }, (0, fenextjs_functions_1._tValidate)(contentByStatus?.[data?.status ?? "NONE"]
-                    ?.title ?? title, _t)),
+                react_1.default.createElement(Title_1.Title, { className: `fenext-input-file-status-title ` }, _t(contentByStatus?.[data?.status ?? "NONE"]
+                    ?.title ?? title)),
                 react_1.default.createElement("div", { className: `fenext-input-file-status-content-icon` }, contentByStatus?.[data?.status ?? "NONE"]
                     ?.icon ?? icon),
                 react_1.default.createElement("div", { className: `fenext-input-file-status-tag` },
-                    react_1.default.createElement(Text_1.Text, null, (0, fenextjs_functions_1._tValidate)(contentByStatus?.[data?.status ?? "NONE"]?.tag, _t))),
+                    react_1.default.createElement(Text_1.Text, null, _t(contentByStatus?.[data?.status ?? "NONE"]?.tag))),
                 react_1.default.createElement(Link_1.Link, { href: data?.url ?? data?.base64 ?? data?.fileData, target: "_blank", className: `fenext-input-file-status-link ` }, data.text),
                 !props.disabled && (react_1.default.createElement("div", { className: `fenext-input-file-status-remove `, onClick: () => {
                         setData({
@@ -71,10 +72,10 @@ const InputFileStatus = ({ className = "", btn = "Choose File", icon = (react_1.
                     });
                 }, parseProgress: () => "", ...props, _t: _t },
                 react_1.default.createElement("div", { className: `fenext-input-file-status-up ` },
-                    react_1.default.createElement(Title_1.Title, { className: `fenext-input-file-status-title ` }, (0, fenextjs_functions_1._tValidate)(title, _t)),
+                    react_1.default.createElement(Title_1.Title, { className: `fenext-input-file-status-title ` }, _t(title)),
                     react_1.default.createElement("div", { className: `fenext-input-file-status-content-icon` }, loaderSubmit ? iconLoader : icon),
-                    react_1.default.createElement(Button_1.Button, { className: `fenext-input-file-status-btn ` }, (0, fenextjs_functions_1._tValidate)(btn, _t)),
-                    react_1.default.createElement(Text_1.Text, { className: `fenext-input-file-status-text ` }, (0, fenextjs_functions_1._tValidate)(text, _t)),
+                    react_1.default.createElement(Button_1.Button, { className: `fenext-input-file-status-btn ` }, _t(btn)),
+                    react_1.default.createElement(Text_1.Text, { className: `fenext-input-file-status-text ` }, _t(text)),
                     dataError && (react_1.default.createElement(Error_1.ErrorComponent, { error: dataError })))))))));
 };
 exports.InputFileStatus = InputFileStatus;

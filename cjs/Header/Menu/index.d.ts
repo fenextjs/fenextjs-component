@@ -38,4 +38,4 @@ export interface MenuClassProps {
  */
 export interface MenuProps extends MenuBaseProps, MenuClassProps {
 }
-export declare const Menu: ({ className, items, defaultShowSubMenu, iconArrow, typeCollapse, _t, }: MenuProps) => React.JSX.Element;
+export declare const Menu: ({ className, items, defaultShowSubMenu, iconArrow, typeCollapse, ...props }: MenuProps) => React.JSX.Element;

@@ -217,11 +217,10 @@ export const InputSearch = ({
     onChangeTabFilterSelected,
     selectMultipleTabFilter = false,
     iconPos = "left",
-   
 
     ...props
 }: InputSearchProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const SEARCH = useRef<HTMLInputElement>(null);
     const BG = useRef<HTMLInputElement>(null);
     const {
@@ -432,10 +431,7 @@ export const InputSearch = ({
                                             setSearchText(item.text);
                                         }}
                                     >
-                                        {_t(
-                                            item?.content ?? item?.text,
-                                           
-                                        )}
+                                        {_t(item?.content ?? item?.text)}
                                     </div>
                                 );
                             })}
@@ -448,10 +444,7 @@ export const InputSearch = ({
                                             <div
                                                 className={`fenext-input-search-content-result-pre-search `}
                                             >
-                                                {_t(
-                                                    resultPreSearch,
-                                                   
-                                                )}
+                                                {_t(resultPreSearch)}
                                             </div>
                                         </>
                                     ) : (

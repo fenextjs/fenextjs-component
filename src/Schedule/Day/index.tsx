@@ -73,10 +73,10 @@ export const ScheduleDay = ({
     ButtonProps = {
         children: "Add Time Range",
     },
-   
+
     ...props
 }: ScheduleDayProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const { data, onChangeData, setData, onDeleteData } =
         useData<ScheduleDayValueType>(defaultValue, {
             onChangeDataAfter: onChange,

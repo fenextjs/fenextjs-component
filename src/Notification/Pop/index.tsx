@@ -40,7 +40,7 @@ export const NotificationPop = ({
     className = "",
     typePop = "down",
     time = 2000,
-   ...props
+    ...props
 }: NotificationPopProps) => {
     const { notification, reset } = useNotification({ time });
     useEffect(() => {
@@ -61,7 +61,7 @@ export const NotificationPop = ({
                     `}
                 >
                     <Notification
-                    {...props}
+                        {...props}
                         className={className}
                         type={notification?.type}
                         children={notification?.message}

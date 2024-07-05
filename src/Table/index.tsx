@@ -231,7 +231,7 @@ export const Table = <T,>({
     actionsCheckboxSelectAll = "Select All",
     ...props
 }: TableProps<T>) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const checkboxItems = useMemo(
         () => items.map((item: T) => ({ ...item, __checkbox: false })),
         [items],
@@ -480,9 +480,7 @@ export const Table = <T,>({
                                         data-col-id={h?.id}
                                         data-col-text={h?.th}
                                     >
-                                        <DropDown
-                                            header={<>{_t(h.th)}</>}
-                                        >
+                                        <DropDown header={<>{_t(h.th)}</>}>
                                             {h?.columnOptions?.orderBy ? (
                                                 <>
                                                     <div

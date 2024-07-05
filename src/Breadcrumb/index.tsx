@@ -62,7 +62,7 @@ export const Breadcrumb = ({
     links,
     ...props
 }: BreadcrumbProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     return (
         <>
             <ul className={`fenext-breadcrumb ${className} `}>

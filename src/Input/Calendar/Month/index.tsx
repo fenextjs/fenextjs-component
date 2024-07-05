@@ -23,7 +23,7 @@ export interface InputCalendarMonthProps extends _TProps {
 }
 export const InputCalendarMonth = ({
     type = "normal",
-   
+
     onPreMonth,
     onNextMonth,
     date,
@@ -35,7 +35,7 @@ export const InputCalendarMonth = ({
     setDataNSelect,
     ...props
 }: InputCalendarMonthProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     return (
         <>
             <div className={`fenext-input-calendar-month`}>

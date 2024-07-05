@@ -44,4 +44,4 @@ export interface ChronologicalListClassProps {
  */
 export interface ChronologicalListProps extends ChronologicalListBaseProps, ChronologicalListClassProps {
 }
-export declare const ChronologicalList: ({ className, items, market, parseDateHHMMSS: parseDateHHMMSSProps, parseDateYYYYMMDD: parseDateYYYYMMDDProps, _t, }: ChronologicalListProps) => React.JSX.Element;
+export declare const ChronologicalList: ({ className, items, market, parseDateHHMMSS: parseDateHHMMSSProps, parseDateYYYYMMDD: parseDateYYYYMMDDProps, ...props }: ChronologicalListProps) => React.JSX.Element;

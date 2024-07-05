@@ -21,16 +21,16 @@ export interface DesignBoxGapProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxGap = ({
-   
     textGap = "Gap",
     textGapRow = "Gap Row",
     textGapColumn = "Gap Column",
 
     data,
     onChangeData,
-    setDataFunction,...props
+    setDataFunction,
+    ...props
 }: DesignBoxGapProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeGap = (gap: "gapColumn" | "gapRow") => (e: number | "") => {

@@ -101,10 +101,9 @@ export const InputImg = ({
     onChange,
     onRemove,
 
-   
     ...props
 }: InputImgProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const { data, setData } = useData<FileProps>(defaultValue, {
         onChangeDataAfter: onChange,
     });

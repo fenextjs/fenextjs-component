@@ -105,7 +105,7 @@ export const InputDateRange = ({
 
     ...props
 }: InputDateRangeProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const { dataMemo: data, onChangeData } = useData<
         InputDateRangeDataProps,
         InputDateRangeDataProps

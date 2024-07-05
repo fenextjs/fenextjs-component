@@ -9,12 +9,13 @@ const useData_1 = require("fenextjs-hook/cjs/useData");
 const Error_1 = require("../../Error");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_validator_1 = require("fenextjs-validator");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_2 = require("fenextjs-hook");
 /**
  * Component that renders a checkbox input.
  * Takes an InputTextSelectProps object as props.
  */
-const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultValue = {}, value: valueProps = undefined, onChange, validator = undefined, posSelect = "left", _t = (e) => e, errorWithIsChange = false, error, ...props }) => {
+const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultValue = {}, value: valueProps = undefined, onChange, validator = undefined, posSelect = "left", errorWithIsChange = false, error, ...props }) => {
+    const { _t } = (0, fenextjs_hook_2.use_T)({ ...props });
     const { data, onChangeData, isChange } = (0, useData_1.useData)(defaultValue, {
         onChangeDataAfter: onChange,
     });
@@ -31,7 +32,7 @@ const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultVal
     }, [error, errorFenext, errorWithIsChange, isChange]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-input-text-select fenext-input-text-select-${posSelect}` },
-            react_1.default.createElement("div", { className: `fenext-input-text-select-label fenext-input-label  ` }, (0, fenextjs_functions_1._tValidate)(label, _t)),
+            react_1.default.createElement("div", { className: `fenext-input-text-select-label fenext-input-label  ` }, _t(label)),
             react_1.default.createElement("div", { className: `fenext-input-text-select-select ` },
                 react_1.default.createElement(Select_1.InputSelect, { ...props, placeholder: placeholderSelect, onChange: onChangeData("select"), validator: undefined, value: value.select, _t: _t, parseText: (e) => e })),
             react_1.default.createElement("div", { className: `fenext-input-text-select-text ` },

@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Fixed_1 = require("../Fixed");
 const useNotification_1 = require("fenextjs-hook/cjs/useNotification");
-const NotificationPop = ({ classNamePop = "", className = "", typePop = "down", time = 2000, _t, }) => {
+const NotificationPop = ({ classNamePop = "", className = "", typePop = "down", time = 2000, ...props }) => {
     const { notification, reset } = (0, useNotification_1.useNotification)({ time });
     (0, react_1.useEffect)(() => {
         setTimeout(() => {
@@ -18,7 +18,7 @@ const NotificationPop = ({ classNamePop = "", className = "", typePop = "down", 
                         fenext-notification-pop-${notification?.message != "" ? "active" : ""}
                         ${classNamePop}
                     ` },
-        react_1.default.createElement(Fixed_1.Notification, { className: className, type: notification?.type, children: notification?.message, _t: _t })))));
+        react_1.default.createElement(Fixed_1.Notification, { ...props, className: className, type: notification?.type, children: notification?.message })))));
 };
 exports.NotificationPop = NotificationPop;
 //# sourceMappingURL=index.js.map

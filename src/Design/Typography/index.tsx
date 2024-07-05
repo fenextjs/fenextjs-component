@@ -63,7 +63,6 @@ export interface DesignTypographyProps extends _TProps {
 
 export const DesignTypography = ({
     className = "",
-   
 
     textTypography = "Typography",
     textExample = "Example",
@@ -100,9 +99,10 @@ export const DesignTypography = ({
 
     collapseName,
     collapseType,
-    collapseUseActiveForShowChildren = true,...props
+    collapseUseActiveForShowChildren = true,
+    ...props
 }: DesignTypographyProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const {
         data: data_,
         onChangeData,

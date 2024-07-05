@@ -37,4 +37,4 @@ export interface TooltipClassProps {
  */
 export interface TooltipProps extends TooltipBaseProps, TooltipClassProps {
 }
-export declare const Tooltip: ({ className, children, tooltip, positionX, positionY, _t, }: TooltipProps) => React.JSX.Element;
+export declare const Tooltip: ({ className, children, tooltip, positionX, positionY, ...props }: TooltipProps) => React.JSX.Element;

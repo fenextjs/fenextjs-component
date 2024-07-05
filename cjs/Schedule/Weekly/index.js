@@ -8,19 +8,20 @@ const Multiple_1 = require("../../Collapse/Multiple");
 const Title_1 = require("../../Title");
 const Day_1 = require("../Day");
 const fenextjs_hook_1 = require("fenextjs-hook");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_2 = require("fenextjs-hook");
 const ScheduleWeekly = ({ title = "Schedule Weekly", className = "", defaultValue = {}, value = undefined, onChange, CollapseMultipleProps = {
     name: "schedule",
     type: "radio",
     defaultActive: 0,
-}, onParseHeaderDay, _t, ...props }) => {
+}, onParseHeaderDay, ...props }) => {
+    const { _t } = (0, fenextjs_hook_2.use_T)({ ...props });
     const { data, onChangeData } = (0, fenextjs_hook_1.useData)(defaultValue, {
         onChangeDataAfter: onChange,
         data: value,
     });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-schedule-weekly ${className} ` },
-            react_1.default.createElement(Title_1.Title, { tag: "h4" }, (0, fenextjs_functions_1._tValidate)(title, _t)),
+            react_1.default.createElement(Title_1.Title, { tag: "h4" }, _t(title)),
             react_1.default.createElement(Multiple_1.CollapseMultiple, { ...CollapseMultipleProps, items: Object.keys(Date_1.DaysEnum).map((e) => {
                     const day = e;
                     return {

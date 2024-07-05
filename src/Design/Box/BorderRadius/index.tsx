@@ -23,7 +23,6 @@ export interface DesignBoxBorderRadiusProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxBorderRadius = ({
-   
     textBorderRadius = "Border Radius",
     textBorderRadiusTopLeft = "Top Left",
     textBorderRadiusTopRight = "Top Right",
@@ -32,9 +31,10 @@ export const DesignBoxBorderRadius = ({
 
     data,
     onChangeData,
-    setDataFunction,...props
+    setDataFunction,
+    ...props
 }: DesignBoxBorderRadiusProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeBorderRadius =

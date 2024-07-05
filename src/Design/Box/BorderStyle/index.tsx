@@ -23,7 +23,6 @@ export interface DesignBoxBorderStyleProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxBorderStyle = ({
-   
     textBorderStyle = "Border Style",
     textBorderStyleTop = "Top",
     textBorderStyleLeft = "Left",
@@ -31,9 +30,10 @@ export const DesignBoxBorderStyle = ({
     textBorderStyleBottom = "Bottom",
 
     data,
-    setDataFunction,...props
+    setDataFunction,
+    ...props
 }: DesignBoxBorderStyleProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const _p = (e) => ({ id: `${e}`, text: `${e}`, data: e });
 
     const onChangeBorderStyle =

@@ -86,4 +86,4 @@ export interface MediaPageClassProps {
  */
 export interface MediaPageProps extends MediaPageBaseProps, MediaPageClassProps {
 }
-export declare const MediaPage: ({ className, multiple, onChange, onUploadImg, onDeleteImg, onAcepte, HeaderPage, defaultValue, images, loaderImages, disabledSelectImg, InputUploadProps, ButtonAcceptProps, ButtonCancelProps, isPage, extraContentImgs, onRenderImg, _t, }: MediaPageProps) => React.JSX.Element;
+export declare const MediaPage: ({ className, multiple, onChange, onUploadImg, onDeleteImg, onAcepte, HeaderPage, defaultValue, images, loaderImages, disabledSelectImg, InputUploadProps, ButtonAcceptProps, ButtonCancelProps, isPage, extraContentImgs, onRenderImg, ...props }: MediaPageProps) => React.JSX.Element;

@@ -8,4 +8,4 @@ export interface DesignBoxGapProps extends DesignBoxUseDataProps {
     textGapRow?: string;
     textGapColumn?: string;
 }
-export declare const DesignBoxGap: ({ _t, textGap, textGapRow, textGapColumn, data, onChangeData, setDataFunction, }: DesignBoxGapProps) => React.JSX.Element;
+export declare const DesignBoxGap: ({ textGap, textGapRow, textGapColumn, data, onChangeData, setDataFunction, ...props }: DesignBoxGapProps) => React.JSX.Element;

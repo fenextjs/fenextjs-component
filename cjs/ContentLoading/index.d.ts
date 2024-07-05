@@ -38,4 +38,4 @@ export interface ContentLoadingClassProps {
  */
 export interface ContentLoadingProps extends ContentLoadingBaseProps, ContentLoadingClassProps {
 }
-export declare const ContentLoading: ({ className, children, componentLoader, loader, isPage, _t, }: ContentLoadingProps) => React.JSX.Element;
+export declare const ContentLoading: ({ className, children, componentLoader, loader, isPage, ...props }: ContentLoadingProps) => React.JSX.Element;

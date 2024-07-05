@@ -27,4 +27,4 @@ export interface ContainerClassProps {
  */
 export interface ContainerProps extends ContainerBaseProps, ContainerClassProps {
 }
-export declare const Container: ({ className, customSize, usePaddingInline, children, _t, }: ContainerProps) => React.JSX.Element;
+export declare const Container: ({ className, customSize, usePaddingInline, children, ...props }: ContainerProps) => React.JSX.Element;

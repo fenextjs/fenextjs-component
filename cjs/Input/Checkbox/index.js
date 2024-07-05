@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Check_1 = require("fenextjs-svg/cjs/Check");
 const env_log_1 = require("fenextjs-functions/cjs/env_log");
-const fenextjs_functions_1 = require("fenextjs-functions");
+const fenextjs_hook_1 = require("fenextjs-hook");
 /**
  * Component that renders a checkbox input.
  * Takes an InputCheckboxProps object as props.
@@ -14,7 +14,8 @@ const InputCheckbox = ({ classNameLabel = "", classNameLabelActive = "", classNa
     (0, env_log_1.env_log)(e, {
         name: "input checkbox onchange",
     });
-}, defaultValue = false, useValue = false, value = false, disabled = false, icon = react_1.default.createElement(Check_1.Check, null), onValidateCheck = async () => { }, optional = false, optionalText = "(optional)", required = false, requiredText = "*", _t, onActive, onActiveValue, onInactive, onInactiveValue, valueActive, valueInactive, }) => {
+}, defaultValue = false, useValue = false, value = false, disabled = false, icon = react_1.default.createElement(Check_1.Check, null), onValidateCheck = async () => { }, optional = false, optionalText = "(optional)", required = false, requiredText = "*", onActive, onActiveValue, onInactive, onInactiveValue, valueActive, valueInactive, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const [checked_, setChecked] = (0, react_1.useState)(defaultValue === true);
     const checked = (0, react_1.useMemo)(() => (useValue ? value : checked_), [useValue, value, checked_]);
     const onChecked = async () => {
@@ -47,11 +48,11 @@ const InputCheckbox = ({ classNameLabel = "", classNameLabelActive = "", classNa
                     ? classNameCheckboxActive
                     : classNameCheckboxInactive}` }, checked && icon)),
         react_1.default.createElement("span", { className: `fenext-input-checkbox-text ${classNameText}` },
-            (0, fenextjs_functions_1._tValidate)(label, _t),
+            _t(label),
             optional && (react_1.default.createElement(react_1.default.Fragment, null,
-                react_1.default.createElement("small", { className: "fenext-input-optional" }, (0, fenextjs_functions_1._tValidate)(optionalText, _t)))),
+                react_1.default.createElement("small", { className: "fenext-input-optional" }, _t(optionalText)))),
             required && (react_1.default.createElement(react_1.default.Fragment, null,
-                react_1.default.createElement("small", { className: "fenext-input-required" }, (0, fenextjs_functions_1._tValidate)(requiredText, _t)))))));
+                react_1.default.createElement("small", { className: "fenext-input-required" }, _t(requiredText)))))));
 };
 exports.InputCheckbox = InputCheckbox;
 //# sourceMappingURL=index.js.map

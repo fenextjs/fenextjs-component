@@ -54,7 +54,7 @@ export const Copy = ({
     },
     ...props
 }: CopyProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const { pop } = useNotification({});
 
     const onCopy = () => {

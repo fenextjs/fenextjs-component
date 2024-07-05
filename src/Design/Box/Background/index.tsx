@@ -12,13 +12,12 @@ export interface DesignBoxBackgroundProps extends DesignBoxUseDataProps {
 }
 
 export const DesignBoxBackground = ({
-   
     textBackground = "Background",
     data,
     onChangeData,
     ...props
 }: DesignBoxBackgroundProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     return (
         <>
             <div

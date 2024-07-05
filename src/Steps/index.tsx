@@ -201,7 +201,7 @@ export const Steps = ({
     onSetStep,
     ...props
 }: StepsProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const ref = useRef<HTMLDivElement>(null);
     const [loader, setLoader] = useState(false);
     const parseCurrentStep = useCallback(

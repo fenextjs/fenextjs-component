@@ -51,4 +51,4 @@ export interface CounterClassProps {
  */
 export interface CounterProps extends CounterBaseProps, CounterClassProps {
 }
-export declare const Counter: ({ className, classNameNumber, classNameText, number, text, time, decimal, parseNumber, _t, }: CounterProps) => React.JSX.Element;
+export declare const Counter: ({ className, classNameNumber, classNameText, number, text, time, decimal, parseNumber, ...props }: CounterProps) => React.JSX.Element;

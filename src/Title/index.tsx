@@ -39,7 +39,7 @@ export const Title = ({
     children,
     ...props
 }: TitleProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const Tag = tag;
     return (
         <>

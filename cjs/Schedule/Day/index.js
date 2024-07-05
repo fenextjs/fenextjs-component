@@ -15,7 +15,8 @@ const ScheduleDay = ({ className = "", defaultValue = [[undefined, undefined]], 
     placeholder: "Final hour",
 }, ButtonProps = {
     children: "Add Time Range",
-}, _t, ...props }) => {
+}, ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const { data, onChangeData, setData, onDeleteData } = (0, fenextjs_hook_1.useData)(defaultValue, {
         onChangeDataAfter: onChange,
         onDeleteDataAfter: onChange,

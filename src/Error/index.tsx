@@ -46,7 +46,7 @@ export const ErrorComponent = ({
     useErrorInput = true,
     ...props
 }: ErrorComponentProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const content = useMemo(() => {
         return (
             <>

@@ -75,10 +75,10 @@ export const Pagination = ({
             text: "All",
         },
     ],
-   
+
     ...props
 }: PaginationProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const minPage = useMemo(() => {
         let m = Infinity;
         listNpage?.forEach((e) => {

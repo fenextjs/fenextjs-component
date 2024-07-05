@@ -152,10 +152,10 @@ export const InputUpload = ({
     loader = false,
     iconLoader = <LoaderSpinner />,
     customPreview = undefined,
-   
+
     ...props
 }: InputUploadProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const { data, setData } = useData<FileProps>(defaultValue, {
         onChangeDataAfter: onChange,
     });

@@ -107,7 +107,7 @@ export const InputTextSelect = ({
     error,
     ...props
 }: InputTextSelectProps) => {
-    const {_t} = use_T({...props})
+    const { _t } = use_T({ ...props });
     const { data, onChangeData, isChange } = useData<
         Partial<TextSelectProps>,
         Partial<TextSelectProps>

@@ -25,4 +25,4 @@ export interface NotificationPopClassProps extends NotificationClassProps {
  */
 export interface NotificationPopProps extends NotificationPopBaseProps, NotificationPopClassProps {
 }
-export declare const NotificationPop: ({ classNamePop, className, typePop, time, _t, }: NotificationPopProps) => React.JSX.Element;
+export declare const NotificationPop: ({ classNamePop, className, typePop, time, ...props }: NotificationPopProps) => React.JSX.Element;

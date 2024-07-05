@@ -118,4 +118,4 @@ export interface InputRadioProps<T> extends InputRadioBaseProps<T>, InputRadioCl
  * Component that renders a radio input.
  * Takes an InputRadioProps object as props.
  */
-export declare const InputRadio: <T = any>({ classNameContent, classNameLabel, classNameLabelActive, classNameLabelInactive, classNameText, classNameContentRadio, classNameContentRadioActive, classNameContentRadioInactive, classNameRadio, classNameRadioActive, classNameRadioInactive, labelPosition, name, onChange, defaultValue, useValue, value, disabled, icon, items, _t, }: InputRadioProps<T>) => React.JSX.Element;
+export declare const InputRadio: <T = any>({ classNameContent, classNameLabel, classNameLabelActive, classNameLabelInactive, classNameText, classNameContentRadio, classNameContentRadioActive, classNameContentRadioInactive, classNameRadio, classNameRadioActive, classNameRadioInactive, labelPosition, name, onChange, defaultValue, useValue, value, disabled, icon, items, ...props }: InputRadioProps<T>) => React.JSX.Element;
