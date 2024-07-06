@@ -79,9 +79,8 @@ export const Breadcrumb = ({
                                     onClick={link?.onClick}
                                     _t={link?._t ?? _t}
                                     useT={link?.useT ?? props?.useT}
-                                >
-                                    {_t(link.children)}
-                                </Link>
+                                    children={link.children}
+                                />
                             </li>
                         </>
                     );
