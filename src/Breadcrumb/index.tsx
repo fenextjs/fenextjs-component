@@ -53,7 +53,7 @@ export interface BreadcrumbClassProps {
  */
 export interface BreadcrumbProps
     extends BreadcrumbBaseProps,
-    BreadcrumbClassProps { }
+        BreadcrumbClassProps {}
 
 export const Breadcrumb = ({
     className = "",
@@ -73,7 +73,8 @@ export const Breadcrumb = ({
                                 key={i}
                                 className={`fenext-breadcrumb-item ${classNameItem}`}
                             >
-                                <Link href={link.href} 
+                                <Link
+                                    href={link.href}
                                     className={`fenext-breadcrumb-item-link ${classNameLink}`}
                                     onClick={link?.onClick}
                                     _t={link?._t ?? _t}

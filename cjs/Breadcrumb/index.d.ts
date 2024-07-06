@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 /**
  * Properties for the base Breadcrumb Link component.
  */
-export interface BreadcrumbLinkProps {
+export interface BreadcrumbLinkProps extends _TProps {
     /**
      * Url of the redirect.
      */
