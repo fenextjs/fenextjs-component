@@ -11,7 +11,7 @@ const Breadcrumb = ({ className = "", classNameItem = "", classNameLink = "", li
         react_1.default.createElement("ul", { className: `fenext-breadcrumb ${className} ` }, links.map((link, i) => {
             return (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("li", { key: i, className: `fenext-breadcrumb-item ${classNameItem}` },
-                    react_1.default.createElement(Link_1.Link, { href: link.href, className: `fenext-breadcrumb-item-link ${classNameLink}`, onClick: link?.onClick, _t: link?._t ?? _t, useT: link?.useT ?? props?.useT }, _t(link.children)))));
+                    react_1.default.createElement(Link_1.Link, { href: link.href, className: `fenext-breadcrumb-item-link ${classNameLink}`, onClick: link?.onClick, _t: link?._t ?? _t, useT: link?.useT ?? props?.useT, children: link.children }))));
         }))));
 };
 exports.Breadcrumb = Breadcrumb;
