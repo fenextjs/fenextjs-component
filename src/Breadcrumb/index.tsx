@@ -1,12 +1,12 @@
 import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
-import Link from "next/link";
 import React, { ReactNode } from "react";
+import { Link } from "../Link";
 
 /**
  * Properties for the base Breadcrumb Link component.
  */
-export interface BreadcrumbLinkProps {
+export interface BreadcrumbLinkProps extends _TProps {
     /**
      * Url of the redirect.
      */
@@ -53,7 +53,7 @@ export interface BreadcrumbClassProps {
  */
 export interface BreadcrumbProps
     extends BreadcrumbBaseProps,
-        BreadcrumbClassProps {}
+    BreadcrumbClassProps { }
 
 export const Breadcrumb = ({
     className = "",
@@ -73,13 +73,13 @@ export const Breadcrumb = ({
                                 key={i}
                                 className={`fenext-breadcrumb-item ${classNameItem}`}
                             >
-                                <Link href={link.href} legacyBehavior>
-                                    <a
-                                        className={`fenext-breadcrumb-item-link ${classNameLink}`}
-                                        onClick={link?.onClick}
-                                    >
-                                        {_t(link.children)}
-                                    </a>
+                                <Link href={link.href} 
+                                    className={`fenext-breadcrumb-item-link ${classNameLink}`}
+                                    onClick={link?.onClick}
+                                    _t={link?._t ?? _t}
+                                    useT={link?.useT ?? props?.useT}
+                                >
+                                    {_t(link.children)}
                                 </Link>
                             </li>
                         </>
