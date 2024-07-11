@@ -260,7 +260,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                             react_1.default.createElement("div", { className: "fenext-select-content-icon-search" }, iconSearch))), onBlur: onBlur, onChange: (e) => {
                         onChangeText_(e);
                         onLoadChildren();
-                    }, value: dataMemo?.text ?? "", onEnter: onEnter, error: errorInput, autoComplete: false, errorWithIsChange: errorWithIsChange, extraInContentInput: react_1.default.createElement(react_1.default.Fragment, null,
+                    }, value: _tValue(dataMemo?.text ?? ""), onEnter: onEnter, error: errorInput, autoComplete: false, errorWithIsChange: errorWithIsChange, extraInContentInput: react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("button", { className: `fenext-select-clear`, onClick: onClear }, _t(clearContent)),
                         showOptionIconImg && (react_1.default.createElement(react_1.default.Fragment, null, dataMemo?.option?.img ? (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement("div", { className: "fenext-select-option-selected-img" },
