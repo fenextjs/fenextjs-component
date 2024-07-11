@@ -31,34 +31,36 @@ const args: InputSelectProps = {
     label: "Select",
     placeholder: "Select",
     datalist: "listOption",
+    useTOption:true,
+    // _t:e=>"x",
     options: [
         {
             id: "1",
             text: "Option 1",
-            children: <>Option 1</>,
+            // children: <>Option 1</>,
             disabled:true,
             img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
         },
         {
             id: "2",
             text: "Option 2",
-            children: <>Option 2</>,
+            // children: <>Option 2</>,
             img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
         },
         {
             id: "3",
             text: "Option 3",
-            children: <>Option 3</>,
+            // children: <>Option 3</>,
         },
         {
             id: "4",
             text: "Option 4",
-            children: <>Option 4</>,
+            // children: <>Option 4</>,
         },
         {
             id: "5",
             text: "Option 5",
-            children: <>Option 5</>,
+            // children: <>Option 5</>,
         },
         {
             id: "6",

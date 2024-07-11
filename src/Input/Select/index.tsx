@@ -679,7 +679,7 @@ export const InputSelect = <T = any,>({
                             onChangeText_(e);
                             onLoadChildren();
                         }}
-                        value={dataMemo?.text ?? ""}
+                        value={_tValue(dataMemo?.text ?? "")}
                         onEnter={onEnter}
                         error={errorInput}
                         autoComplete={false}
