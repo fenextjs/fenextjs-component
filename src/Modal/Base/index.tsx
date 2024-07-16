@@ -49,6 +49,10 @@ export interface ModalBaseBaseProps extends PropsWithChildren {
      */
     name?: string;
     /**
+     * nameLocalStorage of Modal.
+     */
+    nameLocalStorage?: string;
+    /**
      * closeComponent of Modal.
      */
     closeComponent?: ReactNode;

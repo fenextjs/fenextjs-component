@@ -32,6 +32,7 @@ export interface ModalProps
             | "useRender"
             | "name"
             | "closeComponent"
+            | "nameLocalStorage"
         >,
         ModalClassProps {
     /**
@@ -69,6 +70,7 @@ export const Modal = ({
     typeClose = "out",
     useRender = false,
     name,
+    nameLocalStorage,
     activeByNameLocalStorage = false,
     closeComponent,
 }: ModalProps) => {
@@ -79,6 +81,7 @@ export const Modal = ({
         onClose: onCloseProps,
         name,
         activeByNameLocalStorage,
+        nameLocalStorage,
     });
     return (
         <>
