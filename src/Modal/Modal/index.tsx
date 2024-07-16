@@ -101,6 +101,7 @@ export const Modal = ({
                 disabledClose={disabledClose}
                 useRender={useRender}
                 name={name}
+                nameLocalStorage={nameLocalStorage}
             >
                 {children}
             </ModalBase>
