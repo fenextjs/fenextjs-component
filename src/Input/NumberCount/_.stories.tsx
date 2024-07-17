@@ -23,6 +23,11 @@ const args  : InputNumberCountProps = {
     symbolFinal:"%",
     symbolInit:"",
     // value:22
+    errorWithIsChange:false,
+    validator:FenextjsValidator()
+    .isRequired()
+    .isNumber()
+    .isMinOrEqual(0, )
 }
 
 Index.args= args

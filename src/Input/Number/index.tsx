@@ -6,6 +6,7 @@ import { SVGNumberIncrease, SVGNumberDecrease } from "fenextjs-svg/cjs/Number";
 import { Arrow } from "fenextjs-svg/cjs/Arrow";
 import { FenextjsValidator } from "fenextjs-validator";
 import { useValidator } from "fenextjs-hook/cjs/useValidator";
+import { parseNumber } from "fenextjs-functions";
 
 /**
  * Props for InputNumber component.
@@ -91,7 +92,7 @@ export const InputNumber = ({
         setValue(Value);
     };
     const { error: errorFenext } = useValidator({
-        data: valueInput,
+        data: valueInput != undefined && valueInput!="" ? parseNumber(valueInput) : undefined,
         validator: validator ?? FenextjsValidator(),
     });
 

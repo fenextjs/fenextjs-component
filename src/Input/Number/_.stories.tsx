@@ -17,6 +17,11 @@ export const Index = Profile.bind({});
 const args  : InputNumberProps = {
     label:"Label",
     placeholder:"Placeholder",
+    errorWithIsChange:false,
+    validator:FenextjsValidator()
+    .isRequired()
+    .isNumber()
+    .isMinOrEqual(0, )
 }
 
 Index.args= args
