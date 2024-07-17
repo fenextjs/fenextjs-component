@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InputSelectCSC = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
-const Select_1 = require("../Select");
 const useCSC_1 = require("fenextjs-hook/cjs/useCSC");
 const fenextjs_functions_1 = require("fenextjs-functions");
+const SelectT_1 = require("../SelectT");
 const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country = {
     label: "Country",
     placeholder: "Country",
@@ -28,26 +28,47 @@ const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country 
     });
     const CONTENT = (0, react_1.useMemo)(() => {
         let C = (react_1.default.createElement(react_1.default.Fragment, null,
-            react_1.default.createElement(Select_1.InputSelect, { ...props, ...country, 
+            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...country, 
                 // key={value?.country?.id}
                 useTOption: false, options: countrys?.map((e) => {
                     return {
                         ...e,
                         data: e,
                     };
-                }), onChangeData: onChangeCSC("country"), defaultValue: value?.country, loader: !loadCountrys }),
-            react_1.default.createElement(Select_1.InputSelect, { ...props, ...state, useTOption: false, key: value?.country?.id, options: states?.map((e) => {
+                }), onChangeData: onChangeCSC("country"), defaultValue: value?.country, loader: !loadCountrys, onParse: (e) => {
+                    return {
+                        ...e,
+                        id: e?.id ?? "",
+                        text: e?.text ?? "",
+                        data: e,
+                    };
+                } }),
+            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...state, useTOption: false, key: value?.country?.id, options: states?.map((e) => {
                     return {
                         ...e,
                         data: e,
                     };
-                }), onChangeData: onChangeCSC("state"), defaultValue: value?.state, loader: !loadStates }),
-            react_1.default.createElement(Select_1.InputSelect, { ...props, ...city, useTOption: false, key: value?.state?.id, options: citys?.map((e) => {
+                }), onChangeData: onChangeCSC("state"), defaultValue: value?.state, loader: !loadStates, onParse: (e) => {
+                    return {
+                        ...e,
+                        id: e?.id ?? "",
+                        text: e?.text ?? "",
+                        data: e,
+                    };
+                } }),
+            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...city, useTOption: false, key: value?.state?.id, options: citys?.map((e) => {
                     return {
                         ...e,
                         data: e,
                     };
-                }), onChangeData: onChangeCSC("city"), defaultValue: value?.city, loader: !loadCitys })));
+                }), onChangeData: onChangeCSC("city"), defaultValue: value?.city, loader: !loadCitys, onParse: (e) => {
+                    return {
+                        ...e,
+                        id: e?.id ?? "",
+                        text: e?.text ?? "",
+                        data: e,
+                    };
+                } })));
         if (useContainer) {
             C = (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("div", { className: `fenext-select-csc ${classNameSelectCSC}` }, C)));

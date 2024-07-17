@@ -157,13 +157,13 @@ export const InputSelectCSC = ({
                     onChangeData={onChangeCSC("country")}
                     defaultValue={value?.country}
                     loader={!loadCountrys}
-                    onParse={(e)=>{
+                    onParse={(e) => {
                         return {
                             ...e,
-                            id:e?.id ?? '',
-                            text:e?.text ?? '',
-                            data:e
-                        }
+                            id: e?.id ?? "",
+                            text: e?.text ?? "",
+                            data: e,
+                        };
                     }}
                 />
                 <InputSelectT<StateProps>
@@ -180,13 +180,13 @@ export const InputSelectCSC = ({
                     onChangeData={onChangeCSC("state")}
                     defaultValue={value?.state}
                     loader={!loadStates}
-                    onParse={(e)=>{
+                    onParse={(e) => {
                         return {
                             ...e,
-                            id:e?.id ?? '',
-                            text:e?.text ?? '',
-                            data:e
-                        }
+                            id: e?.id ?? "",
+                            text: e?.text ?? "",
+                            data: e,
+                        };
                     }}
                 />
                 <InputSelectT<CityProps>
@@ -203,13 +203,13 @@ export const InputSelectCSC = ({
                     onChangeData={onChangeCSC("city")}
                     defaultValue={value?.city}
                     loader={!loadCitys}
-                    onParse={(e)=>{
+                    onParse={(e) => {
                         return {
                             ...e,
-                            id:e?.id ?? '',
-                            text:e?.text ?? '',
-                            data:e
-                        }
+                            id: e?.id ?? "",
+                            text: e?.text ?? "",
+                            data: e,
+                        };
                     }}
                 />
             </>
