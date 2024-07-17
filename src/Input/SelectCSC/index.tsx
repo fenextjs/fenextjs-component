@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import {
-    InputSelect,
     InputSelectBaseProps,
     InputSelectClassProps,
     InputSelectProps,
@@ -16,6 +15,7 @@ import {
     parseCSCString_to_CSC,
     parseCSC_to_CSCString,
 } from "fenextjs-functions";
+import { InputSelectT } from "../SelectT";
 
 /**
  * Interface that defines CSS class properties for a select input component.
@@ -143,7 +143,7 @@ export const InputSelectCSC = ({
     const CONTENT = useMemo(() => {
         let C = (
             <>
-                <InputSelect<CountryProps>
+                <InputSelectT<CountryProps>
                     {...props}
                     {...country}
                     // key={value?.country?.id}
@@ -157,8 +157,16 @@ export const InputSelectCSC = ({
                     onChangeData={onChangeCSC("country")}
                     defaultValue={value?.country}
                     loader={!loadCountrys}
+                    onParse={(e)=>{
+                        return {
+                            ...e,
+                            id:e?.id ?? '',
+                            text:e?.text ?? '',
+                            data:e
+                        }
+                    }}
                 />
-                <InputSelect<StateProps>
+                <InputSelectT<StateProps>
                     {...props}
                     {...state}
                     useTOption={false}
@@ -172,8 +180,16 @@ export const InputSelectCSC = ({
                     onChangeData={onChangeCSC("state")}
                     defaultValue={value?.state}
                     loader={!loadStates}
+                    onParse={(e)=>{
+                        return {
+                            ...e,
+                            id:e?.id ?? '',
+                            text:e?.text ?? '',
+                            data:e
+                        }
+                    }}
                 />
-                <InputSelect<CityProps>
+                <InputSelectT<CityProps>
                     {...props}
                     {...city}
                     useTOption={false}
@@ -187,6 +203,14 @@ export const InputSelectCSC = ({
                     onChangeData={onChangeCSC("city")}
                     defaultValue={value?.city}
                     loader={!loadCitys}
+                    onParse={(e)=>{
+                        return {
+                            ...e,
+                            id:e?.id ?? '',
+                            text:e?.text ?? '',
+                            data:e
+                        }
+                    }}
                 />
             </>
         );
