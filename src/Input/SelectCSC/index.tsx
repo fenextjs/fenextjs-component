@@ -32,16 +32,16 @@ export interface InputSelectCSCClassProps extends InputSelectClassProps {
  */
 export interface InputSelectCSCBaseProps
     extends useCSCProps,
-    Omit<
-        InputSelectBaseProps,
-        | "options"
-        | "defaultValue"
-        | "value"
-        | "isSelectClearText"
-        | "onChange"
-        | "onChangeValidate"
-        | "validator"
-    > {
+        Omit<
+            InputSelectBaseProps,
+            | "options"
+            | "defaultValue"
+            | "value"
+            | "isSelectClearText"
+            | "onChange"
+            | "onChangeValidate"
+            | "validator"
+        > {
     /**
      * useContainer for group select in div.
      */
@@ -55,21 +55,36 @@ export interface InputSelectCSCBaseProps
      */
     country?: Pick<
         InputSelectProps,
-        "label" | "placeholder" | "disabled" | "classNameSelect" | "validator" | "validatorData"
+        | "label"
+        | "placeholder"
+        | "disabled"
+        | "classNameSelect"
+        | "validator"
+        | "validatorData"
     >;
     /**
      * state Input Label and Placeholder.
      */
     state?: Pick<
         InputSelectProps,
-        "label" | "placeholder" | "disabled" | "classNameSelect" | "validator" | "validatorData"
+        | "label"
+        | "placeholder"
+        | "disabled"
+        | "classNameSelect"
+        | "validator"
+        | "validatorData"
     >;
     /**
      * city Input Label and Placeholder.
      */
     city?: Pick<
         InputSelectProps,
-        "label" | "placeholder" | "disabled" | "classNameSelect" | "validator" | "validatorData"
+        | "label"
+        | "placeholder"
+        | "disabled"
+        | "classNameSelect"
+        | "validator"
+        | "validatorData"
     >;
 }
 /**
@@ -77,7 +92,7 @@ export interface InputSelectCSCBaseProps
  */
 export interface InputSelectCSCProps
     extends InputSelectCSCBaseProps,
-    InputSelectCSCClassProps { }
+        InputSelectCSCClassProps {}
 
 export const InputSelectCSC = ({
     classNameSelectCSC = "",

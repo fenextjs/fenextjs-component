@@ -14,7 +14,7 @@ export interface InputSelectCSCClassProps extends InputSelectClassProps {
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectCSCBaseProps extends useCSCProps, Omit<InputSelectBaseProps, "options" | "defaultValue" | "value" | "isSelectClearText" | "onChange" | "onChangeValidate"> {
+export interface InputSelectCSCBaseProps extends useCSCProps, Omit<InputSelectBaseProps, "options" | "defaultValue" | "value" | "isSelectClearText" | "onChange" | "onChangeValidate" | "validator"> {
     /**
      * useContainer for group select in div.
      */
@@ -26,15 +26,15 @@ export interface InputSelectCSCBaseProps extends useCSCProps, Omit<InputSelectBa
     /**
      * country Input Label and Placeholder.
      */
-    country?: Pick<InputSelectProps, "label" | "placeholder" | "disabled" | "classNameSelect">;
+    country?: Pick<InputSelectProps, "label" | "placeholder" | "disabled" | "classNameSelect" | "validator" | "validatorData">;
     /**
      * state Input Label and Placeholder.
      */
-    state?: Pick<InputSelectProps, "label" | "placeholder" | "disabled" | "classNameSelect">;
+    state?: Pick<InputSelectProps, "label" | "placeholder" | "disabled" | "classNameSelect" | "validator" | "validatorData">;
     /**
      * city Input Label and Placeholder.
      */
-    city?: Pick<InputSelectProps, "label" | "placeholder" | "disabled" | "classNameSelect">;
+    city?: Pick<InputSelectProps, "label" | "placeholder" | "disabled" | "classNameSelect" | "validator" | "validatorData">;
 }
 /**
  * Props interface for the InputSelectCSC component. Extends both InputSelectCSCBaseProps and InputSelectCSCClassProps interfaces.
