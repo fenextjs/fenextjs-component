@@ -92,7 +92,10 @@ export const InputNumber = ({
         setValue(Value);
     };
     const { error: errorFenext } = useValidator({
-        data: valueInput != undefined && valueInput!="" ? parseNumber(valueInput) : undefined,
+        data:
+            valueInput != undefined && valueInput != ""
+                ? parseNumber(valueInput)
+                : undefined,
         validator: validator ?? FenextjsValidator(),
     });
 

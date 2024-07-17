@@ -126,7 +126,8 @@ export const InputNumberCount = ({
     }, [validatorProps, min, max]);
 
     const { error: errorFenext } = useValidator({
-        data: value != undefined && value!="" ? parseNumber(value) : undefined,
+        data:
+            value != undefined && value != "" ? parseNumber(value) : undefined,
         validator: validator,
     });
 

@@ -28,7 +28,7 @@ const InputNumberCount = ({ onChange, value: valueProps = undefined, defaultValu
         return v;
     }, [validatorProps, min, max]);
     const { error: errorFenext } = (0, fenextjs_hook_1.useValidator)({
-        data: (0, Number_1.parseNumber)(value),
+        data: value != undefined && value != "" ? (0, Number_1.parseNumber)(value) : undefined,
         validator: validator,
     });
     const dataText = (0, react_1.useMemo)(() => {

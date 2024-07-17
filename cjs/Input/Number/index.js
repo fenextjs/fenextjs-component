@@ -8,6 +8,7 @@ const Number_1 = require("fenextjs-svg/cjs/Number");
 const Arrow_1 = require("fenextjs-svg/cjs/Arrow");
 const fenextjs_validator_1 = require("fenextjs-validator");
 const useValidator_1 = require("fenextjs-hook/cjs/useValidator");
+const fenextjs_functions_1 = require("fenextjs-functions");
 const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = false, validator = undefined, value, ...props }) => {
     const [value_, setValue_] = (0, react_1.useState)(defaultValue ?? "");
     const valueInput = (0, react_1.useMemo)(() => value ?? (value_ == "" ? defaultValue : value_), [value_, defaultValue, value]);
@@ -35,7 +36,9 @@ const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = fal
         setValue(Value);
     };
     const { error: errorFenext } = (0, useValidator_1.useValidator)({
-        data: valueInput,
+        data: valueInput != undefined && valueInput != ""
+            ? (0, fenextjs_functions_1.parseNumber)(valueInput)
+            : undefined,
         validator: validator ?? (0, fenextjs_validator_1.FenextjsValidator)(),
     });
     return (react_1.default.createElement(react_1.default.Fragment, null,
