@@ -182,6 +182,10 @@ export interface InputSelectBaseProps<T = any>
      */
     maxLengthShowOptions?: number;
     /**
+     * converterInSearchWithMaxLenght in select.
+     */
+    converterInSearchWithMaxLenght?: boolean;
+    /**
      * showOptionIconImg in select.
      */
     showOptionIconImg?: boolean;
@@ -236,6 +240,7 @@ export const InputSelect = <T = any,>({
     searchById = false,
     useSwichtypeSelectStyle = false,
     changeByFirstOptionInOnBlur = false,
+    converterInSearchWithMaxLenght = false,
 
     maxLengthShowOptions = 20,
     itemMaxLengthShowOptions = {
@@ -366,17 +371,24 @@ export const InputSelect = <T = any,>({
                         textSearch?.includes(parseTextSearch(option.id)))),
         );
     }, [options, dataMemo, searchById]);
-    const OPTIONS = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
+    const { OPTIONS } = useMemo<{
+        OPTIONS: InputSelectItemOptionBaseProps<T>[];
+        nMax: boolean;
+    }>(() => {
         if (props?.disabled) {
-            return [];
+            return {
+                OPTIONS: [],
+                nMax: false,
+            };
         }
+        let nMax = false;
         let list = [...options];
 
         if (typeSelect == "div") {
             list = [...OPTIONSSEARCH];
         }
         if (maxLengthShowOptions) {
-            const nMax = list.length > maxLengthShowOptions;
+            nMax = list.length > maxLengthShowOptions;
             list = list.splice(0, maxLengthShowOptions);
             if (nMax && itemMaxLengthShowOptions) {
                 list.push({
@@ -385,7 +397,10 @@ export const InputSelect = <T = any,>({
                 });
             }
         }
-        return list;
+        return {
+            OPTIONS: list,
+            nMax,
+        };
     }, [
         typeSelect,
         OPTIONSSEARCH,
@@ -558,6 +573,8 @@ export const InputSelect = <T = any,>({
         props?.placeholder,
         OPTIONS,
         data,
+        useTOption,
+        onChangeOption,
 
         props.loader,
         loaderOption,
@@ -619,7 +636,7 @@ export const InputSelect = <T = any,>({
         if (isFocus) {
             onLoadChildren();
         }
-    }, [props?.loader, options]);
+    }, [props?.loader, options, OPTIONS, isFocus]);
 
     return (
         <>
@@ -627,6 +644,7 @@ export const InputSelect = <T = any,>({
                 ref={selectRef}
                 className={`
                     fenext-select
+                    fenext-select-${converterInSearchWithMaxLenght && options.length > maxLengthShowOptions ? "search-nmax" : ""}
                     fenext-select-type-${typeSelect}
                     fenext-select-type-style-${typeSelectStyle}
                     fenext-select-${useSwichtypeSelectStyle ? "use-swich-select-style" : ""}

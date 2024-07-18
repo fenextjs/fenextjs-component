@@ -258,6 +258,27 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
         }
     }
 
+    &-search-nmax {
+        &:has(.fenext-input-content-input:focus) {
+            .fenext-input-content-input {
+                padding-left: 2.5rem;
+            }
+            .fenext-input-content-icon {
+                left: 1.1rem;
+                right: inherit;
+            }
+            .fenext-select {
+                &-content-icon {
+                    &-arrow {
+                        display: none;
+                    }
+                    &-search {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
     &-type-style {
         &-normal {
         }

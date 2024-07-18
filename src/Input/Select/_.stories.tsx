@@ -411,6 +411,21 @@ const MaxLengthOptionsArgs: InputSelectProps = {
 MaxLengthOptions.args = MaxLengthOptionsArgs;
 
 
+
+
+
+export const MaxLengthOptionsWithSearch = Profile.bind({});
+
+const MaxLengthOptionsWithSearchArgs: InputSelectProps = {
+    ...MaxLengthOptionsArgs,
+    converterInSearchWithMaxLenght:true
+};
+
+MaxLengthOptionsWithSearch.args = MaxLengthOptionsWithSearchArgs;
+
+
+
+
 const FV = FenextjsValidator().isNumber().isMin(5)
 
 const ValidatorDataArgs: InputSelectProps = {

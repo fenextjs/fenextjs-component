@@ -15,7 +15,7 @@ const fenextjs_hook_2 = require("fenextjs-hook");
 const fenextjs_svg_1 = require("fenextjs-svg");
 const Img_1 = require("../../Img");
 const useSelectOptionsPos_1 = require("./useSelectOptionsPos");
-const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(Arrow_1.Arrow, null), iconSearch = react_1.default.createElement(fenextjs_svg_1.SVGSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(cancel_1.Cancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, maxLengthShowOptions = 20, itemMaxLengthShowOptions = {
+const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(Arrow_1.Arrow, null), iconSearch = react_1.default.createElement(fenextjs_svg_1.SVGSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(cancel_1.Cancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, converterInSearchWithMaxLenght = false, maxLengthShowOptions = 20, itemMaxLengthShowOptions = {
     id: "fenext-item-max-length-show-options",
     text: "More ...",
 }, showOptionIconImg = true, validatorData, useTOption, ...props }) => {
@@ -116,16 +116,20 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                 (parseTextSearch(option.id)?.includes(textSearch) ||
                     textSearch?.includes(parseTextSearch(option.id)))));
     }, [options, dataMemo, searchById]);
-    const OPTIONS = (0, react_1.useMemo)(() => {
+    const { OPTIONS } = (0, react_1.useMemo)(() => {
         if (props?.disabled) {
-            return [];
+            return {
+                OPTIONS: [],
+                nMax: false,
+            };
         }
+        let nMax = false;
         let list = [...options];
         if (typeSelect == "div") {
             list = [...OPTIONSSEARCH];
         }
         if (maxLengthShowOptions) {
-            const nMax = list.length > maxLengthShowOptions;
+            nMax = list.length > maxLengthShowOptions;
             list = list.splice(0, maxLengthShowOptions);
             if (nMax && itemMaxLengthShowOptions) {
                 list.push({
@@ -134,7 +138,10 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                 });
             }
         }
-        return list;
+        return {
+            OPTIONS: list,
+            nMax,
+        };
     }, [
         typeSelect,
         OPTIONSSEARCH,
@@ -210,6 +217,8 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
         props?.placeholder,
         OPTIONS,
         data,
+        useTOption,
+        onChangeOption,
         props.loader,
         loaderOption,
         selectRef,
@@ -230,10 +239,11 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
         if (isFocus) {
             onLoadChildren();
         }
-    }, [props?.loader, options]);
+    }, [props?.loader, options, OPTIONS, isFocus]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { ref: selectRef, className: `
                     fenext-select
+                    fenext-select-${converterInSearchWithMaxLenght && options.length > maxLengthShowOptions ? "search-nmax" : ""}
                     fenext-select-type-${typeSelect}
                     fenext-select-type-style-${typeSelectStyle}
                     fenext-select-${useSwichtypeSelectStyle ? "use-swich-select-style" : ""}
