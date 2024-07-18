@@ -8,7 +8,7 @@ import {
 export interface InputSelectTProps<T>
     extends Omit<
         InputSelectProps<T>,
-        "defaultValue" | "value" | "options" | "onChange"
+        "defaultValue" | "value" | "options" | "onChange" | "onChangeData"
     > {
     /**
      * Default Options of select.

@@ -146,15 +146,9 @@ export const InputSelectCSC = ({
                 <InputSelectT<CountryProps>
                     {...props}
                     {...country}
-                    // key={value?.country?.id}
                     useTOption={false}
-                    options={countrys?.map((e) => {
-                        return {
-                            ...e,
-                            data: e,
-                        };
-                    })}
-                    onChangeData={onChangeCSC("country")}
+                    options={countrys}
+                    onChange={onChangeCSC("country")}
                     defaultValue={value?.country}
                     loader={!loadCountrys}
                     onParse={(e) => {
@@ -171,13 +165,8 @@ export const InputSelectCSC = ({
                     {...state}
                     useTOption={false}
                     key={value?.country?.id}
-                    options={states?.map((e) => {
-                        return {
-                            ...e,
-                            data: e,
-                        };
-                    })}
-                    onChangeData={onChangeCSC("state")}
+                    options={states}
+                    onChange={onChangeCSC("state")}
                     defaultValue={value?.state}
                     loader={!loadStates}
                     onParse={(e) => {
@@ -194,13 +183,8 @@ export const InputSelectCSC = ({
                     {...city}
                     useTOption={false}
                     key={value?.state?.id}
-                    options={citys?.map((e) => {
-                        return {
-                            ...e,
-                            data: e,
-                        };
-                    })}
-                    onChangeData={onChangeCSC("city")}
+                    options={citys}
+                    onChange={onChangeCSC("city")}
                     defaultValue={value?.city}
                     loader={!loadCitys}
                     onParse={(e) => {
