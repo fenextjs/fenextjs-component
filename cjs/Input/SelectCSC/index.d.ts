@@ -11,10 +11,11 @@ export interface InputSelectCSCClassProps extends InputSelectClassProps {
      */
     classNameSelectCSC?: string;
 }
+type InputCSCProps = Pick<InputSelectProps, "label" | "placeholder" | "placeholderFocus" | "disabled" | "classNameSelect" | "validator" | "validatorData" | "filterOptions">;
 /**
  * Interface that defines the base properties for a text input component.
  */
-export interface InputSelectCSCBaseProps extends useCSCProps, Omit<InputSelectBaseProps, "options" | "defaultValue" | "value" | "isSelectClearText" | "onChange" | "onChangeValidate" | "validator"> {
+export interface InputSelectCSCBaseProps extends useCSCProps, Omit<InputSelectBaseProps, "options" | "defaultValue" | "value" | "isSelectClearText" | "onChange" | "onChangeValidate" | "validator" | "validatorData" | "filterOptions"> {
     /**
      * useContainer for group select in div.
      */
@@ -26,15 +27,15 @@ export interface InputSelectCSCBaseProps extends useCSCProps, Omit<InputSelectBa
     /**
      * country Input Label and Placeholder.
      */
-    country?: Pick<InputSelectProps, "label" | "placeholder" | "placeholderFocus" | "disabled" | "classNameSelect" | "validator" | "validatorData">;
+    country?: InputCSCProps;
     /**
      * state Input Label and Placeholder.
      */
-    state?: Pick<InputSelectProps, "label" | "placeholder" | "placeholderFocus" | "disabled" | "classNameSelect" | "validator" | "validatorData">;
+    state?: InputCSCProps;
     /**
      * city Input Label and Placeholder.
      */
-    city?: Pick<InputSelectProps, "label" | "placeholder" | "placeholderFocus" | "disabled" | "classNameSelect" | "validator" | "validatorData">;
+    city?: InputCSCProps;
 }
 /**
  * Props interface for the InputSelectCSC component. Extends both InputSelectCSCBaseProps and InputSelectCSCClassProps interfaces.
@@ -42,3 +43,4 @@ export interface InputSelectCSCBaseProps extends useCSCProps, Omit<InputSelectBa
 export interface InputSelectCSCProps extends InputSelectCSCBaseProps, InputSelectCSCClassProps {
 }
 export declare const InputSelectCSC: ({ classNameSelectCSC, useContainer, country, state, city, defaultValue: defaultValueProps, value: valueProps, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, ...props }: InputSelectCSCProps) => React.JSX.Element;
+export {};
