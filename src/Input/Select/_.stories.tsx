@@ -418,7 +418,8 @@ export const MaxLengthOptionsWithSearch = Profile.bind({});
 
 const MaxLengthOptionsWithSearchArgs: InputSelectProps = {
     ...MaxLengthOptionsArgs,
-    converterInSearchWithMaxLenght:true
+    converterInSearchWithMaxLenght:true,
+    placeholderFocus:"Search"
 };
 
 MaxLengthOptionsWithSearch.args = MaxLengthOptionsWithSearchArgs;

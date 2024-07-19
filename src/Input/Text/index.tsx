@@ -124,6 +124,10 @@ export interface InputTextBaseProps extends _TProps {
      * Placeholder text to display in the input field.
      */
     placeholder?: string;
+    /**
+     * Placeholder text to display in the input field.
+     */
+    placeholderFocus?: string;
 
     /**
      * Default value to set for the input field.
@@ -311,6 +315,7 @@ export const InputText = ({
     yup = Yup.string(),
     label = "",
     placeholder = "",
+    placeholderFocus = undefined,
     defaultValue = undefined,
     value = undefined,
     type = "text",
@@ -366,6 +371,7 @@ export const InputText = ({
     ...p
 }: InputTextProps) => {
     const { _t } = use_T({ ...p });
+    const [isFocus, setIsFocus] = useState(false);
     const [statusInput, setStateInput] = useState("");
 
     const { dataMemo: dataErrorInput, setData: setErrorInput } = useData<
@@ -613,18 +619,24 @@ export const InputText = ({
                         type={type}
                         ref={ref}
                         className={`fenext-input-content-input ${classNameInput} fenext-input-validator-status-${FenextInputValidatorStatus} ${statusInput}`}
-                        placeholder={_t(placeholder)}
+                        placeholder={_t((isFocus ? placeholderFocus : placeholder) ?? placeholder)}
                         value={
                             (parseText ? parseText(valueInput) : valueInput) ??
                             valueInput
                         }
                         onChange={onChangeInput}
-                        onBlur={blurInput}
+                        onBlur={()=>{
+                            blurInput()
+                            setIsFocus(false);
+                        }}
                         disabled={disabled}
                         onKeyUp={(event) => {
                             if (event.keyCode === 13) {
                                 onEnter();
                             }
+                        }}
+                        onClick={()=>{
+                            setIsFocus(true)
                         }}
                         autoComplete={autoComplete ? "on" : "off"}
                         onKeyDown={onKeyDown}
