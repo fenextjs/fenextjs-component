@@ -35,3 +35,16 @@ const UseValidatorArg  : InputTextProps = {
 }
 
 UseValidator.args= UseValidatorArg
+
+
+
+export const TextArea = Profile.bind({});
+
+const TextAreaArgs  : InputTextProps = {
+    label:"Label",
+    placeholder:"Placeholder",
+    type:"textarea",
+    maxLength:100
+}
+
+TextArea.args= TextAreaArgs

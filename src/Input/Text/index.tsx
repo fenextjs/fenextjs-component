@@ -649,6 +649,15 @@ export const InputText = ({
                     {ICON}
                     {LOADER}
                     {extraInContentInput}
+                    {
+                        type == "textarea" && maxLength
+                        &&
+                        <>
+                            <span className="fenext-input-content-input-max-leght">
+                                ({valueInput?.length ?? 0} / {maxLength})
+                            </span>
+                        </>
+                    }
                 </div>
                 {extraInLabel}
                 {FenextInputValidatorStatus == "error" && (

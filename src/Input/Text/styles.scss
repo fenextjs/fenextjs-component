@@ -64,6 +64,20 @@
             &:disabled {
                 opacity: 0.5;
             }
+            &[type="textarea"] {
+                min-height: 5rem;
+                resize: vertical;
+            }
+            &-max-leght{
+                position: absolute;
+                right: 1rem;
+                bottom: .5rem;
+                font-family: var(--fenext-font-global);
+                font-size: .75rem;
+                font-weight: 300;
+                line-height: 1;
+                color: var(--fenext-color-light);
+            }
             &[type="number"] {
                 -moz-appearance: textfield;
                 &::-webkit-outer-spin-button,
