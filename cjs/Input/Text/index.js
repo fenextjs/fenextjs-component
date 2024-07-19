@@ -213,7 +213,14 @@ const InputText = ({ id = "", datalist = undefined, name = "", yup = Yup.string(
                     }, autoComplete: autoComplete ? "on" : "off", onKeyDown: onKeyDown, ...props, inputMode: inputMode }),
                 ICON,
                 LOADER,
-                extraInContentInput),
+                extraInContentInput,
+                type == "textarea" && maxLength && (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement("span", { className: "fenext-input-content-input-max-leght" },
+                        "(",
+                        valueInput?.length ?? 0,
+                        " / ",
+                        maxLength,
+                        ")")))),
             extraInLabel,
             FenextInputValidatorStatus == "error" && (react_1.default.createElement(Error_1.ErrorComponent, { error: errorFenext ?? errorInput, className: "fenext-input-error", _t: _t })))));
 };
