@@ -57,6 +57,7 @@ export interface InputSelectCSCBaseProps
         InputSelectProps,
         | "label"
         | "placeholder"
+        | "placeholderFocus"
         | "disabled"
         | "classNameSelect"
         | "validator"
@@ -69,6 +70,7 @@ export interface InputSelectCSCBaseProps
         InputSelectProps,
         | "label"
         | "placeholder"
+        | "placeholderFocus"
         | "disabled"
         | "classNameSelect"
         | "validator"
@@ -81,6 +83,7 @@ export interface InputSelectCSCBaseProps
         InputSelectProps,
         | "label"
         | "placeholder"
+        | "placeholderFocus"
         | "disabled"
         | "classNameSelect"
         | "validator"
