@@ -14,7 +14,7 @@ const useValidator_1 = require("fenextjs-hook/cjs/useValidator");
 const Error_1 = require("../../Error");
 const fenextjs_interface_1 = require("fenextjs-interface");
 const fenextjs_hook_2 = require("fenextjs-hook");
-const InputText = ({ id = "", datalist = undefined, name = "", yup = Yup.string(), label = "", placeholder = "", defaultValue = undefined, value = undefined, type = "text", className = "", classNameLabel = "", classNameContentInput = "", classNameInput = "", classNameIcon = "", classNameLoaderValidate = "", iconLoader = react_1.default.createElement(Loader_1.Loader, null), onChange = () => { }, onBlur = () => { }, onEnter = () => { }, onChangeValidate = async (e) => e, parseText, onChangeValidateBeforeYup = async (e) => {
+const InputText = ({ id = "", datalist = undefined, name = "", yup = Yup.string(), label = "", placeholder = "", placeholderFocus = undefined, defaultValue = undefined, value = undefined, type = "text", className = "", classNameLabel = "", classNameContentInput = "", classNameInput = "", classNameIcon = "", classNameLoaderValidate = "", iconLoader = react_1.default.createElement(Loader_1.Loader, null), onChange = () => { }, onBlur = () => { }, onEnter = () => { }, onChangeValidate = async (e) => e, parseText, onChangeValidateBeforeYup = async (e) => {
     (0, env_log_1.env_log)(e, {
         name: "onChangeValidateBeforeYup",
     });
@@ -24,6 +24,7 @@ const InputText = ({ id = "", datalist = undefined, name = "", yup = Yup.string(
     });
 }, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", required = false, requiredText = "*", loader = false, autoComplete = false, useLoader = true, isChange: isChangeProps = undefined, onKeyDown, iconPos = "right", inputMode, validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, ...p }) => {
     const { _t } = (0, fenextjs_hook_2.use_T)({ ...p });
+    const [isFocus, setIsFocus] = (0, react_1.useState)(false);
     const [statusInput, setStateInput] = (0, react_1.useState)("");
     const { dataMemo: dataErrorInput, setData: setErrorInput } = (0, fenextjs_hook_1.useData)(undefined);
     const errorInput = (0, react_1.useMemo)(() => error ?? dataErrorInput, [error, dataErrorInput]);
@@ -198,11 +199,17 @@ const InputText = ({ id = "", datalist = undefined, name = "", yup = Yup.string(
                 required && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement("small", { className: "fenext-input-required" }, _t(requiredText))))),
             react_1.default.createElement("div", { className: `fenext-input-content fenext-input-icon-pos-${iconPos} ${classNameContentInput}` },
-                react_1.default.createElement(TagInput, { id: id, name: name, list: datalist, type: type, ref: ref, className: `fenext-input-content-input ${classNameInput} fenext-input-validator-status-${FenextInputValidatorStatus} ${statusInput}`, placeholder: _t(placeholder), value: (parseText ? parseText(valueInput) : valueInput) ??
-                        valueInput, onChange: onChangeInput, onBlur: blurInput, disabled: disabled, onKeyUp: (event) => {
+                react_1.default.createElement(TagInput, { id: id, name: name, list: datalist, type: type, ref: ref, className: `fenext-input-content-input ${classNameInput} fenext-input-validator-status-${FenextInputValidatorStatus} ${statusInput}`, placeholder: _t((isFocus ? placeholderFocus : placeholder) ??
+                        placeholder), value: (parseText ? parseText(valueInput) : valueInput) ??
+                        valueInput, onChange: onChangeInput, onBlur: () => {
+                        blurInput();
+                        setIsFocus(false);
+                    }, disabled: disabled, onKeyUp: (event) => {
                         if (event.keyCode === 13) {
                             onEnter();
                         }
+                    }, onClick: () => {
+                        setIsFocus(true);
                     }, autoComplete: autoComplete ? "on" : "off", onKeyDown: onKeyDown, ...props, inputMode: inputMode }),
                 ICON,
                 LOADER,

@@ -619,14 +619,17 @@ export const InputText = ({
                         type={type}
                         ref={ref}
                         className={`fenext-input-content-input ${classNameInput} fenext-input-validator-status-${FenextInputValidatorStatus} ${statusInput}`}
-                        placeholder={_t((isFocus ? placeholderFocus : placeholder) ?? placeholder)}
+                        placeholder={_t(
+                            (isFocus ? placeholderFocus : placeholder) ??
+                                placeholder,
+                        )}
                         value={
                             (parseText ? parseText(valueInput) : valueInput) ??
                             valueInput
                         }
                         onChange={onChangeInput}
-                        onBlur={()=>{
-                            blurInput()
+                        onBlur={() => {
+                            blurInput();
                             setIsFocus(false);
                         }}
                         disabled={disabled}
@@ -635,8 +638,8 @@ export const InputText = ({
                                 onEnter();
                             }
                         }}
-                        onClick={()=>{
-                            setIsFocus(true)
+                        onClick={() => {
+                            setIsFocus(true);
                         }}
                         autoComplete={autoComplete ? "on" : "off"}
                         onKeyDown={onKeyDown}
