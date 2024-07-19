@@ -276,6 +276,9 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
                         display: flex;
                     }
                 }
+                &-option-selected-img{
+                    display: none;
+                }
             }
         }
     }

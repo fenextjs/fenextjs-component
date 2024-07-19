@@ -74,8 +74,10 @@ const args: InputSelectCSCProps = {
         }
     },
     errorWithIsChange: false,
+    converterInSearchWithMaxLenght:true,
     country: {
-        validatorData: XellValidatorCountry
+        validatorData: XellValidatorCountry,
+
     },
     state: {
         validatorData: XellValidatorState
