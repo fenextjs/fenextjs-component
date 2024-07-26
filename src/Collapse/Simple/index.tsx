@@ -25,6 +25,10 @@ export interface CollapseBaseProps {
      */
     active?: boolean;
     /**
+     * The id for the component.
+     */
+    id?: string;
+    /**
      * The name for the component.
      */
     name?: string;
@@ -114,6 +118,7 @@ export const Collapse = ({
     disabled = false,
     defaultActive = false,
     active: activeProps = undefined,
+    id,
     name = "",
     type = "checkbox",
     show = "checked",
@@ -164,6 +169,7 @@ export const Collapse = ({
                     <input
                         type={type}
                         className={`fenext-collapse-header-checkbox`}
+                        id={id}
                         name={name}
                         disabled={disabled || loader}
                         defaultChecked={defaultActive}

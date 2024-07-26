@@ -12,7 +12,7 @@ export interface CollapseMultipleBaseProps
     /**
      * items of Collapse.
      */
-    items?: Omit<CollapseBaseProps, "checkbox" | "name">[];
+    items?: Omit<CollapseBaseProps, "checkbox" | "name" | "id">[];
 
     /**
      * defaultActive of Collapse.
