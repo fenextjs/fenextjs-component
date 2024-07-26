@@ -20,6 +20,10 @@ export interface CollapseBaseProps {
      */
     active?: boolean;
     /**
+     * The id for the component.
+     */
+    id?: string;
+    /**
      * The name for the component.
      */
     name?: string;
@@ -91,4 +95,4 @@ export interface CollapseClassProps {
  */
 export interface CollapseProps extends CollapseBaseProps, CollapseClassProps {
 }
-export declare const Collapse: ({ className, classNameHeader, classNameHeaderContent, classNameHeaderIcon, classNameBody, children, loader, header, disabled, defaultActive, active: activeProps, name, type, show, status, onChange, iconArrow, rotateIcon, useActiveForShowChildren, }: CollapseProps) => React.JSX.Element;
+export declare const Collapse: ({ className, classNameHeader, classNameHeaderContent, classNameHeaderIcon, classNameBody, children, loader, header, disabled, defaultActive, active: activeProps, id, name, type, show, status, onChange, iconArrow, rotateIcon, useActiveForShowChildren, }: CollapseProps) => React.JSX.Element;
