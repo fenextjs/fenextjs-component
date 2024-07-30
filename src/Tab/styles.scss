@@ -35,22 +35,12 @@
         scroll-snap-type: x mandatory;
         scroll-padding: 0;
         &::-webkit-scrollbar {
-            width: 0.25rem;
-            height: 0.25rem;
+            width: 0.5rem;
+            height: 0.5rem;
             transition: 0.5s;
             @media (max-width: 575px) {
                 width: 0;
                 height: 0;
-            }
-        }
-        &:hover {
-            &::-webkit-scrollbar {
-                width: 0.5rem;
-                height: 0.5rem;
-                @media (max-width: 575px) {
-                    width: 0;
-                    height: 0;
-                }
             }
         }
         &-item {
