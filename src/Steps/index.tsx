@@ -196,7 +196,7 @@ export const Steps = ({
     onPrev,
     stepPos = "left",
     showCurrentStepNStep = false,
-    useArrowKey = true,
+    useArrowKey = false,
     useDogs = false,
     onSetStep,
     ...props

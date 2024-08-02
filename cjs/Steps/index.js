@@ -6,7 +6,7 @@ const react_1 = tslib_1.__importStar(require("react"));
 const useDocumentEvent_1 = require("fenextjs-hook/cjs/useDocumentEvent");
 const Button_1 = require("../Button");
 const fenextjs_hook_1 = require("fenextjs-hook");
-const Steps = ({ className = "", classNameContentItems = "", classNameContentSteps = "", classNameListSteps = "", classNameItem = "", classNameItemActive = "", classNameStep = "", classNameStepActive = "", classNameStepCircle = "", classNameStepLabel = "", classNameContentBtn = "", classNameBtn = "", classNameBtnNext = "", classNameBtnPrev = "", defaultStep = 0, step = undefined, useStep = false, items = [], btnNext = "Next", btnPrev = "Previous", disabledBtnNext = false, disabledBtnPrev = false, onNext, onPrev, stepPos = "left", showCurrentStepNStep = false, useArrowKey = true, useDogs = false, onSetStep, ...props }) => {
+const Steps = ({ className = "", classNameContentItems = "", classNameContentSteps = "", classNameListSteps = "", classNameItem = "", classNameItemActive = "", classNameStep = "", classNameStepActive = "", classNameStepCircle = "", classNameStepLabel = "", classNameContentBtn = "", classNameBtn = "", classNameBtnNext = "", classNameBtnPrev = "", defaultStep = 0, step = undefined, useStep = false, items = [], btnNext = "Next", btnPrev = "Previous", disabledBtnNext = false, disabledBtnPrev = false, onNext, onPrev, stepPos = "left", showCurrentStepNStep = false, useArrowKey = false, useDogs = false, onSetStep, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const ref = (0, react_1.useRef)(null);
     const [loader, setLoader] = (0, react_1.useState)(false);
