@@ -161,6 +161,10 @@ export interface StepsClassProps {
      * The class name for the btn prev.
      */
     classNameBtnPrev?: string;
+
+    forceShowBtnPrev?:boolean
+
+    forceShowBtnNext?:boolean
 }
 
 /**
@@ -199,6 +203,8 @@ export const Steps = ({
     useArrowKey = false,
     useDogs = false,
     onSetStep,
+    forceShowBtnPrev=false,
+    forceShowBtnNext=false,
     ...props
 }: StepsProps) => {
     const { _t } = use_T({ ...props });
@@ -357,7 +363,7 @@ export const Steps = ({
                 <div
                     className={`fenext-steps-content-btn ${classNameContentBtn} `}
                 >
-                    {currentStep != 0 && (
+                    {(currentStep != 0 || forceShowBtnPrev) && (
                         <Button
                             className={`fenext-steps-btn fenext-steps-btn-prev ${classNameBtn} ${classNameBtnPrev}`}
                             disabled={disabledBtnPrev}
@@ -402,7 +408,7 @@ export const Steps = ({
                             </div>
                         </>
                     )}
-                    {currentStep != items.length - 1 && (
+                    {(currentStep != items.length - 1 || forceShowBtnNext) && (
                         <Button
                             className={`fenext-steps-btn fenext-steps-btn-next ${classNameBtn} ${classNameBtnNext}`}
                             disabled={disabledBtnNext}

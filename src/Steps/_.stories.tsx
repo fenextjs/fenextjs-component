@@ -246,6 +246,8 @@ Index.args = {
             ),
         },
     ],
+    forceShowBtnNext:false,
+    forceShowBtnPrev:false
 } as StepsProps;
 
 export const useStep = Profile.bind({});
