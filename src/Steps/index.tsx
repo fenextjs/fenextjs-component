@@ -162,9 +162,9 @@ export interface StepsClassProps {
      */
     classNameBtnPrev?: string;
 
-    forceShowBtnPrev?:boolean
+    forceShowBtnPrev?: boolean;
 
-    forceShowBtnNext?:boolean
+    forceShowBtnNext?: boolean;
 }
 
 /**
@@ -203,8 +203,8 @@ export const Steps = ({
     useArrowKey = false,
     useDogs = false,
     onSetStep,
-    forceShowBtnPrev=false,
-    forceShowBtnNext=false,
+    forceShowBtnPrev = false,
+    forceShowBtnNext = false,
     ...props
 }: StepsProps) => {
     const { _t } = use_T({ ...props });
