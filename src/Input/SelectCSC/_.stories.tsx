@@ -60,13 +60,7 @@ const args: InputSelectCSCProps = {
             "id_country": 82,
             "nameAve": "BOGOTA(CUNDINAMARCA)"
         },
-        "country": {
-            "id": 82,
-            "text": "Colombia",
-            "code": "CO",
-            "code_phone": "+57",
-            "img": "https://xell-lib-csc-bucket.s3.amazonaws.com/country/82_colombia/img.png"
-        },
+        "country": {"id":-1,"code":"","text":""},
         "state": {
             "id": 1726,
             "id_country": 82,
