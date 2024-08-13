@@ -11,7 +11,7 @@ export interface InputSelectCSCClassProps extends InputSelectClassProps {
      */
     classNameSelectCSC?: string;
 }
-type InputCSCProps = Pick<InputSelectProps, "label" | "placeholder" | "placeholderFocus" | "disabled" | "classNameSelect" | "validator" | "validatorData" | "filterOptions">;
+type InputCSCProps = Pick<InputSelectProps, "label" | "placeholder" | "placeholderFocus" | "disabled" | "classNameSelect" | "validator" | "validatorData" | "filterOptions" | "optional" | "optionalText" | "required" | "requiredText">;
 /**
  * Interface that defines the base properties for a text input component.
  */

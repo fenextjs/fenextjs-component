@@ -37,10 +37,10 @@ type InputCSCProps = Pick<
     | "validator"
     | "validatorData"
     | "filterOptions"
-    | 'optional'
-    |'optionalText'
-    |'required'
-    |'requiredText'
+    | "optional"
+    | "optionalText"
+    | "required"
+    | "requiredText"
 >;
 
 /**
