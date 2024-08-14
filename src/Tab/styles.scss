@@ -17,17 +17,17 @@
             align-items: center;
             gap: 0.5rem;
 
-            &:has(&-before){
+            &:has(&-before) {
                 grid-template-columns: auto 1fr;
             }
-            &:has(&-after){
-                grid-template-columns: 1fr auto ;
+            &:has(&-after) {
+                grid-template-columns: 1fr auto;
             }
-            &:has(&-before):has(&-after){
-                grid-template-columns:auto 1fr auto ;
+            &:has(&-before):has(&-after) {
+                grid-template-columns: auto 1fr auto;
             }
             @media (max-width: 991px) {
-                &.fenext-tab-content-head.fenext-tab-content-head{
+                &.fenext-tab-content-head.fenext-tab-content-head {
                     grid-template-columns: 1fr;
                 }
             }
