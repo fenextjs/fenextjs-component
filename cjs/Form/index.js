@@ -6,11 +6,10 @@ const react_1 = tslib_1.__importDefault(require("react"));
 const useNotification_1 = require("fenextjs-hook/cjs/useNotification");
 const Request_1 = require("fenextjs-interface/cjs/Request");
 const fenextjs_hook_1 = require("fenextjs-hook");
-const Form = ({ id = "", data, disabled = true, onChangeLoader, children, className = "", ...props }) => {
+const Form = ({ id = "", data, disabled = true, children, className = "", ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const { pop } = (0, useNotification_1.useNotification)({});
     const onSendForm = async () => {
-        onChangeLoader?.(true);
         try {
             const result = await props?.onSubmit?.(data);
             pop({
@@ -35,7 +34,6 @@ const Form = ({ id = "", data, disabled = true, onChangeLoader, children, classN
                 message: _t(error?.message ?? error ?? ""),
             });
         }
-        onChangeLoader?.(false);
     };
     const onSubmit = async (e) => {
         e.preventDefault();

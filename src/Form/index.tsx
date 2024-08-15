@@ -49,11 +49,6 @@ export interface FormProps<
     loader?: boolean;
 
     /**
-     * The function to call when the loader state of the form changes
-     */
-    onChangeLoader?: (disabled: boolean) => void;
-
-    /**
      * The className to apply to the form element
      */
     className?: string;
@@ -63,7 +58,6 @@ export const Form = <D = any, R = any, E = any>({
     id = "",
     data,
     disabled = true,
-    onChangeLoader,
     children,
     className = "",
     ...props
@@ -71,7 +65,6 @@ export const Form = <D = any, R = any, E = any>({
     const { _t } = use_T({ ...props });
     const { pop } = useNotification({});
     const onSendForm = async () => {
-        onChangeLoader?.(true);
         try {
             const result = await props?.onSubmit?.(data);
             pop({
@@ -95,7 +88,6 @@ export const Form = <D = any, R = any, E = any>({
                 message: _t(error?.message ?? error ?? ""),
             });
         }
-        onChangeLoader?.(false);
     };
 
     const onSubmit = async (e: any) => {

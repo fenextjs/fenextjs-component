@@ -29,12 +29,8 @@ export interface FormProps<D = any, R = any, E = any, T = RequestResultTypeProps
      */
     loader?: boolean;
     /**
-     * The function to call when the loader state of the form changes
-     */
-    onChangeLoader?: (disabled: boolean) => void;
-    /**
      * The className to apply to the form element
      */
     className?: string;
 }
-export declare const Form: <D = any, R = any, E = any>({ id, data, disabled, onChangeLoader, children, className, ...props }: PropsWithChildren<FormProps<D, R, E>>) => React.JSX.Element;
+export declare const Form: <D = any, R = any, E = any>({ id, data, disabled, children, className, ...props }: PropsWithChildren<FormProps<D, R, E>>) => React.JSX.Element;
