@@ -44,11 +44,6 @@ export interface FormProps<
     disabled?: boolean;
 
     /**
-     * The function to call when the disabled state of the form changes
-     */
-    onChangeDisable?: (disabled: boolean) => void;
-
-    /**
      * Whether to show a loader while the form is submitting
      */
     loader?: boolean;
@@ -68,7 +63,6 @@ export const Form = <D = any, R = any, E = any>({
     id = "",
     data,
     disabled = true,
-    onChangeDisable,
     onChangeLoader,
     children,
     className = "",
@@ -109,7 +103,7 @@ export const Form = <D = any, R = any, E = any>({
         if (disabled) {
             return;
         }
-        onSendForm()
+        onSendForm();
     };
 
     return (

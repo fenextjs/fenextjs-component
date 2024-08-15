@@ -103,7 +103,7 @@ export const InputPhone = ({
     disabled,
     label,
     loader,
-    
+
     placeholderCode = "+57",
     placeholder = "xxx-xx-xx-xxxx",
     validator = undefined,
@@ -264,9 +264,9 @@ export const InputPhone = ({
                         optional={false}
                     />
                 </div>
-                {((props?.error ) || (errorFenext && isChange)) && (
+                {(props?.error || (errorFenext && isChange)) && (
                     <ErrorComponent
-                        error={errorFenext ?? props?.error }
+                        error={errorFenext ?? props?.error}
                         className={`fenext-input-error ${classNameError}`}
                         _t={_t}
                     />

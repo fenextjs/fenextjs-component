@@ -250,7 +250,7 @@ import {
 <details>
   <summary>InputPhone</summary>
 
-El componente InputPhone es un campo de entrada que combina un código de país selecto y un número de teléfono. También puede mostrar una bandera junto al código de país. 
+El componente InputPhone es un campo de entrada que combina un código de país selecto y un número de teléfono. También puede mostrar una bandera junto al código de país.
 
 ```tsx
 import {
@@ -536,7 +536,8 @@ const handleValidateCheck = async () => {
 <details>
   <summary>InputText</summary>
 
-El componente InputText es un componente para renderizar campos de entrada de texto. 
+El componente InputText es un componente para renderizar campos de entrada de texto.
+
 ```tsx
 import { InputText, InputTextProps } from "fenextjs-component/cjs/Input/Text";
 const handleChange = (value) => {
