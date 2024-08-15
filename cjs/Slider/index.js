@@ -69,7 +69,6 @@ const Slider = ({ className = "", classNameContent = "", classNameItem = "", cla
     };
     const onLoadSlider = () => {
         if (SliderRef.current) {
-            // onLoadTouchScroll(SliderRef.current);
             onLoadLoop();
         }
         else {

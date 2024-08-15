@@ -2,18 +2,9 @@ import { _TProps } from "fenextjs-interface";
 import React, { CSSProperties } from "react";
 import { CollapseProps } from "../../Collapse/Simple";
 import { DesignTypographyValue } from "./fontUnit";
-/**
- * Properties for the base DesignTypography component.
- */
 export interface DesignTypographyValueProps extends Partial<DesignTypographyValue> {
 }
-/**
- * Properties for the base DesignTypography component.
- */
 export interface DesignTypographyProps extends _TProps {
-    /**
-     * The class name for the component.
-     */
     className?: string;
     defaultValue?: DesignTypographyValueProps;
     value?: DesignTypographyValueProps;

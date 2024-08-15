@@ -6,10 +6,6 @@ const react_1 = tslib_1.__importStar(require("react"));
 const Check_1 = require("fenextjs-svg/cjs/Check");
 const env_log_1 = require("fenextjs-functions/cjs/env_log");
 const fenextjs_hook_1 = require("fenextjs-hook");
-/**
- * Component that renders a radio input.
- * Takes an InputRadioProps object as props.
- */
 const InputRadio = ({ classNameContent = "", classNameLabel = "", classNameLabelActive = "", classNameLabelInactive = "", classNameText = "", classNameContentRadio = "", classNameContentRadioActive = "", classNameContentRadioInactive = "", classNameRadio = "", classNameRadioActive = "", classNameRadioInactive = "", labelPosition = "right", name = "", onChange = (e) => {
     (0, env_log_1.env_log)(e, {
         name: "input radio onchange",

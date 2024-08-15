@@ -21,17 +21,6 @@ const parseTabCount = (d, _t) => {
     };
 };
 exports.parseTabCount = parseTabCount;
-/**
- * Tab component that displays a set of tabs with content.
- * @param className CSS class name for the component.
- * @param classNameHead CSS class name for the tab header.
- * @param classNameHeadItem CSS class name for each item in the tab header.
- * @param classNameHeadItemActive CSS class name for the active item in the tab header.
- * @param classNameBody CSS class name for the tab body.
- * @param classNameBodyItem CSS class name for each item in the tab body.
- * @param items Array of `TabItemProps` objects representing the tabs.
- * @param defaultTab Index of the tab to be shown by default.
- */
 const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", classNameHeadItem = "", classNameHeadItemActive = "", classNameBody = "", classNameBodyItem = "", classNameContentAfterHead = "", classNameContentBeforeHead = "", items = [], defaultTab = 0, activeTab = undefined, afterTabs = undefined, beforeTabs = undefined, onChange, tabScrollActive = false, validataTabOneHiddenHeader = true, useCount = false, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const [_tabSelect, setTabSelect] = (0, react_1.useState)(Math.max(0, Math.min(defaultTab, items?.length - 1)));

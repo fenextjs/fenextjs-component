@@ -12,10 +12,6 @@ const fenextjs_functions_1 = require("fenextjs-functions");
 const useJsonString_1 = require("fenextjs-hook/cjs/useJsonString");
 const country_state_city_nextjs_1 = require("country-state-city-nextjs");
 const SelectT_1 = require("../SelectT");
-/**
- * Component that renders a checkbox input.
- * Takes an InputPhoneProps object as props.
- */
 const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultValue: defaultValueProps = {
     code: "+57",
     number: "",
@@ -83,9 +79,7 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                                     : undefined,
                             });
                         }
-                    }, regExp: /[^0-9+-]/g, regExpReplace: "", icon: react_1.default.createElement(react_1.default.Fragment, null), 
-                    // changeByFirstOptionInOnBlur={true}
-                    optional: false, showOptionIconImg: true })),
+                    }, regExp: /[^0-9+-]/g, regExpReplace: "", icon: react_1.default.createElement(react_1.default.Fragment, null), optional: false, showOptionIconImg: true })),
             react_1.default.createElement("div", { className: `fenext-input-phone-text ${classNamePhoneNumber}` },
                 react_1.default.createElement(Text_1.InputText, { ...classNameInputNumber, ...props, type: "text", onChange: onChangeData("number"), loader: !loadPhoneCodes || loader, disabled: !loadPhoneCodes || disabled, placeholder: placeholder, defaultValue: data?.number, value: value?.number, _t: _t, validator: validator?.getObjectValidator?.()?.number, inputMode: "numeric", regExpReplace: "", regExp: /[^0-9]/g, optional: false })),
             (props?.error || (errorFenext && isChange)) && (react_1.default.createElement(Error_1.ErrorComponent, { error: errorFenext ?? props?.error, className: `fenext-input-error ${classNameError}`, _t: _t })))));

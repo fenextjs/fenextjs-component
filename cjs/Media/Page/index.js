@@ -62,7 +62,6 @@ const MediaPage = ({ className = "", multiple = false, onChange, onUploadImg, on
             name: v.text,
             quality: 0.7,
         });
-        // console.log(img.srcThumbnail_100);
         (0, env_log_1.env_log)(img, {
             name: "Img upload",
         });

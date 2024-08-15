@@ -1,9 +1,6 @@
 import React from "react";
 import { InputTextProps } from "../Text";
 import { InputCalendarMonthProps } from "./Month";
-/**
- * All props for the InputCalendar component.
- */
 export interface InputCalendarProps extends Pick<InputTextProps, "label" | "placeholder" | "optional" | "optionalText" | "required" | "requiredText" | "icon" | "iconPos">, Pick<InputCalendarMonthProps, "_t" | "type"> {
     defaultValue?: Date;
     value?: Date;

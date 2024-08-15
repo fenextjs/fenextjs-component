@@ -1,7 +1,4 @@
 import React, { ReactNode } from "react";
-/**
- * Props for InputScannerQr component.
- */
 export interface InputScannerQrProps {
     className?: string;
     onChange?: (v: string) => void;

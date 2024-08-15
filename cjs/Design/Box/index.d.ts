@@ -12,20 +12,11 @@ import { DesignBoxWidthProps } from "./Width";
 import { DesignBoxHeightProps } from "./Height";
 import { DesignBoxAlignProps } from "./Align";
 import { DesignBoxGapProps } from "./Gap";
-/**
- * Properties for the base DesignBox component.
- */
 export interface DesignBoxValueProps extends Partial<DesignBoxValue> {
 }
 export interface DesignBoxTextProps extends DesignBoxPaddingProps, DesignBoxMarginProps, DesignBoxBorderProps, DesignBoxBorderRadiusProps, DesignBoxBorderColorProps, DesignBoxBackgroundProps, DesignBoxWidthProps, DesignBoxHeightProps, DesignBoxGapProps, DesignBoxAlignProps, DesignBoxBorderStyleProps {
 }
-/**
- * Properties for the base DesignBox component.
- */
 export interface DesignBoxProps extends Omit<DesignBoxTextProps, "setDataFunction" | "data" | "onChangeData"> {
-    /**
-     * The class name for the component.
-     */
     className?: string;
     onChangeStyles?: (data: CSSProperties) => void;
     collapseName?: CollapseProps["name"];

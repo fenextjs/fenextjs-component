@@ -1,8 +1,5 @@
 import React from "react";
 import { DesignBoxUseDataProps } from "../boxUnit";
-/**
- * Properties for the base DesignBoxPadding component.
- */
 export interface DesignBoxPaddingProps extends DesignBoxUseDataProps {
     textPadding?: string;
     textPaddingTop?: string;

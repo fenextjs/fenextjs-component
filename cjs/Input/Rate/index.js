@@ -7,9 +7,6 @@ const Start_1 = require("fenextjs-svg/cjs/Start");
 const InputRate = ({ className = "", classNameContentStar = "", classNameStar = "", classNameStarActive = "", classNameNumber = "", defaultValue = 0, value = undefined, useValue = false, onChange, }) => {
     const [data, setData] = (0, react_1.useState)(defaultValue);
     const start = (0, react_1.useMemo)(() => Math.max(0, Math.min((useValue ? value : data) ?? 0, 5)), [useValue, value, data]);
-    // const elemento = e.currentTarget;
-    // const posX = e.nativeEvent.offsetX;
-    // const porcentajeX = (posX / elemento.offsetWidth) * 100;
     const onSelectStar = (e) => {
         const v = parseFloat(e.target.value);
         onChange?.(v);

@@ -6,10 +6,6 @@ const react_1 = tslib_1.__importStar(require("react"));
 const Check_1 = require("fenextjs-svg/cjs/Check");
 const env_log_1 = require("fenextjs-functions/cjs/env_log");
 const fenextjs_hook_1 = require("fenextjs-hook");
-/**
- * Component that renders a checkbox input.
- * Takes an InputCheckboxProps object as props.
- */
 const InputCheckbox = ({ classNameLabel = "", classNameLabelActive = "", classNameLabelInactive = "", classNameText = "", classNameContentCheckbox = "", classNameContentCheckboxActive = "", classNameContentCheckboxInactive = "", classNameCheckbox = "", classNameCheckboxActive = "", classNameCheckboxInactive = "", label = "", labelPosition = "right", name = "", onChange = (e) => {
     (0, env_log_1.env_log)(e, {
         name: "input checkbox onchange",

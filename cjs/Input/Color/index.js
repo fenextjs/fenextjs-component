@@ -4,10 +4,6 @@ exports.InputColor = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const fenextjs_hook_1 = require("fenextjs-hook");
-/**
- * Component that renders a swich input.
- * Takes an InputColorProps object as props.
- */
 const InputColor = ({ className = "", defaultValue, value, onChange, disabled, }) => {
     const { data: data_, setData } = (0, fenextjs_hook_1.useData)(defaultValue ?? "", {
         onChangeDataAfter: onChange,

@@ -7,10 +7,6 @@ const TextSelect_1 = require("../../TextSelect");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const Unit_1 = require("fenextjs-functions/cjs/parse/Unit");
 const Number_1 = require("fenextjs-functions/cjs/parse/Number");
-/**
- * Component that renders a checkbox input.
- * Takes an InputUnitBaseProps object as props.
- */
 const InputUnitBase = ({ defaultValue = {}, value: valueProps = undefined, onChange, options, ...props }) => {
     const { data, setData } = (0, fenextjs_hook_1.useData)({
         unit: defaultValue?.unit,

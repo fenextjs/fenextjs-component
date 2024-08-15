@@ -1,8 +1,5 @@
 import React from "react";
 import { DesignBoxUseDataProps } from "../boxUnit";
-/**
- * Properties for the base DesignBoxBorderStyle component.
- */
 export interface DesignBoxBorderStyleProps extends DesignBoxUseDataProps {
     textBorderStyle?: string;
     textBorderStyleTop?: string;

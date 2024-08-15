@@ -33,7 +33,7 @@
         "target": "esnext",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "removeComments": false,
+        "removeComments": true,
         "noImplicitAny": false,
         "isolatedModules": true
     }

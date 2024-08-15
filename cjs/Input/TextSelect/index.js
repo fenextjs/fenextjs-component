@@ -10,10 +10,6 @@ const Error_1 = require("../../Error");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_validator_1 = require("fenextjs-validator");
 const fenextjs_hook_2 = require("fenextjs-hook");
-/**
- * Component that renders a checkbox input.
- * Takes an InputTextSelectProps object as props.
- */
 const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultValue = {}, value: valueProps = undefined, onChange, validator = undefined, posSelect = "left", errorWithIsChange = false, error, ...props }) => {
     const { _t } = (0, fenextjs_hook_2.use_T)({ ...props });
     const { data, onChangeData, isChange } = (0, useData_1.useData)(defaultValue, {
