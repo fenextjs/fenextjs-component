@@ -61,8 +61,7 @@
     "fenextjs-svg": "6.1.0",
     "fenextjs-validator": "4.3.1",
     "qr-scanner": "1.4.2",
-    "uselocalstoragenextjs": "2.0.0",
-    "yup": "1.4.0"
+    "uselocalstoragenextjs": "2.0.0"
   },
   "files": [
     "cjs",

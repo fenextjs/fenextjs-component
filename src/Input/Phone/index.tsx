@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import * as Yup from "yup";
 
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../Text";
 import { InputSelectClassProps } from "../Select";
 import { PhoneProps } from "fenextjs-interface/cjs/Phone";
 import { useData } from "fenextjs-hook/cjs/useData";
-import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorComponent } from "../../Error";
-import { CountryProps, ErrorCode } from "fenextjs-interface";
+import { CountryProps } from "fenextjs-interface";
 import { useValidator, use_T } from "fenextjs-hook";
 import { FenextjsValidator, FenextjsValidatorClass } from "fenextjs-validator";
 import { parsePhone_to_String, parseString_to_Phone } from "fenextjs-functions";
@@ -105,10 +103,7 @@ export const InputPhone = ({
     disabled,
     label,
     loader,
-    yup = Yup.object().shape({
-        code: Yup.string().required(),
-        number: Yup.string().required(),
-    }),
+    
     placeholderCode = "+57",
     placeholder = "xxx-xx-xx-xxxx",
     validator = undefined,
@@ -146,7 +141,6 @@ export const InputPhone = ({
         onChange: onChangeProps,
     });
 
-    const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
     const [loadPhoneCodes, setlLoadPhoneCodes] = useState(false);
     const {
         dataMemo: data,
@@ -162,24 +156,8 @@ export const InputPhone = ({
                 tel: `${v.code} ${v.number}`,
             };
         },
-        onChangeDataAfter: (data: Partial<PhoneProps>) => onValidatePhone(data),
     });
     const [phones, setPhones] = useState<CountryProps[]>([]);
-    const onValidatePhone = async (data: Partial<PhoneProps>) => {
-        try {
-            const valid = await yup.validate(data);
-            if (valid) {
-                setError(undefined);
-            }
-        } catch (error: any) {
-            setError(
-                new ErrorFenextjs({
-                    code: ErrorCode.ERROR,
-                    message: `${error.message}`,
-                }),
-            );
-        }
-    };
     const loadPhones = async () => {
         const countrys: CountryProps[] = await getDataCountrys();
         setPhones(countrys);
@@ -286,9 +264,9 @@ export const InputPhone = ({
                         optional={false}
                     />
                 </div>
-                {((props?.error ?? error) || (errorFenext && isChange)) && (
+                {((props?.error ) || (errorFenext && isChange)) && (
                     <ErrorComponent
-                        error={errorFenext ?? props?.error ?? error}
+                        error={errorFenext ?? props?.error }
                         className={`fenext-input-error ${classNameError}`}
                         _t={_t}
                     />

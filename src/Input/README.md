@@ -250,7 +250,7 @@ import {
 <details>
   <summary>InputPhone</summary>
 
-El componente InputPhone es un campo de entrada que combina un código de país selecto y un número de teléfono. También puede mostrar una bandera junto al código de país. Utiliza la librería Yup para validar el código de país y el número de teléfono.
+El componente InputPhone es un campo de entrada que combina un código de país selecto y un número de teléfono. También puede mostrar una bandera junto al código de país. 
 
 ```tsx
 import {
@@ -536,8 +536,7 @@ const handleValidateCheck = async () => {
 <details>
   <summary>InputText</summary>
 
-El componente InputText es un componente para renderizar campos de entrada de texto. Proporciona funcionalidades como validación de entrada utilizando el esquema Yup, manejo de errores y carga, y opciones adicionales para personalizar la apariencia del campo de entrada.
-
+El componente InputText es un componente para renderizar campos de entrada de texto. 
 ```tsx
 import { InputText, InputTextProps } from "fenextjs-component/cjs/Input/Text";
 const handleChange = (value) => {

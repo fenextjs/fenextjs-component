@@ -1,6 +1,6 @@
 #### InputText
 
-El componente InputText es un componente para renderizar campos de entrada de texto. Proporciona funcionalidades como validación de entrada utilizando el esquema Yup, manejo de errores y carga, y opciones adicionales para personalizar la apariencia del campo de entrada.
+El componente InputText es un componente para renderizar campos de entrada de texto.
 
 ```tsx
 import { InputText, InputTextProps } from "fenextjs-component/cjs/Input/Text";

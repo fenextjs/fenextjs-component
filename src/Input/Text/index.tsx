@@ -1,5 +1,4 @@
 import React, { CSSProperties, useMemo, useState } from "react";
-import * as Yup from "yup";
 
 import { env_log } from "fenextjs-functions/cjs/env_log";
 import { useRef } from "react";
@@ -107,10 +106,6 @@ export interface InputTextBaseProps extends _TProps {
      */
     datalist?: any;
     /**
-     * Yup object used for input validation.
-     */
-    yup?: any;
-    /**
      * FenextjsValidatorClass used for input validation.
      */
     validator?: FenextjsValidatorClass;
@@ -170,16 +165,6 @@ export interface InputTextBaseProps extends _TProps {
      * Function to call for custom input validation.
      */
     onChangeValidate?: (e: string) => Promise<string> | string;
-
-    /**
-     * Function to call before using Yup validation.
-     */
-    onChangeValidateBeforeYup?: (e: string) => Promise<void> | void;
-
-    /**
-     * Function to call after using Yup validation.
-     */
-    onChangeValidateAfterYup?: (e: string) => Promise<void> | void;
 
     /**
      * Additional properties to pass to the input component.
@@ -312,7 +297,6 @@ export const InputText = ({
     id = "",
     datalist = undefined,
     name = "",
-    yup = Yup.string(),
     label = "",
     placeholder = "",
     placeholderFocus = undefined,
@@ -331,16 +315,6 @@ export const InputText = ({
     onEnter = () => {},
     onChangeValidate = async (e: string) => e,
     parseText,
-    onChangeValidateBeforeYup = async (e) => {
-        env_log(e, {
-            name: "onChangeValidateBeforeYup",
-        });
-    },
-    onChangeValidateAfterYup = async (e) => {
-        env_log(e, {
-            name: "onChangeValidateAfterYup",
-        });
-    },
     props = {},
     icon = <></>,
     extraInContentInput = <></>,
@@ -412,9 +386,6 @@ export const InputText = ({
                 const n = await onChangeValidate(v);
                 v = n ?? v;
             }
-            if (onChangeValidateBeforeYup) {
-                await onChangeValidateBeforeYup(v);
-            }
         } catch (error: any) {
             env_log(error, {
                 name: "error",
@@ -430,72 +401,7 @@ export const InputText = ({
             setLoaderInput(false);
             return v;
         }
-        if (yup != null) {
-            try {
-                const valid = await yup.validate(v);
-                if (valid) {
-                    setStateInput("ok");
-                    setErrorInput(undefined);
-                    try {
-                        setLoaderInput(true);
-                        if (onChangeValidateAfterYup) {
-                            await onChangeValidateAfterYup(v);
-                        }
-                        setLoaderInput(false);
-                    } catch (error: any) {
-                        env_log(error, {
-                            name: "error",
-                            color: "red",
-                        });
-                        setStateInput("error");
-                        setErrorInput(
-                            new ErrorFenextjs({
-                                code: ErrorCode.ERROR,
-                                message: error.message,
-                            }),
-                        );
-                        setLoaderInput(false);
-                    }
-                }
-            } catch (error: any) {
-                env_log(error, {
-                    name: "error",
-                    color: "red",
-                });
-                setStateInput("error");
-                setErrorInput(
-                    new ErrorFenextjs({
-                        code: ErrorCode.ERROR,
-                        message: error.message,
-                    }),
-                );
-            }
-            setLoaderInput(false);
-            return v;
-        } else {
-            try {
-                setLoaderInput(true);
-                if (onChangeValidateAfterYup) {
-                    await onChangeValidateAfterYup(v);
-                }
-                setLoaderInput(false);
-                return v;
-            } catch (error: any) {
-                env_log(error, {
-                    name: "error",
-                    color: "red",
-                });
-                setStateInput("error");
-                setErrorInput(
-                    new ErrorFenextjs({
-                        code: ErrorCode.ERROR,
-                        message: error.message,
-                    }),
-                );
-                setLoaderInput(false);
-                return v;
-            }
-        }
+        return v;
     };
     const onChangeInput = async (
         e:

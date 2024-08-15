@@ -1,8 +1,4 @@
-import * as Yup from "yup";
-import type { ObjectSchema, AnyObject } from "yup";
-import React, { PropsWithChildren, useEffect } from "react";
-
-import { env_log } from "fenextjs-functions/cjs/env_log";
+import React, { PropsWithChildren } from "react";
 
 import { useNotification } from "fenextjs-hook/cjs/useNotification";
 import {
@@ -63,16 +59,6 @@ export interface FormProps<
     onChangeLoader?: (disabled: boolean) => void;
 
     /**
-     * The Yup schema to use for form validation
-     */
-    yup?: ObjectSchema<AnyObject, AnyObject, any, "">;
-
-    /**
-     * The function to handle form validation after validating with Yup
-     */
-    validateAfterYup?: RequestProps<D, R, E, T>;
-
-    /**
      * The className to apply to the form element
      */
     className?: string;
@@ -85,8 +71,6 @@ export const Form = <D = any, R = any, E = any>({
     onChangeDisable,
     onChangeLoader,
     children,
-    yup = Yup.object().shape({}),
-    validateAfterYup,
     className = "",
     ...props
 }: PropsWithChildren<FormProps<D, R, E>>) => {
@@ -125,45 +109,8 @@ export const Form = <D = any, R = any, E = any>({
         if (disabled) {
             return;
         }
-        onValidateData(onSendForm, (error: string) => {
-            pop({
-                type: RequestResultTypeProps.ERROR,
-                message: _t(error),
-            });
-        });
+        onSendForm()
     };
-
-    const onValidateData = (onOk: onOk | null, onError: onError | null) => {
-        yup.validate(data)
-            .then(async function () {
-                try {
-                    if (validateAfterYup) {
-                        await validateAfterYup(data);
-                    }
-                    onChangeDisable?.(false);
-                } catch (error: any) {
-                    onChangeDisable?.(true);
-                    env_log(error, {
-                        name: "error",
-                    });
-                    onError?.(error.message);
-                    return;
-                }
-                onOk?.();
-            })
-            .catch(function (error: any) {
-                onChangeDisable?.(true);
-                env_log(error, {
-                    name: "onValidateData error",
-                });
-                onError?.(error.message);
-
-                return;
-            });
-    };
-    useEffect(() => {
-        onValidateData(null, null);
-    }, [data, yup]);
 
     return (
         <>

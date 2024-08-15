@@ -1,6 +1,5 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import * as Yup from "yup";
 import {  FenextjsValidator } from "fenextjs-validator";
 
 import { InputText, InputTextProps } from "./index";
@@ -19,7 +18,6 @@ export const Index = Profile.bind({});
 const args  : InputTextProps = {
     label:"Label",
     placeholder:"Placeholder",
-    yup:Yup.string().required()
 }
 
 Index.args= args

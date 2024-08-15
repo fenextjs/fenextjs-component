@@ -1,6 +1,6 @@
 #### Form
 
-El componente Form es un componente que se utiliza para manejar formularios en React. Proporciona funciones para validar los datos del formulario usando Yup, enviar el formulario y manejar las notificaciones de éxito o error después del envío.
+El componente Form es un componente que se utiliza para manejar formularios en React. Enviar el formulario y manejar las notificaciones de éxito o error después del envío.
 
 ```tsx
 import { Form, FormProps } from "fenextjs-component/cjs/Form";

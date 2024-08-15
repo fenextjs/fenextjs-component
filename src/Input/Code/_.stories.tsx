@@ -1,6 +1,5 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import * as Yup from "yup";
 
 import { InputCode, InputCodeProps } from "./index";
 
@@ -18,7 +17,6 @@ export const Index = Profile.bind({});
 const args  : InputCodeProps = {
     label:"Label",
     placeholder:"Placeholder",
-    yup:Yup.string().required(),
     maxLength:6,
     regExp:/[^0-9]$/,
 }

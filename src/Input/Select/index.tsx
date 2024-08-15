@@ -54,15 +54,12 @@ export interface InputSelectBaseProps<T = any>
         InputTextBaseProps,
         | "value"
         | "type"
-        | "yup"
         | "defaultValue"
         | "value"
         | "onChange"
         | "onBlur"
         | "onEnter"
         | "onChangeValidate"
-        | "onChangeValidateBeforeYup"
-        | "onChangeValidateAfterYup"
     > {
     /**
      * Options of select.
