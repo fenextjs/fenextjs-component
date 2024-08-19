@@ -18,7 +18,7 @@ const useSelectOptionsPos_1 = require("./useSelectOptionsPos");
 const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(Arrow_1.Arrow, null), iconSearch = react_1.default.createElement(fenextjs_svg_1.SVGSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(cancel_1.Cancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, converterInSearchWithMaxLenght = false, maxLengthShowOptions = 20, itemMaxLengthShowOptions = {
     id: "fenext-item-max-length-show-options",
     text: "More ...",
-}, showOptionIconImg = true, validatorData, useTOption, ...props }) => {
+}, showOptionIconImg = true, validatorData, useTOption, forceShowOptionIfNotSelected = false, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const { _t: _tValue } = (0, fenextjs_hook_1.use_T)({ ...props, useT: useTOption });
     const options = (0, react_1.useMemo)(() => (filterOptions ? filterOptions(optionsProps) : optionsProps), [optionsProps, filterOptions]);
@@ -236,10 +236,23 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
     });
     const [isFocus, setIsFocus] = (0, react_1.useState)(false);
     (0, react_1.useEffect)(() => {
-        if (isFocus) {
+        if (isFocus ||
+            (forceShowOptionIfNotSelected && data?.option == undefined)) {
             onLoadChildren();
+            if (forceShowOptionIfNotSelected) {
+                const ele = selectRef.current?.querySelector(".fenext-input-content-input");
+                ele?.click();
+                ele?.focus();
+            }
         }
-    }, [props?.loader, options, OPTIONS, isFocus]);
+    }, [
+        props?.loader,
+        options,
+        OPTIONS,
+        isFocus,
+        forceShowOptionIfNotSelected,
+        data,
+    ]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { ref: selectRef, className: `
                     fenext-select

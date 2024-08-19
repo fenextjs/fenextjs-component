@@ -29,7 +29,7 @@ export interface InputSelectCSCClassProps extends InputSelectClassProps {
 
 type InputCSCProps = Pick<
     InputSelectProps,
-    |"id"
+    | "id"
     | "label"
     | "placeholder"
     | "placeholderFocus"
@@ -42,7 +42,7 @@ type InputCSCProps = Pick<
     | "optionalText"
     | "required"
     | "requiredText"
-    |"forceShowOptionIfNotSelected"
+    | "forceShowOptionIfNotSelected"
 >;
 
 /**

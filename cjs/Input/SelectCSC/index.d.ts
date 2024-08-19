@@ -5,7 +5,7 @@ import { CSCProps } from "fenextjs-interface/cjs/CSC";
 export interface InputSelectCSCClassProps extends InputSelectClassProps {
     classNameSelectCSC?: string;
 }
-type InputCSCProps = Pick<InputSelectProps, "label" | "placeholder" | "placeholderFocus" | "disabled" | "classNameSelect" | "validator" | "validatorData" | "filterOptions" | "optional" | "optionalText" | "required" | "requiredText">;
+type InputCSCProps = Pick<InputSelectProps, "id" | "label" | "placeholder" | "placeholderFocus" | "disabled" | "classNameSelect" | "validator" | "validatorData" | "filterOptions" | "optional" | "optionalText" | "required" | "requiredText" | "forceShowOptionIfNotSelected">;
 export interface InputSelectCSCBaseProps extends useCSCProps, Omit<InputSelectBaseProps, "options" | "defaultValue" | "value" | "isSelectClearText" | "onChange" | "onChangeValidate" | "validator" | "validatorData" | "filterOptions"> {
     useContainer?: boolean;
     onChange?: (data: CSCProps) => void;
