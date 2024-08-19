@@ -32,6 +32,7 @@ const args: InputSelectProps = {
     placeholder: "Select",
     datalist: "listOption",
     useTOption:true,
+    // forceShowOptionIfNotSelected:true,
     // _t:e=>"x",
     options: [
         {

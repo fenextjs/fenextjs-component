@@ -52,26 +52,26 @@ const XellValidatorCity = FenextjsValidator<CityProps>()
     .isRequired('Ciudad requerida');
 
 const args: InputSelectCSCProps = {
-    defaultValue: {
-        "city": {
-            "id": 452468,
-            "id_state": 1726,
-            "text": "Bogotá",
-            "id_country": 82,
-            "nameAve": "BOGOTA(CUNDINAMARCA)"
-        },
-        "country": {"id":-1,"code":"","text":""},
-        "state": {
-            "id": 1726,
-            "id_country": 82,
-            "text": "Cundinamarca"
-        }
-    },
+    // defaultValue: {
+    //     "city": {
+    //         "id": 452468,
+    //         "id_state": 1726,
+    //         "text": "Bogotá",
+    //         "id_country": 82,
+    //         "nameAve": "BOGOTA(CUNDINAMARCA)"
+    //     },
+    //     "country": {"id":-1,"code":"","text":""},
+    //     "state": {
+    //         "id": 1726,
+    //         "id_country": 82,
+    //         "text": "Cundinamarca"
+    //     }
+    // },
     errorWithIsChange: false,
     converterInSearchWithMaxLenght:true,
     country: {
         validatorData: XellValidatorCountry,
-
+        forceShowOptionIfNotSelected:true
     },
     state: {
         validatorData: XellValidatorState
