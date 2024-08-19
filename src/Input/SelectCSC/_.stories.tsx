@@ -71,7 +71,7 @@ const args: InputSelectCSCProps = {
     converterInSearchWithMaxLenght:true,
     country: {
         validatorData: XellValidatorCountry,
-        forceShowOptionIfNotSelected:true
+        forceShowOptionOnLoad:true
     },
     state: {
         validatorData: XellValidatorState

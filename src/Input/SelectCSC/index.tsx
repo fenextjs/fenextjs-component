@@ -42,7 +42,7 @@ type InputCSCProps = Pick<
     | "optionalText"
     | "required"
     | "requiredText"
-    | "forceShowOptionIfNotSelected"
+    | "forceShowOptionOnLoad"
 >;
 
 /**

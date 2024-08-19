@@ -191,9 +191,9 @@ export interface InputSelectBaseProps<T = any>
      */
     validatorData?: FenextjsValidatorClass<T>;
     /**
-     * forceShowOptionIfNotSelected
+     * forceShowOptionOnLoad
      */
-    forceShowOptionIfNotSelected?: boolean;
+    forceShowOptionOnLoad?: boolean;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -251,7 +251,7 @@ export const InputSelect = <T = any,>({
     showOptionIconImg = true,
     validatorData,
     useTOption,
-    forceShowOptionIfNotSelected = false,
+    forceShowOptionOnLoad = false,
     ...props
 }: InputSelectProps<T>) => {
     const { _t } = use_T({ ...props });
@@ -637,10 +637,10 @@ export const InputSelect = <T = any,>({
     useEffect(() => {
         if (
             isFocus ||
-            (forceShowOptionIfNotSelected && data?.option == undefined)
+            (forceShowOptionOnLoad && data?.option == undefined)
         ) {
             onLoadChildren();
-            if (forceShowOptionIfNotSelected) {
+            if (forceShowOptionOnLoad) {
                 const ele = selectRef.current?.querySelector<HTMLInputElement>(
                     ".fenext-input-content-input",
                 );
@@ -654,7 +654,7 @@ export const InputSelect = <T = any,>({
         options,
         OPTIONS,
         isFocus,
-        forceShowOptionIfNotSelected,
+        forceShowOptionOnLoad,
         data,
     ]);
 
