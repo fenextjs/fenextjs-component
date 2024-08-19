@@ -236,7 +236,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
     });
     const [isFocus, setIsFocus] = (0, react_1.useState)(false);
     (0, react_1.useEffect)(() => {
-        if (isFocus || (forceShowOptionOnLoad && data?.option == undefined)) {
+        if (isFocus || forceShowOptionOnLoad) {
             onLoadChildren();
             if (forceShowOptionOnLoad) {
                 const ele = selectRef.current?.querySelector(".fenext-input-content-input");
