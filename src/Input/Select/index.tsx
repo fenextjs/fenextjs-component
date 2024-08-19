@@ -635,7 +635,7 @@ export const InputSelect = <T = any,>({
     });
     const [isFocus, setIsFocus] = useState(false);
     useEffect(() => {
-        if (isFocus || (forceShowOptionOnLoad && data?.option == undefined)) {
+        if (isFocus || forceShowOptionOnLoad ) {
             onLoadChildren();
             if (forceShowOptionOnLoad) {
                 const ele = selectRef.current?.querySelector<HTMLInputElement>(
