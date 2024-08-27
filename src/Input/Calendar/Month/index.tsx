@@ -39,6 +39,7 @@ export const InputCalendarMonth = ({
     return (
         <>
             <div className={`fenext-input-calendar-month`}>
+            <div className={`fenext-input-calendar-month-content`}>
                 <div className={`fenext-input-calendar-top`}>
                     <button
                         className={`fenext-input-calendar-btn`}
@@ -126,6 +127,7 @@ export const InputCalendarMonth = ({
                         </>
                     );
                 })}
+            </div>
             </div>
         </>
     );

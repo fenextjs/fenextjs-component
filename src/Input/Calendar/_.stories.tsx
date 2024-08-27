@@ -15,6 +15,8 @@ const Profile: Story<PropsWithChildren<InputCalendarProps>> = (args) => (
 export const Index = Profile.bind({});
 const args : InputCalendarProps = {
     label:"Label",
-    placeholder:"Placeholder"
+    placeholder:"Placeholder",
+    type:"range",
+    nMonthShow:3
 }
 Index.args = args
