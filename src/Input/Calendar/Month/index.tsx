@@ -39,81 +39,81 @@ export const InputCalendarMonth = ({
     return (
         <>
             <div className={`fenext-input-calendar-month`}>
-            <div className={`fenext-input-calendar-month-content`}>
-                <div className={`fenext-input-calendar-top`}>
-                    <button
-                        className={`fenext-input-calendar-btn`}
-                        onClick={onPreMonth}
-                    >
-                        <PaginationPre />
-                    </button>
-                    <div className={`fenext-input-calendar-top-info`}>
-                        {date?.onFormat({
-                            month: "long",
-                            year: "numeric",
+                <div className={`fenext-input-calendar-month-content`}>
+                    <div className={`fenext-input-calendar-top`}>
+                        <button
+                            className={`fenext-input-calendar-btn`}
+                            onClick={onPreMonth}
+                        >
+                            <PaginationPre />
+                        </button>
+                        <div className={`fenext-input-calendar-top-info`}>
+                            {date?.onFormat({
+                                month: "long",
+                                year: "numeric",
+                            })}
+                        </div>
+                        <button
+                            className={`fenext-input-calendar-btn`}
+                            onClick={onNextMonth}
+                        >
+                            <PaginationNext />
+                        </button>
+                    </div>
+                    <div className={`fenext-input-calendar-days`}>
+                        {[
+                            DaysEnum.Sunday,
+                            DaysEnum.Monday,
+                            DaysEnum.Tuesday,
+                            DaysEnum.Wednesday,
+                            DaysEnum.Thursday,
+                            DaysEnum.Friday,
+                            DaysEnum.Saturday,
+                        ].map((day, i) => {
+                            return (
+                                <>
+                                    <div
+                                        key={i}
+                                        data-day={day}
+                                        className={`fenext-input-calendar-day`}
+                                    >
+                                        {_t(day)[0]}
+                                    </div>
+                                </>
+                            );
                         })}
                     </div>
-                    <button
-                        className={`fenext-input-calendar-btn`}
-                        onClick={onNextMonth}
-                    >
-                        <PaginationNext />
-                    </button>
-                </div>
-                <div className={`fenext-input-calendar-days`}>
-                    {[
-                        DaysEnum.Sunday,
-                        DaysEnum.Monday,
-                        DaysEnum.Tuesday,
-                        DaysEnum.Wednesday,
-                        DaysEnum.Thursday,
-                        DaysEnum.Friday,
-                        DaysEnum.Saturday,
-                    ].map((day, i) => {
+                    {date?.onGenerateDateByCalendar()?.map((d, i) => {
                         return (
                             <>
                                 <div
                                     key={i}
-                                    data-day={day}
-                                    className={`fenext-input-calendar-day`}
-                                >
-                                    {_t(day)[0]}
-                                </div>
-                            </>
-                        );
-                    })}
-                </div>
-                {date?.onGenerateDateByCalendar()?.map((d, i) => {
-                    return (
-                        <>
-                            <div
-                                key={i}
-                                data-date={d.getDate()}
-                                data-month={d.getMonth() + 1}
-                                data-year={d.getFullYear()}
-                                onClick={() => {
-                                    if (type == "normal") {
-                                        setSelectDate(d);
-                                    }
-                                    if (type == "range") {
-                                        if (dataNSelect) {
-                                            setSelectDateRange(() => {
-                                                return [d];
-                                            });
-                                        } else {
-                                            setSelectDateRange((old) => {
-                                                return [...old, d].sort(
-                                                    (a, b) =>
-                                                        a.getTime() -
-                                                        b.getTime(),
-                                                );
-                                            });
+                                    data-date={d.getDate()}
+                                    data-month={d.getMonth() + 1}
+                                    data-year={d.getFullYear()}
+                                    onClick={() => {
+                                        if (type == "normal") {
+                                            setSelectDate(d);
                                         }
+                                        if (type == "range") {
+                                            if (dataNSelect) {
+                                                setSelectDateRange(() => {
+                                                    return [d];
+                                                });
+                                            } else {
+                                                setSelectDateRange((old) => {
+                                                    return [...old, d].sort(
+                                                        (a, b) =>
+                                                            a.getTime() -
+                                                            b.getTime(),
+                                                    );
+                                                });
+                                            }
 
-                                        setDataNSelect((e) => !e);
-                                    }
-                                }}
-                                className={`
+                                            setDataNSelect((e) => !e);
+                                        }
+                                    }}
+                                    className={`
                                 fenext-input-calendar-date
                                 fenext-input-calendar-date-${d.getMonth() == date.date.getMonth() ? "in-month" : "other-month"}
                                 fenext-input-calendar-date-${type == "normal" && d.getTime() == selectDate?.getTime() ? "select" : ""}
@@ -121,13 +121,13 @@ export const InputCalendarMonth = ({
                                 fenext-input-calendar-date-${type == "range" && d.getTime() > selectDateRange[0]?.getTime() && d.getTime() < selectDateRange[1]?.getTime() ? "select-range" : ""}
                                 fenext-input-calendar-date-${type == "range" && d.getTime() == selectDateRange[1]?.getTime() ? "select" : ""}
                             `}
-                            >
-                                {d?.getDate()}
-                            </div>
-                        </>
-                    );
-                })}
-            </div>
+                                >
+                                    {d?.getDate()}
+                                </div>
+                            </>
+                        );
+                    })}
+                </div>
             </div>
         </>
     );

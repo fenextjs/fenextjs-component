@@ -1,9 +1,9 @@
 .fenext-input-calendar {
     --padding: 0.5rem;
-    --size-cell:2.5rem;
+    --size-cell: 2.5rem;
     --width: calc(var(--size-cell) * 7 + calc(var(--padding) * 2));
-    @media (max-width:767px) {
-        --size-cell:2.25rem;
+    @media (max-width: 767px) {
+        --size-cell: 2.25rem;
     }
     .fenext-collapse {
         &-header {
@@ -38,18 +38,16 @@
         }
     }
     &-month {
-        
-        &-content{
+        &-content {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             padding: var(--padding);
             border-radius: var(--padding);
             width: var(--width);
-    
+
             color: var(--fenext-color-light);
             background-color: var(--fenext-color-dark);
             font-size: 1rem;
-
         }
     }
     &-top {
