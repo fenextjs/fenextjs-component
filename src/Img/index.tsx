@@ -56,6 +56,7 @@ export const Img = ({
     classNameImg = "",
     id,
     name = "",
+    alt,
     src,
     srcMin1920 = undefined,
     srcMin1680 = undefined,
@@ -155,8 +156,10 @@ export const Img = ({
                 {loader && <LoaderLine />}
                 <img
                     src={`${src}`}
+                    alt={alt ?? name}
                     data-src={`${src}`}
-                    alt={name}
+                    data-name={name}
+                    data-alt={alt}
                     className={`fenext-img ${classNameImg}`}
                     onError={onErrorImg}
                 />
