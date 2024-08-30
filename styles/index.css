@@ -3494,7 +3494,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   }
 }
 @media (max-width: 575px) {
-  .fenext-layout-grid-ml-movil-inactive .fenext-layout-grid-ml-menu-left {
+  .fenext-layout-grid-ml-movil-inactive {
     --clip-path: circle(0% at 0% 0%);
   }
 }

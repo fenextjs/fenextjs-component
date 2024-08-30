@@ -36,9 +36,7 @@
     &-movil {
         @media (max-width: 575px) {
             &-inactive {
-                #{$nameClass}-menu-left {
-                    --clip-path: circle(0% at 0% 0%);
-                }
+                --clip-path: circle(0% at 0% 0%);
             }
         }
     }
