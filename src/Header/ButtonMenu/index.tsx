@@ -64,7 +64,7 @@ export const ButtonMenu = ({
     disabled = false,
     defaultActive: defaultActiveProps = undefined,
     children,
-    target = 'fenext-btn-menu-checkbox',
+    target = "fenext-btn-menu-checkbox",
     ...props
 }: ButtonMenuProps) => {
     const { _t } = use_T({ ...props });

@@ -1,5 +1,5 @@
 &-ml {
-    --size-menu : var(--fenext-size-menu-left, auto);
+    --size-menu: var(--fenext-size-menu-left, auto);
     --clip-path: circle(200% at 0% 0%);
 
     $nameClass: &;
@@ -30,7 +30,7 @@
     }
     @media (min-width: 576px) {
         &-inactive {
-            --size-menu : var(--fenext-size-menu-left-close, 0px)
+            --size-menu: var(--fenext-size-menu-left-close, 0px);
         }
     }
     &-movil {
@@ -41,11 +41,11 @@
         }
     }
     &-use-btn-menu {
-        $BtnTarget : '[name="fenext-btn-menu-checkbox"]:checked';
+        $BtnTarget: '[name="fenext-btn-menu-checkbox"]:checked';
 
         @at-root body:has(#{$BtnTarget}) & {
             @media (min-width: 576px) {
-                --size-menu : var(--fenext-size-menu-left, auto);
+                --size-menu: var(--fenext-size-menu-left, auto);
             }
             @media (max-width: 575px) {
                 --clip-path: circle(200% at 0% 0%);
@@ -53,7 +53,7 @@
         }
         @at-root body:not(:has(#{$BtnTarget})) & {
             @media (min-width: 576px) {
-                --size-menu : var(--fenext-size-menu-left-close, 0px);
+                --size-menu: var(--fenext-size-menu-left-close, 0px);
             }
             @media (max-width: 575px) {
                 --clip-path: circle(0% at 0% 0%);

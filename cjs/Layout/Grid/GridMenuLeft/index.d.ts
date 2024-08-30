@@ -10,6 +10,7 @@ export interface LayoutGridMenuLeftBaseProps extends PropsWithChildren {
     menuLeftMovilActive?: boolean;
     useHeaderButtonMenu?: boolean;
     usePageProgress?: boolean;
+    target?: string;
 }
 export interface LayoutGridMenuLeftClassProps extends LoaderClassProps {
     className?: string;
@@ -19,4 +20,4 @@ export interface LayoutGridMenuLeftClassProps extends LoaderClassProps {
 }
 export interface LayoutGridMenuLeftProps extends LayoutGridMenuLeftBaseProps, LayoutGridMenuLeftClassProps {
 }
-export declare const LayoutGridMenuLeft: ({ className, classNameLoader, classNameChildren, classNameMenuLeft, classNameMenuLeftContent, children, menuLeft, loader, menuLeftActive, menuLeftMovilActive, useHeaderButtonMenu, usePageProgress, useAlertHook, alertHookProps, ...props }: LayoutGridMenuLeftProps) => React.JSX.Element;
+export declare const LayoutGridMenuLeft: ({ className, classNameLoader, classNameChildren, classNameMenuLeft, classNameMenuLeftContent, children, menuLeft, loader, menuLeftActive, menuLeftMovilActive, useHeaderButtonMenu, usePageProgress, useAlertHook, alertHookProps, target, ...props }: LayoutGridMenuLeftProps) => React.JSX.Element;

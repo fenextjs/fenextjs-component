@@ -50,7 +50,7 @@ export const LayoutGridMenuTopLeft = ({
     usePageProgress = true,
     alertHookProps,
     useAlertHook = true,
-    target = 'fenext-btn-menu-checkbox',
+    target = "fenext-btn-menu-checkbox",
 }: LayoutGridMenuTopLeftProps) => {
     return (
         <>

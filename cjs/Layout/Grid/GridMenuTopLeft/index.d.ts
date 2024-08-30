@@ -8,4 +8,4 @@ export interface LayoutGridMenuTopLeftClassProps extends LayoutGridMenuTopClassP
 }
 export interface LayoutGridMenuTopLeftProps extends LayoutGridMenuTopLeftBaseProps, LayoutGridMenuTopLeftClassProps {
 }
-export declare const LayoutGridMenuTopLeft: ({ className, classNameLoader, classNameChildren, classNameMenuTop, classNameMenuLeft, classNameMenuLeftContent, children, menuLeft, menuTop, loader, menuLeftActive, menuLeftMovilActive, useHeaderButtonMenu, usePageProgress, alertHookProps, useAlertHook, }: LayoutGridMenuTopLeftProps) => React.JSX.Element;
+export declare const LayoutGridMenuTopLeft: ({ className, classNameLoader, classNameChildren, classNameMenuTop, classNameMenuLeft, classNameMenuLeftContent, children, menuLeft, menuTop, loader, menuLeftActive, menuLeftMovilActive, useHeaderButtonMenu, usePageProgress, alertHookProps, useAlertHook, target, }: LayoutGridMenuTopLeftProps) => React.JSX.Element;

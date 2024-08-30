@@ -72,7 +72,7 @@ export interface LayoutGridMenuLeftClassProps extends LoaderClassProps {
  */
 export interface LayoutGridMenuLeftProps
     extends LayoutGridMenuLeftBaseProps,
-    LayoutGridMenuLeftClassProps { }
+        LayoutGridMenuLeftClassProps {}
 
 export const LayoutGridMenuLeft = ({
     className = "",
@@ -90,20 +90,23 @@ export const LayoutGridMenuLeft = ({
     usePageProgress = true,
     useAlertHook = true,
     alertHookProps = {},
-    target = 'fenext-btn-menu-checkbox',
+    target = "fenext-btn-menu-checkbox",
     ...props
 }: LayoutGridMenuLeftProps) => {
-    const t = `[name="${target}"]:checked`
+    const t = `[name="${target}"]:checked`;
     return (
         <>
             <div
                 className={`fenext-layout-grid fenext-layout-grid-ml 
                     ${className} 
-                    fenext-layout-grid-ml-${menuLeftActive ? "active" : "inactive"
+                    fenext-layout-grid-ml-${
+                        menuLeftActive ? "active" : "inactive"
                     }
-                    fenext-layout-grid-ml-movil-${menuLeftMovilActive ? "active" : "inactive"
+                    fenext-layout-grid-ml-movil-${
+                        menuLeftMovilActive ? "active" : "inactive"
                     }
-                    fenext-layout-grid-ml-${useHeaderButtonMenu ? "use-btn-menu" : ""
+                    fenext-layout-grid-ml-${
+                        useHeaderButtonMenu ? "use-btn-menu" : ""
                     }
                 `}
                 data-target={target}
@@ -137,9 +140,7 @@ export const LayoutGridMenuLeft = ({
                         <>{children}</>
                     )}
                 </div>
-                {
-                    target != 'fenext-btn-menu-checkbox'
-                    &&
+                {target != "fenext-btn-menu-checkbox" && (
                     <>
                         <style>
                             {`
@@ -162,7 +163,7 @@ export const LayoutGridMenuLeft = ({
                             `}
                         </style>
                     </>
-                }
+                )}
             </div>
         </>
     );
