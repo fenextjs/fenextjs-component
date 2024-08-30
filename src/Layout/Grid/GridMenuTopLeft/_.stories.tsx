@@ -463,3 +463,50 @@ WithBtnMenuAndElementContainer.args = {
         </>
     ),
 } as LayoutGridMenuTopLeftProps;
+
+
+
+const Profile2: Story<PropsWithChildren<LayoutGridMenuTopLeftProps>> = (
+    args,
+) => {
+
+    return (
+        <>
+            <LayoutGridMenuTopLeft {...args}/>
+        </>
+    );
+};
+
+export const TwoLayout = Profile2.bind({});
+TwoLayout.args = {
+    useHeaderButtonMenu: true,
+    children: (
+        <>
+            <h1>It is Body 1</h1>
+            <LayoutGridMenuTopLeft
+                target="btn-menu-2"
+                useHeaderButtonMenu={true}
+                menuTop={<>
+                    <ButtonMenu target="btn-menu-2" />
+                    <h3>It is Header 2 </h3>
+                </>}
+                menuLeft={<>
+                    <h3>It is Menu Left 1</h3>
+                </>}
+            >
+                <h1>It is Body 2</h1>
+            </LayoutGridMenuTopLeft>
+        </>
+    ),
+    menuTop: (
+        <>
+            <ButtonMenu />
+            <h3>It is Header 1 </h3>
+        </>
+    ),
+    menuLeft: (
+        <>
+            <h3>It is Menu Left 1</h3>
+        </>
+    ),
+} as LayoutGridMenuTopLeftProps;

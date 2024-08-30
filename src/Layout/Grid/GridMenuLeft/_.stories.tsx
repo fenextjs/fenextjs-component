@@ -163,6 +163,10 @@ WithBtnMenu.args = {
     menuLeft: (
         <>
             <h3>It is Menu Left</h3>
+
+            <label htmlFor="fenext-btn-menu-checkbox">
+                CLOSE
+            </label>
         </>
     ),
 } as LayoutGridMenuLeftProps;

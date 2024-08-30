@@ -1,9 +1,12 @@
 &-ml {
+    --size-menu : var(--fenext-size-menu-left, auto);
+    --clip-path: circle(200% at 0% 0%);
+
     $nameClass: &;
     font-family: var(--fenext-font-global);
 
     display: grid;
-    grid-template-columns: var(--fenext-size-menu-left, auto) 1fr;
+    grid-template-columns: var(--size-menu, auto) 1fr;
     grid-template-rows: 1fr;
 
     position: relative;
@@ -14,7 +17,7 @@
         position: sticky;
         background-color: var(--fenext-color-light-dark);
         color: var(--fenext-color-dark);
-        clip-path: circle(200% at 0% 0%);
+        clip-path: var(--clip-path);
         height: 100dvh;
         top: 0;
         overflow: auto;
@@ -27,37 +30,35 @@
     }
     @media (min-width: 576px) {
         &-inactive {
-            grid-template-columns: 0 1fr;
+            --size-menu : var(--fenext-size-menu-left-close, 0px)
         }
     }
     &-movil {
         @media (max-width: 575px) {
             &-inactive {
                 #{$nameClass}-menu-left {
-                    clip-path: circle(0% at 0% 0%);
+                    --clip-path: circle(0% at 0% 0%);
                 }
             }
         }
     }
     &-use-btn-menu {
-        @at-root body:has(.fenext-btn-menu-checkbox:checked) & {
+        $BtnTarget : '[name="fenext-btn-menu-checkbox"]:checked';
+
+        @at-root body:has(#{$BtnTarget}) & {
             @media (min-width: 576px) {
-                grid-template-columns: var(--fenext-size-menu-left, auto) 1fr;
+                --size-menu : var(--fenext-size-menu-left, auto);
             }
             @media (max-width: 575px) {
-                #{$nameClass}-menu-left {
-                    clip-path: circle(200% at 0% 0%);
-                }
+                --clip-path: circle(200% at 0% 0%);
             }
         }
-        @at-root body:not(:has(.fenext-btn-menu-checkbox:checked)) & {
+        @at-root body:not(:has(#{$BtnTarget})) & {
             @media (min-width: 576px) {
-                grid-template-columns: var(--fenext-size-menu-left-close, 0px) 1fr;
+                --size-menu : var(--fenext-size-menu-left-close, 0px);
             }
             @media (max-width: 575px) {
-                #{$nameClass}-menu-left {
-                    clip-path: circle(0% at 0% 0%);
-                }
+                --clip-path: circle(0% at 0% 0%);
             }
         }
     }

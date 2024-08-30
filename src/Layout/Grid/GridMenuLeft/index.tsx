@@ -2,6 +2,7 @@ import React, { PropsWithChildren, ReactNode } from "react";
 import { Loader, LoaderClassProps } from "../../../Loader";
 import { PageProgress } from "../../../PageProgress";
 import { AlertHook, AlertHookProps } from "../../../AlertHook";
+
 /**
  * Properties for the base button component.
  */
@@ -38,6 +39,10 @@ export interface LayoutGridMenuLeftBaseProps extends PropsWithChildren {
      * Use page progress bar.
      */
     usePageProgress?: boolean;
+    /**
+     * target for btn.
+     */
+    target?: string;
 }
 
 /**
@@ -67,7 +72,7 @@ export interface LayoutGridMenuLeftClassProps extends LoaderClassProps {
  */
 export interface LayoutGridMenuLeftProps
     extends LayoutGridMenuLeftBaseProps,
-        LayoutGridMenuLeftClassProps {}
+    LayoutGridMenuLeftClassProps { }
 
 export const LayoutGridMenuLeft = ({
     className = "",
@@ -85,23 +90,23 @@ export const LayoutGridMenuLeft = ({
     usePageProgress = true,
     useAlertHook = true,
     alertHookProps = {},
+    target = 'fenext-btn-menu-checkbox',
     ...props
 }: LayoutGridMenuLeftProps) => {
+    const t = `[name="${target}"]:checked`
     return (
         <>
             <div
                 className={`fenext-layout-grid fenext-layout-grid-ml 
                     ${className} 
-                    fenext-layout-grid-ml-${
-                        menuLeftActive ? "active" : "inactive"
+                    fenext-layout-grid-ml-${menuLeftActive ? "active" : "inactive"
                     }
-                    fenext-layout-grid-ml-movil-${
-                        menuLeftMovilActive ? "active" : "inactive"
+                    fenext-layout-grid-ml-movil-${menuLeftMovilActive ? "active" : "inactive"
                     }
-                    fenext-layout-grid-ml-${
-                        useHeaderButtonMenu ? "use-btn-menu" : ""
+                    fenext-layout-grid-ml-${useHeaderButtonMenu ? "use-btn-menu" : ""
                     }
                 `}
+                data-target={target}
                 {...props}
             >
                 <div
@@ -111,6 +116,7 @@ export const LayoutGridMenuLeft = ({
                         className={`fenext-layout-grid-ml-menu-left-content ${classNameMenuLeftContent}`}
                     >
                         {menuLeft}
+                        {target}
                     </div>
                 </div>
                 <div
@@ -131,6 +137,32 @@ export const LayoutGridMenuLeft = ({
                         <>{children}</>
                     )}
                 </div>
+                {
+                    target != 'fenext-btn-menu-checkbox'
+                    &&
+                    <>
+                        <style>
+                            {`
+                                body:has(${t}) .fenext-layout-grid-ml-use-btn-menu[data-target=${target}] {
+                                    @media (min-width: 576px) {
+                                        --size-menu : var(--fenext-size-menu-left, auto);
+                                    }
+                                    @media (max-width: 575px) {
+                                        --clip-path: circle(200% at 0% 0%);
+                                    }
+                                }
+                                body:not(:has(${t})) .fenext-layout-grid-ml-use-btn-menu[data-target=${target}] {
+                                    @media (min-width: 576px) {
+                                        --size-menu : var(--fenext-size-menu-left-close, 0px);
+                                    }
+                                    @media (max-width: 575px) {
+                                        --clip-path: circle(0% at 0% 0%);
+                                    }
+                                }
+                            `}
+                        </style>
+                    </>
+                }
             </div>
         </>
     );

@@ -19,6 +19,10 @@ export interface ButtonMenuBaseProps extends PropsWithChildren, _TProps {
      * Indicates whether the Collapse is defaultActive for show.
      */
     defaultActive?: boolean;
+    /**
+     * target for btn.
+     */
+    target?: string;
 }
 
 /**
@@ -60,6 +64,7 @@ export const ButtonMenu = ({
     disabled = false,
     defaultActive: defaultActiveProps = undefined,
     children,
+    target = 'fenext-btn-menu-checkbox',
     ...props
 }: ButtonMenuProps) => {
     const { _t } = use_T({ ...props });
@@ -83,6 +88,8 @@ export const ButtonMenu = ({
                     disabled={disabled || loader}
                     defaultChecked={defaultActiveProps ?? defaultActive}
                     key={defaultActiveProps ?? defaultActive ? "0" : "1"}
+                    name={target}
+                    id={target}
                 />
                 {loader ? (
                     <>
