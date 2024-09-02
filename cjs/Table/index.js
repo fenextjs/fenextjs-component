@@ -56,10 +56,10 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                 .fill(1)
                 .map((item, i) => (react_1.default.createElement("tr", { key: i * item, className: `fenext-table-content-table-tr ${classNameTr}` },
                 useCheckbox && (react_1.default.createElement("td", { key: `${i}-checkbox`, className: `fenext-table-content-table-td ${classNameTd}` },
-                    react_1.default.createElement(Checkbox_1.InputCheckbox, { value: false, useValue: true }))),
+                    react_1.default.createElement(Checkbox_1.InputCheckbox, { value: false, useValue: true, classNameLabel: "fenext-table-content-table-checkbox" }))),
                 headerNotTr.map((h, j) => (react_1.default.createElement("td", { key: `${i}-${j}`, className: `fenext-table-content-table-td ${classNameTd}`, style: {
-                        ["--fenext-table-head-th"]: `"${h?.th}"`,
-                    }, "data-col-id": h?.id, "data-col-text": h?.th },
+                        ["--fenext-table-head-th"]: `"${h?.thText ?? h?.th}"`,
+                    }, "data-col-id": h?.id, "data-col-text": h?.thText ?? h?.th },
                     react_1.default.createElement(Line_1.LoaderLine, null)))))));
         }
         if (items.length == 0) {
@@ -70,16 +70,16 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
             return (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("tr", { key: i, className: `fenext-table-content-table-tr ${classNameTr}` },
                     useCheckbox && (react_1.default.createElement("td", { key: `${i}-checkbox`, className: `fenext-table-content-table-td ${classNameTd}` },
-                        react_1.default.createElement(Checkbox_1.InputCheckbox, { onChange: onCheckedItem(i), value: checkbox[i]?.__checkbox ?? false, useValue: true }))),
+                        react_1.default.createElement(Checkbox_1.InputCheckbox, { onChange: onCheckedItem(i), value: checkbox[i]?.__checkbox ?? false, useValue: true, classNameLabel: "fenext-table-content-table-checkbox" }))),
                     headerNotTr.map((h, j) => (react_1.default.createElement("td", { key: `${i}-${j}`, className: `fenext-table-content-table-td ${classNameTd} ${h?.className ?? ""}`, style: {
-                            ["--fenext-table-head-th"]: `"${h?.th}"`,
-                        }, "data-col-id": h?.id, "data-col-text": h?.th }, h?.parse?.(item) ?? item[h.id] ?? "")))),
+                            ["--fenext-table-head-th"]: `"${h?.thText ?? h?.th}"`,
+                        }, "data-col-id": h?.id, "data-col-text": h?.thText ?? h?.th }, h?.parse?.(item) ?? item[h.id] ?? "")))),
                 headerTr.map((new_tr, j) => {
                     return (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("tr", { key: `${i}_tr_${j}`, className: `fenext-table-content-table-tr ${classNameTr} ${new_tr?.className ?? ""}` },
                             react_1.default.createElement("td", { key: `${i}-${j}`, className: `fenext-table-content-table-td ${classNameTd}`, style: {
-                                    ["--fenext-table-head-th"]: `"${new_tr?.th}"`,
-                                }, colSpan: 100, "data-col-id": new_tr?.id, "data-col-text": new_tr?.th }, new_tr?.parse?.(item) ??
+                                    ["--fenext-table-head-th"]: `"${new_tr?.thText ?? new_tr?.th}"`,
+                                }, colSpan: 100, "data-col-id": new_tr?.id, "data-col-text": new_tr?.thText ?? new_tr?.th }, new_tr?.parse?.(item) ??
                                 item[new_tr.id] ??
                                 ""))));
                 })));
@@ -115,7 +115,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                     react_1.default.createElement("thead", { className: `fenext-table-content-table-thead ${classNameTHead}` },
                         react_1.default.createElement("tr", { className: `fenext-table-content-table-thr ${classNameThr}` },
                             useCheckbox && (react_1.default.createElement("th", { className: `fenext-table-content-table-th ${classNameTh}` },
-                                react_1.default.createElement(Checkbox_1.InputCheckbox, { onChange: onCheckedAll, value: checkbox.every((e) => e?.__checkbox ?? false), useValue: true, _t: _t }))),
+                                react_1.default.createElement(Checkbox_1.InputCheckbox, { onChange: onCheckedAll, value: checkbox.every((e) => e?.__checkbox ?? false), useValue: true, _t: _t, classNameLabel: "fenext-table-content-table-checkbox" }))),
                             headerNotTr.map((h, i) => (react_1.default.createElement("th", { key: i, className: `fenext-table-content-table-th ${classNameTh} ${h?.className ?? ""}`, "data-col-id": h?.id, "data-col-text": h?.th },
                                 react_1.default.createElement(DropDown_1.DropDown, { header: react_1.default.createElement(react_1.default.Fragment, null, _t(h.th)) },
                                     h?.columnOptions?.orderBy ? (react_1.default.createElement(react_1.default.Fragment, null,

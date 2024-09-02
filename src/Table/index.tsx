@@ -311,8 +311,11 @@ export const Table = <T,>({
                                 key={`${i}-checkbox`}
                                 className={`fenext-table-content-table-td ${classNameTd}`}
                             >
-                                <InputCheckbox value={false} useValue={true} 
-                                            classNameLabel="fenext-table-content-table-checkbox"/>
+                                <InputCheckbox
+                                    value={false}
+                                    useValue={true}
+                                    classNameLabel="fenext-table-content-table-checkbox"
+                                />
                             </td>
                         )}
                         {headerNotTr.map((h, j) => (
@@ -361,7 +364,7 @@ export const Table = <T,>({
                                     onChange={onCheckedItem(i)}
                                     value={checkbox[i]?.__checkbox ?? false}
                                     useValue={true}
-                                            classNameLabel="fenext-table-content-table-checkbox"
+                                    classNameLabel="fenext-table-content-table-checkbox"
                                 />
                             </td>
                         )}
@@ -398,7 +401,9 @@ export const Table = <T,>({
                                         }
                                         colSpan={100}
                                         data-col-id={new_tr?.id}
-                                        data-col-text={new_tr?.thText ?? new_tr?.th}
+                                        data-col-text={
+                                            new_tr?.thText ?? new_tr?.th
+                                        }
                                     >
                                         {new_tr?.parse?.(item) ??
                                             item[new_tr.id] ??

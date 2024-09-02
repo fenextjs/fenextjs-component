@@ -18,6 +18,7 @@ export interface TableClassProps {
 export type TableHeader<T> = {
     id: keyof T;
     th: React.ReactNode;
+    thText?: string;
     parse?: (data: T) => any;
     columnOptions?: {
         orderBy?: boolean;
