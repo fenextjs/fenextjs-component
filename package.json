@@ -1,6 +1,6 @@
 {
   "name": "fenextjs-component",
-  "version": "11.0.9",
+  "version": "11.0.10",
   "description": "",
   "main": "./cjs/index.js",
   "module": "./cjs/index.js",
