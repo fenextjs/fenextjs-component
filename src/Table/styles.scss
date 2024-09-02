@@ -43,10 +43,12 @@
                     }
                 }
             }
-            .fenext-input-checkbox {
+            &-checkbox{
                 align-items: flex-end;
-                &-text {
-                    display: none;
+                .fenext-input-checkbox {
+                    &-text {
+                        display: none;
+                    }
                 }
             }
 

@@ -87,6 +87,10 @@ export type TableHeader<T> = {
      * The label to display in the header column.
      */
     th: React.ReactNode;
+    /**
+     * The name in the header column.
+     */
+    thText?: string;
 
     /**
      * A function that can be used to transform the data before displaying it in the table cell.
@@ -307,7 +311,8 @@ export const Table = <T,>({
                                 key={`${i}-checkbox`}
                                 className={`fenext-table-content-table-td ${classNameTd}`}
                             >
-                                <InputCheckbox value={false} useValue={true} />
+                                <InputCheckbox value={false} useValue={true} 
+                                            classNameLabel="fenext-table-content-table-checkbox"/>
                             </td>
                         )}
                         {headerNotTr.map((h, j) => (
@@ -316,11 +321,11 @@ export const Table = <T,>({
                                 className={`fenext-table-content-table-td ${classNameTd}`}
                                 style={
                                     {
-                                        ["--fenext-table-head-th"]: `"${h?.th}"`,
+                                        ["--fenext-table-head-th"]: `"${h?.thText ?? h?.th}"`,
                                     } as React.CSSProperties
                                 }
                                 data-col-id={h?.id}
-                                data-col-text={h?.th}
+                                data-col-text={h?.thText ?? h?.th}
                             >
                                 <LoaderLine />
                             </td>
@@ -356,6 +361,7 @@ export const Table = <T,>({
                                     onChange={onCheckedItem(i)}
                                     value={checkbox[i]?.__checkbox ?? false}
                                     useValue={true}
+                                            classNameLabel="fenext-table-content-table-checkbox"
                                 />
                             </td>
                         )}
@@ -365,11 +371,11 @@ export const Table = <T,>({
                                 className={`fenext-table-content-table-td ${classNameTd} ${h?.className ?? ""}`}
                                 style={
                                     {
-                                        ["--fenext-table-head-th"]: `"${h?.th}"`,
+                                        ["--fenext-table-head-th"]: `"${h?.thText ?? h?.th}"`,
                                     } as React.CSSProperties
                                 }
                                 data-col-id={h?.id}
-                                data-col-text={h?.th}
+                                data-col-text={h?.thText ?? h?.th}
                             >
                                 {h?.parse?.(item) ?? item[h.id] ?? ""}
                             </td>
@@ -387,12 +393,12 @@ export const Table = <T,>({
                                         className={`fenext-table-content-table-td ${classNameTd}`}
                                         style={
                                             {
-                                                ["--fenext-table-head-th"]: `"${new_tr?.th}"`,
+                                                ["--fenext-table-head-th"]: `"${new_tr?.thText ?? new_tr?.th}"`,
                                             } as React.CSSProperties
                                         }
                                         colSpan={100}
                                         data-col-id={new_tr?.id}
-                                        data-col-text={new_tr?.th}
+                                        data-col-text={new_tr?.thText ?? new_tr?.th}
                                     >
                                         {new_tr?.parse?.(item) ??
                                             item[new_tr.id] ??
@@ -470,6 +476,7 @@ export const Table = <T,>({
                                             )}
                                             useValue={true}
                                             _t={_t}
+                                            classNameLabel="fenext-table-content-table-checkbox"
                                         />
                                     </th>
                                 )}
