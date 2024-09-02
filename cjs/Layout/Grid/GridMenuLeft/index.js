@@ -16,9 +16,7 @@ const LayoutGridMenuLeft = ({ className = "", classNameLoader = "", classNameChi
                     fenext-layout-grid-ml-${useHeaderButtonMenu ? "use-btn-menu" : ""}
                 `, "data-target": target, ...props },
             react_1.default.createElement("div", { className: `fenext-layout-grid-ml-menu-left ${classNameMenuLeft}` },
-                react_1.default.createElement("div", { className: `fenext-layout-grid-ml-menu-left-content ${classNameMenuLeftContent}` },
-                    menuLeft,
-                    target)),
+                react_1.default.createElement("div", { className: `fenext-layout-grid-ml-menu-left-content ${classNameMenuLeftContent}` }, menuLeft)),
             react_1.default.createElement("div", { className: `fenext-layout-grid-ml-children ${classNameChildren}` },
                 usePageProgress && react_1.default.createElement(PageProgress_1.PageProgress, null),
                 useAlertHook && (react_1.default.createElement(AlertHook_1.AlertHook, { ...alertHookProps, className: `fenext-layout-grid-alert ${alertHookProps?.className ?? ""}` })),

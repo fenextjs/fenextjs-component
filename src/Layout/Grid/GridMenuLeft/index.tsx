@@ -119,7 +119,6 @@ export const LayoutGridMenuLeft = ({
                         className={`fenext-layout-grid-ml-menu-left-content ${classNameMenuLeftContent}`}
                     >
                         {menuLeft}
-                        {target}
                     </div>
                 </div>
                 <div
