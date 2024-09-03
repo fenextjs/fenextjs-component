@@ -41,7 +41,6 @@ const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, se
                     const COMPARE_DATE = date.onCompareDate({
                         date: selectDate,
                         dateCompare: d,
-                        compareSymbol: { "==": true },
                         compare: {
                             Date: true,
                             Month: true,
@@ -51,7 +50,6 @@ const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, se
                     const COMPARE_DATE_RANGE_0 = date.onCompareDate({
                         date: d,
                         dateCompare: selectDateRange[0],
-                        compareSymbol: { "==": true, ">": true },
                         compare: {
                             Date: true,
                             Month: true,
@@ -61,7 +59,6 @@ const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, se
                     const COMPARE_DATE_RANGE_1 = date.onCompareDate({
                         date: d,
                         dateCompare: selectDateRange[1],
-                        compareSymbol: { "==": true, "<": true },
                         compare: {
                             Date: true,
                             Month: true,
