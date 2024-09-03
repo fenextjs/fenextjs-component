@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from "react";
 import { Story, Meta } from "@storybook/react";
 
 import { InputCalendar, InputCalendarProps } from "./index";
+import { FenextjsValidator } from "fenextjs-validator";
 
 export default {
     title: "Input/InputCalendar",
@@ -20,15 +21,31 @@ const args : InputCalendarProps = {
     nMonthShow:3
 }
 Index.args = args
+
 const d = new Date()
 d.setMonth(d.getMonth()+2)
 export const MinMax = Profile.bind({});
 const argsMinMax : InputCalendarProps = {
-    label:"Label",
-    placeholder:"Placeholder",
-    type:"range",
-    nMonthShow:3,
+   ...args,
     min:new Date(),
     max:d
 }
 MinMax.args = argsMinMax
+
+export const Validator = Profile.bind({});
+const argsValidator : InputCalendarProps = {
+   ...args,
+   type:"normal",
+   validator:FenextjsValidator().isDate().isMin(new Date()).isMax(d),
+   errorWithIsChange:false
+}
+Validator.args = argsValidator
+
+
+export const ValidatorRange = Profile.bind({});
+const argsValidatorRange : InputCalendarProps = {
+   ...args,
+   type:"range",
+   validator:FenextjsValidator().isArray(argsValidator.validator)
+}
+ValidatorRange.args = argsValidatorRange

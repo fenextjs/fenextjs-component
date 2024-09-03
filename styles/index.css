@@ -862,6 +862,9 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   background-color: transparent;
   margin-bottom: 0;
 }
+.fenext-input-error.fenext-input-error .fenext-error-input {
+  display: none;
+}
 
 .fenext-input-date {
   position: absolute;

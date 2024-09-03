@@ -3,7 +3,7 @@ import { InputText, InputTextProps } from "../Text";
 import { Date as SvgDate } from "fenextjs-svg/cjs/Date";
 import { Collapse } from "../../Collapse";
 import { useDate } from "fenextjs-hook/cjs/useDate";
-import { useData } from "fenextjs-hook";
+import { useData, useValidator } from "fenextjs-hook";
 import { InputCalendarMonth, InputCalendarMonthProps } from "./Month";
 import { FenextjsDate } from "fenextjs-date";
 
@@ -22,6 +22,7 @@ export interface InputCalendarProps
             | "icon"
             | "iconPos"
             | "validator"
+            |"errorWithIsChange"
         >,
         Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max"> {
     defaultValue?: Date;
@@ -43,12 +44,18 @@ export const InputCalendar = ({
     valueRange,
     onChange,
     onChangeRange,
+    validator,
+    errorWithIsChange= true,
     ...props
 }: InputCalendarProps) => {
+    const [isChange, setIsChange] = useState(!errorWithIsChange)
     const { data: dataSelectDate, setData: setSelectDate } = useData<
         Date | undefined
     >(defaultValue, {
-        onChangeDataAfter: onChange,
+        onChangeDataAfter: (e)=>{
+            setIsChange(true)
+            onChange?.(e)
+        },
     });
     const selectDate = useMemo(
         () => value ?? dataSelectDate,
@@ -58,7 +65,10 @@ export const InputCalendar = ({
     const [dataNSelect, setDataNSelect] = useState(true);
     const { data: dataSelectDateRange, setDataFunction: setSelectDateRange } =
         useData<Date[]>(defaultValueRange ?? [], {
-            onChangeDataAfter: onChangeRange,
+            onChangeDataAfter: (e)=>{
+                setIsChange(true)
+                onChangeRange?.(e)
+            },
         });
     const selectDateRange = useMemo(
         () => valueRange ?? dataSelectDateRange,
@@ -74,6 +84,13 @@ export const InputCalendar = ({
     const onNextMonth = () => {
         date.addMonth(1);
     };
+
+
+    const { error: errorFenext } = useValidator({
+        data: type == "normal" ? selectDate : selectDateRange,
+        validator,
+    });
+
 
     return (
         <>
@@ -94,6 +111,8 @@ export const InputCalendar = ({
                                                   : ""
                                           }`
                                 }
+                                error={errorFenext}
+                                errorWithIsChange={!isChange}
                             />
                         </>
                     }

@@ -138,4 +138,7 @@
     color: var(--fenext-color-red);
     background-color: transparent;
     margin-bottom: 0;
+    .fenext-error-input{
+        display: none;
+    }
 }
