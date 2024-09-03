@@ -91,9 +91,9 @@
     }
     &-date {
         cursor: pointer;
-        &-disabled{
+        &-disabled {
             filter: grayscale(1);
-            opacity: .75;
+            opacity: 0.75;
             background: var(--fenext-color-dark-light);
             cursor: not-allowed;
         }

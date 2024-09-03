@@ -6,7 +6,7 @@ const fenextjs_interface_1 = require("fenextjs-interface");
 const react_1 = tslib_1.__importDefault(require("react"));
 const fenextjs_svg_1 = require("fenextjs-svg");
 const fenextjs_hook_1 = require("fenextjs-hook");
-const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, selectDate, selectDateRange, setSelectDate, setSelectDateRange, dataNSelect, setDataNSelect, ...props }) => {
+const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, selectDate, selectDateRange, setSelectDate, setSelectDateRange, dataNSelect, setDataNSelect, min, max, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-input-calendar-month` },
@@ -33,8 +33,46 @@ const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, se
                         react_1.default.createElement("div", { key: i, "data-day": day, className: `fenext-input-calendar-day` }, _t(day)[0])));
                 })),
                 date?.onGenerateDateByCalendar()?.map((d, i) => {
+                    const isValid = date?.onValidateMinMax({
+                        date: d,
+                        max,
+                        min,
+                    });
+                    const COMPARE_DATE = date.onCompareDate({
+                        date: selectDate,
+                        dateCompare: d,
+                        compareSymbol: { "==": true },
+                        compare: {
+                            Date: true,
+                            Month: true,
+                            FullYear: true,
+                        },
+                    });
+                    const COMPARE_DATE_RANGE_0 = date.onCompareDate({
+                        date: d,
+                        dateCompare: selectDateRange[0],
+                        compareSymbol: { "==": true, ">": true },
+                        compare: {
+                            Date: true,
+                            Month: true,
+                            FullYear: true,
+                        },
+                    });
+                    const COMPARE_DATE_RANGE_1 = date.onCompareDate({
+                        date: d,
+                        dateCompare: selectDateRange[1],
+                        compareSymbol: { "==": true, "<": true },
+                        compare: {
+                            Date: true,
+                            Month: true,
+                            FullYear: true,
+                        },
+                    });
                     return (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("div", { key: i, "data-date": d.getDate(), "data-month": d.getMonth() + 1, "data-year": d.getFullYear(), onClick: () => {
+                                if (!isValid) {
+                                    return;
+                                }
                                 if (type == "normal") {
                                     setSelectDate(d);
                                 }
@@ -53,13 +91,14 @@ const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, se
                                     setDataNSelect((e) => !e);
                                 }
                             }, className: `
-                                fenext-input-calendar-date
-                                fenext-input-calendar-date-${d.getMonth() == date.date.getMonth() ? "in-month" : "other-month"}
-                                fenext-input-calendar-date-${type == "normal" && d.getTime() == selectDate?.getTime() ? "select" : ""}
-                                fenext-input-calendar-date-${type == "range" && d.getTime() == selectDateRange[0]?.getTime() ? "select" : ""}
-                                fenext-input-calendar-date-${type == "range" && d.getTime() > selectDateRange[0]?.getTime() && d.getTime() < selectDateRange[1]?.getTime() ? "select-range" : ""}
-                                fenext-input-calendar-date-${type == "range" && d.getTime() == selectDateRange[1]?.getTime() ? "select" : ""}
-                            ` }, d?.getDate())));
+                                        fenext-input-calendar-date
+                                        fenext-input-calendar-date-${isValid ? "valid" : "disabled"}
+                                        fenext-input-calendar-date-${d.getMonth() == date.date.getMonth() ? "in-month" : "other-month"}
+                                        fenext-input-calendar-date-${type == "normal" && COMPARE_DATE["=="] ? "select" : ""}
+                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_0["=="] ? "select" : ""}
+                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_0[">"] && COMPARE_DATE_RANGE_1["<"] ? "select-range" : ""}
+                                        fenext-input-calendar-date-${type == "range" && COMPARE_DATE_RANGE_1["=="] ? "select" : ""}
+                                    ` }, d?.getDate())));
                 })))));
 };
 exports.InputCalendarMonth = InputCalendarMonth;

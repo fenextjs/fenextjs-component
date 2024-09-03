@@ -22,7 +22,7 @@ export interface InputCalendarProps
             | "icon"
             | "iconPos"
             | "validator"
-            |"errorWithIsChange"
+            | "errorWithIsChange"
         >,
         Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max"> {
     defaultValue?: Date;
@@ -45,16 +45,16 @@ export const InputCalendar = ({
     onChange,
     onChangeRange,
     validator,
-    errorWithIsChange= true,
+    errorWithIsChange = true,
     ...props
 }: InputCalendarProps) => {
-    const [isChange, setIsChange] = useState(!errorWithIsChange)
+    const [isChange, setIsChange] = useState(!errorWithIsChange);
     const { data: dataSelectDate, setData: setSelectDate } = useData<
         Date | undefined
     >(defaultValue, {
-        onChangeDataAfter: (e)=>{
-            setIsChange(true)
-            onChange?.(e)
+        onChangeDataAfter: (e) => {
+            setIsChange(true);
+            onChange?.(e);
         },
     });
     const selectDate = useMemo(
@@ -65,9 +65,9 @@ export const InputCalendar = ({
     const [dataNSelect, setDataNSelect] = useState(true);
     const { data: dataSelectDateRange, setDataFunction: setSelectDateRange } =
         useData<Date[]>(defaultValueRange ?? [], {
-            onChangeDataAfter: (e)=>{
-                setIsChange(true)
-                onChangeRange?.(e)
+            onChangeDataAfter: (e) => {
+                setIsChange(true);
+                onChangeRange?.(e);
             },
         });
     const selectDateRange = useMemo(
@@ -85,12 +85,10 @@ export const InputCalendar = ({
         date.addMonth(1);
     };
 
-
     const { error: errorFenext } = useValidator({
         data: type == "normal" ? selectDate : selectDateRange,
         validator,
     });
-
 
     return (
         <>

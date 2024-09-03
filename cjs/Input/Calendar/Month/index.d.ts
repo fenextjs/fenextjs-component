@@ -12,5 +12,7 @@ export interface InputCalendarMonthProps extends _TProps {
     setSelectDateRange: (d: (d: Date[]) => Date[]) => void;
     dataNSelect: boolean;
     setDataNSelect: (d: (d: boolean) => boolean) => void;
+    min?: Date;
+    max?: Date;
 }
-export declare const InputCalendarMonth: ({ type, onPreMonth, onNextMonth, date, selectDate, selectDateRange, setSelectDate, setSelectDateRange, dataNSelect, setDataNSelect, ...props }: InputCalendarMonthProps) => React.JSX.Element;
+export declare const InputCalendarMonth: ({ type, onPreMonth, onNextMonth, date, selectDate, selectDateRange, setSelectDate, setSelectDateRange, dataNSelect, setDataNSelect, min, max, ...props }: InputCalendarMonthProps) => React.JSX.Element;

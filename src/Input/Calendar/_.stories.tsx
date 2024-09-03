@@ -13,14 +13,27 @@ const Profile: Story<PropsWithChildren<InputCalendarProps>> = (args) => (
     <InputCalendar {...args}>Test Children</InputCalendar>
 );
 
+const n = new Date()
+n.setDate(n.getDate() + 10)
+
 export const Index = Profile.bind({});
 const args : InputCalendarProps = {
     label:"Label",
     placeholder:"Placeholder",
-    type:"range",
-    nMonthShow:3
+    type:"normal",
+    nMonthShow:3,
+    defaultValue:new Date(),
+    defaultValueRange:[new Date(),n]
+    // value:new Date()
 }
 Index.args = args
+
+export const Range = Profile.bind({});
+const argsRange : InputCalendarProps = {
+    ...args,
+    type:"range",
+}
+Range.args = argsRange
 
 const d = new Date()
 d.setMonth(d.getMonth()+2)
@@ -37,7 +50,7 @@ const argsValidator : InputCalendarProps = {
    ...args,
    type:"normal",
    validator:FenextjsValidator().isDate().isMin(new Date()).isMax(d),
-   errorWithIsChange:false
+//    errorWithIsChange:false
 }
 Validator.args = argsValidator
 
