@@ -21,8 +21,9 @@ export interface InputCalendarProps
             | "requiredText"
             | "icon"
             | "iconPos"
+            | "validator"
         >,
-        Pick<InputCalendarMonthProps, "_t" | "type"> {
+        Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max"> {
     defaultValue?: Date;
     value?: Date;
     defaultValueRange?: Date[];
@@ -112,6 +113,7 @@ export const InputCalendar = ({
                             date={date}
                             onNextMonth={onNextMonth}
                             onPreMonth={onPreMonth}
+                            {...props}
                         />
                         {nMonthShow > 1 && (
                             <>
@@ -149,6 +151,7 @@ export const InputCalendar = ({
                                                     date={dateN}
                                                     onNextMonth={onNextMonth}
                                                     onPreMonth={onPreMonth}
+                                                    {...props}
                                                 />
                                             </>
                                         );

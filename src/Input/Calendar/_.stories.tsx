@@ -20,3 +20,15 @@ const args : InputCalendarProps = {
     nMonthShow:3
 }
 Index.args = args
+const d = new Date()
+d.setMonth(d.getMonth()+2)
+export const MinMax = Profile.bind({});
+const argsMinMax : InputCalendarProps = {
+    label:"Label",
+    placeholder:"Placeholder",
+    type:"range",
+    nMonthShow:3,
+    min:new Date(),
+    max:d
+}
+MinMax.args = argsMinMax

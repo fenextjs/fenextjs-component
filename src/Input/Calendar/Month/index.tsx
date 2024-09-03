@@ -20,6 +20,9 @@ export interface InputCalendarMonthProps extends _TProps {
 
     dataNSelect: boolean;
     setDataNSelect: (d: (d: boolean) => boolean) => void;
+
+    min?:Date
+    max?:Date
 }
 export const InputCalendarMonth = ({
     type = "normal",
@@ -33,6 +36,8 @@ export const InputCalendarMonth = ({
     setSelectDateRange,
     dataNSelect,
     setDataNSelect,
+    min,
+    max,
     ...props
 }: InputCalendarMonthProps) => {
     const { _t } = use_T({ ...props });
@@ -84,6 +89,7 @@ export const InputCalendarMonth = ({
                         })}
                     </div>
                     {date?.onGenerateDateByCalendar()?.map((d, i) => {
+                         const isValid = date?.onValidateMinMax({date:d,max,min})
                         return (
                             <>
                                 <div
@@ -92,6 +98,9 @@ export const InputCalendarMonth = ({
                                     data-month={d.getMonth() + 1}
                                     data-year={d.getFullYear()}
                                     onClick={() => {
+                                        if(!isValid){
+                                            return ;
+                                        }
                                         if (type == "normal") {
                                             setSelectDate(d);
                                         }
@@ -114,13 +123,14 @@ export const InputCalendarMonth = ({
                                         }
                                     }}
                                     className={`
-                                fenext-input-calendar-date
-                                fenext-input-calendar-date-${d.getMonth() == date.date.getMonth() ? "in-month" : "other-month"}
-                                fenext-input-calendar-date-${type == "normal" && d.getTime() == selectDate?.getTime() ? "select" : ""}
-                                fenext-input-calendar-date-${type == "range" && d.getTime() == selectDateRange[0]?.getTime() ? "select" : ""}
-                                fenext-input-calendar-date-${type == "range" && d.getTime() > selectDateRange[0]?.getTime() && d.getTime() < selectDateRange[1]?.getTime() ? "select-range" : ""}
-                                fenext-input-calendar-date-${type == "range" && d.getTime() == selectDateRange[1]?.getTime() ? "select" : ""}
-                            `}
+                                        fenext-input-calendar-date
+                                        fenext-input-calendar-date-${isValid?"valid":"disabled"}
+                                        fenext-input-calendar-date-${d.getMonth() == date.date.getMonth() ? "in-month" : "other-month"}
+                                        fenext-input-calendar-date-${type == "normal" && d.getTime() == selectDate?.getTime() ? "select" : ""}
+                                        fenext-input-calendar-date-${type == "range" && d.getTime() == selectDateRange[0]?.getTime() ? "select" : ""}
+                                        fenext-input-calendar-date-${type == "range" && d.getTime() > selectDateRange[0]?.getTime() && d.getTime() < selectDateRange[1]?.getTime() ? "select-range" : ""}
+                                        fenext-input-calendar-date-${type == "range" && d.getTime() == selectDateRange[1]?.getTime() ? "select" : ""}
+                                    `}
                                 >
                                     {d?.getDate()}
                                 </div>

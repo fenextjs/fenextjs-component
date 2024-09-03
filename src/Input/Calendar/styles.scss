@@ -79,8 +79,24 @@
     }
     &-day {
     }
+    &-btn,
+    &-day,
+    &-date {
+        width: var(--size-cell);
+        display: grid;
+        place-items: center;
+        aspect-ratio: 1/1;
+        padding: 0.25rem;
+        cursor: pointer;
+    }
     &-date {
         cursor: pointer;
+        &-disabled{
+            filter: grayscale(1);
+            opacity: .75;
+            background: var(--fenext-color-dark-light);
+            cursor: not-allowed;
+        }
         &-other-month {
             background: var(--fenext-color-dark-light);
             border-radius: var(--padding);
@@ -116,15 +132,5 @@
                 }
             }
         }
-    }
-    &-btn,
-    &-day,
-    &-date {
-        width: var(--size-cell);
-        display: grid;
-        place-items: center;
-        aspect-ratio: 1/1;
-        padding: 0.25rem;
-        cursor: pointer;
     }
 }
