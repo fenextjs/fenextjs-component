@@ -71,14 +71,36 @@ const args: InputSelectCSCProps = {
     converterInSearchWithMaxLenght:true,
     country: {
         validatorData: XellValidatorCountry,
-        forceShowOptionOnLoad:true
+        // forceShowOptionOnLoad:true
+        label:"Country"
     },
     state: {
-        validatorData: XellValidatorState
+        validatorData: XellValidatorState,
+        label:"State"
     },
     city: {
-        validatorData: XellValidatorCity
+        validatorData: XellValidatorCity,
+        label:"City"
     },
+    defaultValue:{
+
+    "country": {
+        "id": -1,
+        "code": "",
+        "text": ""
+    },
+    "state": {
+        "id": -1,
+        "id_country": -1,
+        "text": ""
+    },
+    "city": {
+        "id": -1,
+        "id_country": -1,
+        "id_state": -1,
+        "text": ""
+    },
+    }
 };
 
 Index.args = args;

@@ -160,10 +160,10 @@ export const InputSelectCSC = ({
                     {...props}
                     {...state}
                     useTOption={false}
-                    key={value?.country?.id}
+                    // key={value?.country?.id ?? '-2'}
                     options={states}
                     onChange={onChangeCSC("state")}
-                    defaultValue={value?.state}
+                    value={value?.state}
                     loader={!loadStates}
                     onParse={(e) => {
                         return {
@@ -178,10 +178,10 @@ export const InputSelectCSC = ({
                     {...props}
                     {...city}
                     useTOption={false}
-                    key={value?.state?.id}
+                    // key={value?.state?.id}
                     options={citys}
                     onChange={onChangeCSC("city")}
-                    defaultValue={value?.city}
+                    value={value?.city}
                     loader={!loadCitys}
                     onParse={(e) => {
                         return {
@@ -208,6 +208,9 @@ export const InputSelectCSC = ({
         return C;
     }, [
         value,
+        value?.country?.id,
+        value?.state?.id,
+        value?.city?.id,
         countrys,
         states,
         citys,
@@ -219,5 +222,6 @@ export const InputSelectCSC = ({
         loadCountrys,
         loadStates,
     ]);
-    return <>{CONTENT}</>;
+    return <>
+    {CONTENT}</>;
 };
