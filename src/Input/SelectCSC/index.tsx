@@ -222,6 +222,5 @@ export const InputSelectCSC = ({
         loadCountrys,
         loadStates,
     ]);
-    return <>
-    {CONTENT}</>;
+    return <>{CONTENT}</>;
 };

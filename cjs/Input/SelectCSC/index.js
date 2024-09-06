@@ -36,7 +36,7 @@ const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country 
                         data: e,
                     };
                 } }),
-            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...state, useTOption: false, key: value?.country?.id, options: states, onChange: onChangeCSC("state"), defaultValue: value?.state, loader: !loadStates, onParse: (e) => {
+            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...state, useTOption: false, options: states, onChange: onChangeCSC("state"), value: value?.state, loader: !loadStates, onParse: (e) => {
                     return {
                         ...e,
                         id: e?.id ?? "",
@@ -44,7 +44,7 @@ const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country 
                         data: e,
                     };
                 } }),
-            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...city, useTOption: false, key: value?.state?.id, options: citys, onChange: onChangeCSC("city"), defaultValue: value?.city, loader: !loadCitys, onParse: (e) => {
+            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...city, useTOption: false, options: citys, onChange: onChangeCSC("city"), value: value?.city, loader: !loadCitys, onParse: (e) => {
                     return {
                         ...e,
                         id: e?.id ?? "",
@@ -59,6 +59,9 @@ const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country 
         return C;
     }, [
         value,
+        value?.country?.id,
+        value?.state?.id,
+        value?.city?.id,
         countrys,
         states,
         citys,
