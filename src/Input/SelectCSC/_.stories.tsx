@@ -72,7 +72,15 @@ const args: InputSelectCSCProps = {
     country: {
         validatorData: XellValidatorCountry,
         // forceShowOptionOnLoad:true
-        label:"Country"
+        label:"Country",
+        // filterOptions:(d)=>{
+        //     return d.sort((a)=>{
+        //         if(a.text == "Colombia"){
+        //             return -1
+        //         }
+        //         return 0
+        //     })
+        // }
     },
     state: {
         validatorData: XellValidatorState,

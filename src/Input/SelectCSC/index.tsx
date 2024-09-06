@@ -160,7 +160,7 @@ export const InputSelectCSC = ({
                     {...props}
                     {...state}
                     useTOption={false}
-                    // key={value?.country?.id ?? '-2'}
+                    key={`state-${value?.country?.id}`}
                     options={states}
                     onChange={onChangeCSC("state")}
                     value={value?.state}
@@ -178,7 +178,7 @@ export const InputSelectCSC = ({
                     {...props}
                     {...city}
                     useTOption={false}
-                    // key={value?.state?.id}
+                    key={`city-${value?.state?.id}`}
                     options={citys}
                     onChange={onChangeCSC("city")}
                     value={value?.city}
