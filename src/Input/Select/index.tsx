@@ -11,6 +11,7 @@ import {
     InputSelectOption,
     InputSelectOptionBaseProps,
     InputSelectOptionClassProps,
+    InputSelectOptionProps,
 } from "../SelectOption";
 import { Arrow } from "fenextjs-svg/cjs/Arrow";
 import { Cancel } from "fenextjs-svg/cjs/cancel";
@@ -31,7 +32,7 @@ export type InputSelectTypeStyle = "normal" | "box" | "list" | "checkbox";
  */
 export interface InputSelectClassProps
     extends InputTextClassProps,
-        InputSelectOptionClassProps {
+    InputSelectOptionClassProps {
     /**
      * CSS class name for the input select.
      */
@@ -44,7 +45,8 @@ export interface InputSelectClassProps
 }
 
 export interface InputSelectItemOptionBaseProps<T = any>
-    extends Omit<InputSelectOptionBaseProps<T>, "type" | "onDelete"> {}
+    extends Omit<InputSelectOptionProps<T>, "type" | "onDelete"> { }
+
 
 /**
  * Interface that defines the base properties for a text input component.
@@ -179,6 +181,10 @@ export interface InputSelectBaseProps<T = any>
      */
     maxLengthShowOptions?: number;
     /**
+     * nItems in select.
+     */
+    nItems?: number;
+    /**
      * converterInSearchWithMaxLenght in select.
      */
     converterInSearchWithMaxLenght?: boolean;
@@ -200,7 +206,7 @@ export interface InputSelectBaseProps<T = any>
  */
 export interface InputSelectProps<T = any>
     extends InputSelectBaseProps<T>,
-        InputSelectClassProps {}
+    InputSelectClassProps { }
 
 export interface InputSelectValue<T = any> {
     option?: InputSelectItemOptionBaseProps<T>;
@@ -242,11 +248,12 @@ export const InputSelect = <T = any,>({
     useSwichtypeSelectStyle = false,
     changeByFirstOptionInOnBlur = false,
     converterInSearchWithMaxLenght = false,
+    nItems = undefined,
 
     maxLengthShowOptions = 20,
     itemMaxLengthShowOptions = {
         id: "fenext-item-max-length-show-options",
-        text: "More ...",
+        text: "There are more elements ...",
     },
     showOptionIconImg = true,
     validatorData,
@@ -395,6 +402,15 @@ export const InputSelect = <T = any,>({
             if (nMax && itemMaxLengthShowOptions) {
                 list.push({
                     ...itemMaxLengthShowOptions,
+                    classNameOption: `fenext-select-option-item-max-lenght-show-options ${itemMaxLengthShowOptions.classNameOption}`,
+                    text:`${itemMaxLengthShowOptions.text} (${maxLengthShowOptions ?? 0} / ${nItems})`,
+                    children: <>
+                        <div className="fenext-select-option-item-max-lenght-show-options-content">
+                            {itemMaxLengthShowOptions.children ?? itemMaxLengthShowOptions.text}
+
+                        </div>
+                        <span className="fenext-select-option-item-max-lenght-show-options-maxlegnth-nitems">({maxLengthShowOptions ?? 0} / {nItems})</span>
+                    </>,
                     disabled: true,
                 });
             }
@@ -402,6 +418,7 @@ export const InputSelect = <T = any,>({
         return {
             OPTIONS: list,
             nMax,
+            nItems
         };
     }, [
         typeSelect,
@@ -491,8 +508,8 @@ export const InputSelect = <T = any,>({
                                 id={noResult?.id ?? "selected"}
                                 text={_t(
                                     selected?.text ??
-                                        props?.placeholder ??
-                                        "Select",
+                                    props?.placeholder ??
+                                    "Select",
                                 )}
                                 children={selected?.children ?? undefined}
                                 _t={_t}
@@ -658,10 +675,9 @@ export const InputSelect = <T = any,>({
                     fenext-select-type-${typeSelect}
                     fenext-select-type-style-${typeSelectStyle}
                     fenext-select-${useSwichtypeSelectStyle ? "use-swich-select-style" : ""}
-                    fenext-select-${
-                        isSelectChangeText
-                            ? "is-change-text"
-                            : "is-not-change-text"
+                    fenext-select-${isSelectChangeText
+                        ? "is-change-text"
+                        : "is-not-change-text"
                     }
                     ${classNameSelect} ${showOptions}
                     ${hiddenOptions}
@@ -685,7 +701,7 @@ export const InputSelect = <T = any,>({
                             ele?.focus();
                         }
                     }}
-                    // onMouseEnter={onLoadPos}
+                // onMouseEnter={onLoadPos}
                 >
                     <InputText
                         {...props}
@@ -750,16 +766,16 @@ export const InputSelect = <T = any,>({
                                                     <>
                                                         {dataMemo?.option
                                                             ?.icon && (
-                                                            <>
-                                                                <div className="fenext-select-option-selected-img">
-                                                                    {
-                                                                        dataMemo
-                                                                            ?.option
-                                                                            ?.icon
-                                                                    }
-                                                                </div>
-                                                            </>
-                                                        )}
+                                                                <>
+                                                                    <div className="fenext-select-option-selected-img">
+                                                                        {
+                                                                            dataMemo
+                                                                                ?.option
+                                                                                ?.icon
+                                                                        }
+                                                                    </div>
+                                                                </>
+                                                            )}
                                                     </>
                                                 )}
                                             </>
@@ -772,8 +788,8 @@ export const InputSelect = <T = any,>({
                     />
                 </div>
                 {typeSelect == "div" &&
-                typeSelectStyle == "normal" &&
-                !useSwichtypeSelectStyle ? (
+                    typeSelectStyle == "normal" &&
+                    !useSwichtypeSelectStyle ? (
                     <></>
                 ) : (
                     <>{TAGLIST}</>

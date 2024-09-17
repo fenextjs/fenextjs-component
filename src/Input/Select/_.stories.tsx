@@ -73,7 +73,25 @@ const args: InputSelectProps = {
             text: "Option 7",
             children: <>Option 7</>,
         },
+        {
+            id: "8",
+            text: "Option 8",
+        },
+        {
+            id: "9",
+            text: "Option 9",
+        },
+        {
+            id: "10",
+            text: "Option 10",
+        },
+        {
+            id: "11",
+            text: "Option 11",
+        },
     ],
+    maxLengthShowOptions:10,
+    nItems:11,
     create: {
         id: "create",
         text: "Create",
