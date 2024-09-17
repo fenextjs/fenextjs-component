@@ -43,6 +43,7 @@ type InputCSCProps = Pick<
     | "required"
     | "requiredText"
     | "forceShowOptionOnLoad"
+    | "maxLengthShowOptions"
 >;
 
 /**
@@ -144,6 +145,7 @@ export const InputSelectCSC = ({
                     {...country}
                     useTOption={false}
                     options={countrys}
+                    nItems={countrys.length}
                     onChange={onChangeCSC("country")}
                     defaultValue={value?.country}
                     loader={!loadCountrys}
@@ -162,6 +164,7 @@ export const InputSelectCSC = ({
                     useTOption={false}
                     key={`state-${value?.country?.id}`}
                     options={states}
+                    nItems={states.length}
                     onChange={onChangeCSC("state")}
                     value={value?.state}
                     loader={!loadStates}
@@ -180,6 +183,7 @@ export const InputSelectCSC = ({
                     useTOption={false}
                     key={`city-${value?.state?.id}`}
                     options={citys}
+                    nItems={citys.length}
                     onChange={onChangeCSC("city")}
                     value={value?.city}
                     loader={!loadCitys}

@@ -9,7 +9,6 @@ import React, {
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../Text";
 import {
     InputSelectOption,
-    InputSelectOptionBaseProps,
     InputSelectOptionClassProps,
     InputSelectOptionProps,
 } from "../SelectOption";
@@ -403,13 +402,19 @@ export const InputSelect = <T = any,>({
                 list.push({
                     ...itemMaxLengthShowOptions,
                     classNameOption: `fenext-select-option-item-max-lenght-show-options ${itemMaxLengthShowOptions.classNameOption}`,
-                    text:`${itemMaxLengthShowOptions.text} (${maxLengthShowOptions ?? 0} / ${nItems})`,
+                    text: `${itemMaxLengthShowOptions.text} (${maxLengthShowOptions ?? 0} / ${nItems})`,
                     children: <>
                         <div className="fenext-select-option-item-max-lenght-show-options-content">
                             {itemMaxLengthShowOptions.children ?? itemMaxLengthShowOptions.text}
 
                         </div>
-                        <span className="fenext-select-option-item-max-lenght-show-options-maxlegnth-nitems">({maxLengthShowOptions ?? 0} / {nItems})</span>
+                        {
+                            nItems && <>
+                                <span className="fenext-select-option-item-max-lenght-show-options-maxlegnth-nitems">
+                                    ({maxLengthShowOptions ?? 0} / {nItems})
+                                </span>
+                            </>
+                        }
                     </>,
                     disabled: true,
                 });
@@ -427,6 +432,7 @@ export const InputSelect = <T = any,>({
         maxLengthShowOptions,
         props?.disabled,
         itemMaxLengthShowOptions,
+        nItems
     ]);
 
     const onEnter = useCallback(() => {
@@ -600,57 +606,79 @@ export const InputSelect = <T = any,>({
         selectRef,
     ]);
 
-    const { onLoadPos, onLoadChildren } = useSelectOptionsPos({
-        children: (
-            <>
-                {typeSelect == "div" && typeSelectStyle == "normal" ? (
-                    <>
-                        <div className={`fenext-select-content-search`}>
-                            <InputText
-                                {...props}
-                                _t={_t}
-                                icon={
-                                    <>
-                                        <div className="fenext-select-content-icon">
-                                            <div className="fenext-select-content-icon-search">
-                                                {iconSearch}
-                                            </div>
-                                        </div>
-                                    </>
-                                }
-                                onBlur={onBlur}
-                                onChange={onChangeText_}
-                                value={_tValue(dataMemo?.text ?? "")}
-                                onEnter={onEnter}
-                                error={errorInput}
-                                autoComplete={false}
-                                errorWithIsChange={errorWithIsChange}
-                                extraInContentInput={
-                                    <>
-                                        <button
-                                            className={`fenext-select-clear`}
-                                            onClick={onClear}
-                                        >
-                                            {_t(clearContent)}
-                                        </button>
-                                    </>
-                                }
-                                validator={undefined}
-                            />
-                            <button className={`fenext-select-close`}>
-                                {iconCloseMovil}
-                            </button>
-                        </div>
-                        {TAGLIST}
-                    </>
-                ) : (
-                    <></>
-                )}
+    const [isFocus, setIsFocus] = useState(false);
+
+    const CHILDREN_SELECT = useMemo(() => {
+        if (typeSelect == "div" && typeSelectStyle == "normal") {
+            return <>
+
+                <div className={`fenext-select-content-search`}>
+                    <InputText
+                        {...props}
+                        _t={_t}
+                        icon={
+                            <>
+                                <div className="fenext-select-content-icon">
+                                    <div className="fenext-select-content-icon-search">
+                                        {iconSearch}
+                                    </div>
+                                </div>
+                            </>
+                        }
+                        onBlur={onBlur}
+                        onChange={onChangeText_}
+                        value={_tValue(dataMemo?.text ?? "")}
+                        onEnter={onEnter}
+                        error={errorInput}
+                        autoComplete={false}
+                        errorWithIsChange={errorWithIsChange}
+                        extraInContentInput={
+                            <>
+                                <button
+                                    className={`fenext-select-clear`}
+                                    onClick={onClear}
+                                >
+                                    {_t(clearContent)}
+                                </button>
+                            </>
+                        }
+                        validator={undefined}
+                    />
+                    <button className={`fenext-select-close`}>
+                        {iconCloseMovil}
+                    </button>
+                </div>
+                {TAGLIST}
             </>
-        ),
+        }
+        return <></>
+    }, [
+        options,
+        isFocus,
+        forceShowOptionOnLoad,
+        typeSelect,
+        props?.datalist,
+        classNameList,
+        create,
+        onCreate,
+        OPTIONSLENGTH,
+        noResult,
+        selected,
+        props?.placeholder,
+        OPTIONS,
+        data,
+        useTOption,
+        onChangeOption,
+
+        props.loader,
+        loaderOption,
+        selectRef,
+    ])
+
+    const { onLoadPos, onLoadChildren } = useSelectOptionsPos({
+        children: CHILDREN_SELECT,
         target: selectRef?.current,
     });
-    const [isFocus, setIsFocus] = useState(false);
     useEffect(() => {
         if (isFocus || forceShowOptionOnLoad) {
             onLoadChildren();
@@ -663,7 +691,28 @@ export const InputSelect = <T = any,>({
                 ele?.focus();
             }
         }
-    }, [props?.loader, options, OPTIONS, isFocus, forceShowOptionOnLoad, data]);
+    }, [
+        options,
+        isFocus,
+        forceShowOptionOnLoad,
+        typeSelect,
+        props?.datalist,
+        classNameList,
+        create,
+        onCreate,
+        OPTIONSLENGTH,
+        noResult,
+        selected,
+        props?.placeholder,
+        OPTIONS,
+        data,
+        useTOption,
+        onChangeOption,
+
+        props.loader,
+        loaderOption,
+        selectRef,
+    ]);
 
     return (
         <>

@@ -48,6 +48,7 @@ export const InputSelectNumber = ({
                         ? parseOption(defaultValue)
                         : undefined
                 }
+                nItems={max - min}
                 options={new Array(Math.abs(max - min + 1))
                     .fill(1)
                     .map((e, i) => {
