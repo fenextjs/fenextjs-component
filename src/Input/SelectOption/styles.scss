@@ -96,16 +96,14 @@
             color: var(--fenext-color-white);
         }
     }
-    &-item-max-lenght-show-options{
+    &-item-max-lenght-show-options {
         display: grid;
         grid-template-columns: 1fr auto;
         align-items: center;
         gap: 1rem;
-        &-maxlegnth-nitems{
-    
+        &-maxlegnth-nitems {
         }
-        &-content{
-            
+        &-content {
         }
     }
 }

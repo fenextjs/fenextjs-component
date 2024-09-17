@@ -15,7 +15,7 @@ const InputSelectNumber = ({ onChange, defaultValue = undefined, min = 0, max = 
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(__1.InputSelect, { ...props, classNameSelect: `fenext-select-number ${props?.classNameSelect}`, defaultValue: defaultValue != undefined
                 ? parseOption(defaultValue)
-                : undefined, options: new Array(Math.abs(max - min + 1))
+                : undefined, nItems: max - min, options: new Array(Math.abs(max - min + 1))
                 .fill(1)
                 .map((e, i) => {
                 const n = e * i + min;

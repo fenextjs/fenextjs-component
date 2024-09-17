@@ -63,13 +63,11 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
                             aspect-ratio: initial;
                             border-radius: 0.75rem;
                         }
-                        &-item-max-lenght-show-options{
+                        &-item-max-lenght-show-options {
                             grid-template-columns: 1fr;
-                            &-maxlegnth-nitems{
-                        
+                            &-maxlegnth-nitems {
                             }
-                            &-content{
-                                
+                            &-content {
                             }
                         }
                     }

@@ -15,7 +15,7 @@ export interface PaginationNPageClassProps {
  * The base props for the pagination component
  */
 export interface PaginationNPageBaseProps
-    extends Omit<InputSelectBaseProps, "options" | "onChange"> {
+    extends Omit<InputSelectBaseProps, "options" | "onChange" | "nItems"> {
     /**
      * List NPage for select.
      */

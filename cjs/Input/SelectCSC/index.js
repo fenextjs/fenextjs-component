@@ -28,7 +28,7 @@ const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country 
     });
     const CONTENT = (0, react_1.useMemo)(() => {
         let C = (react_1.default.createElement(react_1.default.Fragment, null,
-            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...country, useTOption: false, options: countrys, onChange: onChangeCSC("country"), defaultValue: value?.country, loader: !loadCountrys, onParse: (e) => {
+            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...country, useTOption: false, options: countrys, nItems: countrys.length, onChange: onChangeCSC("country"), defaultValue: value?.country, loader: !loadCountrys, onParse: (e) => {
                     return {
                         ...e,
                         id: e?.id ?? "",
@@ -36,7 +36,7 @@ const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country 
                         data: e,
                     };
                 } }),
-            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...state, useTOption: false, key: `state-${value?.country?.id}`, options: states, onChange: onChangeCSC("state"), value: value?.state, loader: !loadStates, onParse: (e) => {
+            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...state, useTOption: false, key: `state-${value?.country?.id}`, options: states, nItems: states.length, onChange: onChangeCSC("state"), value: value?.state, loader: !loadStates, onParse: (e) => {
                     return {
                         ...e,
                         id: e?.id ?? "",
@@ -44,7 +44,7 @@ const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country 
                         data: e,
                     };
                 } }),
-            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...city, useTOption: false, key: `city-${value?.state?.id}`, options: citys, onChange: onChangeCSC("city"), value: value?.city, loader: !loadCitys, onParse: (e) => {
+            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...city, useTOption: false, key: `city-${value?.state?.id}`, options: citys, nItems: citys.length, onChange: onChangeCSC("city"), value: value?.city, loader: !loadCitys, onParse: (e) => {
                     return {
                         ...e,
                         id: e?.id ?? "",
