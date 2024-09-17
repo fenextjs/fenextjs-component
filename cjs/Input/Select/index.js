@@ -129,7 +129,9 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
             list = [...OPTIONSSEARCH];
         }
         if (maxLengthShowOptions) {
-            nMax = list.length > maxLengthShowOptions;
+            nMax =
+                list.length > maxLengthShowOptions ||
+                    (nItems ?? 0) > maxLengthShowOptions;
             list = list.splice(0, maxLengthShowOptions);
             if (nMax && itemMaxLengthShowOptions) {
                 list.push({
@@ -285,9 +287,10 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
             }
         }
     }, [
-        options,
         isFocus,
         forceShowOptionOnLoad,
+        CHILDREN_SELECT,
+        options,
         typeSelect,
         props?.datalist,
         classNameList,

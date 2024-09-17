@@ -395,7 +395,9 @@ export const InputSelect = <T = any,>({
             list = [...OPTIONSSEARCH];
         }
         if (maxLengthShowOptions) {
-            nMax = (list.length > maxLengthShowOptions) || ((nItems ?? 0) > maxLengthShowOptions);
+            nMax =
+                list.length > maxLengthShowOptions ||
+                (nItems ?? 0) > maxLengthShowOptions;
             list = list.splice(0, maxLengthShowOptions);
             if (nMax && itemMaxLengthShowOptions) {
                 list.push({
@@ -698,7 +700,7 @@ export const InputSelect = <T = any,>({
         forceShowOptionOnLoad,
 
         CHILDREN_SELECT,
-        
+
         options,
         typeSelect,
         props?.datalist,
