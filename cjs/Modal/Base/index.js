@@ -30,7 +30,6 @@ const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", cl
                         }
                     } },
                     react_1.default.createElement("div", { className: `fenext-modal-base-content ${classNameContent} ` },
-                        JSON.stringify({ activeNameLast }),
                         CLOSECOMPONENTE,
                         ((childrenUseActiveForShowHidden && active) ||
                             !childrenUseActiveForShowHidden) &&
