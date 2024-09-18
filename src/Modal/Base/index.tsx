@@ -12,6 +12,14 @@ export interface ModalBaseBaseProps extends PropsWithChildren {
     /**
      * If active modal.
      */
+    activeName?: boolean | null;
+    /**
+     * If active modal.
+     */
+    activeNameLast?: boolean | null;
+    /**
+     * If active modal.
+     */
     childrenUseActiveForShowHidden?: boolean;
     /**
      * If disabled close modal.
@@ -94,6 +102,9 @@ export const ModalBase = ({
     classNameClose = "",
 
     active = false,
+    activeName,
+    activeNameLast,
+
     childrenUseActiveForShowHidden = false,
     disabledClose = false,
     type = "center",
@@ -126,11 +137,14 @@ export const ModalBase = ({
             <>
                 <dialog
                     open={active}
-                    className={`fenext-modal-base-dialog fenext-modal-base-dialog-close-${typeClose} fenext-modal-base-dialog-${
-                        active ? "active" : "inactive"
-                    } fenext-modal-base-dialog-disabled-close-${
-                        disabledClose ? "active" : "inactive"
-                    }`}
+                    className={`
+                        fenext-modal-base-dialog
+                        fenext-modal-base-dialog-close-${typeClose}
+                        fenext-modal-base-dialog-${active ? "active" : "inactive"}
+                        fenext-modal-base-dialog-name-${activeName ? "active" : "inactive"}
+                        fenext-modal-base-dialog-name-last-${activeNameLast ? "active" : "inactive"}
+                        fenext-modal-base-dialog-disabled-close-${disabledClose ? "active" : "inactive"}
+                    `}
                     data-name={name}
                 >
                     <div
@@ -171,6 +185,8 @@ export const ModalBase = ({
         CLOSECOMPONENTE,
         childrenUseActiveForShowHidden,
         active,
+        activeName,
+        activeNameLast,
         children,
         uuid,
         classNameContent,

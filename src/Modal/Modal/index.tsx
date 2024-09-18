@@ -76,7 +76,7 @@ export const Modal = ({
     activeByNameContentLocalStorage = false,
     closeComponent,
 }: ModalProps) => {
-    const { active, onActive, onClose } = useModal({
+    const { active, onActive, onClose, activeName, activeNameLast } = useModal({
         active: activeProps,
         disabled: disabledElementActionModalActive,
         onActive: onActiveProps,
@@ -99,6 +99,8 @@ export const Modal = ({
                 closeComponent={closeComponent}
                 onClose={onClose}
                 active={active}
+                activeName={activeName}
+                activeNameLast={activeNameLast}
                 type={type}
                 typeClose={typeClose}
                 disabledClose={disabledClose}

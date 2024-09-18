@@ -230,7 +230,7 @@ UseModalName.args = {
 
 const ModalInModalContentLocalStorage_: Story<PropsWithChildren<ModalProps>> = (args) => (
     <Modal {...args} 
-    name="modal-1" activeByNameLocalStorage={true} useRender={true} ElementActionModalActive={<Button>Button Modal</Button>}>
+    name="modal-1"  useRender={true} ElementActionModalActive={<Button>Button Modal</Button>}>
         <h1>Title</h1>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
@@ -240,7 +240,7 @@ const ModalInModalContentLocalStorage_: Story<PropsWithChildren<ModalProps>> = (
         </p>
         <Modal
             {...args}
-            name="modal-2" activeByNameLocalStorage={true} useRender={true}
+            name="modal-2"  useRender={true}
             ElementActionModalActive={<Button>Button Modal 2</Button>}
             type="right"
         >
@@ -253,7 +253,7 @@ const ModalInModalContentLocalStorage_: Story<PropsWithChildren<ModalProps>> = (
             </p>
             <Modal
                 {...args}
-                name="modal-3" activeByNameLocalStorage={true} useRender={true}
+                name="modal-3"  useRender={true}
                 ElementActionModalActive={<Button>Button Modal 3</Button>}
                 type="bottom"
             >
@@ -267,7 +267,7 @@ const ModalInModalContentLocalStorage_: Story<PropsWithChildren<ModalProps>> = (
                 </p>
                 <Modal
                     {...args}
-                    name="modal-4" activeByNameLocalStorage={true} useRender={true}
+                    name="modal-4"  useRender={true}
                     ElementActionModalActive={<Button>Button Modal 4</Button>}
                     type="left"
                 >
@@ -281,7 +281,7 @@ const ModalInModalContentLocalStorage_: Story<PropsWithChildren<ModalProps>> = (
                     </p>
                     <Modal
                         {...args}
-                        name="modal-5" activeByNameLocalStorage={true} useRender={true}
+                        name="modal-5"  useRender={true}
                         ElementActionModalActive={
                             <Button>Button Modal 5</Button>
                         }
@@ -297,7 +297,7 @@ const ModalInModalContentLocalStorage_: Story<PropsWithChildren<ModalProps>> = (
                         </p>
                         <Modal
                             {...args}
-                            name="modal-6" activeByNameLocalStorage={true} useRender={true}
+                            name="modal-6"  useRender={true}
                             ElementActionModalActive={
                                 <Button>Button Modal 6</Button>
                             }
@@ -314,7 +314,7 @@ const ModalInModalContentLocalStorage_: Story<PropsWithChildren<ModalProps>> = (
                             </p>
                             <Modal
                                 {...args}
-                                name="modal-7" activeByNameLocalStorage={true} useRender={true}
+                                name="modal-7"  useRender={true}
                                 ElementActionModalActive={
                                     <Button>Button Modal 7</Button>
                                 }

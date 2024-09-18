@@ -6,7 +6,7 @@ const react_1 = tslib_1.__importDefault(require("react"));
 const Base_1 = require("../Base");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const Modal = ({ classNameElementActionModalActive = "", classNameModal = {}, ElementActionModalActive, disabledElementActionModalActive = false, children, active: activeProps = undefined, disabledClose = false, onClose: onCloseProps, onActive: onActiveProps, type = "center", typeClose = "out", useRender = false, name, nameLocalStorage, activeByNameLocalStorage = false, activeByNameContentLocalStorage = false, closeComponent, }) => {
-    const { active, onActive, onClose } = (0, fenextjs_hook_1.useModal)({
+    const { active, onActive, onClose, activeName, activeNameLast } = (0, fenextjs_hook_1.useModal)({
         active: activeProps,
         disabled: disabledElementActionModalActive,
         onActive: onActiveProps,
@@ -18,7 +18,7 @@ const Modal = ({ classNameElementActionModalActive = "", classNameModal = {}, El
     });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { onClick: onActive, className: `fenext-modal-element-active ${classNameElementActionModalActive}` }, ElementActionModalActive),
-        react_1.default.createElement(Base_1.ModalBase, { ...classNameModal, closeComponent: closeComponent, onClose: onClose, active: active, type: type, typeClose: typeClose, disabledClose: disabledClose, useRender: useRender, name: name, nameLocalStorage: nameLocalStorage }, children)));
+        react_1.default.createElement(Base_1.ModalBase, { ...classNameModal, closeComponent: closeComponent, onClose: onClose, active: active, activeName: activeName, activeNameLast: activeNameLast, type: type, typeClose: typeClose, disabledClose: disabledClose, useRender: useRender, name: name, nameLocalStorage: nameLocalStorage }, children)));
 };
 exports.Modal = Modal;
 //# sourceMappingURL=index.js.map
