@@ -21,7 +21,8 @@ const args  : InputNumberProps = {
     validator:FenextjsValidator()
     .isRequired()
     .isNumber()
-    .isMinOrEqual(0, )
+    .isMinOrEqual(0, ),
+    disabledScroll:false
 }
 
 Index.args= args

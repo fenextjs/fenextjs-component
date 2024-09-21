@@ -138,13 +138,13 @@ export interface InputTextBaseProps extends _TProps {
      * Type of input to display (e.g. text, number, password, etc.).
      */
     type?:
-        | "text"
-        | "search"
-        | "tel"
-        | "url"
-        | "password"
-        | "number"
-        | "textarea";
+    | "text"
+    | "search"
+    | "tel"
+    | "url"
+    | "password"
+    | "number"
+    | "textarea";
 
     /**
      * Function to call when the input value changes.
@@ -244,15 +244,15 @@ export interface InputTextBaseProps extends _TProps {
      * inputMode of Input.
      */
     inputMode?:
-        | "none"
-        | "text"
-        | "tel"
-        | "url"
-        | "email"
-        | "numeric"
-        | "decimal"
-        | "search"
-        | undefined;
+    | "none"
+    | "text"
+    | "tel"
+    | "url"
+    | "email"
+    | "numeric"
+    | "decimal"
+    | "search"
+    | undefined;
     /**
      * AutoComplete of Input.
      */
@@ -262,9 +262,14 @@ export interface InputTextBaseProps extends _TProps {
      * onKeyDown of Input.
      */
     onKeyDown?:
-        | (React.KeyboardEventHandler<HTMLTextAreaElement> &
-              React.KeyboardEventHandler<HTMLInputElement>)
-        | undefined;
+    | (React.KeyboardEventHandler<HTMLTextAreaElement> &
+        React.KeyboardEventHandler<HTMLInputElement>)
+    | undefined;
+
+
+    onWheel?: | (React.WheelEventHandler<HTMLTextAreaElement> &
+        React.WheelEventHandler<HTMLInputElement>)
+    | undefined;
     /**
      * maxLength of Input.
      */
@@ -291,7 +296,7 @@ export interface InputTextBaseProps extends _TProps {
  */
 export interface InputTextProps
     extends InputTextBaseProps,
-        InputTextClassProps {}
+    InputTextClassProps { }
 
 export const InputText = ({
     id = "",
@@ -310,9 +315,9 @@ export const InputText = ({
     classNameIcon = "",
     classNameLoaderValidate = "",
     iconLoader = <Loader />,
-    onChange = () => {},
-    onBlur = () => {},
-    onEnter = () => {},
+    onChange = () => { },
+    onBlur = () => { },
+    onEnter = () => { },
     onChangeValidate = async (e: string) => e,
     parseText,
     props = {},
@@ -332,6 +337,7 @@ export const InputText = ({
     useLoader = true,
     isChange: isChangeProps = undefined,
     onKeyDown,
+    onWheel,
     iconPos = "right",
     inputMode,
 
@@ -527,7 +533,7 @@ export const InputText = ({
                         className={`fenext-input-content-input ${classNameInput} fenext-input-validator-status-${FenextInputValidatorStatus} ${statusInput}`}
                         placeholder={_t(
                             (isFocus ? placeholderFocus : placeholder) ??
-                                placeholder,
+                            placeholder,
                         )}
                         value={
                             (parseText ? parseText(valueInput) : valueInput) ??
@@ -547,6 +553,7 @@ export const InputText = ({
                         onClick={() => {
                             setIsFocus(true);
                         }}
+                        onWheel={onWheel}
                         autoComplete={autoComplete ? "on" : "off"}
                         onKeyDown={onKeyDown}
                         {...props}
