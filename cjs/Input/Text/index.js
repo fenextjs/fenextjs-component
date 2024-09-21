@@ -13,7 +13,7 @@ const useValidator_1 = require("fenextjs-hook/cjs/useValidator");
 const Error_1 = require("../../Error");
 const fenextjs_interface_1 = require("fenextjs-interface");
 const fenextjs_hook_2 = require("fenextjs-hook");
-const InputText = ({ id = "", datalist = undefined, name = "", label = "", placeholder = "", placeholderFocus = undefined, defaultValue = undefined, value = undefined, type = "text", className = "", classNameLabel = "", classNameContentInput = "", classNameInput = "", classNameIcon = "", classNameLoaderValidate = "", iconLoader = react_1.default.createElement(Loader_1.Loader, null), onChange = () => { }, onBlur = () => { }, onEnter = () => { }, onChangeValidate = async (e) => e, parseText, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", required = false, requiredText = "*", loader = false, autoComplete = false, useLoader = true, isChange: isChangeProps = undefined, onKeyDown, iconPos = "right", inputMode, validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, ...p }) => {
+const InputText = ({ id = "", datalist = undefined, name = "", label = "", placeholder = "", placeholderFocus = undefined, defaultValue = undefined, value = undefined, type = "text", className = "", classNameLabel = "", classNameContentInput = "", classNameInput = "", classNameIcon = "", classNameLoaderValidate = "", iconLoader = react_1.default.createElement(Loader_1.Loader, null), onChange = () => { }, onBlur = () => { }, onEnter = () => { }, onChangeValidate = async (e) => e, parseText, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", required = false, requiredText = "*", loader = false, autoComplete = false, useLoader = true, isChange: isChangeProps = undefined, onKeyDown, onWheel, iconPos = "right", inputMode, validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, ...p }) => {
     const { _t } = (0, fenextjs_hook_2.use_T)({ ...p });
     const [isFocus, setIsFocus] = (0, react_1.useState)(false);
     const [statusInput, setStateInput] = (0, react_1.useState)("");
@@ -135,7 +135,7 @@ const InputText = ({ id = "", datalist = undefined, name = "", label = "", place
                         }
                     }, onClick: () => {
                         setIsFocus(true);
-                    }, autoComplete: autoComplete ? "on" : "off", onKeyDown: onKeyDown, ...props, inputMode: inputMode }),
+                    }, onWheel: onWheel, autoComplete: autoComplete ? "on" : "off", onKeyDown: onKeyDown, ...props, inputMode: inputMode }),
                 ICON,
                 LOADER,
                 extraInContentInput,

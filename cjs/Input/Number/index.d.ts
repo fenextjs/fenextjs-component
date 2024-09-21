@@ -8,5 +8,6 @@ export interface InputNumberProps extends Omit<InputTextProps, "defaultValue" | 
     min?: number;
     max?: number;
     useBtnIncreaseDecrease?: boolean;
+    disabledScroll?: boolean;
 }
-export declare const InputNumber: ({ defaultValue, onChange, useBtnIncreaseDecrease, validator, value, ...props }: InputNumberProps) => React.JSX.Element;
+export declare const InputNumber: ({ defaultValue, onChange, useBtnIncreaseDecrease, validator, value, disabledScroll, ...props }: InputNumberProps) => React.JSX.Element;

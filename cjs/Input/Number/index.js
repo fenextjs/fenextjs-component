@@ -9,7 +9,7 @@ const Arrow_1 = require("fenextjs-svg/cjs/Arrow");
 const fenextjs_validator_1 = require("fenextjs-validator");
 const useValidator_1 = require("fenextjs-hook/cjs/useValidator");
 const fenextjs_functions_1 = require("fenextjs-functions");
-const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = false, validator = undefined, value, ...props }) => {
+const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = false, validator = undefined, value, disabledScroll = false, ...props }) => {
     const [value_, setValue_] = (0, react_1.useState)(defaultValue ?? "");
     const valueInput = (0, react_1.useMemo)(() => value ?? (value_ == "" ? defaultValue : value_), [value_, defaultValue, value]);
     const setValue = (v) => {
@@ -42,7 +42,16 @@ const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = fal
         validator: validator ?? (0, fenextjs_validator_1.FenextjsValidator)(),
     });
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(Text_1.InputText, { ...props, type: "number", value: `${valueInput ?? ""}`, className: `fenext-input-number ${props?.className}`, useLoader: false, error: errorFenext, icon: react_1.default.createElement(react_1.default.Fragment, null, useBtnIncreaseDecrease ? (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(Text_1.InputText, { ...props, type: "number", value: `${valueInput ?? ""}`, className: `fenext-input-number ${props?.className}`, useLoader: false, error: errorFenext, onWheel: (e) => {
+                if (disabledScroll === true) {
+                    e.target.blur();
+                    e.stopPropagation();
+                    setTimeout(() => {
+                        e.target.focus();
+                    }, 0);
+                }
+                props?.onWheel?.(e);
+            }, icon: react_1.default.createElement(react_1.default.Fragment, null, useBtnIncreaseDecrease ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("span", { onClick: addValue(1), className: `fenext-input-number-icon-arrow fenext-input-number-icon-increase` },
                     react_1.default.createElement(Number_1.SVGNumberIncrease, null)),
                 react_1.default.createElement("span", { onClick: addValue(-1), className: `fenext-input-number-icon-arrow fenext-input-number-icon-decrease` },

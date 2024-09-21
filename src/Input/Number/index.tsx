@@ -58,7 +58,7 @@ export const InputNumber = ({
     useBtnIncreaseDecrease = false,
     validator = undefined,
     value,
-    disabledScroll=false,
+    disabledScroll = false,
     ...props
 }: InputNumberProps) => {
     const [value_, setValue_] = useState<number | "">(defaultValue ?? "");
@@ -114,16 +114,16 @@ export const InputNumber = ({
                 useLoader={false}
                 error={errorFenext}
                 onWheel={(e) => {
-                    if(disabledScroll === true){
-                        e.target.blur()
-                        
-                        e.stopPropagation()
-                        
+                    if (disabledScroll === true) {
+                        e.target.blur();
+
+                        e.stopPropagation();
+
                         setTimeout(() => {
-                            e.target.focus()
-                        }, 0)
+                            e.target.focus();
+                        }, 0);
                     }
-                    props?.onWheel?.(e)
+                    props?.onWheel?.(e);
                 }}
                 icon={
                     <>
