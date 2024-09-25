@@ -229,6 +229,8 @@ export const InputPhone = ({
                             if (e?.code_phone) {
                                 onConcatData({
                                     code: e?.code_phone,
+                                    country:e,
+                                    code_country:e?.code,
                                     img: e
                                         ? `${getRuteCountryImg(e)}`
                                         : undefined,
@@ -241,6 +243,10 @@ export const InputPhone = ({
                         // changeByFirstOptionInOnBlur={true}
                         optional={false}
                         showOptionIconImg={true}
+                        itemMaxLengthShowOptions={{
+                            id: "fenext-item-max-length-show-options",
+                            text: "...",
+                        }}
                     />
                 </div>
                 <div
