@@ -229,8 +229,8 @@ export const InputPhone = ({
                             if (e?.code_phone) {
                                 onConcatData({
                                     code: e?.code_phone,
-                                    country:e,
-                                    code_country:e?.code,
+                                    country: e,
+                                    code_country: e?.code,
                                     img: e
                                         ? `${getRuteCountryImg(e)}`
                                         : undefined,

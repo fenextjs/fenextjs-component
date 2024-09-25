@@ -74,12 +74,17 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                         if (e?.code_phone) {
                             onConcatData({
                                 code: e?.code_phone,
+                                country: e,
+                                code_country: e?.code,
                                 img: e
                                     ? `${(0, country_state_city_nextjs_1.getRuteCountryImg)(e)}`
                                     : undefined,
                             });
                         }
-                    }, regExp: /[^0-9+-]/g, regExpReplace: "", icon: react_1.default.createElement(react_1.default.Fragment, null), optional: false, showOptionIconImg: true })),
+                    }, regExp: /[^0-9+-]/g, regExpReplace: "", icon: react_1.default.createElement(react_1.default.Fragment, null), optional: false, showOptionIconImg: true, itemMaxLengthShowOptions: {
+                        id: "fenext-item-max-length-show-options",
+                        text: "...",
+                    } })),
             react_1.default.createElement("div", { className: `fenext-input-phone-text ${classNamePhoneNumber}` },
                 react_1.default.createElement(Text_1.InputText, { ...classNameInputNumber, ...props, type: "text", onChange: onChangeData("number"), loader: !loadPhoneCodes || loader, disabled: !loadPhoneCodes || disabled, placeholder: placeholder, defaultValue: data?.number, value: value?.number, _t: _t, validator: validator?.getObjectValidator?.()?.number, inputMode: "numeric", regExpReplace: "", regExp: /[^0-9]/g, optional: false })),
             (props?.error || (errorFenext && isChange)) && (react_1.default.createElement(Error_1.ErrorComponent, { error: errorFenext ?? props?.error, className: `fenext-input-error ${classNameError}`, _t: _t })))));

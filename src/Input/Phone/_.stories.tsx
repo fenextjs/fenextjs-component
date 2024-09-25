@@ -17,7 +17,7 @@ export const Index = Profile.bind({});
 
 const args  : InputPhoneProps = {
     label:"Label",
-    onChange:console.log,
+    // onChange:console.log,
     // value:{
     //     code: "+58",
     //     number: "22222",
