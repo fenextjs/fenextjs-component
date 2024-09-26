@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Story, Meta } from "@storybook/react";
+import { Button } from "../../Button";
 
 import {
     InputSelectCity,
@@ -18,12 +19,58 @@ const Profile: Story<InputSelectCityProps> = (args) => (
 export const Index = Profile.bind({});
 
 const args: InputSelectCityProps = {
-    country:{
+    country: {
         "id": 144,
         "text": "Afganistán",
         "code": "AF"
-      },
-      
+    },
+
 };
 
 Index.args = args;
+
+
+
+
+const ProfileState: Story<InputSelectCityProps> = (args) => {
+    const [data, setData] = useState<any>({
+
+    })
+    const onSetCountryState = () => {
+        setData({
+            country:
+            {
+                "id": 82,
+                "text": "Colombia",
+                "code": "CO",
+                "code_phone": "+57"
+            },
+            state: {
+                "id": 1700,
+                "id_country": 82,
+                "text": "Antioquia"
+            }
+        })
+    }
+
+    return (
+        <>
+            <InputSelectCity {...args}
+
+                country={data?.country}
+                state={data?.state}
+            />
+            <Button onClick={onSetCountryState}>
+                onSetCountryState
+            </Button>
+        </>
+    )
+}
+
+export const IndexState = ProfileState.bind({});
+
+const argsState: InputSelectCityProps = {
+
+};
+
+IndexState.args = argsState;

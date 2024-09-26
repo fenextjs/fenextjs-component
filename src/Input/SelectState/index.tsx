@@ -37,7 +37,7 @@ export const InputSelectState = ({
     };
     useEffect(() => {
         onLoad();
-    }, []);
+    }, [country]);
 
     return (
         <>
