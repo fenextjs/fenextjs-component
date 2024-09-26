@@ -11,7 +11,7 @@ const fenextjs_error_1 = require("fenextjs-error");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const InputGoogleAutocomplete = ({ defaultValueJsonString, valueJsonString, onChangeJsonString, defaultValue: defaultValueProps = undefined, value: valueProps = undefined, onChange: onChangeProps, parseJson_to_String, parseString_to_Json, className = "", validator, ...props }) => {
-    const { defaultValue, onChange } = (0, fenextjs_hook_1.useJsonString)({
+    const { defaultValue, value, onChange } = (0, fenextjs_hook_1.useJsonString)({
         parseJson_to_String: parseJson_to_String ?? fenextjs_functions_1.parseAddress_to_String,
         parseString_to_Json: parseString_to_Json ?? fenextjs_functions_1.parseString_to_Address,
         defaultValueJsonString,
@@ -21,7 +21,7 @@ const InputGoogleAutocomplete = ({ defaultValueJsonString, valueJsonString, onCh
         defaultValue: defaultValueProps,
         onChange: onChangeProps,
     });
-    const [valueText, setValueText] = (0, react_1.useState)(defaultValue?.formatted_address ?? "");
+    const [valueText, setValueText] = (0, react_1.useState)(value?.formatted_address ?? defaultValue?.formatted_address ?? "");
     const [error, setError] = (0, react_1.useState)(undefined);
     const { setData, isValidData } = (0, useData_1.useData)(defaultValue, {
         onChangeDataAfter: (d) => {

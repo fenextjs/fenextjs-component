@@ -24,7 +24,7 @@ const InputSelectCity = ({ country = undefined, state = undefined, ...props }) =
     };
     (0, react_1.useEffect)(() => {
         onLoad();
-    }, []);
+    }, [country, state]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(SelectT_1.InputSelectT, { ...props, useTOption: false, options: options, onParse: (e) => {
                 const r = {

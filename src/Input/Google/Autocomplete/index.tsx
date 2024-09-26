@@ -64,23 +64,22 @@ export const InputGoogleAutocomplete = ({
     validator,
     ...props
 }: InputGoogleAutocompleteProps) => {
-    const { defaultValue,value, onChange } = useJsonString<AddressGoogle | undefined>(
-        {
-            parseJson_to_String: parseJson_to_String ?? parseAddress_to_String,
-            parseString_to_Json: parseString_to_Json ?? parseString_to_Address,
-            defaultValueJsonString,
-            valueJsonString,
-            onChangeJsonString,
-            value: valueProps,
-            defaultValue: defaultValueProps,
-            onChange: onChangeProps,
-        },
-    );
+    const { defaultValue, value, onChange } = useJsonString<
+        AddressGoogle | undefined
+    >({
+        parseJson_to_String: parseJson_to_String ?? parseAddress_to_String,
+        parseString_to_Json: parseString_to_Json ?? parseString_to_Address,
+        defaultValueJsonString,
+        valueJsonString,
+        onChangeJsonString,
+        value: valueProps,
+        defaultValue: defaultValueProps,
+        onChange: onChangeProps,
+    });
 
     const [valueText, setValueText] = useState(
         value?.formatted_address ?? defaultValue?.formatted_address ?? "",
     );
-
 
     const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
 

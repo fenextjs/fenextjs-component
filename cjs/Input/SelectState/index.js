@@ -21,7 +21,7 @@ const InputSelectState = ({ country = undefined, ...props }) => {
     };
     (0, react_1.useEffect)(() => {
         onLoad();
-    }, []);
+    }, [country]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(SelectT_1.InputSelectT, { ...props, options: options, onParse: (e) => {
                 const r = {

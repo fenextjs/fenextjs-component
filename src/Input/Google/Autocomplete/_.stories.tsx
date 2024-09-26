@@ -16,7 +16,7 @@ const Profile: Story<PropsWithChildren<InputGoogleAutocompleteProps>> = (
 ) => (
     <InputGoogleLoadScript>
         <InputGoogleAutocomplete {...args} />
-    </InputGoogleLoadScript>
+     </InputGoogleLoadScript>
 );
 
 export const Index = Profile.bind({});
@@ -30,6 +30,8 @@ Index.args = {
         },
         'Direccion requerido',
     )
-    .isRequired('Direccion requerido')
-
+    .isRequired('Direccion requerido'),
+// value:{
+//     formatted_address:"test Value"
+// }
 } as InputGoogleAutocompleteProps;
