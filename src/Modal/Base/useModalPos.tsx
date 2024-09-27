@@ -5,12 +5,14 @@ export interface useModalPosProps {
     id: string;
     tag?: keyof HTMLElementTagNameMap;
     children?: ReactNode;
+    activeLoad?:boolean
 }
 
 export const useModalPos = <ELEMENT extends HTMLElement>({
     id,
     tag = "div",
     children,
+    activeLoad = true
 }: useModalPosProps) => {
     const [ref, setRef] = useState<ELEMENT | undefined>(undefined);
 
@@ -20,6 +22,9 @@ export const useModalPos = <ELEMENT extends HTMLElement>({
     });
 
     const onLoadRef = () => {
+        if(!activeLoad){
+            return;
+        }
         const ID = id + "-" + uuid;
         let ele = document.getElementById(ID);
         if (!ele) {
@@ -36,7 +41,7 @@ export const useModalPos = <ELEMENT extends HTMLElement>({
             setRef(ele as ELEMENT);
         }
     };
-    useEffect(onLoadRef, []);
+    useEffect(onLoadRef, [activeLoad]);
 
     return {
         ref,

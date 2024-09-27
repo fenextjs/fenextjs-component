@@ -200,6 +200,7 @@ export const ModalBase = ({
     useModalPos({
         id: "fenext-modal",
         children: <>{useRender && CONTENT}</>,
+        activeLoad:useRender
     });
 
     return <>{!useRender && CONTENT}</>;
