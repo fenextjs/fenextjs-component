@@ -53,6 +53,7 @@ const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", cl
     (0, useModalPos_1.useModalPos)({
         id: "fenext-modal",
         children: react_1.default.createElement(react_1.default.Fragment, null, useRender && CONTENT),
+        activeLoad: useRender,
     });
     return react_1.default.createElement(react_1.default.Fragment, null, !useRender && CONTENT);
 };

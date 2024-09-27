@@ -3,13 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.useModalPos = void 0;
 const fenextjs_hook_1 = require("fenextjs-hook");
 const react_1 = require("react");
-const useModalPos = ({ id, tag = "div", children, }) => {
+const useModalPos = ({ id, tag = "div", children, activeLoad = true, }) => {
     const [ref, setRef] = (0, react_1.useState)(undefined);
     const { uuid } = (0, fenextjs_hook_1.useRender)({
         children,
         ref,
     });
     const onLoadRef = () => {
+        if (!activeLoad) {
+            return;
+        }
         const ID = id + "-" + uuid;
         let ele = document.getElementById(ID);
         if (!ele) {
@@ -26,7 +29,7 @@ const useModalPos = ({ id, tag = "div", children, }) => {
             setRef(ele);
         }
     };
-    (0, react_1.useEffect)(onLoadRef, []);
+    (0, react_1.useEffect)(onLoadRef, [activeLoad]);
     return {
         ref,
         uuid,
