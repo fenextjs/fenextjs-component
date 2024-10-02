@@ -9,6 +9,7 @@ const fenextjs_hook_1 = require("fenextjs-hook");
 const Form = ({ id = "", data, disabled = true, children, className = "", ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const { pop } = (0, useNotification_1.useNotification)({});
+    const { push } = (0, fenextjs_hook_1.useDataLayer)({});
     const onSendForm = async () => {
         try {
             const result = await props?.onSubmit?.(data);
@@ -18,12 +19,9 @@ const Form = ({ id = "", data, disabled = true, children, className = "", ...pro
             });
             if (result?.type == Request_1.RequestResultTypeProps.OK) {
                 if (id != "") {
-                    const w = window;
-                    if (w?.dataLayer?.push) {
-                        w.dataLayer?.push?.({
-                            event: `form-${id}`,
-                        });
-                    }
+                    push({
+                        event: `form-${id}`,
+                    });
                 }
                 props?.onAfterSubmit?.(result);
             }

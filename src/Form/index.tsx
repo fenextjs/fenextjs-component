@@ -64,7 +64,7 @@ export const Form = <D = any, R = any, E = any>({
 }: PropsWithChildren<FormProps<D, R, E>>) => {
     const { _t } = use_T({ ...props });
     const { pop } = useNotification({});
-    const {push} = useDataLayer({})
+    const { push } = useDataLayer({});
     const onSendForm = async () => {
         try {
             const result = await props?.onSubmit?.(data);
