@@ -7,7 +7,7 @@ import {
     RequestResultTypeProps,
 } from "fenextjs-interface/cjs/Request";
 import { _TProps } from "fenextjs-interface";
-import { use_T } from "fenextjs-hook";
+import { use_T, useDataLayer } from "fenextjs-hook";
 export type onError = (error: string) => void;
 export type onOk = () => Promise<void> | void;
 
@@ -64,6 +64,7 @@ export const Form = <D = any, R = any, E = any>({
 }: PropsWithChildren<FormProps<D, R, E>>) => {
     const { _t } = use_T({ ...props });
     const { pop } = useNotification({});
+    const {push} = useDataLayer({})
     const onSendForm = async () => {
         try {
             const result = await props?.onSubmit?.(data);
@@ -73,12 +74,9 @@ export const Form = <D = any, R = any, E = any>({
             });
             if (result?.type == RequestResultTypeProps.OK) {
                 if (id != "") {
-                    const w: any = window;
-                    if (w?.dataLayer?.push) {
-                        w.dataLayer?.push?.({
-                            event: `form-${id}`,
-                        });
-                    }
+                    push({
+                        event: `form-${id}`,
+                    });
                 }
                 props?.onAfterSubmit?.(result);
             }
