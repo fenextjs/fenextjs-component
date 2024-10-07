@@ -15,7 +15,7 @@ const Profile: Story<InputSwichProps> = (args) => (
 export const Index = Profile.bind({});
 
 const args  : InputSwichProps = {
-    
+    // value:false
 }
 
 Index.args= args

@@ -102,10 +102,6 @@ export interface InputCheckboxBaseProps<VT = any, VF = any> extends _TProps {
      */
     defaultValue?: boolean;
 
-    /**
-     * A boolean value indicating whether to use the value attribute of the checkbox input element or not.
-     */
-    useValue?: boolean;
 
     /**
      * The value of the checkbox input element.
@@ -175,8 +171,7 @@ export const InputCheckbox = <VT = any, VF = any>({
         });
     },
     defaultValue = false,
-    useValue = false,
-    value = false,
+    value = undefined,
     disabled = false,
     icon = <Check />,
     onValidateCheck = async () => {},
@@ -197,8 +192,8 @@ export const InputCheckbox = <VT = any, VF = any>({
     const { _t } = use_T({ ...props });
     const [checked_, setChecked] = useState(defaultValue === true);
     const checked = useMemo(
-        () => (useValue ? value : checked_),
-        [useValue, value, checked_],
+        () => (value ?? checked_),
+        [ value, checked_],
     );
 
     const onChecked = async () => {

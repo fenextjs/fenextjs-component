@@ -19,7 +19,8 @@ const args  : InputCheckboxProps = {
     // onActiveValue:console.log,
     // onInactiveValue:console.log,
     valueActive:"SI",
-    valueInactive:"NO"
+    valueInactive:"NO",
+    // value:false
 }
 
 Index.args= args

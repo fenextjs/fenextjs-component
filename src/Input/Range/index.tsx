@@ -30,11 +30,6 @@ export interface InputRangeBaseProps {
      */
     valueMax?: number;
     /**
-     * use value props in the input.
-     * @default false
-     */
-    useValue?: boolean;
-    /**
      * The default value of the input.
      * @default 0
      */
@@ -164,10 +159,9 @@ export const InputRange = ({
     defaultValue = 0,
     defaultValueMin = -100,
     defaultValueMax = 100,
-    useValue = false,
-    value = 0,
-    valueMin = -100,
-    valueMax = 100,
+    value = undefined,
+    valueMin = undefined,
+    valueMax = undefined,
     onChange,
     onChangeRange,
     useRange = false,
@@ -175,14 +169,14 @@ export const InputRange = ({
     showNumber = "top",
 }: InputRangeProps) => {
     const onParceData = (d: InputRangeConfigProps): InputRangeConfigProps => {
-        const _max = useValue ? valueMax : d.max;
-        const _min = useValue ? valueMin : d.min;
-        const _value = useValue ? value : d.value;
+        const _max =  valueMax ?? d.max;
+        const _min =  valueMin ?? d.min;
+        const _value =  value ?? d.value;
         return {
             ...d,
             center: (_max - _min) / 2 + _min,
             value: _value,
-            min: _min,
+            min: Math.min(_min , _max - step),
             max: Math.max(_min + step, _max),
         };
     };

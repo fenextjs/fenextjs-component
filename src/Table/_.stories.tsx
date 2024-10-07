@@ -34,6 +34,7 @@ const TableIndex: Story<TableProps<TestItemTable>> = (args) =>{
 export const Index = TableIndex.bind({});
 Index.args = {
     name:"Usuarios",
+    
     header: [
         {
             id: "id",

@@ -119,11 +119,6 @@ export interface InputRadioBaseProps<T = any> extends _TProps {
     defaultValue?: InputRadioItemProps<T>;
 
     /**
-     * A boolean value indicating whether to use the value attribute of the radio input element or not.
-     */
-    useValue?: boolean;
-
-    /**
      * The value of the radio input element.
      */
     value?: InputRadioItemProps<T>;
@@ -169,7 +164,6 @@ export const InputRadio = <T = any,>({
         });
     },
     defaultValue = undefined,
-    useValue = false,
     value = undefined,
     disabled = false,
     icon = <Check />,
@@ -191,7 +185,7 @@ export const InputRadio = <T = any,>({
     return (
         <div className={`fenext-content-radio ${classNameContent}`}>
             {items.map((item, i) => {
-                const isCheck = (useValue ? value?.id : checked?.id) == item.id;
+                const isCheck = ( value?.id ?? checked?.id) == item.id;
                 return (
                     <label
                         key={i}

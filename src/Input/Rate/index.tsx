@@ -18,11 +18,6 @@ export interface InputRateBaseProps {
      * @max 5
      */
     defaultValue?: number;
-    /**
-     * if use Value of component.
-     * @default false.
-     */
-    useValue?: boolean;
 }
 
 /**
@@ -71,13 +66,12 @@ export const InputRate = ({
 
     defaultValue = 0,
     value = undefined,
-    useValue = false,
     onChange,
 }: InputRateProps) => {
     const [data, setData] = useState(defaultValue);
     const start = useMemo(
-        () => Math.max(0, Math.min((useValue ? value : data) ?? 0, 5)),
-        [useValue, value, data],
+        () => Math.max(0, Math.min(( value ?? data) ?? 0, 5)),
+        [ value, data],
     );
 
     // const elemento = e.currentTarget;

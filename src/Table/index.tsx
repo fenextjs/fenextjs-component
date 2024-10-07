@@ -313,7 +313,6 @@ export const Table = <T,>({
                             >
                                 <InputCheckbox
                                     value={false}
-                                    useValue={true}
                                     classNameLabel="fenext-table-content-table-checkbox"
                                 />
                             </td>
@@ -363,7 +362,6 @@ export const Table = <T,>({
                                 <InputCheckbox
                                     onChange={onCheckedItem(i)}
                                     value={checkbox[i]?.__checkbox ?? false}
-                                    useValue={true}
                                     classNameLabel="fenext-table-content-table-checkbox"
                                 />
                             </td>
@@ -452,7 +450,6 @@ export const Table = <T,>({
                                     value: checkbox.every(
                                         (e) => e?.__checkbox ?? false,
                                     ),
-                                    useValue: true,
                                 }}
                                 data={checkbox.filter((e) => e.__checkbox)}
                             />
@@ -479,7 +476,6 @@ export const Table = <T,>({
                                             value={checkbox.every(
                                                 (e) => e?.__checkbox ?? false,
                                             )}
-                                            useValue={true}
                                             _t={_t}
                                             classNameLabel="fenext-table-content-table-checkbox"
                                         />

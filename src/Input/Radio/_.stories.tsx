@@ -8,13 +8,13 @@ export default {
     component: InputRadio,
 } as Meta;
 
-const Profile: Story<InputRadioProps> = (args) => (
+const Profile: Story<InputRadioProps<any>> = (args) => (
     <InputRadio {...args}>Test Children</InputRadio>
 );
 
 export const Index = Profile.bind({});
 
-const args  : InputRadioProps = {
+const args  : InputRadioProps<any> = {
     items:[
         {
             id:"1",
@@ -29,6 +29,10 @@ const args  : InputRadioProps = {
             label:"Label 3",
         },
     ],
+    // value:{
+    //     id:"1",
+    //     label:"Label 1",
+    // },
 }
 
 Index.args= args

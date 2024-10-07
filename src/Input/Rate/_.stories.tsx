@@ -13,4 +13,6 @@ const Profile: Story<PropsWithChildren<InputRateProps>> = (args) => (
 );
 
 export const Index = Profile.bind({});
-Index.args = {} as InputRateProps;
+Index.args = {
+// value:3.2
+} as InputRateProps;

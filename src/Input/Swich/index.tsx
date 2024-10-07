@@ -46,11 +46,6 @@ export interface InputSwichBaseProps {
     defaultValue?: boolean;
 
     /**
-     * A boolean value indicating whether to use the value attribute of the swich input element or not.
-     */
-    useValue?: boolean;
-
-    /**
      * The value of the swich input element.
      */
     value?: boolean;
@@ -90,15 +85,14 @@ export const InputSwich = ({
     name = "",
     onChange,
     defaultValue = false,
-    useValue = false,
-    value = false,
+    value = undefined,
     disabled = false,
     onValidateCheck = async () => {},
 }: InputSwichProps) => {
     const [checked_, setChecked] = useState(defaultValue === true);
     const checked = useMemo(
-        () => (useValue ? value : checked_),
-        [useValue, value, checked_],
+        () => (value ?? checked_),
+        [ value, checked_],
     );
 
     const onChecked = async () => {

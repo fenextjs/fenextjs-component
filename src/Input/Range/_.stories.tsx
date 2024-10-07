@@ -25,4 +25,8 @@ Index.args = {
             name: "onChangeRange",
         });
     },
+    useRange:true,
+    // value:20
+    // valueMin:10,
+    // valueMax:20
 } as InputRangeProps;
