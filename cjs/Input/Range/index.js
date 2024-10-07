@@ -4,16 +4,16 @@ exports.InputRange = void 0;
 const tslib_1 = require("tslib");
 const useData_1 = require("fenextjs-hook/cjs/useData");
 const react_1 = tslib_1.__importStar(require("react"));
-const InputRange = ({ className = "", classNameContentValue = "", classNameValue = "", classNameValueMax = "", classNameValueMin = "", classNameContentRange = "", classNameCurrent = "", classNameMax = "", classNameMin = "", classNameContentCircle = "", classNameCircle = "", classNameLine = "", min = -100, max = 100, defaultValue = 0, defaultValueMin = -100, defaultValueMax = 100, useValue = false, value = 0, valueMin = -100, valueMax = 100, onChange, onChangeRange, useRange = false, step = 1, showNumber = "top", }) => {
+const InputRange = ({ className = "", classNameContentValue = "", classNameValue = "", classNameValueMax = "", classNameValueMin = "", classNameContentRange = "", classNameCurrent = "", classNameMax = "", classNameMin = "", classNameContentCircle = "", classNameCircle = "", classNameLine = "", min = -100, max = 100, defaultValue = 0, defaultValueMin = -100, defaultValueMax = 100, value = undefined, valueMin = undefined, valueMax = undefined, onChange, onChangeRange, useRange = false, step = 1, showNumber = "top", }) => {
     const onParceData = (d) => {
-        const _max = useValue ? valueMax : d.max;
-        const _min = useValue ? valueMin : d.min;
-        const _value = useValue ? value : d.value;
+        const _max = valueMax ?? d.max;
+        const _min = valueMin ?? d.min;
+        const _value = value ?? d.value;
         return {
             ...d,
             center: (_max - _min) / 2 + _min,
             value: _value,
-            min: _min,
+            min: Math.min(_min, _max - step),
             max: Math.max(_min + step, _max),
         };
     };

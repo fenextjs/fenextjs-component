@@ -10,10 +10,10 @@ const InputCheckbox = ({ classNameLabel = "", classNameLabelActive = "", classNa
     (0, env_log_1.env_log)(e, {
         name: "input checkbox onchange",
     });
-}, defaultValue = false, useValue = false, value = false, disabled = false, icon = react_1.default.createElement(Check_1.Check, null), onValidateCheck = async () => { }, optional = false, optionalText = "(optional)", required = false, requiredText = "*", onActive, onActiveValue, onInactive, onInactiveValue, valueActive, valueInactive, ...props }) => {
+}, defaultValue = false, value = undefined, disabled = false, icon = react_1.default.createElement(Check_1.Check, null), onValidateCheck = async () => { }, optional = false, optionalText = "(optional)", required = false, requiredText = "*", onActive, onActiveValue, onInactive, onInactiveValue, valueActive, valueInactive, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const [checked_, setChecked] = (0, react_1.useState)(defaultValue === true);
-    const checked = (0, react_1.useMemo)(() => (useValue ? value : checked_), [useValue, value, checked_]);
+    const checked = (0, react_1.useMemo)(() => value ?? checked_, [value, checked_]);
     const onChecked = async () => {
         if (disabled) {
             return;

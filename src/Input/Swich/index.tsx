@@ -90,10 +90,7 @@ export const InputSwich = ({
     onValidateCheck = async () => {},
 }: InputSwichProps) => {
     const [checked_, setChecked] = useState(defaultValue === true);
-    const checked = useMemo(
-        () => (value ?? checked_),
-        [ value, checked_],
-    );
+    const checked = useMemo(() => value ?? checked_, [value, checked_]);
 
     const onChecked = async () => {
         try {

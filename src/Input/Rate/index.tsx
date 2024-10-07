@@ -70,8 +70,8 @@ export const InputRate = ({
 }: InputRateProps) => {
     const [data, setData] = useState(defaultValue);
     const start = useMemo(
-        () => Math.max(0, Math.min(( value ?? data) ?? 0, 5)),
-        [ value, data],
+        () => Math.max(0, Math.min(value ?? data ?? 0, 5)),
+        [value, data],
     );
 
     // const elemento = e.currentTarget;

@@ -25,10 +25,9 @@ export interface InputRadioBaseProps<T = any> extends _TProps {
     name?: string;
     onChange?: (e: InputRadioItemProps<T>) => void;
     defaultValue?: InputRadioItemProps<T>;
-    useValue?: boolean;
     value?: InputRadioItemProps<T>;
     disabled?: boolean;
 }
 export interface InputRadioProps<T> extends InputRadioBaseProps<T>, InputRadioClassProps {
 }
-export declare const InputRadio: <T = any>({ classNameContent, classNameLabel, classNameLabelActive, classNameLabelInactive, classNameText, classNameContentRadio, classNameContentRadioActive, classNameContentRadioInactive, classNameRadio, classNameRadioActive, classNameRadioInactive, labelPosition, name, onChange, defaultValue, useValue, value, disabled, icon, items, ...props }: InputRadioProps<T>) => React.JSX.Element;
+export declare const InputRadio: <T = any>({ classNameContent, classNameLabel, classNameLabelActive, classNameLabelInactive, classNameText, classNameContentRadio, classNameContentRadioActive, classNameContentRadioInactive, classNameRadio, classNameRadioActive, classNameRadioInactive, labelPosition, name, onChange, defaultValue, value, disabled, icon, items, ...props }: InputRadioProps<T>) => React.JSX.Element;

@@ -185,7 +185,7 @@ export const InputRadio = <T = any,>({
     return (
         <div className={`fenext-content-radio ${classNameContent}`}>
             {items.map((item, i) => {
-                const isCheck = ( value?.id ?? checked?.id) == item.id;
+                const isCheck = (value?.id ?? checked?.id) == item.id;
                 return (
                     <label
                         key={i}

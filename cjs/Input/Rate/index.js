@@ -4,9 +4,9 @@ exports.InputRate = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Start_1 = require("fenextjs-svg/cjs/Start");
-const InputRate = ({ className = "", classNameContentStar = "", classNameStar = "", classNameStarActive = "", classNameNumber = "", defaultValue = 0, value = undefined, useValue = false, onChange, }) => {
+const InputRate = ({ className = "", classNameContentStar = "", classNameStar = "", classNameStarActive = "", classNameNumber = "", defaultValue = 0, value = undefined, onChange, }) => {
     const [data, setData] = (0, react_1.useState)(defaultValue);
-    const start = (0, react_1.useMemo)(() => Math.max(0, Math.min((useValue ? value : data) ?? 0, 5)), [useValue, value, data]);
+    const start = (0, react_1.useMemo)(() => Math.max(0, Math.min(value ?? data ?? 0, 5)), [value, data]);
     const onSelectStar = (e) => {
         const v = parseFloat(e.target.value);
         onChange?.(v);

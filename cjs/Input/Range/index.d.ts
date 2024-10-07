@@ -9,7 +9,6 @@ export interface InputRangeBaseProps {
     value?: number;
     valueMin?: number;
     valueMax?: number;
-    useValue?: boolean;
     defaultValue?: number;
     defaultValueMin?: number;
     defaultValueMax?: number;
@@ -37,4 +36,4 @@ export interface InputRangeClassProps {
 }
 export interface InputRangeProps extends InputRangeBaseProps, InputRangeClassProps {
 }
-export declare const InputRange: ({ className, classNameContentValue, classNameValue, classNameValueMax, classNameValueMin, classNameContentRange, classNameCurrent, classNameMax, classNameMin, classNameContentCircle, classNameCircle, classNameLine, min, max, defaultValue, defaultValueMin, defaultValueMax, useValue, value, valueMin, valueMax, onChange, onChangeRange, useRange, step, showNumber, }: InputRangeProps) => React.JSX.Element;
+export declare const InputRange: ({ className, classNameContentValue, classNameValue, classNameValueMax, classNameValueMin, classNameContentRange, classNameCurrent, classNameMax, classNameMin, classNameContentCircle, classNameCircle, classNameLine, min, max, defaultValue, defaultValueMin, defaultValueMax, value, valueMin, valueMax, onChange, onChangeRange, useRange, step, showNumber, }: InputRangeProps) => React.JSX.Element;

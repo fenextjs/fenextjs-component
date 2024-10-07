@@ -169,14 +169,14 @@ export const InputRange = ({
     showNumber = "top",
 }: InputRangeProps) => {
     const onParceData = (d: InputRangeConfigProps): InputRangeConfigProps => {
-        const _max =  valueMax ?? d.max;
-        const _min =  valueMin ?? d.min;
-        const _value =  value ?? d.value;
+        const _max = valueMax ?? d.max;
+        const _min = valueMin ?? d.min;
+        const _value = value ?? d.value;
         return {
             ...d,
             center: (_max - _min) / 2 + _min,
             value: _value,
-            min: Math.min(_min , _max - step),
+            min: Math.min(_min, _max - step),
             max: Math.max(_min + step, _max),
         };
     };

@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InputSwich = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
-const InputSwich = ({ className = "", classNameActive = "", classNameInactive = "", classNameCicle = "", name = "", onChange, defaultValue = false, useValue = false, value = false, disabled = false, onValidateCheck = async () => { }, }) => {
+const InputSwich = ({ className = "", classNameActive = "", classNameInactive = "", classNameCicle = "", name = "", onChange, defaultValue = false, value = undefined, disabled = false, onValidateCheck = async () => { }, }) => {
     const [checked_, setChecked] = (0, react_1.useState)(defaultValue === true);
-    const checked = (0, react_1.useMemo)(() => (useValue ? value : checked_), [useValue, value, checked_]);
+    const checked = (0, react_1.useMemo)(() => value ?? checked_, [value, checked_]);
     const onChecked = async () => {
         try {
             if (disabled) {

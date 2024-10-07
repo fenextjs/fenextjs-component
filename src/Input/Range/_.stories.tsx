@@ -25,7 +25,7 @@ Index.args = {
             name: "onChangeRange",
         });
     },
-    useRange:true,
+    useRange:false,
     // value:20
     // valueMin:10,
     // valueMax:20

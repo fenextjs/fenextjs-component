@@ -2,7 +2,6 @@ import React from "react";
 export interface InputRateBaseProps {
     value?: number;
     defaultValue?: number;
-    useValue?: boolean;
 }
 export interface InputRateClassProps {
     className?: string;
@@ -14,4 +13,4 @@ export interface InputRateClassProps {
 }
 export interface InputRateProps extends InputRateBaseProps, InputRateClassProps {
 }
-export declare const InputRate: ({ className, classNameContentStar, classNameStar, classNameStarActive, classNameNumber, defaultValue, value, useValue, onChange, }: InputRateProps) => React.JSX.Element;
+export declare const InputRate: ({ className, classNameContentStar, classNameStar, classNameStarActive, classNameNumber, defaultValue, value, onChange, }: InputRateProps) => React.JSX.Element;

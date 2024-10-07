@@ -10,7 +10,7 @@ const InputRadio = ({ classNameContent = "", classNameLabel = "", classNameLabel
     (0, env_log_1.env_log)(e, {
         name: "input radio onchange",
     });
-}, defaultValue = undefined, useValue = false, value = undefined, disabled = false, icon = react_1.default.createElement(Check_1.Check, null), items = [], ...props }) => {
+}, defaultValue = undefined, value = undefined, disabled = false, icon = react_1.default.createElement(Check_1.Check, null), items = [], ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const [checked, setChecked] = (0, react_1.useState)(defaultValue);
     const onChecked = (i) => () => {
@@ -21,7 +21,7 @@ const InputRadio = ({ classNameContent = "", classNameLabel = "", classNameLabel
         onChange(i);
     };
     return (react_1.default.createElement("div", { className: `fenext-content-radio ${classNameContent}` }, items.map((item, i) => {
-        const isCheck = (useValue ? value?.id : checked?.id) == item.id;
+        const isCheck = (value?.id ?? checked?.id) == item.id;
         return (react_1.default.createElement("label", { key: i, className: `fenext-input-radio ${labelPosition} ${classNameLabel}  ${isCheck
                 ? classNameLabelActive
                 : classNameLabelInactive}`, onClick: onChecked(item) },
