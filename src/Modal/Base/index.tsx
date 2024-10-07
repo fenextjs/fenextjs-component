@@ -196,13 +196,13 @@ export const ModalBase = ({
         disabledClose,
         typeClose,
     ]);
-    if(useRender){
-        return <>
-            <Portal>
-                {CONTENT}
-            </Portal>
-        </>
-    };
+    if (useRender) {
+        return (
+            <>
+                <Portal>{CONTENT}</Portal>
+            </>
+        );
+    }
 
     return <>{CONTENT}</>;
 };

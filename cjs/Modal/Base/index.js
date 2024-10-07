@@ -4,7 +4,7 @@ exports.ModalBase = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Close_1 = require("fenextjs-svg/cjs/Close");
-const useModalPos_1 = require("./useModalPos");
+const Portal_1 = require("../../Portal");
 const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", classNameClose = "", active = false, activeName, activeNameLast, childrenUseActiveForShowHidden = false, disabledClose = false, type = "center", typeClose = "out", onClose, children, useRender = false, name, closeComponent = react_1.default.createElement(Close_1.Close, null), }) => {
     const uuid = (0, react_1.useMemo)(() => new Date().getTime(), [active]);
     const CLOSECOMPONENTE = (0, react_1.useMemo)(() => {
@@ -50,12 +50,11 @@ const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", cl
         disabledClose,
         typeClose,
     ]);
-    (0, useModalPos_1.useModalPos)({
-        id: "fenext-modal",
-        children: react_1.default.createElement(react_1.default.Fragment, null, useRender && CONTENT),
-        activeLoad: useRender,
-    });
-    return react_1.default.createElement(react_1.default.Fragment, null, !useRender && CONTENT);
+    if (useRender) {
+        return (react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement(Portal_1.Portal, null, CONTENT)));
+    }
+    return react_1.default.createElement(react_1.default.Fragment, null, CONTENT);
 };
 exports.ModalBase = ModalBase;
 //# sourceMappingURL=index.js.map

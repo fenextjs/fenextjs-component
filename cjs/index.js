@@ -52,4 +52,5 @@ tslib_1.__exportStar(require("./TableActionCheckbox"), exports);
 tslib_1.__exportStar(require("./Alert"), exports);
 tslib_1.__exportStar(require("./AlertHook"), exports);
 tslib_1.__exportStar(require("./Design"), exports);
+tslib_1.__exportStar(require("./Portal"), exports);
 //# sourceMappingURL=index.js.map

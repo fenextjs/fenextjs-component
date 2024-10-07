@@ -49,3 +49,4 @@ export * from "./TableActionCheckbox";
 export * from "./Alert";
 export * from "./AlertHook";
 export * from "./Design";
+export * from "./Portal";
