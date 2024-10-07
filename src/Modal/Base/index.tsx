@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, ReactNode, useMemo } from "react";
 import { Close } from "fenextjs-svg/cjs/Close";
-import { useModalPos } from "./useModalPos";
+import { Portal } from "../../Portal";
 /**
  * Properties for the base ModalBase component.
  */
@@ -196,12 +196,13 @@ export const ModalBase = ({
         disabledClose,
         typeClose,
     ]);
+    if(useRender){
+        return <>
+            <Portal>
+                {CONTENT}
+            </Portal>
+        </>
+    };
 
-    useModalPos({
-        id: "fenext-modal",
-        children: <>{useRender && CONTENT}</>,
-        activeLoad: useRender,
-    });
-
-    return <>{!useRender && CONTENT}</>;
+    return <>{CONTENT}</>;
 };

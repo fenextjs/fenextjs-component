@@ -5,6 +5,7 @@ import { Modal, ModalProps } from "./index";
 import { LayoutGridMenuTopLeft } from "./../../Layout/Grid/GridMenuTopLeft";
 import { Button } from "../../Button";
 import { useModal } from "fenextjs-hook";
+// import { Back } from "../../Back";
 
 export default {
     title: "Modal/Modal",
@@ -25,6 +26,7 @@ Index.args = {
     ),
     children: (
         <>
+            {/* <Back/> */}
             <h1>Title</h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -36,7 +38,7 @@ Index.args = {
     ),
     typeClose: "inset",
     disabledClose: false,
-    // useRender:true
+    useRender:true
 } as ModalProps;
 
 const WithLayout_: Story<PropsWithChildren<ModalProps>> = (args) => (
@@ -68,7 +70,7 @@ WithLayout.args = {
 
 const ModalInModal_: Story<PropsWithChildren<ModalProps>> = (args) => (
     <Modal {...args} 
-    nameLocalStorage="test"
+    // nameLocalStorage="test"
     name="modal-1" activeByNameLocalStorage={true} useRender={true} ElementActionModalActive={<Button>Button Modal</Button>}>
         <h1>Title</h1>
         <p>
@@ -182,7 +184,7 @@ ModalInModal.args = {
     useRender: true,
 } as ModalProps;
 
-export const BtnUseModalName = ({ name }: { name: string }) => {
+const BtnUseModalName = ({ name }: { name: string }) => {
     const { onActive } = useModal({
         name,
     });
@@ -196,7 +198,7 @@ export const BtnUseModalName = ({ name }: { name: string }) => {
 const ProfileUseModal: Story<PropsWithChildren<ModalProps>> = (args) => {
     return (
         <>
-            <BtnUseModalName name={args?.name ?? "modal-test"} />
+            <BtnUseModalName name={args?.name } />
             <br />
             <br />
             <Modal {...args} />
@@ -229,117 +231,117 @@ UseModalName.args = {
 
 
 
-const ModalInModalContentLocalStorage_: Story<PropsWithChildren<ModalProps>> = (args) => (
-    <Modal {...args} 
-    name="modal-1"  useRender={true} ElementActionModalActive={<Button>Button Modal</Button>}>
-        <h1>Title</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-            error illo iusto, ex esse ullam aliquam officia praesentium labore
-            reprehenderit nostrum quidem exercitationem blanditiis est illum
-            pariatur veritatis magni corporis!
-        </p>
-        <Modal
-            {...args}
-            name="modal-2"  useRender={true}
-            ElementActionModalActive={<Button>Button Modal 2</Button>}
-            type="right"
-        >
-            <h1>Title 2</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestias error illo iusto, ex esse ullam aliquam officia
-                praesentium labore reprehenderit nostrum quidem exercitationem
-                blanditiis est illum pariatur veritatis magni corporis!
-            </p>
-            <Modal
-                {...args}
-                name="modal-3"  useRender={true}
-                ElementActionModalActive={<Button>Button Modal 3</Button>}
-                type="bottom"
-            >
-                <h1>Title 3</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Molestias error illo iusto, ex esse ullam aliquam officia
-                    praesentium labore reprehenderit nostrum quidem
-                    exercitationem blanditiis est illum pariatur veritatis magni
-                    corporis!
-                </p>
-                <Modal
-                    {...args}
-                    name="modal-4"  useRender={true}
-                    ElementActionModalActive={<Button>Button Modal 4</Button>}
-                    type="left"
-                >
-                    <h1>Title 4</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Molestias error illo iusto, ex esse ullam aliquam
-                        officia praesentium labore reprehenderit nostrum quidem
-                        exercitationem blanditiis est illum pariatur veritatis
-                        magni corporis!
-                    </p>
-                    <Modal
-                        {...args}
-                        name="modal-5"  useRender={true}
-                        ElementActionModalActive={
-                            <Button>Button Modal 5</Button>
-                        }
-                        type="right"
-                    >
-                        <h1>Title 5</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Molestias error illo iusto, ex esse ullam
-                            aliquam officia praesentium labore reprehenderit
-                            nostrum quidem exercitationem blanditiis est illum
-                            pariatur veritatis magni corporis!
-                        </p>
-                        <Modal
-                            {...args}
-                            name="modal-6"  useRender={true}
-                            ElementActionModalActive={
-                                <Button>Button Modal 6</Button>
-                            }
-                            type="top"
-                        >
-                            <h1>Title 6</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Molestias error illo iusto, ex
-                                esse ullam aliquam officia praesentium labore
-                                reprehenderit nostrum quidem exercitationem
-                                blanditiis est illum pariatur veritatis magni
-                                corporis!
-                            </p>
-                            <Modal
-                                {...args}
-                                name="modal-7"  useRender={true}
-                                ElementActionModalActive={
-                                    <Button>Button Modal 7</Button>
-                                }
-                                type="layout-grid"
-                            >
-                                <h1>Title 7</h1>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Molestias error illo
-                                    iusto, ex esse ullam aliquam officia
-                                    praesentium labore reprehenderit nostrum
-                                    quidem exercitationem blanditiis est illum
-                                    pariatur veritatis magni corporis!
-                                </p>
-                            </Modal>
-                        </Modal>
-                    </Modal>
-                </Modal>
-            </Modal>
-        </Modal>
-    </Modal>
-);
-export const ModalInModalContentLocalStorage = ModalInModalContentLocalStorage_.bind({});
-ModalInModalContentLocalStorage.args = {
-    useRender: true,
-    activeByNameContentLocalStorage:true,
-} as ModalProps;
+// const ModalInModalContentLocalStorage_: Story<PropsWithChildren<ModalProps>> = (args) => (
+//     <Modal {...args} 
+//     name="modal-1"  useRender={true} ElementActionModalActive={<Button>Button Modal</Button>}>
+//         <h1>Title</h1>
+//         <p>
+//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+//             error illo iusto, ex esse ullam aliquam officia praesentium labore
+//             reprehenderit nostrum quidem exercitationem blanditiis est illum
+//             pariatur veritatis magni corporis!
+//         </p>
+//         <Modal
+//             {...args}
+//             name="modal-2"  useRender={true}
+//             ElementActionModalActive={<Button>Button Modal 2</Button>}
+//             type="right"
+//         >
+//             <h1>Title 2</h1>
+//             <p>
+//                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+//                 Molestias error illo iusto, ex esse ullam aliquam officia
+//                 praesentium labore reprehenderit nostrum quidem exercitationem
+//                 blanditiis est illum pariatur veritatis magni corporis!
+//             </p>
+//             <Modal
+//                 {...args}
+//                 name="modal-3"  useRender={true}
+//                 ElementActionModalActive={<Button>Button Modal 3</Button>}
+//                 type="bottom"
+//             >
+//                 <h1>Title 3</h1>
+//                 <p>
+//                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+//                     Molestias error illo iusto, ex esse ullam aliquam officia
+//                     praesentium labore reprehenderit nostrum quidem
+//                     exercitationem blanditiis est illum pariatur veritatis magni
+//                     corporis!
+//                 </p>
+//                 <Modal
+//                     {...args}
+//                     name="modal-4"  useRender={true}
+//                     ElementActionModalActive={<Button>Button Modal 4</Button>}
+//                     type="left"
+//                 >
+//                     <h1>Title 4</h1>
+//                     <p>
+//                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
+//                         Molestias error illo iusto, ex esse ullam aliquam
+//                         officia praesentium labore reprehenderit nostrum quidem
+//                         exercitationem blanditiis est illum pariatur veritatis
+//                         magni corporis!
+//                     </p>
+//                     <Modal
+//                         {...args}
+//                         name="modal-5"  useRender={true}
+//                         ElementActionModalActive={
+//                             <Button>Button Modal 5</Button>
+//                         }
+//                         type="right"
+//                     >
+//                         <h1>Title 5</h1>
+//                         <p>
+//                             Lorem ipsum dolor sit amet consectetur adipisicing
+//                             elit. Molestias error illo iusto, ex esse ullam
+//                             aliquam officia praesentium labore reprehenderit
+//                             nostrum quidem exercitationem blanditiis est illum
+//                             pariatur veritatis magni corporis!
+//                         </p>
+//                         <Modal
+//                             {...args}
+//                             name="modal-6"  useRender={true}
+//                             ElementActionModalActive={
+//                                 <Button>Button Modal 6</Button>
+//                             }
+//                             type="top"
+//                         >
+//                             <h1>Title 6</h1>
+//                             <p>
+//                                 Lorem ipsum dolor sit amet consectetur
+//                                 adipisicing elit. Molestias error illo iusto, ex
+//                                 esse ullam aliquam officia praesentium labore
+//                                 reprehenderit nostrum quidem exercitationem
+//                                 blanditiis est illum pariatur veritatis magni
+//                                 corporis!
+//                             </p>
+//                             <Modal
+//                                 {...args}
+//                                 name="modal-7"  useRender={true}
+//                                 ElementActionModalActive={
+//                                     <Button>Button Modal 7</Button>
+//                                 }
+//                                 type="layout-grid"
+//                             >
+//                                 <h1>Title 7</h1>
+//                                 <p>
+//                                     Lorem ipsum dolor sit amet consectetur
+//                                     adipisicing elit. Molestias error illo
+//                                     iusto, ex esse ullam aliquam officia
+//                                     praesentium labore reprehenderit nostrum
+//                                     quidem exercitationem blanditiis est illum
+//                                     pariatur veritatis magni corporis!
+//                                 </p>
+//                             </Modal>
+//                         </Modal>
+//                     </Modal>
+//                 </Modal>
+//             </Modal>
+//         </Modal>
+//     </Modal>
+// );
+// export const ModalInModalContentLocalStorage = ModalInModalContentLocalStorage_.bind({});
+// ModalInModalContentLocalStorage.args = {
+//     // useRender: true,
+//     activeByNameContentLocalStorage:true,
+// } as ModalProps;
