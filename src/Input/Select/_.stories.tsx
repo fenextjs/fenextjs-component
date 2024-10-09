@@ -32,7 +32,7 @@ const args: InputSelectProps = {
     placeholder: "Select",
     datalist: "listOption",
     useTOption:true,
-    typeSelectStyle:"normal-out",
+    // typeSelectStyle:"normal-out",
     // forceShowOptionIfNotSelected:true,
     // _t:e=>"x",
     options: [

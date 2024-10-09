@@ -24,14 +24,19 @@ import { Img } from "../../Img";
 import { useSelectOptionsPos } from "./useSelectOptionsPos";
 import { FenextjsValidatorClass } from "fenextjs-validator";
 
-export type InputSelectTypeStyle = "normal" | "normal-out" | "box" | "list" | "checkbox";
+export type InputSelectTypeStyle =
+    | "normal"
+    | "normal-out"
+    | "box"
+    | "list"
+    | "checkbox";
 
 /**
  * Interface that defines CSS class properties for a select input component.
  */
 export interface InputSelectClassProps
     extends InputTextClassProps,
-    InputSelectOptionClassProps {
+        InputSelectOptionClassProps {
     /**
      * CSS class name for the input select.
      */
@@ -44,7 +49,7 @@ export interface InputSelectClassProps
 }
 
 export interface InputSelectItemOptionBaseProps<T = any>
-    extends Omit<InputSelectOptionProps<T>, "type" | "onDelete"> { }
+    extends Omit<InputSelectOptionProps<T>, "type" | "onDelete"> {}
 
 /**
  * Interface that defines the base properties for a text input component.
@@ -209,7 +214,7 @@ export interface InputSelectBaseProps<T = any>
  */
 export interface InputSelectProps<T = any>
     extends InputSelectBaseProps<T>,
-    InputSelectClassProps { }
+        InputSelectClassProps {}
 
 export interface InputSelectValue<T = any> {
     option?: InputSelectItemOptionBaseProps<T>;
@@ -523,8 +528,8 @@ export const InputSelect = <T = any,>({
                                 id={noResult?.id ?? "selected"}
                                 text={_t(
                                     selected?.text ??
-                                    props?.placeholder ??
-                                    "Select",
+                                        props?.placeholder ??
+                                        "Select",
                                 )}
                                 children={selected?.children ?? undefined}
                                 _t={_t}
@@ -618,8 +623,10 @@ export const InputSelect = <T = any,>({
     const [isFocus, setIsFocus] = useState(false);
 
     const CHILDREN_SELECT = useMemo(() => {
-        if (typeSelect == "div" && (
-            typeSelectStyle == "normal" || typeSelectStyle == "normal-out")) {
+        if (
+            typeSelect == "div" &&
+            (typeSelectStyle == "normal" || typeSelectStyle == "normal-out")
+        ) {
             return (
                 <>
                     <div className={`fenext-select-content-search`}>
@@ -738,9 +745,10 @@ export const InputSelect = <T = any,>({
                     fenext-select-type-${typeSelect}
                     fenext-select-type-style-${typeSelectStyle}
                     fenext-select-${useSwichtypeSelectStyle ? "use-swich-select-style" : ""}
-                    fenext-select-${isSelectChangeText
-                        ? "is-change-text"
-                        : "is-not-change-text"
+                    fenext-select-${
+                        isSelectChangeText
+                            ? "is-change-text"
+                            : "is-not-change-text"
                     }
                     ${classNameSelect} ${showOptions}
                     ${hiddenOptions}
@@ -764,7 +772,7 @@ export const InputSelect = <T = any,>({
                             ele?.focus();
                         }
                     }}
-                // onMouseEnter={onLoadPos}
+                    // onMouseEnter={onLoadPos}
                 >
                     <InputText
                         {...props}
@@ -787,8 +795,10 @@ export const InputSelect = <T = any,>({
                             onLoadChildren();
                         }}
                         value={
-                            typeSelectStyle == "normal-out" ? undefined :
-                                _tValue(dataMemo?.text ?? "")}
+                            typeSelectStyle == "normal-out"
+                                ? undefined
+                                : _tValue(dataMemo?.text ?? "")
+                        }
                         onEnter={onEnter}
                         error={errorInput}
                         autoComplete={false}
@@ -831,16 +841,16 @@ export const InputSelect = <T = any,>({
                                                     <>
                                                         {dataMemo?.option
                                                             ?.icon && (
-                                                                <>
-                                                                    <div className="fenext-select-option-selected-img">
-                                                                        {
-                                                                            dataMemo
-                                                                                ?.option
-                                                                                ?.icon
-                                                                        }
-                                                                    </div>
-                                                                </>
-                                                            )}
+                                                            <>
+                                                                <div className="fenext-select-option-selected-img">
+                                                                    {
+                                                                        dataMemo
+                                                                            ?.option
+                                                                            ?.icon
+                                                                    }
+                                                                </div>
+                                                            </>
+                                                        )}
                                                     </>
                                                 )}
                                             </>
@@ -850,44 +860,36 @@ export const InputSelect = <T = any,>({
                             </>
                         }
                         validator={undefined}
-
                         extraInLabel={
                             <>
-                                {
-                                    typeSelectStyle == "normal-out" && dataMemo?.option
-                                    &&
-                                    <>
-                                        <div
-                                            className={`fenext-select-multiple-list `}
-                                        >
-                                            <InputSelectOption
-                                                {...dataMemo?.option}
-                                                type={"multiple"}
-                                                onDelete={() => {
-                                                    onClear()
-                                                }}
-                                                iconDelete={
-                                                    iconDelete
-                                                }
-                                                disabled={
-                                                    props?.disabled
-                                                }
-                                                useT={useTOption}
-                                            />
-                                        </div>
-                                    </>
-                                }
+                                {typeSelectStyle == "normal-out" &&
+                                    dataMemo?.option && (
+                                        <>
+                                            <div
+                                                className={`fenext-select-multiple-list `}
+                                            >
+                                                <InputSelectOption
+                                                    {...dataMemo?.option}
+                                                    type={"multiple"}
+                                                    onDelete={() => {
+                                                        onClear();
+                                                    }}
+                                                    iconDelete={iconDelete}
+                                                    disabled={props?.disabled}
+                                                    useT={useTOption}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
                                 {props?.extraInLabel}
                             </>
                         }
                     />
                 </div>
                 {typeSelect == "div" &&
-                    (
-                        typeSelectStyle == "normal" || typeSelectStyle == "normal-out"
-
-                    ) &&
-                    !useSwichtypeSelectStyle ? (
+                (typeSelectStyle == "normal" ||
+                    typeSelectStyle == "normal-out") &&
+                !useSwichtypeSelectStyle ? (
                     <></>
                 ) : (
                     <>{TAGLIST}</>

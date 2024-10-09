@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import { InputTextBaseProps, InputTextClassProps } from "../Text";
 import { InputSelectOptionClassProps, InputSelectOptionProps } from "../SelectOption";
 import { FenextjsValidatorClass } from "fenextjs-validator";
-export type InputSelectTypeStyle = "normal" | "box" | "list" | "checkbox";
+export type InputSelectTypeStyle = "normal" | "normal-out" | "box" | "list" | "checkbox";
 export interface InputSelectClassProps extends InputTextClassProps, InputSelectOptionClassProps {
     classNameSelect?: string;
     classNameList?: string;
@@ -43,6 +43,7 @@ export interface InputSelectBaseProps<T = any> extends Omit<InputTextBaseProps, 
     showOptionIconImg?: boolean;
     validatorData?: FenextjsValidatorClass<T>;
     forceShowOptionOnLoad?: boolean;
+    iconDelete?: ReactNode;
 }
 export interface InputSelectProps<T = any> extends InputSelectBaseProps<T>, InputSelectClassProps {
 }
@@ -51,4 +52,4 @@ export interface InputSelectValue<T = any> {
     text?: string;
     textSearch?: string;
 }
-export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, converterInSearchWithMaxLenght, nItems, maxLengthShowOptions, itemMaxLengthShowOptions, showOptionIconImg, validatorData, useTOption, forceShowOptionOnLoad, ...props }: InputSelectProps<T>) => React.JSX.Element;
+export declare const InputSelect: <T = any>({ classNameSelect, classNameList, error, options: optionsProps, showOptions, hiddenOptions, defaultValue, typeSelect, typeSelectStyle, value, onChange, onChangeData, onChangeText, onChangeValidate, icon, iconSearch, noResult, loaderOption, selected, create, onCreate, isSelectClearText, iconCloseMovil, filterOptions, clearContent, isSelectChangeText, errorWithIsChange, validator, searchById, useSwichtypeSelectStyle, changeByFirstOptionInOnBlur, converterInSearchWithMaxLenght, nItems, maxLengthShowOptions, itemMaxLengthShowOptions, showOptionIconImg, validatorData, useTOption, forceShowOptionOnLoad, iconDelete, ...props }: InputSelectProps<T>) => React.JSX.Element;

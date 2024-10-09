@@ -18,7 +18,7 @@ const useSelectOptionsPos_1 = require("./useSelectOptionsPos");
 const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(Arrow_1.Arrow, null), iconSearch = react_1.default.createElement(fenextjs_svg_1.SVGSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(cancel_1.Cancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, converterInSearchWithMaxLenght = false, nItems = undefined, maxLengthShowOptions = 20, itemMaxLengthShowOptions = {
     id: "fenext-item-max-length-show-options",
     text: "There are more elements ...",
-}, showOptionIconImg = true, validatorData, useTOption, forceShowOptionOnLoad = false, ...props }) => {
+}, showOptionIconImg = true, validatorData, useTOption, forceShowOptionOnLoad = false, iconDelete = react_1.default.createElement(fenextjs_svg_1.Trash, null), ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const { _t: _tValue } = (0, fenextjs_hook_1.use_T)({ ...props, useT: useTOption });
     const options = (0, react_1.useMemo)(() => (filterOptions ? filterOptions(optionsProps) : optionsProps), [optionsProps, filterOptions]);
@@ -241,7 +241,8 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
     ]);
     const [isFocus, setIsFocus] = (0, react_1.useState)(false);
     const CHILDREN_SELECT = (0, react_1.useMemo)(() => {
-        if (typeSelect == "div" && typeSelectStyle == "normal") {
+        if (typeSelect == "div" &&
+            (typeSelectStyle == "normal" || typeSelectStyle == "normal-out")) {
             return (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("div", { className: `fenext-select-content-search` },
                     react_1.default.createElement(Text_1.InputText, { ...props, _t: _t, icon: react_1.default.createElement(react_1.default.Fragment, null,
@@ -338,7 +339,9 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                             react_1.default.createElement("div", { className: "fenext-select-content-icon-search" }, iconSearch))), onBlur: onBlur, onChange: (e) => {
                         onChangeText_(e);
                         onLoadChildren();
-                    }, value: _tValue(dataMemo?.text ?? ""), onEnter: onEnter, error: errorInput, autoComplete: false, errorWithIsChange: errorWithIsChange, extraInContentInput: react_1.default.createElement(react_1.default.Fragment, null,
+                    }, value: typeSelectStyle == "normal-out"
+                        ? undefined
+                        : _tValue(dataMemo?.text ?? ""), onEnter: onEnter, error: errorInput, autoComplete: false, errorWithIsChange: errorWithIsChange, extraInContentInput: react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement("button", { className: `fenext-select-clear`, onClick: onClear }, _t(clearContent)),
                         showOptionIconImg && (react_1.default.createElement(react_1.default.Fragment, null, dataMemo?.option?.img ? (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement("div", { className: "fenext-select-option-selected-img" },
@@ -352,9 +355,17 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
                             ?.icon && (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement("div", { className: "fenext-select-option-selected-img" }, dataMemo
                                 ?.option
-                                ?.icon)))))))))), validator: undefined })),
+                                ?.icon)))))))))), validator: undefined, extraInLabel: react_1.default.createElement(react_1.default.Fragment, null,
+                        typeSelectStyle == "normal-out" &&
+                            dataMemo?.option && (react_1.default.createElement(react_1.default.Fragment, null,
+                            react_1.default.createElement("div", { className: `fenext-select-multiple-list ` },
+                                react_1.default.createElement(SelectOption_1.InputSelectOption, { ...dataMemo?.option, type: "multiple", onDelete: () => {
+                                        onClear();
+                                    }, iconDelete: iconDelete, disabled: props?.disabled, useT: useTOption })))),
+                        props?.extraInLabel) })),
             typeSelect == "div" &&
-                typeSelectStyle == "normal" &&
+                (typeSelectStyle == "normal" ||
+                    typeSelectStyle == "normal-out") &&
                 !useSwichtypeSelectStyle ? (react_1.default.createElement(react_1.default.Fragment, null)) : (react_1.default.createElement(react_1.default.Fragment, null, TAGLIST)))));
 };
 exports.InputSelect = InputSelect;
