@@ -66,3 +66,7 @@ body {
     --fenext-modal-width: max(30vw, min(30rem, 100%));
     --fenext-modal-height: max(30vh, min(15rem, 100%));
 }
+
+*{
+    content-visibility: auto;
+}
