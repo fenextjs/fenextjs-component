@@ -17,8 +17,7 @@
 
     position: relative;
 
-
-    grid-template-columns: repeat(var(--nItems),1fr);
+    grid-template-columns: repeat(var(--nItems), 1fr);
 
     --progess: calc(calc(100% / calc(var(--nItems) - 1)) * var(--step));
 

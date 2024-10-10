@@ -12,7 +12,7 @@ const StepsCircle = ({ className = "", defaultStep = undefined, valueStep = unde
                     fenext-steps-circle-${disable ? "disable" : ""}
                     ${className} 
                 `, style: {
-                "--nItems": items?.length + 1,
+                "--nItems": items?.length,
                 "--step": step,
             } }, items?.map((item, i) => {
             return (react_1.default.createElement(react_1.default.Fragment, null,
