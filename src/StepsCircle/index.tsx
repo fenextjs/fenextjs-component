@@ -46,7 +46,7 @@ export const StepsCircle = ({
                 `}
                 style={
                     {
-                        "--nItems": items?.length + 1,
+                        "--nItems": items?.length,
                         "--step": step,
                     } as CSSProperties
                 }

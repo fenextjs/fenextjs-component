@@ -10,18 +10,21 @@
     --color-active: var(--fenext-color-light);
     --bg-active: var(--fenext-color-teal);
 
-    display: flex;
+    display: grid;
     align-items: flex-start;
     gap: 1rem;
     justify-content: space-between;
 
     position: relative;
 
-    --progess: calc(calc(100% / calc(var(--nItems) - 2)) * var(--step));
+
+    grid-template-columns: repeat(var(--nItems),1fr);
+
+    --progess: calc(calc(100% / calc(var(--nItems) - 1)) * var(--step));
 
     &::before {
         content: "";
-        width: calc(100% - var(--size-circle));
+        width: calc(100% * calc(var(--nItems) - 1) / var(--nItems));
         height: 0.5rem;
         background: linear-gradient(
                 to right,
@@ -33,7 +36,9 @@
             var(--bg);
         position: absolute;
         top: calc(var(--size-circle) / 2);
-        left: calc(var(--size-circle) / 2);
+        left: 0;
+        right: 0;
+        margin: auto;
         transform: translateY(-50%);
         transition: 0.5s;
     }

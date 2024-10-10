@@ -16,17 +16,18 @@ export const Index = Profile.bind({});
 const args : StepsCircleProps = {
     items:[
         {
-            children:"Paso 1"
+            children:"Buscar el Plugin"
         },
         {
-            children:"Paso 2"
+            children:"Instalar Plugin"
         },
         {
-            children:"Paso 3"
+            children:"Conectar con Xell"
         },
         {
-            children:"Paso 4"
+            children:"Seleccione la tienda a Conecta"
         },
     ]
 }
+
 Index.args = args
