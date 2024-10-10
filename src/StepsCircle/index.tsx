@@ -17,14 +17,13 @@ export interface StepsCircleProps {
      */
     className?: string;
 
-    items?: StepsCircleItemProps[]
+    items?: StepsCircleItemProps[];
 
-    defaultStep?: number
-    valueStep?: number
+    defaultStep?: number;
+    valueStep?: number;
 
-    disable?: boolean
+    disable?: boolean;
 }
-
 
 export const StepsCircle = ({
     className = "",
@@ -35,25 +34,26 @@ export const StepsCircle = ({
 }: StepsCircleProps) => {
     const [step_, setStep] = useState(defaultStep ?? 0);
 
-    const step = useMemo(() => valueStep ?? step_, [step_, valueStep])
+    const step = useMemo(() => valueStep ?? step_, [step_, valueStep]);
 
     return (
         <>
-            <div 
+            <div
                 className={`
                     fenext-steps-circle 
-                    fenext-steps-circle-${disable?"disable":""}
+                    fenext-steps-circle-${disable ? "disable" : ""}
                     ${className} 
                 `}
-                style={{
-                    "--nItems":items?.length + 1,
-                    "--step":step
-                } as CSSProperties}
+                style={
+                    {
+                        "--nItems": items?.length + 1,
+                        "--step": step,
+                    } as CSSProperties
+                }
             >
-
-                {
-                    items?.map((item, i) => {
-                        return <>
+                {items?.map((item, i) => {
+                    return (
+                        <>
                             <div
                                 className={`
                                     fenext-steps-circle-item
@@ -63,11 +63,13 @@ export const StepsCircle = ({
                                     if (disable) {
                                         return;
                                     }
-                                    item?.onClick?.()
-                                    setStep(i)
+                                    item?.onClick?.();
+                                    setStep(i);
                                 }}
                             >
-                                <div className={`fenext-steps-circle-item-circle`}>
+                                <div
+                                    className={`fenext-steps-circle-item-circle`}
+                                >
                                     {i + 1}
                                 </div>
                                 <div className="fenext-steps-circle-item-content">
@@ -75,8 +77,8 @@ export const StepsCircle = ({
                                 </div>
                             </div>
                         </>
-                    })
-                }
+                    );
+                })}
             </div>
         </>
     );

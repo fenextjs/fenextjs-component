@@ -17,12 +17,12 @@
 
     position: relative;
 
-    --progess: calc(calc(100% / calc( var(--nItems) - 2)) * var(--step));
+    --progess: calc(calc(100% / calc(var(--nItems) - 2)) * var(--step));
 
     &::before {
         content: "";
         width: calc(100% - var(--size-circle));
-        height: .5rem;
+        height: 0.5rem;
         background: linear-gradient(
                 to right,
                 var(--bg-active) 0%,
@@ -35,7 +35,7 @@
         top: calc(var(--size-circle) / 2);
         left: calc(var(--size-circle) / 2);
         transform: translateY(-50%);
-        transition: .5s;
+        transition: 0.5s;
     }
 
     &-item {
@@ -60,7 +60,7 @@
             justify-content: center;
             color: var(--color);
             background: var(--bg);
-            transition: .5s;
+            transition: 0.5s;
             &:hover {
                 color: var(--color-hover);
                 background: var(--bg-hover);
