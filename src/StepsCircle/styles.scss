@@ -1,0 +1,80 @@
+.fenext-steps-circle {
+    --size-circle: 3rem;
+
+    --color: var(--fenext-color-light);
+    --bg: var(--fenext-color-blue);
+
+    --color-hover: var(--fenext-color-light);
+    --bg-hover: var(--fenext-color-dark);
+
+    --color-active: var(--fenext-color-light);
+    --bg-active: var(--fenext-color-teal);
+
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    justify-content: space-between;
+
+    position: relative;
+
+    --progess: calc(calc(100% / calc( var(--nItems) - 2)) * var(--step));
+
+    &::before {
+        content: "";
+        width: calc(100% - var(--size-circle));
+        height: .5rem;
+        background: linear-gradient(
+                to right,
+                var(--bg-active) 0%,
+                var(--bg-active) var(--progess),
+                var(--bg) var(--progess),
+                var(--bg) 100%
+            ),
+            var(--bg);
+        position: absolute;
+        top: calc(var(--size-circle) / 2);
+        left: calc(var(--size-circle) / 2);
+        transform: translateY(-50%);
+        transition: .5s;
+    }
+
+    &-item {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        align-items: flex-start;
+        gap: 0.5rem;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        &-circle {
+            width: var(--size-circle);
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            font-family: var(--fenext-font-global);
+            line-height: 1;
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color);
+            background: var(--bg);
+            transition: .5s;
+            &:hover {
+                color: var(--color-hover);
+                background: var(--bg-hover);
+            }
+        }
+        &-active {
+            --color: var(--color-active);
+            --bg: var(--bg-active);
+        }
+        &-content {
+            font-family: var(--fenext-font-global);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--fenext-color-dark);
+        }
+    }
+}

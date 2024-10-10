@@ -51,3 +51,4 @@ export * from "./Alert";
 export * from "./AlertHook";
 export * from "./Design";
 export * from "./Portal";
+export * from "./StepsCircle"
