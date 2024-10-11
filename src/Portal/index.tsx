@@ -5,12 +5,9 @@ export interface PortalProps {
     container?: Element | DocumentFragment;
     children: ReactNode;
 }
-export const Portal = ({
-    children,
-    container,
-}: PortalProps) => {
-    if(!window ||  typeof window == 'undefined'){
-        return <></>
+export const Portal = ({ children, container }: PortalProps) => {
+    if (!window || typeof window == "undefined") {
+        return <></>;
     }
     return createPortal(<>{children}</>, container ?? document?.body);
 };
