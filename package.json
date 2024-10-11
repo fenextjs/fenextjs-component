@@ -1,6 +1,6 @@
 {
   "name": "fenextjs-component",
-  "version": "12.3.1",
+  "version": "12.3.2",
   "description": "",
   "main": "./cjs/index.js",
   "module": "./cjs/index.js",
@@ -54,14 +54,14 @@
     "fenextjs-date": "3.2.4",
     "fenextjs-error": "3.1.4",
     "fenextjs-functions": "5.3.5",
-    "fenextjs-hook": "11.4.1",
+    "fenextjs-hook": "11.4.2",
     "fenextjs-img-placeholder": "3.0.0",
     "fenextjs-interface": "4.3.1",
     "fenextjs-nextjs-dependencies": "2.0.1",
     "fenextjs-svg": "6.1.0",
     "fenextjs-validator": "4.4.0",
     "qr-scanner": "1.4.2",
-    "uselocalstoragenextjs": "2.0.1"
+    "uselocalstoragenextjs": "2.0.2"
   },
   "files": [
     "cjs",
