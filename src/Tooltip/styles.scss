@@ -5,6 +5,7 @@
     &-content {
         position: fixed;
         width: max-content;
+        height: max-content;
         max-width: calc(100vw - 1rem);
         max-height: calc(100dvh - 1rem);
         overflow: auto;
@@ -52,10 +53,11 @@
         );
         --bottom: calc(var(--element-bottom) - var(--separate));
 
-        @at-root body:not(:has(.fenext-tooltip:hover)) &:not(:hover) {
+        &-inactive {
             inset: 0;
             visibility: hidden;
             opacity: 0;
+            z-index: -10;
         }
 
         top: var(--y);

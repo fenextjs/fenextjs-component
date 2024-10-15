@@ -1,7 +1,7 @@
+import { Portal } from "../Portal";
 import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
-import React, { ReactNode, useCallback, useMemo, useRef } from "react";
-import * as ReactDOM from "react-dom";
+import React, { ReactNode, useRef, useState } from "react";
 
 export type TooltipPositionX = "center" | "right" | "left";
 export type TooltipPositionY = "center" | "top" | "bottom";
@@ -9,7 +9,11 @@ export type TooltipPositionY = "center" | "top" | "bottom";
 /**
  * Properties for the base Tooltip component.
  */
-export interface TooltipBaseProps extends _TProps {
+export interface TooltipProps extends _TProps {
+    /**
+     * The class name for the component.
+     */
+    className?: string;
     /**
      * The children for the component.
      */
@@ -28,21 +32,6 @@ export interface TooltipBaseProps extends _TProps {
     positionY?: TooltipPositionY;
 }
 
-/**
- * Properties for the class of the Tooltip component.
- */
-export interface TooltipClassProps {
-    /**
-     * The class name for the component.
-     */
-    className?: string;
-}
-
-/**
- * Properties for the Tooltip component.
- */
-export interface TooltipProps extends TooltipBaseProps, TooltipClassProps {}
-
 export const Tooltip = ({
     className = "",
     children,
@@ -53,89 +42,67 @@ export const Tooltip = ({
 }: TooltipProps) => {
     const { _t } = use_T({ ...props });
     const ref = useRef<HTMLDivElement>(null);
-    const uuid = useMemo(
-        () => `${Math.ceil(new Date().getTime() * Math.random())}`,
-        [],
-    );
-    const onDefTooltipPos = (target: HTMLElement) => {
-        const tooltipElement = document.getElementById("fenext-tooltip");
-        if (tooltipElement) {
-            const bounding = target.getBoundingClientRect();
+    const refTooltipContent = useRef<HTMLDivElement>(null);
 
-            tooltipElement.style.setProperty(
-                "--element-width",
-                `${tooltipElement.offsetWidth}px`,
-            );
-            tooltipElement.style.setProperty(
-                "--element-height",
-                `${tooltipElement.offsetHeight}px`,
-            );
-            tooltipElement.style.setProperty(
-                "--element-top",
-                `${bounding.top}px`,
-            );
-            tooltipElement.style.setProperty(
-                "--element-left",
-                `${bounding.left}px`,
-            );
-            tooltipElement.style.setProperty(
-                "--element-right",
-                `${bounding.right}px`,
-            );
-            tooltipElement.style.setProperty(
-                "--element-bottom",
-                `${bounding.bottom}px`,
-            );
+    type configTooltipType = {
+        "--element-width"?: string
+        "--element-height"?: string
+        "--element-top"?: string
+        "--element-left"?: string
+        "--element-right"?: string
+        "--element-bottom"?: string
+        "--element-center-x"?: string
+        "--element-center-y"?: string
+    }
 
-            tooltipElement.style.setProperty(
-                "--element-center-x",
-                `${(bounding.right - bounding.left) / 2 + bounding.left}px`,
-            );
-            tooltipElement.style.setProperty(
-                "--element-center-y",
-                `${(bounding.bottom - bounding.top) / 2 + bounding.top}px`,
-            );
-        }
-    };
+    const [configTooltip, setConfigTooltip] = useState<configTooltipType | undefined>(undefined);
 
-    const onDefTooltip = useCallback(
-        (target: HTMLElement) => {
-            let tooltipElement = document.getElementById("fenext-tooltip");
-            if (!tooltipElement) {
-                tooltipElement = document.createElement("div");
-                tooltipElement.id = "fenext-tooltip";
-                document.body.append(tooltipElement);
-            }
-            tooltipElement = document.getElementById("fenext-tooltip");
-            if (tooltipElement) {
-                tooltipElement.classList.value = `fenext-tooltip-content fenext-tooltip-content-x-${positionX} fenext-tooltip-content-y-${positionY}`;
-                if (!(`${tooltipElement.getAttribute("uuid") ?? ""}` == uuid)) {
-                    tooltipElement.setAttribute("uuid", uuid);
-                    ReactDOM.render(<>{tooltip}</>, tooltipElement);
-                }
-                setTimeout(() => {
-                    onDefTooltipPos(target);
-                }, 100);
-            }
-        },
-        [positionX, positionY, tooltip],
-    );
 
     const onShowTooltip = () => {
-        if (ref.current) {
-            onDefTooltip(ref.current);
-        }
-    };
+        const target = ref?.current as HTMLElement
+        const tooltipElement = refTooltipContent?.current;
+        if (tooltipElement) {
+            const bounding = target.getBoundingClientRect();
+            setConfigTooltip({
+                "--element-width": `${tooltipElement.offsetWidth}px`,
+                "--element-height": `${tooltipElement.offsetHeight}px`,
+                "--element-top": `${bounding.top}px`,
+                "--element-left": `${bounding.left}px`,
+                "--element-right": `${bounding.right}px`,
+                "--element-bottom": `${bounding.bottom}px`,
+                "--element-center-x": `${(bounding.right - bounding.left) / 2 + bounding.left}px`,
+                "--element-center-y": `${(bounding.bottom - bounding.top) / 2 + bounding.top}px`,
+            })
+        };
+    }
+
     return (
         <>
+            <Portal>
+                <div 
+                    ref={refTooltipContent}
+                    className={`
+                        fenext-tooltip-content 
+                        fenext-tooltip-content-x-${positionX} 
+                        fenext-tooltip-content-y-${positionY} 
+                        fenext-tooltip-content-${configTooltip?"active":"inactive"}
+                    `}
+                    onMouseEnter={onShowTooltip}
+                    onMouseLeave={()=>{setConfigTooltip(undefined)}}
+                    style={configTooltip as any}
+                >
+                    {tooltip}
+                </div>
+            </Portal>
             <div
                 ref={ref}
                 className={`fenext-tooltip ${className} `}
                 onMouseEnter={onShowTooltip}
                 onClick={onShowTooltip}
+                onMouseLeave={()=>{setConfigTooltip(undefined)}}
             >
                 <div className={`fenext-tooltip-children`}>{_t(children)}</div>
             </div>
         </>
     );
-};
+}
