@@ -64,14 +64,14 @@ export interface InputPhoneBaseProps
             | "validator"
         >,
         useJsonStringProps<Partial<PhoneProps>> {
-            /**
-             * defaultCode select code.
-             */
-            defaultCode?: string;
-            /**
-             * disabled select code.
-             */
-            disabledSelectCode?: boolean;
+    /**
+     * defaultCode select code.
+     */
+    defaultCode?: string;
+    /**
+     * disabled select code.
+     */
+    disabledSelectCode?: boolean;
     /**
      * Placeholder select code.
      */
@@ -139,9 +139,12 @@ export const InputPhone = ({
         onChangeJsonString,
         value: valueProps,
         defaultValue: {
-            code: (defaultValueProps?.code ?? "") == "" ?defaultCode : defaultValueProps?.code  ,
-            number: defaultValueProps?.number ?? '',
-            tel: defaultValueProps?.tel ?? '',
+            code:
+                (defaultValueProps?.code ?? "") == ""
+                    ? defaultCode
+                    : defaultValueProps?.code,
+            number: defaultValueProps?.number ?? "",
+            tel: defaultValueProps?.tel ?? "",
         },
         onChange: onChangeProps,
     });

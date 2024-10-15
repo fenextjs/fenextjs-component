@@ -12,11 +12,7 @@ const fenextjs_functions_1 = require("fenextjs-functions");
 const useJsonString_1 = require("fenextjs-hook/cjs/useJsonString");
 const country_state_city_nextjs_1 = require("country-state-city-nextjs");
 const SelectT_1 = require("../SelectT");
-const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultValue: defaultValueProps = {
-    code: "+57",
-    number: "",
-    tel: "",
-}, value: valueProps = undefined, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, ...props }) => {
+const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultCode = "+57", defaultValue: defaultValueProps = undefined, value: valueProps = undefined, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const { value, defaultValue, onChange } = (0, useJsonString_1.useJsonString)({
         parseJson_to_String: parseJson_to_String ?? fenextjs_functions_1.parsePhone_to_String,
@@ -25,7 +21,13 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
         valueJsonString,
         onChangeJsonString,
         value: valueProps,
-        defaultValue: defaultValueProps,
+        defaultValue: {
+            code: (defaultValueProps?.code ?? "") == ""
+                ? defaultCode
+                : defaultValueProps?.code,
+            number: defaultValueProps?.number ?? "",
+            tel: defaultValueProps?.tel ?? "",
+        },
         onChange: onChangeProps,
     });
     const [loadPhoneCodes, setlLoadPhoneCodes] = (0, react_1.useState)(false);
