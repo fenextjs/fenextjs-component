@@ -3,6 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import {  FenextjsValidator } from "fenextjs-validator";
 
 import { InputPhone, InputPhoneProps } from "./index";
+import { parseString_to_Phone } from "fenextjs-functions";
 
 export default {
     title: "Input/InputPhone",
@@ -17,6 +18,7 @@ export const Index = Profile.bind({});
 
 const args  : InputPhoneProps = {
     label:"Label",
+    defaultValue:parseString_to_Phone("")
     // onChange:console.log,
     // value:{
     //     code: "+58",

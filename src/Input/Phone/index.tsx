@@ -139,10 +139,9 @@ export const InputPhone = ({
         onChangeJsonString,
         value: valueProps,
         defaultValue: {
-            code: defaultCode,
-            number: "",
-            tel: "",
-            ...(defaultValueProps ?? {}),
+            code: (defaultValueProps?.code ?? "") == "" ?defaultCode : defaultValueProps?.code  ,
+            number: defaultValueProps?.number ?? '',
+            tel: defaultValueProps?.tel ?? '',
         },
         onChange: onChangeProps,
     });
