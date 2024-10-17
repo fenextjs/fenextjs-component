@@ -55,15 +55,15 @@ export interface InputPhoneClassProps {
  */
 export interface InputPhoneBaseProps
     extends Omit<
-        InputTextBaseProps,
-        | "type"
-        | "value"
-        | "onChange"
-        | "defaultValue"
-        | "datalist"
-        | "validator"
-    >,
-    useJsonStringProps<Partial<PhoneProps>> {
+            InputTextBaseProps,
+            | "type"
+            | "value"
+            | "onChange"
+            | "defaultValue"
+            | "datalist"
+            | "validator"
+        >,
+        useJsonStringProps<Partial<PhoneProps>> {
     /**
      * defaultCode select code.
      */
@@ -88,7 +88,7 @@ export interface InputPhoneBaseProps
  */
 export interface InputPhoneProps
     extends InputPhoneBaseProps,
-    InputPhoneClassProps { }
+        InputPhoneClassProps {}
 
 /**
  * Component that renders a checkbox input.
@@ -145,10 +145,9 @@ export const InputPhone = ({
                     : defaultValueProps?.code,
             number: defaultValueProps?.number ?? "",
             tel: defaultValueProps?.tel ?? "",
-            code_country:defaultValueProps?.code_country ?? undefined,
-            country:defaultValueProps?.country ?? undefined,
-            img:defaultValueProps?.img ?? undefined,
-
+            code_country: defaultValueProps?.code_country ?? undefined,
+            country: defaultValueProps?.country ?? undefined,
+            img: defaultValueProps?.img ?? undefined,
         },
         onChange: onChangeProps,
     });
@@ -184,26 +183,15 @@ export const InputPhone = ({
         validator: validator ?? FenextjsValidator(),
     });
 
-
     const getCountryPhone = (d: Partial<PhoneProps> | undefined) => {
-        return d?.country ??
-            (
-                d?.code_country
-                    ? phones.find(
-                        (e) => (e.code == d?.code_country)
-                    )
-                    : undefined
-            )
-            ??
-
-            (
-                d?.code
-                    ? phones.find(
-                        (e) => (e.code_phone == d?.code)
-                    )
-                    : undefined
-            ) 
-    }
+        return (
+            d?.country ??
+            (d?.code_country
+                ? phones.find((e) => e.code == d?.code_country)
+                : undefined) ??
+            (d?.code ? phones.find((e) => e.code_phone == d?.code) : undefined)
+        );
+    };
 
     return (
         <>
@@ -248,12 +236,8 @@ export const InputPhone = ({
                         disabled={
                             !loadPhoneCodes || disabled || disabledSelectCode
                         }
-                        defaultValue={
-                            getCountryPhone(defaultValue)
-                        }
-                        value={
-                            getCountryPhone(value)
-                        }
+                        defaultValue={getCountryPhone(defaultValue)}
+                        value={getCountryPhone(value)}
                         onChange={(e) => {
                             if (e?.code_phone) {
                                 onConcatData({

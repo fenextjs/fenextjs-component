@@ -27,6 +27,9 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                 : defaultValueProps?.code,
             number: defaultValueProps?.number ?? "",
             tel: defaultValueProps?.tel ?? "",
+            code_country: defaultValueProps?.code_country ?? undefined,
+            country: defaultValueProps?.country ?? undefined,
+            img: defaultValueProps?.img ?? undefined,
         },
         onChange: onChangeProps,
     });
@@ -54,6 +57,13 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
         data: data,
         validator: validator ?? (0, fenextjs_validator_1.FenextjsValidator)(),
     });
+    const getCountryPhone = (d) => {
+        return (d?.country ??
+            (d?.code_country
+                ? phones.find((e) => e.code == d?.code_country)
+                : undefined) ??
+            (d?.code ? phones.find((e) => e.code_phone == d?.code) : undefined));
+    };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-input-phone ${classNamePhone}` },
             react_1.default.createElement("div", { className: `fenext-input-phone-label fenext-input-label ${classNamePhoneLabel} ` },
@@ -63,16 +73,14 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                 required && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement("small", { className: "fenext-input-required" }, _t(requiredText))))),
             react_1.default.createElement("div", { className: `fenext-input-phone-code ${classNamePhoneCode}` },
-                react_1.default.createElement(SelectT_1.InputSelectT, { ...classNameSelectCode, classNameList: `fenext-input-phone-select-code ${classNameSelectCode?.classNameList ?? ""}`, key: `${defaultValue?.code}-${value?.code}-${phones.length}`, placeholder: placeholderCode, _t: _t, options: phones, onParse: (e) => {
+                react_1.default.createElement(SelectT_1.InputSelectT, { ...classNameSelectCode, classNameList: `fenext-input-phone-select-code ${classNameSelectCode?.classNameList ?? ""}`, key: `${defaultValue?.code_country}-${defaultValue?.code}-${value?.code}-${phones.length}`, placeholder: placeholderCode, _t: _t, options: phones, onParse: (e) => {
                         return {
                             id: e?.code_phone ?? "",
                             text: e?.code_phone ?? "",
                             data: e,
                             img: e ? `${(0, country_state_city_nextjs_1.getRuteCountryImg)(e)}` : undefined,
                         };
-                    }, disabled: !loadPhoneCodes || disabled || disabledSelectCode, defaultValue: phones.find((e) => e.code_phone == defaultValue?.code), value: value
-                        ? phones.find((e) => e.code_phone == value?.code)
-                        : undefined, onChange: (e) => {
+                    }, disabled: !loadPhoneCodes || disabled || disabledSelectCode, defaultValue: getCountryPhone(defaultValue), value: getCountryPhone(value), onChange: (e) => {
                         if (e?.code_phone) {
                             onConcatData({
                                 code: e?.code_phone,
