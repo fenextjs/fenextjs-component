@@ -55,15 +55,15 @@ export interface InputPhoneClassProps {
  */
 export interface InputPhoneBaseProps
     extends Omit<
-            InputTextBaseProps,
-            | "type"
-            | "value"
-            | "onChange"
-            | "defaultValue"
-            | "datalist"
-            | "validator"
-        >,
-        useJsonStringProps<Partial<PhoneProps>> {
+        InputTextBaseProps,
+        | "type"
+        | "value"
+        | "onChange"
+        | "defaultValue"
+        | "datalist"
+        | "validator"
+    >,
+    useJsonStringProps<Partial<PhoneProps>> {
     /**
      * defaultCode select code.
      */
@@ -88,7 +88,7 @@ export interface InputPhoneBaseProps
  */
 export interface InputPhoneProps
     extends InputPhoneBaseProps,
-        InputPhoneClassProps {}
+    InputPhoneClassProps { }
 
 /**
  * Component that renders a checkbox input.
@@ -145,6 +145,10 @@ export const InputPhone = ({
                     : defaultValueProps?.code,
             number: defaultValueProps?.number ?? "",
             tel: defaultValueProps?.tel ?? "",
+            code_country:defaultValueProps?.code_country ?? undefined,
+            country:defaultValueProps?.country ?? undefined,
+            img:defaultValueProps?.img ?? undefined,
+
         },
         onChange: onChangeProps,
     });
@@ -180,6 +184,27 @@ export const InputPhone = ({
         validator: validator ?? FenextjsValidator(),
     });
 
+
+    const getCountryPhone = (d: Partial<PhoneProps> | undefined) => {
+        return d?.country ??
+            (
+                d?.code_country
+                    ? phones.find(
+                        (e) => (e.code == d?.code_country)
+                    )
+                    : undefined
+            )
+            ??
+
+            (
+                d?.code
+                    ? phones.find(
+                        (e) => (e.code_phone == d?.code)
+                    )
+                    : undefined
+            ) 
+    }
+
     return (
         <>
             <div className={`fenext-input-phone ${classNamePhone}`}>
@@ -208,7 +233,7 @@ export const InputPhone = ({
                     <InputSelectT<CountryProps>
                         {...classNameSelectCode}
                         classNameList={`fenext-input-phone-select-code ${classNameSelectCode?.classNameList ?? ""}`}
-                        key={`${defaultValue?.code}-${value?.code}-${phones.length}`}
+                        key={`${defaultValue?.code_country}-${defaultValue?.code}-${value?.code}-${phones.length}`}
                         placeholder={placeholderCode}
                         _t={_t}
                         options={phones}
@@ -223,15 +248,11 @@ export const InputPhone = ({
                         disabled={
                             !loadPhoneCodes || disabled || disabledSelectCode
                         }
-                        defaultValue={phones.find(
-                            (e) => e.code_phone == defaultValue?.code,
-                        )}
+                        defaultValue={
+                            getCountryPhone(defaultValue)
+                        }
                         value={
-                            value
-                                ? phones.find(
-                                      (e) => e.code_phone == value?.code,
-                                  )
-                                : undefined
+                            getCountryPhone(value)
                         }
                         onChange={(e) => {
                             if (e?.code_phone) {
