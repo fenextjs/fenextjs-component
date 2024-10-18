@@ -27,7 +27,7 @@
         $classContent: &;
         position: relative;
         --box-shadow-color: var(--fenext-color-primary);
-        --box-shadow-color-target: var(--fenext-color-primary-light);
+        --box-shadow-color-target: var(--fenext-color-yellow-light);
         --box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
         &:has([class*="fenext-input"]:focus) {
             .fenext-input-content-input {
@@ -36,6 +36,9 @@
         }
         &:has(.fenext-input-validator-status-error) {
             --box-shadow-color: var(--fenext-color-red);
+        }
+        &:has(.fenext-input-content-input-show-focus-target:target) {
+            --box-shadow-color: var(--box-shadow-color-target);
         }
         &-input {
             width: 100%;
@@ -57,7 +60,6 @@
             }
             &-show-focus-target{
                 &:target{
-                    --box-shadow-color: var(--box-shadow-color-target);
                     box-shadow: var(--box-shadow);
                 }
             }

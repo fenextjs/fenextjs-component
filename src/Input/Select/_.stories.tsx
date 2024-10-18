@@ -27,6 +27,7 @@ export const Index = Profile.bind({});
 
 const args: InputSelectProps = {
     id: "select",
+    showFocusInTarget:true,
     name: "select",
     label: "Select",
     placeholder: "Select",

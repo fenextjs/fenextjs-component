@@ -757,7 +757,7 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
 .fenext-input-content {
   position: relative;
   --box-shadow-color: var(--fenext-color-primary);
-  --box-shadow-color-target: var(--fenext-color-primary-light);
+  --box-shadow-color-target: var(--fenext-color-yellow-light);
   --box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
 }
 .fenext-input-content:has([class*=fenext-input]:focus) .fenext-input-content-input {
@@ -765,6 +765,9 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
 }
 .fenext-input-content:has(.fenext-input-validator-status-error) {
   --box-shadow-color: var(--fenext-color-red);
+}
+.fenext-input-content:has(.fenext-input-content-input-show-focus-target:target) {
+  --box-shadow-color: var(--box-shadow-color-target);
 }
 .fenext-input-content-input {
   width: 100%;
@@ -788,7 +791,6 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   }
 }
 .fenext-input-content-input-show-focus-target:target {
-  --box-shadow-color: var(--box-shadow-color-target);
   box-shadow: var(--box-shadow);
 }
 .fenext-input-content-input::placeholder {
