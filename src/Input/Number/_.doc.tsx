@@ -67,13 +67,13 @@ export default {
             default: "''",
             description: "Clase CSS para el componente.",
         },
-        ...Object.keys(InputTextProps).map(key => ({
-            id: key,
-            type: typeof InputTextProps[key],
-            require: false,
-            default: InputTextProps[key].default || "undefined",
-            description: `Propiedad del componente InputTextProps: ${key}`
-        }))
+        // ...Object.keys(InputTextProps).map(key => ({
+        //     id: key,
+        //     type: typeof InputTextProps[key],
+        //     require: false,
+        //     default: InputTextProps[key].default || "undefined",
+        //     description: `Propiedad del componente InputTextProps: ${key}`
+        // }))
     ],
     useExample: [
         {
