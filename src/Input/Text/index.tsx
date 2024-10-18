@@ -1,4 +1,4 @@
-import React, { CSSProperties, useMemo, useState } from "react";
+import React, { CSSProperties, ReactNode, useMemo, useState } from "react";
 
 import { env_log } from "fenextjs-functions/cjs/env_log";
 import { useRef } from "react";
@@ -96,11 +96,11 @@ export interface InputTextBaseProps extends _TProps {
     /**
      * ID of Input.
      */
-    id?: any;
+    id?: string;
     /**
      * Name of Input.
      */
-    name?: any;
+    name?: string;
     /**
      * Datalist name of Input.
      */
@@ -113,7 +113,7 @@ export interface InputTextBaseProps extends _TProps {
     /**
      * Label text to display for the input.
      */
-    label?: any;
+    label?: ReactNode;
 
     /**
      * Placeholder text to display in the input field.
@@ -174,7 +174,7 @@ export interface InputTextBaseProps extends _TProps {
     /**
      * Icon to display inside the input field.
      */
-    icon?: any;
+    icon?: ReactNode;
     /**
      * Position of Icon to display inside the input field.
      */
@@ -183,12 +183,12 @@ export interface InputTextBaseProps extends _TProps {
     /**
      * Extra content to display inside the input container.
      */
-    extraInContentInput?: any;
+    extraInContentInput?: ReactNode;
 
     /**
      * Extra content to display inside the input label.
      */
-    extraInLabel?: any;
+    extraInLabel?: ReactNode;
 
     /**
      * Boolean value indicating whether the input field is disabled.
@@ -290,6 +290,10 @@ export interface InputTextBaseProps extends _TProps {
      * onChangeEvent of Input.
      */
     onChangeEvent?: (e: InputTextChangeEvent) => void;
+    /**
+     * showFocusInTarget of Input.
+     */
+    showFocusInTarget?: boolean;
 }
 /**
  * Props interface for the InputText component. Extends both InputTextBaseProps and InputTextClassProps interfaces.
@@ -347,6 +351,8 @@ export const InputText = ({
     regExpReplace = "",
 
     onChangeEvent,
+
+    showFocusInTarget=false,
 
     ...p
 }: InputTextProps) => {
@@ -530,7 +536,13 @@ export const InputText = ({
                         list={datalist}
                         type={type}
                         ref={ref}
-                        className={`fenext-input-content-input ${classNameInput} fenext-input-validator-status-${FenextInputValidatorStatus} ${statusInput}`}
+                        className={`
+                            fenext-input-content-input
+                            fenext-input-validator-status-${FenextInputValidatorStatus}
+                            fenext-input-content-input-${showFocusInTarget ? "show-focus-target":""}
+                            ${classNameInput}
+                            ${statusInput}
+                        `}
                         placeholder={_t(
                             (isFocus ? placeholderFocus : placeholder) ??
                                 placeholder,

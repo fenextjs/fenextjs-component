@@ -281,6 +281,7 @@ export const InputPhone = ({
                         regExpReplace=""
                         regExp={/[^0-9]/g}
                         optional={false}
+                        error={undefined}
                     />
                 </div>
                 {(props?.error || (errorFenext && isChange)) && (

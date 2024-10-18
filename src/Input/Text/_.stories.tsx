@@ -16,8 +16,10 @@ const Profile: Story<InputTextProps> = (args) => (
 export const Index = Profile.bind({});
 
 const args  : InputTextProps = {
+    id:"target",
     label:"Label",
     placeholder:"Placeholder",
+    showFocusInTarget:true
 }
 
 Index.args= args

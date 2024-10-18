@@ -27,6 +27,7 @@
         $classContent: &;
         position: relative;
         --box-shadow-color: var(--fenext-color-primary);
+        --box-shadow-color-target: var(--fenext-color-primary-light);
         --box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
         &:has([class*="fenext-input"]:focus) {
             .fenext-input-content-input {
@@ -54,7 +55,12 @@
                 padding: 0.75rem 1rem;
                 font-size: 0.75rem;
             }
-
+            &-show-focus-target{
+                &:target{
+                    --box-shadow-color: var(--box-shadow-color-target);
+                    box-shadow: var(--box-shadow);
+                }
+            }
             &::placeholder {
                 color: color-mix(in srgb, currentColor 50%, #fff 0%);
             }

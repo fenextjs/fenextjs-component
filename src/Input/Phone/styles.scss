@@ -17,6 +17,11 @@
             padding-inline: 0.5rem;
         }
     }
+    &-text{
+        .fenext-error{
+            display: none;
+        }
+    }
     .fenext-error {
         grid-column: 1/-1;
     }
