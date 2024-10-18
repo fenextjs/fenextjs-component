@@ -13,7 +13,7 @@ const useValidator_1 = require("fenextjs-hook/cjs/useValidator");
 const Error_1 = require("../../Error");
 const fenextjs_interface_1 = require("fenextjs-interface");
 const fenextjs_hook_2 = require("fenextjs-hook");
-const InputText = ({ id = "", datalist = undefined, name = "", label = "", placeholder = "", placeholderFocus = undefined, defaultValue = undefined, value = undefined, type = "text", className = "", classNameLabel = "", classNameContentInput = "", classNameInput = "", classNameIcon = "", classNameLoaderValidate = "", iconLoader = react_1.default.createElement(Loader_1.Loader, null), onChange = () => { }, onBlur = () => { }, onEnter = () => { }, onChangeValidate = async (e) => e, parseText, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", required = false, requiredText = "*", loader = false, autoComplete = false, useLoader = true, isChange: isChangeProps = undefined, onKeyDown, onWheel, iconPos = "right", inputMode, validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, ...p }) => {
+const InputText = ({ id = "", datalist = undefined, name = "", label = "", placeholder = "", placeholderFocus = undefined, defaultValue = undefined, value = undefined, type = "text", className = "", classNameLabel = "", classNameContentInput = "", classNameInput = "", classNameIcon = "", classNameLoaderValidate = "", iconLoader = react_1.default.createElement(Loader_1.Loader, null), onChange = () => { }, onBlur = () => { }, onEnter = () => { }, onChangeValidate = async (e) => e, parseText, props = {}, icon = react_1.default.createElement(react_1.default.Fragment, null), extraInContentInput = react_1.default.createElement(react_1.default.Fragment, null), extraInLabel = react_1.default.createElement(react_1.default.Fragment, null), disabled = false, showIcon = true, error = undefined, errorWithIsChange = true, optional = false, optionalText = "(optional)", required = false, requiredText = "*", loader = false, autoComplete = false, useLoader = true, isChange: isChangeProps = undefined, onKeyDown, onWheel, iconPos = "right", inputMode, validator, maxLength = undefined, regExp = undefined, regExpReplace = "", onChangeEvent, showFocusInTarget = false, ...p }) => {
     const { _t } = (0, fenextjs_hook_2.use_T)({ ...p });
     const [isFocus, setIsFocus] = (0, react_1.useState)(false);
     const [statusInput, setStateInput] = (0, react_1.useState)("");
@@ -124,7 +124,13 @@ const InputText = ({ id = "", datalist = undefined, name = "", label = "", place
                 required && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement("small", { className: "fenext-input-required" }, _t(requiredText))))),
             react_1.default.createElement("div", { className: `fenext-input-content fenext-input-icon-pos-${iconPos} ${classNameContentInput}` },
-                react_1.default.createElement(TagInput, { id: id, name: name, list: datalist, type: type, ref: ref, className: `fenext-input-content-input ${classNameInput} fenext-input-validator-status-${FenextInputValidatorStatus} ${statusInput}`, placeholder: _t((isFocus ? placeholderFocus : placeholder) ??
+                react_1.default.createElement(TagInput, { id: id, name: name, list: datalist, type: type, ref: ref, className: `
+                            fenext-input-content-input
+                            fenext-input-validator-status-${FenextInputValidatorStatus}
+                            fenext-input-content-input-${showFocusInTarget ? "show-focus-target" : ""}
+                            ${classNameInput}
+                            ${statusInput}
+                        `, placeholder: _t((isFocus ? placeholderFocus : placeholder) ??
                         placeholder), value: (parseText ? parseText(valueInput) : valueInput) ??
                         valueInput, onChange: onChangeInput, onBlur: () => {
                         blurInput();

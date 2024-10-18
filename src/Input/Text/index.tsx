@@ -352,7 +352,7 @@ export const InputText = ({
 
     onChangeEvent,
 
-    showFocusInTarget=false,
+    showFocusInTarget = false,
 
     ...p
 }: InputTextProps) => {
@@ -539,7 +539,7 @@ export const InputText = ({
                         className={`
                             fenext-input-content-input
                             fenext-input-validator-status-${FenextInputValidatorStatus}
-                            fenext-input-content-input-${showFocusInTarget ? "show-focus-target":""}
+                            fenext-input-content-input-${showFocusInTarget ? "show-focus-target" : ""}
                             ${classNameInput}
                             ${statusInput}
                         `}

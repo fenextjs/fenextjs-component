@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { ErrorFenextjs } from "fenextjs-error";
 import { FenextjsValidatorClass } from "fenextjs-validator";
 import { _TProps } from "fenextjs-interface";
@@ -20,11 +20,11 @@ export interface InputTextClassProps {
     iconLoader?: any;
 }
 export interface InputTextBaseProps extends _TProps {
-    id?: any;
-    name?: any;
+    id?: string;
+    name?: string;
     datalist?: any;
     validator?: FenextjsValidatorClass;
-    label?: any;
+    label?: ReactNode;
     placeholder?: string;
     placeholderFocus?: string;
     defaultValue?: string | undefined | null;
@@ -35,10 +35,10 @@ export interface InputTextBaseProps extends _TProps {
     onEnter?: () => void;
     onChangeValidate?: (e: string) => Promise<string> | string;
     props?: any;
-    icon?: any;
+    icon?: ReactNode;
     iconPos?: "left" | "right";
-    extraInContentInput?: any;
-    extraInLabel?: any;
+    extraInContentInput?: ReactNode;
+    extraInLabel?: ReactNode;
     disabled?: boolean;
     showIcon?: boolean;
     className?: string;
@@ -60,7 +60,8 @@ export interface InputTextBaseProps extends _TProps {
     regExpReplace?: string;
     parseText?: (data: string) => string;
     onChangeEvent?: (e: InputTextChangeEvent) => void;
+    showFocusInTarget?: boolean;
 }
 export interface InputTextProps extends InputTextBaseProps, InputTextClassProps {
 }
-export declare const InputText: ({ id, datalist, name, label, placeholder, placeholderFocus, defaultValue, value, type, className, classNameLabel, classNameContentInput, classNameInput, classNameIcon, classNameLoaderValidate, iconLoader, onChange, onBlur, onEnter, onChangeValidate, parseText, props, icon, extraInContentInput, extraInLabel, disabled, showIcon, error, errorWithIsChange, optional, optionalText, required, requiredText, loader, autoComplete, useLoader, isChange: isChangeProps, onKeyDown, onWheel, iconPos, inputMode, validator, maxLength, regExp, regExpReplace, onChangeEvent, ...p }: InputTextProps) => React.JSX.Element;
+export declare const InputText: ({ id, datalist, name, label, placeholder, placeholderFocus, defaultValue, value, type, className, classNameLabel, classNameContentInput, classNameInput, classNameIcon, classNameLoaderValidate, iconLoader, onChange, onBlur, onEnter, onChangeValidate, parseText, props, icon, extraInContentInput, extraInLabel, disabled, showIcon, error, errorWithIsChange, optional, optionalText, required, requiredText, loader, autoComplete, useLoader, isChange: isChangeProps, onKeyDown, onWheel, iconPos, inputMode, validator, maxLength, regExp, regExpReplace, onChangeEvent, showFocusInTarget, ...p }: InputTextProps) => React.JSX.Element;

@@ -96,7 +96,7 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                         text: "...",
                     } })),
             react_1.default.createElement("div", { className: `fenext-input-phone-text ${classNamePhoneNumber}` },
-                react_1.default.createElement(Text_1.InputText, { ...classNameInputNumber, ...props, type: "text", onChange: onChangeData("number"), loader: !loadPhoneCodes || loader, disabled: !loadPhoneCodes || disabled, placeholder: placeholder, defaultValue: data?.number, value: value?.number, _t: _t, validator: validator?.getObjectValidator?.()?.number, inputMode: "numeric", regExpReplace: "", regExp: /[^0-9]/g, optional: false })),
+                react_1.default.createElement(Text_1.InputText, { ...classNameInputNumber, ...props, type: "text", onChange: onChangeData("number"), loader: !loadPhoneCodes || loader, disabled: !loadPhoneCodes || disabled, placeholder: placeholder, defaultValue: data?.number, value: value?.number, _t: _t, validator: validator?.getObjectValidator?.()?.number, inputMode: "numeric", regExpReplace: "", regExp: /[^0-9]/g, optional: false, error: undefined })),
             (props?.error || (errorFenext && isChange)) && (react_1.default.createElement(Error_1.ErrorComponent, { error: errorFenext ?? props?.error, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputPhone = InputPhone;
