@@ -22,6 +22,7 @@ export interface InputCardExpDateProps
         | "defaultValue"
         | "value"
         | "onChange"
+        | "inputMode"
     > {
     /**
      * The max length number card.
