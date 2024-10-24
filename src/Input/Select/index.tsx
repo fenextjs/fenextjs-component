@@ -184,6 +184,10 @@ export interface InputSelectBaseProps<T = any>
      */
     maxLengthShowOptions?: number;
     /**
+     * useItemMaxLengthShowOptions in select.
+     */
+    useItemMaxLengthShowOptions?: boolean;
+    /**
      * nItems in select.
      */
     nItems?: number;
@@ -258,6 +262,7 @@ export const InputSelect = <T = any,>({
     converterInSearchWithMaxLenght = false,
     nItems = undefined,
 
+    useItemMaxLengthShowOptions = true,
     maxLengthShowOptions = 20,
     itemMaxLengthShowOptions = {
         id: "fenext-item-max-length-show-options",
@@ -405,7 +410,7 @@ export const InputSelect = <T = any,>({
         if (typeSelect == "div") {
             list = [...OPTIONSSEARCH];
         }
-        if (maxLengthShowOptions) {
+        if (maxLengthShowOptions && useItemMaxLengthShowOptions) {
             nMax =
                 list.length > maxLengthShowOptions ||
                 (nItems ?? 0) > maxLengthShowOptions;
@@ -443,6 +448,7 @@ export const InputSelect = <T = any,>({
         typeSelect,
         OPTIONSSEARCH,
         options,
+        useItemMaxLengthShowOptions,
         maxLengthShowOptions,
         props?.disabled,
         itemMaxLengthShowOptions,

@@ -67,8 +67,7 @@ export const PaginationNPage = ({
         <div className={`fenext-pagination-npage ${className}`}>
             <InputSelect
                 {...props}
-                itemMaxLengthShowOptions={undefined}
-                maxLength={undefined}
+                useItemMaxLengthShowOptions={false}
                 options={listNpage}
                 onChange={onChangeNPage}
                 isSelectChangeText={false}
