@@ -27,7 +27,7 @@ const PaginationNPage = ({ className = "", defaultValue, listNpage = [
     },
 ], onChangeNPage, ...props }) => {
     return (react_1.default.createElement("div", { className: `fenext-pagination-npage ${className}` },
-        react_1.default.createElement(Select_1.InputSelect, { ...props, itemMaxLengthShowOptions: undefined, maxLength: undefined, options: listNpage, onChange: onChangeNPage, isSelectChangeText: false, defaultValue: defaultValue ?? listNpage[0] })));
+        react_1.default.createElement(Select_1.InputSelect, { ...props, useItemMaxLengthShowOptions: false, options: listNpage, onChange: onChangeNPage, isSelectChangeText: false, defaultValue: defaultValue ?? listNpage[0] })));
 };
 exports.PaginationNPage = PaginationNPage;
 //# sourceMappingURL=index.js.map
