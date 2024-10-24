@@ -15,7 +15,10 @@ export interface PaginationNPageClassProps {
  * The base props for the pagination component
  */
 export interface PaginationNPageBaseProps
-    extends Omit<InputSelectBaseProps, "options" | "onChange" | "nItems"> {
+    extends Omit<
+        InputSelectBaseProps,
+        "options" | "onChange" | "nItems" | "maxLengthShowOptions"
+    > {
     /**
      * List NPage for select.
      */
@@ -64,6 +67,8 @@ export const PaginationNPage = ({
         <div className={`fenext-pagination-npage ${className}`}>
             <InputSelect
                 {...props}
+                itemMaxLengthShowOptions={undefined}
+                maxLength={undefined}
                 options={listNpage}
                 onChange={onChangeNPage}
                 isSelectChangeText={false}

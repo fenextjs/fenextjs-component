@@ -19,11 +19,11 @@ const Profile: Story<InputSelectCityProps> = (args) => (
 export const Index = Profile.bind({});
 
 const args: InputSelectCityProps = {
-    country: {
-        "id": 144,
-        "text": "Afganistán",
-        "code": "AF"
-    },
+    // country: {
+    //     "id": 144,
+    //     "text": "Afganistán",
+    //     "code": "AF"
+    // },
 
 };
 

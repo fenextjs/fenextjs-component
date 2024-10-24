@@ -3,7 +3,7 @@ import { InputSelectBaseProps } from "../../Input/Select";
 export interface PaginationNPageClassProps {
     className?: string;
 }
-export interface PaginationNPageBaseProps extends Omit<InputSelectBaseProps, "options" | "onChange" | "nItems"> {
+export interface PaginationNPageBaseProps extends Omit<InputSelectBaseProps, "options" | "onChange" | "nItems" | "maxLengthShowOptions"> {
     listNpage?: InputSelectBaseProps["options"];
     onChangeNPage?: InputSelectBaseProps["onChange"];
 }
