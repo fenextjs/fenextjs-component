@@ -1,83 +1,61 @@
 export default {
-    id: "lava-lamp",
-    idStorybook: "component-lava-lamp",
-    name: "LavaLamp",
-    description: "El componente LavaLamp genera un fondo animado que simula el efecto de una lámpara de lava con múltiples elementos flotantes. Los elementos pueden personalizarse en estilo, tamaño, animación y cantidad.",
+    id: "link",
+    idStorybook: "component-link",
+    name: "Link",
+    description: "El componente Link es una representación personalizada de un enlace que utiliza Next.js `Link` para manejar la navegación entre páginas. Soporta propiedades específicas para controlar el comportamiento del enlace, como el destino, la política de referenciación y la clase CSS para personalización adicional.",
     props: [
-        {
-            id: "nItems",
-            type: "number",
-            require: false,
-            default: "20",
-            description: "Número de elementos flotantes en la lámpara de lava.",
-        },
-        {
-            id: "styles",
-            type: "CSSProperties",
-            require: false,
-            default: `{
-                width: "100%",
-                height: "500px",
-                background: "linear-gradient(45deg,var(--fenext-color-blue) 0%,var(--fenext-color-teal) 100%)"
-            }`,
-            description: "Estilos generales aplicados al contenedor de la lámpara de lava.",
-        },
-        {
-            id: "stylesElement",
-            type: "LavaLampStylesElement[]",
-            require: false,
-            default: `[
-                {
-                    width: "150px",
-                    aspectRatio: "2/1.5",
-                    borderRadius: "30% 70% 70% 30% / 68% 30% 70% 32% ",
-                    background: "linear-gradient(45deg,var(--fenext-color-blue) 0%,var(--fenext-color-teal) 100%)",
-                    animationTimingFunction: "ease",
-                },
-                {
-                    width: "100px",
-                    aspectRatio: "1 / 1",
-                    borderRadius: "30% 70% 44% 56% / 23% 46% 54% 77% ",
-                    background: "linear-gradient(75deg,var(--fenext-color-info) 0%,var(--fenext-color-indigo) 100%)",
-                    animationTimingFunction: "ease-out",
-                },
-                {
-                    width: "100px",
-                    aspectRatio: "1 / 1",
-                    borderRadius: "87% 13% 65% 35% / 46% 46% 54% 54% ",
-                    background: "linear-gradient(135deg,var(--fenext-color-cyan) 0%,var(--fenext-color-purple) 100%)",
-                    animationTimingFunction: "linear",
-                },
-            ]`,
-            description: "Estilos aplicados a los elementos individuales flotantes en la lámpara de lava.",
-        },
-        {
-            id: "ranges",
-            type: "LavaLampRangeStylesProps",
-            require: false,
-            default: "{}",
-            description: "Propiedades de rango aleatorio para determinar el movimiento, escala y posición de los elementos.",
-        },
         {
             id: "className",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS adicional para personalizar el contenedor del componente.",
+            description: "Clase CSS para personalizar el estilo del enlace.",
+        },
+        {
+            id: "children",
+            type: "ReactNode",
+            require: false,
+            default: "'Link'",
+            description: "Contenido o texto que se muestra dentro del enlace.",
+        },
+        {
+            id: "target",
+            type: "'_self' | '_blank' | '_parent' | '_top'",
+            require: false,
+            default: "'_self'",
+            description: "Define el destino donde se abrirá el enlace.",
+        },
+        {
+            id: "referrerPolicy",
+            type: "string",
+            require: false,
+            default: "''",
+            description: "Política de referencia que se debe usar al navegar a través del enlace.",
+        },
+        {
+            id: "rel",
+            type: "string",
+            require: false,
+            default: "''",
+            description: "Especifica la relación entre el documento actual y el enlace.",
+        },
+        {
+            id: "href",
+            type: "string",
+            require: true,
+            default: "''",
+            description: "URL a la que se navega cuando se hace clic en el enlace.",
         }
     ],
+    extras: [],
     useExample: [
         {
-            text: "Uso básico",
-            content: `<LavaLamp />`
+            text: "Enlace básico",
+            content: `<Link href="/about">About Us</Link>`
         },
         {
-            text: "Con estilos personalizados",
-            content: `<LavaLamp styles={{ width: '80%', height: '600px' }} />`
-        },
-        {
-            text: "Con elementos personalizados",
-            content: `<LavaLamp stylesElement={[{ width: '200px', background: 'red' }]} />`
+            text: "Enlace con apertura en nueva pestaña",
+            content: `<Link href="/contact" target="_blank">Contact Us</Link>`
         }
     ]
 };
