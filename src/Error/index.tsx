@@ -36,7 +36,7 @@ export interface ErrorComponentClassProps {
  */
 export interface ErrorComponentProps
     extends ErrorComponentBaseProps,
-    ErrorComponentClassProps { }
+        ErrorComponentClassProps {}
 
 export const ErrorComponent = ({
     error,
