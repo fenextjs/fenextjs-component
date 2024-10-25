@@ -36,7 +36,7 @@ export interface ErrorComponentClassProps {
  */
 export interface ErrorComponentProps
     extends ErrorComponentBaseProps,
-        ErrorComponentClassProps {}
+    ErrorComponentClassProps { }
 
 export const ErrorComponent = ({
     error,
@@ -47,27 +47,6 @@ export const ErrorComponent = ({
     ...props
 }: ErrorComponentProps) => {
     const { _t } = use_T({ ...props });
-    const content = useMemo(() => {
-        return (
-            <>
-                {error ? (
-                    <>
-                        {_t(error?.msg ?? "")}
-                        {useErrorInput && error?.input && (
-                            <>
-                                {" "}
-                                <span className="fenext-error-input">
-                                    {_t(`[${error?.input ?? ""}]`)}
-                                </span>
-                            </>
-                        )}
-                    </>
-                ) : (
-                    _t(children)
-                )}
-            </>
-        );
-    }, [error, children, useErrorInput]);
 
     const dataError = useMemo(() => {
         const err = useDataError ? error?.data : undefined;
@@ -79,7 +58,21 @@ export const ErrorComponent = ({
             className={`fenext-error ${className} fenext-error-${error?.code}`}
             data-error={dataError}
         >
-            {content}
+            {error ? (
+                <>
+                    {_t(error?.msg ?? "")}
+                    {useErrorInput && error?.input && (
+                        <>
+                            {" "}
+                            <span className="fenext-error-input">
+                                {_t(`[${error?.input ?? ""}]`)}
+                            </span>
+                        </>
+                    )}
+                </>
+            ) : (
+                _t(children)
+            )}
         </div>
     );
 };
