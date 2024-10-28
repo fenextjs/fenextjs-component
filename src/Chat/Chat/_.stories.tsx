@@ -23,8 +23,8 @@ const User2: Partial<UserProps> = {
     name: "user2",
 };
 
-export const Primary = Chat_.bind({});
-Primary.args = {
+export const Index = Chat_.bind({});
+Index.args = {
     chatFormSendMessage: {},
     chatMessage: new Array(20).fill(1).map((ele, i) => {
         return {

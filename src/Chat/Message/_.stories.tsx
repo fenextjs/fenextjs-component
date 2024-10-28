@@ -8,5 +8,5 @@ export default {
 } as Meta;
 
 const ChatMessage_: Story<ChatMessageProps> = (args) => <ChatMessage {...args} />;
-export const Primary = ChatMessage_.bind({});
-Primary.args = {} as ChatMessageProps;
+export const Index = ChatMessage_.bind({});
+Index.args = {} as ChatMessageProps;

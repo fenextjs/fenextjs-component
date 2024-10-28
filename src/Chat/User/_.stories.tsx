@@ -8,5 +8,5 @@ export default {
 } as Meta;
 
 const ChatUser_: Story<ChatUserProps> = (args) => <ChatUser {...args} />;
-export const Primary = ChatUser_.bind({});
-Primary.args = {} as ChatUserProps;
+export const Index = ChatUser_.bind({});
+Index.args = {} as ChatUserProps;

@@ -8,5 +8,5 @@ export default {
 } as Meta;
 
 const ChatFormSendMessage_: Story<ChatFormSendMessageProps> = (args) => <ChatFormSendMessage {...args} />;
-export const Primary = ChatFormSendMessage_.bind({});
-Primary.args = {} as ChatFormSendMessageProps;
+export const Index = ChatFormSendMessage_.bind({});
+Index.args = {} as ChatFormSendMessageProps;
