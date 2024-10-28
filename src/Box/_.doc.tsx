@@ -1,6 +1,6 @@
 export default {
     id: "box",
-    idStorybook: "box",
+    idStorybook: "box-box",
     name: "Box",
     description:
         "El componente Box actúa como un contenedor básico que encapsula su contenido, permitiendo aplicar estilos personalizados mediante clases adicionales.",
