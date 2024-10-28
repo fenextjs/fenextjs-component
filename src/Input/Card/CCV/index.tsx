@@ -5,7 +5,7 @@ import { InputText, InputTextProps } from "../../Text";
  * Props for InputCardCCV component.
  */
 export interface InputCardCCVProps
-    extends Omit<InputTextProps, "onChangeValidate" | "icon" | "type"> {}
+    extends Omit<InputTextProps, "onChangeValidate" | "icon" | "type"|"maxLength"|"regExpReplace"|"regExp"|"inputMode"|"type"> {}
 
 export const InputCardCCV = ({
     placeholder = "XXX",
