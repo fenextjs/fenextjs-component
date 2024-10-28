@@ -2,7 +2,8 @@ export default {
     id: "input-range",
     idStorybook: "component-input-range",
     name: "InputRange",
-    description: "El componente InputRange permite la selección de un valor o rango de valores dentro de un intervalo definido. Se puede personalizar con clases CSS y manejar cambios en los valores mínimo, máximo o intermedio.",
+    description:
+        "El componente InputRange permite la selección de un valor o rango de valores dentro de un intervalo definido. Se puede personalizar con clases CSS y manejar cambios en los valores mínimo, máximo o intermedio.",
     props: [
         {
             id: "value",
@@ -50,20 +51,23 @@ export default {
             id: "onChange",
             type: "function",
             require: false,
-            description: "Función que se ejecuta cuando el valor del input cambia.",
+            description:
+                "Función que se ejecuta cuando el valor del input cambia.",
         },
         {
             id: "onChangeRange",
             type: "function",
             require: false,
-            description: "Función que se ejecuta cuando cambia el rango de valores del input.",
+            description:
+                "Función que se ejecuta cuando cambia el rango de valores del input.",
         },
         {
             id: "useRange",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si se debe usar un rango de valores en lugar de un único valor.",
+            description:
+                "Indica si se debe usar un rango de valores en lugar de un único valor.",
         },
         {
             id: "min",
@@ -91,7 +95,8 @@ export default {
             type: "'top' | 'bottom' | 'none'",
             require: false,
             default: "'top'",
-            description: "Posición en la que se muestra el valor numérico del input.",
+            description:
+                "Posición en la que se muestra el valor numérico del input.",
         },
         {
             id: "className",
@@ -140,20 +145,20 @@ export default {
             type: "string",
             require: false,
             description: "Clase CSS para las líneas del input.",
-        }
+        },
     ],
     useExample: [
         {
             text: "InputRange básico",
-            content: `<InputRange />`
+            content: `<InputRange />`,
         },
         {
             text: "InputRange con rango activado",
-            content: `<InputRange useRange={true} />`
+            content: `<InputRange useRange={true} />`,
         },
         {
             text: "InputRange con valor personalizado",
-            content: `<InputRange value={50} />`
-        }
-    ]
+            content: `<InputRange value={50} />`,
+        },
+    ],
 };

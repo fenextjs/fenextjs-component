@@ -2,14 +2,16 @@ export default {
     id: "input-number",
     idStorybook: "component-input-number",
     name: "InputNumber",
-    description: "El componente InputNumber permite a los usuarios ingresar un valor numérico con opciones para aumentar o disminuir el valor usando botones, así como la posibilidad de validación.",
+    description:
+        "El componente InputNumber permite a los usuarios ingresar un valor numérico con opciones para aumentar o disminuir el valor usando botones, así como la posibilidad de validación.",
     props: [
         {
             id: "value",
             type: "number | ''",
             require: false,
             default: "''",
-            description: "Valor actual del input. Puede ser un número o una cadena vacía.",
+            description:
+                "Valor actual del input. Puede ser un número o una cadena vacía.",
         },
         {
             id: "defaultValue",
@@ -23,14 +25,16 @@ export default {
             type: "(v: number | '') => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta al cambiar el valor del input.",
+            description:
+                "Función que se ejecuta al cambiar el valor del input.",
         },
         {
             id: "onChangeValidate",
             type: "(v: number | '') => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta al perder el foco y después de validar el valor.",
+            description:
+                "Función que se ejecuta al perder el foco y después de validar el valor.",
         },
         {
             id: "min",
@@ -51,7 +55,8 @@ export default {
             type: "boolean",
             require: false,
             default: "false",
-            description: "Determina si se deben mostrar los botones de aumento/disminución.",
+            description:
+                "Determina si se deben mostrar los botones de aumento/disminución.",
         },
         {
             id: "disabledScroll",
@@ -78,19 +83,19 @@ export default {
     useExample: [
         {
             text: "Uso básico del componente InputNumber",
-            content: `<InputNumber onChange={(value) => console.log(value)} />`
+            content: `<InputNumber onChange={(value) => console.log(value)} />`,
         },
         {
             text: "Uso de InputNumber con validación",
-            content: `<InputNumber onChangeValidate={(value) => console.log('Validated:', value)} />`
+            content: `<InputNumber onChangeValidate={(value) => console.log('Validated:', value)} />`,
         },
         {
             text: "Uso de InputNumber con límites",
-            content: `<InputNumber min={0} max={100} onChange={(value) => console.log(value)} />`
+            content: `<InputNumber min={0} max={100} onChange={(value) => console.log(value)} />`,
         },
         {
             text: "Uso de InputNumber con botones de aumento/disminución",
-            content: `<InputNumber useBtnIncreaseDecrease={true} onChange={(value) => console.log(value)} />`
+            content: `<InputNumber useBtnIncreaseDecrease={true} onChange={(value) => console.log(value)} />`,
         },
-    ]
+    ],
 };

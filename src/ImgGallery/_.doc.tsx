@@ -2,7 +2,8 @@ export default {
     id: "img-gallery",
     idStorybook: "component-img-gallery",
     name: "ImgGallery",
-    description: "El componente ImgGallery muestra una galería de imágenes con la opción de cargar más imágenes y visualizar cada imagen en un modal con un deslizador.",
+    description:
+        "El componente ImgGallery muestra una galería de imágenes con la opción de cargar más imágenes y visualizar cada imagen en un modal con un deslizador.",
     props: [
         {
             id: "imgs",
@@ -22,29 +23,33 @@ export default {
             type: "Omit<ButtonProps, 'onClick'>",
             require: false,
             default: "{ children: 'Hidden pictures' }",
-            description: "Propiedades del botón para ocultar imágenes adicionales.",
+            description:
+                "Propiedades del botón para ocultar imágenes adicionales.",
         },
         {
             id: "loader",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si el componente está en estado de carga, mostrando un cargador en lugar de las imágenes.",
+            description:
+                "Indica si el componente está en estado de carga, mostrando un cargador en lugar de las imágenes.",
         },
         {
             id: "nLoader",
             type: "number",
             require: false,
             default: "5",
-            description: "Número de elementos que mostrarán el loader mientras se cargan las imágenes.",
+            description:
+                "Número de elementos que mostrarán el loader mientras se cargan las imágenes.",
         },
         {
             id: "className",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el contenedor de la galería.",
-        }
+            description:
+                "Clase CSS para personalizar el contenedor de la galería.",
+        },
     ],
     useExample: [
         {
@@ -58,6 +63,6 @@ export default {
         {
             text: "Galería en estado de carga",
             content: `<ImgGallery loader={true} nLoader={3} />`,
-        }
-    ]
+        },
+    ],
 };

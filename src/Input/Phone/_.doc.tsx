@@ -2,56 +2,64 @@ export default {
     id: "input-phone",
     idStorybook: "form-input-phone",
     name: "InputPhone",
-    description: "El componente InputPhone permite ingresar y validar números de teléfono, incluyendo un campo de selección de código de país y el número de teléfono propiamente dicho.",
+    description:
+        "El componente InputPhone permite ingresar y validar números de teléfono, incluyendo un campo de selección de código de país y el número de teléfono propiamente dicho.",
     props: [
         {
             id: "classNameSelectCode",
             type: "InputSelectClassProps",
             require: false,
             default: "undefined",
-            description: "Clase CSS para personalizar el contenedor del campo de selección del código de país.",
+            description:
+                "Clase CSS para personalizar el contenedor del campo de selección del código de país.",
         },
         {
             id: "classNameInputNumber",
             type: "InputTextClassProps",
             require: false,
             default: "undefined",
-            description: "Clase CSS para personalizar el contenedor del campo de número de teléfono.",
+            description:
+                "Clase CSS para personalizar el contenedor del campo de número de teléfono.",
         },
         {
             id: "classNamePhone",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el contenedor principal del componente InputPhone.",
+            description:
+                "Clase CSS para personalizar el contenedor principal del componente InputPhone.",
         },
         {
             id: "classNamePhoneCode",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el contenedor del código de país.",
+            description:
+                "Clase CSS para personalizar el contenedor del código de país.",
         },
         {
             id: "classNamePhoneLabel",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el label del componente InputPhone.",
+            description:
+                "Clase CSS para personalizar el label del componente InputPhone.",
         },
         {
             id: "classNamePhoneNumber",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el contenedor del número de teléfono.",
+            description:
+                "Clase CSS para personalizar el contenedor del número de teléfono.",
         },
         {
             id: "classNameError",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el contenedor del mensaje de error.",
+            description:
+                "Clase CSS para personalizar el contenedor del mensaje de error.",
         },
         {
             id: "disabledSelectCode",
@@ -100,7 +108,8 @@ export default {
             type: "function",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta al cambiar el valor del número de teléfono.",
+            description:
+                "Función que se ejecuta al cambiar el valor del número de teléfono.",
         },
         {
             id: "validator",

@@ -63,7 +63,8 @@ export default {
             type: "(bounds: google.maps.LatLngBounds | undefined) => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta cuando los límites del mapa cambian.",
+            description:
+                "Función que se ejecuta cuando los límites del mapa cambian.",
         },
         // Props adicionales heredadas de GoogleMapProps pueden ser agregadas aquí si es necesario.
     ],

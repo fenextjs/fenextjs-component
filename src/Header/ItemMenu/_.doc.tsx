@@ -2,7 +2,8 @@ export default {
     id: "item-menu",
     idStorybook: "component-item-menu",
     name: "ItemMenu",
-    description: "El componente ItemMenu representa un elemento de menú que puede contener enlaces, iconos y submenús colapsables. Es útil para crear menús anidados o navegaciones que requieren interacción jerárquica.",
+    description:
+        "El componente ItemMenu representa un elemento de menú que puede contener enlaces, iconos y submenús colapsables. Es útil para crear menús anidados o navegaciones que requieren interacción jerárquica.",
     props: [
         {
             id: "url",
@@ -61,13 +62,15 @@ export default {
             type: "boolean",
             require: false,
             default: "true",
-            description: "Determina si el componente se renderiza como un enlace.",
+            description:
+                "Determina si el componente se renderiza como un enlace.",
         },
         {
             id: "onClick",
             type: "function",
             require: false,
-            description: "Función que se ejecuta al hacer clic en el ítem de menú.",
+            description:
+                "Función que se ejecuta al hacer clic en el ítem de menú.",
         },
         {
             id: "className",
@@ -96,20 +99,20 @@ export default {
             require: false,
             default: "''",
             description: "Clase CSS para el texto del ítem.",
-        }
+        },
     ],
     useExample: [
         {
             text: "Uso básico",
-            content: `<ItemMenu url="/home" text="Inicio" />`
+            content: `<ItemMenu url="/home" text="Inicio" />`,
         },
         {
             text: "Ítem de menú con submenús",
-            content: `<ItemMenu url="/services" text="Servicios" subItems={[{ url: "/web", text: "Desarrollo Web" }, { url: "/app", text: "Aplicaciones Móviles" }]} />`
+            content: `<ItemMenu url="/services" text="Servicios" subItems={[{ url: "/web", text: "Desarrollo Web" }, { url: "/app", text: "Aplicaciones Móviles" }]} />`,
         },
         {
             text: "Ítem de menú con icono y colapso activado",
-            content: `<ItemMenu url="/profile" text="Perfil" icon={<UserIcon />} defaultActive={true} />`
-        }
-    ]
+            content: `<ItemMenu url="/profile" text="Perfil" icon={<UserIcon />} defaultActive={true} />`,
+        },
+    ],
 };

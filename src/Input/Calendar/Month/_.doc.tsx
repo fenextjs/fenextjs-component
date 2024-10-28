@@ -2,38 +2,44 @@ export default {
     id: "input-calendar-month",
     idStorybook: "component-input-calendar-month",
     name: "InputCalendarMonth",
-    description: "El componente InputCalendarMonth permite seleccionar fechas en un formato de calendario mensual. Puede usarse tanto para una selección normal como para un rango de fechas.",
+    description:
+        "El componente InputCalendarMonth permite seleccionar fechas en un formato de calendario mensual. Puede usarse tanto para una selección normal como para un rango de fechas.",
     props: [
         {
             id: "type",
             type: "'normal' | 'range'",
             require: false,
             default: "'normal'",
-            description: "Define si el calendario es para una selección única ('normal') o un rango de fechas ('range').",
+            description:
+                "Define si el calendario es para una selección única ('normal') o un rango de fechas ('range').",
         },
         {
             id: "date",
             type: "FenextjsDate",
             require: false,
-            description: "La fecha actual del calendario, utilizada para mostrar el mes y año.",
+            description:
+                "La fecha actual del calendario, utilizada para mostrar el mes y año.",
         },
         {
             id: "onPreMonth",
             type: "() => void",
             require: false,
-            description: "Función que se ejecuta al hacer clic en el botón para mostrar el mes anterior.",
+            description:
+                "Función que se ejecuta al hacer clic en el botón para mostrar el mes anterior.",
         },
         {
             id: "onNextMonth",
             type: "() => void",
             require: false,
-            description: "Función que se ejecuta al hacer clic en el botón para mostrar el mes siguiente.",
+            description:
+                "Función que se ejecuta al hacer clic en el botón para mostrar el mes siguiente.",
         },
         {
             id: "selectDate",
             type: "Date | undefined",
             require: true,
-            description: "La fecha actualmente seleccionada en el modo 'normal'.",
+            description:
+                "La fecha actualmente seleccionada en el modo 'normal'.",
         },
         {
             id: "selectDateRange",
@@ -45,25 +51,29 @@ export default {
             id: "setSelectDate",
             type: "(d: Date) => void",
             require: true,
-            description: "Función para actualizar la fecha seleccionada en el modo 'normal'.",
+            description:
+                "Función para actualizar la fecha seleccionada en el modo 'normal'.",
         },
         {
             id: "setSelectDateRange",
             type: "(d: (d: Date[]) => Date[]) => void",
             require: true,
-            description: "Función para actualizar el rango de fechas en el modo 'range'.",
+            description:
+                "Función para actualizar el rango de fechas en el modo 'range'.",
         },
         {
             id: "dataNSelect",
             type: "boolean",
             require: true,
-            description: "Indica si se ha seleccionado la primera fecha en el modo 'range'.",
+            description:
+                "Indica si se ha seleccionado la primera fecha en el modo 'range'.",
         },
         {
             id: "setDataNSelect",
             type: "(d: (d: boolean) => boolean) => void",
             require: true,
-            description: "Función para actualizar el estado de la selección de fechas en el modo 'range'.",
+            description:
+                "Función para actualizar el estado de la selección de fechas en el modo 'range'.",
         },
         {
             id: "min",
@@ -76,7 +86,7 @@ export default {
             type: "Date",
             require: false,
             description: "Fecha máxima seleccionable.",
-        }
+        },
     ],
     useExample: [
         {
@@ -86,6 +96,6 @@ export default {
         {
             text: "Calendario con selección de rango",
             content: `<InputCalendarMonth type="range" date={new FenextjsDate()} selectDate={undefined} setSelectDate={() => {}} selectDateRange={selectedRange} setSelectDateRange={setSelectedRange} dataNSelect={true} setDataNSelect={setNSelect} />`,
-        }
-    ]
+        },
+    ],
 };
