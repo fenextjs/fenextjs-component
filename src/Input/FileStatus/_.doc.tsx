@@ -2,21 +2,24 @@ export default {
     id: "input-file-status",
     idStorybook: "component-input-file-status",
     name: "InputFileStatus",
-    description: "El componente InputFileStatus combina la funcionalidad de carga de archivos con un estado visual, mostrando diferentes iconos y mensajes según el estado del archivo (Aprobado, Rechazado, Pendiente).",
+    description:
+        "El componente InputFileStatus combina la funcionalidad de carga de archivos con un estado visual, mostrando diferentes iconos y mensajes según el estado del archivo (Aprobado, Rechazado, Pendiente).",
     props: [
         {
             id: "title",
             type: "React.ReactNode",
             require: false,
             default: "'Drag and drop here'",
-            description: "Título del componente que se muestra cuando no hay archivos cargados.",
+            description:
+                "Título del componente que se muestra cuando no hay archivos cargados.",
         },
         {
             id: "text",
             type: "React.ReactNode",
             require: false,
             default: "'Drag and drop your file or template here.'",
-            description: "Texto que se muestra para guiar al usuario sobre la acción que debe realizar.",
+            description:
+                "Texto que se muestra para guiar al usuario sobre la acción que debe realizar.",
         },
         {
             id: "icon",
@@ -37,7 +40,8 @@ export default {
             type: "React.ReactNode",
             require: false,
             default: "<LoaderSpinner />",
-            description: "Ícono que se muestra mientras se está cargando el archivo.",
+            description:
+                "Ícono que se muestra mientras se está cargando el archivo.",
         },
         {
             id: "className",
@@ -51,14 +55,16 @@ export default {
             type: "(data: FileProps) => Promise<FileProps>",
             require: true,
             default: "undefined",
-            description: "Función que se ejecuta para manejar la carga del archivo.",
+            description:
+                "Función que se ejecuta para manejar la carga del archivo.",
         },
         {
             id: "contentByStatus",
             type: "InputFileStatusContentByStatus",
             require: false,
             default: "{}",
-            description: "Contenido específico para cada estado del archivo, que incluye título, ícono y etiqueta.",
+            description:
+                "Contenido específico para cada estado del archivo, que incluye título, ícono y etiqueta.",
         },
         // ...Object.keys(InputFileBaseProps).map(key => ({
         //     id: key,
@@ -71,15 +77,15 @@ export default {
     useExample: [
         {
             text: "Carga de archivo con estado de éxito",
-            content: `<InputFileStatus onUploadFile={async (file) => { /* Lógica de carga */ return file; }} />`
+            content: `<InputFileStatus onUploadFile={async (file) => { /* Lógica de carga */ return file; }} />`,
         },
         {
             text: "Carga de archivo con gestión de errores",
-            content: `<InputFileStatus onUploadFile={async (file) => { throw new Error('Error de carga'); }} />`
+            content: `<InputFileStatus onUploadFile={async (file) => { throw new Error('Error de carga'); }} />`,
         },
         {
             text: "Componente de carga con botón personalizado",
-            content: `<InputFileStatus btn={<Button>Subir Archivo</Button>} onUploadFile={async (file) => { /* Lógica de carga */ return file; }} />`
+            content: `<InputFileStatus btn={<Button>Subir Archivo</Button>} onUploadFile={async (file) => { /* Lógica de carga */ return file; }} />`,
         },
-    ]
+    ],
 };

@@ -2,13 +2,14 @@ export default {
     id: "stepscircle",
     idStorybook: "component-stepscircle",
     name: "StepsCircle",
-    description: "El componente StepsCircle presenta una serie de pasos circulares que se pueden recorrer, proporcionando opciones de personalización y control de pasos.",
+    description:
+        "El componente StepsCircle presenta una serie de pasos circulares que se pueden recorrer, proporcionando opciones de personalización y control de pasos.",
     props: [
         {
             id: "className",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para el contenedor del componente.",
         },
         {
@@ -16,7 +17,8 @@ export default {
             type: "{ children?: ReactNode; onClick?: () => void; }[]",
             require: false,
             default: "[]",
-            description: "Lista de elementos de paso con contenido y funciones de clic opcionales.",
+            description:
+                "Lista de elementos de paso con contenido y funciones de clic opcionales.",
         },
         {
             id: "defaultStep",
@@ -38,20 +40,20 @@ export default {
             require: false,
             default: "false",
             description: "Deshabilita la interacción con el componente.",
-        }
+        },
     ],
     useExample: [
         {
             text: "Ejemplo básico",
-            content: `<StepsCircle items={[{ children: <div>Paso 1</div> }, { children: <div>Paso 2</div> }]} />`
+            content: `<StepsCircle items={[{ children: <div>Paso 1</div> }, { children: <div>Paso 2</div> }]} />`,
         },
         {
             text: "Con paso predeterminado",
-            content: `<StepsCircle items={[{ children: <div>Inicio</div> }, { children: <div>Fin</div> }]} defaultStep={0} />`
+            content: `<StepsCircle items={[{ children: <div>Inicio</div> }, { children: <div>Fin</div> }]} defaultStep={0} />`,
         },
         {
             text: "Ejemplo con deshabilitación",
-            content: `<StepsCircle disable={true} items={[{ children: <div>Paso deshabilitado</div> }]} />`
-        }
-    ]
+            content: `<StepsCircle disable={true} items={[{ children: <div>Paso deshabilitado</div> }]} />`,
+        },
+    ],
 };

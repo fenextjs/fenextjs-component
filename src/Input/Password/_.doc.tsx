@@ -17,7 +17,8 @@ export default {
             type: "(value: string) => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta al cambiar el valor del input.",
+            description:
+                "Función que se ejecuta al cambiar el valor del input.",
         },
         {
             id: "placeholder",
@@ -31,7 +32,8 @@ export default {
             type: "ReactNode",
             require: false,
             default: "undefined",
-            description: "Ícono utilizado para alternar entre el texto visible y la contraseña.",
+            description:
+                "Ícono utilizado para alternar entre el texto visible y la contraseña.",
         },
         {
             id: "className",
@@ -59,8 +61,9 @@ export default {
             type: "boolean",
             require: false,
             default: "false",
-            description: "Determina si el input debe recibir foco automáticamente al cargarse.",
-        }
+            description:
+                "Determina si el input debe recibir foco automáticamente al cargarse.",
+        },
     ],
     extras: [
         {
@@ -68,7 +71,7 @@ export default {
             title: "Alternancia de visibilidad",
             description:
                 "El componente incluye un ícono que permite alternar entre mostrar el texto de la contraseña o mantenerlo oculto. El estado de visibilidad cambia entre 'text' y 'password' al hacer clic en el ícono.",
-        }
+        },
     ],
     useExample: [
         {
@@ -82,6 +85,6 @@ export default {
         {
             text: "Personalización de clase",
             content: `<InputPassword className="custom-input" />`,
-        }
+        },
     ],
 };

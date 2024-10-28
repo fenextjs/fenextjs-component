@@ -2,21 +2,24 @@ export default {
     id: "input-number-count",
     idStorybook: "component-input-number-count",
     name: "InputNumberCount",
-    description: "El componente InputNumberCount permite la entrada de números con soporte para validaciones, símbolos de inicio y final, y controles de mínimo y máximo.",
+    description:
+        "El componente InputNumberCount permite la entrada de números con soporte para validaciones, símbolos de inicio y final, y controles de mínimo y máximo.",
     props: [
         {
             id: "symbolInit",
             type: "string",
             require: false,
             default: "'$'",
-            description: "El símbolo que se muestra al inicio del valor numérico en el campo.",
+            description:
+                "El símbolo que se muestra al inicio del valor numérico en el campo.",
         },
         {
             id: "symbolFinal",
             type: "string",
             require: false,
             default: "''",
-            description: "El símbolo que se muestra al final del valor numérico en el campo.",
+            description:
+                "El símbolo que se muestra al final del valor numérico en el campo.",
         },
         {
             id: "defaultValue",
@@ -37,7 +40,8 @@ export default {
             type: "(v: number | '') => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta cuando el valor del input cambia.",
+            description:
+                "Función que se ejecuta cuando el valor del input cambia.",
         },
         {
             id: "min",
@@ -72,21 +76,24 @@ export default {
             type: "string",
             require: false,
             default: "undefined",
-            description: "Mensaje de error cuando el valor es menor que el mínimo permitido.",
+            description:
+                "Mensaje de error cuando el valor es menor que el mínimo permitido.",
         },
         {
             id: "maxError",
             type: "string",
             require: false,
             default: "undefined",
-            description: "Mensaje de error cuando el valor es mayor que el máximo permitido.",
+            description:
+                "Mensaje de error cuando el valor es mayor que el máximo permitido.",
         },
         {
             id: "validator",
             type: "FenextjsValidatorClass<number>",
             require: false,
             default: "undefined",
-            description: "Instancia de FenextjsValidator para validaciones personalizadas.",
+            description:
+                "Instancia de FenextjsValidator para validaciones personalizadas.",
         },
         {
             id: "optionsParseNumber",

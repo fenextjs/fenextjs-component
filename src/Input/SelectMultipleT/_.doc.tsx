@@ -27,7 +27,8 @@ export default {
             id: "onChange",
             type: "(v?: T[]) => void",
             require: false,
-            description: "Función que se ejecuta cuando cambian los valores seleccionados.",
+            description:
+                "Función que se ejecuta cuando cambian los valores seleccionados.",
         },
         {
             id: "onParse",

@@ -2,7 +2,8 @@ export default {
     id: "input-select",
     idStorybook: "component-input-select",
     name: "InputSelect",
-    description: "El componente InputSelect proporciona una interfaz interactiva que permite a los usuarios seleccionar opciones de una lista, con la posibilidad de búsqueda y personalización avanzada.",
+    description:
+        "El componente InputSelect proporciona una interfaz interactiva que permite a los usuarios seleccionar opciones de una lista, con la posibilidad de búsqueda y personalización avanzada.",
     props: [
         {
             id: "options",
@@ -15,7 +16,8 @@ export default {
             type: "function",
             require: false,
             default: "undefined",
-            description: "Función personalizada para filtrar las opciones del select.",
+            description:
+                "Función personalizada para filtrar las opciones del select.",
         },
         {
             id: "showOptions",
@@ -64,7 +66,8 @@ export default {
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si se debe usar una opción traducida (useTOption).",
+            description:
+                "Indica si se debe usar una opción traducida (useTOption).",
         },
         {
             id: "value",
@@ -76,13 +79,15 @@ export default {
             id: "noResult",
             type: "InputSelectItemOptionBaseProps",
             require: false,
-            description: "Valor que se muestra cuando no hay resultados en la búsqueda.",
+            description:
+                "Valor que se muestra cuando no hay resultados en la búsqueda.",
         },
         {
             id: "loaderOption",
             type: "InputSelectItemOptionBaseProps",
             require: false,
-            description: "Opción que se muestra mientras se cargan las opciones.",
+            description:
+                "Opción que se muestra mientras se cargan las opciones.",
         },
         {
             id: "selected",
@@ -94,13 +99,15 @@ export default {
             id: "create",
             type: "InputSelectItemOptionBaseProps",
             require: false,
-            description: "Opción que permite crear un nuevo valor en el select.",
+            description:
+                "Opción que permite crear un nuevo valor en el select.",
         },
         {
             id: "onCreate",
             type: "function",
             require: false,
-            description: "Función que se ejecuta cuando se crea un nuevo valor.",
+            description:
+                "Función que se ejecuta cuando se crea un nuevo valor.",
         },
         {
             id: "isSelectClearText",
@@ -120,32 +127,37 @@ export default {
             id: "onChange",
             type: "function",
             require: false,
-            description: "Función que se ejecuta cuando cambia el valor seleccionado.",
+            description:
+                "Función que se ejecuta cuando cambia el valor seleccionado.",
         },
         {
             id: "onChangeData",
             type: "function",
             require: false,
-            description: "Función que se ejecuta cuando cambia el valor de los datos seleccionados.",
+            description:
+                "Función que se ejecuta cuando cambia el valor de los datos seleccionados.",
         },
         {
             id: "onChangeText",
             type: "function",
             require: false,
-            description: "Función que se ejecuta cuando cambia el texto del select.",
+            description:
+                "Función que se ejecuta cuando cambia el texto del select.",
         },
         {
             id: "onChangeValidate",
             type: "function",
             require: false,
-            description: "Función personalizada de validación que se ejecuta cuando cambia el valor del select.",
+            description:
+                "Función personalizada de validación que se ejecuta cuando cambia el valor del select.",
         },
         {
             id: "iconCloseMovil",
             type: "ReactNode",
             require: false,
             default: "<Cancel />",
-            description: "Ícono que se muestra para cerrar el select en vista móvil.",
+            description:
+                "Ícono que se muestra para cerrar el select en vista móvil.",
         },
         {
             id: "clearContent",
@@ -173,7 +185,8 @@ export default {
             type: "boolean",
             require: false,
             default: "false",
-            description: "Cambia al valor de la primera opción cuando el input pierde el foco.",
+            description:
+                "Cambia al valor de la primera opción cuando el input pierde el foco.",
         },
         {
             id: "maxLengthShowOptions",
@@ -193,20 +206,23 @@ export default {
             type: "boolean",
             require: false,
             default: "true",
-            description: "Muestra íconos de imagen junto a las opciones del select.",
+            description:
+                "Muestra íconos de imagen junto a las opciones del select.",
         },
         {
             id: "validatorData",
             type: "FenextjsValidatorClass",
             require: false,
-            description: "Clase de validación utilizada para validar los datos de entrada del select.",
+            description:
+                "Clase de validación utilizada para validar los datos de entrada del select.",
         },
         {
             id: "forceShowOptionOnLoad",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Forza a mostrar las opciones al cargar el componente.",
+            description:
+                "Forza a mostrar las opciones al cargar el componente.",
         },
         {
             id: "iconDelete",
@@ -214,7 +230,7 @@ export default {
             require: false,
             default: "<Trash />",
             description: "Ícono personalizado para eliminar una opción.",
-        }
+        },
     ],
     useExample: [
         {
@@ -232,6 +248,6 @@ export default {
         {
             text: "InputSelect con opción personalizada de crear",
             content: `<InputSelect options={options} onCreate={() => console.log("Crear nueva opción")} />`,
-        }
-    ]
+        },
+    ],
 };

@@ -2,7 +2,8 @@ export default {
     id: "input-date-range",
     idStorybook: "component-input-date-range",
     name: "InputDateRange",
-    description: "El componente InputDateRange permite a los usuarios seleccionar un rango de fechas utilizando dos campos de entrada de fecha. Es útil para formularios donde se requiere seleccionar un inicio y un final de un período de tiempo.",
+    description:
+        "El componente InputDateRange permite a los usuarios seleccionar un rango de fechas utilizando dos campos de entrada de fecha. Es útil para formularios donde se requiere seleccionar un inicio y un final de un período de tiempo.",
     props: [
         {
             id: "defaultValue",
@@ -16,14 +17,16 @@ export default {
             type: "[Date | undefined, Date | undefined]",
             require: false,
             default: "undefined",
-            description: "Valor actual del rango de fechas. Si se proporciona, anula el valor predeterminado.",
+            description:
+                "Valor actual del rango de fechas. Si se proporciona, anula el valor predeterminado.",
         },
         {
             id: "onChange",
             type: "(value: [Date | undefined, Date | undefined]) => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta cuando el rango de fechas cambia.",
+            description:
+                "Función que se ejecuta cuando el rango de fechas cambia.",
         },
         {
             id: "propsStart",
@@ -44,21 +47,24 @@ export default {
             type: "string",
             require: false,
             default: "''",
-            description: "Etiqueta que se muestra para el campo de rango de fechas.",
+            description:
+                "Etiqueta que se muestra para el campo de rango de fechas.",
         },
         {
             id: "classNameInputDateRange",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS adicional para el contenedor del rango de fechas.",
+            description:
+                "Clase CSS adicional para el contenedor del rango de fechas.",
         },
         {
             id: "classNameInputDateRangeContentInputDate",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS adicional para el contenido del campo de fecha en el rango.",
+            description:
+                "Clase CSS adicional para el contenido del campo de fecha en el rango.",
         },
         {
             id: "optional",
@@ -106,15 +112,15 @@ export default {
     useExample: [
         {
             text: "Selector de rango de fechas por defecto",
-            content: `<InputDateRange defaultValue={[new Date(), new Date()]} onChange={(range) => console.log(range)} />`
+            content: `<InputDateRange defaultValue={[new Date(), new Date()]} onChange={(range) => console.log(range)} />`,
         },
         {
             text: "Selector de rango de fechas con validación",
-            content: `<InputDateRange value={[startDate, endDate]} onChange={(range) => validateRange(range)} />`
+            content: `<InputDateRange value={[startDate, endDate]} onChange={(range) => validateRange(range)} />`,
         },
         {
             text: "Selector de rango de fechas deshabilitado",
-            content: `<InputDateRange defaultValue={[new Date(), new Date()]} disabled={true} />`
+            content: `<InputDateRange defaultValue={[new Date(), new Date()]} disabled={true} />`,
         },
-    ]
+    ],
 };

@@ -2,14 +2,16 @@ export default {
     id: "layout-grid-menu-left",
     idStorybook: "component-layout-grid-menu-left",
     name: "LayoutGridMenuLeft",
-    description: "El componente LayoutGridMenuLeft organiza el contenido en un diseño de cuadrícula, con un menú a la izquierda que puede mostrarse u ocultarse. Además, admite alertas, carga de página y otros elementos opcionales.",
+    description:
+        "El componente LayoutGridMenuLeft organiza el contenido en un diseño de cuadrícula, con un menú a la izquierda que puede mostrarse u ocultarse. Además, admite alertas, carga de página y otros elementos opcionales.",
     props: [
         {
             id: "useAlertHook",
             type: "boolean",
             require: false,
             default: "true",
-            description: "Indica si se debe renderizar el componente de alerta (AlertHook).",
+            description:
+                "Indica si se debe renderizar el componente de alerta (AlertHook).",
         },
         {
             id: "alertHookProps",
@@ -23,14 +25,16 @@ export default {
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si la página está en estado de carga, mostrando un indicador de carga.",
+            description:
+                "Indica si la página está en estado de carga, mostrando un indicador de carga.",
         },
         {
             id: "menuLeft",
             type: "ReactNode",
             require: false,
             default: "undefined",
-            description: "Contenido que se renderiza en el menú izquierdo del layout.",
+            description:
+                "Contenido que se renderiza en el menú izquierdo del layout.",
         },
         {
             id: "menuLeftActive",
@@ -44,14 +48,16 @@ export default {
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si el menú izquierdo está activo en dispositivos móviles.",
+            description:
+                "Indica si el menú izquierdo está activo en dispositivos móviles.",
         },
         {
             id: "useHeaderButtonMenu",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Permite mostrar un botón en el encabezado para alternar el menú.",
+            description:
+                "Permite mostrar un botón en el encabezado para alternar el menú.",
         },
         {
             id: "usePageProgress",
@@ -93,21 +99,22 @@ export default {
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para el contenedor de los hijos del componente.",
-        }
+            description:
+                "Clase CSS para el contenedor de los hijos del componente.",
+        },
     ],
     useExample: [
         {
             text: "Uso básico",
-            content: `<LayoutGridMenuLeft />`
+            content: `<LayoutGridMenuLeft />`,
         },
         {
             text: "Con menú personalizado",
-            content: `<LayoutGridMenuLeft menuLeft={<CustomMenu />} />`
+            content: `<LayoutGridMenuLeft menuLeft={<CustomMenu />} />`,
         },
         {
             text: "Con estado de carga",
-            content: `<LayoutGridMenuLeft loader={true} />`
-        }
-    ]
+            content: `<LayoutGridMenuLeft loader={true} />`,
+        },
+    ],
 };

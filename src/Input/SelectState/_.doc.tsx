@@ -2,14 +2,16 @@ export default {
     id: "input-select-state",
     idStorybook: "component-input-select-state",
     name: "InputSelectState",
-    description: "El componente InputSelectState permite seleccionar un estado o provincia dentro de un país específico. Utiliza la API 'country-state-city-nextjs' para obtener y filtrar los estados según el país proporcionado.",
+    description:
+        "El componente InputSelectState permite seleccionar un estado o provincia dentro de un país específico. Utiliza la API 'country-state-city-nextjs' para obtener y filtrar los estados según el país proporcionado.",
     props: [
         {
             id: "country",
             type: "CountryProps",
             require: false,
             default: "undefined",
-            description: "Objeto que representa el país seleccionado, necesario para filtrar los estados correspondientes.",
+            description:
+                "Objeto que representa el país seleccionado, necesario para filtrar los estados correspondientes.",
         },
         {
             id: "id",
@@ -37,7 +39,8 @@ export default {
             type: "string",
             require: false,
             default: "undefined",
-            description: "Texto de marcador de posición que aparece cuando no hay selección.",
+            description:
+                "Texto de marcador de posición que aparece cuando no hay selección.",
         },
         {
             id: "disabled",
@@ -51,14 +54,16 @@ export default {
             type: "StateProps",
             require: false,
             default: "undefined",
-            description: "Valor seleccionado actualmente en el selector de estado.",
+            description:
+                "Valor seleccionado actualmente en el selector de estado.",
         },
         {
             id: "onChange",
             type: "(value: StateProps) => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta cuando el valor seleccionado cambia.",
+            description:
+                "Función que se ejecuta cuando el valor seleccionado cambia.",
         },
         {
             id: "isClearable",
@@ -66,7 +71,7 @@ export default {
             require: false,
             default: "false",
             description: "Indica si se puede limpiar el campo de selección.",
-        }
+        },
     ],
     useExample: [
         {
@@ -84,6 +89,6 @@ export default {
         {
             text: "InputSelectState deshabilitado",
             content: `<InputSelectState disabled={true} />`,
-        }
-    ]
+        },
+    ],
 };

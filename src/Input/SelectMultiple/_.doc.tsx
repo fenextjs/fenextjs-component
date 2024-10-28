@@ -9,7 +9,8 @@ export default {
             id: "classNameSelectMultiple",
             type: "string",
             require: false,
-            description: "Clase CSS personalizada para el componente `select-multiple`.",
+            description:
+                "Clase CSS personalizada para el componente `select-multiple`.",
             default: '""',
         },
         {
@@ -23,7 +24,8 @@ export default {
             id: "defaultValue",
             type: "InputSelectItemOptionBaseProps<T>[]",
             require: false,
-            description: "Opciones predeterminadas seleccionadas al iniciar el componente.",
+            description:
+                "Opciones predeterminadas seleccionadas al iniciar el componente.",
             default: "[]",
         },
         {
@@ -36,46 +38,53 @@ export default {
             id: "onChange",
             type: "(v?: InputSelectItemOptionBaseProps<T>[]) => void",
             require: false,
-            description: "Función que se ejecuta cuando el valor seleccionado cambia.",
+            description:
+                "Función que se ejecuta cuando el valor seleccionado cambia.",
         },
         {
             id: "onChangeData",
             type: "(v?: T[]) => void",
             require: false,
-            description: "Función que se ejecuta cuando los datos seleccionados cambian.",
+            description:
+                "Función que se ejecuta cuando los datos seleccionados cambian.",
         },
         {
             id: "onChangeValidate",
             type: "(e: InputSelectItemOptionBaseProps<T>[]) => Promise<any> | any",
             require: false,
-            description: "Función de validación personalizada que se ejecuta cuando el valor cambia.",
+            description:
+                "Función de validación personalizada que se ejecuta cuando el valor cambia.",
         },
         {
             id: "iconDelete",
             type: "ReactNode",
             require: false,
-            description: "Icono personalizado para eliminar una opción seleccionada.",
+            description:
+                "Icono personalizado para eliminar una opción seleccionada.",
             default: "<Trash />",
         },
         {
             id: "typeSelectMultipleStyle",
             type: "'normal' | 'checkbox'",
             require: false,
-            description: "Define el estilo del select múltiple. Puede ser `normal` o con casillas de verificación (`checkbox`).",
+            description:
+                "Define el estilo del select múltiple. Puede ser `normal` o con casillas de verificación (`checkbox`).",
             default: "'normal'",
         },
         {
             id: "CustomOptionsSelected",
             type: "typeof InputSelectOption<T>",
             require: false,
-            description: "Componente personalizado para renderizar las opciones seleccionadas.",
+            description:
+                "Componente personalizado para renderizar las opciones seleccionadas.",
         },
         {
             id: "validatorData",
             type: "FenextjsValidatorClass<T[]>",
             require: false,
-            description: "Instancia de `FenextjsValidatorClass` para validar los datos seleccionados.",
-        }
+            description:
+                "Instancia de `FenextjsValidatorClass` para validar los datos seleccionados.",
+        },
     ],
     useExample: [
         {
@@ -97,6 +106,6 @@ export default {
     }}
     onChangeData={(data) => console.log("Datos seleccionados:", data)}
 />`,
-        }
-    ]
+        },
+    ],
 };

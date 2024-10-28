@@ -2,7 +2,8 @@ export default {
     id: "input-checkbox",
     idStorybook: "component-input-checkbox",
     name: "InputCheckbox",
-    description: "El componente InputCheckbox es un campo de entrada de tipo checkbox que permite al usuario seleccionar o deseleccionar una opción. Puede mostrar etiquetas y manejar validaciones, así como valores personalizados para las opciones activas e inactivas.",
+    description:
+        "El componente InputCheckbox es un campo de entrada de tipo checkbox que permite al usuario seleccionar o deseleccionar una opción. Puede mostrar etiquetas y manejar validaciones, así como valores personalizados para las opciones activas e inactivas.",
     props: [
         {
             id: "label",
@@ -30,14 +31,16 @@ export default {
             type: "(checked: boolean) => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta cuando se alterna el checkbox, recibe un valor booleano que indica si está seleccionado.",
+            description:
+                "Función que se ejecuta cuando se alterna el checkbox, recibe un valor booleano que indica si está seleccionado.",
         },
         {
             id: "defaultValue",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Valor predeterminado del checkbox cuando se renderiza por primera vez.",
+            description:
+                "Valor predeterminado del checkbox cuando se renderiza por primera vez.",
         },
         {
             id: "value",
@@ -100,7 +103,8 @@ export default {
             type: "() => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta cuando el checkbox se desactiva.",
+            description:
+                "Función que se ejecuta cuando el checkbox se desactiva.",
         },
         {
             id: "valueActive",
@@ -127,19 +131,19 @@ export default {
     useExample: [
         {
             text: "Básico",
-            content: `<InputCheckbox label="Acepto los términos y condiciones" />`
+            content: `<InputCheckbox label="Acepto los términos y condiciones" />`,
         },
         {
             text: "Checkbox deshabilitado",
-            content: `<InputCheckbox label="No puedo seleccionar este" disabled={true} />`
+            content: `<InputCheckbox label="No puedo seleccionar este" disabled={true} />`,
         },
         {
             text: "Checkbox obligatorio",
-            content: `<InputCheckbox label="Este checkbox es obligatorio" required={true} />`
+            content: `<InputCheckbox label="Este checkbox es obligatorio" required={true} />`,
         },
         {
             text: "Checkbox opcional con texto",
-            content: `<InputCheckbox label="Este es opcional" optional={true} optionalText="(opcional)" />`
-        }
-    ]
+            content: `<InputCheckbox label="Este es opcional" optional={true} optionalText="(opcional)" />`,
+        },
+    ],
 };

@@ -2,7 +2,8 @@ export default {
     id: "input-upload",
     idStorybook: "component-input-upload",
     name: "InputUpload",
-    description: "El componente InputUpload permite a los usuarios cargar archivos, proporcionando opciones de previsualización y una interfaz personalizable para seleccionar o arrastrar y soltar archivos.",
+    description:
+        "El componente InputUpload permite a los usuarios cargar archivos, proporcionando opciones de previsualización y una interfaz personalizable para seleccionar o arrastrar y soltar archivos.",
     props: [
         {
             id: "title",
@@ -16,28 +17,32 @@ export default {
             type: "React.ReactNode",
             require: false,
             default: `"Drag and drop your file or template here."`,
-            description: "Texto adicional que se muestra en el área de carga de archivos.",
+            description:
+                "Texto adicional que se muestra en el área de carga de archivos.",
         },
         {
             id: "titleFile",
             type: "React.ReactNode",
             require: false,
             default: "undefined",
-            description: "Título personalizado que se muestra al seleccionar un archivo.",
+            description:
+                "Título personalizado que se muestra al seleccionar un archivo.",
         },
         {
             id: "textFile",
             type: "React.ReactNode",
             require: false,
             default: "undefined",
-            description: "Texto personalizado que se muestra al seleccionar un archivo.",
+            description:
+                "Texto personalizado que se muestra al seleccionar un archivo.",
         },
         {
             id: "textPreview",
             type: "React.ReactNode",
             require: false,
             default: `"Preview File"`,
-            description: "Texto que se muestra para la previsualización del archivo.",
+            description:
+                "Texto que se muestra para la previsualización del archivo.",
         },
         {
             id: "icon",
@@ -58,50 +63,57 @@ export default {
             type: "React.ReactNode",
             require: false,
             default: `"Choose File"`,
-            description: "Texto o componente personalizado para el botón de selección de archivo.",
+            description:
+                "Texto o componente personalizado para el botón de selección de archivo.",
         },
         {
             id: "tagPreview",
             type: '"embed" | "img"',
             require: false,
             default: `"embed"`,
-            description: "Etiqueta HTML usada para mostrar la previsualización del archivo. Puede ser 'embed' o 'img'.",
+            description:
+                "Etiqueta HTML usada para mostrar la previsualización del archivo. Puede ser 'embed' o 'img'.",
         },
         {
             id: "customPreview",
             type: "(data: FileProps) => React.ReactNode",
             require: false,
             default: "undefined",
-            description: "Función personalizada para renderizar la previsualización del archivo.",
+            description:
+                "Función personalizada para renderizar la previsualización del archivo.",
         },
         {
             id: "loader",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Determina si se muestra un indicador de carga mientras se sube el archivo.",
+            description:
+                "Determina si se muestra un indicador de carga mientras se sube el archivo.",
         },
         {
             id: "iconLoader",
             type: "React.ReactNode",
             require: false,
             default: "<LoaderSpinner />",
-            description: "Icono o componente que se muestra mientras el archivo está en proceso de carga.",
+            description:
+                "Icono o componente que se muestra mientras el archivo está en proceso de carga.",
         },
         {
             id: "parseProgress",
             type: "(e: number) => string",
             require: false,
             default: "(e) => `Uploading . . . ${e.toFixed(0)}%`",
-            description: "Función que permite personalizar el texto de progreso de la carga de archivos.",
+            description:
+                "Función que permite personalizar el texto de progreso de la carga de archivos.",
         },
         {
             id: "onChange",
             type: "(file: File) => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta cuando el archivo cambia, recibe el archivo seleccionado.",
-        }
+            description:
+                "Función que se ejecuta cuando el archivo cambia, recibe el archivo seleccionado.",
+        },
     ],
     useExample: [
         {
@@ -119,6 +131,6 @@ export default {
         {
             text: "InputUpload con un botón personalizado",
             content: `<InputUpload btn={<Button>Cargar Archivo</Button>} />`,
-        }
-    ]
+        },
+    ],
 };

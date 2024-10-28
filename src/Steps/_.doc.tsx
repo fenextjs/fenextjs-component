@@ -2,14 +2,16 @@ export default {
     id: "steps",
     idStorybook: "component-steps",
     name: "Steps",
-    description: "El componente Steps proporciona una interfaz para mostrar y navegar entre pasos en un proceso secuencial, permitiendo personalizar el contenido, la navegación y la apariencia de cada paso.",
+    description:
+        "El componente Steps proporciona una interfaz para mostrar y navegar entre pasos en un proceso secuencial, permitiendo personalizar el contenido, la navegación y la apariencia de cada paso.",
     props: [
         {
             id: "items",
             type: "{ label: ReactNode; icon?: ReactNode; content: ReactNode; status?: 'none' | 'ok' | 'error'; }[]",
             require: true,
             default: "[]",
-            description: "Los elementos que representan cada paso, incluyendo el contenido, etiqueta, ícono y estado del paso.",
+            description:
+                "Los elementos que representan cada paso, incluyendo el contenido, etiqueta, ícono y estado del paso.",
         },
         {
             id: "defaultStep",
@@ -30,27 +32,29 @@ export default {
             type: "boolean",
             require: false,
             default: "true",
-            description: "Indica si se pueden usar las teclas de flecha para navegar entre los pasos.",
+            description:
+                "Indica si se pueden usar las teclas de flecha para navegar entre los pasos.",
         },
         {
             id: "useStep",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Determina si el componente debe controlar internamente el estado del paso actual.",
+            description:
+                "Determina si el componente debe controlar internamente el estado del paso actual.",
         },
         {
             id: "btnPrev",
             type: "ReactNode",
             require: false,
-            default: "\"Previous\"",
+            default: '"Previous"',
             description: "Contenido del botón de retroceso.",
         },
         {
             id: "btnNext",
             type: "ReactNode",
             require: false,
-            default: "\"Next\"",
+            default: '"Next"',
             description: "Contenido del botón de avance.",
         },
         {
@@ -72,14 +76,16 @@ export default {
             type: "(step: number) => Promise<void> | void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta al hacer clic en el botón de retroceso.",
+            description:
+                "Función que se ejecuta al hacer clic en el botón de retroceso.",
         },
         {
             id: "onNext",
             type: "(step: number) => Promise<void> | void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta al hacer clic en el botón de avance.",
+            description:
+                "Función que se ejecuta al hacer clic en el botón de avance.",
         },
         {
             id: "onSetStep",
@@ -107,104 +113,106 @@ export default {
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si se debe utilizar un comportamiento especial (documentación adicional requerida).",
+            description:
+                "Indica si se debe utilizar un comportamiento especial (documentación adicional requerida).",
         },
         {
             id: "className",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para el contenedor del componente.",
         },
         {
             id: "classNameContentSteps",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para el contenedor de los pasos.",
         },
         {
             id: "classNameListSteps",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para la lista de pasos.",
         },
         {
             id: "classNameContentItems",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para los elementos de contenido.",
         },
         {
             id: "classNameStep",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para cada paso.",
         },
         {
             id: "classNameStepActive",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para el paso activo.",
         },
         {
             id: "classNameItem",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para cada ítem.",
         },
         {
             id: "classNameItemActive",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para el ítem activo.",
         },
         {
             id: "classNameStepCircle",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para el círculo del paso.",
         },
         {
             id: "classNameStepLabel",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para la etiqueta del paso.",
         },
         {
             id: "classNameContentBtn",
             type: "string",
             require: false,
-            default: "\"\"",
-            description: "Clase CSS para el contenedor de los botones de navegación.",
+            default: '""',
+            description:
+                "Clase CSS para el contenedor de los botones de navegación.",
         },
         {
             id: "classNameBtn",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para los botones de navegación.",
         },
         {
             id: "classNameBtnNext",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para el botón de avance.",
         },
         {
             id: "classNameBtnPrev",
             type: "string",
             require: false,
-            default: "\"\"",
+            default: '""',
             description: "Clase CSS para el botón de retroceso.",
         },
         {
@@ -220,20 +228,20 @@ export default {
             require: false,
             default: "false",
             description: "Fuerza la visibilidad del botón de avance.",
-        }
+        },
     ],
     useExample: [
         {
             text: "Ejemplo básico",
-            content: `<Steps items={[{ label: "Paso 1", content: <div>Contenido del Paso 1</div> }]} />`
+            content: `<Steps items={[{ label: "Paso 1", content: <div>Contenido del Paso 1</div> }]} />`,
         },
         {
             text: "Ejemplo con pasos personalizados",
-            content: `<Steps items={[{ label: "Inicio", content: <div>Contenido Inicio</div> }, { label: "Fin", content: <div>Contenido Fin</div> }]} stepPos="top" />`
+            content: `<Steps items={[{ label: "Inicio", content: <div>Contenido Inicio</div> }, { label: "Fin", content: <div>Contenido Fin</div> }]} stepPos="top" />`,
         },
         {
             text: "Con botones deshabilitados",
-            content: `<Steps disabledBtnPrev={true} disabledBtnNext={true} />`
-        }
-    ]
+            content: `<Steps disabledBtnPrev={true} disabledBtnNext={true} />`,
+        },
+    ],
 };

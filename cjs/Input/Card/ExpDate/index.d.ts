@@ -4,7 +4,7 @@ export interface InputCardExpDateDataProps {
     month?: number;
     year?: number;
 }
-export interface InputCardExpDateProps extends Omit<InputTextProps, "onChangeValidate" | "icon" | "type" | "defaultValue" | "value" | "onChange"> {
+export interface InputCardExpDateProps extends Omit<InputTextProps, "onChangeValidate" | "icon" | "type" | "defaultValue" | "value" | "onChange" | "inputMode"> {
     maxExpDateLength?: number;
     defaultValue?: InputCardExpDateDataProps;
     value?: InputCardExpDateDataProps;

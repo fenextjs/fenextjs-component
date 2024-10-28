@@ -15,7 +15,8 @@ export default {
             id: "useContainer",
             type: "boolean",
             require: false,
-            description: "Define si el componente se envuelve en un contenedor `div`.",
+            description:
+                "Define si el componente se envuelve en un contenedor `div`.",
             default: "true",
         },
         {
@@ -43,7 +44,8 @@ export default {
             id: "defaultValueJsonString",
             type: "string",
             require: false,
-            description: "Valor por defecto en formato JSON para inicializar el select.",
+            description:
+                "Valor por defecto en formato JSON para inicializar el select.",
         },
         {
             id: "valueJsonString",
@@ -69,7 +71,7 @@ export default {
             type: "function",
             require: false,
             description: "Función para convertir string a JSON.",
-        }
+        },
     ],
     useExample: [
         {
@@ -84,6 +86,6 @@ export default {
     valueJsonString='{"country": "US", "state": "CA", "city": "Los Angeles"}'
     onChangeJsonString={(value) => console.log(value)}
 />`,
-        }
-    ]
+        },
+    ],
 };

@@ -2,7 +2,8 @@ export default {
     id: "img-slider",
     idStorybook: "component-img-slider",
     name: "ImgSlider",
-    description: "El componente ImgSlider permite navegar entre una lista de imágenes utilizando un sistema de pasos. Se puede controlar el paso actual y navegar entre las imágenes usando botones de paginación.",
+    description:
+        "El componente ImgSlider permite navegar entre una lista de imágenes utilizando un sistema de pasos. Se puede controlar el paso actual y navegar entre las imágenes usando botones de paginación.",
     props: [
         {
             id: "imgs",
@@ -21,15 +22,17 @@ export default {
             id: "setStep",
             type: "(e: number) => void",
             require: false,
-            description: "Función para actualizar el paso actual en el deslizador.",
+            description:
+                "Función para actualizar el paso actual en el deslizador.",
         },
         {
             id: "className",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el contenedor del deslizador.",
-        }
+            description:
+                "Clase CSS para personalizar el contenedor del deslizador.",
+        },
     ],
     useExample: [
         {
@@ -39,6 +42,6 @@ export default {
         {
             text: "Deslizador con paso controlado",
             content: `<ImgSlider imgs={imageList} step={2} setStep={(e) => console.log(e)} />`,
-        }
-    ]
+        },
+    ],
 };

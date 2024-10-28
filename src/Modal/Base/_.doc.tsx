@@ -2,7 +2,8 @@ export default {
     id: "modal-base",
     idStorybook: "component-modal-base",
     name: "ModalBase",
-    description: "El componente ModalBase proporciona una base flexible para modales con diferentes posiciones, tipos de cierre y opciones de visibilidad.",
+    description:
+        "El componente ModalBase proporciona una base flexible para modales con diferentes posiciones, tipos de cierre y opciones de visibilidad.",
     props: [
         {
             id: "active",
@@ -16,21 +17,24 @@ export default {
             type: "boolean | null",
             require: false,
             default: "undefined",
-            description: "Indica si el nombre específico del modal está activo.",
+            description:
+                "Indica si el nombre específico del modal está activo.",
         },
         {
             id: "activeNameLast",
             type: "boolean | null",
             require: false,
             default: "undefined",
-            description: "Indica si el último nombre activo del modal está activo.",
+            description:
+                "Indica si el último nombre activo del modal está activo.",
         },
         {
             id: "childrenUseActiveForShowHidden",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Determina si los elementos secundarios utilizan el estado activo para mostrarse u ocultarse.",
+            description:
+                "Determina si los elementos secundarios utilizan el estado activo para mostrarse u ocultarse.",
         },
         {
             id: "disabledClose",
@@ -44,14 +48,16 @@ export default {
             type: "boolean",
             require: false,
             default: "false",
-            description: "Determina si el modal utiliza renderización condicional.",
+            description:
+                "Determina si el modal utiliza renderización condicional.",
         },
         {
             id: "type",
             type: "'top' | 'left' | 'right' | 'bottom' | 'center' | 'full' | 'layout-grid' | 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'",
             require: false,
             default: "'center'",
-            description: "Define el tipo de modal o la posición en la que se muestra.",
+            description:
+                "Define el tipo de modal o la posición en la que se muestra.",
         },
         {
             id: "typeClose",
@@ -107,7 +113,8 @@ export default {
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el icono de cierre del modal.",
+            description:
+                "Clase CSS para personalizar el icono de cierre del modal.",
         },
         {
             id: "classNameContent",
@@ -115,24 +122,24 @@ export default {
             require: false,
             default: "''",
             description: "Clase CSS para personalizar el contenido del modal.",
-        }
+        },
     ],
     useExample: [
         {
             text: "Modal básico",
-            content: `<ModalBase active={true} />`
+            content: `<ModalBase active={true} />`,
         },
         {
             text: "Modal con contenido personalizado",
-            content: `<ModalBase active={true}>Contenido del modal</ModalBase>`
+            content: `<ModalBase active={true}>Contenido del modal</ModalBase>`,
         },
         {
             text: "Modal con botón de cierre deshabilitado",
-            content: `<ModalBase active={true} disabledClose={true} />`
+            content: `<ModalBase active={true} disabledClose={true} />`,
         },
         {
             text: "Modal con posición superior derecha",
-            content: `<ModalBase active={true} type="top-right" />`
-        }
-    ]
+            content: `<ModalBase active={true} type="top-right" />`,
+        },
+    ],
 };

@@ -2,14 +2,16 @@ export default {
     id: "layout-grid-menu-top-left",
     idStorybook: "component-layout-grid-menu-top-left",
     name: "LayoutGridMenuTopLeft",
-    description: "Este componente combina el diseño de menú superior y el menú lateral izquierdo, permitiendo una estructura flexible para mostrar contenido, alertas y un indicador de progreso de página.",
+    description:
+        "Este componente combina el diseño de menú superior y el menú lateral izquierdo, permitiendo una estructura flexible para mostrar contenido, alertas y un indicador de progreso de página.",
     props: [
         {
             id: "useAlertHook",
             type: "boolean",
             require: false,
             default: "true",
-            description: "Indica si se debe renderizar el componente de alerta (AlertHook).",
+            description:
+                "Indica si se debe renderizar el componente de alerta (AlertHook).",
         },
         {
             id: "alertHookProps",
@@ -23,7 +25,8 @@ export default {
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si la página está en estado de carga, mostrando un indicador de carga.",
+            description:
+                "Indica si la página está en estado de carga, mostrando un indicador de carga.",
         },
         {
             id: "menuTop",
@@ -37,7 +40,8 @@ export default {
             type: "ReactNode",
             require: false,
             default: "undefined",
-            description: "Elemento del menú lateral izquierdo dentro del layout.",
+            description:
+                "Elemento del menú lateral izquierdo dentro del layout.",
         },
         {
             id: "menuLeftActive",
@@ -51,28 +55,32 @@ export default {
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si el menú lateral izquierdo está activo en dispositivos móviles.",
+            description:
+                "Indica si el menú lateral izquierdo está activo en dispositivos móviles.",
         },
         {
             id: "useHeaderButtonMenu",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si el botón del menú en el header está habilitado.",
+            description:
+                "Indica si el botón del menú en el header está habilitado.",
         },
         {
             id: "usePageProgress",
             type: "boolean",
             require: false,
             default: "true",
-            description: "Indica si se debe mostrar la barra de progreso de la página.",
+            description:
+                "Indica si se debe mostrar la barra de progreso de la página.",
         },
         {
             id: "className",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS personalizada para el contenedor del layout.",
+            description:
+                "Clase CSS personalizada para el contenedor del layout.",
         },
         {
             id: "classNameLoader",
@@ -86,7 +94,8 @@ export default {
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS personalizada para el contenido de los hijos.",
+            description:
+                "Clase CSS personalizada para el contenido de los hijos.",
         },
         {
             id: "classNameMenuTop",
@@ -100,32 +109,34 @@ export default {
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS personalizada para el menú lateral izquierdo.",
+            description:
+                "Clase CSS personalizada para el menú lateral izquierdo.",
         },
         {
             id: "classNameMenuLeftContent",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS personalizada para el contenido del menú lateral izquierdo.",
-        }
+            description:
+                "Clase CSS personalizada para el contenido del menú lateral izquierdo.",
+        },
     ],
     useExample: [
         {
             text: "Básico",
-            content: `<LayoutGridMenuTopLeft />`
+            content: `<LayoutGridMenuTopLeft />`,
         },
         {
             text: "Con menú superior y lateral",
-            content: `<LayoutGridMenuTopLeft menuTop={<div>Menú Top</div>} menuLeft={<div>Menú Izquierdo</div>} />`
+            content: `<LayoutGridMenuTopLeft menuTop={<div>Menú Top</div>} menuLeft={<div>Menú Izquierdo</div>} />`,
         },
         {
             text: "Con barra de progreso deshabilitada",
-            content: `<LayoutGridMenuTopLeft usePageProgress={false} />`
+            content: `<LayoutGridMenuTopLeft usePageProgress={false} />`,
         },
         {
             text: "Con alertas personalizadas",
-            content: `<LayoutGridMenuTopLeft useAlertHook={true} alertHookProps={{ message: 'Alerta' }} />`
-        }
-    ]
+            content: `<LayoutGridMenuTopLeft useAlertHook={true} alertHookProps={{ message: 'Alerta' }} />`,
+        },
+    ],
 };

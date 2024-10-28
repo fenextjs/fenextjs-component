@@ -9,7 +9,8 @@ export default {
             id: "onChange",
             type: "(n?: number) => void",
             require: false,
-            description: "Función que se ejecuta cuando el valor seleccionado cambia.",
+            description:
+                "Función que se ejecuta cuando el valor seleccionado cambia.",
         },
         {
             id: "defaultValue",

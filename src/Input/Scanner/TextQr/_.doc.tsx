@@ -2,14 +2,16 @@ export default {
     id: "input-scanner-text-qr",
     idStorybook: "component-input-scanner-text-qr",
     name: "InputScannerTextQr",
-    description: "El componente InputScannerTextQr combina un campo de texto con un escáner QR. Permite al usuario ingresar texto manualmente o escanear un código QR para rellenar el campo de texto.",
+    description:
+        "El componente InputScannerTextQr combina un campo de texto con un escáner QR. Permite al usuario ingresar texto manualmente o escanear un código QR para rellenar el campo de texto.",
     props: [
         {
             id: "className",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el contenedor principal del componente.",
+            description:
+                "Clase CSS para personalizar el contenedor principal del componente.",
         },
         {
             id: "defaultValue",
@@ -23,36 +25,41 @@ export default {
             type: "(value: string) => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta cuando el valor del campo de texto cambia, pasando el nuevo valor.",
+            description:
+                "Función que se ejecuta cuando el valor del campo de texto cambia, pasando el nuevo valor.",
         },
         {
             id: "icon",
             type: "ReactNode",
             require: false,
             default: "undefined",
-            description: "Ícono que se muestra junto al campo de texto, en este caso, el escáner QR.",
+            description:
+                "Ícono que se muestra junto al campo de texto, en este caso, el escáner QR.",
         },
         {
             id: "onChangeCameraContent",
             type: "ReactNode",
             require: false,
             default: "<CameraChange />",
-            description: "Contenido personalizado para el botón que permite cambiar entre cámaras en el escáner QR.",
+            description:
+                "Contenido personalizado para el botón que permite cambiar entre cámaras en el escáner QR.",
         },
         {
             id: "buttonToggleFlashContent",
             type: "ReactNode",
             require: false,
             default: "<Bolt />",
-            description: "Contenido personalizado para el botón que activa o desactiva el flash de la cámara en el escáner QR.",
+            description:
+                "Contenido personalizado para el botón que activa o desactiva el flash de la cámara en el escáner QR.",
         },
         {
             id: "buttonScannerContent",
             type: "ReactNode",
             require: false,
             default: "<Qr />",
-            description: "Contenido personalizado para el botón que activa el escáner QR.",
-        }
+            description:
+                "Contenido personalizado para el botón que activa el escáner QR.",
+        },
     ],
     useExample: [
         {
@@ -66,6 +73,6 @@ export default {
         {
             text: "Escáner de texto y QR con icono personalizado",
             content: `<InputScannerTextQr icon={<div>Escanear QR</div>} />`,
-        }
-    ]
+        },
+    ],
 };

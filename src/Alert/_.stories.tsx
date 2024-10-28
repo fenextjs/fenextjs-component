@@ -18,6 +18,17 @@ const argsBase: AlertComponentProps = {
     type: "OK",
 };
 
+const argsBaseNORMAL: AlertComponentProps = {
+    ...argsBase,
+    type: "NORMAL",
+};
+
+export const Index = Profile.bind({});
+Index.args = argsBaseNORMAL;
+
+export const NORMAL = Profile.bind({});
+NORMAL.args = argsBaseNORMAL;
+
 const argsBaseOK: AlertComponentProps = {
     ...argsBase,
 };
@@ -31,12 +42,6 @@ const argsBaseERROR: AlertComponentProps = {
 export const ERROR = Profile.bind({});
 ERROR.args = argsBaseERROR;
 
-const argsBaseNORMAL: AlertComponentProps = {
-    ...argsBase,
-    type: "NORMAL",
-};
-export const NORMAL = Profile.bind({});
-NORMAL.args = argsBaseNORMAL;
 
 const argsBaseWARNING: AlertComponentProps = {
     ...argsBase,

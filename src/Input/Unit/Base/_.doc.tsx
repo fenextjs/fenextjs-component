@@ -2,42 +2,48 @@ export default {
     id: "input-unit-base",
     idStorybook: "component-input-unit-base",
     name: "InputUnitBase",
-    description: "El componente InputUnitBase permite a los usuarios ingresar un valor numérico junto con una unidad de medida seleccionable.",
+    description:
+        "El componente InputUnitBase permite a los usuarios ingresar un valor numérico junto con una unidad de medida seleccionable.",
     props: [
         {
             id: "defaultValue",
             type: "Partial<InputUnitValue>",
             require: false,
             default: "{}",
-            description: "Valor por defecto del componente, incluye el valor numérico y la unidad de medida.",
+            description:
+                "Valor por defecto del componente, incluye el valor numérico y la unidad de medida.",
         },
         {
             id: "value",
             type: "Partial<InputUnitValue>",
             require: false,
             default: "undefined",
-            description: "Valor actual del componente, incluye el valor numérico y la unidad de medida.",
+            description:
+                "Valor actual del componente, incluye el valor numérico y la unidad de medida.",
         },
         {
             id: "onChange",
             type: "(data: Partial<InputUnitValue>) => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta cuando el valor o la unidad cambia, recibe el objeto con `value` y `unit`.",
+            description:
+                "Función que se ejecuta cuando el valor o la unidad cambia, recibe el objeto con `value` y `unit`.",
         },
         {
             id: "options",
             type: "Unit_All[]",
             require: true,
             default: "undefined",
-            description: "Opciones disponibles para las unidades de medida, definidas por el tipo `Unit_All`.",
+            description:
+                "Opciones disponibles para las unidades de medida, definidas por el tipo `Unit_All`.",
         },
         {
             id: "className",
             type: "string",
             require: false,
             default: "undefined",
-            description: "Clase CSS personalizada para el componente principal.",
+            description:
+                "Clase CSS personalizada para el componente principal.",
         },
         {
             id: "classNameSelect",
@@ -51,8 +57,9 @@ export default {
             type: "string",
             require: false,
             default: "undefined",
-            description: "Clase CSS personalizada para el input del valor numérico.",
-        }
+            description:
+                "Clase CSS personalizada para el input del valor numérico.",
+        },
     ],
     useExample: [
         {
@@ -66,6 +73,6 @@ export default {
         {
             text: "InputUnitBase con función onChange",
             content: `<InputUnitBase options={['kg', 'g']} onChange={(data) => console.log(data)} />`,
-        }
-    ]
+        },
+    ],
 };

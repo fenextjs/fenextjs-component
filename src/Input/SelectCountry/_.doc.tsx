@@ -2,14 +2,16 @@ export default {
     id: "input-select-country",
     idStorybook: "component-input-select-country",
     name: "InputSelectCountry",
-    description: "El componente InputSelectCountry permite seleccionar un país de una lista de países, con la posibilidad de personalizar las clases CSS.",
+    description:
+        "El componente InputSelectCountry permite seleccionar un país de una lista de países, con la posibilidad de personalizar las clases CSS.",
     props: [
         {
             id: "...props",
             type: "InputSelectTProps<CountryProps>",
             require: false,
-            description: "Propiedades adicionales que extienden de InputSelectTProps, como eventos o configuraciones del componente.",
-        }
+            description:
+                "Propiedades adicionales que extienden de InputSelectTProps, como eventos o configuraciones del componente.",
+        },
     ],
     useExample: [
         {
@@ -31,6 +33,6 @@ export default {
 <InputSelectCountry
     classNameSelect="custom-select-class"
 />`,
-        }
-    ]
+        },
+    ],
 };

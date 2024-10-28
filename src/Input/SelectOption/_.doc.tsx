@@ -2,14 +2,16 @@ export default {
     id: "input-select-option",
     idStorybook: "component-input-select-option",
     name: "InputSelectOption",
-    description: "El componente InputSelectOption permite mostrar opciones seleccionables con texto, imágenes o íconos, además de proporcionar funcionalidades adicionales como la eliminación de opciones y la personalización de eventos.",
+    description:
+        "El componente InputSelectOption permite mostrar opciones seleccionables con texto, imágenes o íconos, además de proporcionar funcionalidades adicionales como la eliminación de opciones y la personalización de eventos.",
     props: [
         {
             id: "id",
             type: "string | number",
             require: true,
             default: "undefined",
-            description: "ID de la opción, que puede ser un string o un número.",
+            description:
+                "ID de la opción, que puede ser un string o un número.",
         },
         {
             id: "text",
@@ -23,14 +25,16 @@ export default {
             type: "string",
             require: false,
             default: "undefined",
-            description: "URL de la imagen que se mostrará en la opción, si es proporcionada.",
+            description:
+                "URL de la imagen que se mostrará en la opción, si es proporcionada.",
         },
         {
             id: "imgComponent",
             type: "ImgProps",
             require: false,
             default: "undefined",
-            description: "Propiedades para personalizar el componente de imagen (Img).",
+            description:
+                "Propiedades para personalizar el componente de imagen (Img).",
         },
         {
             id: "icon",
@@ -44,7 +48,8 @@ export default {
             type: "'div' | 'option' | 'multiple'",
             require: false,
             default: "'div'",
-            description: "Define el tipo de opción que se renderiza: div, option, o multiple.",
+            description:
+                "Define el tipo de opción que se renderiza: div, option, o multiple.",
         },
         {
             id: "disabled",
@@ -100,7 +105,8 @@ export default {
             type: "ReactNode",
             require: false,
             default: "<Trash />",
-            description: "Icono personalizado para la eliminación de la opción.",
+            description:
+                "Icono personalizado para la eliminación de la opción.",
         },
         {
             id: "classNameOption",
@@ -121,8 +127,9 @@ export default {
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el botón de eliminar de la opción.",
-        }
+            description:
+                "Clase CSS para personalizar el botón de eliminar de la opción.",
+        },
     ],
     useExample: [
         {
@@ -141,5 +148,5 @@ export default {
             text: "Opción deshabilitada",
             content: `<InputSelectOption id={4} text="Opción 4" disabled={true} />`,
         },
-    ]
+    ],
 };

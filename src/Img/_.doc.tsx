@@ -2,7 +2,8 @@ export default {
     id: "img",
     idStorybook: "component-img",
     name: "Img",
-    description: "El componente Img renderiza una imagen con soporte para múltiples resoluciones, capas visuales, y un cargador opcional. También permite definir acciones personalizadas en caso de error o al hacer clic sobre la imagen.",
+    description:
+        "El componente Img renderiza una imagen con soporte para múltiples resoluciones, capas visuales, y un cargador opcional. También permite definir acciones personalizadas en caso de error o al hacer clic sobre la imagen.",
     props: [
         {
             id: "src",
@@ -72,42 +73,48 @@ export default {
             type: "string",
             require: false,
             default: "''",
-            description: "URL de la imagen que se mostrará en caso de error de carga.",
+            description:
+                "URL de la imagen que se mostrará en caso de error de carga.",
         },
         {
             id: "layers",
             type: "CSSProperties[]",
             require: false,
             default: "[]",
-            description: "Capas CSS que se aplican como filtros o estilos adicionales a la imagen.",
+            description:
+                "Capas CSS que se aplican como filtros o estilos adicionales a la imagen.",
         },
         {
             id: "onErrorImg",
             type: "(e: SyntheticEvent<HTMLImageElement, Event>) => void",
             require: false,
             default: "undefined",
-            description: "Función personalizada que se ejecuta cuando ocurre un error al cargar la imagen.",
+            description:
+                "Función personalizada que se ejecuta cuando ocurre un error al cargar la imagen.",
         },
         {
             id: "onClick",
             type: "() => void",
             require: false,
             default: "undefined",
-            description: "Función personalizada que se ejecuta al hacer clic en la imagen.",
+            description:
+                "Función personalizada que se ejecuta al hacer clic en la imagen.",
         },
         {
             id: "loader",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si se debe mostrar un cargador mientras se carga la imagen.",
+            description:
+                "Indica si se debe mostrar un cargador mientras se carga la imagen.",
         },
         {
             id: "className",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el contenedor del componente.",
+            description:
+                "Clase CSS para personalizar el contenedor del componente.",
         },
         {
             id: "classNameImg",
@@ -115,24 +122,24 @@ export default {
             require: false,
             default: "''",
             description: "Clase CSS para personalizar la imagen en sí.",
-        }
+        },
     ],
     useExample: [
         {
             text: "Imagen básica",
-            content: `<Img src="/path/to/image.jpg" alt="Descripción" />`
+            content: `<Img src="/path/to/image.jpg" alt="Descripción" />`,
         },
         {
             text: "Imagen con capas",
-            content: `<Img src="/path/to/image.jpg" layers={[{ opacity: 0.5, mixBlendMode: 'multiply' }]} />`
+            content: `<Img src="/path/to/image.jpg" layers={[{ opacity: 0.5, mixBlendMode: 'multiply' }]} />`,
         },
         {
             text: "Imagen con loader y acción de clic",
-            content: `<Img src="/path/to/image.jpg" loader={true} onClick={() => alert('Imagen clickeada')} />`
+            content: `<Img src="/path/to/image.jpg" loader={true} onClick={() => alert('Imagen clickeada')} />`,
         },
         {
             text: "Imagen con manejo de error",
-            content: `<Img src="/path/to/image.jpg" imgIf404="/path/to/fallback.jpg" />`
-        }
-    ]
+            content: `<Img src="/path/to/image.jpg" imgIf404="/path/to/fallback.jpg" />`,
+        },
+    ],
 };

@@ -2,14 +2,16 @@ export default {
     id: "input-select-time-zone",
     idStorybook: "component-input-select-time-zone",
     name: "InputSelectTimeZone",
-    description: "El componente InputSelectTimeZone permite a los usuarios seleccionar una zona horaria de una lista predefinida de zonas horarias, con opciones de personalización tanto para la apariencia como para el comportamiento.",
+    description:
+        "El componente InputSelectTimeZone permite a los usuarios seleccionar una zona horaria de una lista predefinida de zonas horarias, con opciones de personalización tanto para la apariencia como para el comportamiento.",
     props: [
         {
             id: "useTOption",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si se debe usar la opción traducida en lugar de los valores predeterminados para las zonas horarias.",
+            description:
+                "Indica si se debe usar la opción traducida en lugar de los valores predeterminados para las zonas horarias.",
         },
         {
             id: "id",
@@ -37,28 +39,32 @@ export default {
             type: "string",
             require: false,
             default: "undefined",
-            description: "Texto de marcador de posición que aparece cuando no hay selección.",
+            description:
+                "Texto de marcador de posición que aparece cuando no hay selección.",
         },
         {
             id: "disabled",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si el selector de zona horaria está deshabilitado.",
+            description:
+                "Indica si el selector de zona horaria está deshabilitado.",
         },
         {
             id: "value",
             type: "TimeZoneProps",
             require: false,
             default: "undefined",
-            description: "Valor seleccionado actualmente en el selector de zona horaria.",
+            description:
+                "Valor seleccionado actualmente en el selector de zona horaria.",
         },
         {
             id: "onChange",
             type: "(value: TimeZoneProps) => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta cuando el valor seleccionado cambia.",
+            description:
+                "Función que se ejecuta cuando el valor seleccionado cambia.",
         },
         {
             id: "isClearable",
@@ -66,7 +72,7 @@ export default {
             require: false,
             default: "false",
             description: "Indica si se puede limpiar el campo de selección.",
-        }
+        },
     ],
     useExample: [
         {
@@ -84,6 +90,6 @@ export default {
         {
             text: "InputSelectTimeZone deshabilitado",
             content: `<InputSelectTimeZone disabled={true} />`,
-        }
-    ]
+        },
+    ],
 };

@@ -2,7 +2,8 @@ export default {
     id: "modal",
     idStorybook: "component-modal",
     name: "Modal",
-    description: "El componente Modal permite crear una ventana modal personalizable con opciones de activación, cierre y renderizado condicional, heredando propiedades de ModalBase.",
+    description:
+        "El componente Modal permite crear una ventana modal personalizable con opciones de activación, cierre y renderizado condicional, heredando propiedades de ModalBase.",
     props: [
         {
             id: "ElementActionModalActive",
@@ -16,7 +17,8 @@ export default {
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si el elemento activador del modal está deshabilitado.",
+            description:
+                "Indica si el elemento activador del modal está deshabilitado.",
         },
         {
             id: "onActive",
@@ -30,14 +32,16 @@ export default {
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si el estado activo del modal se almacena en localStorage.",
+            description:
+                "Indica si el estado activo del modal se almacena en localStorage.",
         },
         {
             id: "activeByNameContentLocalStorage",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Determina si el contenido del modal activo se almacena en localStorage.",
+            description:
+                "Determina si el contenido del modal activo se almacena en localStorage.",
         },
         {
             id: "classNameElementActionModalActive",
@@ -51,7 +55,8 @@ export default {
             type: "ModalBaseClassProps",
             require: false,
             default: "{}",
-            description: "Objeto que contiene las clases CSS personalizables del modal.",
+            description:
+                "Objeto que contiene las clases CSS personalizables del modal.",
         },
         {
             id: "children",
@@ -114,7 +119,8 @@ export default {
             type: "string",
             require: false,
             default: "undefined",
-            description: "Clave de almacenamiento en localStorage para el estado del modal.",
+            description:
+                "Clave de almacenamiento en localStorage para el estado del modal.",
         },
         {
             id: "closeComponent",
@@ -122,24 +128,24 @@ export default {
             require: false,
             default: "undefined",
             description: "Componente personalizado de cierre para el modal.",
-        }
+        },
     ],
     useExample: [
         {
             text: "Modal básico",
-            content: `<Modal active={true}>Contenido del modal</Modal>`
+            content: `<Modal active={true}>Contenido del modal</Modal>`,
         },
         {
             text: "Modal con cierre deshabilitado",
-            content: `<Modal active={true} disabledClose={true} />`
+            content: `<Modal active={true} disabledClose={true} />`,
         },
         {
             text: "Modal con activador personalizado",
-            content: `<Modal ElementActionModalActive={<button>Abrir Modal</button>} />`
+            content: `<Modal ElementActionModalActive={<button>Abrir Modal</button>} />`,
         },
         {
             text: "Modal con posición superior derecha",
-            content: `<Modal active={true} type="top-right" />`
-        }
-    ]
+            content: `<Modal active={true} type="top-right" />`,
+        },
+    ],
 };

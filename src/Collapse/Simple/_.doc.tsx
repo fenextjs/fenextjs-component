@@ -2,28 +2,32 @@ export default {
     id: "collapse",
     idStorybook: "component-collapse",
     name: "Collapse",
-    description: "El componente Collapse permite mostrar u ocultar contenido dentro de un contenedor colapsable con opciones de personalización como control de estado activo, íconos, y estados de carga.",
+    description:
+        "El componente Collapse permite mostrar u ocultar contenido dentro de un contenedor colapsable con opciones de personalización como control de estado activo, íconos, y estados de carga.",
     props: [
         {
             id: "loader",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si el componente está en estado de carga, mostrando un ícono de cargando.",
+            description:
+                "Indica si el componente está en estado de carga, mostrando un ícono de cargando.",
         },
         {
             id: "disabled",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Determina si el componente está deshabilitado, evitando que el usuario lo pueda interactuar.",
+            description:
+                "Determina si el componente está deshabilitado, evitando que el usuario lo pueda interactuar.",
         },
         {
             id: "defaultActive",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Determina si el Collapse estará activado de manera predeterminada.",
+            description:
+                "Determina si el Collapse estará activado de manera predeterminada.",
         },
         {
             id: "active",
@@ -50,21 +54,24 @@ export default {
             type: "'none' | 'error' | 'ok'",
             require: false,
             default: "'none'",
-            description: "Estado del Collapse, puede ser 'none', 'error' o 'ok'.",
+            description:
+                "Estado del Collapse, puede ser 'none', 'error' o 'ok'.",
         },
         {
             id: "type",
             type: "'radio' | 'checkbox'",
             require: false,
             default: "'checkbox'",
-            description: "Define el tipo de interacción del componente, ya sea tipo 'radio' o 'checkbox'.",
+            description:
+                "Define el tipo de interacción del componente, ya sea tipo 'radio' o 'checkbox'.",
         },
         {
             id: "show",
             type: "'checked' | 'focus'",
             require: false,
             default: "'checked'",
-            description: "Controla cómo se muestra el contenido del Collapse, ya sea cuando está 'checked' o 'focus'.",
+            description:
+                "Controla cómo se muestra el contenido del Collapse, ya sea cuando está 'checked' o 'focus'.",
         },
         {
             id: "header",
@@ -76,7 +83,8 @@ export default {
             id: "onChange",
             type: "(value: boolean) => void",
             require: false,
-            description: "Función que se ejecuta cuando el estado activo del Collapse cambia.",
+            description:
+                "Función que se ejecuta cuando el estado activo del Collapse cambia.",
         },
         {
             id: "iconArrow",
@@ -90,14 +98,16 @@ export default {
             type: "boolean",
             require: false,
             default: "true",
-            description: "Indica si el ícono debe rotar al expandirse el Collapse.",
+            description:
+                "Indica si el ícono debe rotar al expandirse el Collapse.",
         },
         {
             id: "useActiveForShowChildren",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Si está habilitado, el contenido solo se mostrará cuando el Collapse esté activo.",
+            description:
+                "Si está habilitado, el contenido solo se mostrará cuando el Collapse esté activo.",
         },
         {
             id: "children",
@@ -117,21 +127,24 @@ export default {
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS personalizada para el encabezado del Collapse.",
+            description:
+                "Clase CSS personalizada para el encabezado del Collapse.",
         },
         {
             id: "classNameHeaderContent",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS personalizada para el contenido del encabezado del Collapse.",
+            description:
+                "Clase CSS personalizada para el contenido del encabezado del Collapse.",
         },
         {
             id: "classNameHeaderIcon",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS personalizada para el ícono del encabezado del Collapse.",
+            description:
+                "Clase CSS personalizada para el ícono del encabezado del Collapse.",
         },
         {
             id: "classNameBody",
@@ -139,16 +152,16 @@ export default {
             require: false,
             default: "''",
             description: "Clase CSS personalizada para el cuerpo del Collapse.",
-        }
+        },
     ],
     useExample: [
         {
             text: "Collapse básico",
-            content: `<Collapse header={<h3>Encabezado</h3>}>Contenido del collapse</Collapse>`
+            content: `<Collapse header={<h3>Encabezado</h3>}>Contenido del collapse</Collapse>`,
         },
         {
             text: "Collapse con estado de carga",
-            content: `<Collapse header={<h3>Encabezado</h3>} loader={true}>Cargando...</Collapse>`
+            content: `<Collapse header={<h3>Encabezado</h3>} loader={true}>Cargando...</Collapse>`,
         },
         {
             text: "Collapse controlado externamente",
@@ -160,7 +173,7 @@ const [active, setActive] = useState(false);
     onChange={(value) => setActive(value)}
 >
     Contenido controlado
-</Collapse>`
-        }
-    ]
+</Collapse>`,
+        },
+    ],
 };
