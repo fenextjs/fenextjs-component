@@ -1,6 +1,6 @@
 export default {
     id: "input-select-country-multiple",
-    idStorybook: "component-input-select-country-multiple",
+    idStorybook: "input-inputselectcountrymultiple",
     name: "InputSelectCountryMultiple",
     description:
         "El componente InputSelectCountryMultiple permite seleccionar múltiples países de una lista de opciones, con posibilidad de personalización adicional a través de las propiedades del componente.",

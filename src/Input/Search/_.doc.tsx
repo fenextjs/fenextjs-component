@@ -1,6 +1,6 @@
 export default {
     id: "input-search",
-    idStorybook: "component-input-search",
+    idStorybook: "input-inputsearch",
     name: "InputSearch",
     description:
         "El componente InputSearch permite realizar búsquedas de manera eficiente y personalizable. Incluye soporte para resultados de búsqueda, filtros por pestañas y opciones de carga adicional.",

@@ -1,6 +1,6 @@
 export default {
     id: "input-select",
-    idStorybook: "component-input-select",
+    idStorybook: "input-inputselect",
     name: "InputSelect",
     description:
         "El componente InputSelect proporciona una interfaz interactiva que permite a los usuarios seleccionar opciones de una lista, con la posibilidad de búsqueda y personalización avanzada.",

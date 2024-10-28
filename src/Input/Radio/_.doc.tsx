@@ -1,6 +1,6 @@
 export default {
     id: "input-radio",
-    idStorybook: "component-input-radio",
+    idStorybook: "input-inputradio",
     name: "InputRadio",
     description:
         "El componente InputRadio permite renderizar un conjunto de radios personalizados, que pueden incluir etiquetas, íconos y diversos estilos basados en su estado (activo/inactivo). Este componente es útil para permitir al usuario seleccionar una opción de un grupo predefinido.",

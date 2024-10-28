@@ -1,6 +1,6 @@
 export default {
     id: "input-select-state",
-    idStorybook: "component-input-select-state",
+    idStorybook: "input-inputselectstate",
     name: "InputSelectState",
     description:
         "El componente InputSelectState permite seleccionar un estado o provincia dentro de un país específico. Utiliza la API 'country-state-city-nextjs' para obtener y filtrar los estados según el país proporcionado.",

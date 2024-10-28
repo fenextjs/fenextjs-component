@@ -1,6 +1,6 @@
 export default {
     id: "input-select-multiple-t",
-    idStorybook: "component-input-select-multiple-t",
+    idStorybook: "input-inputselectmultiplet",
     name: "InputSelectMultipleT",
     description:
         "El componente `InputSelectMultipleT` es una variante de `InputSelectMultiple` que permite seleccionar múltiples opciones de un tipo genérico `T`. Incluye la funcionalidad de conversión personalizada para manejar los datos y su representación en el select.",

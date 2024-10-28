@@ -1,6 +1,6 @@
 export default {
     id: "input-unit-base",
-    idStorybook: "component-input-unit-base",
+    idStorybook: "input-inputunitbase",
     name: "InputUnitBase",
     description:
         "El componente InputUnitBase permite a los usuarios ingresar un valor numérico junto con una unidad de medida seleccionable.",

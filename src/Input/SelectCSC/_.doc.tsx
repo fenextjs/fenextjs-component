@@ -1,6 +1,6 @@
 export default {
     id: "input-select-csc",
-    idStorybook: "component-input-select-csc",
+    idStorybook: "input-inputselectcsc",
     name: "InputSelectCSC",
     description:
         "El componente InputSelectCSC permite seleccionar un país, estado y ciudad de manera interrelacionada, facilitando la gestión de datos geográficos.",

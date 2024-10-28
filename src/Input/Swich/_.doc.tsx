@@ -1,6 +1,6 @@
 export default {
     id: "input-swich",
-    idStorybook: "component-input-swich",
+    idStorybook: "input-inputswich",
     name: "InputSwich",
     description:
         "El componente InputSwich permite crear un interruptor (switch) interactivo que los usuarios pueden alternar entre los estados activo e inactivo. Es altamente personalizable en términos de apariencia y comportamiento.",

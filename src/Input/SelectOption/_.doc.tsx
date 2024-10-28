@@ -1,6 +1,6 @@
 export default {
     id: "input-select-option",
-    idStorybook: "component-input-select-option",
+    idStorybook: "input-inputselectoption",
     name: "InputSelectOption",
     description:
         "El componente InputSelectOption permite mostrar opciones seleccionables con texto, imágenes o íconos, además de proporcionar funcionalidades adicionales como la eliminación de opciones y la personalización de eventos.",

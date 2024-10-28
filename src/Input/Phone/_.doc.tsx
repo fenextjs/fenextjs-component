@@ -1,6 +1,6 @@
 export default {
     id: "input-phone",
-    idStorybook: "form-input-phone",
+    idStorybook: "input-inputphone",
     name: "InputPhone",
     description:
         "El componente InputPhone permite ingresar y validar números de teléfono, incluyendo un campo de selección de código de país y el número de teléfono propiamente dicho.",

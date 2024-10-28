@@ -1,6 +1,6 @@
 export default {
     id: "input-text-select",
-    idStorybook: "component-input-text-select",
+    idStorybook: "input-inputtextselect",
     name: "InputTextSelect",
     description:
         "El componente InputTextSelect combina un campo de texto con un menú desplegable (select), permitiendo a los usuarios ingresar texto o seleccionar una opción predefinida de una lista. Ofrece gran flexibilidad y personalización en términos de etiquetas, placehoder y validaciones.",

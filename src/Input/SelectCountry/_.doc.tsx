@@ -1,6 +1,6 @@
 export default {
     id: "input-select-country",
-    idStorybook: "component-input-select-country",
+    idStorybook: "input-inputselectcountry",
     name: "InputSelectCountry",
     description:
         "El componente InputSelectCountry permite seleccionar un país de una lista de países, con la posibilidad de personalizar las clases CSS.",

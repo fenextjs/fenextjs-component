@@ -1,6 +1,6 @@
 export default {
     id: "input-select-multiple",
-    idStorybook: "component-input-select-multiple",
+    idStorybook: "input-inputselectmultiple",
     name: "InputSelectMultiple",
     description:
         "El componente InputSelectMultiple permite seleccionar múltiples opciones de una lista de elementos. Ofrece funcionalidades avanzadas como validación personalizada, eliminación de opciones seleccionadas y selección de estilo de visualización.",

@@ -1,6 +1,6 @@
 export default {
     id: "input-select-city",
-    idStorybook: "component-input-select-city",
+    idStorybook: "input-inputselectcity",
     name: "InputSelectCity",
     description:
         "Componente InputSelectCity que permite seleccionar una ciudad basándose en el país y estado seleccionados.",

@@ -1,6 +1,6 @@
 export default {
     id: "input-select-time-zone",
-    idStorybook: "component-input-select-time-zone",
+    idStorybook: "input-inputselecttimezone",
     name: "InputSelectTimeZone",
     description:
         "El componente InputSelectTimeZone permite a los usuarios seleccionar una zona horaria de una lista predefinida de zonas horarias, con opciones de personalización tanto para la apariencia como para el comportamiento.",

@@ -1,6 +1,6 @@
 export default {
     id: "input-select-number",
-    idStorybook: "component-input-select-number",
+    idStorybook: "input-inputselectnumber",
     name: "InputSelectNumber",
     description:
         "El componente `InputSelectNumber` permite la selección de un valor numérico de una lista de números dentro de un rango definido. Ofrece funcionalidades adicionales como la personalización del texto a mostrar para cada número.",

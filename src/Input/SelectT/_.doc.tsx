@@ -1,6 +1,6 @@
 export default {
     id: "input-select-t",
-    idStorybook: "component-input-select-t",
+    idStorybook: "input-inputselectt",
     name: "InputSelectT",
     description:
         "El componente `InputSelectT` es un select customizable que permite pasar opciones y valores de un tipo genérico `T`. Implementa funciones para manejar la conversión de los elementos seleccionados y permite personalizar la representación de los datos.",
