@@ -1,6 +1,6 @@
 export default {
     id: "input-checkbox",
-    idStorybook: "component-input-checkbox",
+    idStorybook: "input-inputcheckbox",
     name: "InputCheckbox",
     description:
         "El componente InputCheckbox es un campo de entrada de tipo checkbox que permite al usuario seleccionar o deseleccionar una opción. Puede mostrar etiquetas y manejar validaciones, así como valores personalizados para las opciones activas e inactivas.",

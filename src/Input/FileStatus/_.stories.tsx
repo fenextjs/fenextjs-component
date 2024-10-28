@@ -13,7 +13,7 @@ const Profile: Story<PropsWithChildren<InputFileStatusProps>> = (args) => (
     <InputFileStatus {...args}/>
 );
 
-export const APPROVED = Profile.bind({});
+export const Index = Profile.bind({});
 const argAPPROVED : InputFileStatusProps = {
         onUploadFile:async (e) => {
             await sleep(2000)
@@ -23,8 +23,10 @@ const argAPPROVED : InputFileStatusProps = {
             }
         }
 }
-APPROVED.args = argAPPROVED
+Index.args = Index
 
+export const APPROVED = Profile.bind({});
+APPROVED.args = argAPPROVED
 
 export const PENDING = Profile.bind({});
 const argPENDING : InputFileStatusProps = {
