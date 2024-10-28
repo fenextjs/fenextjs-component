@@ -1,6 +1,6 @@
 export default {
     id: "input-unit-volumen",
-    idStorybook: "component-input-unit-volumen",
+    idStorybook: "input-inputunitvolumen",
     name: "InputUnitVolumen",
     description:
         "El componente InputUnitVolumen permite al usuario seleccionar y gestionar unidades de volumen, ofreciendo opciones predeterminadas y personalizadas. Está basado en `InputUnitBase` y extiende su funcionalidad con opciones específicas de volumen.",

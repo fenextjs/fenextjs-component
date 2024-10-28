@@ -1,6 +1,6 @@
 export default {
     id: "input-unit-distance",
-    idStorybook: "component-input-unit-distance",
+    idStorybook: "input-inputunitdistance",
     name: "InputUnitDistance",
     description:
         "El componente InputUnitDistance permite a los usuarios ingresar un valor numérico junto con una unidad de medida de distancia seleccionable.",

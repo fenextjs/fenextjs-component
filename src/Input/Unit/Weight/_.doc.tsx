@@ -1,6 +1,6 @@
 export default {
     id: "input-unit-weight",
-    idStorybook: "component-input-unit-weight",
+    idStorybook: "input-inputunitweight",
     name: "InputUnitWeight",
     description:
         "El componente InputUnitWeight permite al usuario seleccionar y gestionar unidades de peso, ofreciendo opciones predeterminadas y personalizadas. Está basado en `InputUnitBase` y extiende su funcionalidad con opciones específicas de peso.",
