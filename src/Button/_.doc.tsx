@@ -1,6 +1,6 @@
 export default {
     id: "button",
-    idStorybook: "button",
+    idStorybook: "component-button",
     name: "Button",
     description:
         "El componente Button es un botón interactivo que puede ser configurado para mostrar íconos, estar en estado de carga (loader), deshabilitarse y adaptarse a diferentes tamaños. Permite a los usuarios interactuar con la aplicación ejecutando acciones al hacer clic.",

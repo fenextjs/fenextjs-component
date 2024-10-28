@@ -1,6 +1,6 @@
 export default {
     id: "table",
-    idStorybook: "component-table",
+    idStorybook: "table-table",
     name: "Table",
     description:
         "El componente Table permite mostrar una tabla de datos con funcionalidades avanzadas como paginación, selección de elementos, ordenación, y más.",

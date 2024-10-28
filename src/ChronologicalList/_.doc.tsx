@@ -1,6 +1,6 @@
 export default {
     id: "chronological-list",
-    idStorybook: "component-chronological-list",
+    idStorybook: "chronologicallist-chronologicallist",
     name: "ChronologicalList",
     description:
         "El componente ChronologicalList organiza elementos de forma cronológica, agrupándolos por fecha y hora. Permite personalizar el formato de la fecha y la hora, así como agregar contenido adicional para cada elemento.",

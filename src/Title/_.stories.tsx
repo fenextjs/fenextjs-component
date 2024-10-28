@@ -12,6 +12,12 @@ const Profile: Story<PropsWithChildren<TitleProps>> = (args) => (
     <Title {...args} />
 );
 
+export const Index = Profile.bind({});
+Index.args = {
+    tag: "h1",
+    children: "Title h1",
+} as TitleProps;
+
 export const H1 = Profile.bind({});
 H1.args = {
     tag: "h1",

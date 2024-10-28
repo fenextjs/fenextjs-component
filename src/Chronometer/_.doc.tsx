@@ -1,6 +1,6 @@
 export default {
     id: "chronometer",
-    idStorybook: "component-chronometer",
+    idStorybook: "chronometer-chronometer",
     name: "Chronometer",
     description:
         "El componente Chronometer muestra una cuenta regresiva en base al tiempo dado en segundos, actualizándose cada segundo. Permite personalizar el formato del tiempo mostrado y ejecutar una acción cada vez que el tiempo cambia.",

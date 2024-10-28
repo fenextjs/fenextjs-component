@@ -1,6 +1,6 @@
 export default {
     id: "breadcrumb",
-    idStorybook: "breadcrumb",
+    idStorybook: "breadcrumb-breadcrumb",
     name: "Breadcrumb",
     description:
         "El componente Breadcrumb muestra una serie de enlaces que indican la ruta de navegación actual del usuario. Es útil para mejorar la experiencia del usuario al mostrarle el contexto de navegación.",
