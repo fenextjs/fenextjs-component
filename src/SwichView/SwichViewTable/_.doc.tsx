@@ -1,6 +1,6 @@
 export default {
     id: "swichviewtable",
-    idStorybook: "component-swichviewtable",
+    idStorybook: "swichview-table",
     name: "SwichViewTable",
     description:
         "El componente SwichViewTable permite a los usuarios alternar entre diferentes vistas de tabla mediante iconos específicos para cada opción de visualización.",

@@ -1,6 +1,6 @@
 export default {
     id: "swichviewselect",
-    idStorybook: "component-swichviewselect",
+    idStorybook: "swichview-select",
     name: "SwichViewSelect",
     description:
         "El componente SwichViewSelect permite al usuario alternar entre diferentes vistas de selección mediante opciones visuales, representadas por íconos específicos para cada vista de selección.",

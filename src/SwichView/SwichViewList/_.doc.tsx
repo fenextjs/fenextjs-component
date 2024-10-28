@@ -1,6 +1,6 @@
 export default {
     id: "swichviewlist",
-    idStorybook: "component-swichviewlist",
+    idStorybook: "swichview-list",
     name: "SwichViewList",
     description:
         "El componente SwichViewList permite al usuario alternar entre diferentes vistas o ítems mediante una lista de opciones visuales, cada una identificada por un ícono y un identificador único.",

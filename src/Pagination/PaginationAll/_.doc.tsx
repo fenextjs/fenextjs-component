@@ -1,6 +1,6 @@
 export default {
     id: "pagination",
-    idStorybook: "component-pagination",
+    idStorybook: "pagination-pagination",
     name: "Pagination",
     description:
         "El componente Pagination permite la navegación de contenido paginado y ofrece opciones de personalización de estilo para adaptarse a diferentes diseños y temas.",

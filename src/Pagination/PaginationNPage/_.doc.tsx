@@ -1,6 +1,6 @@
 export default {
     id: "pagination-n-page",
-    idStorybook: "component-paginationnpage",
+    idStorybook: "pagination-paginationnpage",
     name: "PaginationNPage",
     description:
         "Componente de selección de elementos por página para la paginación, permitiendo seleccionar el número de elementos a mostrar en cada página.",
