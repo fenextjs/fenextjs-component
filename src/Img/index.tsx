@@ -65,7 +65,7 @@ export const Img = ({
     srcMin992 = undefined,
     srcMin768 = undefined,
     srcMin575 = undefined,
-    imgIf404 = "",
+    imgIf404 = undefined,
     layers = [],
     onErrorImg: onErrorImg_,
     onClick,
@@ -73,7 +73,9 @@ export const Img = ({
 }: ImgProps) => {
     const onErrorImg = (e: SyntheticEvent<HTMLImageElement, Event>) => {
         const img: any = e.target;
-        img.src = imgIf404;
+        if(imgIf404){
+            img.src = imgIf404;
+        }
         onErrorImg_?.(e);
     };
 

@@ -9,7 +9,7 @@ export default {
             id: "src",
             type: "string",
             require: true,
-            default: "undefined",
+            default: "",
             description: "La URL de la imagen a mostrar.",
         },
         {
@@ -72,7 +72,7 @@ export default {
             id: "imgIf404",
             type: "string",
             require: false,
-            default: "''",
+            default: "undefined",
             description:
                 "URL de la imagen que se mostrará en caso de error de carga.",
         },
