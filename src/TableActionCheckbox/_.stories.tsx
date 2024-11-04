@@ -13,5 +13,10 @@ const Profile: Story<PropsWithChildren<TableActionCheckboxProps<any>>> = (
 ) => <TableActionCheckbox {...args} />;
 
 export const Index = Profile.bind({});
-const args: TableActionCheckboxProps<any> = {};
+const args: TableActionCheckboxProps<any> = {
+    actions:[
+        () => <button>Delete</button>,
+        () => <button>Edit</button>
+    ]
+};
 Index.args = args;
