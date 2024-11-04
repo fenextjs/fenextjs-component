@@ -31,7 +31,7 @@ const Share = ({ className = "", share = "", ButtonProps = {
         },
         x: {
             urlShare: "https://x.com/share?text=",
-            icon: react_1.default.createElement(X_1.X, null),
+            icon: react_1.default.createElement(X_1.XBox, null),
         },
         email: {
             urlShare: "mailto:?body=",

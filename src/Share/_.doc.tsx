@@ -41,7 +41,7 @@ export default {
             id: "shareList",
             type: "ShareListType[]",
             require: false,
-            default: "['whatsapp', 'facebook', 'twitter', 'email', 'copy']",
+            default: "['whatsapp', 'facebook', 'x', 'email', 'copy']",
             description:
                 "Lista de plataformas de redes sociales o acciones de compartir disponibles en el componente.",
         },
