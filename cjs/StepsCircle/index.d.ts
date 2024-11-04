@@ -8,6 +8,6 @@ export interface StepsCircleProps {
     items?: StepsCircleItemProps[];
     defaultStep?: number;
     valueStep?: number;
-    disable?: boolean;
+    disabled?: boolean;
 }
-export declare const StepsCircle: ({ className, defaultStep, valueStep, disable, items, }: StepsCircleProps) => React.JSX.Element;
+export declare const StepsCircle: ({ className, defaultStep, valueStep, disabled, items, }: StepsCircleProps) => React.JSX.Element;

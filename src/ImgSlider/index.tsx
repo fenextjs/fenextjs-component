@@ -73,7 +73,6 @@ export const ImgSlider = ({
                     })}
                     stepPos="top"
                     step={step}
-                    useStep={true}
                     onSetStep={setStep}
                     btnNext={
                         <>

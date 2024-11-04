@@ -1,4 +1,10 @@
-import React, { useCallback, ReactNode,useMemo, useRef, useState } from "react";
+import React, {
+    useCallback,
+    ReactNode,
+    useMemo,
+    useRef,
+    useState,
+} from "react";
 import {
     useDocumentEvent,
     TypeListenerFunctions,
@@ -220,9 +226,8 @@ export const Steps = ({
     };
 
     const currentStep = useMemo(
-        () =>
-            parseCurrentStep( step ?? currentStep___ ),
-        [currentStep___,  step, items.length],
+        () => parseCurrentStep(step ?? currentStep___),
+        [currentStep___, step, items.length],
     );
 
     const getNumberSum = useCallback(

@@ -226,32 +226,27 @@ export default {
         {
             id: "StepsItemProps",
             title: "StepsItemProps",
-            description:
-                "Los items de step tienen su propios parametros:",
+            description: "Los items de step tienen su propios parametros:",
             tableItems: [
                 {
-                    "Parametro": "label",
+                    Parametro: "label",
                     Tipo: "ReactNode",
-                    Descripción:
-                        "Label del elemento.",
+                    Descripción: "Label del elemento.",
                 },
                 {
-                    "Parametro": "icon",
+                    Parametro: "icon",
                     Tipo: "ReactNode",
-                    Descripción:
-                        "Icon del elemento.",
+                    Descripción: "Icon del elemento.",
                 },
                 {
-                    "Parametro": "content",
+                    Parametro: "content",
                     Tipo: "ReactNode",
-                    Descripción:
-                        "Contenido del elemento.",
+                    Descripción: "Contenido del elemento.",
                 },
                 {
-                    "Parametro": "status",
+                    Parametro: "status",
                     Tipo: `"none" | "ok" | "error"`,
-                    Descripción:
-                        "Estatus del elemento.",
+                    Descripción: "Estatus del elemento.",
                 },
             ],
         },

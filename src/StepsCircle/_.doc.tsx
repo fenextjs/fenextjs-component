@@ -35,7 +35,7 @@ export default {
             description: "Paso actual cuando se controla externamente.",
         },
         {
-            id: "disable",
+            id: "disabled",
             type: "boolean",
             require: false,
             default: "false",
@@ -46,20 +46,17 @@ export default {
         {
             id: "StepsCircleItemProps",
             title: "StepsCircleItemProps",
-            description:
-                "Los items de step tienen su propios parametros:",
+            description: "Los items de step tienen su propios parametros:",
             tableItems: [
                 {
-                    "Parametro": "children",
+                    Parametro: "children",
                     Tipo: "ReactNode",
-                    Descripción:
-                        "Contenido del elemento.",
+                    Descripción: "Contenido del elemento.",
                 },
                 {
-                    "Parametro": "onClick",
+                    Parametro: "onClick",
                     Tipo: "function",
-                    Descripción:
-                        "Funcion al hacer click en el elemento.",
+                    Descripción: "Funcion al hacer click en el elemento.",
                 },
             ],
         },
@@ -87,7 +84,7 @@ export default {
         {
             text: "Ejemplo con deshabilitación",
             content: `<StepsCircle 
-    disable={true}
+    disabled={true}
     items={[{ children: <div>Paso deshabilitado</div> }]}
 />`,
         },

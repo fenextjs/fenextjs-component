@@ -60,7 +60,7 @@ export const StepsCircle = ({
                                     fenext-steps-circle-item-${step >= i ? "active" : ""}
                                 `}
                                 onClick={() => {
-                                    if (disable) {
+                                    if (disabled) {
                                         return;
                                     }
                                     item?.onClick?.();
