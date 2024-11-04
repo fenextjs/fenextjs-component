@@ -116,15 +116,28 @@ export default {
     useExample: [
         {
             text: "Ejemplo básico",
-            content: `<Tab items={[{ id: "tab1", head: "Tab 1", body: "Contenido 1" }, { id: "tab2", head: "Tab 2", body: "Contenido 2" }]} />`,
+            content: `<Tab
+    items={[
+        { id: "tab1", head: "Tab 1", body: "Contenido 1" },
+        { id: "tab2", head: "Tab 2", body: "Contenido 2" }
+    ]}
+/>`,
         },
         {
             text: "Con clase personalizada y función de cambio",
-            content: `<Tab className="custom-tab" onChange={(item) => console.log("Pestaña seleccionada:", item)} />`,
+            content: `<Tab 
+    className="custom-tab" 
+    onChange={(item) => console.log("Pestaña seleccionada:", item)} 
+/>`,
         },
         {
             text: "Con contador de elementos en el encabezado",
-            content: `<Tab items={[{ id: "tab1", head: "Tab 1", body: "Contenido 1", useCount: true, count: 3, singular: "elemento", plural: "elementos" }]} useCount={true} />`,
+            content: `<Tab 
+    items={[
+        { id: "tab1", head: "Tab 1", body: "Contenido 1", useCount: true, count: 3, singular: "elemento", plural: "elementos" }
+    ]}
+    useCount={true}
+/>`,
         },
     ],
 };
