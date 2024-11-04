@@ -14,7 +14,7 @@ export default {
         },
         {
             id: "type",
-            type: "string",
+            type: "AlertType",
             require: true,
             description:
                 "El tipo de alerta a mostrar, que puede estar relacionado con el estilo visual de la misma.",
@@ -47,6 +47,32 @@ export default {
                 "Datos adicionales o metadatos que se pueden agregar al componente de alerta.",
         },
     ],
+    extras: [
+        {
+            id: "AlertType",
+            title: "AlertType",
+            description:
+                "Dependiendo del valor de 'AlertType', el estilo de la alerta sera diferente",
+            tableItems: [
+                {
+                    "AlertType": "OK",
+                    "Descripción":"Mensaje de exito.",
+                },
+                {
+                    "AlertType": "ERROR",
+                    "Descripción":"Mensaje de error.",
+                },
+                {
+                    "AlertType": "NORMAL",
+                    "Descripción":"Mensaje sin estatus específico.",
+                },
+                {
+                    "AlertType": "WARNING",
+                    "Descripción":"Mensaje de advertencia.",
+                },
+            ],
+        },
+    ],
     useExample: [
         {
             text: "Básico",
@@ -54,7 +80,7 @@ export default {
         },
         {
             text: "Alerta con función de cierre",
-            content: `<Alert message="Close this alert" type="warning" onClose={() => alert('Alert closed!')} />`,
+            content: `<Alert message="Close this alert" type="warning" onClose={() => alert('¡Alerta cerró!')} />`,
         },
         {
             text: "Alerta con icono personalizado",
