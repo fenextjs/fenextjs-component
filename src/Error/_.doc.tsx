@@ -48,22 +48,40 @@ export default {
     ],
     extras: [
         {
-            id: "gestión-de-errores",
-            title: "Gestión de Errores",
+            id: "ErrorFenextjs",
+            title: "ErrorFenextjs",
             description:
-                "El componente permite gestionar errores personalizados o de validación de formularios, mostrando mensajes de error específicos o relacionados con entradas.",
+                "El error que se pasa al componente tiene distintos atributos:",
             tableItems: [
                 {
-                    Propiedad: "error",
-                    Uso: "El mensaje de error principal y opcionalmente una entrada relacionada se muestran en el componente.",
-                    Descripcion:
-                        "El error puede contener un mensaje y detalles sobre una entrada relacionada.",
+                    Propiedad: "code",
+                    Tipo: "ErrorCode",
+                    Descripción:
+                        "Código del error",
                 },
                 {
-                    Propiedad: "useDataError",
-                    Uso: "Incluir el error en el atributo 'data-error' como una cadena JSON para depuración.",
-                    Descripcion:
-                        "Se puede desactivar si no se requiere pasar el error como un dato estructurado.",
+                    Propiedad: "message",
+                    Tipo: "string",
+                    Descripción:
+                        "Mensaje interno del error",
+                },
+                {
+                    Propiedad: "msg",
+                    Tipo: "msg",
+                    Descripción:
+                        "Mensaje del error",
+                },
+                {
+                    Propiedad: "input",
+                    Tipo: "input",
+                    Descripción:
+                        "Input del error",
+                },
+                {
+                    Propiedad: "data",
+                    Tipo: "any",
+                    Descripción:
+                        "Data del error",
                 },
             ],
         },
