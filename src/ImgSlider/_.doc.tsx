@@ -12,10 +12,17 @@ export default {
             description: "Lista de imágenes que se muestran en el deslizador.",
         },
         {
-            id: "step",
+            id: "defaultStep",
             type: "number",
             require: false,
             default: "0",
+            description: "Paso inicial en el deslizador de imágenes.",
+        },
+        {
+            id: "step",
+            type: "number",
+            require: false,
+            default: "",
             description: "Paso actual en el deslizador de imágenes.",
         },
         {

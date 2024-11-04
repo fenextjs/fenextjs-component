@@ -13,6 +13,10 @@ export interface ImgSliderBaseProps extends _TProps {
      */
     imgs: ImgProps[];
     /**
+     * defaultStep of Img.
+     */
+    defaultStep?: number;
+    /**
      * step of Img.
      */
     step?: number;
@@ -43,12 +47,13 @@ export const ImgSlider = ({
     className = "",
     imgs,
 
+    defaultStep= 0,
     setStep: setStepProps,
     step: stepProps,
 
     ...props
 }: ImgSliderProps) => {
-    const [step__, setStep__] = useState(0);
+    const [step__, setStep__] = useState(defaultStep);
 
     const setStep = (e: number) => {
         setStep__(e);
