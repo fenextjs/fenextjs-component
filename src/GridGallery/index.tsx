@@ -3,19 +3,13 @@ import { _TProps } from "fenextjs-interface";
 import React from "react";
 
 /**
- * Properties for the base GridGallery component.
+ * Properties for the GridGallery component.
  */
-export interface GridGalleryBaseProps extends _TProps {
+export interface GridGalleryProps extends _TProps {
     /**
      * The items for the component.
      */
     items: React.ReactNode[];
-}
-
-/**
- * Properties for the class of the GridGallery component.
- */
-export interface GridGalleryClassProps {
     /**
      * The class name for the component.
      */
@@ -26,12 +20,6 @@ export interface GridGalleryClassProps {
     classNameItem?: string;
 }
 
-/**
- * Properties for the GridGallery component.
- */
-export interface GridGalleryProps
-    extends GridGalleryBaseProps,
-        GridGalleryClassProps {}
 
 export const GridGallery = ({
     className = "",
