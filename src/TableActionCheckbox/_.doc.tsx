@@ -42,10 +42,16 @@ export default {
         },
         {
             text: "Uso con acciones personalizadas",
-            content: `<TableActionCheckbox data={[{ id: 1, name: "Item 1" }, { id: 2, name: "Item 2" }]} actions={[
-                (selectedData) => <button onClick={() => console.log(selectedData)}>Delete</button>,
-                (selectedData) => <button onClick={() => console.log(selectedData)}>Edit</button>
-            ]} />`,
+            content: `<TableActionCheckbox
+    data={[
+        { id: 1, name: "Item 1" },
+        { id: 2, name: "Item 2" }
+    ]}
+    actions={[
+        (selectedData) => <button onClick={() => console.log(selectedData)}>Delete</button>,
+        (selectedData) => <button onClick={() => console.log(selectedData)}>Edit</button>
+    ]}
+/>`,
         },
     ],
 };

@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { Story, Meta } from "@storybook/react";
+import {Button} from '../Button';
 
 import { TableActionCheckbox, TableActionCheckboxProps } from "./index";
 
@@ -15,8 +16,8 @@ const Profile: Story<PropsWithChildren<TableActionCheckboxProps<any>>> = (
 export const Index = Profile.bind({});
 const args: TableActionCheckboxProps<any> = {
     actions:[
-        () => <button>Delete</button>,
-        () => <button>Edit</button>
+        () => <Button size="extra-small">Delete</Button>,
+        () => <Button size="extra-small">Edit</Button>
     ]
 };
 Index.args = args;
