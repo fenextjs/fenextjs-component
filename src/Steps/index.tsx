@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, { useCallback, ReactNode,useMemo, useRef, useState } from "react";
 import {
     useDocumentEvent,
     TypeListenerFunctions,
@@ -7,6 +7,25 @@ import { Button } from "../Button";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 
+export interface StepsItemProps {
+    /**
+     * Item label.
+     */
+    label: ReactNode;
+    /**
+     * Item icon.
+     */
+    icon?: ReactNode;
+    /**
+     * Item content.
+     */
+    content: ReactNode;
+    /**
+     * status Item.
+     */
+    status?: "none" | "ok" | "error";
+}
+
 /**
  * Properties for the base Steps component.
  */
@@ -14,24 +33,7 @@ export interface StepsBaseProps extends _TProps {
     /**
      * Items steps.
      */
-    items: {
-        /**
-         * Item label.
-         */
-        label: React.ReactNode;
-        /**
-         * Item icon.
-         */
-        icon?: React.ReactNode;
-        /**
-         * Item content.
-         */
-        content: React.ReactNode;
-        /**
-         * status Item.
-         */
-        status?: "none" | "ok" | "error";
-    }[];
+    items: StepsItemProps[];
     /**
      * defaultStep show.
      * @default 0
@@ -47,11 +49,6 @@ export interface StepsBaseProps extends _TProps {
      * @default true
      */
     useArrowKey?: boolean;
-    /**
-     * useStep step show.
-     * @default false
-     */
-    useStep?: boolean;
     /**
      * Content of Button previous.
      * @default "Previous"
@@ -190,7 +187,6 @@ export const Steps = ({
 
     defaultStep = 0,
     step = undefined,
-    useStep = false,
     items = [],
     btnNext = "Next",
     btnPrev = "Previous",
@@ -225,8 +221,8 @@ export const Steps = ({
 
     const currentStep = useMemo(
         () =>
-            parseCurrentStep(useStep ? step ?? currentStep___ : currentStep___),
-        [currentStep___, useStep, step, items.length],
+            parseCurrentStep( step ?? currentStep___ ),
+        [currentStep___,  step, items.length],
     );
 
     const getNumberSum = useCallback(

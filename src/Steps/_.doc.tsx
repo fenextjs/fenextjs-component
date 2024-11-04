@@ -7,7 +7,7 @@ export default {
     props: [
         {
             id: "items",
-            type: "{ label: ReactNode; icon?: ReactNode; content: ReactNode; status?: 'none' | 'ok' | 'error'; }[]",
+            type: "StepsItemProps[]",
             require: true,
             default: "[]",
             description:
@@ -34,14 +34,6 @@ export default {
             default: "true",
             description:
                 "Indica si se pueden usar las teclas de flecha para navegar entre los pasos.",
-        },
-        {
-            id: "useStep",
-            type: "boolean",
-            require: false,
-            default: "false",
-            description:
-                "Determina si el componente debe controlar internamente el estado del paso actual.",
         },
         {
             id: "btnPrev",
@@ -228,6 +220,40 @@ export default {
             require: false,
             default: "false",
             description: "Fuerza la visibilidad del botón de avance.",
+        },
+    ],
+    extras: [
+        {
+            id: "StepsItemProps",
+            title: "StepsItemProps",
+            description:
+                "Los items de step tienen su propios parametros:",
+            tableItems: [
+                {
+                    "Parametro": "label",
+                    Tipo: "ReactNode",
+                    Descripción:
+                        "Label del elemento.",
+                },
+                {
+                    "Parametro": "icon",
+                    Tipo: "ReactNode",
+                    Descripción:
+                        "Icon del elemento.",
+                },
+                {
+                    "Parametro": "content",
+                    Tipo: "ReactNode",
+                    Descripción:
+                        "Contenido del elemento.",
+                },
+                {
+                    "Parametro": "status",
+                    Tipo: `"none" | "ok" | "error"`,
+                    Descripción:
+                        "Estatus del elemento.",
+                },
+            ],
         },
     ],
     useExample: [
