@@ -3,9 +3,9 @@ import { _TProps } from "fenextjs-interface";
 import React, { CSSProperties, ReactNode } from "react";
 
 /**
- * Properties for the base Cols component.
+ * Properties for the Cols component.
  */
-export interface ColsBaseProps extends _TProps {
+export interface ColsProps extends _TProps {
     /**
      * The nCols for the component.
      */
@@ -19,22 +19,12 @@ export interface ColsBaseProps extends _TProps {
      * The children for the component.
      */
     children?: ReactNode;
-}
-
-/**
- * Properties for the class of the Cols component.
- */
-export interface ColsClassProps {
     /**
      * The class name for the component.
      */
     className?: string;
 }
 
-/**
- * Properties for the Cols component.
- */
-export interface ColsProps extends ColsBaseProps, ColsClassProps {}
 
 export const Cols = ({
     className = "",

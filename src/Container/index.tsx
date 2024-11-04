@@ -3,9 +3,9 @@ import { _TProps } from "fenextjs-interface";
 import React, { PropsWithChildren } from "react";
 
 /**
- * Properties for the base Container component.
+ * Properties for the Container component.
  */
-export interface ContainerBaseProps extends PropsWithChildren, _TProps {
+export interface ContainerProps extends PropsWithChildren, _TProps {
     /**
      * The Custom Size of Container / 16 * rem.
      */
@@ -14,24 +14,12 @@ export interface ContainerBaseProps extends PropsWithChildren, _TProps {
      * Use Padding Inline in Container.
      */
     usePaddingInline?: boolean;
-}
-
-/**
- * Properties for the class of the Container component.
- */
-export interface ContainerClassProps {
     /**
      * The class name for the component.
      */
     className?: string;
 }
 
-/**
- * Properties for the Container component.
- */
-export interface ContainerProps
-    extends ContainerBaseProps,
-        ContainerClassProps {}
 
 export const Container = ({
     className = "",

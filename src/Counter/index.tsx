@@ -4,10 +4,11 @@ import { _TProps } from "fenextjs-interface";
 import { sleep } from "fenextjs-functions";
 import { use_T } from "fenextjs-hook";
 
+
 /**
- * Properties for the base Counter component.
+ * Properties for the Counter component.
  */
-export interface CounterBaseProps extends _TProps {
+export interface CounterProps extends _TProps {
     /**
      * Number show.
      */
@@ -32,12 +33,6 @@ export interface CounterBaseProps extends _TProps {
      * @default parseNumberCount
      */
     parseNumber?: (n: number) => ReactNode;
-}
-
-/**
- * Properties for the class of the Counter component.
- */
-export interface CounterClassProps {
     /**
      * The class name for the component.
      */
@@ -52,10 +47,6 @@ export interface CounterClassProps {
     classNameText?: string;
 }
 
-/**
- * Properties for the Counter component.
- */
-export interface CounterProps extends CounterBaseProps, CounterClassProps {}
 
 export const Counter = ({
     className = "",
