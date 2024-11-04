@@ -4,10 +4,12 @@ exports.Img = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importDefault(require("react"));
 const Line_1 = require("../Loader/Line");
-const Img = ({ className = "", classNameImg = "", id, name = "", alt, src, srcMin1920 = undefined, srcMin1680 = undefined, srcMin1440 = undefined, srcMin1024 = undefined, srcMin992 = undefined, srcMin768 = undefined, srcMin575 = undefined, imgIf404 = "", layers = [], onErrorImg: onErrorImg_, onClick, loader = false, }) => {
+const Img = ({ className = "", classNameImg = "", id, name = "", alt, src, srcMin1920 = undefined, srcMin1680 = undefined, srcMin1440 = undefined, srcMin1024 = undefined, srcMin992 = undefined, srcMin768 = undefined, srcMin575 = undefined, imgIf404 = undefined, layers = [], onErrorImg: onErrorImg_, onClick, loader = false, }) => {
     const onErrorImg = (e) => {
         const img = e.target;
-        img.src = imgIf404;
+        if (imgIf404) {
+            img.src = imgIf404;
+        }
         onErrorImg_?.(e);
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,

@@ -16,7 +16,7 @@ export default {
             id: "children",
             type: "ReactNode",
             require: false,
-            default: "'Link'",
+            default: "''",
             description: "Contenido o texto que se muestra dentro del enlace.",
         },
         {

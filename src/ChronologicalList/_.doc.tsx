@@ -56,8 +56,7 @@ export default {
                     Propiedad: "date",
                     Tipo: "Date",
                     Requerido: "si",
-                    Descripción:
-                        "La fecha correspondiente al elemento.",
+                    Descripción: "La fecha correspondiente al elemento.",
                 },
                 {
                     Propiedad: "children",
@@ -71,7 +70,7 @@ export default {
                     Tipo: "ReactNode",
                     Requerido: "no",
                     Descripción:
-                    "Contenido personalizado que se mostrará junto a cada elemento como marcador. Puede ser un ícono, texto o cualquier otro nodo.",
+                        "Contenido personalizado que se mostrará junto a cada elemento como marcador. Puede ser un ícono, texto o cualquier otro nodo.",
                 },
                 {
                     Propiedad: "className",

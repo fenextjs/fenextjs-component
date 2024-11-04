@@ -5,19 +5,14 @@ import { Title, TitleProps } from "../Title";
 
 import { WhatsappBox } from "fenextjs-svg/cjs/Whatsapp";
 import { FacebookBox } from "fenextjs-svg/cjs/Facebook";
-import { TwitterBox } from "fenextjs-svg/cjs/Twitter";
+import { XBox } from "fenextjs-svg/cjs/X";
 import { EmailBox } from "fenextjs-svg/cjs/Email";
 import { SvgCopyBox } from "fenextjs-svg/cjs/Copy";
 import { Copy } from "../Copy";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 
-export type ShareListType =
-    | "whatsapp"
-    | "facebook"
-    | "twitter"
-    | "email"
-    | "copy";
+export type ShareListType = "whatsapp" | "facebook" | "x" | "email" | "copy";
 
 /**
  * Properties for the base Share component.
@@ -73,7 +68,7 @@ export const Share = ({
         children: "Share",
         tag: "h2",
     },
-    shareList = ["whatsapp", "facebook", "twitter", "email", "copy"],
+    shareList = ["whatsapp", "facebook", "x", "email", "copy"],
     showShareCopy = false,
     ...props
 }: ShareProps) => {
@@ -92,9 +87,9 @@ export const Share = ({
             urlShare: "https://www.facebook.com/sharer/sharer.php?u=",
             icon: <FacebookBox />,
         },
-        twitter: {
+        x: {
             urlShare: "https://x.com/share?text=",
-            icon: <TwitterBox />,
+            icon: <XBox />,
         },
         email: {
             urlShare: "mailto:?body=",

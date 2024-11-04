@@ -35,7 +35,7 @@ export interface LinkProps extends LinkBaseProps, LinkClassProps {}
 export const Link = ({
     className = "",
 
-    children = "Link",
+    children = "",
 
     ...props
 }: LinkProps) => {

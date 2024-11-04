@@ -56,32 +56,27 @@ export default {
                 {
                     Propiedad: "code",
                     Tipo: "ErrorCode",
-                    Descripción:
-                        "Código del error",
+                    Descripción: "Código del error",
                 },
                 {
                     Propiedad: "message",
                     Tipo: "string",
-                    Descripción:
-                        "Mensaje interno del error",
+                    Descripción: "Mensaje interno del error",
                 },
                 {
                     Propiedad: "msg",
                     Tipo: "msg",
-                    Descripción:
-                        "Mensaje del error",
+                    Descripción: "Mensaje del error",
                 },
                 {
                     Propiedad: "input",
                     Tipo: "input",
-                    Descripción:
-                        "Input del error",
+                    Descripción: "Input del error",
                 },
                 {
                     Propiedad: "data",
                     Tipo: "any",
-                    Descripción:
-                        "Data del error",
+                    Descripción: "Data del error",
                 },
             ],
         },

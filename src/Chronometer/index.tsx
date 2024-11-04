@@ -39,7 +39,7 @@ export interface ChronometerClassProps {
  */
 export interface ChronometerProps
     extends ChronometerBaseProps,
-    ChronometerClassProps { }
+        ChronometerClassProps {}
 
 export const Chronometer = ({
     className = "",
@@ -50,7 +50,7 @@ export const Chronometer = ({
         days: false,
         hours: true,
         minutes: true,
-        seconds: true
+        seconds: true,
     },
 }: ChronometerProps) => {
     const { data, setData } = useData<number>(time, {

@@ -20,7 +20,6 @@ export interface GridGalleryProps extends _TProps {
     classNameItem?: string;
 }
 
-
 export const GridGallery = ({
     className = "",
     classNameItem = "",

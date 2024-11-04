@@ -4,7 +4,6 @@ import { _TProps } from "fenextjs-interface";
 import { sleep } from "fenextjs-functions";
 import { use_T } from "fenextjs-hook";
 
-
 /**
  * Properties for the Counter component.
  */
@@ -46,7 +45,6 @@ export interface CounterProps extends _TProps {
      */
     classNameText?: string;
 }
-
 
 export const Counter = ({
     className = "",

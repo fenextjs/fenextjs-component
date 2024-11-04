@@ -73,10 +73,10 @@ export default {
         { href: "/about", children: "About" }
     ]}
 />`,
-            },
-            {
-                text: "Breadcrumb con clases personalizadas",
-                content: `<Breadcrumb 
+        },
+        {
+            text: "Breadcrumb con clases personalizadas",
+            content: `<Breadcrumb 
     className="custom-breadcrumb" 
     classNameItem="custom-item" 
     classNameLink="custom-link" 

@@ -55,20 +55,20 @@ export default {
                 "Dependiendo del valor de 'AlertType', el estilo de la alerta sera diferente",
             tableItems: [
                 {
-                    "AlertType": "OK",
-                    "Descripción":"Mensaje de exito.",
+                    AlertType: "OK",
+                    Descripción: "Mensaje de exito.",
                 },
                 {
-                    "AlertType": "ERROR",
-                    "Descripción":"Mensaje de error.",
+                    AlertType: "ERROR",
+                    Descripción: "Mensaje de error.",
                 },
                 {
-                    "AlertType": "NORMAL",
-                    "Descripción":"Mensaje sin estatus específico.",
+                    AlertType: "NORMAL",
+                    Descripción: "Mensaje sin estatus específico.",
                 },
                 {
-                    "AlertType": "WARNING",
-                    "Descripción":"Mensaje de advertencia.",
+                    AlertType: "WARNING",
+                    Descripción: "Mensaje de advertencia.",
                 },
             ],
         },

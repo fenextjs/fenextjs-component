@@ -6,8 +6,8 @@ const react_1 = tslib_1.__importStar(require("react"));
 const Img_1 = require("../Img");
 const Steps_1 = require("../Steps");
 const Pagination_1 = require("fenextjs-svg/cjs/Pagination");
-const ImgSlider = ({ className = "", imgs, setStep: setStepProps, step: stepProps, ...props }) => {
-    const [step__, setStep__] = (0, react_1.useState)(0);
+const ImgSlider = ({ className = "", imgs, defaultStep = 0, setStep: setStepProps, step: stepProps, ...props }) => {
+    const [step__, setStep__] = (0, react_1.useState)(defaultStep);
     const setStep = (e) => {
         setStep__(e);
         setStepProps?.(e);

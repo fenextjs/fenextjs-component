@@ -47,7 +47,7 @@ export const ImgSlider = ({
     className = "",
     imgs,
 
-    defaultStep= 0,
+    defaultStep = 0,
     setStep: setStepProps,
     step: stepProps,
 

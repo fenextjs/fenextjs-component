@@ -8,7 +8,7 @@ const Button_1 = require("../Button");
 const Title_1 = require("../Title");
 const Whatsapp_1 = require("fenextjs-svg/cjs/Whatsapp");
 const Facebook_1 = require("fenextjs-svg/cjs/Facebook");
-const Twitter_1 = require("fenextjs-svg/cjs/Twitter");
+const X_1 = require("fenextjs-svg/cjs/X");
 const Email_1 = require("fenextjs-svg/cjs/Email");
 const Copy_1 = require("fenextjs-svg/cjs/Copy");
 const Copy_2 = require("../Copy");
@@ -18,7 +18,7 @@ const Share = ({ className = "", share = "", ButtonProps = {
 }, TitleProps = {
     children: "Share",
     tag: "h2",
-}, shareList = ["whatsapp", "facebook", "twitter", "email", "copy"], showShareCopy = false, ...props }) => {
+}, shareList = ["whatsapp", "facebook", "x", "email", "copy"], showShareCopy = false, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const LISTSHARE = {
         whatsapp: {
@@ -29,9 +29,9 @@ const Share = ({ className = "", share = "", ButtonProps = {
             urlShare: "https://www.facebook.com/sharer/sharer.php?u=",
             icon: react_1.default.createElement(Facebook_1.FacebookBox, null),
         },
-        twitter: {
+        x: {
             urlShare: "https://x.com/share?text=",
-            icon: react_1.default.createElement(Twitter_1.TwitterBox, null),
+            icon: react_1.default.createElement(X_1.X, null),
         },
         email: {
             urlShare: "mailto:?body=",

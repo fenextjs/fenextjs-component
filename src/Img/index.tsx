@@ -73,7 +73,7 @@ export const Img = ({
 }: ImgProps) => {
     const onErrorImg = (e: SyntheticEvent<HTMLImageElement, Event>) => {
         const img: any = e.target;
-        if(imgIf404){
+        if (imgIf404) {
             img.src = imgIf404;
         }
         onErrorImg_?.(e);

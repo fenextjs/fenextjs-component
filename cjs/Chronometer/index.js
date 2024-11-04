@@ -7,6 +7,9 @@ const fenextjs_hook_1 = require("fenextjs-hook");
 const react_1 = tslib_1.__importStar(require("react"));
 const Chronometer = ({ className = "", time = 100, min = 0, onChange, optionsTimeToText = {
     days: false,
+    hours: true,
+    minutes: true,
+    seconds: true,
 }, }) => {
     const { data, setData } = (0, fenextjs_hook_1.useData)(time, {
         onChangeDataAfter: onChange,

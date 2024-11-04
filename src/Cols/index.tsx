@@ -25,7 +25,6 @@ export interface ColsProps extends _TProps {
     className?: string;
 }
 
-
 export const Cols = ({
     className = "",
     children,
