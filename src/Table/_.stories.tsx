@@ -49,6 +49,7 @@ Index.args = {
         },
         {
             id: "name",
+            thText:"Name",
             th: <>Name</>,
             parse: (data: TestItemTable) => {
                 return <a href={`#${data.id}`}>{data.name}</a>;
