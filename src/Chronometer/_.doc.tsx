@@ -33,7 +33,7 @@ export default {
             id: "optionsTimeToText",
             type: "getTimeToTextProps",
             require: false,
-            default: "{ days: false }",
+            default: `{days: false, hours: true,minutes: true,seconds: true }`,
             description:
                 "Opciones para personalizar el formato del tiempo mostrado, como si incluir o no los días.",
         },
