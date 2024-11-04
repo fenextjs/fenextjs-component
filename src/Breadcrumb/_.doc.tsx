@@ -67,11 +67,25 @@ export default {
     useExample: [
         {
             text: "Breadcrumb básico",
-            content: `<Breadcrumb links={[{ href: "/home", children: "Home" }, { href: "/about", children: "About" }]} />`,
-        },
-        {
-            text: "Breadcrumb con clases personalizadas",
-            content: `<Breadcrumb className="custom-breadcrumb" classNameItem="custom-item" classNameLink="custom-link" links={[{ href: "/home", children: "Home" }, { href: "/services", children: "Services" }, { href: "/contact", children: "Contact" }]} />`,
+            content: `<Breadcrumb 
+    links={[
+        { href: "/home", children: "Home" }, 
+        { href: "/about", children: "About" }
+    ]}
+/>`,
+            },
+            {
+                text: "Breadcrumb con clases personalizadas",
+                content: `<Breadcrumb 
+    className="custom-breadcrumb" 
+    classNameItem="custom-item" 
+    classNameLink="custom-link" 
+    links={[
+        { href: "/home", children: "Home" }, 
+        { href: "/services", children: "Services" }, 
+        { href: "/contact", children: "Contact" }
+    ]}
+/>`,
         },
     ],
 };

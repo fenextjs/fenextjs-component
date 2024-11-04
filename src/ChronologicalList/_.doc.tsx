@@ -47,6 +47,41 @@ export default {
     ],
     extras: [
         {
+            id: "ChronologicalListItemsProps",
+            title: "ChronologicalListItemsProps",
+            description:
+                "Cada elemento de la lista tiene sus propios parámetros:",
+            tableItems: [
+                {
+                    Propiedad: "date",
+                    Tipo: "Date",
+                    Requerido: "si",
+                    Descripción:
+                        "La fecha correspondiente al elemento.",
+                },
+                {
+                    Propiedad: "children",
+                    Tipo: "ReactNode",
+                    Requerido: "si",
+                    Descripción:
+                        "El contenido que se mostrará dentro del elemento.",
+                },
+                {
+                    Propiedad: "market",
+                    Tipo: "ReactNode",
+                    Requerido: "no",
+                    Descripción:
+                    "Contenido personalizado que se mostrará junto a cada elemento como marcador. Puede ser un ícono, texto o cualquier otro nodo.",
+                },
+                {
+                    Propiedad: "className",
+                    Tipo: "string",
+                    Requerido: "no",
+                    Descripción: "Clase CSS personalizada para el elemento.",
+                },
+            ],
+        },
+        {
             id: "formato-fecha-hora",
             title: "Formato de Fecha y Hora",
             description:
