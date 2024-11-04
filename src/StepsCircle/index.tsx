@@ -22,14 +22,14 @@ export interface StepsCircleProps {
     defaultStep?: number;
     valueStep?: number;
 
-    disable?: boolean;
+    disabled?: boolean;
 }
 
 export const StepsCircle = ({
     className = "",
     defaultStep = undefined,
     valueStep = undefined,
-    disable = false,
+    disabled = false,
     items = [],
 }: StepsCircleProps) => {
     const [step_, setStep] = useState(defaultStep ?? 0);
@@ -41,7 +41,7 @@ export const StepsCircle = ({
             <div
                 className={`
                     fenext-steps-circle 
-                    fenext-steps-circle-${disable ? "disable" : ""}
+                    fenext-steps-circle-${disabled ? "disabled" : ""}
                     ${className} 
                 `}
                 style={

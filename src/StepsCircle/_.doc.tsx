@@ -14,7 +14,7 @@ export default {
         },
         {
             id: "items",
-            type: "{ children?: ReactNode; onClick?: () => void; }[]",
+            type: "StepsCircleItemProps[]",
             require: false,
             default: "[]",
             description:
@@ -42,18 +42,54 @@ export default {
             description: "Deshabilita la interacción con el componente.",
         },
     ],
+    extras: [
+        {
+            id: "StepsCircleItemProps",
+            title: "StepsCircleItemProps",
+            description:
+                "Los items de step tienen su propios parametros:",
+            tableItems: [
+                {
+                    "Parametro": "children",
+                    Tipo: "ReactNode",
+                    Descripción:
+                        "Contenido del elemento.",
+                },
+                {
+                    "Parametro": "onClick",
+                    Tipo: "function",
+                    Descripción:
+                        "Funcion al hacer click en el elemento.",
+                },
+            ],
+        },
+    ],
     useExample: [
         {
             text: "Ejemplo básico",
-            content: `<StepsCircle items={[{ children: <div>Paso 1</div> }, { children: <div>Paso 2</div> }]} />`,
+            content: `<StepsCircle 
+    items={[
+        { children: <div>Paso 1</div> }, 
+        { children: <div>Paso 2</div> }
+    ]}
+/>`,
         },
         {
             text: "Con paso predeterminado",
-            content: `<StepsCircle items={[{ children: <div>Inicio</div> }, { children: <div>Fin</div> }]} defaultStep={0} />`,
+            content: `<StepsCircle 
+    items={[
+        { children: <div>Inicio</div> }, 
+        { children: <div>Fin</div> }
+    ]} 
+    defaultStep={0}
+/>`,
         },
         {
             text: "Ejemplo con deshabilitación",
-            content: `<StepsCircle disable={true} items={[{ children: <div>Paso deshabilitado</div> }]} />`,
+            content: `<StepsCircle 
+    disable={true}
+    items={[{ children: <div>Paso deshabilitado</div> }]}
+/>`,
         },
     ],
 };
