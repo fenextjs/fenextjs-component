@@ -53,15 +53,31 @@ export default {
     useExample: [
         {
             text: "TwoColSticky básico",
-            content: `<TwoColSticky colSticky={<div>Sticky Content</div>}>Scrollable Content</TwoColSticky>`,
+            content: `<TwoColSticky 
+    colSticky={<div>Sticky Content</div>}
+>
+    Scrollable Content
+</TwoColSticky>`,
         },
         {
             text: "TwoColSticky con columna sticky a la derecha",
-            content: `<TwoColSticky colSticky={<div>Sticky Content</div>} posCol="right">Scrollable Content</TwoColSticky>`,
+            content: `<TwoColSticky 
+    colSticky={<div>Sticky Content</div>} 
+    posCol="right"
+>
+    Scrollable Content
+</TwoColSticky>`,
         },
         {
             text: "TwoColSticky con clases personalizadas",
-            content: `<TwoColSticky colSticky={<div>Sticky Content</div>} className="custom-container" classNameChildren="custom-children" classNameColSticky="custom-sticky">Scrollable Content</TwoColSticky>`,
+            content: `<TwoColSticky 
+    colSticky={<div>Sticky Content</div>} 
+    className="custom-container" 
+    classNameChildren="custom-children" 
+    classNameColSticky="custom-sticky"
+>
+    Scrollable Content
+</TwoColSticky>`,
         },
     ],
 };

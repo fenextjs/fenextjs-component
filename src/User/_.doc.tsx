@@ -7,7 +7,7 @@ export default {
     props: [
         {
             id: "user",
-            type: "Partial<UserInterfaceProps>",
+            type: "Partial<UserProps>",
             require: false,
             default: "undefined",
             description:
@@ -75,14 +75,80 @@ export default {
                 "Clase CSS para el componente de cargador cuando se muestra en lugar de los datos del usuario.",
         },
     ],
+    extras: [
+        {
+            id: "UserProps",
+            title: "UserProps",
+            description:
+                "Fenextjs posee su interface estandar para:",
+            tableItems: [
+                {
+                    "Propiedad": "status",
+                    Tipo: "UserStatusProps",
+                    Descripción:"Estatus del usuario.",
+                },
+                {
+                    "Propiedad": "id",
+                    Tipo: "string",
+                    Descripción:"Id del usuario.",
+                },
+                {
+                    "Propiedad": "token",
+                    Tipo: "string",
+                    Descripción:"token del usuario.",
+                },
+                {
+                    "Propiedad": "name",
+                    Tipo: "string",
+                    Descripción:"Nombre del usuario.",
+                },
+                {
+                    "Propiedad": "img",
+                    Tipo: "ImgDataProps",
+                    Descripción:"Avatar del usuario.",
+                },
+                {
+                    "Propiedad": "role",
+                    Tipo: "UserRoleProps",
+                    Descripción:"Rol del usuario.",
+                },
+                {
+                    "Propiedad": "phone",
+                    Tipo: "PhoneProps",
+                    Descripción:"Telefono del usuario.",
+                },
+                {
+                    "Propiedad": "email",
+                    Tipo: "string",
+                    Descripción:"Correo del usuario.",
+                },
+                {
+                    "Propiedad": "dateCreate",
+                    Tipo: "Date",
+                    Descripción:"Fecha de creacion del usuario.",
+                },
+            ],
+        },
+    ],
     useExample: [
         {
             text: "User básico",
-            content: `<User user={{ name: "John Doe", email: "john@example.com" }} />`,
+            content: `<User 
+    user={{ 
+        name: "John Doe", 
+        email: "john@example.com" 
+    }}
+/>`,
         },
         {
             text: "User con imagen de perfil",
-            content: `<User user={{ name: "Jane Doe", email: "jane@example.com", image: "/path/to/image.jpg" }} />`,
+            content: `<User 
+    user={{ 
+        name: "Jane Doe", 
+        email: "jane@example.com", 
+        image: "/path/to/image.jpg" 
+    }} 
+/>`,
         },
         {
             text: "User con cargador",
@@ -90,7 +156,11 @@ export default {
         },
         {
             text: "User con clases personalizadas",
-            content: `<User user={{ name: "John Doe" }} className="custom-container" classNameName="custom-name" />`,
+            content: `<User 
+    user={{ name: "John Doe" }} 
+    className="custom-container" 
+    classNameName="custom-name" 
+/>`,
         },
     ],
 };

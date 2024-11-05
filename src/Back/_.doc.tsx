@@ -111,23 +111,23 @@ export default {
                 {
                     "Tipo de back": "history",
                     Redireccion: "history.back()",
-                    Descripcion:
+                    Descripción:
                         "Redirección a la página anterior mediante el historial del navegador.",
                 },
                 {
                     "Tipo de back": "router",
                     Redireccion: "router.back()",
-                    Descripcion: "Redirección utilizando el router de Next.js.",
+                    Descripción: "Redirección utilizando el router de Next.js.",
                 },
                 {
                     "Tipo de back": "link",
                     Redireccion: "router.push(link)",
-                    Descripcion: "Redirección a una URL específica.",
+                    Descripción: "Redirección a una URL específica.",
                 },
                 {
                     "Tipo de back": "none",
                     Redireccion: "Ninguna acción",
-                    Descripcion: "No se realiza ninguna redirección.",
+                    Descripción: "No se realiza ninguna redirección.",
                 },
             ],
         },

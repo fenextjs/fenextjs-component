@@ -38,7 +38,11 @@ export default {
     useExample: [
         {
             text: "Uso básico del TableActionCheckbox",
-            content: `<TableActionCheckbox className="my-checkbox" data={[{ id: 1, name: "Item 1" }, { id: 2, name: "Item 2" }]} actionAllCheckbox={{ label: "Select All" }} />`,
+            content: `<TableActionCheckbox
+    className="my-checkbox" 
+    data={[{ id: 1, name: "Item 1" }, { id: 2, name: "Item 2" }]} 
+    actionAllCheckbox={{ label: "Select All" }} 
+/>`,
         },
         {
             text: "Uso con acciones personalizadas",

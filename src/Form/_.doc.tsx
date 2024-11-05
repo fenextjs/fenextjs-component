@@ -80,13 +80,13 @@ export default {
                 {
                     Propiedad: "onSubmit",
                     Uso: "Maneja el envío de datos y devuelve el resultado de la operación.",
-                    Descripcion:
+                    Descripción:
                         "Función que puede incluir lógica personalizada para gestionar los datos que se envían.",
                 },
                 {
                     Propiedad: "onAfterSubmit",
                     Uso: "Ejecuta acciones después del envío exitoso, como el seguimiento de eventos.",
-                    Descripcion:
+                    Descripción:
                         "Función opcional que recibe los datos del resultado del envío y permite manejar la lógica post-envío.",
                 },
             ],

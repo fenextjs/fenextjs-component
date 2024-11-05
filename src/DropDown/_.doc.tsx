@@ -171,22 +171,22 @@ export default {
             tableItems: [
                 {
                     Dirección: "left",
-                    Descripcion:
+                    Descripción:
                         "El DropDown se alinea a la izquierda si hay más espacio disponible.",
                 },
                 {
                     Dirección: "right",
-                    Descripcion:
+                    Descripción:
                         "El DropDown se alinea a la derecha si hay más espacio disponible.",
                 },
                 {
                     Dirección: "up",
-                    Descripcion:
+                    Descripción:
                         "El DropDown se despliega hacia arriba si hay más espacio disponible arriba.",
                 },
                 {
                     Dirección: "down",
-                    Descripcion:
+                    Descripción:
                         "El DropDown se despliega hacia abajo si hay más espacio disponible abajo.",
                 },
             ],

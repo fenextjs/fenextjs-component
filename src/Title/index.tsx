@@ -4,9 +4,9 @@ import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 
 /**
- * Properties for the base Title component.
+ * Properties for the Title component.
  */
-export interface TitleBaseProps extends PropsWithChildren, _TProps {
+export interface TitleProps extends PropsWithChildren, _TProps {
     /**
      * The class name for the component.
      */
@@ -15,22 +15,12 @@ export interface TitleBaseProps extends PropsWithChildren, _TProps {
      * The loader for the component.
      */
     loader?: boolean;
-}
-
-/**
- * Properties for the class of the Title component.
- */
-export interface TitleClassProps {
     /**
      * The class name for the component.
      */
     className?: string;
 }
 
-/**
- * Properties for the Title component.
- */
-export interface TitleProps extends TitleBaseProps, TitleClassProps {}
 
 export const Title = ({
     className = "",

@@ -75,13 +75,13 @@ export default {
                 {
                     Propiedad: "defaultActive",
                     Uso: "Determina si el menú se muestra activo por defecto.",
-                    Descripcion:
+                    Descripción:
                         "El menú se mostrará activado si el ancho de la ventana es mayor a 575px al cargar la página.",
                 },
                 {
                     Propiedad: "loader",
                     Uso: "Muestra un indicador de carga en lugar del contenido del menú.",
-                    Descripcion:
+                    Descripción:
                         "Cuando 'loader' está en 'true', el componente muestra un spinner en lugar del contenido del menú.",
                 },
             ],

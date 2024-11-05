@@ -4,9 +4,9 @@ import { Img } from "../Img";
 import { LoaderUser, LoaderUserClassProps } from "../Loader/User";
 
 /**
- * Properties for the base User component.
+ * Properties for the User component.
  */
-export interface UserBaseProps {
+export interface UserComponentProps {
     /**
      * User data.
      */
@@ -15,12 +15,6 @@ export interface UserBaseProps {
      * If loader user.
      */
     loader?: boolean;
-}
-
-/**
- * Properties for the class of the User component.
- */
-export interface UserClassProps {
     /**
      * The class name for the component.
      */
@@ -50,11 +44,6 @@ export interface UserClassProps {
      */
     classNameLoader?: LoaderUserClassProps;
 }
-
-/**
- * Properties for the User component.
- */
-export interface UserComponentProps extends UserBaseProps, UserClassProps {}
 
 export const User = ({
     className = "",

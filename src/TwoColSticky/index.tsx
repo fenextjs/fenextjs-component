@@ -3,9 +3,9 @@ import { _TProps } from "fenextjs-interface";
 import React, { ReactNode } from "react";
 
 /**
- * Properties for the base TwoColSticky component.
+ * Properties for the TwoColSticky component.
  */
-export interface TwoColStickyBaseProps extends _TProps {
+export interface TwoColStickyProps extends _TProps {
     /**
      * children for the component.
      */
@@ -18,12 +18,6 @@ export interface TwoColStickyBaseProps extends _TProps {
      *postion of col for the component.
      */
     posCol?: "left" | "right";
-}
-
-/**
- * Properties for the class of the TwoColSticky component.
- */
-export interface TwoColStickyClassProps {
     /**
      * The class name for the component.
      */
@@ -37,13 +31,6 @@ export interface TwoColStickyClassProps {
      */
     classNameColSticky?: string;
 }
-
-/**
- * Properties for the TwoColSticky component.
- */
-export interface TwoColStickyProps
-    extends TwoColStickyBaseProps,
-        TwoColStickyClassProps {}
 
 /**
  * TwoColSticky Component

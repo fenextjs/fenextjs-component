@@ -46,19 +46,19 @@ export default {
                 {
                     Propiedad: "href",
                     Tipo: "string",
-                    Descripcion:
+                    Descripción:
                         "La URL a la que se redirigirá cuando se haga clic en el enlace.",
                 },
                 {
                     Propiedad: "children",
                     Tipo: "ReactNode",
-                    Descripcion:
+                    Descripción:
                         "El contenido que se mostrará dentro del enlace.",
                 },
                 {
                     Propiedad: "onClick",
                     Tipo: "function",
-                    Descripcion:
+                    Descripción:
                         "Función que se ejecutará cuando se haga clic en el enlace (opcional).",
                 },
             ],

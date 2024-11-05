@@ -5,14 +5,9 @@ import { useTheme } from "fenextjs-hook/cjs/useTheme";
 import { _TProps } from "fenextjs-interface";
 
 /**
- * Properties for the base Theme component.
+ * Properties for the Theme component.
  */
-export interface ThemeBaseProps extends _TProps {}
-
-/**
- * Properties for the class of the Theme component.
- */
-export interface ThemeClassProps {
+export interface ThemeProps extends _TProps {
     /**
      * The class name for the component.
      */
@@ -23,10 +18,6 @@ export interface ThemeClassProps {
     classNameItem?: string;
 }
 
-/**
- * Properties for the Theme component.
- */
-export interface ThemeProps extends ThemeBaseProps, ThemeClassProps {}
 
 export const Theme = ({ className = "", classNameItem = "" }: ThemeProps) => {
     const { setTheme, theme } = useTheme({});
