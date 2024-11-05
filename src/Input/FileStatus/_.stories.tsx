@@ -23,7 +23,7 @@ const argAPPROVED : InputFileStatusProps = {
             }
         }
 }
-Index.args = Index
+Index.args = argAPPROVED
 
 export const APPROVED = Profile.bind({});
 APPROVED.args = argAPPROVED
