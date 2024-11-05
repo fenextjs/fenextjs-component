@@ -98,26 +98,28 @@ export default {
             description:
                 "Función que formatea el texto de progreso durante la carga.",
         },
-        // ...Object.keys(InputFileBaseProps).map(key => ({
-        //     id: key,
-        //     type: typeof InputFileBaseProps[key],
-        //     require: false,
-        //     default: InputFileBaseProps[key].default || "undefined",
-        //     description: `Propiedad del componente InputFileBaseProps: ${key}`
-        // }))
     ],
     useExample: [
         {
             text: "Carga de una imagen simple",
-            content: `<InputImg onChange={(data) => { console.log(data); }} />`,
+            content: `<InputImg 
+    onChange={(data) => { console.log(data); }} 
+/>`,
         },
         {
             text: "Carga de una imagen con título y texto personalizado",
-            content: `<InputImg title="Sube tu Imagen" text="Arrastra la imagen aquí" onChange={(data) => { console.log(data); }} />`,
+            content: `<InputImg 
+    title="Sube tu Imagen" 
+    text="Arrastra la imagen aquí" 
+    onChange={(data) => { console.log(data); }} 
+/>`,
         },
         {
             text: "Carga de imagen con función de eliminación",
-            content: `<InputImg onRemove={() => { console.log('Imagen eliminada'); }} onChange={(data) => { console.log(data); }} />`,
+            content: `<InputImg 
+    onRemove={() => { console.log('Imagen eliminada'); }} 
+    onChange={(data) => { console.log(data); }}
+/>`,
         },
     ],
 };

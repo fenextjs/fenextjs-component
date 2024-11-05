@@ -69,15 +69,23 @@ export default {
     useExample: [
         {
             text: "Galería de imágenes básica",
-            content: `<InputGallery onChange={(items) => { console.log(items); }} />`,
+            content: `<InputGallery 
+    onChange={(items) => { console.log(items); }} 
+/>`,
         },
         {
             text: "Galería de imágenes con valores predefinidos",
-            content: `<InputGallery defaultValue={[{ fileData: "url1", text: "Image 1" }]} onChange={(items) => { console.log(items); }} />`,
+            content: `<InputGallery 
+    defaultValue={[{ fileData: "url1", text: "Image 1" }]} 
+    onChange={(items) => { console.log(items); }} 
+/>`,
         },
         {
             text: "Galería con botón personalizado",
-            content: `<InputGallery textBtn="Upload New Image" onChange={(items) => { console.log(items); }} />`,
+            content: `<InputGallery 
+    textBtn="Upload New Image" 
+    onChange={(items) => { console.log(items); }} 
+/>`,
         },
     ],
 };
