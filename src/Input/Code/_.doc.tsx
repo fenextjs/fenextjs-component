@@ -31,9 +31,9 @@ export default {
         },
         {
             id: "placeholder",
-            type: "string[]",
+            type: "string",
             require: false,
-            default: "[]",
+            default: "",
             description:
                 "Array de placeholders que se muestran en cada campo del input.",
         },
@@ -51,23 +51,15 @@ export default {
             default: "false",
             description: "Indica si el input está deshabilitado.",
         },
-        {
-            id: "type",
-            type: "'text'",
-            require: false,
-            default: "'text'",
-            description: "Tipo del input, debe ser 'text'.",
-        },
-        // Agrega más propiedades si hay más en InputTextBaseProps que quieras incluir
     ],
     useExample: [
         {
             text: "Código de verificación",
-            content: `<InputCode maxLength={6} placeholder={['0', '0', '0', '0', '0', '0']} />`,
+            content: `<InputCode maxLength={6} placeholder={'XXXXXX'} />`,
         },
         {
             text: "Input deshabilitado",
-            content: `<InputCode maxLength={4} disabled={true} placeholder={['A', 'B', 'C', 'D']} />`,
+            content: `<InputCode maxLength={4} disabled={true} />`,
         },
     ],
 };

@@ -7,14 +7,14 @@ export default {
     props: [
         {
             id: "defaultValue",
-            type: "[Date | undefined, Date | undefined]",
+            type: "[Date, Date]",
             require: false,
             default: "undefined",
             description: "Valor predeterminado del rango de fechas.",
         },
         {
             id: "value",
-            type: "[Date | undefined, Date | undefined]",
+            type: "[Date, Date]",
             require: false,
             default: "undefined",
             description:
@@ -22,7 +22,7 @@ export default {
         },
         {
             id: "onChange",
-            type: "(value: [Date | undefined, Date | undefined]) => void",
+            type: "(value: [Date, Date]) => void",
             require: false,
             default: "undefined",
             description:
@@ -96,14 +96,14 @@ export default {
         },
         {
             id: "min",
-            type: "Date | undefined",
+            type: "Date",
             require: false,
             default: "undefined",
             description: "Fecha mínima válida para ambos campos de fecha.",
         },
         {
             id: "max",
-            type: "Date | undefined",
+            type: "Date",
             require: false,
             default: "undefined",
             description: "Fecha máxima válida para ambos campos de fecha.",

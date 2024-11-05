@@ -1,6 +1,7 @@
 export default {
     id: "input-calendar",
     idStorybook: "component-input-calendar",
+    minHeightIframe: "60vh",
     name: "InputCalendar",
     description:
         "El componente InputCalendar permite seleccionar fechas o rangos de fechas a través de un calendario desplegable. Se puede configurar para mostrar múltiples meses y admite validaciones.",
@@ -102,15 +103,26 @@ export default {
     useExample: [
         {
             text: "Calendario básico",
-            content: `<InputCalendar defaultValue={new Date()} onChange={(date) => console.log(date)} />`,
+            content: `<InputCalendar 
+    defaultValue={new Date()} 
+    onChange={(date) => console.log(date)} 
+/>`,
         },
         {
             text: "Calendario con selección de rango",
-            content: `<InputCalendar type="range" defaultValueRange={[new Date(), new Date()]} onChangeRange={(range) => console.log(range)} />`,
+            content: `<InputCalendar 
+    type="range" 
+    defaultValueRange={[new Date(), new Date()]} 
+    onChangeRange={(range) => console.log(range)} 
+/>`,
         },
         {
             text: "Calendario mostrando múltiples meses",
-            content: `<InputCalendar nMonthShow={3} defaultValue={new Date()} onChange={(date) => console.log(date)} />`,
+            content: `<InputCalendar 
+    nMonthShow={3} 
+    defaultValue={new Date()} 
+    onChange={(date) => console.log(date)} 
+/>`,
         },
     ],
 };

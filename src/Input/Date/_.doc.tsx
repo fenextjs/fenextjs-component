@@ -7,14 +7,14 @@ export default {
     props: [
         {
             id: "defaultValue",
-            type: "Date | undefined",
+            type: "Date",
             require: false,
             default: "undefined",
             description: "Valor predeterminado del campo de entrada de fecha.",
         },
         {
             id: "value",
-            type: "Date | undefined",
+            type: "Date",
             require: false,
             default: "undefined",
             description:
@@ -30,14 +30,14 @@ export default {
         },
         {
             id: "min",
-            type: "Date | undefined",
+            type: "Date",
             require: false,
             default: "undefined",
             description: "Fecha mínima válida que se puede seleccionar.",
         },
         {
             id: "max",
-            type: "Date | undefined",
+            type: "Date",
             require: false,
             default: "undefined",
             description: "Fecha máxima válida que se puede seleccionar.",
@@ -75,7 +75,7 @@ export default {
         },
         {
             id: "validator",
-            type: "Validator",
+            type: "FenextjsValidator",
             require: false,
             default: "undefined",
             description: "Validador opcional para validar la fecha ingresada.",

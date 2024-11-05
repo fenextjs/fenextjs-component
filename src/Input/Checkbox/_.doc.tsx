@@ -7,7 +7,7 @@ export default {
     props: [
         {
             id: "label",
-            type: "any",
+            type: "ReactNode",
             require: false,
             default: "''",
             description: "Etiqueta que se muestra al lado del checkbox.",

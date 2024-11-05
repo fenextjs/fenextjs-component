@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { ReactNode, useMemo, useState } from "react";
 
 import { Check } from "fenextjs-svg/cjs/Check";
 import { env_log } from "fenextjs-functions/cjs/env_log";
@@ -72,7 +72,7 @@ export interface InputCheckboxBaseProps<VT = any, VF = any> extends _TProps {
     /**
      * The label to display next to the checkbox.
      */
-    label?: any;
+    label?: ReactNode;
 
     /**
      * The position of the label relative to the checkbox.
