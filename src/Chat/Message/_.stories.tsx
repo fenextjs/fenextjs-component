@@ -9,4 +9,12 @@ export default {
 
 const ChatMessage_: Story<ChatMessageProps> = (args) => <ChatMessage {...args} />;
 export const Index = ChatMessage_.bind({});
-Index.args = {} as ChatMessageProps;
+Index.args = {
+    account:{
+        email:"email@email.com",
+        name:"name"
+    },
+    id:1,
+    message:"message",
+    createdAt:new Date()
+} as ChatMessageProps;

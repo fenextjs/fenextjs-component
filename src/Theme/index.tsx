@@ -18,7 +18,6 @@ export interface ThemeProps extends _TProps {
     classNameItem?: string;
 }
 
-
 export const Theme = ({ className = "", classNameItem = "" }: ThemeProps) => {
     const { setTheme, theme } = useTheme({});
     return (

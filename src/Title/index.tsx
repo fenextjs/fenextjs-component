@@ -21,7 +21,6 @@ export interface TitleProps extends PropsWithChildren, _TProps {
     className?: string;
 }
 
-
 export const Title = ({
     className = "",
     tag = "h1",
