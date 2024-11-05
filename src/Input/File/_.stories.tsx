@@ -11,7 +11,7 @@ export default {
 const Profile: Story<PropsWithChildren<InputFileProps>> = (args) => (
     <InputFile {...args}>
         <div style={{fontSize:"4rem"}}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis illum perferendis distinctio minima sunt autem perspiciatis doloremque qui iure sed, molestias error, atque eligendi explicabo iusto quis expedita. Dolore, corporis!
+            Children Input File
         </div>
     </InputFile>
 );

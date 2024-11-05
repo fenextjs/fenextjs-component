@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { _TProps } from "fenextjs-interface";
 export interface InputCheckboxClassProps {
     classNameLabel?: string;
@@ -14,7 +14,7 @@ export interface InputCheckboxClassProps {
     icon?: any;
 }
 export interface InputCheckboxBaseProps<VT = any, VF = any> extends _TProps {
-    label?: any;
+    label?: ReactNode;
     labelPosition?: "right" | "left";
     name?: string;
     onChange?: (e: boolean) => void;

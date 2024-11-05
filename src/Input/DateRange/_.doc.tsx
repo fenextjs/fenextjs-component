@@ -112,15 +112,24 @@ export default {
     useExample: [
         {
             text: "Selector de rango de fechas por defecto",
-            content: `<InputDateRange defaultValue={[new Date(), new Date()]} onChange={(range) => console.log(range)} />`,
+            content: `<InputDateRange 
+    defaultValue={[new Date(), new Date()]} 
+    onChange={(range) => console.log(range)} 
+/>`,
         },
         {
             text: "Selector de rango de fechas con validación",
-            content: `<InputDateRange value={[startDate, endDate]} onChange={(range) => validateRange(range)} />`,
+            content: `<InputDateRange 
+    value={[startDate, endDate]} 
+    onChange={(range) => validateRange(range)} 
+/>`,
         },
         {
             text: "Selector de rango de fechas deshabilitado",
-            content: `<InputDateRange defaultValue={[new Date(), new Date()]} disabled={true} />`,
+            content: `<InputDateRange 
+    defaultValue={[new Date(), new Date()]} 
+    disabled={true} 
+/>`,
         },
     ],
 };
