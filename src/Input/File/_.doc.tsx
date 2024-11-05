@@ -130,15 +130,25 @@ export default {
     useExample: [
         {
             text: "Selector de archivos con validación de tipo",
-            content: `<InputFile accept={['jpg', 'png']} onChange={(file) => console.log(file)} />`,
+            content: `<InputFile 
+    accept={['jpg', 'png']} 
+    onChange={(file) => console.log(file)} 
+/>`,
         },
         {
             text: "Selector de archivos con tamaño máximo",
-            content: `<InputFile MAX_SIZE_FILE={2000000} textMaxSizeFile="El archivo supera el límite de tamaño." onChange={(file) => console.log(file)} />`,
+            content: `<InputFile 
+    MAX_SIZE_FILE={2000000} 
+    textMaxSizeFile="El archivo supera el límite de tamaño." 
+    onChange={(file) => console.log(file)} 
+/>`,
         },
         {
             text: "Selector de archivos deshabilitado",
-            content: `<InputFile disabled={true} onChange={(file) => console.log(file)} />`,
+            content: `<InputFile 
+    disabled={true} 
+    onChange={(file) => console.log(file)}
+/>`,
         },
     ],
 };

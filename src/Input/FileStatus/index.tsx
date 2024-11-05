@@ -125,7 +125,7 @@ export const InputFileStatus = ({
     return (
         <>
             <div
-                className={`fenext-input-file-status fenext-input-file-status-${data.status ?? "NONE"} ${className}`}
+                className={`fenext-input-file-status fenext-input-file-status-${data?.status ?? "NONE"} ${className}`}
             >
                 {!dataError &&
                 !loaderSubmit &&
