@@ -7,7 +7,7 @@ export default {
     props: [
         {
             id: "title",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "'Drag and drop here'",
             description:
@@ -15,7 +15,7 @@ export default {
         },
         {
             id: "text",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "'Drag and drop your file or template here.'",
             description:
@@ -23,21 +23,21 @@ export default {
         },
         {
             id: "icon",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "<Upload2 />",
             description: "Ícono que se muestra en el componente.",
         },
         {
             id: "btn",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "'Choose File'",
             description: "Texto o contenido del botón de carga.",
         },
         {
             id: "iconLoader",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "<LoaderSpinner />",
             description:
@@ -77,15 +77,36 @@ export default {
     useExample: [
         {
             text: "Carga de archivo con estado de éxito",
-            content: `<InputFileStatus onUploadFile={async (file) => { /* Lógica de carga */ return file; }} />`,
+            content: `<InputFileStatus 
+    onUploadFile={
+        async (file) => { 
+            /* Lógica de carga */ 
+            return file; 
+        }
+    } 
+/>`,
         },
         {
             text: "Carga de archivo con gestión de errores",
-            content: `<InputFileStatus onUploadFile={async (file) => { throw new Error('Error de carga'); }} />`,
+            content: `<InputFileStatus 
+    onUploadFile={
+        async (file) => { 
+            throw new Error('Error de carga'); 
+        }
+    } 
+/>`,
         },
         {
             text: "Componente de carga con botón personalizado",
-            content: `<InputFileStatus btn={<Button>Subir Archivo</Button>} onUploadFile={async (file) => { /* Lógica de carga */ return file; }} />`,
+            content: `<InputFileStatus 
+    btn={<Button>Subir Archivo</Button>} 
+    onUploadFile={
+        async (file) => { 
+            /* Lógica de carga */ 
+            return file; 
+        }
+    } 
+/>`,
         },
     ],
 };
