@@ -9,4 +9,7 @@ export default {
 
 const ChatUser_: Story<ChatUserProps> = (args) => <ChatUser {...args} />;
 export const Index = ChatUser_.bind({});
-Index.args = {} as ChatUserProps;
+Index.args = {
+    name:"User Name"
+
+} as ChatUserProps;

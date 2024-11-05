@@ -92,11 +92,22 @@ export default {
     useExample: [
         {
             text: "Mensaje básico",
-            content: `<ChatMessage id={1} message="Hola" createdAt={new Date()} account={{ name: "Usuario" }} />`,
+            content: `<ChatMessage 
+    id={1}
+    message="Hola" 
+    createdAt={new Date()} 
+    account={{ name: "Usuario" }} 
+/>`,
         },
         {
             text: "Mensaje alineado a la derecha",
-            content: `<ChatMessage id={2} message="Hola, soy yo" right={true} createdAt={new Date()} account={{ name: "Yo" }} />`,
+            content: `<ChatMessage 
+    id={2} 
+    message="Hola, soy yo" 
+    right={true} 
+    createdAt={new Date()} 
+    account={{ name: "Yo" }} 
+/>`,
         },
         {
             text: "Mensaje en estado de carga",
