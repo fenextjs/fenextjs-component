@@ -20,14 +20,14 @@ const args  : InputNumberCountProps = {
     placeholder:"Placeholder",
     min:20,
     max:30000,
-    symbolFinal:"%",
-    symbolInit:"",
+    // symbolFinal:"%",
+    // symbolInit:"",
     // value:22
-    errorWithIsChange:false,
-    validator:FenextjsValidator()
-    .isRequired()
-    .isNumber()
-    .isMinOrEqual(0, )
+    // errorWithIsChange:false,
+    // validator:FenextjsValidator()
+    // .isRequired()
+    // .isNumber()
+    // .isMinOrEqual(0, )
 }
 
 Index.args= args
