@@ -86,7 +86,7 @@ export type TableHeader<T> = {
     /**
      * The label to display in the header column.
      */
-    th: React.ReactNode;
+    th: ReactNode;
     /**
      * The name in the header column.
      */

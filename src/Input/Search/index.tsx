@@ -41,7 +41,7 @@ export interface InputSearchResultProps {
     /**
      * content of Result Search.
      */
-    content?: React.ReactNode;
+    content?: ReactNode;
     /**
      * data of item Search.
      */

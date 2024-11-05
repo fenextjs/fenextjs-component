@@ -7,7 +7,7 @@ export interface InputSearchTabFilterProps extends Omit<InputSelectOptionProps, 
 export interface InputSearchResultProps {
     id: string;
     text: string;
-    content?: React.ReactNode;
+    content?: ReactNode;
     data?: any;
 }
 export interface InputSearchBaseProps extends Omit<InputTextBaseProps, "type"> {

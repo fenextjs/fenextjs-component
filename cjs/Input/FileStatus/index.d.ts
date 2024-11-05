@@ -1,19 +1,19 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { InputFileBaseProps } from "../File";
 import { FileProps, FileStatus } from "fenextjs-interface/cjs/File";
 export type InputFileStatusContentByStatus = {
     [id in FileStatus]?: {
-        title?: React.ReactNode;
-        icon?: React.ReactNode;
-        tag?: React.ReactNode;
+        title?: ReactNode;
+        icon?: ReactNode;
+        tag?: ReactNode;
     };
 };
 export interface InputFileStatusProps extends Omit<InputFileBaseProps, "onUploadFile"> {
-    title?: React.ReactNode;
-    text?: React.ReactNode;
-    icon?: React.ReactNode;
-    btn?: React.ReactNode;
-    iconLoader?: React.ReactNode;
+    title?: ReactNode;
+    text?: ReactNode;
+    icon?: ReactNode;
+    btn?: ReactNode;
+    iconLoader?: ReactNode;
     className?: string;
     onUploadFile: (data: FileProps) => Promise<FileProps>;
     contentByStatus?: InputFileStatusContentByStatus;

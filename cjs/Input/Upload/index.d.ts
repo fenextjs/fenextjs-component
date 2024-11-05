@@ -1,22 +1,22 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { InputFileBaseProps } from "../File";
 import { TitleProps } from "../../Title";
 import { ButtonProps } from "../../Button";
 import { TextProps } from "../../Text";
 import { FileProps } from "fenextjs-interface/cjs/File";
 export interface InputUploadBaseProps extends InputFileBaseProps {
-    title?: React.ReactNode;
-    text?: React.ReactNode;
-    titleFile?: React.ReactNode;
-    textFile?: React.ReactNode;
-    textPreview?: React.ReactNode;
-    icon?: React.ReactNode;
-    iconFile?: React.ReactNode;
-    btn?: React.ReactNode;
+    title?: ReactNode;
+    text?: ReactNode;
+    titleFile?: ReactNode;
+    textFile?: ReactNode;
+    textPreview?: ReactNode;
+    icon?: ReactNode;
+    iconFile?: ReactNode;
+    btn?: ReactNode;
     tagPreview?: "embed" | "img";
-    customPreview?: (data: FileProps) => React.ReactNode;
+    customPreview?: (data: FileProps) => ReactNode;
     loader?: boolean;
-    iconLoader?: React.ReactNode;
+    iconLoader?: ReactNode;
 }
 export interface InputUploadClassProps {
     className?: string;

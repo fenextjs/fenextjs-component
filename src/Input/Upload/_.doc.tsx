@@ -7,14 +7,14 @@ export default {
     props: [
         {
             id: "title",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: `"Drag and drop here"`,
             description: "Título mostrado en el área de carga de archivos.",
         },
         {
             id: "text",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: `"Drag and drop your file or template here."`,
             description:
@@ -22,7 +22,7 @@ export default {
         },
         {
             id: "titleFile",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "undefined",
             description:
@@ -30,7 +30,7 @@ export default {
         },
         {
             id: "textFile",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "undefined",
             description:
@@ -38,7 +38,7 @@ export default {
         },
         {
             id: "textPreview",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: `"Preview File"`,
             description:
@@ -46,21 +46,21 @@ export default {
         },
         {
             id: "icon",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "<Upload2 />",
             description: "Icono que se muestra en el área de carga.",
         },
         {
             id: "iconFile",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: '""',
             description: "Icono que se muestra junto con el archivo cargado.",
         },
         {
             id: "btn",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: `"Choose File"`,
             description:
@@ -76,7 +76,7 @@ export default {
         },
         {
             id: "customPreview",
-            type: "(data: FileProps) => React.ReactNode",
+            type: "(data: FileProps) => ReactNode",
             require: false,
             default: "undefined",
             description:
@@ -92,7 +92,7 @@ export default {
         },
         {
             id: "iconLoader",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "<LoaderSpinner />",
             description:

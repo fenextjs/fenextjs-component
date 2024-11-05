@@ -59,12 +59,12 @@ export interface StepsBaseProps extends _TProps {
      * Content of Button previous.
      * @default "Previous"
      */
-    btnPrev?: React.ReactNode;
+    btnPrev?: ReactNode;
     /**
      * Content of Button next.
      * @default "Next"
      */
-    btnNext?: React.ReactNode;
+    btnNext?: ReactNode;
     /**
      * If Disabled Button previous.
      * @default false

@@ -39,7 +39,7 @@ export default {
         },
         {
             id: "children",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             description:
                 "Contenido que se mostrará dentro del componente `Text` si `loader` es `false`.",

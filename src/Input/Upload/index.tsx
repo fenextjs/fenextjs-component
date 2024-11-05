@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { ReactNode, useMemo, useState } from "react";
 import { InputFile, InputFileBaseProps } from "../File";
 import { Title, TitleProps } from "../../Title";
 import { Button, ButtonProps } from "../../Button";
@@ -19,35 +19,35 @@ export interface InputUploadBaseProps extends InputFileBaseProps {
     /**
      * The Title for the component.
      */
-    title?: React.ReactNode;
+    title?: ReactNode;
     /**
      * The Text for the component.
      */
-    text?: React.ReactNode;
+    text?: ReactNode;
     /**
      * The Title for the component.
      */
-    titleFile?: React.ReactNode;
+    titleFile?: ReactNode;
     /**
      * The Text for the component.
      */
-    textFile?: React.ReactNode;
+    textFile?: ReactNode;
     /**
      * The Text for the component.
      */
-    textPreview?: React.ReactNode;
+    textPreview?: ReactNode;
     /**
      * The Icon for the component.
      */
-    icon?: React.ReactNode;
+    icon?: ReactNode;
     /**
      * The Icon for the component.
      */
-    iconFile?: React.ReactNode;
+    iconFile?: ReactNode;
     /**
      * The Buton for the component.
      */
-    btn?: React.ReactNode;
+    btn?: ReactNode;
     /**
      * The tagPreview for the component.
      */
@@ -55,7 +55,7 @@ export interface InputUploadBaseProps extends InputFileBaseProps {
     /**
      * The tagPreview for the component.
      */
-    customPreview?: (data: FileProps) => React.ReactNode;
+    customPreview?: (data: FileProps) => ReactNode;
     /**
      * The loader for the component.
      */
@@ -63,7 +63,7 @@ export interface InputUploadBaseProps extends InputFileBaseProps {
     /**
      * The Icon for the component.
      */
-    iconLoader?: React.ReactNode;
+    iconLoader?: ReactNode;
 }
 
 /**

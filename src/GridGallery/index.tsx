@@ -1,6 +1,6 @@
 import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
-import React from "react";
+import React, { ReactNode } from "react";
 
 /**
  * Properties for the GridGallery component.
@@ -9,7 +9,7 @@ export interface GridGalleryProps extends _TProps {
     /**
      * The items for the component.
      */
-    items: React.ReactNode[];
+    items: ReactNode[];
     /**
      * The class name for the component.
      */

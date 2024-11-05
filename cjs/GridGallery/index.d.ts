@@ -1,7 +1,7 @@
 import { _TProps } from "fenextjs-interface";
-import React from "react";
+import React, { ReactNode } from "react";
 export interface GridGalleryProps extends _TProps {
-    items: React.ReactNode[];
+    items: ReactNode[];
     className?: string;
     classNameItem?: string;
 }

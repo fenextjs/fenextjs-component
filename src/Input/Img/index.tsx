@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { InputFile, InputFileBaseProps } from "../File";
 import { Title, TitleProps } from "../../Title";
 import { Text, TextProps } from "../../Text";
@@ -16,15 +16,15 @@ export interface InputImgBaseProps extends Omit<InputFileBaseProps, "accept"> {
     /**
      * The Title for the component.
      */
-    title?: React.ReactNode;
+    title?: ReactNode;
     /**
      * The Text for the component.
      */
-    text?: React.ReactNode;
+    text?: ReactNode;
     /**
      * The Icon for the component.
      */
-    icon?: React.ReactNode;
+    icon?: ReactNode;
     /**
      * on Remove Img for the component.
      */

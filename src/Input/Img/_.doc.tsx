@@ -7,14 +7,14 @@ export default {
     props: [
         {
             id: "title",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "'Add Image'",
             description: "Título que se muestra en el componente.",
         },
         {
             id: "text",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "'Drag Image'",
             description:
@@ -22,7 +22,7 @@ export default {
         },
         {
             id: "icon",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "<SvgImg />",
             description: "Ícono que se muestra en el componente.",

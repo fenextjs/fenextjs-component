@@ -11,8 +11,8 @@ export interface StepsBaseProps extends _TProps {
     defaultStep?: number;
     step?: number;
     useArrowKey?: boolean;
-    btnPrev?: React.ReactNode;
-    btnNext?: React.ReactNode;
+    btnPrev?: ReactNode;
+    btnNext?: ReactNode;
     disabledBtnPrev?: boolean;
     disabledBtnNext?: boolean;
     onPrev?: (step: number) => Promise<void> | void;

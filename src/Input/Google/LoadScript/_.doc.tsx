@@ -15,7 +15,7 @@ export default {
         },
         {
             id: "children",
-            type: "React.ReactNode",
+            type: "ReactNode",
             require: false,
             default: "undefined",
             description:

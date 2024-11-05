@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { ReactNode, useMemo } from "react";
 import { InputFile, InputFileBaseProps } from "../File";
 import { Title } from "../../Title";
 import { Button } from "../../Button";
@@ -18,15 +18,15 @@ export type InputFileStatusContentByStatus = {
         /**
          * The Title for the component.
          */
-        title?: React.ReactNode;
+        title?: ReactNode;
         /**
          * The Icon for the component.
          */
-        icon?: React.ReactNode;
+        icon?: ReactNode;
         /**
          * The Tag for the component.
          */
-        tag?: React.ReactNode;
+        tag?: ReactNode;
     };
 };
 
@@ -38,24 +38,24 @@ export interface InputFileStatusProps
     /**
      * The Title for the component.
      */
-    title?: React.ReactNode;
+    title?: ReactNode;
     /**
      * The Text for the component.
      */
-    text?: React.ReactNode;
+    text?: ReactNode;
     /**
      * The Icon for the component.
      */
-    icon?: React.ReactNode;
+    icon?: ReactNode;
     /**
      * The Buton for the component.
      */
-    btn?: React.ReactNode;
+    btn?: ReactNode;
 
     /**
      * The Icon for the component.
      */
-    iconLoader?: React.ReactNode;
+    iconLoader?: ReactNode;
 
     /**
      * className for the component.

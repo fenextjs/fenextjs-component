@@ -1,6 +1,6 @@
 #### GridGallery
 
-El componente GridGallery es una galería de elementos dispuestos en una cuadrícula. Toma una lista de elementos de tipo React.ReactNode y los muestra en una cuadrícula con un estilo personalizado.
+El componente GridGallery es una galería de elementos dispuestos en una cuadrícula. Toma una lista de elementos de tipo ReactNode y los muestra en una cuadrícula con un estilo personalizado.
 
 ```tsx
 import {

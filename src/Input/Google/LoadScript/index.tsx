@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { LoadScript, LoadScriptProps } from "@react-google-maps/api";
 import { ErrorComponent } from "../../../Error";
 import { ErrorFenextjs, ErrorGoogleKeyInvalid } from "fenextjs-error";
@@ -16,7 +16,7 @@ export interface InputGoogleLoadScriptBaseProps
      */
     googleMapsApiKey?: string;
 
-    children?: React.ReactNode;
+    children?: ReactNode;
 }
 
 /**

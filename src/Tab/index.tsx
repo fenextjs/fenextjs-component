@@ -15,21 +15,21 @@ export interface TabItemProps<T = string> {
     /**
      * Content to be displayed in the tab header.
      */
-    head: React.ReactNode;
+    head: ReactNode;
 
     /**
      * Content to be displayed in the tab body.
      */
-    body: React.ReactNode;
+    body: ReactNode;
     /**
      * Component of before list  Tabs Header;
      */
-    beforeTab?: React.ReactNode;
+    beforeTab?: ReactNode;
 
     /**
      * Component of after list  Tabs Header;
      */
-    afterTab?: React.ReactNode;
+    afterTab?: ReactNode;
 
     /**
      * useCount  Tabs Header;
@@ -78,12 +78,12 @@ export interface TabBaseProps<T = string> extends _TProps {
     /**
      * Component of before list  Tabs Header;
      */
-    beforeTabs?: React.ReactNode;
+    beforeTabs?: ReactNode;
 
     /**
      * Component of after list  Tabs Header;
      */
-    afterTabs?: React.ReactNode;
+    afterTabs?: ReactNode;
 
     /**
      * tabScrollActive if show all tabs in scroll in selecte.

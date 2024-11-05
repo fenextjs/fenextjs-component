@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { LoadScriptProps } from "@react-google-maps/api";
 import { _TProps } from "fenextjs-interface";
 export interface InputGoogleLoadScriptBaseProps extends Omit<LoadScriptProps, "googleMapsApiKey" | "id">, _TProps {
     googleMapsApiKey?: string;
-    children?: React.ReactNode;
+    children?: ReactNode;
 }
 export interface InputGoogleLoadScriptClassProps {
     className?: string;

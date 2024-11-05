@@ -1,11 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { InputFileBaseProps } from "../File";
 import { TitleProps } from "../../Title";
 import { TextProps } from "../../Text";
 export interface InputImgBaseProps extends Omit<InputFileBaseProps, "accept"> {
-    title?: React.ReactNode;
-    text?: React.ReactNode;
-    icon?: React.ReactNode;
+    title?: ReactNode;
+    text?: ReactNode;
+    icon?: ReactNode;
     onRemove?: () => void;
 }
 export interface InputImgClassProps {

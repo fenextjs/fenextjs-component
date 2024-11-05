@@ -3,10 +3,10 @@ import { _TProps } from "fenextjs-interface";
 import React, { ReactNode } from "react";
 export interface TabItemProps<T = string> {
     id: T;
-    head: React.ReactNode;
-    body: React.ReactNode;
-    beforeTab?: React.ReactNode;
-    afterTab?: React.ReactNode;
+    head: ReactNode;
+    body: ReactNode;
+    beforeTab?: ReactNode;
+    afterTab?: ReactNode;
     useCount?: boolean;
     count?: number;
     singular?: ReactNode;
@@ -17,8 +17,8 @@ export interface TabBaseProps<T = string> extends _TProps {
     onChange?: (item: TabItemProps<T>) => void;
     defaultTab?: number;
     activeTab?: number;
-    beforeTabs?: React.ReactNode;
-    afterTabs?: React.ReactNode;
+    beforeTabs?: ReactNode;
+    afterTabs?: ReactNode;
     tabScrollActive?: boolean;
     validataTabOneHiddenHeader?: boolean;
     useCount?: boolean;
