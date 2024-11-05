@@ -1,6 +1,7 @@
 export default {
     id: "menu",
     idStorybook: "component-menu",
+    minHeightIframe: "50vh",
     name: "Menu",
     description:
         "El componente Menu renderiza una lista de elementos interactivos. Se utiliza para mostrar una estructura de menú con soporte para la funcionalidad de colapsar submenús, íconos personalizados y distintos tipos de comportamiento (radio o checkbox).",
@@ -49,15 +50,32 @@ export default {
     useExample: [
         {
             text: "Menú básico",
-            content: `<Menu items={[{ label: 'Home', link: '/' }, { label: 'About', link: '/about' }]} />`,
+            content: `<Menu 
+    items={[
+        { label: 'Home', link: '/' }, 
+        { label: 'About', link: '/about' }
+    ]} 
+/>`,
         },
         {
             text: "Menú con ícono personalizado",
-            content: `<Menu iconArrow={<CustomIcon />} items={[{ label: 'Home', link: '/' }, { label: 'Services', link: '/services' }]} />`,
+            content: `<Menu 
+    iconArrow={<CustomIcon />} 
+    items={[
+        { label: 'Home', link: '/' }, 
+        { label: 'Services', link: '/services' }
+    ]} 
+/>`,
         },
         {
             text: "Menú con submenús desplegables",
-            content: `<Menu defaultShowSubMenu={true} items={[{ label: 'Home', link: '/', defaultActive: true }, { label: 'Projects', link: '/projects' }]} />`,
+            content: `<Menu 
+    defaultShowSubMenu={true} 
+    items={[
+        { label: 'Home', link: '/', defaultActive: true }, 
+        { label: 'Projects', link: '/projects' }
+    ]} 
+/>`,
         },
     ],
 };

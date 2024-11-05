@@ -108,7 +108,14 @@ export default {
         },
         {
             text: "Ítem de menú con submenús",
-            content: `<ItemMenu url="/services" text="Servicios" subItems={[{ url: "/web", text: "Desarrollo Web" }, { url: "/app", text: "Aplicaciones Móviles" }]} />`,
+            content: `<ItemMenu 
+    url="/services" 
+    text="Servicios" 
+    subItems={[
+        { url: "/web", text: "Desarrollo Web" }, 
+        { url: "/app", text: "Aplicaciones Móviles" }
+    ]} 
+/>`,
         },
         {
             text: "Ítem de menú con icono y colapso activado",
