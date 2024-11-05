@@ -1,5 +1,6 @@
 export default {
     id: "collapse-multiple",
+    minHeightIframe: "50vh",
     idStorybook: "component-collapse-multiple",
     name: "CollapseMultiple",
     description:
@@ -9,6 +10,7 @@ export default {
             id: "items",
             type: "Omit<CollapseBaseProps, 'checkbox' | 'name' | 'id'>[]",
             require: false,
+            default: "[]",
             description:
                 "Lista de items que se mostrarán como componentes Collapse dentro de CollapseMultiple.",
         },

@@ -107,7 +107,7 @@ export default {
             require: false,
             default: "false",
             description:
-                "Si está habilitado, el contenido solo se mostrará cuando el Collapse esté activo.",
+                "Si está habilitado, el contenido solo se cargara cuando el Collapse esté activo.",
         },
         {
             id: "children",
