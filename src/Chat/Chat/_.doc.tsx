@@ -2,6 +2,7 @@ export default {
     id: "chat",
     idStorybook: "chat",
     name: "Chat",
+    minHeightIframe:"80vh",
     description:
         "El componente Chat es un contenedor completo que incluye elementos como el usuario del chat, los mensajes, un formulario para enviar mensajes y un botón de cargar más mensajes. Se puede configurar para mostrar un loader mientras se cargan los datos, así como manejar diferentes estados como chat vacío y auto-scroll cuando hay nuevos mensajes.",
     props: [
@@ -121,7 +122,11 @@ export default {
         },
         {
             text: "Chat vacío",
-            content: `<Chat chatUser={[{ id: 1, name: "User1" }]} chatMessage={[]} chatFormSendMessage={{ onSubmit: () => {} }} />`,
+            content: `<Chat 
+    chatUser={[{ id: 1, name: "User1" }]} 
+    chatMessage={[]} 
+    chatFormSendMessage={{ onSubmit: () => {} }}
+/>`,
         },
         {
             text: "Chat con botón de cargar más mensajes",
