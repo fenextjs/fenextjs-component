@@ -6,11 +6,50 @@ export default {
         "El componente InputPassword es un campo de entrada de contraseña que permite alternar entre la visibilidad del texto y el modo de contraseña mediante un ícono de ojo.",
     props: [
         {
-            id: "value",
-            type: "string",
+            id: "id",
+            type: "any",
+            require: false,
+            default: "''",
+            description: "ID del campo de entrada.",
+        },
+        {
+            id: "name",
+            type: "any",
+            require: false,
+            default: "''",
+            description: "Nombre del campo de entrada.",
+        },
+        {
+            id: "validator",
+            type: "FenextjsValidatorClass",
             require: false,
             default: "undefined",
-            description: "Valor actual del input de contraseña.",
+            description:
+                "Clase de validador de Fenextjs para la validación de la entrada.",
+        },
+        {
+            id: "label",
+            type: "any",
+            require: false,
+            default: "''",
+            description:
+                "Texto de etiqueta que se muestra para el campo de entrada.",
+        },
+        {
+            id: "placeholder",
+            type: "string",
+            require: false,
+            default: "''",
+            description:
+                "Texto que se muestra en el campo de entrada cuando está vacío.",
+        },
+        {
+            id: "defaultValue",
+            type: "string | undefined | null",
+            require: false,
+            default: "undefined",
+            description:
+                "Valor predeterminado para establecer en el campo de entrada.",
         },
         {
             id: "onChange",
@@ -19,13 +58,6 @@ export default {
             default: "undefined",
             description:
                 "Función que se ejecuta al cambiar el valor del input.",
-        },
-        {
-            id: "placeholder",
-            type: "string",
-            require: false,
-            default: "undefined",
-            description: "Texto de marcador de posición dentro del input.",
         },
         {
             id: "icon",
