@@ -7,14 +7,14 @@ export default {
     props: [
         {
             id: "id",
-            type: "any",
+            type: "string",
             require: false,
             default: "''",
             description: "ID del campo de entrada.",
         },
         {
             id: "name",
-            type: "any",
+            type: "string",
             require: false,
             default: "''",
             description: "Nombre del campo de entrada.",
@@ -29,7 +29,7 @@ export default {
         },
         {
             id: "label",
-            type: "any",
+            type: "ReactNode",
             require: false,
             default: "''",
             description:
