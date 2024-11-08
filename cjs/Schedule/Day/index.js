@@ -34,7 +34,7 @@ const ScheduleDay = ({ className = "", defaultValue = [[undefined, undefined]], 
                         react_1.default.createElement("div", { className: "fenext-schedule-day-date-range-close", onClick: () => {
                                 onDeleteData(i);
                             } },
-                            react_1.default.createElement(Close_1.Close, null)))));
+                            react_1.default.createElement(Close_1.SvgClose, null)))));
             })),
             react_1.default.createElement("div", { className: "fenext-schedule-day-content-btn" },
                 react_1.default.createElement(Button_1.Button, { ...ButtonProps, onClick: onAddTimeRange, _t: _t })))));

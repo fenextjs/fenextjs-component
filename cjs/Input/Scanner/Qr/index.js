@@ -10,7 +10,7 @@ const Qr_1 = require("fenextjs-svg/cjs/Qr");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_svg_1 = require("fenextjs-svg");
-const InputScannerQr = ({ className = "", onChange, buttonScannerContent = react_1.default.createElement(Qr_1.Qr, null), buttonChangeCameraContent = react_1.default.createElement(fenextjs_svg_1.CameraChange, null), buttonToggleFlashContent = react_1.default.createElement(fenextjs_svg_1.Bolt, null), }) => {
+const InputScannerQr = ({ className = "", onChange, buttonScannerContent = react_1.default.createElement(Qr_1.SvgQr, null), buttonChangeCameraContent = react_1.default.createElement(fenextjs_svg_1.SvgCameraChange, null), buttonToggleFlashContent = react_1.default.createElement(fenextjs_svg_1.SvgBolt, null), }) => {
     const uuid = (0, react_1.useMemo)(() => (0, fenextjs_functions_1.generateRandomID)(), []);
     const ref = (0, react_1.useRef)(null);
     const [showScanner, setShowScanner] = (0, react_1.useState)(false);

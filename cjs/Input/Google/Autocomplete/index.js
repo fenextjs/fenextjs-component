@@ -62,7 +62,7 @@ const InputGoogleAutocomplete = ({ defaultValueJsonString, valueJsonString, onCh
                                 ? isValidData
                                 : undefined) }))),
             react_1.default.createElement("span", { className: `fenext-input-google-autocomplete-close` },
-                react_1.default.createElement(Close_1.Close, null)))));
+                react_1.default.createElement(Close_1.SvgClose, null)))));
 };
 exports.InputGoogleAutocomplete = InputGoogleAutocomplete;
 //# sourceMappingURL=index.js.map

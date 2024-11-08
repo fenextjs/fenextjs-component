@@ -1,7 +1,10 @@
 import React, { useMemo, useState } from "react";
 import { Img, ImgProps } from "../Img";
 import { Steps } from "../Steps";
-import { PaginationNext, PaginationPre } from "fenextjs-svg/cjs/Pagination";
+import {
+    SvgPaginationNext,
+    SvgPaginationPre,
+} from "fenextjs-svg/cjs/Pagination";
 import { _TProps } from "fenextjs-interface";
 
 /**
@@ -76,12 +79,12 @@ export const ImgSlider = ({
                     onSetStep={setStep}
                     btnNext={
                         <>
-                            <PaginationNext />
+                            <SvgPaginationNext />
                         </>
                     }
                     btnPrev={
                         <>
-                            <PaginationPre />
+                            <SvgPaginationPre />
                         </>
                     }
                     useDogs={true}

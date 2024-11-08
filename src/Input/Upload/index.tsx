@@ -3,11 +3,11 @@ import { InputFile, InputFileBaseProps } from "../File";
 import { Title, TitleProps } from "../../Title";
 import { Button, ButtonProps } from "../../Button";
 import { Text, TextProps } from "../../Text";
-import { Upload2 } from "fenextjs-svg/cjs/Upload";
+import { SvgUpload2 } from "fenextjs-svg/cjs/Upload";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { FileProps } from "fenextjs-interface/cjs/File";
 import { ErrorProps } from "fenextjs-interface/cjs/Error";
-import { Close } from "fenextjs-svg/cjs/Close";
+import { SvgClose } from "fenextjs-svg/cjs/Close";
 import { Collapse } from "../../Collapse";
 import { use_T } from "fenextjs-hook";
 import { LoaderSpinner } from "../../Loader";
@@ -130,7 +130,7 @@ export const InputUpload = ({
     btn = "Choose File",
     icon = (
         <>
-            <Upload2 />
+            <SvgUpload2 />
         </>
     ),
     text = "Drag and drop your file or template here.",
@@ -242,7 +242,7 @@ export const InputUpload = ({
                                         });
                                     }}
                                 >
-                                    <Close />
+                                    <SvgClose />
                                 </div>
                             )}
                         </div>

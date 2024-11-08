@@ -38,7 +38,7 @@ const InputImg = ({ className = "", classNameContentIcon = "", classNameText = {
                         });
                         onRemove?.();
                     } },
-                    react_1.default.createElement(Close_1.Close, null))))) : (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(Close_1.SvgClose, null))))) : (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(File_1.InputFile, { onChange: setData, parseProgress: () => "", onChangeProgress: setProgress, onChangeError: setError, accept: [
                     "jpg",
                     "jpeg",

@@ -14,7 +14,7 @@ const Notification = ({ className = "", type = Request_1.RequestResultTypeProps.
         react_1.default.createElement("div", { className: `fenext-notification fenext-notification-${type.toLowerCase()} ${className} ` },
             _t(children),
             react_1.default.createElement("div", { className: "fenext-notification-close", onClick: reset },
-                react_1.default.createElement(Close_1.Close, null)))));
+                react_1.default.createElement(Close_1.SvgClose, null)))));
 };
 exports.Notification = Notification;
 //# sourceMappingURL=index.js.map

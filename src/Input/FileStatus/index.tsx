@@ -3,11 +3,11 @@ import { InputFile, InputFileBaseProps } from "../File";
 import { Title } from "../../Title";
 import { Button } from "../../Button";
 import { Text } from "../../Text";
-import { Upload2 } from "fenextjs-svg/cjs/Upload";
-import { Check } from "fenextjs-svg/cjs/Check";
+import { SvgUpload2 } from "fenextjs-svg/cjs/Upload";
+import { SvgCheck } from "fenextjs-svg/cjs/Check";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { FileProps, FileStatus } from "fenextjs-interface/cjs/File";
-import { Close } from "fenextjs-svg/cjs/Close";
+import { SvgClose } from "fenextjs-svg/cjs/Close";
 import { use_T } from "fenextjs-hook";
 import { LoaderSpinner } from "../../Loader";
 import { ErrorComponent } from "../../Error";
@@ -72,7 +72,7 @@ export const InputFileStatus = ({
     btn = "Choose File",
     icon = (
         <>
-            <Upload2 />
+            <SvgUpload2 />
         </>
     ),
     text = "Drag and drop your file or template here.",
@@ -96,17 +96,17 @@ export const InputFileStatus = ({
             APPROVED: {
                 title: "Approved!",
                 tag: "Accepted",
-                icon: <Check />,
+                icon: <SvgCheck />,
             },
             REFUSED: {
                 title: "Refused! go up again",
                 tag: "Denied",
-                icon: <Upload2 />,
+                icon: <SvgUpload2 />,
             },
             PENDING: {
                 title: "Pending",
                 tag: "Pending",
-                icon: <Upload2 />,
+                icon: <SvgUpload2 />,
             },
             ...contentByStatusProps,
         }),
@@ -175,7 +175,7 @@ export const InputFileStatus = ({
                                         });
                                     }}
                                 >
-                                    <Close />
+                                    <SvgClose />
                                 </div>
                             )}
                         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../../Text";
 import { Autocomplete, AutocompleteProps } from "@react-google-maps/api";
-import { Close } from "fenextjs-svg/cjs/Close";
+import { SvgClose } from "fenextjs-svg/cjs/Close";
 import { useData } from "fenextjs-hook/cjs/useData";
 import {
     AddressGoogle,
@@ -146,7 +146,7 @@ export const InputGoogleAutocomplete = ({
                     </Autocomplete>
                 </div>
                 <span className={`fenext-input-google-autocomplete-close`}>
-                    <Close />
+                    <SvgClose />
                 </span>
             </div>
         </div>

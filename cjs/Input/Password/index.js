@@ -11,7 +11,7 @@ const InputPassword = ({ classNameContentEye = "", ...props }) => {
         setType(type == "password" ? "text" : "password");
     };
     const ICON = (0, react_1.useMemo)(() => {
-        return (react_1.default.createElement("span", { onClick: toggleTypePassword, className: `fenext-input-password-icon ${classNameContentEye}` }, type == "password" ? react_1.default.createElement(Eye_1.Eye, null) : react_1.default.createElement(Eye_1.EyeBar, null)));
+        return (react_1.default.createElement("span", { onClick: toggleTypePassword, className: `fenext-input-password-icon ${classNameContentEye}` }, type == "password" ? react_1.default.createElement(Eye_1.SvgEye, null) : react_1.default.createElement(Eye_1.SvgEyeBar, null)));
     }, [type]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(Text_1.InputText, { ...props, icon: ICON, type: type })));

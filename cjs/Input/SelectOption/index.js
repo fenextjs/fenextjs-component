@@ -6,7 +6,7 @@ const react_1 = tslib_1.__importDefault(require("react"));
 const Trash_1 = require("fenextjs-svg/cjs/Trash");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const Img_1 = require("../../Img");
-const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", classNameOptionDelete = "", id, text, img = undefined, imgComponent = undefined, icon = undefined, children, type = "div", onClick, onDelete, disabled = false, selected = false, hidden = false, isBtn = false, data, iconDelete = react_1.default.createElement(Trash_1.Trash, null), ...props }) => {
+const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", classNameOptionDelete = "", id, text, img = undefined, imgComponent = undefined, icon = undefined, children, type = "div", onClick, onDelete, disabled = false, selected = false, hidden = false, isBtn = false, data, iconDelete = react_1.default.createElement(Trash_1.SvgTrash, null), ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const TAG = type == "option" ? "option" : "div";
     return (react_1.default.createElement(react_1.default.Fragment, null,

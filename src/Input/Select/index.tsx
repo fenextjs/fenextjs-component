@@ -12,14 +12,14 @@ import {
     InputSelectOptionClassProps,
     InputSelectOptionProps,
 } from "../SelectOption";
-import { Arrow } from "fenextjs-svg/cjs/Arrow";
-import { Cancel } from "fenextjs-svg/cjs/cancel";
+import { SvgArrow } from "fenextjs-svg/cjs/Arrow";
+import { SvgCancel } from "fenextjs-svg/cjs/cancel";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorCode } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 import { useValidator } from "fenextjs-hook";
-import { SVGSearch, Trash } from "fenextjs-svg";
+import { SvgSearch, SvgTrash } from "fenextjs-svg";
 import { Img } from "../../Img";
 import { useSelectOptionsPos } from "./useSelectOptionsPos";
 import { FenextjsValidatorClass } from "fenextjs-validator";
@@ -242,15 +242,15 @@ export const InputSelect = <T = any,>({
     onChangeData,
     onChangeText,
     onChangeValidate,
-    icon = <Arrow />,
-    iconSearch = <SVGSearch />,
+    icon = <SvgArrow />,
+    iconSearch = <SvgSearch />,
     noResult,
     loaderOption,
     selected,
     create,
     onCreate,
     isSelectClearText = false,
-    iconCloseMovil = <Cancel />,
+    iconCloseMovil = <SvgCancel />,
     filterOptions = undefined,
     clearContent = "Clear",
     isSelectChangeText = true,
@@ -272,7 +272,7 @@ export const InputSelect = <T = any,>({
     validatorData,
     useTOption,
     forceShowOptionOnLoad = false,
-    iconDelete = <Trash />,
+    iconDelete = <SvgTrash />,
     ...props
 }: InputSelectProps<T>) => {
     const { _t } = use_T({ ...props });

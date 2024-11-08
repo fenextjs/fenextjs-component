@@ -10,15 +10,15 @@ const useData_1 = require("fenextjs-hook/cjs/useData");
 const fenextjs_svg_1 = require("fenextjs-svg");
 const fenextjs_functions_1 = require("fenextjs-functions");
 exports.InputCardNumberIcons = {
-    AMEX: react_1.default.createElement(fenextjs_svg_1.CardAmericanExpress, null),
-    DINERS: react_1.default.createElement(fenextjs_svg_1.CardDinersClub, null),
-    DINERS_CARTE_BLANCHE: react_1.default.createElement(fenextjs_svg_1.CardDinersClub, null),
-    DISCOVER: react_1.default.createElement(fenextjs_svg_1.CardDiscover, null),
-    JCB: react_1.default.createElement(fenextjs_svg_1.CardJCB, null),
-    MASTERCARD: react_1.default.createElement(fenextjs_svg_1.CardMasterCard, null),
+    AMEX: react_1.default.createElement(fenextjs_svg_1.SvgCardAmericanExpress, null),
+    DINERS: react_1.default.createElement(fenextjs_svg_1.SvgCardDinersClub, null),
+    DINERS_CARTE_BLANCHE: react_1.default.createElement(fenextjs_svg_1.SvgCardDinersClub, null),
+    DISCOVER: react_1.default.createElement(fenextjs_svg_1.SvgCardDiscover, null),
+    JCB: react_1.default.createElement(fenextjs_svg_1.SvgCardJCB, null),
+    MASTERCARD: react_1.default.createElement(fenextjs_svg_1.SvgCardMasterCard, null),
     OTHER: react_1.default.createElement(react_1.default.Fragment, null),
-    VISA: react_1.default.createElement(fenextjs_svg_1.CardVisa, null),
-    VISA_ELECTRON: react_1.default.createElement(fenextjs_svg_1.CardVisaElectron, null),
+    VISA: react_1.default.createElement(fenextjs_svg_1.SvgCardVisa, null),
+    VISA_ELECTRON: react_1.default.createElement(fenextjs_svg_1.SvgCardVisaElectron, null),
 };
 const InputCardNumber = ({ value: valueProps, defaultValue = "", onChange, validator = undefined, maxNumberLength = 19, ...props }) => {
     const { data, setData } = (0, useData_1.useData)(defaultValue ?? "", {

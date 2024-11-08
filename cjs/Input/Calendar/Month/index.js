@@ -13,13 +13,13 @@ const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, se
             react_1.default.createElement("div", { className: `fenext-input-calendar-month-content` },
                 react_1.default.createElement("div", { className: `fenext-input-calendar-top` },
                     react_1.default.createElement("button", { className: `fenext-input-calendar-btn`, onClick: onPreMonth },
-                        react_1.default.createElement(fenextjs_svg_1.PaginationPre, null)),
+                        react_1.default.createElement(fenextjs_svg_1.SvgPaginationPre, null)),
                     react_1.default.createElement("div", { className: `fenext-input-calendar-top-info` }, date?.onFormat({
                         month: "long",
                         year: "numeric",
                     })),
                     react_1.default.createElement("button", { className: `fenext-input-calendar-btn`, onClick: onNextMonth },
-                        react_1.default.createElement(fenextjs_svg_1.PaginationNext, null))),
+                        react_1.default.createElement(fenextjs_svg_1.SvgPaginationNext, null))),
                 react_1.default.createElement("div", { className: `fenext-input-calendar-days` }, [
                     fenextjs_interface_1.DaysEnum.Sunday,
                     fenextjs_interface_1.DaysEnum.Monday,

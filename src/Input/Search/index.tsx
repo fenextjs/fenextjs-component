@@ -1,6 +1,6 @@
 import React, { ReactNode, useRef, useState } from "react";
-import { SVGSearch } from "fenextjs-svg/cjs/Search";
-import { Close } from "fenextjs-svg/cjs/Close";
+import { SvgSearch } from "fenextjs-svg/cjs/Search";
+import { SvgClose } from "fenextjs-svg/cjs/Close";
 import { useData } from "fenextjs-hook";
 import { Title } from "../../Title";
 import { InputSelectOption, InputSelectOptionProps } from "../SelectOption";
@@ -179,8 +179,8 @@ export const InputSearch = ({
     classNameSearchResult = "",
 
     placeholder = "Search",
-    icon = <SVGSearch />,
-    iconClear = <Close />,
+    icon = <SvgSearch />,
+    iconClear = <SvgClose />,
     loader = false,
 
     onSearch,
@@ -377,7 +377,7 @@ export const InputSearch = ({
                                             onDelete={onClickDeleteTabFilter(i)}
                                             onClick={onFocusClickSearch}
                                             type="multiple"
-                                            iconDelete={<Close />}
+                                            iconDelete={<SvgClose />}
                                             {...item}
                                             _t={_t}
                                         />

@@ -53,14 +53,14 @@ const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = fal
                 props?.onWheel?.(e);
             }, icon: react_1.default.createElement(react_1.default.Fragment, null, useBtnIncreaseDecrease ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("span", { onClick: addValue(1), className: `fenext-input-number-icon-arrow fenext-input-number-icon-increase` },
-                    react_1.default.createElement(Number_1.SVGNumberIncrease, null)),
+                    react_1.default.createElement(Number_1.SvgNumberIncrease, null)),
                 react_1.default.createElement("span", { onClick: addValue(-1), className: `fenext-input-number-icon-arrow fenext-input-number-icon-decrease` },
-                    react_1.default.createElement(Number_1.SVGNumberDecrease, null)))) : (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(Number_1.SvgNumberDecrease, null)))) : (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("div", { className: "fenext-input-number-icon-arrow" },
                     react_1.default.createElement("span", { onClick: addValue(1), className: `fenext-input-number-icon-arrow-up` },
-                        react_1.default.createElement(Arrow_1.Arrow, null)),
+                        react_1.default.createElement(Arrow_1.SvgArrow, null)),
                     react_1.default.createElement("span", { onClick: addValue(-1), className: `fenext-input-number-icon-arrow-down` },
-                        react_1.default.createElement(Arrow_1.Arrow, null)))))), onChangeValidate: (v) => {
+                        react_1.default.createElement(Arrow_1.SvgArrow, null)))))), onChangeValidate: (v) => {
                 const v2 = minMaxValue(valueToNumber(v));
                 const s = props?.onChangeValidate?.(v2) ?? v2;
                 return `${s}`;

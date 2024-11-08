@@ -21,8 +21,8 @@ const ImgSlider = ({ className = "", imgs, defaultStep = 0, setStep: setStepProp
                         content: react_1.default.createElement(Img_1.Img, { key: i, ...e }),
                     };
                 }), stepPos: "top", step: step, onSetStep: setStep, btnNext: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(Pagination_1.PaginationNext, null)), btnPrev: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(Pagination_1.PaginationPre, null)), useDogs: true, ...props }))));
+                    react_1.default.createElement(Pagination_1.SvgPaginationNext, null)), btnPrev: react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(Pagination_1.SvgPaginationPre, null)), useDogs: true, ...props }))));
 };
 exports.ImgSlider = ImgSlider;
 //# sourceMappingURL=index.js.map

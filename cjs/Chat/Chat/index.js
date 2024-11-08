@@ -12,7 +12,7 @@ const Text_1 = require("../../Text");
 const Telegram_1 = require("fenextjs-svg/cjs/Telegram");
 const Chat = ({ loader, empty = (react_1.default.createElement(react_1.default.Fragment, null,
     react_1.default.createElement(Text_1.Text, null, "There is not messages yet"),
-    react_1.default.createElement(Telegram_1.Telegram, null))), chatUser, loaderChatUser, chatMessage, loaderChatMessage, chatFormSendMessage, loaderChatFormSendMessage, useBtnLoadMoreMssages = false, btnLoadMoreMessages = {
+    react_1.default.createElement(Telegram_1.SvgTelegram, null))), chatUser, loaderChatUser, chatMessage, loaderChatMessage, chatFormSendMessage, loaderChatFormSendMessage, useBtnLoadMoreMssages = false, btnLoadMoreMessages = {
     children: "Load more messages",
 }, fullPage = true, onScrollIfNewMessage = true, ...props }) => {
     const onActionAfterNewMessage = () => {

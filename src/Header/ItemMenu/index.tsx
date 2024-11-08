@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { Collapse } from "../../Collapse/Simple";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
-import { Arrow } from "fenextjs-svg/cjs/Arrow";
+import { SvgArrow } from "fenextjs-svg/cjs/Arrow";
 import { Link } from "../../Link";
 
 /**
@@ -92,7 +92,7 @@ export const ItemMenu = ({
     icon = <></>,
     subItems = [],
     defaultActive = false,
-    iconArrow = <Arrow />,
+    iconArrow = <SvgArrow />,
     nameNumber = 1,
     typeCollapse,
     isLink = true,

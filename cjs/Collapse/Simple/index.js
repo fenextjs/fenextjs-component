@@ -7,7 +7,7 @@ const Loader_1 = require("../../Loader");
 const Arrow_1 = require("fenextjs-svg/cjs/Arrow");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_functions_1 = require("fenextjs-functions");
-const Collapse = ({ className = "", classNameHeader = "", classNameHeaderContent = "", classNameHeaderIcon = "", classNameBody = "", children, loader = false, header, disabled = false, defaultActive = false, active: activeProps = undefined, id, name = "", type = "checkbox", show = "checked", status = "none", onChange, iconArrow = react_1.default.createElement(Arrow_1.Arrow, null), rotateIcon = true, useActiveForShowChildren = false, }) => {
+const Collapse = ({ className = "", classNameHeader = "", classNameHeaderContent = "", classNameHeaderIcon = "", classNameBody = "", children, loader = false, header, disabled = false, defaultActive = false, active: activeProps = undefined, id, name = "", type = "checkbox", show = "checked", status = "none", onChange, iconArrow = react_1.default.createElement(Arrow_1.SvgArrow, null), rotateIcon = true, useActiveForShowChildren = false, }) => {
     const [active_, setActive_] = (0, react_1.useState)(defaultActive);
     const active = (0, react_1.useMemo)(() => activeProps ?? active_, [activeProps, active_]);
     const { onAction } = (0, fenextjs_hook_1.useAction)({

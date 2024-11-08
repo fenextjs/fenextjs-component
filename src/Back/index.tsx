@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { useRouter } from "next/router";
 import { Loader, LoaderClassProps } from "../Loader";
-import { PaginationPre } from "fenextjs-svg/cjs/Pagination";
+import { SvgPaginationPre } from "fenextjs-svg/cjs/Pagination";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 
@@ -89,7 +89,7 @@ export const Back = ({
     loader = false,
     disabled = false,
     onClick = undefined,
-    icon = <PaginationPre />,
+    icon = <SvgPaginationPre />,
     typeOnBack = "history",
     link = "",
     minLenght = 2,

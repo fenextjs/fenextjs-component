@@ -39,7 +39,7 @@ const DesignTypography = ({ className = "", textTypography = "Typography", textE
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-design-typography ${className} ` },
             react_1.default.createElement(Simple_1.Collapse, { header: react_1.default.createElement(react_1.default.Fragment, null, _t(textTypography)), iconArrow: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(fenextjs_svg_1.Edit, null)), rotateIcon: false, name: collapseName, type: collapseType, useActiveForShowChildren: collapseUseActiveForShowChildren },
+                    react_1.default.createElement(fenextjs_svg_1.SvgEdit, null)), rotateIcon: false, name: collapseName, type: collapseType, useActiveForShowChildren: collapseUseActiveForShowChildren },
                 react_1.default.createElement("div", { className: `fenext-design-typography-content ` },
                     react_1.default.createElement("div", { className: `fenext-design-typography-item fenext-design-typography-item-2` },
                         react_1.default.createElement(Text_1.Text, null, _t(textExample)),

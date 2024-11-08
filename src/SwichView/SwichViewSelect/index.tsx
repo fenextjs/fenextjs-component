@@ -5,9 +5,9 @@ import {
     SwichViewListBaseProps,
     SwichViewListClassProps,
 } from "../SwichViewList";
-import { SelectBox } from "fenextjs-svg/cjs/View/SelectBox";
-import { SelectList } from "fenextjs-svg/cjs/View/SelectList";
-import { SelectNormal } from "fenextjs-svg/cjs/View/SelectNormal";
+import { SvgSelectBox } from "fenextjs-svg/cjs/View/SelectBox";
+import { SvgSelectList } from "fenextjs-svg/cjs/View/SelectList";
+import { SvgSelectNormal } from "fenextjs-svg/cjs/View/SelectNormal";
 
 export type SwichViewSelectType =
     | "fenext-swich-view-select-box"
@@ -43,15 +43,15 @@ export const SwichViewSelect = ({
     const ITEMS: SwichViewListBaseItemProps<SwichViewSelectType>[] = [
         {
             id: "fenext-swich-view-select-box",
-            icon: <SelectBox />,
+            icon: <SvgSelectBox />,
         },
         {
             id: "fenext-swich-view-select-list",
-            icon: <SelectList />,
+            icon: <SvgSelectList />,
         },
         {
             id: "fenext-swich-view-select-normal",
-            icon: <SelectNormal />,
+            icon: <SvgSelectNormal />,
         },
     ];
     return (

@@ -1,6 +1,6 @@
 import React, { ReactNode, useMemo, useState } from "react";
 
-import { Check } from "fenextjs-svg/cjs/Check";
+import { SvgCheck } from "fenextjs-svg/cjs/Check";
 import { env_log } from "fenextjs-functions/cjs/env_log";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
@@ -172,7 +172,7 @@ export const InputCheckbox = <VT = any, VF = any>({
     defaultValue = false,
     value = undefined,
     disabled = false,
-    icon = <Check />,
+    icon = <SvgCheck />,
     onValidateCheck = async () => {},
     optional = false,
     optionalText = "(optional)",

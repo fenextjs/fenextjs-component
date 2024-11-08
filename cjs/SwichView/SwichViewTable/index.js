@@ -10,11 +10,11 @@ const SwichViewTable = ({ className = "", defaultValue = "fenext-swich-view-tabl
     const ITEMS = [
         {
             id: "fenext-swich-view-table-box",
-            icon: react_1.default.createElement(TableBox_1.TableBox, null),
+            icon: react_1.default.createElement(TableBox_1.SvgTableBox, null),
         },
         {
             id: "fenext-swich-view-table-list",
-            icon: react_1.default.createElement(TableList_1.TableList, null),
+            icon: react_1.default.createElement(TableList_1.SvgTableList, null),
         },
     ];
     return (react_1.default.createElement(SwichViewList_1.SwichViewList, { ...props, name: "fenext-swich-view-table", className: `fenext-swich-view-table ${className}`, list: ITEMS, defaultValue: defaultValue }));

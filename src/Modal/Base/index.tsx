@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactNode, useMemo } from "react";
-import { Close } from "fenextjs-svg/cjs/Close";
+import { SvgClose } from "fenextjs-svg/cjs/Close";
 import { Portal } from "../../Portal";
 /**
  * Properties for the base ModalBase component.
@@ -113,7 +113,7 @@ export const ModalBase = ({
     children,
     useRender = false,
     name,
-    closeComponent = <Close />,
+    closeComponent = <SvgClose />,
 }: ModalBaseProps) => {
     const uuid = useMemo(() => new Date().getTime(), [active]);
 

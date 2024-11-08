@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from "react";
 
-import { Check } from "fenextjs-svg/cjs/Check";
+import { SvgCheck } from "fenextjs-svg/cjs/Check";
 import { env_log } from "fenextjs-functions/cjs/env_log";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
@@ -166,7 +166,7 @@ export const InputRadio = <T = any,>({
     defaultValue = undefined,
     value = undefined,
     disabled = false,
-    icon = <Check />,
+    icon = <SvgCheck />,
 
     items = [],
     ...props

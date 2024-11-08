@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../Text";
 import { TypeDate } from "fenextjs-interface/cjs/Date";
-import { Date as SVGDate } from "fenextjs-svg/cjs/Date";
+import { SvgDate } from "fenextjs-svg/cjs/Date";
 import {
     parseDateToText,
     parseTextToDate,
@@ -77,7 +77,7 @@ export const InputDate = ({
     min = undefined,
     max = undefined,
     onChange,
-    icon = <SVGDate />,
+    icon = <SvgDate />,
     iconPos = "left",
     validator,
     ...props

@@ -10,7 +10,7 @@ const useDate_1 = require("fenextjs-hook/cjs/useDate");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const Month_1 = require("./Month");
 const fenextjs_date_1 = require("fenextjs-date");
-const InputCalendar = ({ nMonthShow = 1, icon = react_1.default.createElement(Date_1.Date, null), type = "normal", defaultValue, value, defaultValueRange, valueRange, onChange, onChangeRange, validator, errorWithIsChange = true, ...props }) => {
+const InputCalendar = ({ nMonthShow = 1, icon = react_1.default.createElement(Date_1.SvgDate, null), type = "normal", defaultValue, value, defaultValueRange, valueRange, onChange, onChangeRange, validator, errorWithIsChange = true, ...props }) => {
     const [isChange, setIsChange] = (0, react_1.useState)(!errorWithIsChange);
     const { data: dataSelectDate, setData: setSelectDate } = (0, fenextjs_hook_1.useData)(defaultValue, {
         onChangeDataAfter: (e) => {

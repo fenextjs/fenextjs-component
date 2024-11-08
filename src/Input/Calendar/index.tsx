@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { InputText, InputTextProps } from "../Text";
-import { Date as SvgDate } from "fenextjs-svg/cjs/Date";
+import { SvgDate } from "fenextjs-svg/cjs/Date";
 import { Collapse } from "../../Collapse";
 import { useDate } from "fenextjs-hook/cjs/useDate";
 import { useData, useValidator } from "fenextjs-hook";

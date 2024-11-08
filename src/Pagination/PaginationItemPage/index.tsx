@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from "react";
 
 import {
-    PaginationUp,
-    PaginationPre,
-    PaginationNext,
-    PaginationDown,
+    SvgPaginationUp,
+    SvgPaginationPre,
+    SvgPaginationNext,
+    SvgPaginationDown,
 } from "fenextjs-svg/cjs/Pagination";
 import { _TProps } from "fenextjs-interface";
 /**
@@ -118,10 +118,10 @@ export const PaginationItemPage = ({
     classNameDown = "",
 
     icons = {
-        up: <PaginationUp />,
-        pre: <PaginationPre />,
-        next: <PaginationNext />,
-        down: <PaginationDown />,
+        up: <SvgPaginationUp />,
+        pre: <SvgPaginationPre />,
+        next: <SvgPaginationNext />,
+        down: <SvgPaginationDown />,
     },
 
     defaultPage = 0,

@@ -6,7 +6,7 @@ import { SvgImg } from "fenextjs-svg/cjs/Img";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { FileProps } from "fenextjs-interface/cjs/File";
 import { ErrorProps } from "fenextjs-interface/cjs/Error";
-import { Close } from "fenextjs-svg/cjs/Close";
+import { SvgClose } from "fenextjs-svg/cjs/Close";
 import { use_T } from "fenextjs-hook";
 
 /**
@@ -142,7 +142,7 @@ export const InputImg = ({
                                     onRemove?.();
                                 }}
                             >
-                                <Close />
+                                <SvgClose />
                             </div>
                         </div>
                     </>

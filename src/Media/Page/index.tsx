@@ -10,8 +10,8 @@ import { LoaderSpinner } from "../../Loader";
 import { FileProps, _TProps } from "fenextjs-interface";
 import { parseBase64ToImgData } from "fenextjs-functions/cjs/parse/Img/Base64ToImgData";
 import { env_log } from "fenextjs-functions/cjs/env_log";
-import { Trash } from "fenextjs-svg/cjs/Trash";
-import { Save } from "fenextjs-svg/cjs/Save";
+import { SvgTrash } from "fenextjs-svg/cjs/Trash";
+import { SvgSave } from "fenextjs-svg/cjs/Save";
 import { use_T } from "fenextjs-hook";
 
 /**
@@ -230,7 +230,7 @@ export const MediaPage = ({
                                         download={img.name ?? "download.png"}
                                         target="_blank"
                                     >
-                                        <Save />
+                                        <SvgSave />
                                     </a>
                                     <div
                                         className={`fenext-media-page-img-action fenext-media-page-img-delete`}
@@ -238,7 +238,7 @@ export const MediaPage = ({
                                             onDeleteImg?.(img);
                                         }}
                                     >
-                                        <Trash />
+                                        <SvgTrash />
                                     </div>
                                 </div>
                             </div>

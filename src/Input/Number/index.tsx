@@ -2,8 +2,8 @@ import React, { useMemo, useState } from "react";
 
 import { InputText, InputTextProps } from "../Text";
 
-import { SVGNumberIncrease, SVGNumberDecrease } from "fenextjs-svg/cjs/Number";
-import { Arrow } from "fenextjs-svg/cjs/Arrow";
+import { SvgNumberIncrease, SvgNumberDecrease } from "fenextjs-svg/cjs/Number";
+import { SvgArrow } from "fenextjs-svg/cjs/Arrow";
 import { FenextjsValidator } from "fenextjs-validator";
 import { useValidator } from "fenextjs-hook/cjs/useValidator";
 import { parseNumber } from "fenextjs-functions";
@@ -133,13 +133,13 @@ export const InputNumber = ({
                                     onClick={addValue(1)}
                                     className={`fenext-input-number-icon-arrow fenext-input-number-icon-increase`}
                                 >
-                                    <SVGNumberIncrease />
+                                    <SvgNumberIncrease />
                                 </span>
                                 <span
                                     onClick={addValue(-1)}
                                     className={`fenext-input-number-icon-arrow fenext-input-number-icon-decrease`}
                                 >
-                                    <SVGNumberDecrease />
+                                    <SvgNumberDecrease />
                                 </span>
                             </>
                         ) : (
@@ -149,13 +149,13 @@ export const InputNumber = ({
                                         onClick={addValue(1)}
                                         className={`fenext-input-number-icon-arrow-up`}
                                     >
-                                        <Arrow />
+                                        <SvgArrow />
                                     </span>
                                     <span
                                         onClick={addValue(-1)}
                                         className={`fenext-input-number-icon-arrow-down`}
                                     >
-                                        <Arrow />
+                                        <SvgArrow />
                                     </span>
                                 </div>
                             </>

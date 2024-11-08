@@ -1,5 +1,8 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react";
-import { PaginationPre, PaginationNext } from "fenextjs-svg/cjs/Pagination";
+import {
+    SvgPaginationPre,
+    SvgPaginationNext,
+} from "fenextjs-svg/cjs/Pagination";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 
@@ -255,13 +258,13 @@ export const Slider = ({
                     onClick={onScrollToPre}
                     className={`fenext-slider-arrow fenext-slider-arrow-pre ${classNameArrows} ${classNameArrowPre}`}
                 >
-                    <PaginationPre />
+                    <SvgPaginationPre />
                 </div>
                 <div
                     onClick={onScrollToNext}
                     className={`fenext-slider-arrow fenext-slider-arrow-next ${classNameArrows} ${classNameArrowNext}`}
                 >
-                    <PaginationNext />
+                    <SvgPaginationNext />
                 </div>
             </div>
         </>

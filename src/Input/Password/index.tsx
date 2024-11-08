@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../Text";
 
-import { Eye, EyeBar } from "fenextjs-svg/cjs/Eye";
+import { SvgEye, SvgEyeBar } from "fenextjs-svg/cjs/Eye";
 
 /**
  * Interface for the base props of an input password component.
@@ -38,7 +38,7 @@ export const InputPassword = ({
                 onClick={toggleTypePassword}
                 className={`fenext-input-password-icon ${classNameContentEye}`}
             >
-                {type == "password" ? <Eye /> : <EyeBar />}
+                {type == "password" ? <SvgEye /> : <SvgEyeBar />}
             </span>
         );
     }, [type]);

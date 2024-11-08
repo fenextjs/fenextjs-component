@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { RequestResultTypeProps } from "fenextjs-interface/cjs/Request";
-import { Close } from "fenextjs-svg/cjs/Close";
+import { SvgClose } from "fenextjs-svg/cjs/Close";
 import { useNotification } from "fenextjs-hook";
 import { use_T } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
@@ -47,7 +47,7 @@ export const Notification = ({
             >
                 {_t(children)}
                 <div className="fenext-notification-close" onClick={reset}>
-                    <Close />
+                    <SvgClose />
                 </div>
             </div>
         </>

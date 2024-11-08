@@ -9,7 +9,7 @@ import {
 import { Button, ButtonProps } from "../../Button";
 import { Back } from "../../Back";
 import { Text } from "../../Text";
-import { Telegram } from "fenextjs-svg/cjs/Telegram";
+import { SvgTelegram } from "fenextjs-svg/cjs/Telegram";
 
 export interface ChatProps {
     loader?: boolean;
@@ -39,7 +39,7 @@ export const Chat = ({
     empty = (
         <>
             <Text>There is not messages yet</Text>
-            <Telegram />
+            <SvgTelegram />
         </>
     ),
 

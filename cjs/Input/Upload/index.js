@@ -16,7 +16,7 @@ const Loader_1 = require("../../Loader");
 const InputUpload = ({ className = "", classNameBtn = {}, classNameContentIcon = "", classNameText = {}, classNamePreview = "", classNameTitle = {
     tag: "h2",
 }, classNameUp = "", classNameProgress = "", classNameRemove = "", btn = "Choose File", icon = (react_1.default.createElement(react_1.default.Fragment, null,
-    react_1.default.createElement(Upload_1.Upload2, null))), text = "Drag and drop your file or template here.", title = "Drag and drop here", titleFile = undefined, textFile = undefined, iconFile = "", textPreview = "Preview File", defaultValue = {
+    react_1.default.createElement(Upload_1.SvgUpload2, null))), text = "Drag and drop your file or template here.", title = "Drag and drop here", titleFile = undefined, textFile = undefined, iconFile = "", textPreview = "Preview File", defaultValue = {
     fileData: "",
     text: "",
 }, parseProgress = (e) => `Uploading . . . ${e.toFixed(0)}%`, onChange, tagPreview = "embed", loader = false, iconLoader = react_1.default.createElement(Loader_1.LoaderSpinner, null), customPreview = undefined, ...props }) => {
@@ -52,7 +52,7 @@ const InputUpload = ({ className = "", classNameBtn = {}, classNameContentIcon =
                             text: "",
                         });
                     } },
-                    react_1.default.createElement(Close_1.Close, null)))))) : (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(Close_1.SvgClose, null)))))) : (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(File_1.InputFile, { onChange: setData, parseProgress: () => "", onChangeProgress: setProgress, onChangeError: setError, ...props, _t: _t },
                 react_1.default.createElement("div", { className: `fenext-input-upload-up ${classNameUp}` },
                     progress > 0 && progress < 100 ? (react_1.default.createElement(Title_1.Title, { ...classNameTitle, className: `fenext-input-upload-progress ${classNameProgress}` }, parseProgress(progress))) : (react_1.default.createElement(Title_1.Title, { ...classNameTitle, className: `fenext-input-upload-title ${classNameTitle.className}` }, _t(title))),

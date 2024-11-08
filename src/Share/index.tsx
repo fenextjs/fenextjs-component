@@ -3,10 +3,10 @@ import { Modal } from "../Modal";
 import { Button, ButtonProps } from "../Button";
 import { Title, TitleProps } from "../Title";
 
-import { WhatsappBox } from "fenextjs-svg/cjs/Whatsapp";
-import { FacebookBox } from "fenextjs-svg/cjs/Facebook";
-import { XBox } from "fenextjs-svg/cjs/X";
-import { EmailBox } from "fenextjs-svg/cjs/Email";
+import { SvgWhatsappBox } from "fenextjs-svg/cjs/Whatsapp";
+import { SvgFacebookBox } from "fenextjs-svg/cjs/Facebook";
+import { SvgXBox } from "fenextjs-svg/cjs/X";
+import { SvgEmailBox } from "fenextjs-svg/cjs/Email";
 import { SvgCopyBox } from "fenextjs-svg/cjs/Copy";
 import { Copy } from "../Copy";
 import { _TProps } from "fenextjs-interface";
@@ -81,19 +81,19 @@ export const Share = ({
     } = {
         whatsapp: {
             urlShare: "https://web.whatsapp.com/share?url=",
-            icon: <WhatsappBox />,
+            icon: <SvgWhatsappBox />,
         },
         facebook: {
             urlShare: "https://www.facebook.com/sharer/sharer.php?u=",
-            icon: <FacebookBox />,
+            icon: <SvgFacebookBox />,
         },
         x: {
             urlShare: "https://x.com/share?text=",
-            icon: <XBox />,
+            icon: <SvgXBox />,
         },
         email: {
             urlShare: "mailto:?body=",
-            icon: <EmailBox />,
+            icon: <SvgEmailBox />,
         },
         copy: {
             urlShare: "",

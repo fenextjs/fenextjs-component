@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactNode } from "react";
-import { Trash } from "fenextjs-svg/cjs/Trash";
+import { SvgTrash } from "fenextjs-svg/cjs/Trash";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 import { Img, ImgProps } from "../../Img";
@@ -110,7 +110,7 @@ export const InputSelectOption = <T = any,>({
     hidden = false,
     isBtn = false,
     data,
-    iconDelete = <Trash />,
+    iconDelete = <SvgTrash />,
     ...props
 }: InputSelectOptionProps<T>) => {
     const { _t } = use_T({ ...props });

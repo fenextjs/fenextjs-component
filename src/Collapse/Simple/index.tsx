@@ -1,6 +1,6 @@
 import React, { ReactNode, useMemo, useState } from "react";
 import { Loader } from "../../Loader";
-import { Arrow } from "fenextjs-svg/cjs/Arrow";
+import { SvgArrow } from "fenextjs-svg/cjs/Arrow";
 import { useAction } from "fenextjs-hook";
 import { sleep } from "fenextjs-functions";
 
@@ -124,7 +124,7 @@ export const Collapse = ({
     show = "checked",
     status = "none",
     onChange,
-    iconArrow = <Arrow />,
+    iconArrow = <SvgArrow />,
     rotateIcon = true,
     useActiveForShowChildren = false,
 }: CollapseProps) => {

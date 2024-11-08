@@ -23,19 +23,19 @@ const Share = ({ className = "", share = "", ButtonProps = {
     const LISTSHARE = {
         whatsapp: {
             urlShare: "https://web.whatsapp.com/share?url=",
-            icon: react_1.default.createElement(Whatsapp_1.WhatsappBox, null),
+            icon: react_1.default.createElement(Whatsapp_1.SvgWhatsappBox, null),
         },
         facebook: {
             urlShare: "https://www.facebook.com/sharer/sharer.php?u=",
-            icon: react_1.default.createElement(Facebook_1.FacebookBox, null),
+            icon: react_1.default.createElement(Facebook_1.SvgFacebookBox, null),
         },
         x: {
             urlShare: "https://x.com/share?text=",
-            icon: react_1.default.createElement(X_1.XBox, null),
+            icon: react_1.default.createElement(X_1.SvgXBox, null),
         },
         email: {
             urlShare: "mailto:?body=",
-            icon: react_1.default.createElement(Email_1.EmailBox, null),
+            icon: react_1.default.createElement(Email_1.SvgEmailBox, null),
         },
         copy: {
             urlShare: "",

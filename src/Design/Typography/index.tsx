@@ -4,7 +4,7 @@ import { InputColor } from "../../Input/Color";
 import { InputNumberCount } from "../../Input/NumberCount";
 import { _TProps } from "fenextjs-interface";
 import React, { CSSProperties, useMemo } from "react";
-import { Edit } from "fenextjs-svg";
+import { SvgEdit } from "fenextjs-svg";
 import { Collapse, CollapseProps } from "../../Collapse/Simple";
 import { Text } from "../../Text";
 import {
@@ -124,7 +124,7 @@ export const DesignTypography = ({
                     header={<>{_t(textTypography)}</>}
                     iconArrow={
                         <>
-                            <Edit />
+                            <SvgEdit />
                         </>
                     }
                     rotateIcon={false}

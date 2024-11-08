@@ -16,7 +16,7 @@ import { useData } from "fenextjs-hook/cjs/useData";
 import { InputSelectOption } from "../SelectOption";
 import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorCode } from "fenextjs-interface";
-import { Trash } from "fenextjs-svg";
+import { SvgTrash } from "fenextjs-svg";
 import { useValidator } from "fenextjs-hook";
 import { FenextjsValidatorClass } from "fenextjs-validator";
 /**
@@ -100,7 +100,7 @@ export const InputSelectMultiple = <T = any,>({
     defaultValue = [],
     onChangeValidate,
     options = [],
-    iconDelete = <Trash />,
+    iconDelete = <SvgTrash />,
     typeSelectMultipleStyle = "normal",
     CustomOptionsSelected = undefined,
     validatorData,

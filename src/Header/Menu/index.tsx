@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { ItemMenu, ItemMenuProps } from "../ItemMenu";
 import { _TProps } from "fenextjs-interface";
-import { Arrow } from "fenextjs-svg/cjs/Arrow";
+import { SvgArrow } from "fenextjs-svg/cjs/Arrow";
 
 /**
  * Properties for the base Menu component.
@@ -48,7 +48,7 @@ export const Menu = ({
     items = [],
 
     defaultShowSubMenu = false,
-    iconArrow = <Arrow />,
+    iconArrow = <SvgArrow />,
     typeCollapse,
     ...props
 }: MenuProps) => {

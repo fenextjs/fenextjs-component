@@ -1,6 +1,6 @@
 import { DaysEnum } from "fenextjs-interface";
 import React from "react";
-import { PaginationNext, PaginationPre } from "fenextjs-svg";
+import { SvgPaginationNext, SvgPaginationPre } from "fenextjs-svg";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 import { FenextjsDate } from "fenextjs-date";
@@ -50,7 +50,7 @@ export const InputCalendarMonth = ({
                             className={`fenext-input-calendar-btn`}
                             onClick={onPreMonth}
                         >
-                            <PaginationPre />
+                            <SvgPaginationPre />
                         </button>
                         <div className={`fenext-input-calendar-top-info`}>
                             {date?.onFormat({
@@ -62,7 +62,7 @@ export const InputCalendarMonth = ({
                             className={`fenext-input-calendar-btn`}
                             onClick={onNextMonth}
                         >
-                            <PaginationNext />
+                            <SvgPaginationNext />
                         </button>
                     </div>
                     <div className={`fenext-input-calendar-days`}>

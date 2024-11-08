@@ -103,9 +103,9 @@ const Slider = ({ className = "", classNameContent = "", classNameItem = "", cla
                     react_1.default.createElement("div", { onClick: onScroll(n), className: `fenext-slider-dog ${classNameDog} ${currentDog == i ? "active" : ""}` })));
             })),
             react_1.default.createElement("div", { onClick: onScrollToPre, className: `fenext-slider-arrow fenext-slider-arrow-pre ${classNameArrows} ${classNameArrowPre}` },
-                react_1.default.createElement(Pagination_1.PaginationPre, null)),
+                react_1.default.createElement(Pagination_1.SvgPaginationPre, null)),
             react_1.default.createElement("div", { onClick: onScrollToNext, className: `fenext-slider-arrow fenext-slider-arrow-next ${classNameArrows} ${classNameArrowNext}` },
-                react_1.default.createElement(Pagination_1.PaginationNext, null)))));
+                react_1.default.createElement(Pagination_1.SvgPaginationNext, null)))));
 };
 exports.Slider = Slider;
 //# sourceMappingURL=index.js.map

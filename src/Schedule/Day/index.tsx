@@ -6,7 +6,7 @@ import {
     InputDateRangeValueType,
 } from "../../Input/DateRange";
 import { useData, use_T } from "fenextjs-hook";
-import { Close } from "fenextjs-svg/cjs/Close";
+import { SvgClose } from "fenextjs-svg/cjs/Close";
 import { Button, ButtonProps } from "../../Button";
 import { _TProps } from "fenextjs-interface";
 
@@ -113,7 +113,7 @@ export const ScheduleDay = ({
                                             onDeleteData(i);
                                         }}
                                     >
-                                        <Close />
+                                        <SvgClose />
                                     </div>
                                 </div>
                             </>

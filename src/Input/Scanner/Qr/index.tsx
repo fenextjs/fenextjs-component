@@ -9,10 +9,10 @@ import React, {
 import QrScanner from "qr-scanner";
 import { Button } from "../../../Button";
 import { Modal } from "../../../Modal";
-import { Qr } from "fenextjs-svg/cjs/Qr";
+import { SvgQr } from "fenextjs-svg/cjs/Qr";
 import { generateRandomID } from "fenextjs-functions";
 import { useAction } from "fenextjs-hook";
-import { Bolt, CameraChange } from "fenextjs-svg";
+import { SvgBolt, SvgCameraChange } from "fenextjs-svg";
 
 /**
  * Props for InputScannerQr component.
@@ -28,9 +28,9 @@ export interface InputScannerQrProps {
 export const InputScannerQr = ({
     className = "",
     onChange,
-    buttonScannerContent = <Qr />,
-    buttonChangeCameraContent = <CameraChange />,
-    buttonToggleFlashContent = <Bolt />,
+    buttonScannerContent = <SvgQr />,
+    buttonChangeCameraContent = <SvgCameraChange />,
+    buttonToggleFlashContent = <SvgBolt />,
 }: InputScannerQrProps) => {
     const uuid = useMemo(() => generateRandomID(), []);
     const ref = useRef<HTMLVideoElement>(null);

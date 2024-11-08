@@ -87,11 +87,11 @@ const MediaPage = ({ className = "", multiple = false, onChange, onUploadImg, on
                     react_1.default.createElement("div", { className: `fenext-media-page-img-capa` }),
                     react_1.default.createElement("div", { className: `fenext-media-page-img-actions` },
                         react_1.default.createElement("a", { className: `fenext-media-page-img-action fenext-media-page-img-download`, href: img.src, download: img.name ?? "download.png", target: "_blank" },
-                            react_1.default.createElement(Save_1.Save, null)),
+                            react_1.default.createElement(Save_1.SvgSave, null)),
                         react_1.default.createElement("div", { className: `fenext-media-page-img-action fenext-media-page-img-delete`, onClick: () => {
                                 onDeleteImg?.(img);
                             } },
-                            react_1.default.createElement(Trash_1.Trash, null))))));
+                            react_1.default.createElement(Trash_1.SvgTrash, null))))));
         })));
     }, [images, onRenderImg, onSelectImg, onDeleteImg, _t]);
     return (react_1.default.createElement(react_1.default.Fragment, null,

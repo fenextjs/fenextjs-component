@@ -9,7 +9,7 @@ const Date_2 = require("fenextjs-functions/cjs/parse/Date");
 const fenextjs_functions_1 = require("fenextjs-functions");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_validator_1 = require("fenextjs-validator");
-const InputDate = ({ classNameInputDate = "", type = "date", defaultValue = undefined, value = undefined, min = undefined, max = undefined, onChange, icon = react_1.default.createElement(Date_1.Date, null), iconPos = "left", validator, ...props }) => {
+const InputDate = ({ classNameInputDate = "", type = "date", defaultValue = undefined, value = undefined, min = undefined, max = undefined, onChange, icon = react_1.default.createElement(Date_1.SvgDate, null), iconPos = "left", validator, ...props }) => {
     const uuid = (0, react_1.useMemo)(() => new Date().getTime(), []);
     const { data, setData, isChange } = (0, fenextjs_hook_1.useData)(defaultValue);
     const d = (0, react_1.useMemo)(() => `${defaultValue

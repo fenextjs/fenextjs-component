@@ -16,7 +16,7 @@ const Loader_1 = require("../../Loader");
 const Error_1 = require("../../Error");
 const Link_1 = require("../../Link");
 const InputFileStatus = ({ className = "", btn = "Choose File", icon = (react_1.default.createElement(react_1.default.Fragment, null,
-    react_1.default.createElement(Upload_1.Upload2, null))), text = "Drag and drop your file or template here.", title = "Drag and drop here", defaultValue = {
+    react_1.default.createElement(Upload_1.SvgUpload2, null))), text = "Drag and drop your file or template here.", title = "Drag and drop here", defaultValue = {
     fileData: "",
     text: "",
 }, onChange, iconLoader = react_1.default.createElement(Loader_1.LoaderSpinner, null), onUploadFile, contentByStatus: contentByStatusProps = {}, ...props }) => {
@@ -25,17 +25,17 @@ const InputFileStatus = ({ className = "", btn = "Choose File", icon = (react_1.
         APPROVED: {
             title: "Approved!",
             tag: "Accepted",
-            icon: react_1.default.createElement(Check_1.Check, null),
+            icon: react_1.default.createElement(Check_1.SvgCheck, null),
         },
         REFUSED: {
             title: "Refused! go up again",
             tag: "Denied",
-            icon: react_1.default.createElement(Upload_1.Upload2, null),
+            icon: react_1.default.createElement(Upload_1.SvgUpload2, null),
         },
         PENDING: {
             title: "Pending",
             tag: "Pending",
-            icon: react_1.default.createElement(Upload_1.Upload2, null),
+            icon: react_1.default.createElement(Upload_1.SvgUpload2, null),
         },
         ...contentByStatusProps,
     }), [contentByStatusProps]);
@@ -62,7 +62,7 @@ const InputFileStatus = ({ className = "", btn = "Choose File", icon = (react_1.
                             text: "",
                         });
                     } },
-                    react_1.default.createElement(Close_1.Close, null)))))) : (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(Close_1.SvgClose, null)))))) : (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(File_1.InputFile, { onChange: (e) => {
                     onSubmitData({
                         data: e,

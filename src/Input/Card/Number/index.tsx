@@ -5,28 +5,28 @@ import { useValidator } from "fenextjs-hook/cjs/useValidator";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { Card_Enum } from "fenextjs-interface";
 import {
-    CardAmericanExpress,
-    CardDinersClub,
-    CardDiscover,
-    CardJCB,
-    CardMasterCard,
-    CardVisa,
-    CardVisaElectron,
+    SvgCardAmericanExpress,
+    SvgCardDinersClub,
+    SvgCardDiscover,
+    SvgCardJCB,
+    SvgCardMasterCard,
+    SvgCardVisa,
+    SvgCardVisaElectron,
 } from "fenextjs-svg";
 import { GetCardType } from "fenextjs-functions";
 
 export const InputCardNumberIcons: {
     [id in Card_Enum]: ReactNode;
 } = {
-    AMEX: <CardAmericanExpress />,
-    DINERS: <CardDinersClub />,
-    DINERS_CARTE_BLANCHE: <CardDinersClub />,
-    DISCOVER: <CardDiscover />,
-    JCB: <CardJCB />,
-    MASTERCARD: <CardMasterCard />,
+    AMEX: <SvgCardAmericanExpress />,
+    DINERS: <SvgCardDinersClub />,
+    DINERS_CARTE_BLANCHE: <SvgCardDinersClub />,
+    DISCOVER: <SvgCardDiscover />,
+    JCB: <SvgCardJCB />,
+    MASTERCARD: <SvgCardMasterCard />,
     OTHER: <></>,
-    VISA: <CardVisa />,
-    VISA_ELECTRON: <CardVisaElectron />,
+    VISA: <SvgCardVisa />,
+    VISA_ELECTRON: <SvgCardVisaElectron />,
 };
 
 /**

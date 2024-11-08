@@ -1,6 +1,6 @@
 import { use_T } from "fenextjs-hook";
 import React, { CSSProperties, useMemo } from "react";
-import { Edit } from "fenextjs-svg";
+import { SvgEdit } from "fenextjs-svg";
 import { Collapse, CollapseProps } from "../../Collapse/Simple";
 import { DesignBoxValue } from "./boxUnit";
 import { useData } from "fenextjs-hook";
@@ -167,7 +167,7 @@ export const DesignBox = ({
                     header={<>{_t(textBox)}</>}
                     iconArrow={
                         <>
-                            <Edit />
+                            <SvgEdit />
                         </>
                     }
                     rotateIcon={false}
