@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../../Text";
-import { Autocomplete, AutocompleteProps } from "@react-google-maps/api";
+import {
+    Autocomplete as GoogleAutocomplete,
+    AutocompleteProps as GoogleAutocompleteProps,
+} from "@react-google-maps/api";
 import { SvgClose } from "fenextjs-svg/cjs/Close";
 import { useData } from "fenextjs-hook/cjs/useData";
 import {
@@ -19,7 +22,7 @@ import {
  * Properties for the base InputGoogleAutocomplete component.
  */
 export interface InputGoogleAutocompleteBaseProps
-    extends Omit<AutocompleteProps, "children">,
+    extends Omit<GoogleAutocompleteProps, "children">,
         Omit<
             InputTextBaseProps,
             | "defaultValue"
@@ -32,7 +35,7 @@ export interface InputGoogleAutocompleteBaseProps
     /**
      * FenextjsValidatorClass used for input validation.
      */
-    validator?: FenextjsValidatorClass<AddressGoogle>;
+    validator?: FenextjsValidatorClass<AddressGoogle | undefined>;
 }
 
 /**
@@ -123,7 +126,7 @@ export const InputGoogleAutocomplete = ({
                 <div
                     className={`fenext-input-google-autocomplete-content-input`}
                 >
-                    <Autocomplete
+                    <GoogleAutocomplete
                         {...props}
                         onLoad={setAutocompleteValue}
                         onPlaceChanged={onPlaceChanged}
@@ -143,7 +146,7 @@ export const InputGoogleAutocomplete = ({
                                     : undefined)
                             }
                         />
-                    </Autocomplete>
+                    </GoogleAutocomplete>
                 </div>
                 <span className={`fenext-input-google-autocomplete-close`}>
                     <SvgClose />

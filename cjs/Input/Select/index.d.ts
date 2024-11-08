@@ -42,7 +42,7 @@ export interface InputSelectBaseProps<T = any> extends Omit<InputTextBaseProps, 
     nItems?: number;
     converterInSearchWithMaxLenght?: boolean;
     showOptionIconImg?: boolean;
-    validatorData?: FenextjsValidatorClass<T>;
+    validatorData?: FenextjsValidatorClass<T | undefined>;
     forceShowOptionOnLoad?: boolean;
     iconDelete?: ReactNode;
 }

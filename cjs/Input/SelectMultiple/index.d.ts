@@ -16,7 +16,7 @@ export interface InputSelectMultipleBaseProps<T = any> extends Omit<InputSelectB
     iconDelete?: ReactNode;
     typeSelectMultipleStyle?: "normal" | "checkbox";
     CustomOptionsSelected?: typeof InputSelectOption<T>;
-    validatorData?: FenextjsValidatorClass<T[]>;
+    validatorData?: FenextjsValidatorClass<(T | undefined)[]>;
 }
 export interface InputSelectMultipleProps<T = any> extends InputSelectMultipleBaseProps<T>, InputSelectMultipleClassProps {
 }

@@ -1,13 +1,13 @@
-/// <reference types="google.maps" />
 import React from "react";
 import { GoogleMapProps, MarkerProps } from "@react-google-maps/api";
+import { LatLngBounds } from "fenextjs-interface";
 export interface InputGoogleMapsBaseProps extends Omit<GoogleMapProps, "onBoundsChanged"> {
     markers?: MarkerProps[];
     useLoadCenterWithMarker?: boolean;
     useLoadFitBoundsWithMarker?: boolean;
     useLoadDirectionsWithMarker?: boolean;
     showDirectionsWaypoints?: boolean;
-    onBoundsChanged?: (data: google.maps.LatLngBounds | undefined) => void;
+    onBoundsChanged?: (data: LatLngBounds | undefined) => void;
 }
 export interface InputGoogleMapsClassProps {
 }

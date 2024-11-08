@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { _TProps } from "fenextjs-interface";
-import { AlertProps as AlertInterface } from "fenextjs-interface";
-export interface AlertComponentProps extends _TProps, AlertInterface {
+import { AlertProps } from "fenextjs-interface";
+export interface AlertComponentProps extends _TProps, AlertProps {
     className?: string;
     iconClose?: ReactNode;
     onClose?: () => void;

@@ -5,7 +5,7 @@ import {
 } from "../Select";
 import { TimeZoneProps } from "fenextjs-interface";
 import { InputSelectT, InputSelectTProps } from "../SelectT";
-import { TimeZoneList } from "./options";
+import { TimeZoneList } from "./Options";
 /**
  * Interface that defines CSS class properties for a SelectTimeZone input component.
  */

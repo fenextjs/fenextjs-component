@@ -7,6 +7,7 @@ import {
     MarkerProps,
     DirectionsRenderer,
 } from "@react-google-maps/api";
+import { LatLngBounds } from "fenextjs-interface";
 
 /**
  * Properties for the base InputGoogleMaps component.
@@ -19,7 +20,7 @@ export interface InputGoogleMapsBaseProps
     useLoadDirectionsWithMarker?: boolean;
     showDirectionsWaypoints?: boolean;
 
-    onBoundsChanged?: (data: google.maps.LatLngBounds | undefined) => void;
+    onBoundsChanged?: (data: LatLngBounds | undefined) => void;
 }
 
 /**
@@ -50,6 +51,7 @@ export const InputGoogleMaps = ({
     },
     ...props
 }: InputGoogleMapsProps) => {
+    // const google = eval("google")
     const [directionsResult, setDirectionsResult] = useState<
         google.maps.DirectionsResult | undefined
     >(undefined);
@@ -58,7 +60,11 @@ export const InputGoogleMaps = ({
         useState<GoogleMapProps["center"]>(undefined);
 
     const onGetBounds = () => {
-        const bounds = new google.maps.LatLngBounds();
+        const f_LatLngBounds = (google ?? {})?.maps?.LatLngBounds;
+        if (!f_LatLngBounds) {
+            return undefined;
+        }
+        const bounds = new f_LatLngBounds();
         markers?.forEach((e) => {
             bounds.extend(e.position);
         });
@@ -69,7 +75,7 @@ export const InputGoogleMaps = ({
             return;
         }
         const bounds = onGetBounds();
-        setCenterMarker(bounds.getCenter());
+        setCenterMarker(bounds?.getCenter?.());
     };
 
     const onLoadFitBounds = () => {
@@ -77,14 +83,22 @@ export const InputGoogleMaps = ({
             return;
         }
         const bounds = onGetBounds();
-        map?.fitBounds?.(bounds);
+        if (bounds) {
+            map?.fitBounds?.(bounds);
+        }
     };
 
     const onLoadDirectionsList = async () => {
         if (!(useLoadDirectionsWithMarker && markers && markers?.length > 0)) {
             return;
         }
-        const directionsService = new window.google.maps.DirectionsService();
+
+        const f_DirectionsService = window?.google?.maps?.DirectionsService;
+
+        if (!f_DirectionsService) {
+            return undefined;
+        }
+        const directionsService = new f_DirectionsService();
 
         const origin = markers[0];
         const destination = markers[markers.length - 1];

@@ -15,7 +15,11 @@ const InputGoogleMaps = ({ mapContainerStyle = {
     const [map, setMap] = (0, react_1.useState)(undefined);
     const [centerMarker, setCenterMarker] = (0, react_1.useState)(undefined);
     const onGetBounds = () => {
-        const bounds = new google.maps.LatLngBounds();
+        const f_LatLngBounds = (google ?? {})?.maps?.LatLngBounds;
+        if (!f_LatLngBounds) {
+            return undefined;
+        }
+        const bounds = new f_LatLngBounds();
         markers?.forEach((e) => {
             bounds.extend(e.position);
         });
@@ -26,20 +30,26 @@ const InputGoogleMaps = ({ mapContainerStyle = {
             return;
         }
         const bounds = onGetBounds();
-        setCenterMarker(bounds.getCenter());
+        setCenterMarker(bounds?.getCenter?.());
     };
     const onLoadFitBounds = () => {
         if (!(useLoadFitBoundsWithMarker && markers && markers?.length > 0)) {
             return;
         }
         const bounds = onGetBounds();
-        map?.fitBounds?.(bounds);
+        if (bounds) {
+            map?.fitBounds?.(bounds);
+        }
     };
     const onLoadDirectionsList = async () => {
         if (!(useLoadDirectionsWithMarker && markers && markers?.length > 0)) {
             return;
         }
-        const directionsService = new window.google.maps.DirectionsService();
+        const f_DirectionsService = window?.google?.maps?.DirectionsService;
+        if (!f_DirectionsService) {
+            return undefined;
+        }
+        const directionsService = new f_DirectionsService();
         const origin = markers[0];
         const destination = markers[markers.length - 1];
         const resultDirections = await directionsService.route({

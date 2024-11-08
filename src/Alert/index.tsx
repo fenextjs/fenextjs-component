@@ -2,12 +2,12 @@ import React, { ReactNode } from "react";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 import { SvgClose } from "fenextjs-svg";
-import { AlertProps as AlertInterface } from "fenextjs-interface";
+import { AlertProps } from "fenextjs-interface";
 
 /**
  * Properties for the Alert component.
  */
-export interface AlertComponentProps extends _TProps, AlertInterface {
+export interface AlertComponentProps extends _TProps, AlertProps {
     /**
      * The class name for the component.
      */

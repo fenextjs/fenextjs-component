@@ -1,6 +1,6 @@
 import React, { CSSProperties } from "react";
 import { CollapseProps } from "../../Collapse/Simple";
-import { DesignBoxValue } from "./boxUnit";
+import { DesignBoxValueProps } from "./boxUnit";
 import { DesignBoxPaddingProps } from "./Padding";
 import { DesignBoxMarginProps } from "./Margin";
 import { DesignBoxBorderProps } from "./Border";
@@ -12,8 +12,6 @@ import { DesignBoxWidthProps } from "./Width";
 import { DesignBoxHeightProps } from "./Height";
 import { DesignBoxAlignProps } from "./Align";
 import { DesignBoxGapProps } from "./Gap";
-export interface DesignBoxValueProps extends Partial<DesignBoxValue> {
-}
 export interface DesignBoxTextProps extends DesignBoxPaddingProps, DesignBoxMarginProps, DesignBoxBorderProps, DesignBoxBorderRadiusProps, DesignBoxBorderColorProps, DesignBoxBackgroundProps, DesignBoxWidthProps, DesignBoxHeightProps, DesignBoxGapProps, DesignBoxAlignProps, DesignBoxBorderStyleProps {
 }
 export interface DesignBoxProps extends Omit<DesignBoxTextProps, "setDataFunction" | "data" | "onChangeData"> {

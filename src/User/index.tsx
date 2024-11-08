@@ -1,5 +1,5 @@
 import React from "react";
-import { UserProps as UserInterfaceProps } from "fenextjs-interface/cjs/User";
+import { UserProps } from "fenextjs-interface/cjs/User";
 import { Img } from "../Img";
 import { LoaderUser, LoaderUserClassProps } from "../Loader/User";
 
@@ -10,7 +10,7 @@ export interface UserComponentProps {
     /**
      * User data.
      */
-    user?: Partial<UserInterfaceProps>;
+    user?: Partial<UserProps>;
     /**
      * If loader user.
      */

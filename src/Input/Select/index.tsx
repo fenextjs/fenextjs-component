@@ -202,7 +202,7 @@ export interface InputSelectBaseProps<T = any>
     /**
      * FenextjsValidatorClass used for input validation.
      */
-    validatorData?: FenextjsValidatorClass<T>;
+    validatorData?: FenextjsValidatorClass<T | undefined>;
     /**
      * forceShowOptionOnLoad
      */

@@ -2,7 +2,7 @@ import { use_T } from "fenextjs-hook";
 import React, { CSSProperties, useMemo } from "react";
 import { SvgEdit } from "fenextjs-svg";
 import { Collapse, CollapseProps } from "../../Collapse/Simple";
-import { DesignBoxValue } from "./boxUnit";
+import { DesignBoxValueProps } from "./boxUnit";
 import { useData } from "fenextjs-hook";
 import { parseDesignBoxValueProps_to_CSSProperties } from "./parse";
 import { DesignBoxPadding, DesignBoxPaddingProps } from "./Padding";
@@ -19,11 +19,6 @@ import { DesignBoxWidth, DesignBoxWidthProps } from "./Width";
 import { DesignBoxHeight, DesignBoxHeightProps } from "./Height";
 import { DesignBoxAlign, DesignBoxAlignProps } from "./Align";
 import { DesignBoxGap, DesignBoxGapProps } from "./Gap";
-
-/**
- * Properties for the base DesignBox component.
- */
-export interface DesignBoxValueProps extends Partial<DesignBoxValue> {}
 
 export interface DesignBoxTextProps
     extends DesignBoxPaddingProps,

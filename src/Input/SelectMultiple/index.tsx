@@ -82,7 +82,7 @@ export interface InputSelectMultipleBaseProps<T = any>
     /**
      * FenextjsValidatorClass used for input validation.
      */
-    validatorData?: FenextjsValidatorClass<T[]>;
+    validatorData?: FenextjsValidatorClass<(T | undefined)[]>;
 }
 /**
  * Props interface for the InputSelectMultiple component. Extends both InputSelectMultipleBaseProps and InputSelectMultipleClassProps interfaces.
