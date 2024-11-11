@@ -1,8 +1,6 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react";
-import {
-    SvgPaginationPre,
-    SvgPaginationNext,
-} from "fenextjs-svg/cjs/Pagination";
+import { SvgPaginationPre } from "fenextjs-svg/cjs/PaginationPre";
+import { SvgPaginationNext } from "fenextjs-svg/cjs/PaginationNext";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 

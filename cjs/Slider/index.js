@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Slider = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
-const Pagination_1 = require("fenextjs-svg/cjs/Pagination");
+const PaginationPre_1 = require("fenextjs-svg/cjs/PaginationPre");
+const PaginationNext_1 = require("fenextjs-svg/cjs/PaginationNext");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const Slider = ({ className = "", classNameContent = "", classNameItem = "", classNameDogs = "", classNameDog = "", classNameArrows = "", classNameArrowPre = "", classNameArrowNext = "", items = [], nItemsDesktop = 3, nItemsTable = 2, nItemsPhone = 1, timeDelay = 4000, timeAnimation = 500, loop = true, separationItems = 16, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
@@ -103,9 +104,9 @@ const Slider = ({ className = "", classNameContent = "", classNameItem = "", cla
                     react_1.default.createElement("div", { onClick: onScroll(n), className: `fenext-slider-dog ${classNameDog} ${currentDog == i ? "active" : ""}` })));
             })),
             react_1.default.createElement("div", { onClick: onScrollToPre, className: `fenext-slider-arrow fenext-slider-arrow-pre ${classNameArrows} ${classNameArrowPre}` },
-                react_1.default.createElement(Pagination_1.SvgPaginationPre, null)),
+                react_1.default.createElement(PaginationPre_1.SvgPaginationPre, null)),
             react_1.default.createElement("div", { onClick: onScrollToNext, className: `fenext-slider-arrow fenext-slider-arrow-next ${classNameArrows} ${classNameArrowNext}` },
-                react_1.default.createElement(Pagination_1.SvgPaginationNext, null)))));
+                react_1.default.createElement(PaginationNext_1.SvgPaginationNext, null)))));
 };
 exports.Slider = Slider;
 //# sourceMappingURL=index.js.map

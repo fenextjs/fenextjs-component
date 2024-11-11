@@ -13,7 +13,7 @@ import {
     InputSelectOptionProps,
 } from "../SelectOption";
 import { SvgArrow } from "fenextjs-svg/cjs/Arrow";
-import { SvgCancel } from "fenextjs-svg/cjs/cancel";
+import { SvgCancel } from "fenextjs-svg/cjs/Cancel";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorCode } from "fenextjs-interface";

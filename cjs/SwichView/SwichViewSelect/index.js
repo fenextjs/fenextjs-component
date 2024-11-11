@@ -11,15 +11,15 @@ const SwichViewSelect = ({ className = "", defaultValue = "fenext-swich-view-sel
     const ITEMS = [
         {
             id: "fenext-swich-view-select-box",
-            icon: react_1.default.createElement(SelectBox_1.SvgSelectBox, null),
+            icon: react_1.default.createElement(SelectBox_1.SvgViewSelectBox, null),
         },
         {
             id: "fenext-swich-view-select-list",
-            icon: react_1.default.createElement(SelectList_1.SvgSelectList, null),
+            icon: react_1.default.createElement(SelectList_1.SvgViewSelectList, null),
         },
         {
             id: "fenext-swich-view-select-normal",
-            icon: react_1.default.createElement(SelectNormal_1.SvgSelectNormal, null),
+            icon: react_1.default.createElement(SelectNormal_1.SvgViewSelectNormal, null),
         },
     ];
     return (react_1.default.createElement(SwichViewList_1.SwichViewList, { ...props, name: "fenext-swich-view-select", className: `fenext-swich-view-select ${className}`, list: ITEMS, defaultValue: defaultValue }));

@@ -4,7 +4,8 @@ exports.InputNumber = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Text_1 = require("../Text");
-const Number_1 = require("fenextjs-svg/cjs/Number");
+const NumberIncrease_1 = require("fenextjs-svg/cjs/NumberIncrease");
+const NumberDecrease_1 = require("fenextjs-svg/cjs/NumberDecrease");
 const Arrow_1 = require("fenextjs-svg/cjs/Arrow");
 const fenextjs_validator_1 = require("fenextjs-validator");
 const useValidator_1 = require("fenextjs-hook/cjs/useValidator");
@@ -53,9 +54,9 @@ const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = fal
                 props?.onWheel?.(e);
             }, icon: react_1.default.createElement(react_1.default.Fragment, null, useBtnIncreaseDecrease ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("span", { onClick: addValue(1), className: `fenext-input-number-icon-arrow fenext-input-number-icon-increase` },
-                    react_1.default.createElement(Number_1.SvgNumberIncrease, null)),
+                    react_1.default.createElement(NumberIncrease_1.SvgNumberIncrease, null)),
                 react_1.default.createElement("span", { onClick: addValue(-1), className: `fenext-input-number-icon-arrow fenext-input-number-icon-decrease` },
-                    react_1.default.createElement(Number_1.SvgNumberDecrease, null)))) : (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(NumberDecrease_1.SvgNumberDecrease, null)))) : (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("div", { className: "fenext-input-number-icon-arrow" },
                     react_1.default.createElement("span", { onClick: addValue(1), className: `fenext-input-number-icon-arrow-up` },
                         react_1.default.createElement(Arrow_1.SvgArrow, null)),

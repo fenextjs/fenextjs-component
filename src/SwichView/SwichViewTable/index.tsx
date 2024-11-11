@@ -5,8 +5,8 @@ import {
     SwichViewListBaseProps,
     SwichViewListClassProps,
 } from "../SwichViewList";
-import { SvgTableBox } from "fenextjs-svg/cjs/View/TableBox";
-import { SvgTableList } from "fenextjs-svg/cjs/View/TableList";
+import { SvgViewTableBox } from "fenextjs-svg/cjs/View/TableBox";
+import { SvgViewTableList } from "fenextjs-svg/cjs/View/TableList";
 
 export type SwichViewTableType =
     | "fenext-swich-view-table-box"
@@ -38,11 +38,11 @@ export const SwichViewTable = ({
     const ITEMS: SwichViewListBaseItemProps<SwichViewTableType>[] = [
         {
             id: "fenext-swich-view-table-box",
-            icon: <SvgTableBox />,
+            icon: <SvgViewTableBox />,
         },
         {
             id: "fenext-swich-view-table-list",
-            icon: <SvgTableList />,
+            icon: <SvgViewTableList />,
         },
     ];
     return (

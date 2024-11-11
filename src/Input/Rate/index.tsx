@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { SvgStar } from "fenextjs-svg/cjs/Start";
+import { SvgStart } from "fenextjs-svg/cjs/Start";
 /**
  * Properties for the base InputRate component.
  */
@@ -98,38 +98,38 @@ export const InputRate = ({
                 <div
                     className={`fenext-input-rate-content-start ${classNameContentStar} `}
                 >
-                    <SvgStar
+                    <SvgStart
                         className={`fenext-input-rate-start ${classNameStar}`}
                     />
-                    <SvgStar
+                    <SvgStart
                         className={`fenext-input-rate-start ${classNameStar}`}
                     />
-                    <SvgStar
+                    <SvgStart
                         className={`fenext-input-rate-start ${classNameStar}`}
                     />
-                    <SvgStar
+                    <SvgStart
                         className={`fenext-input-rate-start ${classNameStar}`}
                     />
-                    <SvgStar
+                    <SvgStart
                         className={`fenext-input-rate-start ${classNameStar}`}
                     />
                 </div>
                 <div
                     className={`fenext-input-rate-content-start fenext-input-rate-content-start-active ${classNameContentStar} `}
                 >
-                    <SvgStar
+                    <SvgStart
                         className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
                     />
-                    <SvgStar
+                    <SvgStart
                         className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
                     />
-                    <SvgStar
+                    <SvgStart
                         className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
                     />
-                    <SvgStar
+                    <SvgStart
                         className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
                     />
-                    <SvgStar
+                    <SvgStart
                         className={`fenext-input-rate-start fenext-input-rate-start-active ${classNameStar} ${classNameStarActive}`}
                     />
                 </div>

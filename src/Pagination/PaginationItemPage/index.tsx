@@ -1,11 +1,9 @@
 import React, { useMemo, useState } from "react";
 
-import {
-    SvgPaginationUp,
-    SvgPaginationPre,
-    SvgPaginationNext,
-    SvgPaginationDown,
-} from "fenextjs-svg/cjs/Pagination";
+import { SvgPaginationDown } from "fenextjs-svg/cjs/PaginationDown";
+import { SvgPaginationNext } from "fenextjs-svg/cjs/PaginationNext";
+import { SvgPaginationPre } from "fenextjs-svg/cjs/PaginationPre";
+import { SvgPaginationUp } from "fenextjs-svg/cjs/PaginationUp";
 import { _TProps } from "fenextjs-interface";
 /**
  * Class properties to customize the style of the pagination.

@@ -5,9 +5,9 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importDefault(require("react"));
 const router_1 = require("next/router");
 const Loader_1 = require("../Loader");
-const Pagination_1 = require("fenextjs-svg/cjs/Pagination");
+const PaginationPre_1 = require("fenextjs-svg/cjs/PaginationPre");
 const fenextjs_hook_1 = require("fenextjs-hook");
-const Back = ({ className = "", classNameLoader = "", classNameDisabled = "", classNameIcon = "", classNameContent = "", children = "Back", loader = false, disabled = false, onClick = undefined, icon = react_1.default.createElement(Pagination_1.SvgPaginationPre, null), typeOnBack = "history", link = "", minLenght = 2, useHistoryMinLenght = false, ...props }) => {
+const Back = ({ className = "", classNameLoader = "", classNameDisabled = "", classNameIcon = "", classNameContent = "", children = "Back", loader = false, disabled = false, onClick = undefined, icon = react_1.default.createElement(PaginationPre_1.SvgPaginationPre, null), typeOnBack = "history", link = "", minLenght = 2, useHistoryMinLenght = false, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const router = (0, router_1.useRouter)();
     const onBack = () => {

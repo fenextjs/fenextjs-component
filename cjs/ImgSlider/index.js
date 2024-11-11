@@ -5,7 +5,8 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Img_1 = require("../Img");
 const Steps_1 = require("../Steps");
-const Pagination_1 = require("fenextjs-svg/cjs/Pagination");
+const PaginationNext_1 = require("fenextjs-svg/cjs/PaginationNext");
+const PaginationPre_1 = require("fenextjs-svg/cjs/PaginationPre");
 const ImgSlider = ({ className = "", imgs, defaultStep = 0, setStep: setStepProps, step: stepProps, ...props }) => {
     const [step__, setStep__] = (0, react_1.useState)(defaultStep);
     const setStep = (e) => {
@@ -21,8 +22,8 @@ const ImgSlider = ({ className = "", imgs, defaultStep = 0, setStep: setStepProp
                         content: react_1.default.createElement(Img_1.Img, { key: i, ...e }),
                     };
                 }), stepPos: "top", step: step, onSetStep: setStep, btnNext: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(Pagination_1.SvgPaginationNext, null)), btnPrev: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(Pagination_1.SvgPaginationPre, null)), useDogs: true, ...props }))));
+                    react_1.default.createElement(PaginationNext_1.SvgPaginationNext, null)), btnPrev: react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement(PaginationPre_1.SvgPaginationPre, null)), useDogs: true, ...props }))));
 };
 exports.ImgSlider = ImgSlider;
 //# sourceMappingURL=index.js.map

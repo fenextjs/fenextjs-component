@@ -2,7 +2,8 @@ import React, { useMemo, useState } from "react";
 
 import { InputText, InputTextProps } from "../Text";
 
-import { SvgNumberIncrease, SvgNumberDecrease } from "fenextjs-svg/cjs/Number";
+import { SvgNumberIncrease } from "fenextjs-svg/cjs/NumberIncrease";
+import { SvgNumberDecrease } from "fenextjs-svg/cjs/NumberDecrease";
 import { SvgArrow } from "fenextjs-svg/cjs/Arrow";
 import { FenextjsValidator } from "fenextjs-validator";
 import { useValidator } from "fenextjs-hook/cjs/useValidator";

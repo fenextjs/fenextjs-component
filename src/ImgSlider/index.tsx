@@ -1,10 +1,8 @@
 import React, { useMemo, useState } from "react";
 import { Img, ImgProps } from "../Img";
 import { Steps } from "../Steps";
-import {
-    SvgPaginationNext,
-    SvgPaginationPre,
-} from "fenextjs-svg/cjs/Pagination";
+import { SvgPaginationNext } from "fenextjs-svg/cjs/PaginationNext";
+import { SvgPaginationPre } from "fenextjs-svg/cjs/PaginationPre";
 import { _TProps } from "fenextjs-interface";
 
 /**
