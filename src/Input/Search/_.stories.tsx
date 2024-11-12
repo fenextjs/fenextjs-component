@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputSearch, InputSearchProps, InputSearchResultProps, InputSearchTabFilterProps } from "./index";
 import { env_log } from "fenextjs-functions/cjs/env_log";
@@ -89,7 +89,7 @@ const listSearch: InputSearchResultProps[] = [
     },
 ];
 
-const Profile: Story<PropsWithChildren<InputSearchProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputSearchProps>> = (args) => (
     <InputSearch {...args} />
 );
 

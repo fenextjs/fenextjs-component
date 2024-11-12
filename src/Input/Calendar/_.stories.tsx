@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputCalendar, InputCalendarProps } from "./index";
 import { FenextjsValidator } from "fenextjs-validator";
@@ -9,7 +9,7 @@ export default {
     component: InputCalendar,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputCalendarProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputCalendarProps>> = (args) => (
     <InputCalendar {...args}>Test Children</InputCalendar>
 );
 

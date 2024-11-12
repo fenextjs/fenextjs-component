@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import { useAlert } from "fenextjs-hook";
 import { Button } from "../../../Button";
 import { AlertProps } from "fenextjs-interface";
@@ -12,7 +12,7 @@ export default {
     component: LayoutGridMenuTopLeft,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<LayoutGridMenuTopLeftProps>> = (
+const Profile: StoryFn<PropsWithChildren<LayoutGridMenuTopLeftProps>> = (
     args,
 ) => {
     const { setAlert } = useAlert({});
@@ -466,7 +466,7 @@ WithBtnMenuAndElementContainer.args = {
 
 
 
-const Profile2: Story<PropsWithChildren<LayoutGridMenuTopLeftProps>> = (
+const Profile2: StoryFn<PropsWithChildren<LayoutGridMenuTopLeftProps>> = (
     args,
 ) => {
 

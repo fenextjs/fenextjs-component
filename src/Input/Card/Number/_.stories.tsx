@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputCardNumber, InputCardNumberProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputCardNumber,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputCardNumberProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputCardNumberProps>> = (args) => (
     <InputCardNumber {...args}>Test Children</InputCardNumber>
 );
 

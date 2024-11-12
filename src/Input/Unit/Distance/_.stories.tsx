@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputUnitDistance, InputUnitDistanceProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputUnitDistance,
 } as Meta;
 
-const Profile: Story<InputUnitDistanceProps> = (args) => (
+const Profile: StoryFn<InputUnitDistanceProps> = (args) => (
     <InputUnitDistance {...args}>Test Children</InputUnitDistance>
 );
 

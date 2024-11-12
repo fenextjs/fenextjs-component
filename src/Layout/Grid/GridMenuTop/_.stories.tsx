@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { LayoutGridMenuTop, LayoutGridMenuTopProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: LayoutGridMenuTop,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<LayoutGridMenuTopProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<LayoutGridMenuTopProps>> = (args) => (
     <LayoutGridMenuTop {...args} />
 );
 

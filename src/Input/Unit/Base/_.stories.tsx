@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputUnitBase, InputUnitBaseProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputUnitBase,
 } as Meta;
 
-const Profile: Story<InputUnitBaseProps> = (args) => (
+const Profile: StoryFn<InputUnitBaseProps> = (args) => (
     <InputUnitBase {...args}>Test Children</InputUnitBase>
 );
 

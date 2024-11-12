@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { ChronologicalList, ChronologicalListProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: ChronologicalList,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ChronologicalListProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ChronologicalListProps>> = (args) => (
     <ChronologicalList {...args} />
 );
 

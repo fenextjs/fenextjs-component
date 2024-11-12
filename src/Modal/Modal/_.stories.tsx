@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Modal, ModalProps } from "./index";
 import { LayoutGridMenuTopLeft } from "./../../Layout/Grid/GridMenuTopLeft";
@@ -12,7 +12,7 @@ export default {
     component: Modal,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ModalProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ModalProps>> = (args) => (
     <Modal {...args} />
 );
 
@@ -41,7 +41,7 @@ Index.args = {
     useRender:true
 } as ModalProps;
 
-const WithLayout_: Story<PropsWithChildren<ModalProps>> = (args) => (
+const WithLayout_: StoryFn<PropsWithChildren<ModalProps>> = (args) => (
     <LayoutGridMenuTopLeft>
         <Modal {...args} />
     </LayoutGridMenuTopLeft>
@@ -68,7 +68,7 @@ WithLayout.args = {
     ),
 } as ModalProps;
 
-const ModalInModal_: Story<PropsWithChildren<ModalProps>> = (args) => (
+const ModalInModal_: StoryFn<PropsWithChildren<ModalProps>> = (args) => (
     <Modal {...args} 
     // nameLocalStorage="test"
     name="modal-1" activeByNameLocalStorage={true} useRender={true} ElementActionModalActive={<Button>Button Modal</Button>}>
@@ -195,7 +195,7 @@ const BtnUseModalName = ({ name }: { name: string }) => {
     );
 };
 
-const ProfileUseModal: Story<PropsWithChildren<ModalProps>> = (args) => {
+const ProfileUseModal: StoryFn<PropsWithChildren<ModalProps>> = (args) => {
     return (
         <>
             <BtnUseModalName name={args?.name } />
@@ -231,7 +231,7 @@ UseModalName.args = {
 
 
 
-// const ModalInModalContentLocalStorage_: Story<PropsWithChildren<ModalProps>> = (args) => (
+// const ModalInModalContentLocalStorage_: StoryFn<PropsWithChildren<ModalProps>> = (args) => (
 //     <Modal {...args} 
 //     name="modal-1"  useRender={true} ElementActionModalActive={<Button>Button Modal</Button>}>
 //         <h1>Title</h1>

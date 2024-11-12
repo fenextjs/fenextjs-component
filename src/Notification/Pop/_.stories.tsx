@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { NotificationPop, NotificationPopProps } from "./index";
 import { Button } from "../../Button";
@@ -11,7 +11,7 @@ export default {
     component: NotificationPop,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<NotificationPopProps>> = (args) => {
+const Profile: StoryFn<PropsWithChildren<NotificationPopProps>> = (args) => {
     const { pop } = useNotification({});
     return (
         <>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { SwichViewSelect, SwichViewSelectProps } from "./index";
 import { InputSelect } from "../../Input/Select";
@@ -19,7 +19,7 @@ const t = new Array(20).fill(1).map((e, i) => {
     };
 });
 
-const Profile: Story<SwichViewSelectProps> = (args) => (
+const Profile: StoryFn<SwichViewSelectProps> = (args) => (
     <>
         <SwichViewSelect {...args} />
         <InputSelect
@@ -38,7 +38,7 @@ const Profile: Story<SwichViewSelectProps> = (args) => (
 export const Index = Profile.bind({});
 Index.args = {} as SwichViewSelectProps;
 
-const ProfileInterna: Story<SwichViewSelectProps> = (args) => (
+const ProfileInterna: StoryFn<SwichViewSelectProps> = (args) => (
     <>
         <InputSelect
         label={"Select"}
@@ -67,7 +67,7 @@ Interna.args = {} as SwichViewSelectProps;
 
 
 
-const ProfileMultiple: Story<SwichViewSelectProps> = (args) => (
+const ProfileMultiple: StoryFn<SwichViewSelectProps> = (args) => (
     <>
         <InputSelectMultiple
         label={"Select"}

@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Copy, CopyProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Copy,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<CopyProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<CopyProps>> = (args) => (
     <Copy {...args}/>
 );
 

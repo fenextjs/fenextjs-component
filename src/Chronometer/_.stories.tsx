@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Chronometer, ChronometerProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Chronometer,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ChronometerProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ChronometerProps>> = (args) => (
     <Chronometer {...args}/>
 );
 

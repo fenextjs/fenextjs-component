@@ -48,7 +48,7 @@ export default {
             require: true,
             default: "''",
             description:
-                "URL a la que se navega cuando se hace clic en el enlace.",
+                "URL a la que se navega cuando se hace click en el enlace.",
         },
     ],
     extras: [],

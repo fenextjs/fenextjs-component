@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputUnitWeight, InputUnitWeightProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputUnitWeight,
 } as Meta;
 
-const Profile: Story<InputUnitWeightProps> = (args) => (
+const Profile: StoryFn<InputUnitWeightProps> = (args) => (
     <InputUnitWeight {...args}>Test Children</InputUnitWeight>
 );
 

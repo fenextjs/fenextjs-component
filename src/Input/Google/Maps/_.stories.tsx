@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputGoogleMaps, InputGoogleMapsProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputGoogleMaps,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputGoogleMapsProps>> = (
+const Profile: StoryFn<PropsWithChildren<InputGoogleMapsProps>> = (
     args,
 ) => (
         <InputGoogleMaps {...args} />

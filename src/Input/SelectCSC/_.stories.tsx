@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputSelectCSC, InputSelectCSCProps } from "./index";
 import { FenextjsValidator } from "fenextjs-validator";
@@ -10,7 +10,7 @@ export default {
     component: InputSelectCSC,
 } as Meta;
 
-const Profile: Story<InputSelectCSCProps> = (args) => (
+const Profile: StoryFn<InputSelectCSCProps> = (args) => (
     <InputSelectCSC {...args}>Test Children</InputSelectCSC>
 );
 

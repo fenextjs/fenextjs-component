@@ -3,7 +3,7 @@ export default {
     idStorybook: "component-img",
     name: "Img",
     description:
-        "El componente Img renderiza una imagen con soporte para múltiples resoluciones, capas visuales, y un cargador opcional. También permite definir acciones personalizadas en caso de error o al hacer clic sobre la imagen.",
+        "El componente Img renderiza una imagen con soporte para múltiples resoluciones, capas visuales, y un cargador opcional. También permite definir acciones personalizadas en caso de error o al hacer click sobre la imagen.",
     props: [
         {
             id: "src",
@@ -98,7 +98,7 @@ export default {
             require: false,
             default: "undefined",
             description:
-                "Función personalizada que se ejecuta al hacer clic en la imagen.",
+                "Función personalizada que se ejecuta al hacer click en la imagen.",
         },
         {
             id: "loader",

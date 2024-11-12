@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Share, ShareProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Share,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ShareProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ShareProps>> = (args) => (
     <Share {...args}/>
 );
 

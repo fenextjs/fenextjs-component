@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputCardCCV, InputCardCCVProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputCardCCV,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputCardCCVProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputCardCCVProps>> = (args) => (
     <InputCardCCV {...args}>Test Children</InputCardCCV>
 );
 

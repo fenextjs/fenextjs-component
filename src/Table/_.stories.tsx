@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta,  } from "@storybook/react";
+import { StoryFn, Meta,  } from "@storybook/react";
 import { env_log } from "fenextjs-functions/cjs/env_log";
 
 import { Table, TableProps } from "./index";
@@ -22,7 +22,7 @@ interface TestItemTable {
     };
 }
 
-const TableIndex: Story<TableProps<TestItemTable>> = (args) =>{
+const TableIndex: StoryFn<TableProps<TestItemTable>> = (args) =>{
     return  (
        <>
        {/* <div style={{height:"60dvh"}}></div> */}

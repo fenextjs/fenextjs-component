@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { ContentShow, ContentShowProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: ContentShow,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ContentShowProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ContentShowProps>> = (args) => (
     <ContentShow {...args}/>
 );
 

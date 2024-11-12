@@ -18,7 +18,7 @@ export default {
             require: false,
             default: "[]",
             description:
-                "Lista de elementos de paso con contenido y funciones de clic opcionales.",
+                "Lista de elementos de paso con contenido y funciones de click opcionales.",
         },
         {
             id: "defaultStep",

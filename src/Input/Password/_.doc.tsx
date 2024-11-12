@@ -102,7 +102,7 @@ export default {
             id: "alternancia-visibilidad",
             title: "Alternancia de visibilidad",
             description:
-                "El componente incluye un ícono que permite alternar entre mostrar el texto de la contraseña o mantenerlo oculto. El estado de visibilidad cambia entre 'text' y 'password' al hacer clic en el ícono.",
+                "El componente incluye un ícono que permite alternar entre mostrar el texto de la contraseña o mantenerlo oculto. El estado de visibilidad cambia entre 'text' y 'password' al hacer click en el ícono.",
         },
     ],
     useExample: [

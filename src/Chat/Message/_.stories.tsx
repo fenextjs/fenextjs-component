@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { ChatMessage, ChatMessageProps } from './index';
 
 export default {
@@ -7,7 +7,7 @@ export default {
     title: 'Chat/Message',
 } as Meta;
 
-const ChatMessage_: Story<ChatMessageProps> = (args) => <ChatMessage {...args} />;
+const ChatMessage_: StoryFn<ChatMessageProps> = (args) => <ChatMessage {...args} />;
 export const Index = ChatMessage_.bind({});
 Index.args = {
     account:{

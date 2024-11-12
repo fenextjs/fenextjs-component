@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import {  FenextjsValidator } from "fenextjs-validator";
 
 import { InputNumberCount, InputNumberCountProps } from "./index";
@@ -9,7 +9,7 @@ export default {
     component: InputNumberCount,
 } as Meta;
 
-const Profile: Story<InputNumberCountProps> = (args) => (
+const Profile: StoryFn<InputNumberCountProps> = (args) => (
     <InputNumberCount {...args}>Test Children</InputNumberCount>
 );
 

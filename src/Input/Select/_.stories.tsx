@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import { FenextjsValidator} from "fenextjs-validator";
 import {sleep} from 'fenextjs-functions';
 
@@ -18,7 +18,7 @@ export default {
     component: InputSelect,
 } as Meta;
 
-const Profile: Story<InputSelectProps> = (args) => (
+const Profile: StoryFn<InputSelectProps> = (args) => (
     <InputSelect {...args}>Test Children</InputSelect>
 );
 
@@ -125,7 +125,7 @@ const WithValidatorArgs: InputSelectProps = {
 WithValidator.args = WithValidatorArgs;
 
 
-const InOveflow: Story<InputSelectProps> = (args) => (
+const InOveflow: StoryFn<InputSelectProps> = (args) => (
     <div
         style={{
             background: "#04004a",
@@ -318,7 +318,7 @@ const In_Oveflow_arg: InputSelectProps = {
 
 In_Oveflow.args = In_Oveflow_arg;
 
-const ProfileModal: Story<InputSelectProps> = (args) => (
+const ProfileModal: StoryFn<InputSelectProps> = (args) => (
     <Modal type="bottom" ElementActionModalActive={<Button>Btn</Button>}>
     <InputSelect {...args}>Test Children</InputSelect>
         <InputSelect {...args}>Test Children</InputSelect>
@@ -333,7 +333,7 @@ TestingSelectMovilInModal.args = args;
 
 
 
-const InLayout: Story<InputSelectProps> = (args) => (
+const InLayout: StoryFn<InputSelectProps> = (args) => (
     <LayoutGridMenuTopLeft>
     <InputSelect {...args}>Test Children</InputSelect>
     <div style={{
@@ -458,7 +458,7 @@ const ValidatorDataArgs: InputSelectProps = {
 export const ValidatorData = Profile.bind({});
 ValidatorData.args = ValidatorDataArgs;
 
-const WithLoaderProfile: Story<InputSelectProps> = (args) => {
+const WithLoaderProfile: StoryFn<InputSelectProps> = (args) => {
     const [options, setOptions] = useState<InputSelectItemOptionBaseProps[]>([])
     const [loader, setLoader] = useState(false)
     return (

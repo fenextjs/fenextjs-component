@@ -3,7 +3,7 @@ export default {
     idStorybook: "component-copy",
     name: "Copy",
     description:
-        "El componente Copy permite copiar un texto al portapapeles cuando se hace clic en él, con la opción de mostrar una notificación al usuario.",
+        "El componente Copy permite copiar un texto al portapapeles cuando se hace click en él, con la opción de mostrar una notificación al usuario.",
     props: [
         {
             id: "text",
@@ -11,7 +11,7 @@ export default {
             require: false,
             default: "''",
             description:
-                "Texto que se copiará al portapapeles al hacer clic en el componente.",
+                "Texto que se copiará al portapapeles al hacer click en el componente.",
         },
         {
             id: "children",

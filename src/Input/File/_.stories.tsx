@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputFile, InputFileProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputFile,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputFileProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputFileProps>> = (args) => (
     <InputFile {...args}>
         <div style={{fontSize:"4rem"}}>
             Children Input File

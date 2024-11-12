@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputTextSelect, InputTextSelectProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputTextSelect,
 } as Meta;
 
-const Profile: Story<InputTextSelectProps> = (args) => (
+const Profile: StoryFn<InputTextSelectProps> = (args) => (
     <InputTextSelect {...args}>Test Children</InputTextSelect>
 );
 

@@ -88,7 +88,7 @@ export default {
             require: false,
             default: "undefined",
             description:
-                "Función que se ejecuta al hacer clic en un resultado de búsqueda.",
+                "Función que se ejecuta al hacer click en un resultado de búsqueda.",
         },
         {
             id: "useResult",

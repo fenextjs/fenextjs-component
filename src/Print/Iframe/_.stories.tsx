@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { PrintIframe, PrintIframeProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: PrintIframe,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<PrintIframeProps<any>>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<PrintIframeProps<any>>> = (args) => (
     <PrintIframe {...args} />
 );
 

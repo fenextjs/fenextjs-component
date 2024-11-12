@@ -56,7 +56,7 @@ export default {
             tableItems: [
                 {
                     AlertType: "OK",
-                    Descripción: "Mensaje de exito.",
+                    Descripción: "Mensaje de éxito.",
                 },
                 {
                     AlertType: "ERROR",

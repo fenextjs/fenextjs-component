@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Cols, ColsProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Cols,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ColsProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ColsProps>> = (args) => (
     <Cols {...args} />
 );
 

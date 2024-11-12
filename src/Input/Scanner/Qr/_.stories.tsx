@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputScannerQr, InputScannerQrProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputScannerQr,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputScannerQrProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputScannerQrProps>> = (args) => (
     <InputScannerQr {...args}>Test Children</InputScannerQr>
 );
 

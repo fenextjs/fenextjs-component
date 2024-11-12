@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Theme, ThemeProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Theme,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ThemeProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ThemeProps>> = (args) => (
     <Theme {...args}/>
 );
 

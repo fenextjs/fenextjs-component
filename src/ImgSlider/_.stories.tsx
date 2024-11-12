@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { ImgSlider, ImgSliderProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: ImgSlider,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ImgSliderProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ImgSliderProps>> = (args) => (
     <ImgSlider {...args} />
 );
 

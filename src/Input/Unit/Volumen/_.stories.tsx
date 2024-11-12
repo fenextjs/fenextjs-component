@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputUnitVolumen, InputUnitVolumenProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputUnitVolumen,
 } as Meta;
 
-const Profile: Story<InputUnitVolumenProps> = (args) => (
+const Profile: StoryFn<InputUnitVolumenProps> = (args) => (
     <InputUnitVolumen {...args}>Test Children</InputUnitVolumen>
 );
 

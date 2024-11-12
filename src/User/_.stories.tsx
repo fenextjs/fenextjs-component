@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { User, UserComponentProps } from "./index";
 import { UserRoleProps, UserStatusProps } from "fenextjs-interface/cjs/User";
@@ -9,7 +9,7 @@ export default {
     component: User,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<UserComponentProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<UserComponentProps>> = (args) => (
     <User {...args}/>
 );
 

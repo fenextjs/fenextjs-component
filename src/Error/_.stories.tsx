@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import {ErrorFenextjs } from "fenextjs-error";
 
 import { ErrorComponent, ErrorComponentProps } from "./index";
@@ -9,7 +9,7 @@ export default {
     component: ErrorComponent,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ErrorComponentProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ErrorComponentProps>> = (args) => (
     <ErrorComponent {...args} />
 );
 

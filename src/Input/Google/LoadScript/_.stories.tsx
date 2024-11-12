@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputGoogleLoadScript, InputGoogleLoadScriptProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputGoogleLoadScript,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputGoogleLoadScriptProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputGoogleLoadScriptProps>> = (args) => (
     <InputGoogleLoadScript {...args}/>
 );
 

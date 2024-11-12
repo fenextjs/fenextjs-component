@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { DesignTypography, DesignTypographyProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: DesignTypography,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<DesignTypographyProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<DesignTypographyProps>> = (args) => (
     <DesignTypography {...args}/>
 );
 

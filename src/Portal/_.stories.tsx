@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Portal, PortalProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Portal,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<PortalProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<PortalProps>> = (args) => (
     <Portal {...args}>Test Children</Portal>
 );
 

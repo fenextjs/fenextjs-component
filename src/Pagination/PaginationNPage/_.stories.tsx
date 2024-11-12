@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { PaginationNPageProps, PaginationNPage } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: PaginationNPage,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<PaginationNPageProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<PaginationNPageProps>> = (args) => (
     <PaginationNPage {...args}>Test Children</PaginationNPage>
 );
 

@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Link, LinkProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Link,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<LinkProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<LinkProps>> = (args) => (
     <Link {...args}/>
 );
 

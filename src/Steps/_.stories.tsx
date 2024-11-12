@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Steps, StepsProps } from "./index";
 import { sleep } from "fenextjs-functions";
@@ -9,7 +9,7 @@ export default {
     component: Steps,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<StepsProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<StepsProps>> = (args) => (
     <Steps {...args} />
 );
 

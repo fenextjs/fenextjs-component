@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { SwichViewTable, SwichViewTableProps } from "./index";
 import { Table } from "../../Table";
@@ -20,7 +20,7 @@ interface TestItemTable {
         name: string;
     };
 }
-const Profile: Story<PropsWithChildren<SwichViewTableProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<SwichViewTableProps>> = (args) => (
     <>
         <SwichViewTable {...args} />
         <Table<TestItemTable>

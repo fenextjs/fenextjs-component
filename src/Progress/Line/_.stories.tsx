@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { ProgressLine, ProgressLineProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: ProgressLine,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ProgressLineProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ProgressLineProps>> = (args) => (
     <ProgressLine {...args} />
 );
 

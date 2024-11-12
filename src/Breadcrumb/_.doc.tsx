@@ -47,7 +47,7 @@ export default {
                     Propiedad: "href",
                     Tipo: "string",
                     Descripción:
-                        "La URL a la que se redirigirá cuando se haga clic en el enlace.",
+                        "La URL a la que se redirigirá cuando se haga click en el enlace.",
                 },
                 {
                     Propiedad: "children",
@@ -59,7 +59,7 @@ export default {
                     Propiedad: "onClick",
                     Tipo: "function",
                     Descripción:
-                        "Función que se ejecutará cuando se haga clic en el enlace (opcional).",
+                        "Función que se ejecutará cuando se haga click en el enlace (opcional).",
                 },
             ],
         },

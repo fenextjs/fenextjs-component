@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import {  FenextjsValidator } from "fenextjs-validator";
 
 import { InputPhone, InputPhoneProps } from "./index";
@@ -10,7 +10,7 @@ export default {
     component: InputPhone,
 } as Meta;
 
-const Profile: Story<InputPhoneProps> = (args) => (
+const Profile: StoryFn<InputPhoneProps> = (args) => (
     <InputPhone {...args}>Test Children</InputPhone>
 );
 

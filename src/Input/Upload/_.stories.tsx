@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputUpload, InputUploadProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputUpload,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputUploadProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputUploadProps>> = (args) => (
     <InputUpload {...args}/>
 );
 

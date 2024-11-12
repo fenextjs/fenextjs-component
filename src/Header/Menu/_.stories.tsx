@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
-import { Date } from "fenextjs-svg/cjs/Date";
+import { StoryFn, Meta } from "@storybook/react";
+import { SvgDate } from "fenextjs-svg/cjs/Date";
 
 import { Menu, MenuProps } from "./index";
 
@@ -9,7 +9,7 @@ export default {
     component: Menu,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<MenuProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<MenuProps>> = (args) => (
     <Menu {...args}>Test Children</Menu>
 );
 
@@ -21,7 +21,7 @@ Index.args = {
             text: "Text Items 1",
             icon: (
                 <>
-                    <Date />
+                    <SvgDate />
                 </>
             ),
         },

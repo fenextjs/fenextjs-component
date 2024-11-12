@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import {
     Tooltip,
@@ -13,7 +13,7 @@ export default {
     component: Tooltip,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<TooltipProps>> = (args) => {
+const Profile: StoryFn<PropsWithChildren<TooltipProps>> = (args) => {
     const fn_tooltip = (x: TooltipPositionX, y: TooltipPositionY) => {
         return (
             <>

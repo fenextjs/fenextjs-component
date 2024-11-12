@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputFileStatus, InputFileStatusProps } from "./index";
 import { sleep } from "fenextjs-functions";
@@ -9,7 +9,7 @@ export default {
     component: InputFileStatus,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputFileStatusProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputFileStatusProps>> = (args) => (
     <InputFileStatus {...args}/>
 );
 

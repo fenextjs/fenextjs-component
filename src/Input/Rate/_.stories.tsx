@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputRate, InputRateProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputRate,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputRateProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputRateProps>> = (args) => (
     <InputRate {...args}/>
 );
 

@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import {Button} from '../Button';
 
 import { TableActionCheckbox, TableActionCheckboxProps } from "./index";
@@ -9,7 +9,7 @@ export default {
     component: TableActionCheckbox,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<TableActionCheckboxProps<any>>> = (
+const Profile: StoryFn<PropsWithChildren<TableActionCheckboxProps<any>>> = (
     args,
 ) => <TableActionCheckbox {...args} />;
 

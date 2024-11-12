@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputCheckbox, InputCheckboxProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputCheckbox,
 } as Meta;
 
-const Profile: Story<InputCheckboxProps> = (args) => (
+const Profile: StoryFn<InputCheckboxProps> = (args) => (
     <InputCheckbox {...args}>Test Children</InputCheckbox>
 );
 

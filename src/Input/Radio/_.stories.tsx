@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputRadio, InputRadioProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputRadio,
 } as Meta;
 
-const Profile: Story<InputRadioProps<any>> = (args) => (
+const Profile: StoryFn<InputRadioProps<any>> = (args) => (
     <InputRadio {...args}>Test Children</InputRadio>
 );
 

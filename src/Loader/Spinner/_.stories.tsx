@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { LoaderSpinner, LoaderSpinnerProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: LoaderSpinner,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<LoaderSpinnerProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<LoaderSpinnerProps>> = (args) => (
     <LoaderSpinner {...args}>Test Children</LoaderSpinner>
 );
 

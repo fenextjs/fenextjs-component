@@ -2,7 +2,7 @@ export default {
     id: "menu",
     idStorybook: "component-menu",
     minHeightIframe: "50vh",
-    name: "Menu",
+    name: "Menú",
     description:
         "El componente Menu renderiza una lista de elementos interactivos. Se utiliza para mostrar una estructura de menú con soporte para la funcionalidad de colapsar submenús, íconos personalizados y distintos tipos de comportamiento (radio o checkbox).",
     props: [

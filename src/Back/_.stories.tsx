@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Back, BackProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Back,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<BackProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<BackProps>> = (args) => (
     <Back {...args}/>
 );
 

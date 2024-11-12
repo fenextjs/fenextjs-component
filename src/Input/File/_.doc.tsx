@@ -59,7 +59,7 @@ export default {
             require: false,
             default: "false",
             description:
-                "Indica si se debe limpiar el input después de una carga exitosa.",
+                "Indica si se debe limpiar el input después de una carga éxitosa.",
         },
         {
             id: "MAX_SIZE_FILE",

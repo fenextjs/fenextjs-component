@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { ModalBase, ModalBaseProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: ModalBase,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ModalBaseProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ModalBaseProps>> = (args) => (
     <ModalBase {...args} />
 );
 

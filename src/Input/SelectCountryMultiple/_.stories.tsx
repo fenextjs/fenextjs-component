@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import {
     InputSelectCountryMultiple,
@@ -11,7 +11,7 @@ export default {
     component: InputSelectCountryMultiple,
 } as Meta;
 
-const Profile: Story<InputSelectCountryMultipleProps> = (args) => (
+const Profile: StoryFn<InputSelectCountryMultipleProps> = (args) => (
     <InputSelectCountryMultiple {...args}>Test Children</InputSelectCountryMultiple>
 );
 

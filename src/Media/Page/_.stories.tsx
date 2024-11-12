@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { MediaPage, MediaPageProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: MediaPage,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<MediaPageProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<MediaPageProps>> = (args) => (
     <MediaPage {...args}/>
 );
 

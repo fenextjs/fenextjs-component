@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { LayoutGridMenuLeft, LayoutGridMenuLeftProps } from "./index";
 import { ButtonMenu } from "../../../Header/ButtonMenu";
@@ -9,7 +9,7 @@ export default {
     component: LayoutGridMenuLeft,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<LayoutGridMenuLeftProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<LayoutGridMenuLeftProps>> = (args) => (
     <LayoutGridMenuLeft {...args} />
 );
 

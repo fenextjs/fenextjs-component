@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { ScheduleWeekly, ScheduleWeeklyProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: ScheduleWeekly,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ScheduleWeeklyProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ScheduleWeeklyProps>> = (args) => (
     <ScheduleWeekly {...args}/>
 );
 

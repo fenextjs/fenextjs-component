@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { ProgressCircle, ProgressCircleProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: ProgressCircle,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ProgressCircleProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ProgressCircleProps>> = (args) => (
     <ProgressCircle {...args} />
 );
 

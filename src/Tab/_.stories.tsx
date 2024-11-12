@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Tab, TabProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Tab,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<TabProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<TabProps>> = (args) => (
     <Tab {...args}>Test Children</Tab>
 );
 

@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputPassword, InputPasswordProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputPassword,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputPasswordProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputPasswordProps>> = (args) => (
     <InputPassword {...args}>Test Children</InputPassword>
 );
 

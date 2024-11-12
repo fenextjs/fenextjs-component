@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Counter, CounterProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Counter,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<CounterProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<CounterProps>> = (args) => (
     <Counter {...args}/>
 );
 

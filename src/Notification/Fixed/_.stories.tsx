@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Notification, NotificationProps } from "./index";
 import { RequestResultTypeProps } from "fenextjs-interface/cjs/Request";
@@ -9,7 +9,7 @@ export default {
     component: Notification,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<NotificationProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<NotificationProps>> = (args) => (
     <Notification {...args} />
 );
 

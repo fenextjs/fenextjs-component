@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputDateRange, InputDateRangeProps } from "./index";
 import { env_log } from "fenextjs-functions/cjs/env_log";
@@ -9,7 +9,7 @@ export default {
     component: InputDateRange,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputDateRangeProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputDateRangeProps>> = (args) => (
     <InputDateRange {...args}>Test Children</InputDateRange>
 );
 

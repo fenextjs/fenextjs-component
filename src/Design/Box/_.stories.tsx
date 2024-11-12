@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { DesignBox, DesignBoxProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: DesignBox,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<DesignBoxProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<DesignBoxProps>> = (args) => (
     <DesignBox {...args}/>
 );
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import {
     InputSelectTimeZone,
@@ -11,7 +11,7 @@ export default {
     component: InputSelectTimeZone,
 } as Meta;
 
-const Profile: Story<InputSelectTimeZoneProps> = (args) => (
+const Profile: StoryFn<InputSelectTimeZoneProps> = (args) => (
     <InputSelectTimeZone {...args}>Test Children</InputSelectTimeZone>
 );
 

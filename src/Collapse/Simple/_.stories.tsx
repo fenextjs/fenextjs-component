@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Collapse, CollapseProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Collapse,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<CollapseProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<CollapseProps>> = (args) => (
     <Collapse {...args}>Test Children</Collapse>
 );
 

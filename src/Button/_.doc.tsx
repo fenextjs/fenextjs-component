@@ -26,14 +26,14 @@ export default {
             type: "function",
             require: false,
             description:
-                "Función que se ejecuta cuando se hace clic en el botón (solo si no está deshabilitado o en estado de carga).",
+                "Función que se ejecuta cuando se hace click en el botón (solo si no está deshabilitado o en estado de carga).",
         },
         {
             id: "onClickDisabled",
             type: "function",
             require: false,
             description:
-                "Función que se ejecuta cuando se hace clic en el botón estando deshabilitado.",
+                "Función que se ejecuta cuando se hace click en el botón estando deshabilitado.",
         },
         {
             id: "icon",

@@ -3,7 +3,7 @@ export default {
     idStorybook: "component-form",
     name: "Form",
     description:
-        "El componente Form es un formulario que permite manejar envíos de datos, con soporte para mostrar loaders, manejar deshabilitación, y ejecutar funciones tras el envío exitoso o en caso de error.",
+        "El componente Form es un formulario que permite manejar envíos de datos, con soporte para mostrar loaders, manejar deshabilitación, y ejecutar funciones tras el envío éxitoso o en caso de error.",
     props: [
         {
             id: "id",
@@ -35,7 +35,7 @@ export default {
             require: false,
             default: "undefined",
             description:
-                "Función que se ejecuta después de un envío exitoso del formulario.",
+                "Función que se ejecuta después de un envío éxitoso del formulario.",
         },
         {
             id: "disabled",
@@ -85,7 +85,7 @@ export default {
                 },
                 {
                     Propiedad: "onAfterSubmit",
-                    Uso: "Ejecuta acciones después del envío exitoso, como el seguimiento de eventos.",
+                    Uso: "Ejecuta acciones después del envío éxitoso, como el seguimiento de eventos.",
                     Descripción:
                         "Función opcional que recibe los datos del resultado del envío y permite manejar la lógica post-envío.",
                 },
@@ -103,7 +103,7 @@ export default {
         },
         {
             text: "Formulario con acción después del envío",
-            content: `<Form data={{ field: 'value' }} onAfterSubmit={(result) => console.log('Envío exitoso', result)}>Enviar</Form>`,
+            content: `<Form data={{ field: 'value' }} onAfterSubmit={(result) => console.log('Envío éxitoso', result)}>Enviar</Form>`,
         },
     ],
 };

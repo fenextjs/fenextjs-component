@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import { Chat, ChatProps } from "./index";
 import { UserProps} from "fenextjs-interface";
 
@@ -8,7 +8,7 @@ export default {
     title: "Chat/Chat",
 } as Meta;
 
-const Chat_: Story<ChatProps> = (args) => <Chat {...args} />;
+const Chat_: StoryFn<ChatProps> = (args) => <Chat {...args} />;
 
 const User1: Partial<UserProps> = {
     id: "1",

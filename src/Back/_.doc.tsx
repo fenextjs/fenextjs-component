@@ -3,7 +3,7 @@ export default {
     idStorybook: "component-back",
     name: "Back",
     description:
-        "El componente Back es una representación visual de un botón de retroceso (atrás) que permite al usuario navegar a la página anterior en la historia del navegador, utilizar la funcionalidad de Next.js Router, redirigir a una URL específica o simplemente ejecutar una función personalizada al hacer clic en el botón.",
+        "El componente Back es una representación visual de un botón de retroceso (atrás) que permite al usuario navegar a la página anterior en la historia del navegador, utilizar la funcionalidad de Next.js Router, redirigir a una URL específica o simplemente ejecutar una función personalizada al hacer click en el botón.",
     props: [
         {
             id: "loader",
@@ -26,7 +26,7 @@ export default {
             require: false,
             default: "undefined",
             description:
-                "Función personalizada que se ejecuta al hacer clic en el botón.",
+                "Función personalizada que se ejecuta al hacer click en el botón.",
         },
         {
             id: "icon",
@@ -47,7 +47,8 @@ export default {
             type: "'history' | 'router' | 'link' | 'none'",
             require: false,
             default: "'history'",
-            description: "Tipo de acción a ejecutar al hacer clic en el botón.",
+            description:
+                "Tipo de acción a ejecutar al hacer click en el botón.",
         },
         {
             id: "link",

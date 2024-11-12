@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import {  FenextjsValidator } from "fenextjs-validator";
 
 import { InputNumber, InputNumberProps } from "./index";
@@ -9,7 +9,7 @@ export default {
     component: InputNumber,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputNumberProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputNumberProps>> = (args) => (
     <InputNumber {...args}>Test Children</InputNumber>
 );
 

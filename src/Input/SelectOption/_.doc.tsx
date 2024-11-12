@@ -77,7 +77,7 @@ export default {
             type: "(item: InputSelectOptionBaseProps) => void",
             require: false,
             default: "undefined",
-            description: "Función que se ejecuta al hacer clic en la opción.",
+            description: "Función que se ejecuta al hacer click en la opción.",
         },
         {
             id: "onDelete",

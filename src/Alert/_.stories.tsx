@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Alert, AlertComponentProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Alert,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<AlertComponentProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<AlertComponentProps>> = (args) => (
     <Alert {...args} />
 );
 

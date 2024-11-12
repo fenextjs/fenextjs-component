@@ -36,7 +36,7 @@ export default {
         },
         {
             text: "Notificación de éxito",
-            content: `<Notification type="SUCCESS">Operación exitosa</Notification>`,
+            content: `<Notification type="SUCCESS">Operación éxitosa</Notification>`,
         },
         {
             text: "Notificación de error",

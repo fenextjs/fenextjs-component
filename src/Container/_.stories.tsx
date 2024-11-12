@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Container, ContainerProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Container,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ContainerProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ContainerProps>> = (args) => (
     <Container {...args}>
         <>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,

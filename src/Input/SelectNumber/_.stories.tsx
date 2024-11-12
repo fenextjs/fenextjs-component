@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputSelectNumber, InputSelectNumberProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputSelectNumber,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputSelectNumberProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputSelectNumberProps>> = (args) => (
     <InputSelectNumber {...args}>Test Children</InputSelectNumber>
 );
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputSwich, InputSwichProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputSwich,
 } as Meta;
 
-const Profile: Story<InputSwichProps> = (args) => (
+const Profile: StoryFn<InputSwichProps> = (args) => (
     <InputSwich {...args}>Test Children</InputSwich>
 );
 

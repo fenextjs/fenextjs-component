@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputCardExpDate, InputCardExpDateProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputCardExpDate,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputCardExpDateProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<InputCardExpDateProps>> = (args) => (
     <InputCardExpDate {...args}>Test Children</InputCardExpDate>
 );
 

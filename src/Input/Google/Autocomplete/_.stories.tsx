@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputGoogleAutocomplete, InputGoogleAutocompleteProps } from "./index";
 import { InputGoogleLoadScript } from "../LoadScript";
@@ -11,7 +11,7 @@ export default {
     component: InputGoogleAutocomplete,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<InputGoogleAutocompleteProps>> = (
+const Profile: StoryFn<PropsWithChildren<InputGoogleAutocompleteProps>> = (
     args,
 ) => (
     <InputGoogleLoadScript>

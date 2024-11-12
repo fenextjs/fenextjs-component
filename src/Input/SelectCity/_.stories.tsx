@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import { Button } from "../../Button";
 
 import {
@@ -12,7 +12,7 @@ export default {
     component: InputSelectCity,
 } as Meta;
 
-const Profile: Story<InputSelectCityProps> = (args) => (
+const Profile: StoryFn<InputSelectCityProps> = (args) => (
     <InputSelectCity {...args}>Test Children</InputSelectCity>
 );
 
@@ -32,7 +32,7 @@ Index.args = args;
 
 
 
-const ProfileState: Story<InputSelectCityProps> = (args) => {
+const ProfileState: StoryFn<InputSelectCityProps> = (args) => {
     const [data, setData] = useState<any>({
 
     })

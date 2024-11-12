@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { ItemMenu, ItemMenuProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: ItemMenu,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ItemMenuProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ItemMenuProps>> = (args) => (
     <ItemMenu {...args}>Test Children</ItemMenu>
 );
 

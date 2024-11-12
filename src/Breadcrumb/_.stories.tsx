@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { Breadcrumb, BreadcrumbProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: Breadcrumb,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<BreadcrumbProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<BreadcrumbProps>> = (args) => (
     <Breadcrumb {...args}/>
 );
 

@@ -69,7 +69,7 @@ export default {
             require: false,
             default: "undefined",
             description:
-                "Función que se ejecuta al hacer clic en el botón de retroceso.",
+                "Función que se ejecuta al hacer click en el botón de retroceso.",
         },
         {
             id: "onNext",
@@ -77,7 +77,7 @@ export default {
             require: false,
             default: "undefined",
             description:
-                "Función que se ejecuta al hacer clic en el botón de avance.",
+                "Función que se ejecuta al hacer click en el botón de avance.",
         },
         {
             id: "onSetStep",

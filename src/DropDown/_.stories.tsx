@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { DropDown, DropDownProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: DropDown,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<DropDownProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<DropDownProps>> = (args) => (
     <DropDown {...args} />
 );
 
@@ -36,7 +36,7 @@ Left.args = {
     children: <>It is the content</>,
 } as DropDownProps;
 
-const ProfileRight: Story<PropsWithChildren<DropDownProps>> = (args) => (
+const ProfileRight: StoryFn<PropsWithChildren<DropDownProps>> = (args) => (
     <div
         style={{
             display: "flex",
@@ -53,7 +53,7 @@ Right.args = {
 } as DropDownProps;
 
 
-const ProfileUp: Story<PropsWithChildren<DropDownProps>> = (args) => (
+const ProfileUp: StoryFn<PropsWithChildren<DropDownProps>> = (args) => (
     <div
         style={{
             display: "flex",
@@ -71,7 +71,7 @@ Up.args = {
 } as DropDownProps;
 
 
-const ProfileUpRight: Story<PropsWithChildren<DropDownProps>> = (args) => (
+const ProfileUpRight: StoryFn<PropsWithChildren<DropDownProps>> = (args) => (
     <div
         style={{
             display: "flex",

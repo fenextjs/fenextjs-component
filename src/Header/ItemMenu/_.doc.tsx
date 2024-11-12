@@ -70,7 +70,7 @@ export default {
             type: "function",
             require: false,
             description:
-                "Función que se ejecuta al hacer clic en el ítem de menú.",
+                "Función que se ejecuta al hacer click en el ítem de menú.",
         },
         {
             id: "className",

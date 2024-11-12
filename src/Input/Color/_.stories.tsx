@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputColor, InputColorProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputColor,
 } as Meta;
 
-const Profile: Story<InputColorProps> = (args) => (
+const Profile: StoryFn<InputColorProps> = (args) => (
     <InputColor {...args}>Test Children</InputColor>
 );
 

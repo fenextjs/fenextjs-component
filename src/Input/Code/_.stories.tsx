@@ -1,5 +1,5 @@
 import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { InputCode, InputCodeProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: InputCode,
 } as Meta;
 
-const Profile: Story<InputCodeProps> = (args) => (
+const Profile: StoryFn<InputCodeProps> = (args) => (
     <InputCode {...args}>Test Children</InputCode>
 );
 

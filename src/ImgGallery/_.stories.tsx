@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { ImgGallery, ImgGalleryProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: ImgGallery,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<ImgGalleryProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<ImgGalleryProps>> = (args) => (
     <ImgGallery {...args} />
 );
 

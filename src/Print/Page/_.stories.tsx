@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { PrintPage, PrintPageProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: PrintPage,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<PrintPageProps<any>>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<PrintPageProps<any>>> = (args) => (
     <PrintPage {...args} />
 );
 

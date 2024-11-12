@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import { useAlert } from "fenextjs-hook";
 import { AlertHook, AlertHookProps } from "./index";
 import { Button } from "../Button";
@@ -10,7 +10,7 @@ export default {
     component: AlertHook,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<AlertHookProps>> = (args) => {
+const Profile: StoryFn<PropsWithChildren<AlertHookProps>> = (args) => {
     const { setAlert } = useAlert({});
     const argsBase: AlertProps = {
         message:

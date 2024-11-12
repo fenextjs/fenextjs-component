@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { LoaderUser, LoaderUserProps } from "./index";
 
@@ -8,7 +8,7 @@ export default {
     component: LoaderUser,
 } as Meta;
 
-const Profile: Story<PropsWithChildren<LoaderUserProps>> = (args) => (
+const Profile: StoryFn<PropsWithChildren<LoaderUserProps>> = (args) => (
     <LoaderUser {...args}>Test Children</LoaderUser>
 );
 
