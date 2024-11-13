@@ -1,6 +1,6 @@
 export default {
     id: "menu",
-    idStorybook: "component-menu",
+    idStorybook: "header-menu",
     minHeightIframe: "50vh",
     name: "Menú",
     description:
