@@ -52,7 +52,7 @@ export interface InputTextBaseProps extends _TProps {
     isChange?: boolean;
     useLoader?: boolean;
     inputMode?: "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search" | undefined;
-    autoComplete?: boolean;
+    autoComplete?: boolean | string | "off" | "on";
     onKeyDown?: (React.KeyboardEventHandler<HTMLTextAreaElement> & React.KeyboardEventHandler<HTMLInputElement>) | undefined;
     onWheel?: (React.WheelEventHandler<HTMLTextAreaElement> & React.WheelEventHandler<HTMLInputElement>) | undefined;
     maxLength?: number;

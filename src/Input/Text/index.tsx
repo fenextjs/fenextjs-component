@@ -256,7 +256,7 @@ export interface InputTextBaseProps extends _TProps {
     /**
      * AutoComplete of Input.
      */
-    autoComplete?: boolean;
+    autoComplete?: boolean | string | "off" | "on";
 
     /**
      * onKeyDown of Input.
@@ -337,7 +337,7 @@ export const InputText = ({
     required = false,
     requiredText = "*",
     loader = false,
-    autoComplete = false,
+    autoComplete = "off",
     useLoader = true,
     isChange: isChangeProps = undefined,
     onKeyDown,
@@ -566,7 +566,13 @@ export const InputText = ({
                             setIsFocus(true);
                         }}
                         onWheel={onWheel}
-                        autoComplete={autoComplete ? "on" : "off"}
+                        autoComplete={
+                            autoComplete === true
+                                ? "on"
+                                : autoComplete === false
+                                  ? "off"
+                                  : autoComplete
+                        }
                         onKeyDown={onKeyDown}
                         {...props}
                         inputMode={inputMode}

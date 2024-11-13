@@ -244,9 +244,9 @@ export default {
         },
         {
             id: "autoComplete",
-            type: "boolean",
+            type: "boolean  | string | 'off' | 'on'",
             require: false,
-            default: "false",
+            default: "off",
             description: "Indica si se debe habilitar la autocompletación.",
         },
         {
@@ -323,7 +323,7 @@ export default {
         },
         {
             text: "InputText con autocompletado",
-            content: `<InputText autoComplete={true} />`,
+            content: `<InputText autoComplete={"on"} />`,
         },
         {
             text: "InputText con expresión regular",
