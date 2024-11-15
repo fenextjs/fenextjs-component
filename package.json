@@ -22,7 +22,7 @@
     "prettier": "npx prettier src '!**/*.stories.tsx' --check",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
-    "push-storybook":"npm run flb && npm run build-storybook && git push vercel",
+    "push-storybook":"npm run flb && npm run build-storybook && git push vercel && git push",
     "flb": "npm run format && npm run lint && npm run build && npm run sass-min",
     "storybook": "storybook dev -p 6006",
     "bun-i": "bun i",
