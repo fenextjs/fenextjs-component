@@ -143,7 +143,7 @@ export const InputSelectCSC = ({
                 <InputSelectT<CountryProps>
                     {...props}
                     {...country}
-                    useTOption={false}
+                    useTOption={true}
                     options={countrys}
                     nItems={countrys.length}
                     onChange={onChangeCSC("country")}

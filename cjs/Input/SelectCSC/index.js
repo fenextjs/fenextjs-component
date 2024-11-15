@@ -28,7 +28,7 @@ const InputSelectCSC = ({ classNameSelectCSC = "", useContainer = true, country 
     });
     const CONTENT = (0, react_1.useMemo)(() => {
         let C = (react_1.default.createElement(react_1.default.Fragment, null,
-            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...country, useTOption: false, options: countrys, nItems: countrys.length, onChange: onChangeCSC("country"), defaultValue: value?.country, loader: !loadCountrys, onParse: (e) => {
+            react_1.default.createElement(SelectT_1.InputSelectT, { ...props, ...country, useTOption: true, options: countrys, nItems: countrys.length, onChange: onChangeCSC("country"), defaultValue: value?.country, loader: !loadCountrys, onParse: (e) => {
                     return {
                         ...e,
                         id: e?.id ?? "",
