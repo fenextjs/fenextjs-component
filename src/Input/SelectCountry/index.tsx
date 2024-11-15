@@ -42,7 +42,7 @@ export const InputSelectCountry = ({ ...props }: InputSelectCountryProps) => {
         <>
             <InputSelectT<CountryProps>
                 {...props}
-                useTOption={false}
+                useTOption={true}
                 options={options}
                 onParse={(e) => {
                     const r: InputSelectItemOptionBaseProps<CountryProps> = {

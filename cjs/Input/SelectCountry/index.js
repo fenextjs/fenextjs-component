@@ -17,7 +17,7 @@ const InputSelectCountry = ({ ...props }) => {
         onLoad();
     }, []);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(SelectT_1.InputSelectT, { ...props, useTOption: false, options: options, onParse: (e) => {
+        react_1.default.createElement(SelectT_1.InputSelectT, { ...props, useTOption: true, options: options, onParse: (e) => {
                 const r = {
                     id: e?.id ?? "",
                     text: e?.text ?? "",
