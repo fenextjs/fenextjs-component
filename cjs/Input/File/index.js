@@ -14,7 +14,7 @@ const InputFile = ({ defaultValue = {
     (0, env_log_1.env_log)(v, {
         name: "onChange File",
     });
-}, accept = [], children, clearAfterUpload = false, MAX_SIZE_FILE = 5000000, parseProgress = (e) => e, onChangeProgress, onChangeError, disabled = false, textMaxSizeFile = "File max size", ...props }) => {
+}, accept = [], children, clearAfterUpload = false, MAX_SIZE_FILE = 5000000, parseProgress = (e) => e, onChangeProgress, onChangeError, disabled = false, textMaxSizeFile = "File max size", onFileReceived, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const onUploadFile = async (data) => {
         if (props?.onUploadFile) {
@@ -56,6 +56,7 @@ const InputFile = ({ defaultValue = {
         try {
             setError(undefined);
             const file = e.target.files[0];
+            onFileReceived?.(file);
             if (!file) {
                 setProgress(-2);
                 setData({

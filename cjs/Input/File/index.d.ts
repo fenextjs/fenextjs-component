@@ -28,7 +28,8 @@ export interface InputFileBaseProps extends _TProps {
     parseProgress?: (progres: number) => any;
     disabled?: boolean;
     textMaxSizeFile?: string;
+    onFileReceived?: (file: File) => void;
 }
 export interface InputFileProps extends InputFileBaseProps, InputFileClassProps, PropsWithChildren {
 }
-export declare const InputFile: ({ defaultValue, className, classNameLabel, classNameContent, classNameInput, classNameError, onChange, accept, children, clearAfterUpload, MAX_SIZE_FILE, parseProgress, onChangeProgress, onChangeError, disabled, textMaxSizeFile, ...props }: InputFileProps) => React.JSX.Element;
+export declare const InputFile: ({ defaultValue, className, classNameLabel, classNameContent, classNameInput, classNameError, onChange, accept, children, clearAfterUpload, MAX_SIZE_FILE, parseProgress, onChangeProgress, onChangeError, disabled, textMaxSizeFile, onFileReceived, ...props }: InputFileProps) => React.JSX.Element;

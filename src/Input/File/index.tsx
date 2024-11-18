@@ -108,6 +108,10 @@ export interface InputFileBaseProps extends _TProps {
      * textMaxSizeFile.
      */
     textMaxSizeFile?: string;
+    /**
+     * Function to call when a file is received before uploading.
+     */
+    onFileReceived?: (file: File) => void;
 }
 
 /**
@@ -142,6 +146,7 @@ export const InputFile = ({
     onChangeError,
     disabled = false,
     textMaxSizeFile = "File max size",
+    onFileReceived,
     ...props
 }: InputFileProps) => {
     const { _t } = use_T({ ...props });
@@ -195,6 +200,7 @@ export const InputFile = ({
         try {
             setError(undefined);
             const file = e.target.files[0];
+            onFileReceived?.(file);
             if (!file) {
                 setProgress(-2);
                 setData({
