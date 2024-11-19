@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { InputText, InputTextBaseProps, InputTextClassProps } from "../Text";
 import { InputSelectClassProps } from "../Select";
 import { PhoneProps } from "fenextjs-interface/cjs/Phone";
-import { useData } from "fenextjs-hook/cjs/useData";
 import { ErrorComponent } from "../../Error";
 import { CountryProps } from "fenextjs-interface";
 import { useValidator, use_T } from "fenextjs-hook";
-import { FenextjsValidator, FenextjsValidatorClass } from "fenextjs-validator";
+import { useData } from "fenextjs-hook";
+import { FenextjsValidator } from "fenextjs-validator";
 import { parsePhone_to_String, parseString_to_Phone } from "fenextjs-functions";
 import {
     useJsonString,
@@ -15,6 +15,8 @@ import {
 } from "fenextjs-hook/cjs/useJsonString";
 import { getDataCountrys, getRuteCountryImg } from "country-state-city-nextjs";
 import { InputSelectT } from "../SelectT";
+import { FenextjsValidatorClass } from "fenextjs-validator";
+import { useEffect, useState } from "react";
 
 /**
  * Interface that defines CSS class properties for a checkbox input component.
@@ -158,16 +160,26 @@ export const InputPhone = ({
         onChangeData,
         onConcatData,
         isChange,
-    } = useData<Partial<PhoneProps>, Partial<PhoneProps>>(defaultValue ?? {}, {
-        onChangeDataMemoAfter: onChange,
-        onMemo: (d: Partial<PhoneProps>) => {
-            const v = value ?? d;
-            return {
-                ...v,
-                tel: `${v.code} ${v.number}`,
-            };
+    } = useData<Partial<PhoneProps>, Partial<PhoneProps>>(
+        value ?? defaultValue ?? {},
+        {
+            onChangeDataMemoAfter: (v: Partial<PhoneProps>) => {
+                onChange({
+                    ...v,
+                    tel: `${v.code} ${v.number}`,
+                });
+            },
+            memoDependencies: [value],
+            onMemo: (d: Partial<PhoneProps>) => {
+                const v = value ?? d;
+                return {
+                    ...v,
+                    tel: `${v.code} ${v.number}`,
+                };
+            },
         },
-    });
+    );
+
     const [phones, setPhones] = useState<CountryProps[]>([]);
     const loadPhones = async () => {
         const countrys: CountryProps[] = await getDataCountrys();
@@ -240,13 +252,20 @@ export const InputPhone = ({
                         value={getCountryPhone(value)}
                         onChange={(e) => {
                             if (e?.code_phone) {
-                                onConcatData({
+                                const v = {
                                     code: e?.code_phone,
                                     country: e,
                                     code_country: e?.code,
                                     img: e
                                         ? `${getRuteCountryImg(e)}`
                                         : undefined,
+                                };
+                                onConcatData({
+                                    ...v,
+                                });
+                                onChange({
+                                    ...data,
+                                    ...v,
                                 });
                             }
                         }}
@@ -269,12 +288,18 @@ export const InputPhone = ({
                         {...classNameInputNumber}
                         {...props}
                         type="text"
-                        onChange={onChangeData("number")}
+                        onChange={(n) => {
+                            onChangeData("number")(n);
+                            onChange({
+                                ...data,
+                                number: n,
+                            });
+                        }}
                         loader={!loadPhoneCodes || loader}
                         disabled={!loadPhoneCodes || disabled}
                         placeholder={placeholder}
                         defaultValue={data?.number}
-                        value={value?.number}
+                        value={data?.number}
                         _t={_t}
                         validator={validator?.getObjectValidator?.()?.number}
                         inputMode="numeric"
