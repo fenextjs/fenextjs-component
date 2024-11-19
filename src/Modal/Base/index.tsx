@@ -2,9 +2,9 @@ import React, { PropsWithChildren, ReactNode, useMemo } from "react";
 import { SvgClose } from "fenextjs-svg/cjs/Close";
 import { Portal } from "../../Portal";
 /**
- * Properties for the base ModalBase component.
+ * Properties for the base Modal component.
  */
-export interface ModalBaseBaseProps extends PropsWithChildren {
+export interface ModalBaseProps extends PropsWithChildren {
     /**
      * If active modal.
      */
@@ -64,12 +64,6 @@ export interface ModalBaseBaseProps extends PropsWithChildren {
      * closeComponent of Modal.
      */
     closeComponent?: ReactNode;
-}
-
-/**
- * Properties for the class of the ModalBase component.
- */
-export interface ModalBaseClassProps {
     /**
      * The class name for the component.
      */
@@ -88,12 +82,6 @@ export interface ModalBaseClassProps {
     classNameContent?: string;
 }
 
-/**
- * Properties for the ModalBase component.
- */
-export interface ModalBaseProps
-    extends ModalBaseBaseProps,
-        ModalBaseClassProps {}
 
 export const ModalBase = ({
     className = "",
@@ -153,9 +141,15 @@ export const ModalBase = ({
                         } ${classNameBg} `}
                     ></div>
                     <div
-                        className={`fenext-modal-base fenext-modal-base-bg-close fenext-modal-base-bg-close-${uuid} fenext-modal-base-${
-                            active ? "active" : "inactive"
-                        } fenext-modal-base-${type} ${className} `}
+                        className={`
+                            fenext-modal-base
+                            fenext-modal-base-bg-close 
+                            fenext-modal-base-bg-close-${uuid} 
+                            fenext-modal-base-${active ? "active" : "inactive"}
+                            fenext-modal-base-${useRender ? "use-render" : "no-use-render"}
+                            fenext-modal-base-${type}
+                            ${className}
+                        `}
                         onClick={(e) => {
                             const ele = e.target as HTMLDivElement;
                             if (
@@ -195,6 +189,7 @@ export const ModalBase = ({
         classNameBg,
         disabledClose,
         typeClose,
+        useRender
     ]);
     if (useRender) {
         return (

@@ -43,13 +43,18 @@ Index.args = {
 
 const WithLayout_: StoryFn<PropsWithChildren<ModalProps>> = (args) => (
     <LayoutGridMenuTopLeft>
+        <div style={{width:10,height:300}}/>
         <Modal {...args} />
+        <div style={{width:10,height:2000}}>
+            
+        </div>
     </LayoutGridMenuTopLeft>
 );
 
 export const WithLayout = WithLayout_.bind({});
 WithLayout.args = {
     type: "layout-grid",
+    useRender:true,
     ElementActionModalActive: (
         <>
             <Button>Button Modal</Button>
