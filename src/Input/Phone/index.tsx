@@ -80,6 +80,10 @@ export interface InputPhoneBaseProps
      * FenextjsValidatorClass used for input validation.
      */
     validator?: FenextjsValidatorClass<PhoneProps>;
+    /**
+     * Option for set dynamic value when onChange is called
+     */
+    useDynamicValue?: boolean;
 }
 
 /**
@@ -125,6 +129,7 @@ export const InputPhone = ({
     onChangeJsonString,
     parseJson_to_String,
     parseString_to_Json,
+    useDynamicValue = false,
 
     ...props
 }: InputPhoneProps) => {
@@ -161,7 +166,7 @@ export const InputPhone = ({
     } = useData<Partial<PhoneProps>, Partial<PhoneProps>>(defaultValue ?? {}, {
         onChangeDataMemoAfter: onChange,
         onMemo: (d: Partial<PhoneProps>) => {
-            const v = value ?? d;
+            const v = useDynamicValue ? d : value ?? d;
             return {
                 ...v,
                 tel: `${v.code} ${v.number}`,

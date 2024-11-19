@@ -12,7 +12,7 @@ const fenextjs_functions_1 = require("fenextjs-functions");
 const useJsonString_1 = require("fenextjs-hook/cjs/useJsonString");
 const country_state_city_nextjs_1 = require("country-state-city-nextjs");
 const SelectT_1 = require("../SelectT");
-const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultCode = "+57", defaultValue: defaultValueProps = undefined, value: valueProps = undefined, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, ...props }) => {
+const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, classNamePhone = "", classNamePhoneCode = "", classNamePhoneLabel = "", classNamePhoneNumber = "", classNameError = "", disabledSelectCode = false, disabled, label, loader, placeholderCode = "+57", placeholder = "xxx-xx-xx-xxxx", validator = undefined, optional = false, optionalText = "(optional)", required = false, requiredText = "*", defaultCode = "+57", defaultValue: defaultValueProps = undefined, value: valueProps = undefined, onChange: onChangeProps, defaultValueJsonString, valueJsonString, onChangeJsonString, parseJson_to_String, parseString_to_Json, useDynamicValue = false, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const { value, defaultValue, onChange } = (0, useJsonString_1.useJsonString)({
         parseJson_to_String: parseJson_to_String ?? fenextjs_functions_1.parsePhone_to_String,
@@ -37,7 +37,7 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
     const { dataMemo: data, onChangeData, onConcatData, isChange, } = (0, useData_1.useData)(defaultValue ?? {}, {
         onChangeDataMemoAfter: onChange,
         onMemo: (d) => {
-            const v = value ?? d;
+            const v = useDynamicValue ? d : value ?? d;
             return {
                 ...v,
                 tel: `${v.code} ${v.number}`,
