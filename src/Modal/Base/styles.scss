@@ -13,6 +13,22 @@
     --content-height: var(--fenext-modal-height);
     --transform-active: none;
     --transform-inactive: none;
+    overscroll-behavior: contain;
+    &::after {
+        content: "";
+        width: 0.1px;
+        height: 0.1px;
+        bottom: -0.5px;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        display: block;
+    }
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
     &-dialog {
         display: block;
         width: 100%;
@@ -24,6 +40,7 @@
         inset: 0;
         background: transparent;
         z-index: var(--fenext-z-index-modal);
+        overscroll-behavior: contain;
         &-active {
         }
         &-inactive {
@@ -174,8 +191,14 @@
         padding: 1rem;
         border: 0;
         position: relative;
+        overscroll-behavior: contain;
+        overflow: auto;
         > .fenext-modal-base-close {
             position: absolute;
+        }
+        &::-webkit-scrollbar {
+            width: 0.5rem;
+            height: 0.5rem;
         }
     }
 
@@ -183,13 +206,16 @@
         align-items: flex-start;
         --content-width: 100dvw;
         --transform-inactive: translateY(-200%);
+        > .fenext-modal-base-content {
+            max-height: 50dvh;
+        }
     }
     &-left {
         justify-items: flex-start;
         --content-height: 100dvh;
         --transform-inactive: translateX(-200%);
         > .fenext-modal-base-content {
-            min-height: 100dvh;
+            height: 100dvh;
         }
     }
     &-right {
@@ -197,13 +223,16 @@
         --content-height: 100dvh;
         --transform-inactive: translateX(200%);
         > .fenext-modal-base-content {
-            min-height: 100dvh;
+            height: 100dvh;
         }
     }
     &-bottom {
         align-items: flex-end;
         --content-width: 100dvw;
         --transform-inactive: translateY(200%);
+        > .fenext-modal-base-content {
+            max-height: 50dvh;
+        }
     }
     &-top-right,
     &-top-left,
@@ -273,21 +302,19 @@
     }
     &-inactive {
         transform: var(--transform-inactive);
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
     }
 }
 
 html,
 body {
-    &:has(.fenext-modal-base-active.fenext-modal-base-no-use-render) {
-        overflow: hidden !important;
-        .fenext-layout-grid {
-            &-mt-children,
-            &-ml-children {
-                container-type: initial;
-                min-height: calc(100dvh - var(--fenext-size-menu-top, 0px));
-                overflow: hidden;
-                z-index: var(--fenext-z-index-modal);
-            }
+    &:has(.fenext-modal-base-active) {
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
         }
     }
 }
