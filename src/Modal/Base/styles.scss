@@ -279,13 +279,13 @@
 html,
 body {
     &:has(.fenext-modal-base-active.fenext-modal-base-no-use-render) {
-        // overflow: hidden !important;
+        overflow: hidden !important;
         .fenext-layout-grid {
             &-mt-children,
             &-ml-children {
                 container-type: initial;
                 min-height: calc(100dvh - var(--fenext-size-menu-top, 0px));
-                // overflow: hidden;
+                overflow: hidden;
                 z-index: var(--fenext-z-index-modal);
             }
         }
