@@ -2,8 +2,8 @@ import React from "react";
 import { InputTextBaseProps, InputTextClassProps } from "../Text";
 import { InputSelectClassProps } from "../Select";
 import { PhoneProps } from "fenextjs-interface/cjs/Phone";
-import { FenextjsValidatorClass } from "fenextjs-validator";
 import { useJsonStringProps } from "fenextjs-hook/cjs/useJsonString";
+import { FenextjsValidatorClass } from "fenextjs-validator";
 export interface InputPhoneClassProps {
     classNameSelectCode?: InputSelectClassProps;
     classNameInputNumber?: InputTextClassProps;
