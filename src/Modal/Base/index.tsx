@@ -2,9 +2,9 @@ import React, { PropsWithChildren, ReactNode, useMemo } from "react";
 import { SvgClose } from "fenextjs-svg/cjs/Close";
 import { Portal } from "../../Portal";
 /**
- * Properties for the base Modal component.
+ * Properties for the base ModalBase component.
  */
-export interface ModalBaseProps extends PropsWithChildren {
+export interface ModalBaseBaseProps extends PropsWithChildren {
     /**
      * If active modal.
      */
@@ -64,6 +64,12 @@ export interface ModalBaseProps extends PropsWithChildren {
      * closeComponent of Modal.
      */
     closeComponent?: ReactNode;
+}
+
+/**
+ * Properties for the class of the ModalBase component.
+ */
+export interface ModalBaseClassProps {
     /**
      * The class name for the component.
      */
@@ -82,7 +88,12 @@ export interface ModalBaseProps extends PropsWithChildren {
     classNameContent?: string;
 }
 
-
+/**
+ * Properties for the ModalBase component.
+ */
+export interface ModalBaseProps
+    extends ModalBaseBaseProps,
+        ModalBaseClassProps {}
 export const ModalBase = ({
     className = "",
     classNameBg = "",
@@ -189,7 +200,7 @@ export const ModalBase = ({
         classNameBg,
         disabledClose,
         typeClose,
-        useRender
+        useRender,
     ]);
     if (useRender) {
         return (

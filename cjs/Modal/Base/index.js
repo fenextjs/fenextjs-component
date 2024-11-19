@@ -22,7 +22,15 @@ const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", cl
                         fenext-modal-base-dialog-disabled-close-${disabledClose ? "active" : "inactive"}
                     `, "data-name": name },
                 react_1.default.createElement("div", { className: `fenext-modal-base-bg fenext-modal-base-bg-${active ? "active" : "inactive"} ${classNameBg} ` }),
-                react_1.default.createElement("div", { className: `fenext-modal-base fenext-modal-base-bg-close fenext-modal-base-bg-close-${uuid} fenext-modal-base-${active ? "active" : "inactive"} fenext-modal-base-${type} ${className} `, onClick: (e) => {
+                react_1.default.createElement("div", { className: `
+                            fenext-modal-base
+                            fenext-modal-base-bg-close 
+                            fenext-modal-base-bg-close-${uuid} 
+                            fenext-modal-base-${active ? "active" : "inactive"}
+                            fenext-modal-base-${useRender ? "use-render" : "no-use-render"}
+                            fenext-modal-base-${type}
+                            ${className}
+                        `, onClick: (e) => {
                         const ele = e.target;
                         if (ele.classList.value.includes(`fenext-modal-base-bg-close-${uuid}`) &&
                             !disabledClose) {
@@ -49,6 +57,7 @@ const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", cl
         classNameBg,
         disabledClose,
         typeClose,
+        useRender,
     ]);
     if (useRender) {
         return (react_1.default.createElement(react_1.default.Fragment, null,
