@@ -132,34 +132,34 @@ export const InputNumberCount = ({
     });
 
     const parseNumberCountForInputNumberCount = useCallback(
-        (d:string | number,old:string | number, keyDown?: string) => {
+        (d: string | number, old: string | number, keyDown?: string) => {
             let n = parseNumberCount(d, optionsParseNumber);
-            if(keyDown == "-" && n=="0"){
-                return "-0"
+            if (keyDown == "-" && n == "0") {
+                return "-0";
             }
-            if(`${old}`.includes(".")){
-                const decimales = (`${old}`.split(".")?.[1] ?? '').slice(0,optionsParseNumber?.maximumFractionDigits ?? 3).replace(/[^0-9]/g, "");
-                n = parseNumberCount(`${parseInt(`${parseNumber(n)}`)}`)
-                if(!n.includes(".")){
-                    n += "."
+            if (`${old}`.includes(".")) {
+                const decimales = (`${old}`.split(".")?.[1] ?? "")
+                    .slice(0, optionsParseNumber?.maximumFractionDigits ?? 3)
+                    .replace(/[^0-9]/g, "");
+                n = parseNumberCount(`${parseInt(`${parseNumber(n)}`)}`);
+                if (!n.includes(".")) {
+                    n += ".";
                 }
-                n += decimales
+                n += decimales;
             }
-            return n
+            return n;
         },
-      [optionsParseNumber],
-    )
-    
+        [optionsParseNumber],
+    );
 
     const dataText = useMemo(() => {
         const d = `${value}`;
         if (d == "") {
             return "";
         }
-        const n = parseNumberCountForInputNumberCount(d,d);
+        const n = parseNumberCountForInputNumberCount(d, d);
         return `${symbolInit}${n}${d.at(-1) == "." ? "" : symbolFinal}`;
     }, [symbolInit, symbolFinal, value, optionsParseNumber]);
-    
 
     const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
         props?.onKeyDown?.(event);
@@ -167,8 +167,8 @@ export const InputNumberCount = ({
 
         setDataFunction((old) => {
             let oldN = `${old}${keyNew}`.replace(/[^0-9.-]/g, "");
-            
-            let n = `${oldN}`
+
+            let n = `${oldN}`;
             if (keyNew == "Backspace") {
                 n = n.slice(0, n.length - 1);
                 oldN = oldN.slice(0, oldN.length - 1);
@@ -188,7 +188,7 @@ export const InputNumberCount = ({
             if (keyNew == "." && !n.includes(".")) {
                 n += ".";
             }
-            n = parseNumberCountForInputNumberCount(n,oldN,keyNew);
+            n = parseNumberCountForInputNumberCount(n, oldN, keyNew);
             return n;
         });
     };
