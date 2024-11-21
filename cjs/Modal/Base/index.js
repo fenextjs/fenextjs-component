@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const Close_1 = require("fenextjs-svg/cjs/Close");
 const Portal_1 = require("../../Portal");
-const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", classNameClose = "", active = false, activeName, activeNameLast, childrenUseActiveForShowHidden = false, disabledClose = false, type = "center", typeClose = "out", onClose, children, useRender = false, name, closeComponent = react_1.default.createElement(Close_1.SvgClose, null), }) => {
+const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", classNameClose = "", active = false, activeName, activeNameLast, childrenUseActiveForShowHidden = false, disabledClose = false, type = "center", typeClose = "out", onClose, children, useRender = true, name, closeComponent = react_1.default.createElement(Close_1.SvgClose, null), }) => {
     const uuid = (0, react_1.useMemo)(() => new Date().getTime(), [active]);
     const CLOSECOMPONENTE = (0, react_1.useMemo)(() => {
         return (react_1.default.createElement(react_1.default.Fragment, null,
