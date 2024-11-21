@@ -1,8 +1,9 @@
 import React, { ReactNode } from "react";
 import { LoaderClassProps } from "../Loader";
 import { _TProps } from "fenextjs-interface";
-export type BackTypeOnBack = "history" | "router" | "link" | "none";
-export interface BackBaseProps extends _TProps {
+import { useHistoryOnBackProps } from "fenextjs-hook";
+export type BackTypeOnBack = "fenextjs-history" | "history" | "router" | "link" | "none";
+export interface BackBaseProps extends _TProps, useHistoryOnBackProps {
     loader?: boolean;
     disabled?: boolean;
     onClick?: (e?: any) => void;
@@ -21,4 +22,4 @@ export interface BackClassProps extends LoaderClassProps {
 }
 export interface BackProps extends BackBaseProps, BackClassProps {
 }
-export declare const Back: ({ className, classNameLoader, classNameDisabled, classNameIcon, classNameContent, children, loader, disabled, onClick, icon, typeOnBack, link, minLenght, useHistoryMinLenght, ...props }: BackProps) => React.JSX.Element;
+export declare const Back: ({ className, classNameLoader, classNameDisabled, classNameIcon, classNameContent, children, loader, disabled, onClick, icon, typeOnBack, link, minLenght, useHistoryMinLenght, onValidateRuteBack, ...props }: BackProps) => React.JSX.Element;

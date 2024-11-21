@@ -139,8 +139,7 @@ export default {
                 {
                     "Tipo de back": "router",
                     Redireccion: "router.back()",
-                    Descripción:
-                        "Redirección utilizando el router de Next.js.",
+                    Descripción: "Redirección utilizando el router de Next.js.",
                 },
                 {
                     "Tipo de back": "link",

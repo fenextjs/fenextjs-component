@@ -5,7 +5,12 @@ import { SvgPaginationPre } from "fenextjs-svg/cjs/PaginationPre";
 import { _TProps } from "fenextjs-interface";
 import { use_T, useHistory, useHistoryOnBackProps } from "fenextjs-hook";
 
-export type BackTypeOnBack = "fenextjs-history" | "history" | "router" | "link" | "none";
+export type BackTypeOnBack =
+    | "fenextjs-history"
+    | "history"
+    | "router"
+    | "link"
+    | "none";
 /**
  * Properties for the base Back component.
  */
@@ -75,7 +80,7 @@ export interface BackClassProps extends LoaderClassProps {
 /**
  * Properties for the Back component.
  */
-export interface BackProps extends BackBaseProps, BackClassProps { }
+export interface BackProps extends BackBaseProps, BackClassProps {}
 
 export const Back = ({
     className = "",
@@ -96,7 +101,7 @@ export const Back = ({
     onValidateRuteBack,
     ...props
 }: BackProps) => {
-    const { onBack: onBackHistory } = useHistory({})
+    const { onBack: onBackHistory } = useHistory({});
     const { _t } = use_T({ ...props });
     const router = useRouter();
     const onBack = () => {
@@ -109,8 +114,8 @@ export const Back = ({
         } = {
             "fenextjs-history": () => {
                 onBackHistory({
-                    onValidateRuteBack
-                })
+                    onValidateRuteBack,
+                });
             },
             history: () => {
                 history.back();
@@ -136,8 +141,9 @@ export const Back = ({
         <>
             <div
                 onClick={onBack}
-                className={`fenext-back ${className} ${disabled ? `${classNameDisabled} fenext-back-disabled` : ""
-                    }`}
+                className={`fenext-back ${className} ${
+                    disabled ? `${classNameDisabled} fenext-back-disabled` : ""
+                }`}
             >
                 <div className={`fenext-back-icon ${classNameIcon}`}>
                     {loader ? (
