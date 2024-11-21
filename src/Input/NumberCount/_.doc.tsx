@@ -107,7 +107,8 @@ export default {
             type: "Intl.NumberFormatOptions",
             require: false,
             default: "undefined",
-            description: "Opciones para formatear el número inicialmente que se proporciona por defultValue.",
+            description:
+                "Opciones para formatear el número inicialmente que se proporciona por defultValue.",
         },
     ],
     useExample: [
