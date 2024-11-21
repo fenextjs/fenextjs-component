@@ -76,6 +76,10 @@ export interface InputNumberCountBaseProps
      * optionsParseNumber used for input validation.
      */
     optionsParseNumber?: Intl.NumberFormatOptions;
+    /**
+     * optionsParseNumber used for input validation.
+     */
+    optionsParseNumberDefault?: Intl.NumberFormatOptions;
 }
 /**
  * Props interface for the InputNumberCount component. Extends both InputNumberCountBaseProps and InputNumberCountClassProps interfaces.
@@ -97,14 +101,17 @@ export const InputNumberCount = ({
     max = Infinity,
     minError,
     maxError,
+    optionsParseNumberDefault,
     optionsParseNumber,
     aplyMax = true,
     aplyMin = false,
 
     ...props
 }: InputNumberCountProps) => {
+    console.log({defaultValue});
+    
     const { data, setDataFunction, isChange } = useData<string>(
-        `${defaultValue ?? ""}`,
+        `${parseNumberCount(defaultValue ?? "",optionsParseNumberDefault ?? optionsParseNumber)}`,
         {
             onChangeDataAfter: (e) => {
                 if (e == "") {

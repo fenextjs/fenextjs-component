@@ -27,7 +27,11 @@ const args  : InputNumberCountProps = {
     // validator:FenextjsValidator()
     // .isRequired()
     // .isNumber()
-    // .isMinOrEqual(0, )
+    // .isMinOrEqual(0, ),
+    defaultValue:10022.00,
+    // optionsParseNumberDefault:{
+    //     minimumFractionDigits:2
+    // }
 }
 
 Index.args= args
