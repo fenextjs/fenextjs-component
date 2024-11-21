@@ -108,10 +108,8 @@ export const InputNumberCount = ({
 
     ...props
 }: InputNumberCountProps) => {
-    console.log({defaultValue});
-    
     const { data, setDataFunction, isChange } = useData<string>(
-        `${parseNumberCount(defaultValue ?? "",optionsParseNumberDefault ?? optionsParseNumber)}`,
+        `${parseNumberCount(defaultValue ?? "", optionsParseNumberDefault ?? optionsParseNumber)}`,
         {
             onChangeDataAfter: (e) => {
                 if (e == "") {

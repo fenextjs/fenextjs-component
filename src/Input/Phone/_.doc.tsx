@@ -123,7 +123,8 @@ export default {
             type: "(data: CountryProps[]) => CountryProps[]",
             require: false,
             default: "undefined",
-            description: "Function para mapear, ordenar, filtrar, etc, los países del selector de codigo de telefono.",
+            description:
+                "Function para mapear, ordenar, filtrar, etc, los países del selector de codigo de telefono.",
         },
     ],
     useExample: [

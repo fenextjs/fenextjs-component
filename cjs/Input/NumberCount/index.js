@@ -9,8 +9,8 @@ const NumberCount_1 = require("fenextjs-functions/cjs/parse/NumberCount");
 const Number_1 = require("fenextjs-functions/cjs/parse/Number");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_validator_1 = require("fenextjs-validator");
-const InputNumberCount = ({ onChange, value: valueProps = undefined, defaultValue, symbolInit = "$", symbolFinal = "", validator: validatorProps = undefined, min = -Infinity, max = Infinity, minError, maxError, optionsParseNumber, aplyMax = true, aplyMin = false, ...props }) => {
-    const { data, setDataFunction, isChange } = (0, useData_1.useData)(`${defaultValue ?? ""}`, {
+const InputNumberCount = ({ onChange, value: valueProps = undefined, defaultValue, symbolInit = "$", symbolFinal = "", validator: validatorProps = undefined, min = -Infinity, max = Infinity, minError, maxError, optionsParseNumberDefault, optionsParseNumber, aplyMax = true, aplyMin = false, ...props }) => {
+    const { data, setDataFunction, isChange } = (0, useData_1.useData)(`${(0, NumberCount_1.parseNumberCount)(defaultValue ?? "", optionsParseNumberDefault ?? optionsParseNumber)}`, {
         onChangeDataAfter: (e) => {
             if (e == "") {
                 onChange?.("");
