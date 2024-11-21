@@ -4,7 +4,7 @@ import { FenextjsValidator } from "fenextjs-validator";
 import { Button } from '../../Button'
 
 import { InputPhone, InputPhoneProps } from "./index";
-import { PhoneProps } from "fenextjs-interface";
+import {  PhoneProps } from "fenextjs-interface";
 // import { parseString_to_Phone } from "fenextjs-functions";
 
 export default {
@@ -36,6 +36,14 @@ const args: InputPhoneProps = {
     //     // number: "22222",
     //     // tel: "+58 22222",
     // },
+    // parseCountrys:(d: CountryProps[]) => {
+    //     return d.sort((a) => {
+    //         if (['Colombia', 'Estados Unidos', 'Brasil'].includes(a.text)) {
+    //             return -1;
+    //         }
+    //         return 0;
+    //     });
+    // }
     // onChangeJsonString:console.log,
     // defaultValueJsonString:`{"code":"+57","number":"2123123","tel":"+57 2123123","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png"}`
 }

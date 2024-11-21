@@ -83,8 +83,7 @@ export interface InputPhoneBaseProps
      */
     validator?: FenextjsValidatorClass<PhoneProps>;
 
-
-    parseCountrys?:(data:CountryProps[])=>CountryProps[]
+    parseCountrys?: (data: CountryProps[]) => CountryProps[];
 }
 
 /**
@@ -186,8 +185,8 @@ export const InputPhone = ({
     const [phones, setPhones] = useState<CountryProps[]>([]);
     const loadPhones = async () => {
         let countrys: CountryProps[] = await getDataCountrys();
-        if(parseCountrys){
-            countrys = parseCountrys(countrys)
+        if (parseCountrys) {
+            countrys = parseCountrys(countrys);
         }
         setPhones(countrys);
         setlLoadPhoneCodes(true);
