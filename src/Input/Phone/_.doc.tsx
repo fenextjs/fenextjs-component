@@ -118,6 +118,13 @@ export default {
             default: "undefined",
             description: "Validador personalizado para el número de teléfono.",
         },
+        {
+            id: "parseCountrys",
+            type: "(data: CountryProps[]) => CountryProps[]",
+            require: false,
+            default: "undefined",
+            description: "Function para mapear, ordenar, filtrar, etc, los países del selector de codigo de telefono.",
+        },
     ],
     useExample: [
         {
