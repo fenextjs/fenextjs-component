@@ -3,7 +3,7 @@ export default {
     idStorybook: "component-back",
     name: "Back",
     description:
-        "El componente Back es una representación visual de un botón de retroceso (atrás) que permite al usuario navegar a la página anterior en la historia del navegador, utilizar la funcionalidad de Next.js Router, redirigir a una URL específica o simplemente ejecutar una función personalizada al hacer click en el botón.",
+        "El componente Back representa un botón de retroceso que permite al usuario navegar a la página anterior en el historial del navegador, utilizar el Router de Next.js, redirigir a una URL específica, ejecutar una función personalizada o realizar una acción personalizada de 'fenextjs-history'.",
     props: [
         {
             id: "loader",
@@ -11,7 +11,7 @@ export default {
             require: false,
             default: "false",
             description:
-                "Indica si el componente está en estado de carga, mostrando un indicador de spinner y deshabilitando su funcionalidad.",
+                "Indica si el componente está en estado de carga, mostrando un indicador de 'Loader' y deshabilitando su funcionalidad.",
         },
         {
             id: "disabled",
@@ -22,17 +22,17 @@ export default {
         },
         {
             id: "onClick",
-            type: "function",
+            type: "(e?: any) => void",
             require: false,
             default: "undefined",
             description:
-                "Función personalizada que se ejecuta al hacer click en el botón.",
+                "Función personalizada que se ejecuta al hacer clic en el botón.",
         },
         {
             id: "icon",
             type: "ReactNode",
             require: false,
-            default: "<PaginationPre />",
+            default: "<SvgPaginationPre />",
             description: "Icono que se muestra dentro del botón.",
         },
         {
@@ -44,11 +44,11 @@ export default {
         },
         {
             id: "typeOnBack",
-            type: "'history' | 'router' | 'link' | 'none'",
+            type: "'fenextjs-history' | 'history' | 'router' | 'link' | 'none'",
             require: false,
             default: "'history'",
             description:
-                "Tipo de acción a ejecutar al hacer click en el botón.",
+                "Define el tipo de acción que se ejecutará al hacer clic en el botón.",
         },
         {
             id: "link",
@@ -72,6 +72,14 @@ export default {
             default: 2,
             description:
                 "Longitud mínima del historial del navegador para mostrar el botón.",
+        },
+        {
+            id: "onValidateRuteBack",
+            type: "(path: string) => boolean",
+            require: false,
+            default: "undefined",
+            description:
+                "Función para validar el retroceso cuando 'typeOnBack' es 'fenextjs-history'.",
         },
         {
             id: "className",
@@ -101,6 +109,13 @@ export default {
             default: "''",
             description: "Clase CSS para el contenido del botón.",
         },
+        {
+            id: "classNameLoader",
+            type: "string",
+            require: false,
+            default: "''",
+            description: "Clase CSS para el componente 'Loader'.",
+        },
     ],
     extras: [
         {
@@ -110,6 +125,12 @@ export default {
                 "Dependiendo del valor de 'typeOnBack', la redirección se ejecutará de la siguiente manera:",
             tableItems: [
                 {
+                    "Tipo de back": "fenextjs-history",
+                    Redireccion: "onBack({onValidateRuteBack})",
+                    Descripción:
+                        "Acción personalizada utilizando el hook 'useHistory' de 'fenextjs'.",
+                },
+                {
                     "Tipo de back": "history",
                     Redireccion: "history.back()",
                     Descripción:
@@ -118,7 +139,8 @@ export default {
                 {
                     "Tipo de back": "router",
                     Redireccion: "router.back()",
-                    Descripción: "Redirección utilizando el router de Next.js.",
+                    Descripción:
+                        "Redirección utilizando el router de Next.js.",
                 },
                 {
                     "Tipo de back": "link",
@@ -149,6 +171,10 @@ export default {
         {
             text: "Back deshabilitado",
             content: `<Back disabled={true} />`,
+        },
+        {
+            text: "Back con validación personalizada",
+            content: `<Back typeOnBack="fenextjs-history" onValidateRuteBack={(path) => path !== "/home"} />`,
         },
     ],
 };

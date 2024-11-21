@@ -13,4 +13,6 @@ const Profile: StoryFn<PropsWithChildren<BackProps>> = (args) => (
 );
 
 export const Index = Profile.bind({});
-Index.args = {};
+Index.args = {
+    typeOnBack:"history"
+} as BackProps
