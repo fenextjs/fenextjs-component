@@ -102,6 +102,13 @@ export default {
             default: "undefined",
             description: "Opciones para formatear el número.",
         },
+        {
+            id: "optionsParseNumberDefault",
+            type: "Intl.NumberFormatOptions",
+            require: false,
+            default: "undefined",
+            description: "Opciones para formatear el número inicialmente que se proporciona por defultValue.",
+        },
     ],
     useExample: [
         {
