@@ -103,7 +103,7 @@ export default {
         {
             id: "useRender",
             type: "boolean",
-            require: false,
+            require: true,
             default: "false",
             description: "Determina si el modal usa renderizado condicional.",
         },

@@ -69,7 +69,7 @@ export const Modal = ({
     onActive: onActiveProps,
     type = "center",
     typeClose = "out",
-    useRender = false,
+    useRender = true,
     name,
     nameLocalStorage,
     activeByNameLocalStorage = false,
