@@ -4,7 +4,7 @@ import {
     InputSelect,
     InputSelectItemOptionBaseProps,
     InputSelectProps,
-} from "../..";
+} from "../Select";
 
 export interface InputSelectNumberProps
     extends Omit<

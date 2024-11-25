@@ -1,5 +1,5 @@
 import React from "react";
-import { InputSelectProps } from "../..";
+import { InputSelectProps } from "../Select";
 export interface InputSelectNumberProps extends Omit<InputSelectProps, "options" | "onChange" | "defaultValue" | "parseText"> {
     onChange?: (n?: number) => void;
     defaultValue?: number;
