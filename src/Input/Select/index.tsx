@@ -71,6 +71,10 @@ export interface InputSelectBaseProps<T = any>
      */
     options: InputSelectItemOptionBaseProps<T>[];
     /**
+     * Avoid component to search when user types on text field.
+     */
+    avoidSearch?: boolean;
+    /**
      * Options of select.
      */
     filterOptions?: (
@@ -261,6 +265,7 @@ export const InputSelect = <T = any,>({
     changeByFirstOptionInOnBlur = false,
     converterInSearchWithMaxLenght = false,
     nItems = undefined,
+    avoidSearch = false,
 
     useItemMaxLengthShowOptions = true,
     maxLengthShowOptions = 20,
@@ -382,7 +387,7 @@ export const InputSelect = <T = any,>({
     const OPTIONSSEARCH = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
         const textSearch = parseTextSearch(dataMemo?.textSearch);
 
-        if (textSearch == "") {
+        if (textSearch == "" || avoidSearch) {
             return [...options];
         }
         return [...options].filter(
@@ -393,7 +398,7 @@ export const InputSelect = <T = any,>({
                     (parseTextSearch(option.id)?.includes(textSearch) ||
                         textSearch?.includes(parseTextSearch(option.id)))),
         );
-    }, [options, dataMemo, searchById]);
+    }, [options, dataMemo, searchById, avoidSearch]);
     const { OPTIONS } = useMemo<{
         OPTIONS: InputSelectItemOptionBaseProps<T>[];
         nMax: boolean;
