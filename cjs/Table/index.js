@@ -8,7 +8,7 @@ const Checkbox_1 = require("../Input/Checkbox");
 const DropDown_1 = require("../DropDown");
 const Loader_1 = require("../Loader");
 const Line_1 = require("../Loader/Line");
-const __1 = require("..");
+const Radio_1 = require("../Input/Radio");
 const TableActionCheckbox_1 = require("../TableActionCheckbox");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameContentPagination = "", classNameLoader = "", name, items, header, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, onShowHidden, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), actionsCheckbox, actionsCheckboxSelectAll = "Select All", ...props }) => {
@@ -131,7 +131,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                                                 });
                                             }, className: `fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by` }, _t("Order DESC")))) : (react_1.default.createElement(react_1.default.Fragment, null)),
                                     h?.columnOptions?.showHidden ? (react_1.default.createElement(react_1.default.Fragment, null,
-                                        react_1.default.createElement(__1.InputRadio, { name: `${h.th}-${i}-show-hidden`, _t: _t, items: [
+                                        react_1.default.createElement(Radio_1.InputRadio, { name: `${h.th}-${i}-show-hidden`, _t: _t, items: [
                                                 {
                                                     id: "show",
                                                     label: "Show",

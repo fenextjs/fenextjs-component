@@ -5,7 +5,7 @@ import { InputCheckbox } from "../Input/Checkbox";
 import { DropDown } from "../DropDown";
 import { Loader } from "../Loader";
 import { LoaderLine } from "../Loader/Line";
-import { InputRadio } from "..";
+import { InputRadio } from "../Input/Radio";
 import {
     TableActionCheckbox,
     TableActionCheckboxProps,
