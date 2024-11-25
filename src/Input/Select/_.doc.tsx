@@ -231,6 +231,14 @@ export default {
             default: "<Trash />",
             description: "Ícono personalizado para eliminar una opción.",
         },
+        {
+            id: "useSearch",
+            type: "boolean",
+            require: false,
+            default: "true",
+            description:
+                "Determina si el selector filtra los elementos por el texto escrito.",
+        },
     ],
     useExample: [
         {
