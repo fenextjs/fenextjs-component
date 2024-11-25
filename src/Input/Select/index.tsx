@@ -385,7 +385,7 @@ export const InputSelect = <T = any,>({
             .toLowerCase();
     };
     const OPTIONSSEARCH = useMemo<InputSelectItemOptionBaseProps<T>[]>(() => {
-        if(!useSearch){
+        if (!useSearch) {
             return [...options];
         }
         const textSearch = parseTextSearch(dataMemo?.textSearch);
