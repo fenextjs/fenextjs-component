@@ -60,13 +60,17 @@ export const ErrorComponent = ({
         >
             {error ? (
                 <>
-                    {_t(error?.msg ?? "")}
-                    {useErrorInput && error?.input && (
+                    {error?.content ?? (
                         <>
-                            {" "}
-                            <span className="fenext-error-input">
-                                {_t(`[${error?.input ?? ""}]`)}
-                            </span>
+                            {_t(error?.msg ?? "")}
+                            {useErrorInput && error?.input && (
+                                <>
+                                    {" "}
+                                    <span className="fenext-error-input">
+                                        {_t(`[${error?.input ?? ""}]`)}
+                                    </span>
+                                </>
+                            )}
                         </>
                     )}
                 </>

@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import { StoryFn, Meta } from "@storybook/react";
 import {ErrorFenextjs } from "fenextjs-error";
+import {Button} from '../Button'
 
 import { ErrorComponent, ErrorComponentProps } from "./index";
 
@@ -30,5 +31,25 @@ WithError.args = {
             data:{
                 test:1
             }
+    }),
+} as ErrorComponentProps;
+
+
+
+export const WithErrorContent = Profile.bind({});
+WithErrorContent.args = {
+    error : new ErrorFenextjs({
+            message:"Message error",
+            input:"Input",
+            data:{
+                test:1
+            },
+            content : <>
+                this is content
+                <br />
+                <Button>
+                    Btn of Content
+                </Button>
+            </>
     }),
 } as ErrorComponentProps;

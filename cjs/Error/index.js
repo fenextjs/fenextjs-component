@@ -10,11 +10,11 @@ const ErrorComponent = ({ error, children, className = "", useDataError = true, 
         const err = useDataError ? error?.data : undefined;
         return err ? JSON.stringify(error) : undefined;
     }, [useDataError, error]);
-    return (react_1.default.createElement("div", { className: `fenext-error ${className} fenext-error-${error?.code}`, "data-error": dataError }, error ? (react_1.default.createElement(react_1.default.Fragment, null,
+    return (react_1.default.createElement("div", { className: `fenext-error ${className} fenext-error-${error?.code}`, "data-error": dataError }, error ? (react_1.default.createElement(react_1.default.Fragment, null, error?.content ?? (react_1.default.createElement(react_1.default.Fragment, null,
         _t(error?.msg ?? ""),
         useErrorInput && error?.input && (react_1.default.createElement(react_1.default.Fragment, null,
             " ",
-            react_1.default.createElement("span", { className: "fenext-error-input" }, _t(`[${error?.input ?? ""}]`)))))) : (_t(children))));
+            react_1.default.createElement("span", { className: "fenext-error-input" }, _t(`[${error?.input ?? ""}]`)))))))) : (_t(children))));
 };
 exports.ErrorComponent = ErrorComponent;
 //# sourceMappingURL=index.js.map
