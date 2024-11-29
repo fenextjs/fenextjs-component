@@ -206,7 +206,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", error = undefin
         return (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(TAG, { id: props?.datalist, className: `fenext-select-list-options fenext-select-list-options-type-${typeSelect}  ${classNameList}`, onChange: (e) => {
                     onChangeText_(e?.target?.value);
-                } },
+                }, key: props.loader ? "loader" : "load" },
                 create && typeSelect == "div" ? (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(SelectOption_1.InputSelectOption, { type: "div", id: create?.id ?? "create", text: create?.text ?? "Create", children: create?.children ?? undefined, _t: _t, isBtn: true, onClick: create?.onClick ?? onCreate }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
                 OPTIONSLENGTH != 0 && typeSelect == "select" ? (react_1.default.createElement(react_1.default.Fragment, null,

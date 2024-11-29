@@ -23,7 +23,7 @@ const useSelectOptionsPos = ({ children, target, }) => {
         }
     };
     (0, react_1.useEffect)(onLoadRef, []);
-    const onLoadPos = () => {
+    const onLoadPos = (0, react_1.useCallback)(() => {
         if (ref && target) {
             const bounding = target.getBoundingClientRect();
             ReactDOM.render(react_1.default.createElement(react_1.default.Fragment, null, children), ref);
@@ -35,12 +35,12 @@ const useSelectOptionsPos = ({ children, target, }) => {
                 ? "top"
                 : "bottom");
         }
-    };
-    const onLoadChildren = () => {
+    }, [children, target, ref]);
+    const onLoadChildren = (0, react_1.useCallback)(() => {
         if (ref) {
             ReactDOM.render(react_1.default.createElement(react_1.default.Fragment, null, children), ref);
         }
-    };
+    }, [children, ref]);
     return {
         ref,
         onLoadPos,
