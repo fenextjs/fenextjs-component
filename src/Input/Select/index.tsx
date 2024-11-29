@@ -519,6 +519,7 @@ export const InputSelect = <T = any,>({
                     onChange={(e) => {
                         onChangeText_(e?.target?.value);
                     }}
+                    key={props.loader ? "loader": "load"}
                 >
                     {create && typeSelect == "div" ? (
                         <>

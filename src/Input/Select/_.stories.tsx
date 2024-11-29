@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StoryFn, Meta } from "@storybook/react";
 import { FenextjsValidator} from "fenextjs-validator";
 import {sleep} from 'fenextjs-functions';
@@ -461,56 +461,61 @@ ValidatorData.args = ValidatorDataArgs;
 const WithLoaderProfile: StoryFn<InputSelectProps> = (args) => {
     const [options, setOptions] = useState<InputSelectItemOptionBaseProps[]>([])
     const [loader, setLoader] = useState(false)
+
+    const onLoad = async()=>{
+        setLoader(true)
+        setOptions([])
+        await sleep(2000)
+        setOptions([
+            {
+                id: "1",
+                text: "Option 1",
+                children: <>Option 1</>,
+                disabled:true,
+                img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
+            },
+            {
+                id: "2",
+                text: "Option 2",
+                children: <>Option 2</>,
+                img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
+            },
+            {
+                id: "3",
+                text: "Option 3",
+                children: <>Option 3</>,
+            },
+            {
+                id: "4",
+                text: "Option 4",
+                children: <>Option 4</>,
+            },
+            {
+                id: "5",
+                text: "Option 5",
+                children: <>Option 5</>,
+            },
+            {
+                id: "6",
+                text: "Option 6",
+                children: <>Option 6</>,
+            },
+            {
+                id: "7",
+                text: "Option 7",
+                children: <>Option 7</>,
+            },
+        ])
+        setLoader(false)
+    }
+
+    useEffect(() => {
+        onLoad()
+    }, []);
+
     return (
         <InputSelect {...args}
-            onChangeText={()=>{
-                (async()=>{
-                    setLoader(true)
-                    setOptions([])
-                    await sleep(2000)
-                    setOptions([
-                        {
-                            id: "1",
-                            text: "Option 1",
-                            children: <>Option 1</>,
-                            disabled:true,
-                            img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
-                        },
-                        {
-                            id: "2",
-                            text: "Option 2",
-                            children: <>Option 2</>,
-                            img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
-                        },
-                        {
-                            id: "3",
-                            text: "Option 3",
-                            children: <>Option 3</>,
-                        },
-                        {
-                            id: "4",
-                            text: "Option 4",
-                            children: <>Option 4</>,
-                        },
-                        {
-                            id: "5",
-                            text: "Option 5",
-                            children: <>Option 5</>,
-                        },
-                        {
-                            id: "6",
-                            text: "Option 6",
-                            children: <>Option 6</>,
-                        },
-                        {
-                            id: "7",
-                            text: "Option 7",
-                            children: <>Option 7</>,
-                        },
-                    ])
-                    setLoader(false)
-                })()
-            }}
+            onChangeText={onLoad}
             options={options}
             loader={loader}
         
