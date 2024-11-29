@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useCallback, useEffect, useState } from "react";
 import * as ReactDOM from "react-dom";
 
 export interface useSelectOptionsPosProps {
@@ -30,29 +30,36 @@ export const useSelectOptionsPos = ({
     };
     useEffect(onLoadRef, []);
 
-    const onLoadPos = () => {
-        if (ref && target) {
-            const bounding = target.getBoundingClientRect();
-            ReactDOM.render(<>{children}</>, ref);
+    const onLoadPos = useCallback(
+        () => {
+            if (ref && target) {
+                const bounding = target.getBoundingClientRect();
+                ReactDOM.render(<>{children}</>, ref);
 
-            ref.style.setProperty("--element-width", `${target.offsetWidth}px`);
-            ref.style.setProperty("--element-top", `${bounding.top}px`);
-            ref.style.setProperty("--element-left", `${bounding.left}px`);
-            ref.style.setProperty("--element-bottom", `${bounding.bottom}px`);
+                ref.style.setProperty("--element-width", `${target.offsetWidth}px`);
+                ref.style.setProperty("--element-top", `${bounding.top}px`);
+                ref.style.setProperty("--element-left", `${bounding.left}px`);
+                ref.style.setProperty("--element-bottom", `${bounding.bottom}px`);
 
-            ref.setAttribute(
-                "fenext-direction-pos",
-                bounding.top > window?.innerHeight - bounding.bottom
-                    ? "top"
-                    : "bottom",
-            );
-        }
-    };
-    const onLoadChildren = () => {
-        if (ref) {
-            ReactDOM.render(<>{children}</>, ref);
-        }
-    };
+                ref.setAttribute(
+                    "fenext-direction-pos",
+                    bounding.top > window?.innerHeight - bounding.bottom
+                        ? "top"
+                        : "bottom",
+                );
+            }
+        },
+        [children, target, ref],
+    )
+
+    const onLoadChildren = useCallback(
+        () => {
+            if (ref) {
+                ReactDOM.render(<>{children}</>, ref);
+            }
+        },
+        [children, ref]
+    )
 
     return {
         ref,
