@@ -1,6 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import { _TProps } from "fenextjs-interface";
-import {  useDataLayer } from "fenextjs-hook";
+import { useDataLayer } from "fenextjs-hook";
 
 export interface FormProps extends PropsWithChildren {
     /**
@@ -11,7 +10,7 @@ export interface FormProps extends PropsWithChildren {
     /**
      * The function to handle the form submission
      */
-    onSubmit?: ()=>Promise<void>
+    onSubmit?: () => Promise<void>;
 
     /**
      * Whether the form is disabled

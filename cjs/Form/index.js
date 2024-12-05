@@ -3,45 +3,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Form = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importDefault(require("react"));
-const useNotification_1 = require("fenextjs-hook/cjs/useNotification");
-const Request_1 = require("fenextjs-interface/cjs/Request");
 const fenextjs_hook_1 = require("fenextjs-hook");
-const Form = ({ id = "", data, disabled = true, children, className = "", ...props }) => {
-    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
-    const { pop } = (0, useNotification_1.useNotification)({});
+const Form = ({ id = "", disabled = true, children, className = "", onSubmit = async () => { }, }) => {
     const { push } = (0, fenextjs_hook_1.useDataLayer)({});
-    const onSendForm = async () => {
-        try {
-            const result = await props?.onSubmit?.(data);
-            pop({
-                type: result?.type,
-                message: _t(result?.message ?? ""),
-            });
-            if (result?.type == Request_1.RequestResultTypeProps.OK) {
-                if (id != "") {
-                    push({
-                        event: `form-${id}`,
-                    });
-                }
-                props?.onAfterSubmit?.(result);
-            }
-        }
-        catch (error) {
-            pop({
-                type: Request_1.RequestResultTypeProps.ERROR,
-                message: _t(error?.message ?? error ?? ""),
-            });
-        }
-    };
-    const onSubmit = async (e) => {
+    const onSendForm = async (e) => {
         e.preventDefault();
         if (disabled) {
             return;
         }
-        onSendForm();
+        try {
+            await onSubmit?.();
+            if (id != "") {
+                push({
+                    event: `form-${id}`,
+                });
+            }
+        }
+        catch (error) {
+            error;
+        }
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("form", { className: `fenext-form ${className}`, onSubmit: onSubmit }, _t(children))));
+        react_1.default.createElement("form", { className: `fenext-form ${className}`, onSubmit: onSendForm }, children)));
 };
 exports.Form = Form;
 //# sourceMappingURL=index.js.map

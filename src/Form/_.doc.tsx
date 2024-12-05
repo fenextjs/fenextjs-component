@@ -68,8 +68,9 @@ export default {
                 "Cuando el formulario tiene un 'id' definido y se envía correctamente, se registra un evento en el Data Layer.",
             tableItems: [
                 {
-                    "Evento": "form-{id}",
-                    "Descripción": "Evento de tracking cuando se envía el formulario con un 'id' definido.",
+                    Evento: "form-{id}",
+                    Descripción:
+                        "Evento de tracking cuando se envía el formulario con un 'id' definido.",
                 },
             ],
         },
