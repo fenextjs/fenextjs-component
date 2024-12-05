@@ -1,42 +1,17 @@
 import React, { PropsWithChildren } from "react";
-
-import { useNotification } from "fenextjs-hook/cjs/useNotification";
-import {
-    RequestProps,
-    RequestResultDataProps,
-    RequestResultTypeProps,
-} from "fenextjs-interface/cjs/Request";
 import { _TProps } from "fenextjs-interface";
-import { use_T, useDataLayer } from "fenextjs-hook";
-export type onError = (error: string) => void;
-export type onOk = () => Promise<void> | void;
+import {  useDataLayer } from "fenextjs-hook";
 
-export interface FormProps<
-    D = any,
-    R = any,
-    E = any,
-    T = RequestResultTypeProps,
-> extends PropsWithChildren,
-        _TProps {
+export interface FormProps extends PropsWithChildren {
     /**
      * The ID of the form
      */
     id?: string;
 
     /**
-     * The initial data of the form
-     */
-    data: D;
-
-    /**
      * The function to handle the form submission
      */
-    onSubmit?: RequestProps<D, R, E, T>;
-
-    /**
-     * The function to call after a successful form submission
-     */
-    onAfterSubmit?: (data: RequestResultDataProps<R, E, T>) => void;
+    onSubmit?: ()=>Promise<void>
 
     /**
      * Whether the form is disabled
@@ -44,62 +19,41 @@ export interface FormProps<
     disabled?: boolean;
 
     /**
-     * Whether to show a loader while the form is submitting
-     */
-    loader?: boolean;
-
-    /**
      * The className to apply to the form element
      */
     className?: string;
 }
 
-export const Form = <D = any, R = any, E = any>({
+export const Form = ({
     id = "",
-    data,
     disabled = true,
     children,
     className = "",
-    ...props
-}: PropsWithChildren<FormProps<D, R, E>>) => {
-    const { _t } = use_T({ ...props });
-    const { pop } = useNotification({});
+    onSubmit = async () => {},
+}: FormProps) => {
     const { push } = useDataLayer({});
-    const onSendForm = async () => {
-        try {
-            const result = await props?.onSubmit?.(data);
-            pop({
-                type: result?.type,
-                message: _t(result?.message ?? ""),
-            });
-            if (result?.type == RequestResultTypeProps.OK) {
-                if (id != "") {
-                    push({
-                        event: `form-${id}`,
-                    });
-                }
-                props?.onAfterSubmit?.(result);
-            }
-        } catch (error: any) {
-            pop({
-                type: RequestResultTypeProps.ERROR,
-                message: _t(error?.message ?? error ?? ""),
-            });
-        }
-    };
 
-    const onSubmit = async (e: any) => {
+    const onSendForm = async (e: any) => {
         e.preventDefault();
         if (disabled) {
             return;
         }
-        onSendForm();
+        try {
+            await onSubmit?.();
+            if (id != "") {
+                push({
+                    event: `form-${id}`,
+                });
+            }
+        } catch (error) {
+            error;
+        }
     };
 
     return (
         <>
-            <form className={`fenext-form ${className}`} onSubmit={onSubmit}>
-                {_t(children)}
+            <form className={`fenext-form ${className}`} onSubmit={onSendForm}>
+                {children}
             </form>
         </>
     );

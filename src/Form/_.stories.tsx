@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
 
 import { Form, FormProps } from "./index";
@@ -8,7 +8,7 @@ export default {
     component: Form,
 } as Meta;
 
-const Profile: StoryFn<PropsWithChildren<FormProps>> = (args) => (
+const Profile: StoryFn<FormProps> = (args) => (
     <Form {...args}>Test Children</Form>
 );
 
