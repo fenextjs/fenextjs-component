@@ -9,8 +9,8 @@ export interface ChronologicalListItemsProps {
 export interface ChronologicalListBaseProps extends _TProps {
     items: ChronologicalListItemsProps[];
     market?: ReactNode;
-    parseDateYYYYMMDD?: (date: Date) => string;
-    parseDateHHMMSS?: (date: Date) => string;
+    parseDateYYYYMMDD?: (date: Date) => ReactNode;
+    parseDateHHMMSS?: (date: Date) => ReactNode;
 }
 export interface ChronologicalListClassProps {
     className?: string;

@@ -10,8 +10,8 @@ const ChronologicalList = ({ className = "", items, market = undefined, parseDat
     const ITEMS = (0, react_1.useMemo)(() => {
         const i_ = {};
         items.forEach((element) => {
-            const date = (parseDateYYYYMMDDProps ?? fenextjs_functions_1.parseDateYYYYMMDD)(element?.date);
-            const time = (parseDateHHMMSSProps ?? fenextjs_functions_1.getTimeToText)(element?.date, {
+            const date = (0, fenextjs_functions_1.parseDateYYYYMMDD)(element?.date);
+            const time = (0, fenextjs_functions_1.getTimeToText)(element?.date, {
                 days: false,
             });
             i_[date] ??= {};
@@ -19,13 +19,15 @@ const ChronologicalList = ({ className = "", items, market = undefined, parseDat
             i_[date][time].push(element);
         });
         return i_;
-    }, [items, parseDateYYYYMMDDProps, parseDateHHMMSSProps]);
+    }, [items]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-chronological-list ${className} ` }, Object.keys(ITEMS).map((key_Day, i) => {
             const items_day = ITEMS[key_Day];
             return (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("div", { className: `fenext-chronological-list-group`, key: i },
-                    react_1.default.createElement("div", { className: `fenext-chronological-list-group-day` }, key_Day),
+                    react_1.default.createElement("div", { className: `fenext-chronological-list-group-day` }, parseDateYYYYMMDDProps
+                        ? parseDateYYYYMMDDProps(new Date(key_Day))
+                        : key_Day),
                     react_1.default.createElement("div", { className: `fenext-chronological-list-group-list` }, Object.keys(items_day).map((key_time, j) => {
                         const itemsList = items_day[key_time];
                         return (react_1.default.createElement(react_1.default.Fragment, null, itemsList?.map((item, k) => {
@@ -34,7 +36,9 @@ const ChronologicalList = ({ className = "", items, market = undefined, parseDat
                                     react_1.default.createElement("div", { className: `fenext-chronological-list-item-market` }, item?.market ??
                                         market ?? (react_1.default.createElement("div", { className: `fenext-chronological-list-item-market-default` }))),
                                     react_1.default.createElement("div", { className: `fenext-chronological-list-item-children` }, _t(item?.children)),
-                                    react_1.default.createElement("div", { className: `fenext-chronological-list-item-time` }, key_time))));
+                                    react_1.default.createElement("div", { className: `fenext-chronological-list-item-time` }, parseDateHHMMSSProps
+                                        ? parseDateHHMMSSProps(item.date)
+                                        : key_time))));
                         })));
                     })))));
         }))));
