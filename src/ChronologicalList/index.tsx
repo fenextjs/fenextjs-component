@@ -28,11 +28,11 @@ export interface ChronologicalListBaseProps extends _TProps {
     /**
      * Function for parse day, month and year
      */
-    parseDateYYYYMMDD?: (date: Date) => string;
+    parseDateYYYYMMDD?: (date: Date) => ReactNode;
     /**
      * Function for parse hours, minutes and seconds
      */
-    parseDateHHMMSS?: (date: Date) => string;
+    parseDateHHMMSS?: (date: Date) => ReactNode;
 }
 
 /**
@@ -68,10 +68,10 @@ export const ChronologicalList = ({
             };
         } = {};
         items.forEach((element) => {
-            const date = (parseDateYYYYMMDDProps ?? parseDateYYYYMMDD)(
+            const date = ( parseDateYYYYMMDD)(
                 element?.date,
             );
-            const time = (parseDateHHMMSSProps ?? getTimeToText)(
+            const time = (getTimeToText)(
                 element?.date,
                 {
                     days: false,
@@ -83,7 +83,7 @@ export const ChronologicalList = ({
             i_[date][time].push(element);
         });
         return i_;
-    }, [items, parseDateYYYYMMDDProps, parseDateHHMMSSProps]);
+    }, [items]);
 
     return (
         <>
@@ -99,7 +99,9 @@ export const ChronologicalList = ({
                                 <div
                                     className={`fenext-chronological-list-group-day`}
                                 >
-                                    {key_Day}
+                                    {
+                                        parseDateYYYYMMDDProps ? parseDateYYYYMMDDProps(new Date(key_Day)) : key_Day
+                                    }
                                 </div>
                                 <div
                                     className={`fenext-chronological-list-group-list`}
@@ -140,7 +142,7 @@ export const ChronologicalList = ({
                                                                             className={`fenext-chronological-list-item-time`}
                                                                         >
                                                                             {
-                                                                                key_time
+                                                                                parseDateHHMMSSProps ? parseDateHHMMSSProps(item.date) : key_time
                                                                             }
                                                                         </div>
                                                                     </div>

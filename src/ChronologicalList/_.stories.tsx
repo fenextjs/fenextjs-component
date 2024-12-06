@@ -28,3 +28,19 @@ Index.args = {
         };
     }),
 } as ChronologicalListProps;
+
+
+export const CustomDates = Profile.bind({});
+CustomDates.args = {
+    ...Index.args,
+    parseDateYYYYMMDD:(e)=>{
+        return <>
+            Custom Date YYYYMMDD : {e?.getDate()}/{e?.getMonth()}/{e?.getFullYear()}
+        </>
+    },
+    parseDateHHMMSS:(e)=>{
+        return <>
+            Custom Date HHMMSS : {e?.getHours()}:{e?.getMinutes()}
+        </>
+    },
+} as ChronologicalListProps;
