@@ -30,6 +30,11 @@ export interface ImgBaseProps extends ImgDataProps {
      * loader.
      */
     loader?: boolean;
+
+    /**
+     * executes when image loads
+     */
+    onLoad?: () => void;
 }
 
 /**
@@ -70,6 +75,7 @@ export const Img = ({
     onErrorImg: onErrorImg_,
     onClick,
     loader = false,
+    onLoad,
 }: ImgProps) => {
     const onErrorImg = (e: SyntheticEvent<HTMLImageElement, Event>) => {
         const img: any = e.target;
@@ -164,6 +170,7 @@ export const Img = ({
                     data-alt={alt}
                     className={`fenext-img ${classNameImg}`}
                     onError={onErrorImg}
+                    onLoad={onLoad}
                 />
                 {layers?.map((e, i) => (
                     <div key={i} className="fenext-img-layer" style={e} />
