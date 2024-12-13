@@ -6,7 +6,7 @@ export interface ImgBaseProps extends ImgDataProps {
     onErrorImg?: (e: SyntheticEvent<HTMLImageElement, Event>) => void;
     onClick?: () => void;
     loader?: boolean;
-    onLoad?: () => void;
+    onLoad?: React.ReactEventHandler<HTMLImageElement>;
 }
 export interface ImgClassProps {
     className?: string;
