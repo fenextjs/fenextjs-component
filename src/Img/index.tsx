@@ -34,7 +34,7 @@ export interface ImgBaseProps extends ImgDataProps {
     /**
      * executes when image loads
      */
-    onLoad?: () => void;
+    onLoad?: React.ReactEventHandler<HTMLImageElement>
 }
 
 /**

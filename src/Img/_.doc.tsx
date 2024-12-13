@@ -101,6 +101,14 @@ export default {
                 "Función personalizada que se ejecuta al hacer click en la imagen.",
         },
         {
+            id: "onLoad",
+            type: "React.ReactEventHandler<HTMLImageElement>",
+            require: false,
+            default: "undefined",
+            description:
+                "Función que se ejecuta cuando la imagen se carga exitosamente.",
+        },
+        {
             id: "loader",
             type: "boolean",
             require: false,
@@ -140,6 +148,10 @@ export default {
         {
             text: "Imagen con manejo de error",
             content: `<Img src="/path/to/image.jpg" imgIf404="/path/to/fallback.jpg" />`,
+        },
+        {
+            text: "Imagen con función de carga",
+            content: `<Img src="/path/to/image.jpg" onLoad={() => console.log('Imagen cargada')} />`,
         },
     ],
 };
