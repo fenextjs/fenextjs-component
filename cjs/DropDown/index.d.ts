@@ -1,10 +1,16 @@
-import React from "react";
-import { CollapseBaseProps, CollapseClassProps } from "../Collapse";
-export interface DropDownBaseProps extends CollapseBaseProps {
+import React, { ReactNode } from "react";
+export interface DropDownProps {
+    className?: string;
+    loader?: boolean;
+    disabled?: boolean;
+    defaultActive?: boolean;
+    active?: boolean;
+    name?: string;
+    header: ReactNode;
+    onChange?: (value: boolean) => void;
+    iconArrow?: ReactNode;
+    children?: ReactNode;
+    rotateIcon?: boolean;
+    type?: "checked" | "focus";
 }
-export interface DropDownClassProps extends CollapseClassProps {
-    classNameDropDown?: string;
-}
-export interface DropDownProps extends DropDownBaseProps, DropDownClassProps {
-}
-export declare const DropDown: ({ classNameDropDown, show, ...props }: DropDownProps) => React.JSX.Element;
+export declare const DropDown: ({ className, header, active: activeProps, defaultActive, disabled, loader, onChange: onChangeProps, iconArrow, rotateIcon, name, children, type, }: DropDownProps) => React.JSX.Element;

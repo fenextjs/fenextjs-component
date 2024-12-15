@@ -2,7 +2,8 @@ import React, { PropsWithChildren } from "react";
 import { StoryFn, Meta } from "@storybook/react";
 import {Modal} from '../Modal'
 import {Button} from '../Button'
-import { DropDown, DropDownProps, useActionDropDown } from "./index";
+import { DropDown, DropDownProps } from "./index";
+import { useActionDropDown } from "fenextjs-hook";
 
 export default {
     title: "DropDown/DropDown",
