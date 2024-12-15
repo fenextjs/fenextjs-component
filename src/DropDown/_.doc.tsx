@@ -3,203 +3,131 @@ export default {
     idStorybook: "component-dropdown",
     name: "DropDown",
     description:
-        "El componente DropDown proporciona un menú desplegable ajustable que puede cambiar su posición según el espacio disponible alrededor del contenedor.",
+        "El componente DropDown es un desplegable interactivo que permite mostrar u ocultar contenido adicional mediante interacciones como clics o estados activos.",
     props: [
+        {
+            id: "className",
+            type: "string",
+            require: false,
+            default: "''",
+            description: "Clase CSS personalizada para el contenedor principal del componente DropDown.",
+        },
         {
             id: "loader",
             type: "boolean",
             require: false,
             default: "false",
-            description:
-                "Indica si el componente está en estado de carga, mostrando un ícono de cargando.",
+            description: "Indica si el componente está en estado de carga, mostrando un indicador de 'Loader'.",
         },
         {
             id: "disabled",
             type: "boolean",
             require: false,
             default: "false",
-            description:
-                "Determina si el componente está deshabilitado, evitando que el usuario lo pueda interactuar.",
+            description: "Determina si el componente DropDown está deshabilitado.",
         },
         {
             id: "defaultActive",
             type: "boolean",
             require: false,
             default: "false",
-            description:
-                "Determina si el DropDown estará activado de manera predeterminada.",
+            description: "Establece si el DropDown está activo de forma predeterminada al renderizarse.",
         },
         {
             id: "active",
             type: "boolean",
             require: false,
             default: "undefined",
-            description: "Estado activo controlado externamente.",
-        },
-        {
-            id: "id",
-            type: "string",
-            require: false,
-            description: "ID único del componente.",
+            description: "Controla de manera explícita si el DropDown está activo o inactivo.",
         },
         {
             id: "name",
             type: "string",
             require: false,
-            default: "''",
-            description: "Nombre del componente.",
-        },
-        {
-            id: "status",
-            type: "'none' | 'error' | 'ok'",
-            require: false,
-            default: "'none'",
-            description:
-                "Estado del DropDown, puede ser 'none', 'error' o 'ok'.",
-        },
-        {
-            id: "type",
-            type: "'radio' | 'checkbox'",
-            require: false,
-            default: "'checkbox'",
-            description:
-                "Define el tipo de interacción del componente, ya sea tipo 'radio' o 'checkbox'.",
-        },
-        {
-            id: "show",
-            type: "'checked' | 'focus'",
-            require: false,
-            default: "'checked'",
-            description:
-                "Controla cómo se muestra el contenido del DropDown, ya sea cuando está 'checked' o 'focus'.",
+            default: "undefined",
+            description: "Nombre asignado al DropDown, utilizado para manejar eventos de interacción.",
         },
         {
             id: "header",
             type: "ReactNode",
             require: true,
-            description: "El contenido del encabezado del DropDown.",
+            default: "undefined",
+            description: "Elemento que se muestra como cabecera del DropDown.",
         },
         {
             id: "onChange",
             type: "(value: boolean) => void",
             require: false,
-            description:
-                "Función que se ejecuta cuando el estado activo del DropDown cambia.",
+            default: "undefined",
+            description: "Función ejecutada al cambiar el estado activo del DropDown.",
         },
         {
             id: "iconArrow",
             type: "ReactNode",
             require: false,
-            default: "<Arrow />",
-            description: "Ícono que se mostrará como la flecha de colapso.",
+            default: "<SvgArrow />",
+            description: "Icono utilizado como indicador de colapso/expansión del DropDown.",
+        },
+        {
+            id: "children",
+            type: "ReactNode",
+            require: false,
+            default: "undefined",
+            description: "Contenido adicional mostrado dentro del cuerpo del DropDown.",
         },
         {
             id: "rotateIcon",
             type: "boolean",
             require: false,
             default: "true",
-            description:
-                "Indica si el ícono debe rotar al expandirse el DropDown.",
+            description: "Indica si el icono debe rotar al cambiar el estado activo.",
         },
         {
-            id: "useActiveForShowChildren",
-            type: "boolean",
+            id: "type",
+            type: "'checked' | 'focus'",
             require: false,
-            default: "false",
-            description:
-                "Si está habilitado, el contenido solo se mostrará cuando el DropDown esté activo.",
-        },
-        {
-            id: "children",
-            type: "ReactNode",
-            require: false,
-            description: "El contenido dentro del cuerpo del DropDown.",
-        },
-        {
-            id: "className",
-            type: "string",
-            require: false,
-            default: "''",
-            description: "Clase CSS personalizada para el componente DropDown.",
-        },
-        {
-            id: "classNameHeader",
-            type: "string",
-            require: false,
-            default: "''",
-            description:
-                "Clase CSS personalizada para el encabezado del DropDown.",
-        },
-        {
-            id: "classNameHeaderContent",
-            type: "string",
-            require: false,
-            default: "''",
-            description:
-                "Clase CSS personalizada para el contenido del encabezado del DropDown.",
-        },
-        {
-            id: "classNameHeaderIcon",
-            type: "string",
-            require: false,
-            default: "''",
-            description:
-                "Clase CSS personalizada para el ícono del encabezado del DropDown.",
-        },
-        {
-            id: "classNameBody",
-            type: "string",
-            require: false,
-            default: "''",
-            description: "Clase CSS personalizada para el cuerpo del DropDown.",
-        },
-        {
-            id: "classNameDropDown",
-            type: "string",
-            require: false,
-            default: "''",
-            description:
-                "Clase CSS para personalizar el contenedor del DropDown.",
+            default: "'focus'",
+            description: "Define el tipo de interacción que activa el DropDown.",
         },
     ],
     extras: [
         {
-            id: "ajustes_espaciales",
-            title: "Ajustes Espaciales",
+            id: "interacciones",
+            title: "Interacciones",
             description:
-                "El componente DropDown ajusta su posición automáticamente según el espacio disponible en su contenedor. Los posibles ajustes son:",
-            tableItems: [
-                {
-                    Dirección: "left",
-                    Descripción:
-                        "El DropDown se alinea a la izquierda si hay más espacio disponible.",
-                },
-                {
-                    Dirección: "right",
-                    Descripción:
-                        "El DropDown se alinea a la derecha si hay más espacio disponible.",
-                },
-                {
-                    Dirección: "up",
-                    Descripción:
-                        "El DropDown se despliega hacia arriba si hay más espacio disponible arriba.",
-                },
-                {
-                    Dirección: "down",
-                    Descripción:
-                        "El DropDown se despliega hacia abajo si hay más espacio disponible abajo.",
-                },
-            ],
+                "El comportamiento del DropDown está configurado por las propiedades `type` y `onChange`, permitiendo manejar eventos personalizados y estilos dinámicos.",
+        },
+        {
+            id: "NOTA",
+            title: "__NOTA__",
+            description:
+                "Para que el tipo `focus` funcione correctamente, es necesario que el evento global de clic esté vinculado al componente, asegurándose de que las interacciones externas cierren el DropDown automáticamente.",
         },
     ],
     useExample: [
         {
             text: "Básico",
-            content: `<DropDown>Contenido desplegable</DropDown>`,
+            content: `<DropDown header={<span>Menú</span>}>Contenido</DropDown>`,
         },
         {
-            text: "DropDown siempre visible",
-            content: `<DropDown show="always">Contenido siempre visible</DropDown>`,
+            text: "DropDown con estado activo por defecto",
+            content: `<DropDown defaultActive={true} header={<span>Activo</span>}>Contenido Activo</DropDown>`,
+        },
+        {
+            text: "DropDown deshabilitado",
+            content: `<DropDown disabled={true} header={<span>Deshabilitado</span>} />`,
+        },
+        {
+            text: "DropDown con icono personalizado",
+            content: `<DropDown iconArrow={<CustomIcon />} header={<span>Personalizado</span>}>Contenido</DropDown>`,
+        },
+        {
+            text: "DropDown usando useActionDropDown",
+            content: `const {onActive,onClose,onToogle} = useActionDropDown({name:"NAME_DROPDOWN"})
+<Button onClick={onToogle}>onToogle</Button>
+<Button onClick={onActive}>onActive</Button>
+<Button onClick={onClose}>onClose</Button>
+<DropDown name="NAME_DROPDOWN"  header={<span>Personalizado</span>}>Contenido</DropDown>`,
         },
     ],
 };
