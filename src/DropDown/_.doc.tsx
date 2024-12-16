@@ -123,11 +123,18 @@ export default {
         },
         {
             text: "DropDown usando useActionDropDown",
-            content: `const {onActive,onClose,onToogle} = useActionDropDown({name:"NAME_DROPDOWN"})
+            content: `const { onActive, onClose, onToogle } = useActionDropDown({ name:"NAME_DROPDOWN" })
+
 <Button onClick={onToogle}>onToogle</Button>
 <Button onClick={onActive}>onActive</Button>
 <Button onClick={onClose}>onClose</Button>
-<DropDown name="NAME_DROPDOWN"  header={<span>Personalizado</span>}>Contenido</DropDown>`,
+
+<DropDown 
+    name="NAME_DROPDOWN"  
+    header={<span>Personalizado</span>}
+>
+        Contenido
+</DropDown>`,
         },
     ],
 };
