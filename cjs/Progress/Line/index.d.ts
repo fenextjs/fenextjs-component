@@ -5,7 +5,8 @@ export interface ProgressLineBaseProps {
 }
 export interface ProgressLineClassProps {
     className?: string;
+    classNameBar?: string;
 }
 export interface ProgressLineProps extends ProgressLineBaseProps, ProgressLineClassProps {
 }
-export declare const ProgressLine: ({ className, p, showP, }: ProgressLineProps) => React.JSX.Element;
+export declare const ProgressLine: ({ className, classNameBar, p, showP, }: ProgressLineProps) => React.JSX.Element;

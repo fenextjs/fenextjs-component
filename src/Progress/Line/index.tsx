@@ -53,9 +53,11 @@ export const ProgressLine = ({
                     } as React.CSSProperties
                 }
             >
-                <div className={`
+                <div
+                    className={`
                     fenext-progess-line-bar ${classNameBar}
-                    `}></div>
+                    `}
+                ></div>
             </div>
         </>
     );
