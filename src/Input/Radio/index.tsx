@@ -187,7 +187,7 @@ export const InputRadio = <T = any,>({
         }
         setChecked(i);
         onChange(i);
-        onChangeData?.(i?.data as T)
+        onChangeData?.(i?.data as T);
     };
 
     return (
