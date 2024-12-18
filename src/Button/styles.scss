@@ -15,6 +15,7 @@
     &:hover {
         background: var(--fenext-color-dark-light);
     }
+    &-disabled,
     &:disabled {
         background: var(--fenext-color-secondary);
     }

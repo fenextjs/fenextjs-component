@@ -13,4 +13,8 @@ const Profile: StoryFn<PropsWithChildren<ButtonProps>> = (args) => (
 );
 
 export const Index = Profile.bind({});
-Index.args = {};
+Index.args = {
+    // onClick:()=>{alert(1)},
+    // onClickDisabled:()=>{alert("disabled")},
+    // disabled:true
+} as ButtonProps;
