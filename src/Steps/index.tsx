@@ -83,6 +83,9 @@ export interface StepsBaseProps extends _TProps {
      * onClick in btn Next.
      */
     onNext?: (step: number) => Promise<void> | void;
+    
+    onPrevDisabled?: () => void;
+    onNextDisabled?: () => void;
     /**
      * onSetStep.
      */
@@ -200,6 +203,8 @@ export const Steps = ({
     disabledBtnPrev = false,
     onNext,
     onPrev,
+    onNextDisabled,
+    onPrevDisabled,
     stepPos = "left",
     showCurrentStepNStep = false,
     useArrowKey = false,
@@ -369,6 +374,7 @@ export const Steps = ({
                             className={`fenext-steps-btn fenext-steps-btn-prev ${classNameBtn} ${classNameBtnPrev}`}
                             disabled={disabledBtnPrev}
                             onClick={onPrev_}
+                            onClickDisabled={onPrevDisabled}
                             loader={loader}
                             _t={_t}
                         >
@@ -414,6 +420,7 @@ export const Steps = ({
                             className={`fenext-steps-btn fenext-steps-btn-next ${classNameBtn} ${classNameBtnNext}`}
                             disabled={disabledBtnNext}
                             onClick={onNext_}
+                            onClickDisabled={onNextDisabled}
                             loader={loader}
                             _t={_t}
                         >
