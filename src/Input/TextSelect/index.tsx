@@ -105,6 +105,7 @@ export const InputTextSelect = ({
     posSelect = "left",
     errorWithIsChange = false,
     error,
+    classNameError="",
     ...props
 }: InputTextSelectProps) => {
     const { _t } = use_T({ ...props });
@@ -162,7 +163,7 @@ export const InputTextSelect = ({
                 {errorInput && (
                     <ErrorComponent
                         error={errorInput}
-                        className={`fenext-input-error `}
+                        className={`fenext-input-error ${classNameError}`}
                         _t={_t}
                     />
                 )}

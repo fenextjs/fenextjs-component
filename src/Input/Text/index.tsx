@@ -318,6 +318,7 @@ export const InputText = ({
     classNameInput = "",
     classNameIcon = "",
     classNameLoaderValidate = "",
+    classNameError="",
     iconLoader = <Loader />,
     onChange = () => {},
     onBlur = () => {},
@@ -592,7 +593,7 @@ export const InputText = ({
                 {FenextInputValidatorStatus == "error" && (
                     <ErrorComponent
                         error={errorFenext ?? errorInput}
-                        className="fenext-input-error"
+                        className={`fenext-input-error ${classNameError}`}
                         _t={_t}
                     />
                 )}
