@@ -15,7 +15,8 @@ export interface ButtonBaseProps extends PropsWithChildren, _TProps {
 }
 export interface ButtonClassProps extends LoaderClassProps {
     className?: string;
+    classNameDisabled?: string;
 }
 export interface ButtonProps extends ButtonBaseProps, ButtonClassProps {
 }
-export declare const Button: ({ className, classNameLoader, children, loader, disabled, onClick, onClickDisabled: onClickDisabledProps, icon, isBtn, full, size, ...props }: ButtonProps) => React.JSX.Element;
+export declare const Button: ({ className, classNameLoader, classNameDisabled, children, loader, disabled, onClick, onClickDisabled: onClickDisabledProps, icon, isBtn, full, size, ...props }: ButtonProps) => React.JSX.Element;

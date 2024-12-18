@@ -72,6 +72,14 @@ export default {
             description: "Clase personalizada para el componente Button.",
         },
         {
+            id: "classNameDisabled",
+            type: "string",
+            require: false,
+            default: '""',
+            description:
+                "Clase personalizada para el componente Button cuenado esta deshabilitado.",
+        },
+        {
             id: "classNameLoader",
             type: "string",
             require: false,
