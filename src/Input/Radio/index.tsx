@@ -114,6 +114,12 @@ export interface InputRadioBaseProps<T = any> extends _TProps {
     onChange?: (e: InputRadioItemProps<T>) => void;
 
     /**
+     * A callback function to execute when the radio is toggled.
+     * Receives a boolean value indicating whether the radio is checked or not.
+     */
+    onChangeData?: (e: T) => void;
+
+    /**
      * The default value of the radio when it is first rendered.
      */
     defaultValue?: InputRadioItemProps<T>;
@@ -163,6 +169,7 @@ export const InputRadio = <T = any,>({
             name: "input radio onchange",
         });
     },
+    onChangeData,
     defaultValue = undefined,
     value = undefined,
     disabled = false,
@@ -180,6 +187,7 @@ export const InputRadio = <T = any,>({
         }
         setChecked(i);
         onChange(i);
+        onChangeData?.(i?.data as T)
     };
 
     return (
