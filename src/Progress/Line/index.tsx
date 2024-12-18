@@ -22,6 +22,10 @@ export interface ProgressLineClassProps {
      * The class name for the component.
      */
     className?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameBar?: string;
 }
 
 /**
@@ -33,6 +37,7 @@ export interface ProgressLineProps
 
 export const ProgressLine = ({
     className = "",
+    classNameBar = "",
     p,
     showP = true,
 }: ProgressLineProps) => {
@@ -47,7 +52,11 @@ export const ProgressLine = ({
                         ["--p"]: Math.max(0, Math.min(p, 100)),
                     } as React.CSSProperties
                 }
-            ></div>
+            >
+                <div className={`
+                    fenext-progess-line-bar ${classNameBar}
+                    `}></div>
+            </div>
         </>
     );
 };

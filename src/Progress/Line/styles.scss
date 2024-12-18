@@ -3,28 +3,34 @@
     --progess: calc(var(--p) * 1%);
     --bg: var(--fenext-color-white-dark);
     --bgp: var(--fenext-color-blue);
+    position: relative;
     width: 100%;
     min-height: 1rem;
     border-radius: 1rem;
     transition: 0.1s;
-    background: linear-gradient(
-            to right,
-            var(--bgp) 0%,
-            var(--bgp) var(--progess),
-            var(--bg) var(--progess),
-            var(--bg) 100%
-        ),
-        var(--bg);
+    background: var(--bg);
     font-family: var(--fenext-font-global);
     font-size: 1rem;
     font-weight: 700;
     line-height: 1;
     padding: 0.2rem 1rem;
     color: var(--fenext-color-white);
+    &-bar{
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: var(--progess);
+        background: var(--bgp);
+        border-radius: 1rem;
+        transition: 0.5s;
+        z-index: 0;
+    }
     &-show-p {
         &:before {
             counter-reset: p var(--p);
             content: counter(p) "%";
+            position: relative;
+            z-index: 1;
         }
     }
 }
