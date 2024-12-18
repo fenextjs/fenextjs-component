@@ -211,6 +211,14 @@ export default {
             description: "Clase CSS para los botones de navegación.",
         },
         {
+            id: "classNameBtnDisabled",
+            type: "string",
+            require: false,
+            default: '""',
+            description:
+                "Clase CSS para los botones de navegación cuando esten deshabilitados.",
+        },
+        {
             id: "classNameBtnNext",
             type: "string",
             require: false,
@@ -218,11 +226,27 @@ export default {
             description: "Clase CSS para el botón de avance.",
         },
         {
+            id: "classNameBtnNextDisabled",
+            type: "string",
+            require: false,
+            default: '""',
+            description:
+                "Clase CSS para el botón de avance cuando este deshabilitado.",
+        },
+        {
             id: "classNameBtnPrev",
             type: "string",
             require: false,
             default: '""',
             description: "Clase CSS para el botón de retroceso.",
+        },
+        {
+            id: "classNameBtnPrevDisabled",
+            type: "string",
+            require: false,
+            default: '""',
+            description:
+                "Clase CSS para el botón de retroceso cuando este deshabilitado.",
         },
         {
             id: "forceShowBtnPrev",

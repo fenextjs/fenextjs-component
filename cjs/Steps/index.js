@@ -6,7 +6,7 @@ const react_1 = tslib_1.__importStar(require("react"));
 const useDocumentEvent_1 = require("fenextjs-hook/cjs/useDocumentEvent");
 const Button_1 = require("../Button");
 const fenextjs_hook_1 = require("fenextjs-hook");
-const Steps = ({ className = "", classNameContentItems = "", classNameContentSteps = "", classNameListSteps = "", classNameItem = "", classNameItemActive = "", classNameStep = "", classNameStepActive = "", classNameStepCircle = "", classNameStepLabel = "", classNameContentBtn = "", classNameBtn = "", classNameBtnNext = "", classNameBtnPrev = "", defaultStep = 0, step = undefined, items = [], btnNext = "Next", btnPrev = "Previous", disabledBtnNext = false, disabledBtnPrev = false, onNext, onPrev, onNextDisabled, onPrevDisabled, stepPos = "left", showCurrentStepNStep = false, useArrowKey = false, useDogs = false, onSetStep, forceShowBtnPrev = false, forceShowBtnNext = false, ...props }) => {
+const Steps = ({ className = "", classNameContentItems = "", classNameContentSteps = "", classNameListSteps = "", classNameItem = "", classNameItemActive = "", classNameStep = "", classNameStepActive = "", classNameStepCircle = "", classNameStepLabel = "", classNameContentBtn = "", classNameBtn = "", classNameBtnDisabled = "", classNameBtnNext = "", classNameBtnNextDisabled = "", classNameBtnPrev = "", classNameBtnPrevDisabled = "", defaultStep = 0, step = undefined, items = [], btnNext = "Next", btnPrev = "Previous", disabledBtnNext = false, disabledBtnPrev = false, onNext, onPrev, onNextDisabled, onPrevDisabled, stepPos = "left", showCurrentStepNStep = false, useArrowKey = false, useDogs = false, onSetStep, forceShowBtnPrev = false, forceShowBtnNext = false, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const ref = (0, react_1.useRef)(null);
     const [loader, setLoader] = (0, react_1.useState)(false);
@@ -96,7 +96,7 @@ const Steps = ({ className = "", classNameContentItems = "", classNameContentSte
                         : ""} ` }, _t(item.content)));
             })),
             react_1.default.createElement("div", { className: `fenext-steps-content-btn ${classNameContentBtn} ` },
-                (currentStep != 0 || forceShowBtnPrev) && (react_1.default.createElement(Button_1.Button, { className: `fenext-steps-btn fenext-steps-btn-prev ${classNameBtn} ${classNameBtnPrev}`, disabled: disabledBtnPrev, onClick: onPrev_, onClickDisabled: onPrevDisabled, loader: loader, _t: _t }, btnPrev)),
+                (currentStep != 0 || forceShowBtnPrev) && (react_1.default.createElement(Button_1.Button, { className: `fenext-steps-btn fenext-steps-btn-prev ${classNameBtn} ${classNameBtnPrev}`, classNameDisabled: `${classNameBtnDisabled} ${classNameBtnPrevDisabled}`, disabled: disabledBtnPrev, onClick: onPrev_, onClickDisabled: onPrevDisabled, loader: loader, _t: _t }, btnPrev)),
                 showCurrentStepNStep && items.length > 1 && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement("div", { className: "fenext-steps-current-step" },
                         currentStep + 1,
@@ -115,7 +115,7 @@ const Steps = ({ className = "", classNameContentItems = "", classNameContentSte
 
                                                 ` })));
                     })))),
-                (currentStep != items.length - 1 || forceShowBtnNext) && (react_1.default.createElement(Button_1.Button, { className: `fenext-steps-btn fenext-steps-btn-next ${classNameBtn} ${classNameBtnNext}`, disabled: disabledBtnNext, onClick: onNext_, onClickDisabled: onNextDisabled, loader: loader, _t: _t }, btnNext))))));
+                (currentStep != items.length - 1 || forceShowBtnNext) && (react_1.default.createElement(Button_1.Button, { className: `fenext-steps-btn fenext-steps-btn-next ${classNameBtn} ${classNameBtnNext}`, classNameDisabled: `${classNameBtnDisabled} ${classNameBtnNextDisabled}`, disabled: disabledBtnNext, onClick: onNext_, onClickDisabled: onNextDisabled, loader: loader, _t: _t }, btnNext))))));
 };
 exports.Steps = Steps;
 //# sourceMappingURL=index.js.map
