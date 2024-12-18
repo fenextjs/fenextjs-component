@@ -83,7 +83,7 @@ export interface StepsBaseProps extends _TProps {
      * onClick in btn Next.
      */
     onNext?: (step: number) => Promise<void> | void;
-    
+
     onPrevDisabled?: () => void;
     onNextDisabled?: () => void;
     /**
