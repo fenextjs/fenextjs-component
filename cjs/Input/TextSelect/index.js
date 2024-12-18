@@ -10,7 +10,7 @@ const Error_1 = require("../../Error");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const fenextjs_validator_1 = require("fenextjs-validator");
 const fenextjs_hook_2 = require("fenextjs-hook");
-const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultValue = {}, value: valueProps = undefined, onChange, validator = undefined, posSelect = "left", errorWithIsChange = false, error, ...props }) => {
+const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultValue = {}, value: valueProps = undefined, onChange, validator = undefined, posSelect = "left", errorWithIsChange = false, error, classNameError = "", ...props }) => {
     const { _t } = (0, fenextjs_hook_2.use_T)({ ...props });
     const { data, onChangeData, isChange } = (0, useData_1.useData)(defaultValue, {
         onChangeDataAfter: onChange,
@@ -33,7 +33,7 @@ const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultVal
                 react_1.default.createElement(Select_1.InputSelect, { ...props, placeholder: placeholderSelect, onChange: onChangeData("select"), validator: undefined, value: value.select, _t: _t, parseText: (e) => e })),
             react_1.default.createElement("div", { className: `fenext-input-text-select-text ` },
                 react_1.default.createElement(Text_1.InputText, { ...props, placeholder: placeholderText, onChange: onChangeData("text"), validator: undefined, value: value.text, _t: _t })),
-            errorInput && (react_1.default.createElement(Error_1.ErrorComponent, { error: errorInput, className: `fenext-input-error `, _t: _t })))));
+            errorInput && (react_1.default.createElement(Error_1.ErrorComponent, { error: errorInput, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputTextSelect = InputTextSelect;
 //# sourceMappingURL=index.js.map

@@ -18,4 +18,4 @@ export interface InputTextSelectBaseProps extends Omit<InputTextBaseProps, "type
 }
 export interface InputTextSelectProps extends InputTextSelectBaseProps, InputTextSelectClassProps {
 }
-export declare const InputTextSelect: ({ label, placeholderSelect, placeholderText, defaultValue, value: valueProps, onChange, validator, posSelect, errorWithIsChange, error, ...props }: InputTextSelectProps) => React.JSX.Element;
+export declare const InputTextSelect: ({ label, placeholderSelect, placeholderText, defaultValue, value: valueProps, onChange, validator, posSelect, errorWithIsChange, error, classNameError, ...props }: InputTextSelectProps) => React.JSX.Element;

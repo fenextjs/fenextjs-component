@@ -105,7 +105,7 @@ export const InputTextSelect = ({
     posSelect = "left",
     errorWithIsChange = false,
     error,
-    classNameError="",
+    classNameError = "",
     ...props
 }: InputTextSelectProps) => {
     const { _t } = use_T({ ...props });

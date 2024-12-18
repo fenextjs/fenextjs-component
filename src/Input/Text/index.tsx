@@ -318,7 +318,7 @@ export const InputText = ({
     classNameInput = "",
     classNameIcon = "",
     classNameLoaderValidate = "",
-    classNameError="",
+    classNameError = "",
     iconLoader = <Loader />,
     onChange = () => {},
     onBlur = () => {},
