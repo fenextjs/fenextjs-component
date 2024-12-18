@@ -10,42 +10,48 @@ export default {
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS personalizada para el contenedor principal del componente DropDown.",
+            description:
+                "Clase CSS personalizada para el contenedor principal del componente DropDown.",
         },
         {
             id: "loader",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Indica si el componente está en estado de carga, mostrando un indicador de 'Loader'.",
+            description:
+                "Indica si el componente está en estado de carga, mostrando un indicador de 'Loader'.",
         },
         {
             id: "disabled",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Determina si el componente DropDown está deshabilitado.",
+            description:
+                "Determina si el componente DropDown está deshabilitado.",
         },
         {
             id: "defaultActive",
             type: "boolean",
             require: false,
             default: "false",
-            description: "Establece si el DropDown está activo de forma predeterminada al renderizarse.",
+            description:
+                "Establece si el DropDown está activo de forma predeterminada al renderizarse.",
         },
         {
             id: "active",
             type: "boolean",
             require: false,
             default: "undefined",
-            description: "Controla de manera explícita si el DropDown está activo o inactivo.",
+            description:
+                "Controla de manera explícita si el DropDown está activo o inactivo.",
         },
         {
             id: "name",
             type: "string",
             require: false,
             default: "undefined",
-            description: "Nombre asignado al DropDown, utilizado para manejar eventos de interacción.",
+            description:
+                "Nombre asignado al DropDown, utilizado para manejar eventos de interacción.",
         },
         {
             id: "header",
@@ -59,35 +65,40 @@ export default {
             type: "(value: boolean) => void",
             require: false,
             default: "undefined",
-            description: "Función ejecutada al cambiar el estado activo del DropDown.",
+            description:
+                "Función ejecutada al cambiar el estado activo del DropDown.",
         },
         {
             id: "iconArrow",
             type: "ReactNode",
             require: false,
             default: "<SvgArrow />",
-            description: "Icono utilizado como indicador de colapso/expansión del DropDown.",
+            description:
+                "Icono utilizado como indicador de colapso/expansión del DropDown.",
         },
         {
             id: "children",
             type: "ReactNode",
             require: false,
             default: "undefined",
-            description: "Contenido adicional mostrado dentro del cuerpo del DropDown.",
+            description:
+                "Contenido adicional mostrado dentro del cuerpo del DropDown.",
         },
         {
             id: "rotateIcon",
             type: "boolean",
             require: false,
             default: "true",
-            description: "Indica si el icono debe rotar al cambiar el estado activo.",
+            description:
+                "Indica si el icono debe rotar al cambiar el estado activo.",
         },
         {
             id: "type",
             type: "'checked' | 'focus'",
             require: false,
             default: "'focus'",
-            description: "Define el tipo de interacción que activa el DropDown.",
+            description:
+                "Define el tipo de interacción que activa el DropDown.",
         },
     ],
     extras: [
