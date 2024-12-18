@@ -36,7 +36,7 @@ export type InputSelectTypeStyle =
  */
 export interface InputSelectClassProps
     extends InputTextClassProps,
-        InputSelectOptionClassProps {
+    InputSelectOptionClassProps {
     /**
      * CSS class name for the input select.
      */
@@ -49,7 +49,7 @@ export interface InputSelectClassProps
 }
 
 export interface InputSelectItemOptionBaseProps<T = any>
-    extends Omit<InputSelectOptionProps<T>, "type" | "onDelete"> {}
+    extends Omit<InputSelectOptionProps<T>, "type" | "onDelete"> { }
 
 /**
  * Interface that defines the base properties for a text input component.
@@ -222,7 +222,7 @@ export interface InputSelectBaseProps<T = any>
  */
 export interface InputSelectProps<T = any>
     extends InputSelectBaseProps<T>,
-        InputSelectClassProps {}
+    InputSelectClassProps { }
 
 export interface InputSelectValue<T = any> {
     option?: InputSelectItemOptionBaseProps<T>;
@@ -233,6 +233,7 @@ export interface InputSelectValue<T = any> {
 export const InputSelect = <T = any,>({
     classNameSelect = "",
     classNameList = "",
+    classNameOption = "",
 
     error = undefined,
     options: optionsProps = [],
@@ -531,6 +532,7 @@ export const InputSelect = <T = any,>({
                                 _t={_t}
                                 isBtn={true}
                                 onClick={create?.onClick ?? onCreate}
+                                classNameOption={`${classNameOption} ${create?.classNameOption}`}
                             />
                         </>
                     ) : (
@@ -543,8 +545,8 @@ export const InputSelect = <T = any,>({
                                 id={noResult?.id ?? "selected"}
                                 text={_t(
                                     selected?.text ??
-                                        props?.placeholder ??
-                                        "Select",
+                                    props?.placeholder ??
+                                    "Select",
                                 )}
                                 children={selected?.children ?? undefined}
                                 _t={_t}
@@ -563,6 +565,7 @@ export const InputSelect = <T = any,>({
                                     data.option?.id === option?.id
                                 }
                                 {...option}
+                                classNameOption={`${classNameOption} ${option?.classNameOption}`}
                                 onClick={(e) => {
                                     onChangeOption(e);
                                     option?.onClick?.(e);
@@ -580,7 +583,7 @@ export const InputSelect = <T = any,>({
                                 id={loaderOption?.id ?? "loader"}
                                 text={loaderOption?.text ?? "Loading"}
                                 children={loaderOption?.children ?? undefined}
-                                classNameOption="fenext-select-option-loading"
+                                classNameOption={`${classNameOption} fenext-select-option-loading`}
                                 _t={_t}
                                 useT={useTOption}
                                 disabled={true}
@@ -601,7 +604,7 @@ export const InputSelect = <T = any,>({
                                         children={
                                             noResult?.children ?? undefined
                                         }
-                                        classNameOption="fenext-select-option-not-result"
+                                        classNameOption={`${classNameOption} fenext-select-option-not-result`}
                                         _t={_t}
                                         useT={useTOption}
                                         disabled={true}
@@ -618,6 +621,7 @@ export const InputSelect = <T = any,>({
     }, [
         typeSelect,
         props?.datalist,
+        classNameOption,
         classNameList,
         create,
         onCreate,
@@ -760,10 +764,9 @@ export const InputSelect = <T = any,>({
                     fenext-select-type-${typeSelect}
                     fenext-select-type-style-${typeSelectStyle}
                     fenext-select-${useSwichtypeSelectStyle ? "use-swich-select-style" : ""}
-                    fenext-select-${
-                        isSelectChangeText
-                            ? "is-change-text"
-                            : "is-not-change-text"
+                    fenext-select-${isSelectChangeText
+                        ? "is-change-text"
+                        : "is-not-change-text"
                     }
                     ${classNameSelect} ${showOptions}
                     ${hiddenOptions}
@@ -787,7 +790,7 @@ export const InputSelect = <T = any,>({
                             ele?.focus();
                         }
                     }}
-                    // onMouseEnter={onLoadPos}
+                // onMouseEnter={onLoadPos}
                 >
                     <InputText
                         {...props}
@@ -856,16 +859,16 @@ export const InputSelect = <T = any,>({
                                                     <>
                                                         {dataMemo?.option
                                                             ?.icon && (
-                                                            <>
-                                                                <div className="fenext-select-option-selected-img">
-                                                                    {
-                                                                        dataMemo
-                                                                            ?.option
-                                                                            ?.icon
-                                                                    }
-                                                                </div>
-                                                            </>
-                                                        )}
+                                                                <>
+                                                                    <div className="fenext-select-option-selected-img">
+                                                                        {
+                                                                            dataMemo
+                                                                                ?.option
+                                                                                ?.icon
+                                                                        }
+                                                                    </div>
+                                                                </>
+                                                            )}
                                                     </>
                                                 )}
                                             </>
@@ -902,9 +905,9 @@ export const InputSelect = <T = any,>({
                     />
                 </div>
                 {typeSelect == "div" &&
-                (typeSelectStyle == "normal" ||
-                    typeSelectStyle == "normal-out") &&
-                !useSwichtypeSelectStyle ? (
+                    (typeSelectStyle == "normal" ||
+                        typeSelectStyle == "normal-out") &&
+                    !useSwichtypeSelectStyle ? (
                     <></>
                 ) : (
                     <>{TAGLIST}</>
