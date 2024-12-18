@@ -79,6 +79,23 @@ export default {
             description:
                 "Función que se ejecuta al hacer click en el botón de avance.",
         },
+
+        {
+            id: "onPrevDisabled",
+            type: "() =>  void",
+            require: false,
+            default: "undefined",
+            description:
+                "Función que se ejecuta al hacer click en el botón de retroceso cuando esta deshabilitado.",
+        },
+        {
+            id: "onNextDisabled",
+            type: "() =>  void",
+            require: false,
+            default: "undefined",
+            description:
+                "Función que se ejecuta al hacer click en el botón de avance cuando esta deshabilitado.",
+        },
         {
             id: "onSetStep",
             type: "(step: number) => void",
