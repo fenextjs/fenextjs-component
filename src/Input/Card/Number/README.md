@@ -2,12 +2,6 @@
 
 El componente InputCardNumber es un campo de entrada diseñado para capturar el número de una tarjeta de crédito. Este componente formatea automáticamente la entrada del número en grupos de cuatro dígitos y muestra el icono correspondiente al tipo de tarjeta detectada.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-card-inputcardnumber--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputCardNumber, se puede hacer desde fenextjs

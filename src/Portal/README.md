@@ -2,12 +2,6 @@
 
 El componente Portal permite renderizar sus elementos secundarios (`children`) en un contenedor DOM específico, separado de la jerarquía DOM principal de la aplicación. Utiliza `ReactDOM.createPortal` para realizar esta funcionalidad.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-portal--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Portal, se puede hacer desde fenextjs

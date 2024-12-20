@@ -2,12 +2,6 @@
 
 El componente InputDateRange permite a los usuarios seleccionar un rango de fechas utilizando dos campos de entrada de fecha. Es útil para formularios donde se requiere seleccionar un inicio y un final de un período de tiempo.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputdaterange--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputDateRange, se puede hacer desde fenextjs

@@ -2,12 +2,6 @@
 
 El componente InputRadio permite renderizar un conjunto de radios personalizados, que pueden incluir etiquetas, íconos y diversos estilos basados en su estado (activo/inactivo). Este componente es útil para permitir al usuario seleccionar una opción de un grupo predefinido.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputradio--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputRadio, se puede hacer desde fenextjs

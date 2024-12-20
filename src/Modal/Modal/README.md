@@ -2,12 +2,6 @@
 
 El componente Modal permite crear una ventana modal personalizable con opciones de activación, cierre y renderizado condicional, heredando propiedades de ModalBase.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=modal-modal--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Modal, se puede hacer desde fenextjs

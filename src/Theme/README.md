@@ -2,12 +2,6 @@
 
 El componente Theme permite gestionar y representar visualmente los temas de la aplicación, utilizando la funcionalidad y componentes proporcionados por `fenextjs-svg` y `fenextjs-hook`.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=theme-theme--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Theme, se puede hacer desde fenextjs

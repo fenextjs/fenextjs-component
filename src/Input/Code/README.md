@@ -2,12 +2,6 @@
 
 El componente InputCode es un campo de entrada diseñado para ingresar códigos de verificación o códigos de un solo uso. Presenta un diseño que resalta cada carácter ingresado, ideal para situaciones como la autenticación de dos factores.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputcode--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputCode, se puede hacer desde fenextjs

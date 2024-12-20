@@ -2,12 +2,6 @@
 
 El componente InputSelectCSC permite seleccionar un país, estado y ciudad de manera interrelacionada, facilitando la gestión de datos geográficos.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectcsc--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputSelectCSC, se puede hacer desde fenextjs

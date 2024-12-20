@@ -2,12 +2,6 @@
 
 El componente User muestra información de un usuario, incluyendo su imagen, nombre, y correo electrónico. También incluye una opción de cargador para mostrar un indicador de carga cuando la información del usuario no está disponible.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=user-user--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente User, se puede hacer desde fenextjs

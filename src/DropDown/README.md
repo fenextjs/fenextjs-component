@@ -2,12 +2,6 @@
 
 El componente DropDown es un desplegable interactivo que permite mostrar u ocultar contenido adicional mediante interacciones como clics o estados activos.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=dropdown-dropdown--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente DropDown, se puede hacer desde fenextjs

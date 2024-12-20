@@ -2,12 +2,6 @@
 
 El componente ContentLoading es una envoltura que muestra un contenido cargando o el contenido completo, dependiendo de si el estado de carga está activado o no. Es útil para manejar la visualización condicional de contenido mientras se espera una carga.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=contentloading-contentloading--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente ContentLoading, se puede hacer desde fenextjs

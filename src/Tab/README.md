@@ -2,12 +2,6 @@
 
 El componente Tab permite la creación de pestañas con contenidos asociados, personalizables en clases CSS y comportamiento.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-tab--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Tab, se puede hacer desde fenextjs

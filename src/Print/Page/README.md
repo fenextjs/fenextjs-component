@@ -2,12 +2,6 @@
 
 El componente PrintPage permite renderizar contenido listo para impresión y proporciona un hook `usePrintData` para gestionar la carga y obtención de datos necesarios para la impresión.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=print-page--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente PrintPage, se puede hacer desde fenextjs

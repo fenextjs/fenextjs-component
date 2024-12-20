@@ -2,12 +2,6 @@
 
 El componente Form es un formulario que permite capturar datos del usuario. Ofrece funcionalidad para manejar el envío de formularios, opcionalmente realizar una acción al enviarlo y manejar un estado deshabilitado.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-form--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Form, se puede hacer desde fenextjs

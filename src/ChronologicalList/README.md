@@ -2,12 +2,6 @@
 
 El componente ChronologicalList organiza elementos de forma cronológica, agrupándolos por fecha y hora. Permite personalizar el formato de la fecha y la hora, así como agregar contenido adicional para cada elemento.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=chronologicallist-chronologicallist--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente ChronologicalList, se puede hacer desde fenextjs

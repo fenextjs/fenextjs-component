@@ -2,12 +2,6 @@
 
 El componente Chat es un contenedor completo que incluye elementos como el usuario del chat, los mensajes, un formulario para enviar mensajes y un botón de cargar más mensajes. Se puede configurar para mostrar un loader mientras se cargan los datos, así como manejar diferentes estados como chat vacío y auto-scroll cuando hay nuevos mensajes.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="80vh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=chat-chat--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Chat, se puede hacer desde fenextjs

@@ -2,12 +2,6 @@
 
 El componente InputText permite al usuario introducir texto en un campo de entrada. Es personalizable y se puede utilizar en formularios y otras interfaces de usuario donde se requiera la entrada de texto.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputtext--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputText, se puede hacer desde fenextjs

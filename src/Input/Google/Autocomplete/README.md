@@ -2,12 +2,6 @@
 
 El componente InputGoogleAutocomplete permite la entrada de direcciones utilizando la funcionalidad de autocompletado de Google, con validaciones y manejo de errores.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-google-autocomplete--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputGoogleAutocomplete, se puede hacer desde fenextjs

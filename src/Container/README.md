@@ -2,12 +2,6 @@
 
 El componente Container es un contenedor flexible que permite ajustar el tamaño personalizado y aplicar padding de forma opcional, proporcionando una estructura para organizar contenido.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-container--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Container, se puede hacer desde fenextjs

@@ -2,12 +2,6 @@
 
 El componente InputScannerQr permite escanear códigos QR utilizando la cámara del dispositivo. Incluye opciones para cambiar de cámara, activar el flash y detener el escaneo.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-scanner-inputscannerqr--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputScannerQr, se puede hacer desde fenextjs

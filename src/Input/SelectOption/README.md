@@ -2,12 +2,6 @@
 
 El componente InputSelectOption permite mostrar opciones seleccionables con texto, imágenes o íconos, además de proporcionar funcionalidades adicionales como la eliminación de opciones y la personalización de eventos.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectoption--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputSelectOption, se puede hacer desde fenextjs

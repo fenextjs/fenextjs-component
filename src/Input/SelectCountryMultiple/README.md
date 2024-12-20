@@ -2,12 +2,6 @@
 
 El componente InputSelectCountryMultiple permite seleccionar múltiples países de una lista de opciones, con posibilidad de personalización adicional a través de las propiedades del componente.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectcountrymultiple--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputSelectCountryMultiple, se puede hacer desde fenextjs

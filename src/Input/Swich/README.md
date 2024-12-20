@@ -2,12 +2,6 @@
 
 El componente InputSwich permite crear un interruptor (switch) interactivo que los usuarios pueden alternar entre los estados activo e inactivo. Es altamente personalizable en términos de apariencia y comportamiento.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputswich--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputSwich, se puede hacer desde fenextjs

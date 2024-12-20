@@ -2,12 +2,6 @@
 
 Este componente combina el diseño de menú superior y el menú lateral izquierdo, permitiendo una estructura flexible para mostrar contenido, alertas y un indicador de progreso de página.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=layout-layoutgridmenutopleft--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente LayoutGridMenuTopLeft, se puede hacer desde fenextjs

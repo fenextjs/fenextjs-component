@@ -2,12 +2,6 @@
 
 El componente InputSelect proporciona una interfaz interactiva que permite a los usuarios seleccionar opciones de una lista, con la posibilidad de búsqueda y personalización avanzada.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselect--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputSelect, se puede hacer desde fenextjs

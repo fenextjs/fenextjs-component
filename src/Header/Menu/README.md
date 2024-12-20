@@ -2,12 +2,6 @@
 
 El componente Menu renderiza una lista de elementos interactivos. Se utiliza para mostrar una estructura de menú con soporte para la funcionalidad de colapsar submenús, íconos personalizados y distintos tipos de comportamiento (radio o checkbox).
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="50vh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=header-menu--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Menú, se puede hacer desde fenextjs

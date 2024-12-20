@@ -2,12 +2,6 @@
 
 El componente Slider permite crear un carrusel de elementos con opciones de personalización de cantidad de ítems visibles, tiempo de animación y bucle automático. Incluye controles de navegación y estilos personalizados.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=slider-slider--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Slider, se puede hacer desde fenextjs

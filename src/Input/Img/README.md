@@ -2,12 +2,6 @@
 
 El componente InputImg permite a los usuarios cargar una única imagen y muestra una vista previa de la imagen seleccionada. También incluye la opción de eliminar la imagen cargada.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputimg--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputImg, se puede hacer desde fenextjs

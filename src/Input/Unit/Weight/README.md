@@ -2,12 +2,6 @@
 
 El componente InputUnitWeight permite al usuario seleccionar y gestionar unidades de peso, ofreciendo opciones predeterminadas y personalizadas. Está basado en `InputUnitBase` y extiende su funcionalidad con opciones específicas de peso.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputunitweight--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputUnitWeight, se puede hacer desde fenextjs

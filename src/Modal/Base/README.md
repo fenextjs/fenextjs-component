@@ -2,12 +2,6 @@
 
 El componente ModalBase proporciona una base flexible para modales con diferentes posiciones, tipos de cierre y opciones de visibilidad.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=modal-modalbase--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente ModalBase, se puede hacer desde fenextjs

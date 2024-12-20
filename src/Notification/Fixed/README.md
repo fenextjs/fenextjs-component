@@ -2,12 +2,6 @@
 
 El componente Notification permite mostrar mensajes de notificación personalizados, con distintos tipos de resultados y estilos para cada tipo.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=notification-notification--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Notification, se puede hacer desde fenextjs

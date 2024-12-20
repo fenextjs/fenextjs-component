@@ -2,12 +2,6 @@
 
 El componente InputPassword es un campo de entrada de contraseña que permite alternar entre la visibilidad del texto y el modo de contraseña mediante un ícono de ojo.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputpassword--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputPassword, se puede hacer desde fenextjs

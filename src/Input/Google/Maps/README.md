@@ -2,12 +2,6 @@
 
 El componente InputGoogleMaps permite mostrar un mapa de Google Maps con marcadores, opciones de centrado, ajustes de límites y renderización de rutas entre puntos.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-google-maps--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputGoogleMaps, se puede hacer desde fenextjs

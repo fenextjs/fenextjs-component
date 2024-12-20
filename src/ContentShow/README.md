@@ -2,12 +2,6 @@
 
 El componente ContentShow permite mostrar u ocultar su contenido condicionalmente basado en la propiedad 'show'.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=contentshow-contentshow--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente ContentShow, se puede hacer desde fenextjs

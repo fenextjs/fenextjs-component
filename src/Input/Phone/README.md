@@ -2,12 +2,6 @@
 
 El componente InputPhone permite ingresar y validar números de teléfono, incluyendo un campo de selección de código de país y el número de teléfono propiamente dicho.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputphone--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputPhone, se puede hacer desde fenextjs

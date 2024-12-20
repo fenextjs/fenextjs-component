@@ -2,12 +2,6 @@
 
 El componente InputRange permite la selección de un valor o rango de valores dentro de un intervalo definido. Se puede personalizar con clases CSS y manejar cambios en los valores mínimo, máximo o intermedio.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputrange--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputRange, se puede hacer desde fenextjs

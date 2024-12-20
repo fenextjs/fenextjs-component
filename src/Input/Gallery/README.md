@@ -2,12 +2,6 @@
 
 El componente InputGallery permite a los usuarios cargar y gestionar múltiples imágenes a través de una interfaz de galería. Incluye opciones para añadir y eliminar imágenes.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputgallery--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputGallery, se puede hacer desde fenextjs

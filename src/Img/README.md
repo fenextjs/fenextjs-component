@@ -2,12 +2,6 @@
 
 El componente Img renderiza una imagen con soporte para múltiples resoluciones, capas visuales, y un cargador opcional. También permite definir acciones personalizadas en caso de error o al hacer click sobre la imagen.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=img-img--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Img, se puede hacer desde fenextjs

@@ -2,12 +2,6 @@
 
 El componente LoaderSpinner se utiliza para mostrar un indicador de carga en forma de spinner o círculo giratorio. Se puede personalizar su estilo utilizando una clase CSS específica.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=loader-spinner--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente LoaderSpinner, se puede hacer desde fenextjs

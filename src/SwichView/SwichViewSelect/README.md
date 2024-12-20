@@ -2,12 +2,6 @@
 
 El componente SwichViewSelect permite al usuario alternar entre diferentes vistas de selección mediante opciones visuales, representadas por íconos específicos para cada vista de selección.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=swichview-select--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente SwichViewSelect, se puede hacer desde fenextjs

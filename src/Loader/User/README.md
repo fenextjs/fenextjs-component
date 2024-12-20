@@ -2,12 +2,6 @@
 
 El componente LoaderUser muestra un indicador de carga simulando la carga de información de un usuario, incluyendo imagen, nombre y correo electrónico. Se pueden personalizar las clases CSS para cada parte del componente.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=loader-user--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente LoaderUser, se puede hacer desde fenextjs

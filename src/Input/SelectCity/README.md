@@ -2,12 +2,6 @@
 
 Componente InputSelectCity que permite seleccionar una ciudad basándose en el país y estado seleccionados.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectcity--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputSelectCity, se puede hacer desde fenextjs

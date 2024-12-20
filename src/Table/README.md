@@ -2,12 +2,6 @@
 
 El componente Table permite mostrar una tabla de datos con funcionalidades avanzadas como paginación, selección de elementos, ordenación, y más.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=table-table--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Table, se puede hacer desde fenextjs

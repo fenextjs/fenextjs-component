@@ -2,12 +2,6 @@
 
 El componente Pagination permite la navegación de contenido paginado y ofrece opciones de personalización de estilo para adaptarse a diferentes diseños y temas.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=pagination-pagination--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Pagination, se puede hacer desde fenextjs

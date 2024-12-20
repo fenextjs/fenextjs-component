@@ -2,12 +2,6 @@
 
 El componente InputCardCCV es un campo de entrada diseñado para capturar el Código de Seguridad (CCV) de una tarjeta de crédito. Este componente asegura que solo se ingresen números y limita la longitud a 4 caracteres, facilitando una entrada de datos adecuada y segura para transacciones.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-card-inputcardccv--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputCardCCV, se puede hacer desde fenextjs

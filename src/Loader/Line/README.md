@@ -2,12 +2,6 @@
 
 El componente LoaderLine se utiliza para mostrar un indicador de carga en forma de línea. Se puede personalizar tanto su altura como su estilo utilizando una clase CSS específica.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=loader-line--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente LoaderLine, se puede hacer desde fenextjs

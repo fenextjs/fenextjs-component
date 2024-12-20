@@ -2,12 +2,6 @@
 
 El componente InputNumberCount permite la entrada de números con soporte para validaciones, símbolos de inicio y final, y controles de mínimo y máximo.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputnumbercount--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputNumberCount, se puede hacer desde fenextjs

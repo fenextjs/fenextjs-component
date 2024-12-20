@@ -2,12 +2,6 @@
 
 El componente Steps proporciona una interfaz para mostrar y navegar entre pasos en un proceso secuencial, permitiendo personalizar el contenido, la navegación y la apariencia de cada paso.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=steps-steps--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Steps, se puede hacer desde fenextjs

@@ -2,12 +2,6 @@
 
 El componente ChatFormSendMessage es un formulario que permite a los usuarios enviar mensajes dentro del chat. Incluye opciones como un botón para enviar el mensaje, la posibilidad de enviar mensajes presionando 'Enter' y un estado de carga mientras se procesa el envío.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=chat-chatformsendmessage--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente ChatFormSendMessage, se puede hacer desde fenextjs

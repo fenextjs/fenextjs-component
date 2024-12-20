@@ -2,12 +2,6 @@
 
 Componente de paginación que permite navegar entre páginas de una lista de elementos, con opciones de personalización para los iconos y las clases CSS.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=pagination-paginationitempage--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente PaginationItemPage, se puede hacer desde fenextjs

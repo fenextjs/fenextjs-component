@@ -2,12 +2,6 @@
 
 Componente de selección de elementos por página para la paginación, permitiendo seleccionar el número de elementos a mostrar en cada página.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=pagination-paginationnpage--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente PaginationNPage, se puede hacer desde fenextjs

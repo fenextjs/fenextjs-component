@@ -2,12 +2,6 @@
 
 El componente Tooltip muestra información adicional en un cuadro emergente cuando el usuario se desplaza sobre un elemento o interactúa con él. La posición del tooltip puede ajustarse en los ejes X e Y.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=tooltip-tooltip--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Tooltip, se puede hacer desde fenextjs

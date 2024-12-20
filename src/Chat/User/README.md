@@ -2,12 +2,6 @@
 
 El componente ChatUser muestra la información de un usuario en un contexto de chat, incluyendo su imagen, nombre y datos extra opcionales. También soporta un estado de carga y permite personalizar la imagen y el contenido adicional.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=chat-user--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente ChatUser, se puede hacer desde fenextjs

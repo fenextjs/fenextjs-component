@@ -2,12 +2,6 @@
 
 El componente InputSelectTimeZone permite a los usuarios seleccionar una zona horaria de una lista predefinida de zonas horarias, con opciones de personalización tanto para la apariencia como para el comportamiento.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselecttimezone--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputSelectTimeZone, se puede hacer desde fenextjs

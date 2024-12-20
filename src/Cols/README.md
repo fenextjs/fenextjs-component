@@ -2,12 +2,6 @@
 
 El componente Cols permite organizar elementos en múltiples columnas, con opciones para controlar la cantidad de columnas y la propiedad de ruptura interna de los elementos.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=cols-cols--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Cols, se puede hacer desde fenextjs

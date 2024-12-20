@@ -2,12 +2,6 @@
 
 El componente `InputSelectMultipleT` es una variante de `InputSelectMultiple` que permite seleccionar múltiples opciones de un tipo genérico `T`. Incluye la funcionalidad de conversión personalizada para manejar los datos y su representación en el select.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectmultiplet--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputSelectMultipleT, se puede hacer desde fenextjs

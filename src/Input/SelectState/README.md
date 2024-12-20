@@ -2,12 +2,6 @@
 
 El componente InputSelectState permite seleccionar un estado o provincia dentro de un país específico. Utiliza la API 'country-state-city-nextjs' para obtener y filtrar los estados según el país proporcionado.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectstate--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputSelectState, se puede hacer desde fenextjs

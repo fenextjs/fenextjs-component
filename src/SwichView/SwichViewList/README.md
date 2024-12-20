@@ -2,12 +2,6 @@
 
 El componente SwichViewList permite al usuario alternar entre diferentes vistas o ítems mediante una lista de opciones visuales, cada una identificada por un ícono y un identificador único.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=swichview-list--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente SwichViewList, se puede hacer desde fenextjs

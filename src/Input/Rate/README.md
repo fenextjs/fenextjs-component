@@ -2,12 +2,6 @@
 
 El componente InputRate permite seleccionar una calificación de 0 a 5 utilizando estrellas interactivas. Es altamente personalizable y puede gestionar valores predeterminados o seleccionados por el usuario.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputrate--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputRate, se puede hacer desde fenextjs

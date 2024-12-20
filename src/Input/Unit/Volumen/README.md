@@ -2,12 +2,6 @@
 
 El componente InputUnitVolumen permite al usuario seleccionar y gestionar unidades de volumen, ofreciendo opciones predeterminadas y personalizadas. Está basado en `InputUnitBase` y extiende su funcionalidad con opciones específicas de volumen.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputunitvolumen--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente InputUnitVolumen, se puede hacer desde fenextjs

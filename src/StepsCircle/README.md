@@ -2,12 +2,6 @@
 
 El componente StepsCircle presenta una serie de pasos circulares que se pueden recorrer, proporcionando opciones de personalización y control de pasos.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=stepscircle-stepscircle--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente StepsCircle, se puede hacer desde fenextjs

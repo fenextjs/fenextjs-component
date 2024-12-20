@@ -2,12 +2,6 @@
 
 Componente TableActionCheckbox que permite realizar acciones sobre un conjunto de datos seleccionados en una tabla, con la opción de seleccionar todos los elementos usando una casilla de verificación.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=table-tableactioncheckbox--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente TableActionCheckbox, se puede hacer desde fenextjs

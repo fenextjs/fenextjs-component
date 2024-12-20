@@ -2,12 +2,6 @@
 
 El componente Title representa un título de encabezado con soporte para diferentes niveles (`h1` a `h6`), opcionalmente muestra un loader y permite personalización mediante clases CSS.
 
- 
-
-### Ejemplo
-
-<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=title-title--index&viewMode=story" />
-
 ### Importación
 
 Para importar el componente Title, se puede hacer desde fenextjs
