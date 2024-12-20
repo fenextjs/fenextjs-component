@@ -1,25 +1,67 @@
-#### LayoutGridMenuTop
+# LayoutGridMenuTop
 
-El componente LayoutGridMenuTop es un diseño de cuadrícula con un menú en la parte superior. También puede mostrar un loader (cargador) mientras se encuentra en el estado de carga.
+El componente LayoutGridMenuTop es un diseño de cuadrícula que incluye un menú superior y permite gestionar una barra de progreso de página, mostrar alertas personalizadas y un indicador de carga.
 
-```tsx
-import {
-    LayoutGridMenuTop,
-    LayoutGridMenuTopProps,
-} from "fenextjs-component/cjs/Layout/Grid/GridMenuTop";
-const menuContent = (
-    <>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
-    </>
-);
-<LayoutGridMenuTop loader={true} menuTop={menuContent}>
-    <div>
-        <h1>Welcome to My Website</h1>
-        <p>This is the content of the website.</p>
-    </div>
-</LayoutGridMenuTop>;
+import { Iframe } from "@/components/Iframe"; 
+
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=layout-layoutgridmenutop--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente LayoutGridMenuTop, se puede hacer desde fenextjs
+
+```tsx copy
+import { LayoutGridMenuTop } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| useAlertHook | boolean | no | true | Indica si se debe renderizar el componente de alerta (AlertHook). |
+| alertHookProps | AlertHookProps | no | \{\} | Propiedades para el componente AlertHook. |
+| loader | boolean | no | false | Indica si la página está en estado de carga, mostrando un indicador de carga. |
+| menuTop | ReactNode | no | undefined | Elemento del menú superior dentro del layout. |
+| usePageProgress | boolean | no | true | Indica si se debe mostrar la barra de progreso de página. |
+| className | string | no | '' | Clase CSS personalizada para el contenedor del layout. |
+| classNameLoader | string | no | '' | Clase CSS personalizada para el indicador de carga. |
+| classNameChildren | string | no | '' | Clase CSS personalizada para el contenido de los hijos. |
+| classNameMenuTop | string | no | '' | Clase CSS personalizada para el menú superior. |
+
+### Funcionalidad de AlertHook
+
+Si 'useAlertHook' está habilitado, el componente de alerta (AlertHook) se renderiza con las propiedades proporcionadas en 'alertHookProps'.
+
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/layout-layoutgridmenutop--index)
+
+### Usos
+
+- Básico
+
+```tsx copy
+<LayoutGridMenuTop />
+```
+
+- Con menú superior
+
+```tsx copy
+<LayoutGridMenuTop menuTop={<div>Menú</div>} />
+```
+
+- Con barra de progreso deshabilitada
+
+```tsx copy
+<LayoutGridMenuTop usePageProgress={false} />
+```
+
+- Con alertas personalizadas
+
+```tsx copy
+<LayoutGridMenuTop useAlertHook={true} alertHookProps={{ message: 'Alerta' }} />
+```
+

@@ -1,19 +1,67 @@
-#### InputUpload
+# InputUpload
 
-El componente InputUpload es un componente para cargar archivos. Proporciona una interfaz para arrastrar y soltar archivos o seleccionarlos a través de un botón de carga. También admite vista previa del archivo cargado y muestra el progreso de la carga en caso de que se esté cargando un archivo.
+El componente InputUpload permite a los usuarios cargar archivos, proporcionando opciones de previsualización y una interfaz personalizable para seleccionar o arrastrar y soltar archivos.
 
-```tsx
-import {
-    InputUpload,
-    InputUploadProps,
-} from "fenextjs-component/cjs/Input/Upload";
-const handleChange = (data) => {
-    console.log("File data:", data);
-};
+import { Iframe } from "@/components/Iframe"; 
 
-<InputUpload
-    title="Upload File"
-    text="Drag and drop your file or click to choose."
-    onChange={handleChange}
-/>;
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputupload--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente InputUpload, se puede hacer desde fenextjs
+
+```tsx copy
+import { InputUpload } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| title | ReactNode | no | "Drag and drop here" | Título mostrado en el área de carga de archivos. |
+| text | ReactNode | no | "Drag and drop your file or template here." | Texto adicional que se muestra en el área de carga de archivos. |
+| titleFile | ReactNode | no | undefined | Título personalizado que se muestra al seleccionar un archivo. |
+| textFile | ReactNode | no | undefined | Texto personalizado que se muestra al seleccionar un archivo. |
+| textPreview | ReactNode | no | "Preview File" | Texto que se muestra para la previsualización del archivo. |
+| icon | ReactNode | no | \<Upload2 /\> | Icono que se muestra en el área de carga. |
+| iconFile | ReactNode | no | "" | Icono que se muestra junto con el archivo cargado. |
+| btn | ReactNode | no | "Choose File" | Texto o componente personalizado para el botón de selección de archivo. |
+| tagPreview | "embed" \| "img" | no | "embed" | Etiqueta HTML usada para mostrar la previsualización del archivo. Puede ser 'embed' o 'img'. |
+| customPreview | (data: FileProps) =\> ReactNode | no | undefined | Función personalizada para renderizar la previsualización del archivo. |
+| loader | boolean | no | false | Determina si se muestra un indicador de carga mientras se sube el archivo. |
+| iconLoader | ReactNode | no | \<LoaderSpinner /\> | Icono o componente que se muestra mientras el archivo está en proceso de carga. |
+| parseProgress | (e: number) =\> string | no | (e) =\> `Uploading . . . $\{e.toFixed(0)\}%` | Función que permite personalizar el texto de progreso de la carga de archivos. |
+| onChange | (file: File) =\> void | no | undefined | Función que se ejecuta cuando el archivo cambia, recibe el archivo seleccionado. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/input-inputupload--index)
+
+### Usos
+
+- InputUpload básico
+
+```tsx copy
+<InputUpload />
+```
+
+- InputUpload con texto personalizado
+
+```tsx copy
+<InputUpload title="Sube tu archivo aquí" text="Arrastra y suelta tu archivo o selecciónalo desde tu dispositivo" />
+```
+
+- InputUpload con previsualización de imagen
+
+```tsx copy
+<InputUpload tagPreview="img" />
+```
+
+- InputUpload con un botón personalizado
+
+```tsx copy
+<InputUpload btn={<Button>Cargar Archivo</Button>} />
+```
+

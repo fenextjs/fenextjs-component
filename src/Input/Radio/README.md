@@ -1,25 +1,72 @@
-#### InputRadio
+# InputRadio
 
-El componente InputRadio es una serie de botones de opción que permiten al usuario seleccionar una opción de una lista. Cada botón de opción está asociado a un ítem que contiene un id y una etiqueta label.
+El componente InputRadio permite renderizar un conjunto de radios personalizados, que pueden incluir etiquetas, íconos y diversos estilos basados en su estado (activo/inactivo). Este componente es útil para permitir al usuario seleccionar una opción de un grupo predefinido.
 
-```tsx
-import {
-    InputRadio,
-    InputRadioProps,
-} from "fenextjs-component/cjs/Input/Phone";
+import { Iframe } from "@/components/Iframe"; 
 
-const items = [
-    { id: "option1", label: "Option 1" },
-    { id: "option2", label: "Option 2" },
-    { id: "option3", label: "Option 3" },
-];
+### Ejemplo
 
-const handleRadioChange = (selectedItem) => {
-    console.log("Selected Item:", selectedItem);
-};
-<InputRadio
-    items={items}
-    defaultValue={items[0]}
-    onChange={handleRadioChange}
-/>;
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputradio--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente InputRadio, se puede hacer desde fenextjs
+
+```tsx copy
+import { InputRadio } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| items | InputRadioItemProps\<T\>[] | no | [] | Lista de elementos del radio. Cada elemento contiene un id, etiqueta y datos opcionales. |
+| labelPosition | 'right' \| 'left' | no | 'right' | Posición de la etiqueta en relación con el radio (a la derecha o izquierda). |
+| name | string | no | '' | El atributo 'name' del elemento radio. Útil para agrupar radios con el mismo nombre. |
+| onChange | (e: InputRadioItemProps\<T\>) =\> void | no | (e) =\> env_log(e, \{ name: 'input radio onchange' \}) | Función que se ejecuta al cambiar el estado del radio. Recibe el elemento seleccionado como parámetro. |
+| defaultValue | InputRadioItemProps\<T\> | no | undefined | Valor por defecto del radio al renderizarlo por primera vez. |
+| value | InputRadioItemProps\<T\> | no | undefined | El valor actual del radio. Controla qué elemento está seleccionado. |
+| disabled | boolean | no | false | Indica si el grupo de radios está deshabilitado, evitando que los usuarios seleccionen una opción. |
+| classNameContent | string | no | '' | Clase CSS para personalizar el contenedor general del radio. |
+| classNameLabel | string | no | '' | Clase CSS para la etiqueta del radio. |
+| classNameLabelActive | string | no | '' | Clase CSS para la etiqueta cuando el radio está activo. |
+| classNameLabelInactive | string | no | '' | Clase CSS para la etiqueta cuando el radio está inactivo. |
+| classNameText | string | no | '' | Clase CSS para el texto junto al radio. |
+| classNameContentRadio | string | no | '' | Clase CSS para el contenedor del radio. |
+| classNameContentRadioActive | string | no | '' | Clase CSS para el contenedor del radio cuando está activo. |
+| classNameContentRadioInactive | string | no | '' | Clase CSS para el contenedor del radio cuando está inactivo. |
+| classNameRadio | string | no | '' | Clase CSS para el elemento input radio. |
+| classNameRadioActive | string | no | '' | Clase CSS para el elemento input radio cuando está activo. |
+| classNameRadioInactive | string | no | '' | Clase CSS para el elemento input radio cuando está inactivo. |
+| icon | ReactNode | no | \<Check /\> | Icono que se muestra junto al radio cuando está activo. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/input-inputradio--index)
+
+### Usos
+
+- Básico
+
+```tsx copy
+<InputRadio items={[{ id: '1', label: 'Opción 1' }, { id: '2', label: 'Opción 2' }]} />
+```
+
+- Radio con icono
+
+```tsx copy
+<InputRadio items={[{ id: '1', label: 'Opción 1' }, { id: '2', label: 'Opción 2' }]} icon={<Check />} />
+```
+
+- Radio deshabilitado
+
+```tsx copy
+<InputRadio items={[{ id: '1', label: 'Opción 1' }]} disabled={true} />
+```
+
+- Radio con onChange
+
+```tsx copy
+<InputRadio items={[{ id: '1', label: 'Opción 1' }]} onChange={(item) => console.log(item)} />
+```
+

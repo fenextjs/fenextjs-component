@@ -1,49 +1,76 @@
-#### Button
+# Button
 
-El componente Button es un componente versátil que representa un botón interactivo. Puede renderizarse como un elemento <button> o como un contenedor <div>, y proporciona varias opciones de personalización, incluyendo tamaño, icono y estado de carga.
+El componente Button es un botón interactivo que puede ser configurado para mostrar íconos, estar en estado de carga (loader), deshabilitarse y adaptarse a diferentes tamaños. Permite a los usuarios interactuar con la aplicación ejecutando acciones al hacer clic.
 
-```tsx
-import { Button, ButtonProps } from "fenextjs-component/cjs/Button";
+import { Iframe } from "@/components/Iframe"; 
 
-const handleButtonClick = () => {
-    console.log("Button clicked!");
-};
+### Ejemplo
 
-/* Ejemplo 1: Uso básico del componente Button */
-<Button onClick={handleButtonClick}>Click Me</Button>;
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-button--index&viewMode=story" />
 
-/* Ejemplo 2: Button con clase de estilo personalizada */
-<Button className="custom-button" onClick={handleButtonClick}>
-    Custom Button
-</Button>;
+### Importación
 
-/* Ejemplo 3: Button con icono */
-<Button icon={<i className="fa fa-check" />} onClick={handleButtonClick}>
-    Save
-</Button>;
+Para importar el componente Button, se puede hacer desde fenextjs
 
-/* Ejemplo 4: Button con estado de carga */
-<Button loader onClick={handleButtonClick}>
-    Loading...
-</Button>;
-
-/* Ejemplo 5: Button deshabilitado */
-<Button disabled onClick={handleButtonClick}>
-    Disabled Button
-</Button>;
-
-/* Ejemplo 6: Button como un contenedor <div> */
-<Button isBtn={false} onClick={handleButtonClick}>
-    Div Button
-</Button>;
-
-/* Ejemplo 7: Button con tamaño personalizado */
-<Button size="extra-strong" onClick={handleButtonClick}>
-    Extra Strong Button
-</Button>;
-
-/* Ejemplo 8: Button a lo ancho */
-<Button full onClick={handleButtonClick}>
-    Full Width Button
-</Button>;
+```tsx copy
+import { Button } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| loader | boolean | no | false | Si el botón está en estado de carga, mostrando un indicador de carga (spinner) y deshabilitado para otras acciones. |
+| disabled | boolean | no | false | Si el botón está deshabilitado, impidiendo cualquier interacción. |
+| onClick | function | no |  | Función que se ejecuta cuando se hace click en el botón (solo si no está deshabilitado o en estado de carga). |
+| onClickDisabled | function | no |  | Función que se ejecuta cuando se hace click en el botón estando deshabilitado. |
+| icon | ReactNode | no | undefined | El ícono que se mostrará dentro del botón. |
+| isBtn | boolean | no | true | Si se renderiza el componente como un botón (`\<button\>`) o como un `\<div\>`. |
+| size | "extra-small" \| "small" \| "normal" \| "strong" \| "extra-strong" | no | "normal" | El tamaño del botón. |
+| full | boolean | no | false | Si el botón debe ocupar todo el ancho disponible. |
+| className | string | no | "" | Clase personalizada para el componente Button. |
+| classNameDisabled | string | no | "" | Clase personalizada para el componente Button cuenado esta deshabilitado. |
+| classNameLoader | string | no | "" | Clase personalizada para el componente Loader dentro del botón cuando está en estado de carga. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/component-button--index)
+
+### Usos
+
+- Botón básico
+
+```tsx copy
+<Button>Click me</Button>
+```
+
+- Botón con ícono
+
+```tsx copy
+<Button icon={<img src="/icon.svg" alt="Icon" />}>Click me</Button>
+```
+
+- Botón en estado de carga
+
+```tsx copy
+<Button loader={true}>Loading...</Button>
+```
+
+- Botón deshabilitado
+
+```tsx copy
+<Button disabled={true}>Disabled</Button>
+```
+
+- Botón con tamaño personalizado
+
+```tsx copy
+<Button size="strong">Strong Button</Button>
+```
+
+- Botón con ancho completo
+
+```tsx copy
+<Button full={true}>Full Width Button</Button>
+```
+

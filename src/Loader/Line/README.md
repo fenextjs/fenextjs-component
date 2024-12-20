@@ -1,12 +1,49 @@
-#### LoaderLine
+# LoaderLine
 
-El componente LoaderLine es una representación visual de un indicador de carga en forma de línea horizontal. Es una animación sencilla pero efectiva que se utiliza comúnmente en aplicaciones web para mostrar a los usuarios que el contenido está siendo cargado y que deben esperar antes de que esté disponible.
+El componente LoaderLine se utiliza para mostrar un indicador de carga en forma de línea. Se puede personalizar tanto su altura como su estilo utilizando una clase CSS específica.
 
-```tsx
-import {
-    LoaderLine,
-    LoaderLineProps,
-} from "fenextjs-component/cjs/Loader/Line";
+import { Iframe } from "@/components/Iframe"; 
 
-<LoaderLine classNameLoaderLine="custom-loader-line" height={10} />;
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=loader-line--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente LoaderLine, se puede hacer desde fenextjs
+
+```tsx copy
+import { LoaderLine } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| classNameLoaderLine | string | no | '' | Clase CSS para personalizar el estilo de la línea del indicador de carga. |
+| height | number | no | 20 | Altura de la línea del indicador de carga, en píxeles. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/loader-line--index)
+
+### Usos
+
+- LoaderLine básico
+
+```tsx copy
+<LoaderLine />
+```
+
+- LoaderLine con altura personalizada
+
+```tsx copy
+<LoaderLine height={30} />
+```
+
+- LoaderLine con clase personalizada
+
+```tsx copy
+<LoaderLine classNameLoaderLine="custom-loader-line" />
+```
+

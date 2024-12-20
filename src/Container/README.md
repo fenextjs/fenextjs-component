@@ -1,17 +1,51 @@
-#### Container
+# Container
 
-El componente Container es una caja que envuelve y limita su contenido. Permite personalizar el tamaño del contenedor y aplicar padding inline (espacio interno horizontal) si es necesario.
+El componente Container es un contenedor flexible que permite ajustar el tamaño personalizado y aplicar padding de forma opcional, proporcionando una estructura para organizar contenido.
 
-```tsx
-import { Container, ContainerProps } from "fenextjs-component/cjs/Container";
+import { Iframe } from "@/components/Iframe"; 
 
-/* Ejemplo 1: Uso del componente Container con tamaño personalizado y padding inline */
-<Container customSize={480} usePaddingInline>
-    <p>Contenido del contenedor</p>
-</Container>;
+### Ejemplo
 
-/* Ejemplo 2: Uso del componente Container sin padding inline */
-<Container usePaddingInline={false}>
-    <p>Otro contenido del contenedor</p>
-</Container>;
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-container--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente Container, se puede hacer desde fenextjs
+
+```tsx copy
+import { Container } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| customSize | number | no | undefined | Tamaño personalizado del contenedor, calculado como customSize / 16 * rem. |
+| usePaddingInline | boolean | no | true | Determina si se aplica padding en el contenedor. |
+| children | ReactNode | no | undefined | Contenido o elementos que se mostrarán dentro del contenedor. |
+| className | string | no | '' | Clase CSS para personalizar el contenedor. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/component-container--index)
+
+### Usos
+
+- Básico
+
+```tsx copy
+<Container><div>Contenido</div></Container>
+```
+
+- Container con tamaño personalizado
+
+```tsx copy
+<Container customSize={48}><div>Contenido</div></Container>
+```
+
+- Container sin padding
+
+```tsx copy
+<Container usePaddingInline={false}><div>Contenido</div></Container>
+```
+

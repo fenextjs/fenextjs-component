@@ -1,44 +1,68 @@
-#### LayoutGridMenuTopLeft
+# LayoutGridMenuTopLeft
 
-El componente LayoutGridMenuTopLeft es una combinación de los componentes LayoutGridMenuTop y LayoutGridMenuLeft. Este componente permite crear un diseño de cuadrícula con un menú en la parte superior y otro menú a la izquierda, y también puede mostrar un loader mientras se encuentra en el estado de carga.
+Este componente combina el diseño de menú superior y el menú lateral izquierdo, permitiendo una estructura flexible para mostrar contenido, alertas y un indicador de progreso de página.
 
-```tsx
-import {
-    LayoutGridMenuTopLeft,
-    LayoutGridMenuTopLeftProps,
-} from "fenextjs-component/cjs/Layout/Grid/GridMenuTopLeft";
+import { Iframe } from "@/components/Iframe"; 
 
-const menuContentTop = (
-    <>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
-    </>
-);
+### Ejemplo
 
-const menuContentLeft = (
-    <>
-        <ul>
-            <li>Dashboard</li>
-            <li>Profile</li>
-            <li>Settings</li>
-        </ul>
-    </>
-);
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=layout-layoutgridmenutopleft--index&viewMode=story" />
 
-<LayoutGridMenuTopLeft
-    loader={true}
-    menuTop={menuContentTop}
-    menuLeft={menuContentLeft}
-    menuLeftActive={true}
-    menuLeftMovilActive={false}
-    useHeaderButtonMenu={false}
->
-    <div>
-        <h1>Welcome to My Website</h1>
-        <p>This is the content of the website.</p>
-    </div>
-</LayoutGridMenuTopLeft>;
+### Importación
+
+Para importar el componente LayoutGridMenuTopLeft, se puede hacer desde fenextjs
+
+```tsx copy
+import { LayoutGridMenuTopLeft } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| useAlertHook | boolean | no | true | Indica si se debe renderizar el componente de alerta (AlertHook). |
+| alertHookProps | AlertHookProps | no | \{\} | Propiedades para el componente AlertHook. |
+| loader | boolean | no | false | Indica si la página está en estado de carga, mostrando un indicador de carga. |
+| menuTop | ReactNode | no | undefined | Elemento del menú superior dentro del layout. |
+| menuLeft | ReactNode | no | undefined | Elemento del menú lateral izquierdo dentro del layout. |
+| menuLeftActive | boolean | no | true | Indica si el menú lateral izquierdo está activo. |
+| menuLeftMovilActive | boolean | no | false | Indica si el menú lateral izquierdo está activo en dispositivos móviles. |
+| useHeaderButtonMenu | boolean | no | false | Indica si el botón del menú en el header está habilitado. |
+| usePageProgress | boolean | no | true | Indica si se debe mostrar la barra de progreso de la página. |
+| className | string | no | '' | Clase CSS personalizada para el contenedor del layout. |
+| classNameLoader | string | no | '' | Clase CSS personalizada para el indicador de carga. |
+| classNameChildren | string | no | '' | Clase CSS personalizada para el contenido de los hijos. |
+| classNameMenuTop | string | no | '' | Clase CSS personalizada para el menú superior. |
+| classNameMenuLeft | string | no | '' | Clase CSS personalizada para el menú lateral izquierdo. |
+| classNameMenuLeftContent | string | no | '' | Clase CSS personalizada para el contenido del menú lateral izquierdo. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/layout-layoutgridmenutopleft--index)
+
+### Usos
+
+- Básico
+
+```tsx copy
+<LayoutGridMenuTopLeft />
+```
+
+- Con menú superior y lateral
+
+```tsx copy
+<LayoutGridMenuTopLeft menuTop={<div>Menú Top</div>} menuLeft={<div>Menú Izquierdo</div>} />
+```
+
+- Con barra de progreso deshabilitada
+
+```tsx copy
+<LayoutGridMenuTopLeft usePageProgress={false} />
+```
+
+- Con alertas personalizadas
+
+```tsx copy
+<LayoutGridMenuTopLeft useAlertHook={true} alertHookProps={{ message: 'Alerta' }} />
+```
+

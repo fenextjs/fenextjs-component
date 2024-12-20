@@ -1,28 +1,73 @@
-#### InputFile
+# InputFile
 
-El componente InputFile es un campo de entrada que permite a los usuarios cargar archivos. Al seleccionar un archivo, se muestra el nombre del archivo y se inicia una función de carga para subir el archivo al servidor. Además, el componente puede mostrar el progreso de carga y manejar errores durante el proceso de carga.
+El componente InputFile permite a los usuarios seleccionar y subir archivos desde su dispositivo. Admite validaciones como tipos de archivo permitidos y tamaño máximo de archivo.
 
-```tsx
-import { InputFile, InputFileProps } from "fenextjs-component/cjs/Input/File";
+import { Iframe } from "@/components/Iframe"; 
 
-const handleFileChange = (file) => {
-    console.log("Selected file:", file);
-};
+### Ejemplo
 
-const handleUploadFile = async (data) => {
-    // Simulando la carga de archivo en el servidor
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    return {
-        fileData: "https://example.com/myfile.pdf",
-        text: "myfile.pdf",
-    };
-};
-<InputFile
-    label="Select a file:"
-    onChange={handleFileChange}
-    onUploadFile={handleUploadFile}
-    accept={[".pdf", ".jpg", ".png"]}
->
-    <span>Click to browse files</span>
-</InputFile>;
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputfile--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente InputFile, se puede hacer desde fenextjs
+
+```tsx copy
+import { InputFile } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| accept | string[] | no | [] | Tipos de archivo permitidos para la entrada. Ejemplo: ['jpg', 'png'] |
+| defaultValue | FileProps | no | \{ fileData: '', text: '' \} | Valor predeterminado del archivo. Usado para establecer un archivo inicial. |
+| onChange | (v: FileProps) =\> void | no | undefined | Función que se ejecuta cuando se selecciona un archivo. |
+| onChangeProgress | (v: number) =\> void | no | undefined | Función que se ejecuta al actualizar el progreso de la carga. |
+| onChangeError | (v: ErrorProps \| undefined) =\> void | no | undefined | Función que se ejecuta cuando hay un error durante la carga. |
+| onUploadFile | (data: InputFileUploadDataProps) =\> Promise\<FileProps\> | no | undefined | Función que se ejecuta para manejar la carga del archivo. |
+| clearAfterUpload | boolean | no | false | Indica si se debe limpiar el input después de una carga éxitosa. |
+| MAX_SIZE_FILE | number | no | 5000000 | Tamaño máximo del archivo en bytes que se puede subir. |
+| parseProgress | (progres: number) =\> any | no | (e) =\> e | Función para analizar el progreso de la carga. |
+| disabled | boolean | no | false | Indica si el input de archivo está deshabilitado. |
+| textMaxSizeFile | string | no | 'File max size' | Texto que se muestra al superar el tamaño máximo permitido. |
+| className | string | no | '' | Clase CSS para el componente principal. |
+| classNameLabel | string | no | '' | Clase CSS para la etiqueta del componente. |
+| classNameContent | string | no | '' | Clase CSS para el contenido del componente. |
+| classNameInput | string | no | '' | Clase CSS para el input de archivo. |
+| classNameError | string | no | '' | Clase CSS para el mensaje de error. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/input-inputfile--index)
+
+### Usos
+
+- Selector de archivos con validación de tipo
+
+```tsx copy
+<InputFile 
+    accept={['jpg', 'png']} 
+    onChange={(file) => console.log(file)} 
+/>
+```
+
+- Selector de archivos con tamaño máximo
+
+```tsx copy
+<InputFile 
+    MAX_SIZE_FILE={2000000} 
+    textMaxSizeFile="El archivo supera el límite de tamaño." 
+    onChange={(file) => console.log(file)} 
+/>
+```
+
+- Selector de archivos deshabilitado
+
+```tsx copy
+<InputFile 
+    disabled={true} 
+    onChange={(file) => console.log(file)}
+/>
+```
+

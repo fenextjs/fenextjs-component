@@ -1,31 +1,51 @@
-#### NotificationPop
+# NotificationPop
 
-El componente NotificationPop es un componente que muestra una notificación emergente en la parte superior o inferior de la pantalla. Este componente utiliza el hook useNotification para obtener y controlar el estado de las notificaciones.
+El componente NotificationPop muestra mensajes de notificación flotantes que desaparecen automáticamente después de un tiempo especificado. Puede posicionarse en la parte superior o inferior de la pantalla.
 
-```tsx
-import {
-    NotificationPop,
-    NotificationPopProps,
-} from "fenextjs-component/cjs/Notification/Pop";
-import {
-    useNotification,
-    useNotificationProps,
-} from "fenextjs-hook/cjs/useNotification";
-import { RequestResultTypeProps } from "fenextjs-interface/cjs/Request";
-const { pop } = useNotification({ time });
+import { Iframe } from "@/components/Iframe"; 
 
-const handleShowNotification = () => {
-    pop({
-        message: "message",
-        type: RequestResultTypeProps.OK,
-    });
-};
-<button onClick={handleShowNotification}>Mostrar Notificación</button>;
+### Ejemplo
 
-<NotificationPop
-    typePop="top"
-    time={5000}
-    classNamePop="custom-notification-pop"
-    className="custom-notification"
-/>;
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=notification-notificationpop--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente NotificationPop, se puede hacer desde fenextjs
+
+```tsx copy
+import { NotificationPop } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| classNamePop | string | no | '' | Clase CSS para el contenedor del pop de notificación. |
+| className | string | no | '' | Clase CSS adicional para el componente. |
+| typePop | 'top' \| 'down' | no | 'down' | Posición de la notificación en la pantalla. |
+| time | number | no | 2000 | Duración en milisegundos antes de que la notificación desaparezca automáticamente. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/notification-notificationpop--index)
+
+### Usos
+
+- Notificación Pop básica
+
+```tsx copy
+<NotificationPop>Mensaje de notificación</NotificationPop>
+```
+
+- Notificación Pop en la parte superior
+
+```tsx copy
+<NotificationPop typePop="top">Notificación en la parte superior</NotificationPop>
+```
+
+- Notificación Pop con duración personalizada
+
+```tsx copy
+<NotificationPop time={3000}>Mensaje que dura 3 segundos</NotificationPop>
+```
+

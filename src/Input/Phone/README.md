@@ -1,12 +1,63 @@
-#### InputPhone
+# InputPhone
 
-El componente InputPhone es un campo de entrada que combina un código de país selecto y un número de teléfono.
+El componente InputPhone permite ingresar y validar números de teléfono, incluyendo un campo de selección de código de país y el número de teléfono propiamente dicho.
 
-```tsx
-import {
-    InputPhone,
-    InputPhoneProps,
-} from "fenextjs-component/cjs/Input/Phone";
+import { Iframe } from "@/components/Iframe"; 
 
-<InputPhone label="Phone Number" />;
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputphone--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente InputPhone, se puede hacer desde fenextjs
+
+```tsx copy
+import { InputPhone } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| classNameSelectCode | InputSelectClassProps | no | undefined | Clase CSS para personalizar el contenedor del campo de selección del código de país. |
+| classNameInputNumber | InputTextClassProps | no | undefined | Clase CSS para personalizar el contenedor del campo de número de teléfono. |
+| classNamePhone | string | no | '' | Clase CSS para personalizar el contenedor principal del componente InputPhone. |
+| classNamePhoneCode | string | no | '' | Clase CSS para personalizar el contenedor del código de país. |
+| classNamePhoneLabel | string | no | '' | Clase CSS para personalizar el label del componente InputPhone. |
+| classNamePhoneNumber | string | no | '' | Clase CSS para personalizar el contenedor del número de teléfono. |
+| classNameError | string | no | '' | Clase CSS para personalizar el contenedor del mensaje de error. |
+| disabledSelectCode | boolean | no | false | Deshabilita la selección del código de país. |
+| placeholderCode | string | no | '+57' | Placeholder para el campo del código de país. |
+| placeholder | string | no | 'xxx-xx-xx-xxxx' | Placeholder para el campo del número de teléfono. |
+| defaultCode | string | no | '+57' | Código de país por defecto. |
+| defaultValue | Partial\<PhoneProps\> | no | undefined | Valor por defecto para el número de teléfono. |
+| value | Partial\<PhoneProps\> | no | undefined | Valor controlado del número de teléfono. |
+| onChange | function | no | undefined | Función que se ejecuta al cambiar el valor del número de teléfono. |
+| validator | FenextjsValidatorClass\<PhoneProps\> | no | undefined | Validador personalizado para el número de teléfono. |
+| parseCountrys | (data: CountryProps[]) =\> CountryProps[] | no | undefined | Function para mapear, ordenar, filtrar, etc, los países del selector de codigo de telefono. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/input-inputphone--index)
+
+### Usos
+
+- Básico
+
+```tsx copy
+<InputPhone />
+```
+
+- Con valor por defecto
+
+```tsx copy
+<InputPhone defaultValue={{ code: '+57', number: '1234567890' }} />
+```
+
+- Con validación personalizada
+
+```tsx copy
+<InputPhone validator={myPhoneValidator} />
+```
+

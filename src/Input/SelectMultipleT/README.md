@@ -1,21 +1,69 @@
-#### InputSelectMultiple
+# InputSelectMultipleT
 
-El componente InputSelectMultiple es un componente de entrada que permite al usuario seleccionar múltiples opciones de una lista desplegable. El componente muestra las opciones disponibles en un campo de entrada tipo "select" y permite agregar o eliminar opciones seleccionadas en una lista debajo del campo de entrada.
+El componente `InputSelectMultipleT` es una variante de `InputSelectMultiple` que permite seleccionar múltiples opciones de un tipo genérico `T`. Incluye la funcionalidad de conversión personalizada para manejar los datos y su representación en el select.
 
-```tsx
-import {
-    InputSelectMultiple,
-    InputSelectMultipleProps,
-} from "fenextjs-component/cjs/Input/SelectMultiple";
-const handleSelectMultipleChange = (selectedOptions) => {
-    console.log("Selected Options:", selectedOptions);
-};
+import { Iframe } from "@/components/Iframe"; 
+
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectmultiplet--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente InputSelectMultipleT, se puede hacer desde fenextjs
+
+```tsx copy
+import { InputSelectMultipleT } from "fenextjs";
+```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| defaultValue | T[] | no |  | Valores por defecto seleccionados en el select. |
+| value | T[] | no |  | Valores actualmente seleccionados. |
+| options | T[] | sí |  | Lista de opciones disponibles para seleccionar. |
+| onChange | (v?: T[]) =\> void | no |  | Función que se ejecuta cuando cambian los valores seleccionados. |
+| onParse | (v?: T) =\> InputSelectItemOptionBaseProps\<T\> | sí |  | Función utilizada para convertir cada valor del tipo `T` en una opción seleccionable para el componente `InputSelectMultiple`. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/input-inputselectmultiplet--index)
+
+### Usos
+
+- Uso básico de InputSelectMultipleT
+
+```tsx copy
 
 const options = [
-    { id: 1, text: "Option 1" },
-    { id: 2, text: "Option 2" },
-    { id: 3, text: "Option 3" },
-    // ... Add more options as needed
+    { id: 1, name: "Option 1" },
+    { id: 2, name: "Option 2" },
+    { id: 3, name: "Option 3" },
 ];
-<InputSelectMultiple options={options} onChange={handleSelectMultipleChange} />;
+
+<InputSelectMultipleT
+    options={options}
+    onParse={(option) => ({ label: option.name, value: option.id })}
+    onChange={(selected) => console.log(selected)}
+/>
 ```
+
+- InputSelectMultipleT con valores por defecto
+
+```tsx copy
+
+const options = [
+    { id: 1, name: "Option 1" },
+    { id: 2, name: "Option 2" },
+    { id: 3, name: "Option 3" },
+];
+
+<InputSelectMultipleT
+    defaultValue={[options[0], options[1]]}
+    options={options}
+    onParse={(option) => ({ label: option.name, value: option.id })}
+    onChange={(selected) => console.log(selected)}
+/>
+```
+

@@ -1,27 +1,63 @@
-#### InputSwich
+# InputSwich
 
-El componente InputSwich es un componente que representa un interruptor o switch de selección. Permite al usuario cambiar entre dos estados (encendido/apagado) mediante una animación de deslizamiento.
+El componente InputSwich permite crear un interruptor (switch) interactivo que los usuarios pueden alternar entre los estados activo e inactivo. Es altamente personalizable en términos de apariencia y comportamiento.
 
-```tsx
-import {
-    InputSwich,
-    InputSwichProps,
-} from "fenextjs-component/cjs/Input/Swich";
-const handleChange = (isChecked) => {
-    console.log("Switch is checked:", isChecked);
-};
+import { Iframe } from "@/components/Iframe"; 
 
-const handleValidateCheck = async () => {
-    // Simulación de una operación de validación asincrónica
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log("Switch is being validated...");
-};
+### Ejemplo
 
-<InputSwich onChange={handleChange} defaultValue={false} />;
-<InputSwich onChange={handleChange} defaultValue={true} disabled />;
-<InputSwich
-    onChange={handleChange}
-    defaultValue={false}
-    onValidateCheck={handleValidateCheck}
-/>;
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputswich--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente InputSwich, se puede hacer desde fenextjs
+
+```tsx copy
+import { InputSwich } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| className | string | no | '' | Clase CSS para personalizar el contenedor del interruptor. |
+| classNameCicle | string | no | '' | Clase CSS para personalizar el círculo dentro del interruptor. |
+| classNameInactive | string | no | '' | Clase CSS para el estado inactivo del interruptor. |
+| classNameActive | string | no | '' | Clase CSS para el estado activo del interruptor. |
+| name | string | no | '' | Nombre del interruptor que se usará como atributo del input. |
+| onChange | (e: boolean) =\> void | no | undefined | Función que se ejecuta cuando el estado del interruptor cambia. Recibe un valor booleano que indica si está activado o desactivado. |
+| defaultValue | boolean | no | false | Valor inicial del interruptor cuando se renderiza por primera vez. |
+| value | boolean | no | undefined | Valor actual del interruptor, puede ser controlado externamente. |
+| disabled | boolean | no | false | Indica si el interruptor está deshabilitado. |
+| onValidateCheck | (data: boolean) =\> Promise\<void \| boolean\> \| void \| boolean | no | async () =\> \{\} | Función para validar el estado del interruptor cuando se cambia. Puede devolver una promesa para manejar validaciones asíncronas. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/input-inputswich--index)
+
+### Usos
+
+- InputSwich básico
+
+```tsx copy
+<InputSwich />
+```
+
+- InputSwich con valor controlado
+
+```tsx copy
+<InputSwich value={true} onChange={(val) => console.log(val)} />
+```
+
+- InputSwich deshabilitado
+
+```tsx copy
+<InputSwich disabled={true} />
+```
+
+- InputSwich con validación
+
+```tsx copy
+<InputSwich onValidateCheck={async (val) => { return val; }} />
+```
+

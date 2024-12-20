@@ -1,9 +1,42 @@
-#### Loader
+# Loader
 
-El componente Loader que proporcionaste es bastante sencillo y parece ser una representación básica de un elemento cargador. A continuación, te muestro cómo podrías utilizar este componente junto con otros componentes existentes para construir una página simple que muestre un mensaje y un cargador:
+El componente Loader se utiliza para mostrar un indicador de carga. Se puede personalizar utilizando una clase CSS específica para adaptar su estilo.
 
-```tsx
-import { Loader, LoaderProps } from "fenextjs-component/cjs/Loader/Current";
+import { Iframe } from "@/components/Iframe"; 
 
-<Loader classNameLoader="custom-loader" />;
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=loader-loader--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente Loader, se puede hacer desde fenextjs
+
+```tsx copy
+import { Loader } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| classNameLoader | string | no | '' | Clase CSS para personalizar el estilo del indicador de carga. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/loader-loader--index)
+
+### Usos
+
+- Loader básico
+
+```tsx copy
+<Loader />
+```
+
+- Loader con clase personalizada
+
+```tsx copy
+<Loader classNameLoader="custom-loader" />
+```
+

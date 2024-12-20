@@ -1,19 +1,71 @@
-#### InputCalendar
+# InputCalendar
 
-El componente InputCalendar es un campo de entrada que permite al usuario seleccionar una fecha o hora. Es compatible con varios tipos de fechas, como "Calendar", "month", "week" y "time".
+El componente InputCalendar permite seleccionar fechas o rangos de fechas a través de un calendario desplegable. Se puede configurar para mostrar múltiples meses y admite validaciones.
 
-```tsx
-import {
-    InputCalendar,
-    InputCalendarProps,
-} from "fenextjs-component/cjs/Input/Calendar";
+import { Iframe } from "@/components/Iframe"; 
 
-const handleCalendarChange = (Calendar) => {
-    console.log("Selected Calendar:", Calendar);
-};
-<InputCalendar
-    type="Calendar"
-    label="Select a Calendar:"
-    onChange={handleCalendarChange}
-/>;
+### Ejemplo
+
+<Iframe minHeightIframe="60vh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputcalendar--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente InputCalendar, se puede hacer desde fenextjs
+
+```tsx copy
+import { InputCalendar } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| nMonthShow | number | no | 1 | Cantidad de meses que se mostrarán simultáneamente en el calendario. |
+| icon | ReactNode | no | \<SvgDate /\> | Icono que se mostrará en el campo de entrada del calendario. |
+| type | 'normal' \| 'range' | no | 'normal' | Define si el calendario es para una selección única ('normal') o un rango de fechas ('range'). |
+| defaultValue | Date | no |  | La fecha predeterminada seleccionada para el modo 'normal'. |
+| value | Date | no |  | La fecha seleccionada actualmente en el modo 'normal'. |
+| defaultValueRange | Date[] | no |  | El rango de fechas predeterminado para el modo 'range'. |
+| valueRange | Date[] | no |  | El rango de fechas seleccionado actualmente en el modo 'range'. |
+| onChange | (d: Date \| undefined) =\> void | no |  | Función que se ejecuta cuando se selecciona una fecha en el modo 'normal'. |
+| onChangeRange | (d: Date[]) =\> void | no |  | Función que se ejecuta cuando se selecciona un rango de fechas en el modo 'range'. |
+| validator | any | no |  | Validador personalizado que permite agregar reglas para validar las fechas seleccionadas. |
+| errorWithIsChange | boolean | no | true | Indica si los errores de validación deben mostrarse al cambiar la fecha. |
+| min | Date | no |  | Fecha mínima seleccionable. |
+| max | Date | no |  | Fecha máxima seleccionable. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/input-inputcalendar--index)
+
+### Usos
+
+- Calendario básico
+
+```tsx copy
+<InputCalendar 
+    defaultValue={new Date()} 
+    onChange={(date) => console.log(date)} 
+/>
+```
+
+- Calendario con selección de rango
+
+```tsx copy
+<InputCalendar 
+    type="range" 
+    defaultValueRange={[new Date(), new Date()]} 
+    onChangeRange={(range) => console.log(range)} 
+/>
+```
+
+- Calendario mostrando múltiples meses
+
+```tsx copy
+<InputCalendar 
+    nMonthShow={3} 
+    defaultValue={new Date()} 
+    onChange={(date) => console.log(date)} 
+/>
+```
+

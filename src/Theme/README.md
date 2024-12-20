@@ -1,14 +1,43 @@
-#### Theme
+# Theme
 
-El componente Theme es un componente que permite cambiar el tema de una aplicación entre opciones predefinidas. Este componente utiliza el hook useLocalStorage para guardar y recuperar la selección del tema en el almacenamiento local del navegador.
+El componente Theme permite gestionar y representar visualmente los temas de la aplicación, utilizando la funcionalidad y componentes proporcionados por `fenextjs-svg` y `fenextjs-hook`.
 
-```tsx
-import { Theme, ThemeProps } from "fenextjs-component/cjs/Theme";
+import { Iframe } from "@/components/Iframe"; 
 
-<Theme
-    listTheme={["light", "dark", "blue"]} // Opciones de temas disponibles
-    defaultTheme="light" // Tema predeterminado
-    className="theme-selector" // Clase CSS adicional para el componente
-    classNameItem="theme-item" // Clase CSS adicional para cada elemento del tema
-/>;
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=theme-theme--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente Theme, se puede hacer desde fenextjs
+
+```tsx copy
+import { Theme } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| className | string | no | '' | Clase CSS para personalizar el contenedor del componente. |
+| classNameItem | string | no | '' | Clase CSS para los elementos dentro del componente. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/theme-theme--index)
+
+### Usos
+
+- Básico
+
+```tsx copy
+<Theme />
+```
+
+- Con clases personalizadas
+
+```tsx copy
+<Theme className="custom-theme" classNameItem="custom-theme-item" />
+```
+

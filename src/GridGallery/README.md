@@ -1,24 +1,56 @@
-#### GridGallery
+# GridGallery
 
-El componente GridGallery es una galería de elementos dispuestos en una cuadrícula. Toma una lista de elementos de tipo ReactNode y los muestra en una cuadrícula con un estilo personalizado.
+El componente GridGallery permite mostrar una galería de elementos en un formato de cuadrícula, con soporte para clases personalizadas en los contenedores y los elementos.
 
-```tsx
-import {
-    GridGallery,
-    GridGalleryProps,
-} from "fenextjs-component/cjs/GridGallery";
+import { Iframe } from "@/components/Iframe"; 
 
-// Lista de elementos para mostrar en la galería
-const galleryItems = [
-    <img src="imagen1.jpg" alt="Imagen 1" />,
-    <img src="imagen2.jpg" alt="Imagen 2" />,
-    <img src="imagen3.jpg" alt="Imagen 3" />,
-    // Agrega más elementos aquí...
-];
+### Ejemplo
 
-<GridGallery
-    items={galleryItems}
-    className="my-gallery"
-    classNameItem="gallery-item"
-/>;
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=gridgallery-gridgallery--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente GridGallery, se puede hacer desde fenextjs
+
+```tsx copy
+import { GridGallery } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| items | ReactNode[] | sí |  | Lista de elementos que se mostrarán dentro de la galería. |
+| className | string | no | '' | Clase CSS para personalizar el contenedor principal de la galería. |
+| classNameItem | string | no | '' | Clase CSS para personalizar cada uno de los elementos de la galería. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/gridgallery-gridgallery--index)
+
+### Usos
+
+- Uso básico
+
+```tsx copy
+<GridGallery
+    items={[
+        <div>Item 1</div>,
+        <div>Item 2</div>
+    ]} 
+/>
+```
+
+- Galería con clases personalizadas
+
+```tsx copy
+<GridGallery 
+    className="mi-galeria" 
+    classNameItem="mi-item" 
+    items={[
+        <div>Item 1</div>, 
+        <div>Item 2</div>
+    ]} 
+/>
+```
+

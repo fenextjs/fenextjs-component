@@ -1,24 +1,92 @@
-#### DropDown
+# DropDown
 
-El componente DropDown es un componente que muestra un contenido colapsable que se despliega hacia arriba o hacia abajo según el espacio disponible en el contenedor padre. Es útil para crear menús desplegables o listas que deben ajustarse automáticamente según el espacio disponible.
+El componente DropDown es un desplegable interactivo que permite mostrar u ocultar contenido adicional mediante interacciones como clics o estados activos.
 
-```tsx
-import { DropDown, DropDownProps } from "fenextjs-component/cjs/DropDown";
+import { Iframe } from "@/components/Iframe"; 
 
-/* Ejemplo 1: DropDown hacia abajo */
-<DropDown header="Menu">
-    <ul>
-        <li>Option 1</li>
-        <li>Option 2</li>
-        <li>Option 3</li>
-    </ul>
-</DropDown>;
+### Ejemplo
 
-/* Ejemplo 2: DropDown hacia arriba */
-<DropDown header="Profile" show="focus">
-    <div>
-        <p>Username: john_doe</p>
-        <button>Logout</button>
-    </div>
-</DropDown>;
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=dropdown-dropdown--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente DropDown, se puede hacer desde fenextjs
+
+```tsx copy
+import { DropDown } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| className | string | no | '' | Clase CSS personalizada para el contenedor principal del componente DropDown. |
+| loader | boolean | no | false | Indica si el componente está en estado de carga, mostrando un indicador de 'Loader'. |
+| disabled | boolean | no | false | Determina si el componente DropDown está deshabilitado. |
+| defaultActive | boolean | no | false | Establece si el DropDown está activo de forma predeterminada al renderizarse. |
+| active | boolean | no | undefined | Controla de manera explícita si el DropDown está activo o inactivo. |
+| name | string | no | undefined | Nombre asignado al DropDown, utilizado para manejar eventos de interacción. |
+| header | ReactNode | sí | undefined | Elemento que se muestra como cabecera del DropDown. |
+| onChange | (value: boolean) =\> void | no | undefined | Función ejecutada al cambiar el estado activo del DropDown. |
+| iconArrow | ReactNode | no | \<SvgArrow /\> | Icono utilizado como indicador de colapso/expansión del DropDown. |
+| children | ReactNode | no | undefined | Contenido adicional mostrado dentro del cuerpo del DropDown. |
+| rotateIcon | boolean | no | true | Indica si el icono debe rotar al cambiar el estado activo. |
+| type | 'checked' \| 'focus' | no | 'focus' | Define el tipo de interacción que activa el DropDown. |
+
+### Interacciones
+
+El comportamiento del DropDown está configurado por las propiedades `type` y `onChange`, permitiendo manejar eventos personalizados y estilos dinámicos.
+
+
+### __NOTA__
+
+Para que el tipo `focus` funcione correctamente, es necesario que el evento global de clic esté vinculado al componente, asegurándose de que las interacciones externas cierren el DropDown automáticamente.
+
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/dropdown-dropdown--index)
+
+### Usos
+
+- Básico
+
+```tsx copy
+<DropDown header={<span>Menú</span>}>Contenido</DropDown>
+```
+
+- DropDown con estado activo por defecto
+
+```tsx copy
+<DropDown defaultActive={true} header={<span>Activo</span>}>Contenido Activo</DropDown>
+```
+
+- DropDown deshabilitado
+
+```tsx copy
+<DropDown disabled={true} header={<span>Deshabilitado</span>} />
+```
+
+- DropDown con icono personalizado
+
+```tsx copy
+<DropDown iconArrow={<CustomIcon />} header={<span>Personalizado</span>}>Contenido</DropDown>
+```
+
+- DropDown usando useActionDropDown
+
+```tsx copy
+const { onActive, onClose, onToogle } = useActionDropDown({ name:"NAME_DROPDOWN" })
+
+<Button onClick={onToogle}>onToogle</Button>
+<Button onClick={onActive}>onActive</Button>
+<Button onClick={onClose}>onClose</Button>
+
+<DropDown 
+    name="NAME_DROPDOWN"  
+    header={<span>Personalizado</span>}
+>
+        Contenido
+</DropDown>
+```
+

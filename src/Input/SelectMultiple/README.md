@@ -1,21 +1,64 @@
-#### InputSelectMultiple
+# InputSelectMultiple
 
-El componente InputSelectMultiple es un componente de entrada que permite al usuario seleccionar múltiples opciones de una lista desplegable. El componente muestra las opciones disponibles en un campo de entrada tipo "select" y permite agregar o eliminar opciones seleccionadas en una lista debajo del campo de entrada.
+El componente InputSelectMultiple permite seleccionar múltiples opciones de una lista de elementos. Ofrece funcionalidades avanzadas como validación personalizada, eliminación de opciones seleccionadas y selección de estilo de visualización.
 
-```tsx
-import {
-    InputSelectMultiple,
-    InputSelectMultipleProps,
-} from "fenextjs-component/cjs/Input/SelectMultiple";
-const handleSelectMultipleChange = (selectedOptions) => {
-    console.log("Selected Options:", selectedOptions);
-};
+import { Iframe } from "@/components/Iframe"; 
 
-const options = [
-    { id: 1, text: "Option 1" },
-    { id: 2, text: "Option 2" },
-    { id: 3, text: "Option 3" },
-    // ... Add more options as needed
-];
-<InputSelectMultiple options={options} onChange={handleSelectMultipleChange} />;
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectmultiple--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente InputSelectMultiple, se puede hacer desde fenextjs
+
+```tsx copy
+import { InputSelectMultiple } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| classNameSelectMultiple | string | no | "" | Clase CSS personalizada para el componente `select-multiple`. |
+| classNameSelectMultipleList | string | no | "" | Clase CSS personalizada para la lista de opciones. |
+| defaultValue | InputSelectItemOptionBaseProps\<T\>[] | no | [] | Opciones predeterminadas seleccionadas al iniciar el componente. |
+| value | InputSelectItemOptionBaseProps\<T\>[] | no |  | Opciones seleccionadas actualmente. |
+| onChange | (v?: InputSelectItemOptionBaseProps\<T\>[]) =\> void | no |  | Función que se ejecuta cuando el valor seleccionado cambia. |
+| onChangeData | (v?: T[]) =\> void | no |  | Función que se ejecuta cuando los datos seleccionados cambian. |
+| onChangeValidate | (e: InputSelectItemOptionBaseProps\<T\>[]) =\> Promise\<any\> \| any | no |  | Función de validación personalizada que se ejecuta cuando el valor cambia. |
+| iconDelete | ReactNode | no | \<Trash /\> | Icono personalizado para eliminar una opción seleccionada. |
+| typeSelectMultipleStyle | 'normal' \| 'checkbox' | no | 'normal' | Define el estilo del select múltiple. Puede ser `normal` o con casillas de verificación (`checkbox`). |
+| CustomOptionsSelected | typeof InputSelectOption\<T\> | no |  | Componente personalizado para renderizar las opciones seleccionadas. |
+| validatorData | FenextjsValidatorClass\<T[]\> | no |  | Instancia de `FenextjsValidatorClass` para validar los datos seleccionados. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/input-inputselectmultiple--index)
+
+### Usos
+
+- Uso básico de InputSelectMultiple
+
+```tsx copy
+
+<InputSelectMultiple
+    defaultValue={[{ label: "Option 1", value: 1 }, { label: "Option 2", value: 2 }]}
+    onChange={(selected) => console.log(selected)}
+/>
+```
+
+- InputSelectMultiple con validación personalizada
+
+```tsx copy
+
+<InputSelectMultiple
+    onChangeValidate={async (selected) => {
+        if (selected.length > 5) {
+            throw new Error("No puedes seleccionar más de 5 opciones.");
+        }
+    }}
+    onChangeData={(data) => console.log("Datos seleccionados:", data)}
+/>
+```
+

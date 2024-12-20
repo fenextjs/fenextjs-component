@@ -1,24 +1,50 @@
-#### Notification
+# Notification
 
-El componente Notification es un componente que muestra un mensaje de notificación en la pantalla.
-El componente Notification utiliza la propiedad type para aplicar una clase CSS específica relacionada con el tipo de notificación seleccionado. Por ejemplo, si el tipo de notificación es "SUCCESS", se aplicará la clase CSS "fenext-notification-success" al componente, lo que cambiará el estilo de la notificación para que se muestre como una notificación de éxito.
+El componente Notification permite mostrar mensajes de notificación personalizados, con distintos tipos de resultados y estilos para cada tipo.
 
-```tsx
-import {
-    Notification,
-    NotificationProps,
-} from "fenextjs-component/cjs/Notification/Fixed";
+import { Iframe } from "@/components/Iframe"; 
 
-<Notification type="SUCCESS" className="custom-notification">
-    ¡Operación exitosa! El artículo se ha guardado correctamente.
-</Notification>;
-<Notification type="ERROR" className="custom-notification">
-    ¡Error! No se pudo completar la operación.
-</Notification>;
-<Notification type="WARNING" className="custom-notification">
-    Advertencia: Esta acción es irreversible.
-</Notification>;
-<Notification type="NORMAL" className="custom-notification">
-    Hola, esta es una notificación normal.
-</Notification>;
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=notification-notification--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente Notification, se puede hacer desde fenextjs
+
+```tsx copy
+import { Notification } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| className | string | no | '' | Clase CSS para el contenedor del componente. |
+| type | RequestResultTypeProps \| keyof typeof RequestResultTypeProps | no | RequestResultTypeProps.NORMAL | Tipo de notificación, que define el estilo y el propósito del mensaje. |
+| children | ReactNode | no | undefined | Contenido o mensaje que se mostrará dentro de la notificación. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/notification-notification--index)
+
+### Usos
+
+- Notificación básica
+
+```tsx copy
+<Notification>Mensaje de notificación</Notification>
+```
+
+- Notificación de éxito
+
+```tsx copy
+<Notification type="SUCCESS">Operación éxitosa</Notification>
+```
+
+- Notificación de error
+
+```tsx copy
+<Notification type="ERROR">Error en la operación</Notification>
+```
+

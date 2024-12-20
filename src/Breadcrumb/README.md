@@ -1,37 +1,39 @@
 # Breadcrumb
 
-El componente Breadcrumb es una representación visual de una lista de enlaces que proporcionan una navegación jerárquica en una aplicación web. Cada enlace en la lista se muestra con una etiqueta "a" que permite redirigir al usuario a la URL especificada.
+El componente Breadcrumb muestra una serie de enlaces que indican la ruta de navegación actual del usuario. Es útil para mejorar la experiencia del usuario al mostrarle el contexto de navegación.
 
-### Importacion
+import { Iframe } from "@/components/Iframe"; 
 
-Para importar el componente Breadcrumb, se puede hacer desde fenextjs o fenextjs-component
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=breadcrumb-breadcrumb--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente Breadcrumb, se puede hacer desde fenextjs
 
 ```tsx copy
-import { Breadcrumb, BreadcrumbProps } from "fenextjs/cjs/component/Breadcrumb";
+import { Breadcrumb } from "fenextjs";
 ```
 
-o
+### Parámetros
 
-```tsx copy
-import { Breadcrumb, BreadcrumbProps } from "fenextjs-component/cjs/Breadcrumb";
-```
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| links | BreadcrumbLinkProps[] | sí |  | Una lista de objetos que representan los enlaces del breadcrumb. Cada objeto incluye la URL, el contenido y opcionalmente un manejador de eventos onClick. |
+| className | string | no | "" | Clase personalizada para el componente Breadcrumb. |
+| classNameItem | string | no | "" | Clase personalizada para los elementos individuales del breadcrumb. |
+| classNameLink | string | no | "" | Clase personalizada para los enlaces dentro del breadcrumb. |
 
-### Parametros
+### Propiedades de BreadcrumbLink
 
-| Parametro     |                                 Tipo                                  | Requerido | Default | Descripcion                        |
-| ------------- | :-------------------------------------------------------------------: | :-------: | :-----: | :--------------------------------- |
-| links         | [BreadcrumbLinkProps[]](#parametros-de-los-links-breadcrumblinkprops) |    si     |         | Lista de links para el componente  |
-| className     |                                string                                 |    no     |   ""    | Clase personalizada del componente |
-| classNameItem |                                string                                 |    no     |   ""    | Clase personalizada de los items   |
-| classNameLink |                                string                                 |    no     |   ""    | Clase personalizada de los links   |
+Cada enlace en el breadcrumb se define mediante las siguientes propiedades:
 
-### Parametros de los links (BreadcrumbLinkProps)
-
-| Parametro |   Tipo    | Requerido | Default | Descripcion                                          |
-| --------- | :-------: | :-------: | :-----: | :--------------------------------------------------- |
-| href      |  string   |    si     |         | Url del link                                         |
-| children  | ReactNode |    si     |         | Contenido del link                                   |
-| onClick   | function  |    no     |         | Funcion que se ejecuta en el evento onClick del link |
+| Propiedad | Tipo | Descripción |
+| --- | --- | --- |
+| href | string | La URL a la que se redirigirá cuando se haga click en el enlace. |
+| children | ReactNode | El contenido que se mostrará dentro del enlace. |
+| onClick | function | Función que se ejecutará cuando se haga click en el enlace (opcional). |
 
 ### Storybook
 
@@ -39,53 +41,29 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Uso básico del componente Breadcrumb
+- Breadcrumb básico
 
 ```tsx copy
-const breadcrumbLinks = [
-    { href: "/", children: "Home" },
-    { href: "/products", children: "Products" },
-    { href: "/products/category", children: "Category" },
-];
-<Breadcrumb links={breadcrumbLinks} />;
-```
-
--   Breadcrumb con clase de estilo personalizada
-
-```tsx copy
-const breadcrumbLinks = [
-    { href: "/", children: "Home" },
-    { href: "/products", children: "Products" },
-    { href: "/products/category", children: "Category" },
-];
-<Breadcrumb
-    links={breadcrumbLinks}
-    className="custom-breadcrumb"
-    classNameItem="custom-breadcrumb-item"
-    classNameLink="custom-breadcrumb-link"
-/>;
-```
-
--   Breadcrumb con evento de clic personalizado
-
-```tsx copy
-const breadcrumbLinks = [
-    { href: "/", children: "Home" },
-    { href: "/products", children: "Products" },
-    { href: "/products/category", children: "Category" },
-];
-const handleLinkClick = () => {
-    console.log("Breadcrumb link clicked!");
-};
-<Breadcrumb
+<Breadcrumb 
     links={[
-        { href: "/", children: "Home" },
-        {
-            href: "/products",
-            children: "Products",
-            onClick: handleLinkClick,
-        },
-        { href: "/products/category", children: "Category" },
+        { href: "/home", children: "Home" }, 
+        { href: "/about", children: "About" }
     ]}
-/>;
+/>
 ```
+
+- Breadcrumb con clases personalizadas
+
+```tsx copy
+<Breadcrumb 
+    className="custom-breadcrumb" 
+    classNameItem="custom-item" 
+    classNameLink="custom-link" 
+    links={[
+        { href: "/home", children: "Home" }, 
+        { href: "/services", children: "Services" }, 
+        { href: "/contact", children: "Contact" }
+    ]}
+/>
+```
+

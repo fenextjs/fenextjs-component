@@ -1,33 +1,57 @@
-#### MediaInput
+# MediaInput
 
-El componente MediaInput es una herramienta para seleccionar y cargar imágenes. Puede manejar tanto una sola imagen como múltiples imágenes. Proporciona una interfaz de usuario para cargar y previsualizar imágenes, y también se integra con Modal y MediaPage para una experiencia de usuario más completa.
+El componente MediaInput permite a los usuarios seleccionar o cargar imágenes a través de una interfaz que incluye botones y galerías de imágenes. Admite múltiples selecciones y permite personalización a través de varios props, como títulos, iconos y comportamiento del modal.
 
-```tsx
-import {
-    MediaInput,
-    MediaInputProps,
-} from "fenextjs-component/cjs/Media/Input";
+import { Iframe } from "@/components/Iframe"; 
 
-<MediaInput
-    titleView="Seleccionar Imagen"
-    textView="Haga clic para seleccionar o cargar una imagen."
-    defaultValue={[
-        { src: "url_de_la_imagen_1", name: "imagen_1.jpg" },
-        { src: "url_de_la_imagen_2", name: "imagen_2.jpg" },
-    ]}
-    multiple={true}
-    onChange={handleImageChange}
-    ButtonUploadProps={{
-        children: "Cargar Imagen",
-        full: true,
-    }}
-    MediaPageProps={{
-        title: "Galería de Imágenes",
-        description: "Seleccione las imágenes para su galería.",
-        images: [
-            { src: "url_de_la_imagen_1", name: "imagen_1.jpg" },
-            { src: "url_de_la_imagen_2", name: "imagen_2.jpg" },
-        ],
-    }}
-/>;
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=media-input--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente MediaInput, se puede hacer desde fenextjs
+
+```tsx copy
+import { MediaInput } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| className | string | no | '' | Clase CSS para personalizar el contenedor del componente MediaInput. |
+| titleView | string | no | 'Upload Image' | Título que se muestra en la vista de carga de imágenes. |
+| textView | string | no | 'Click for select or upload Image.' | Texto que se muestra en la vista de carga de imágenes. |
+| iconView | ReactNode | no | undefined | Icono que se muestra junto al título y texto de la vista de carga. |
+| defaultValue | ImgDataProps[] \| ImgDataProps | no | undefined | Valor por defecto del componente, que puede ser una o varias imágenes. |
+| multiple | boolean | no | false | Define si se pueden seleccionar múltiples imágenes. |
+| onChange | (data: ImgDataProps[] \| ImgDataProps \| undefined) =\> void | no | undefined | Función que se ejecuta cuando cambian los datos seleccionados o cargados. |
+| ButtonUploadProps | Omit\<ButtonProps, 'onClick'\> | no | \{ children: 'Upload Image', full: true \} | Propiedades del botón de subida de imágenes. |
+| MediaPageProps | Omit\<MediaPageProps, 'onChange' \| 'multiple' \| 'defaultValue'\> | no | \{\} | Propiedades adicionales para la galería de medios. |
+| ModalProps | Pick\<ModalBaseBaseProps, 'type'\> | no | \{ type: 'full' \} | Propiedades del modal que contiene la galería de imágenes. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/media-input--index)
+
+### Usos
+
+- MediaInput básico
+
+```tsx copy
+<MediaInput />
+```
+
+- MediaInput con múltiples imágenes
+
+```tsx copy
+<MediaInput multiple={true} />
+```
+
+- MediaInput con valores predeterminados
+
+```tsx copy
+<MediaInput defaultValue={defaultImages} />
+```
+

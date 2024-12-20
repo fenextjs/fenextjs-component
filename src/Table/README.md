@@ -1,46 +1,72 @@
-#### Table
+# Table
 
-El componente Table es una tabla que muestra una lista de datos en forma de filas y columnas. Puedes configurar el encabezado de la tabla, la paginación, y otras opciones a través de sus propiedades.
+El componente Table permite mostrar una tabla de datos con funcionalidades avanzadas como paginación, selección de elementos, ordenación, y más.
 
-```tsx
-import { Table, TableProps } from "fenextjs-component/cjs/Table";
+import { Iframe } from "@/components/Iframe"; 
 
-const data = [
-    { id: 1, name: "John Doe", age: 30, city: "New York" },
-    { id: 2, name: "Jane Smith", age: 25, city: "Los Angeles" },
-    { id: 3, name: "Bob Johnson", age: 40, city: "Chicago" },
-    // ...
-];
+### Ejemplo
 
-const header = [
-    { id: "name", th: "Name" },
-    { id: "age", th: "Age" },
-    { id: "city", th: "City" },
-    // ...
-];
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=table-table--index&viewMode=story" />
 
-const handleOrderBy = (order) => {
-    // Handle ordering logic here
-    console.log("Ordering by:", order);
-};
+### Importación
 
-const handleShowHidden = (showHidden) => {
-    // Handle show/hide logic here
-    console.log("Show/Hide:", showHidden);
-};
+Para importar el componente Table, se puede hacer desde fenextjs
 
-const handleChecked = (selectedItems) => {
-    // Handle selected items logic here
-    console.log("Selected Items:", selectedItems);
-};
-<Table
-    name="usersTable"
-    items={data}
-    header={header}
-    pagination={{ totalPages: 5, currentPage: 1 }}
-    useCheckbox={true}
-    onOrderBy={handleOrderBy}
-    onShowHidden={handleShowHidden}
-    onChecked={handleChecked}
-/>;
+```tsx copy
+import { Table } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| classNameContent | string | no | "" | Clase CSS para el contenedor principal de la tabla. |
+| classNameContentTable | string | no | "" | Clase CSS para el contenedor del elemento de la tabla. |
+| classNameTable | string | no | "" | Clase CSS para el elemento de la tabla. |
+| classNameTHead | string | no | "" | Clase CSS para el encabezado de la tabla. |
+| classNameTBody | string | no | "" | Clase CSS para el cuerpo de la tabla. |
+| classNameThr | string | no | "" | Clase CSS para las filas del encabezado de la tabla. |
+| classNameTr | string | no | "" | Clase CSS para las filas de la tabla. |
+| classNameTh | string | no | "" | Clase CSS para las celdas del encabezado de la tabla. |
+| classNameTd | string | no | "" | Clase CSS para las celdas del cuerpo de la tabla. |
+| classNameContentPagination | string | no | "" | Clase CSS para el contenedor de la paginación. |
+| classNameLoader | string | no | "" | Clase CSS para el elemento del cargador. |
+| name | string | sí |  | Nombre de la tabla. |
+| items | T[] | sí |  | Arreglo de datos a mostrar en la tabla. |
+| header | TableHeader\<T\> | sí |  | Configuración del encabezado de la tabla. |
+| pagination | PaginationProps | no |  | Propiedades opcionales de la paginación de la tabla. |
+| showPagination | boolean | no | true | Indica si se debe mostrar la paginación en la tabla. |
+| loader | boolean | no | false | Muestra un cargador mientras se cargan los datos de la tabla. |
+| typeLoader | "spinner" \| "line" | no | "line" | Tipo de cargador a mostrar. |
+| useCheckbox | boolean | no | true | Si se deben incluir casillas de verificación en la tabla. |
+| onChecked | (items: T[]) =\> void | no |  | Función a ejecutar al seleccionar elementos de la tabla. |
+| onOrderBy | (order: \{ id: keyof T; order: "ASC" \| "DESC" \}) =\> void | no |  | Función a ejecutar para ordenar los datos de la tabla. |
+| onShowHidden | (showHidden: \{ id: keyof T; showHidden: "SHOW" \| "HIDDEN" \}) =\> void | no |  | Función para mostrar u ocultar columnas de la tabla. |
+| notResult | ReactNode | no | \<div\>There is not results\</div\> | Componente a mostrar cuando no hay resultados en la tabla. |
+| actionsCheckbox | Omit\<TableActionCheckboxProps\<T\>, "actionAllCheckbox" \| "data"\> | no |  | Propiedades para las acciones de selección múltiple de la tabla. |
+| actionsCheckboxSelectAll | ReactNode | no | "Select All" | Componente para seleccionar todas las casillas de verificación. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/table-table--index)
+
+### Usos
+
+- Tabla básica con datos
+
+```tsx copy
+<Table name="sampleTable" items={[{ id: 1, name: "Item 1" }, { id: 2, name: "Item 2" }]} header={[{ id: "id", th: "ID" }, { id: "name", th: "Name" }]} />
+```
+
+- Tabla con paginación y selección múltiple
+
+```tsx copy
+<Table name="paginatedTable" items={[{ id: 1, name: "Item A" }, { id: 2, name: "Item B" }]} header={[{ id: "id", th: "ID" }, { id: "name", th: "Name" }]} pagination={{ current: 1, total: 10 }} useCheckbox={true} />
+```
+
+- Tabla con ordenación y cargador
+
+```tsx copy
+<Table name="sortableTable" items={[{ id: 1, name: "Alpha" }, { id: 2, name: "Beta" }]} header={[{ id: "id", th: "ID", parse: (item) => `#${item}` }, { id: "name", th: "Name" }]} loader={true} typeLoader="spinner" />
+```
+

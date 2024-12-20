@@ -1,32 +1,60 @@
-#### LayoutGridMenuLeft
+# LayoutGridMenuLeft
 
-El componente LayoutGridMenuLeft es un diseño de cuadrícula con un menú izquierdo que puede estar activo o inactivo, y puede cambiar entre estados activos o inactivos en dispositivos móviles. También puede mostrar un loader (cargador) mientras se encuentra en el estado de carga.
+El componente LayoutGridMenuLeft organiza el contenido en un diseño de cuadrícula, con un menú a la izquierda que puede mostrarse u ocultarse. Además, admite alertas, carga de página y otros elementos opcionales.
 
-```tsx
-import {
-    LayoutGridMenuLeft,
-    LayoutGridMenuLeftProps,
-} from "fenextjs-component/cjs/Layout/Grid/GridMenuLeft";
+import { Iframe } from "@/components/Iframe"; 
 
-const menuContent = (
-    <>
-        <ul>
-            <li>Option 1</li>
-            <li>Option 2</li>
-            <li>Option 3</li>
-        </ul>
-    </>
-);
-<LayoutGridMenuLeft
-    loader={true}
-    menuLeft={menuContent}
-    menuLeftActive={true}
-    menuLeftMovilActive={false}
-    useHeaderButtonMenu={true}
->
-    <div>
-        <h1>Welcome to My Website</h1>
-        <p>This is the content of the website.</p>
-    </div>
-</LayoutGridMenuLeft>;
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=layout-layoutgridmenuleft--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente LayoutGridMenuLeft, se puede hacer desde fenextjs
+
+```tsx copy
+import { LayoutGridMenuLeft } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| useAlertHook | boolean | no | true | Indica si se debe renderizar el componente de alerta (AlertHook). |
+| alertHookProps | AlertHookProps | no | \{\} | Propiedades para configurar el AlertHook. |
+| loader | boolean | no | false | Indica si la página está en estado de carga, mostrando un indicador de carga. |
+| menuLeft | ReactNode | no | undefined | Contenido que se renderiza en el menú izquierdo del layout. |
+| menuLeftActive | boolean | no | true | Indica si el menú izquierdo está activo. |
+| menuLeftMovilActive | boolean | no | false | Indica si el menú izquierdo está activo en dispositivos móviles. |
+| useHeaderButtonMenu | boolean | no | false | Permite mostrar un botón en el encabezado para alternar el menú. |
+| usePageProgress | boolean | no | true | Habilita una barra de progreso de la página. |
+| target | string | no | 'fenext-btn-menu-checkbox' | El objetivo del botón en el menú. |
+| className | string | no | '' | Clase CSS para el componente principal. |
+| classNameMenuLeft | string | no | '' | Clase CSS para el menú izquierdo. |
+| classNameMenuLeftContent | string | no | '' | Clase CSS para el contenido del menú izquierdo. |
+| classNameChildren | string | no | '' | Clase CSS para el contenedor de los hijos del componente. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/layout-layoutgridmenuleft--index)
+
+### Usos
+
+- Uso básico
+
+```tsx copy
+<LayoutGridMenuLeft />
+```
+
+- Con menú personalizado
+
+```tsx copy
+<LayoutGridMenuLeft menuLeft={<CustomMenu />} />
+```
+
+- Con estado de carga
+
+```tsx copy
+<LayoutGridMenuLeft loader={true} />
+```
+

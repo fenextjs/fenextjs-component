@@ -1,27 +1,27 @@
 # Box
 
-El componente Box es un componente simple que representa un contenedor que puede ser utilizado para agrupar contenido dentro de una caja con estilos personalizados.
+El componente Box actúa como un contenedor básico que encapsula su contenido, permitiendo aplicar estilos personalizados mediante clases adicionales.
 
-### Importacion
+import { Iframe } from "@/components/Iframe"; 
 
-Para importar el componente Box, se puede hacer desde fenextjs o fenextjs-component
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=box-box--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente Box, se puede hacer desde fenextjs
 
 ```tsx copy
-import { Box, BoxProps } from "fenextjs/cjs/component/Box";
+import { Box } from "fenextjs";
 ```
 
-o
+### Parámetros
 
-```tsx copy
-import { Box, BoxProps } from "fenextjs-component/cjs/Box";
-```
-
-### Parametros
-
-| Parametro |   Tipo    | Requerido | Default | Descripcion                        |
-| --------- | :-------: | :-------: | :-----: | :--------------------------------- |
-| children  | ReactNode |    no     |         | Contenido del componente           |
-| className |  string   |    no     |   ""    | Clase personalizada del componente |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| children | ReactNode | sí |  | El contenido que se renderizará dentro del componente Box. |
+| className | string | no | "" | Clase personalizada para el componente Box. |
 
 ### Storybook
 
@@ -29,20 +29,15 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Uso básico del componente Box
+- Básico
 
 ```tsx copy
-<Box>
-    <h2>Contenido dentro del Box</h2>
-    <p>Este es un párrafo dentro del Box.</p>
-</Box>
+<Box>Este es un contenedor básico</Box>
 ```
 
--   Box con clase de estilo personalizada
+- Box con clase personalizada
 
 ```tsx copy
-<Box className="custom-box">
-    <h2>Contenido personalizado dentro del Box</h2>
-    <p>Este es otro párrafo dentro del Box con estilos personalizados.</p>
-</Box>
+<Box className="custom-class">Contenido con clase personalizada</Box>
 ```
+

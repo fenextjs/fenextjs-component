@@ -1,12 +1,54 @@
-#### InputTextSelect
+# InputUnitBase
 
-El componente InputTextSelect es un campo de entrada que combina un código de país selecto y un número de teléfono.
+El componente InputUnitBase permite a los usuarios ingresar un valor numérico junto con una unidad de medida seleccionable.
 
-```tsx
-import {
-    InputTextSelect,
-    InputTextSelectProps,
-} from "fenextjs-component/cjs/Input/TextSelect";
+import { Iframe } from "@/components/Iframe"; 
 
-<InputTextSelect label="TextSelect Number" />;
+### Ejemplo
+
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputunitbase--index&viewMode=story" />
+
+### Importación
+
+Para importar el componente InputUnitBase, se puede hacer desde fenextjs
+
+```tsx copy
+import { InputUnitBase } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| defaultValue | Partial\<InputUnitValue\> | no | \{\} | Valor por defecto del componente, incluye el valor numérico y la unidad de medida. |
+| value | Partial\<InputUnitValue\> | no | undefined | Valor actual del componente, incluye el valor numérico y la unidad de medida. |
+| onChange | (data: Partial\<InputUnitValue\>) =\> void | no | undefined | Función que se ejecuta cuando el valor o la unidad cambia, recibe el objeto con `value` y `unit`. |
+| options | Unit_All[] | sí | undefined | Opciones disponibles para las unidades de medida, definidas por el tipo `Unit_All`. |
+| className | string | no | undefined | Clase CSS personalizada para el componente principal. |
+| classNameSelect | string | no | undefined | Clase CSS personalizada para el select de unidades. |
+| classNameInput | string | no | undefined | Clase CSS personalizada para el input del valor numérico. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/input-inputunitbase--index)
+
+### Usos
+
+- InputUnitBase básico
+
+```tsx copy
+<InputUnitBase options={['cm', 'in', 'ft']} />
+```
+
+- InputUnitBase con valor y unidad iniciales
+
+```tsx copy
+<InputUnitBase defaultValue={{ value: 10, unit: 'cm' }} options={['cm', 'in', 'ft']} />
+```
+
+- InputUnitBase con función onChange
+
+```tsx copy
+<InputUnitBase options={['kg', 'g']} onChange={(data) => console.log(data)} />
+```
+

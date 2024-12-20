@@ -1,20 +1,55 @@
-#### Counter
+# Counter
 
-El componente Counter es un contador que muestra un número y, opcionalmente, un texto asociado. El contador anima el cambio del número desde el valor actual hasta el número objetivo con una animación suave de incremento.
+El componente Counter muestra un número que se incrementa o decrementa gradualmente hasta alcanzar un valor final. También puede mostrar un texto adicional opcional.
 
-```tsx
-import { Counter, CounterProps } from "fenextjs-component/cjs/Counter";
+import { Iframe } from "@/components/Iframe"; 
 
-/* Ejemplo 1: Uso básico del componente Counter */
-<Counter number={1000} text="Total Count" />;
+### Ejemplo
 
-/* Ejemplo 2: Personalización del tiempo de incremento y el número de decimales */
-<Counter number={2000.75} text="Sales Count" time={2000} decimal={1} />;
+<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=counter-counter--index&viewMode=story" />
 
-/* Ejemplo 3: Uso de un formato personalizado para el número */
-<Counter
-    number={3000.12345}
-    text="Average Score"
-    parseNumber={(n) => `$${n.toFixed(2)}`}
-/>;
+### Importación
+
+Para importar el componente Counter, se puede hacer desde fenextjs
+
+```tsx copy
+import { Counter } from "fenextjs";
 ```
+
+### Parámetros
+
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| number | number | sí | 0 | El número que se mostrará y que será incrementado o decrementado gradualmente. |
+| text | ReactNode | no | undefined | Texto adicional que se puede mostrar junto con el contador. |
+| time | number | no | 1000 | Tiempo en milisegundos para alcanzar el número final. |
+| decimal | number | no | 2 | Cantidad de decimales a mostrar en el número. |
+| parseNumber | (n: number) =\> ReactNode | no | parseNumberCount | Función personalizada para formatear el número antes de mostrarlo. |
+| className | string | no | '' | Clase CSS para personalizar el contenedor del componente. |
+| classNameNumber | string | no | '' | Clase CSS para personalizar la apariencia del número. |
+| classNameText | string | no | '' | Clase CSS para personalizar la apariencia del texto. |
+
+### Storybook
+
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/counter-counter--index)
+
+### Usos
+
+- Básico
+
+```tsx copy
+<Counter number={100} />
+```
+
+- Counter con texto adicional
+
+```tsx copy
+<Counter number={100} text="Progreso" />
+```
+
+- Counter con tiempo personalizado
+
+```tsx copy
+<Counter number={500} time={2000} />
+```
+
