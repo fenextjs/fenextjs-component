@@ -2,11 +2,11 @@
 
 El componente Collapse permite mostrar u ocultar contenido dentro de un contenedor colapsable con opciones de personalización como control de estado activo, íconos, y estados de carga.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=collapse-simple--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=collapse-simple--index&viewMode=story" />
 
 ### Importación
 

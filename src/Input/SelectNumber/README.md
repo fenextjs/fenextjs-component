@@ -2,11 +2,11 @@
 
 El componente `InputSelectNumber` permite la selección de un valor numérico de una lista de números dentro de un rango definido. Ofrece funcionalidades adicionales como la personalización del texto a mostrar para cada número.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectnumber--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectnumber--index&viewMode=story" />
 
 ### Importación
 

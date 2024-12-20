@@ -2,11 +2,11 @@
 
 El componente MediaInput permite a los usuarios seleccionar o cargar imágenes a través de una interfaz que incluye botones y galerías de imágenes. Admite múltiples selecciones y permite personalización a través de varios props, como títulos, iconos y comportamiento del modal.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=media-input--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=media-input--index&viewMode=story" />
 
 ### Importación
 

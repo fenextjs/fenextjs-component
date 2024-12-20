@@ -2,11 +2,11 @@
 
 El componente InputDate permite a los usuarios seleccionar una fecha utilizando un campo de entrada de fecha. Puede manejar diferentes tipos de entrada de fecha, como fecha, mes, semana y hora, y es útil en formularios donde se requiere la selección de fechas.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputdate--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputdate--index&viewMode=story" />
 
 ### Importación
 

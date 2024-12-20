@@ -2,11 +2,11 @@
 
 Este componente combina el diseño de menú superior y el menú lateral izquierdo, permitiendo una estructura flexible para mostrar contenido, alertas y un indicador de progreso de página.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=layout-layoutgridmenutopleft--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=layout-layoutgridmenutopleft--index&viewMode=story" />
 
 ### Importación
 

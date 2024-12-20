@@ -2,11 +2,11 @@
 
 El componente Button es un botón interactivo que puede ser configurado para mostrar íconos, estar en estado de carga (loader), deshabilitarse y adaptarse a diferentes tamaños. Permite a los usuarios interactuar con la aplicación ejecutando acciones al hacer clic.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-button--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-button--index&viewMode=story" />
 
 ### Importación
 

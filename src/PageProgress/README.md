@@ -2,11 +2,11 @@
 
 El componente PageProgress muestra una barra de progreso visual durante los cambios de ruta en Next.js, indicando al usuario el estado de carga de la página.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=pageprogress-pageprogress--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=pageprogress-pageprogress--index&viewMode=story" />
 
 ### Importación
 

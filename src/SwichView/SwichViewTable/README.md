@@ -2,11 +2,11 @@
 
 El componente SwichViewTable permite a los usuarios alternar entre diferentes vistas de tabla mediante iconos específicos para cada opción de visualización.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=swichview-table--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=swichview-table--index&viewMode=story" />
 
 ### Importación
 

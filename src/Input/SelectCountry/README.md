@@ -2,11 +2,11 @@
 
 El componente InputSelectCountry permite seleccionar un país de una lista de países, con la posibilidad de personalizar las clases CSS.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectcountry--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectcountry--index&viewMode=story" />
 
 ### Importación
 

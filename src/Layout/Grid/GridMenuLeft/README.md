@@ -2,11 +2,11 @@
 
 El componente LayoutGridMenuLeft organiza el contenido en un diseño de cuadrícula, con un menú a la izquierda que puede mostrarse u ocultarse. Además, admite alertas, carga de página y otros elementos opcionales.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=layout-layoutgridmenuleft--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=layout-layoutgridmenuleft--index&viewMode=story" />
 
 ### Importación
 

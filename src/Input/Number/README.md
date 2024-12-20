@@ -2,11 +2,11 @@
 
 El componente InputNumber permite a los usuarios ingresar un valor numérico con opciones para aumentar o disminuir el valor usando botones, así como la posibilidad de validación.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputnumber--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputnumber--index&viewMode=story" />
 
 ### Importación
 

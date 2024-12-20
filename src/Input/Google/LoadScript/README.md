@@ -2,11 +2,11 @@
 
 El componente InputGoogleLoadScript se encarga de cargar el script de Google Maps y proporciona validación de la clave API de Google.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-google-loadscript--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-google-loadscript--index&viewMode=story" />
 
 ### Importación
 

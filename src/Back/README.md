@@ -2,11 +2,11 @@
 
 El componente Back representa un botón de retroceso que permite al usuario navegar a la página anterior en el historial del navegador, utilizar el Router de Next.js, redirigir a una URL específica, ejecutar una función personalizada o realizar una acción personalizada de 'fenextjs-history'.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-back--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-back--index&viewMode=story" />
 
 ### Importación
 

@@ -2,11 +2,11 @@
 
 El componente Chronometer muestra una cuenta regresiva en base al tiempo dado en segundos, actualizándose cada segundo. Permite personalizar el formato del tiempo mostrado y ejecutar una acción cada vez que el tiempo cambia.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=chronometer-chronometer--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=chronometer-chronometer--index&viewMode=story" />
 
 ### Importación
 

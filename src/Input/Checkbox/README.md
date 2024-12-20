@@ -2,11 +2,11 @@
 
 El componente InputCheckbox es un campo de entrada de tipo checkbox que permite al usuario seleccionar o deseleccionar una opción. Puede mostrar etiquetas y manejar validaciones, así como valores personalizados para las opciones activas e inactivas.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputcheckbox--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputcheckbox--index&viewMode=story" />
 
 ### Importación
 

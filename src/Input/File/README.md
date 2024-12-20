@@ -2,11 +2,11 @@
 
 El componente InputFile permite a los usuarios seleccionar y subir archivos desde su dispositivo. Admite validaciones como tipos de archivo permitidos y tamaño máximo de archivo.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputfile--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputfile--index&viewMode=story" />
 
 ### Importación
 

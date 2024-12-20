@@ -2,11 +2,11 @@
 
 Componente de selección de elementos por página para la paginación, permitiendo seleccionar el número de elementos a mostrar en cada página.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=pagination-paginationnpage--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=pagination-paginationnpage--index&viewMode=story" />
 
 ### Importación
 

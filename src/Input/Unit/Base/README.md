@@ -2,11 +2,11 @@
 
 El componente InputUnitBase permite a los usuarios ingresar un valor numérico junto con una unidad de medida seleccionable.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputunitbase--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputunitbase--index&viewMode=story" />
 
 ### Importación
 

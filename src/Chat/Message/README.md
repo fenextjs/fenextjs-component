@@ -2,11 +2,11 @@
 
 El componente ChatMessage es una representación de un mensaje de chat, mostrando el usuario, mensaje, hora de creación y su estado, con opciones de personalización para el estilo y comportamiento.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=chat-message--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=chat-message--index&viewMode=story" />
 
 ### Importación
 

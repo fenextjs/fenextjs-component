@@ -2,11 +2,11 @@
 
 El componente Share permite a los usuarios compartir contenido a través de diversas plataformas como WhatsApp, Facebook, Twitter, correo electrónico o copiar el enlace. Incluye personalización de botones y títulos.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=share-share--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=share-share--index&viewMode=story" />
 
 ### Importación
 

@@ -2,11 +2,11 @@
 
 El componente InputColor permite a los usuarios seleccionar un color mediante un selector de color. Es útil para aplicaciones que requieren la personalización de colores, como editores de imágenes, personalización de temas y formularios de diseño.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputcolor--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputcolor--index&viewMode=story" />
 
 ### Importación
 

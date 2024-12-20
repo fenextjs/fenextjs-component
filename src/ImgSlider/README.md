@@ -2,11 +2,11 @@
 
 El componente ImgSlider permite navegar entre una lista de imágenes utilizando un sistema de pasos. Se puede controlar el paso actual y navegar entre las imágenes usando botones de paginación.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=img-imgslider--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=img-imgslider--index&viewMode=story" />
 
 ### Importación
 

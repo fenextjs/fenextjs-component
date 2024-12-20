@@ -2,11 +2,11 @@
 
 El componente InputUnitDistance permite a los usuarios ingresar un valor numérico junto con una unidad de medida de distancia seleccionable.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputunitdistance--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputunitdistance--index&viewMode=story" />
 
 ### Importación
 

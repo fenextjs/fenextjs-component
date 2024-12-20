@@ -2,11 +2,11 @@
 
 El componente InputFileStatus combina la funcionalidad de carga de archivos con un estado visual, mostrando diferentes iconos y mensajes según el estado del archivo (Aprobado, Rechazado, Pendiente).
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputfilestatus--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputfilestatus--index&viewMode=story" />
 
 ### Importación
 

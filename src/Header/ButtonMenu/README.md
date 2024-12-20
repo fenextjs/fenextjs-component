@@ -2,11 +2,11 @@
 
 El componente ButtonMenu proporciona un botón interactivo con un menú desplegable que puede personalizarse con iconos, clases CSS, y configurarse para mostrarse por defecto o estar deshabilitado. También tiene la capacidad de mostrar un indicador de carga.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=header-buttonmenu--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=header-buttonmenu--index&viewMode=story" />
 
 ### Importación
 

@@ -2,11 +2,11 @@
 
 El componente Alert se utiliza para mostrar mensajes de alerta en la interfaz de usuario, proporcionando diferentes tipos de alertas y permitiendo la opción de cerrarlas.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-alert--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-alert--index&viewMode=story" />
 
 ### Importación
 

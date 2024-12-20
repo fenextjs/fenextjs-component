@@ -2,11 +2,11 @@
 
 El componente CollapseMultiple permite mostrar múltiples elementos de Collapse organizados, con soporte para múltiples tipos de colapso (radio o checkbox) y control sobre los estados activos por defecto.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="50vh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=collapse-multiple--index&viewMode=story" />
+<iframe minHeightIframe="50vh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=collapse-multiple--index&viewMode=story" />
 
 ### Importación
 

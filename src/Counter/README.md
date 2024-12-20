@@ -2,11 +2,11 @@
 
 El componente Counter muestra un número que se incrementa o decrementa gradualmente hasta alcanzar un valor final. También puede mostrar un texto adicional opcional.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=counter-counter--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=counter-counter--index&viewMode=story" />
 
 ### Importación
 

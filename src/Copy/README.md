@@ -2,11 +2,11 @@
 
 El componente Copy permite copiar un texto al portapapeles cuando se hace click en él, con la opción de mostrar una notificación al usuario.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=copy-copy--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=copy-copy--index&viewMode=story" />
 
 ### Importación
 

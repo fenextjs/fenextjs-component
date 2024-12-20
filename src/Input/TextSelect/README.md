@@ -2,11 +2,11 @@
 
 El componente InputTextSelect combina un campo de texto con un menú desplegable (select), permitiendo a los usuarios ingresar texto o seleccionar una opción predefinida de una lista. Ofrece gran flexibilidad y personalización en términos de etiquetas, placehoder y validaciones.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputtextselect--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputtextselect--index&viewMode=story" />
 
 ### Importación
 

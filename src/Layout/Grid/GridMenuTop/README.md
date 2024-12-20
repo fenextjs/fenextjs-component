@@ -2,11 +2,11 @@
 
 El componente LayoutGridMenuTop es un diseño de cuadrícula que incluye un menú superior y permite gestionar una barra de progreso de página, mostrar alertas personalizadas y un indicador de carga.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=layout-layoutgridmenutop--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=layout-layoutgridmenutop--index&viewMode=story" />
 
 ### Importación
 

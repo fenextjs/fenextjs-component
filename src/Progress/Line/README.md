@@ -2,11 +2,11 @@
 
 El componente ProgressLine muestra una barra de progreso lineal que indica el avance de una tarea o el porcentaje completado. Incluye una opción para mostrar el porcentaje numérico junto a la barra.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=progress-progressline--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=progress-progressline--index&viewMode=story" />
 
 ### Importación
 

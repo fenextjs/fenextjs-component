@@ -2,11 +2,11 @@
 
 El componente Breadcrumb muestra una serie de enlaces que indican la ruta de navegación actual del usuario. Es útil para mejorar la experiencia del usuario al mostrarle el contexto de navegación.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=breadcrumb-breadcrumb--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=breadcrumb-breadcrumb--index&viewMode=story" />
 
 ### Importación
 

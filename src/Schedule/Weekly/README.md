@@ -2,11 +2,11 @@
 
 El componente ScheduleWeekly permite a los usuarios gestionar horarios semanales seleccionando intervalos de tiempo específicos para cada día de la semana. Utiliza ScheduleDay y CollapseMultiple para representar los horarios diarios en un formato de colapso.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=schedule-scheduleweekly--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=schedule-scheduleweekly--index&viewMode=story" />
 
 ### Importación
 

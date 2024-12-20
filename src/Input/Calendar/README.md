@@ -2,11 +2,11 @@
 
 El componente InputCalendar permite seleccionar fechas o rangos de fechas a través de un calendario desplegable. Se puede configurar para mostrar múltiples meses y admite validaciones.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="60vh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputcalendar--index&viewMode=story" />
+<iframe minHeightIframe="60vh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputcalendar--index&viewMode=story" />
 
 ### Importación
 

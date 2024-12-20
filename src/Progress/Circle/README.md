@@ -2,11 +2,11 @@
 
 El componente ProgressCircle muestra un círculo de progreso visual que indica el avance de una tarea o porcentaje completado. Ofrece una opción para mostrar el porcentaje numérico en el centro del círculo.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=progress-progresscircle--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=progress-progresscircle--index&viewMode=story" />
 
 ### Importación
 

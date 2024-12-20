@@ -2,11 +2,11 @@
 
 Componente de paginación que permite navegar entre páginas de una lista de elementos, con opciones de personalización para los iconos y las clases CSS.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=pagination-paginationitempage--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=pagination-paginationitempage--index&viewMode=story" />
 
 ### Importación
 

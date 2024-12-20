@@ -2,11 +2,11 @@
 
 El componente PrintIframe permite renderizar contenido dentro de un iframe y proporciona una interfaz para imprimirlo. Utiliza el hook `usePrintIframe` para gestionar la funcionalidad de impresión en un iframe.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=print-iframe--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=print-iframe--index&viewMode=story" />
 
 ### Importación
 

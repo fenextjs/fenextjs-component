@@ -2,11 +2,11 @@
 
 El componente ScheduleDay permite a los usuarios seleccionar un rango de fechas para un día específico y añade múltiples intervalos de tiempo si es necesario. Utiliza el componente InputDateRange para manejar los intervalos de fecha/hora.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=schedule-scheduleday--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=schedule-scheduleday--index&viewMode=story" />
 
 ### Importación
 

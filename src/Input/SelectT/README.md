@@ -2,11 +2,11 @@
 
 El componente `InputSelectT` es un select customizable que permite pasar opciones y valores de un tipo genérico `T`. Implementa funciones para manejar la conversión de los elementos seleccionados y permite personalizar la representación de los datos.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectt--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputselectt--index&viewMode=story" />
 
 ### Importación
 

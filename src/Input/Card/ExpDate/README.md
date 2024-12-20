@@ -2,11 +2,11 @@
 
 El componente InputCardExpDate es un campo de entrada diseñado para capturar la fecha de expiración de una tarjeta de crédito en el formato MM/YY. Este componente asegura que la entrada sea válida y maneja la lógica para convertir entre el texto ingresado y los datos estructurados de mes y año.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-card-inputcardexpdate--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-card-inputcardexpdate--index&viewMode=story" />
 
 ### Importación
 

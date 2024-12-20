@@ -2,11 +2,11 @@
 
 Componente Text que permite mostrar diferentes elementos de texto (`p`, `strong`, `small`, etc.) con soporte para un indicador de carga en forma de líneas de esqueleto.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=text-text--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=text-text--index&viewMode=story" />
 
 ### Importación
 

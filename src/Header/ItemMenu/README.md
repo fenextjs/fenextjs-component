@@ -2,11 +2,11 @@
 
 El componente ItemMenu representa un elemento de menú que puede contener enlaces, iconos y submenús colapsables. Es útil para crear menús anidados o navegaciones que requieren interacción jerárquica.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=header-itemmenu--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=header-itemmenu--index&viewMode=story" />
 
 ### Importación
 

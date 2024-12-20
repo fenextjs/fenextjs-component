@@ -2,11 +2,11 @@
 
 El componente Link es una representación personalizada de un enlace que utiliza Next.js `Link` para manejar la navegación entre páginas. Soporta propiedades específicas para controlar el comportamiento del enlace, como el destino, la política de referenciación y la clase CSS para personalización adicional.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-link--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=component-link--index&viewMode=story" />
 
 ### Importación
 

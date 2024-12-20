@@ -2,11 +2,11 @@
 
 El componente LavaLamp genera un fondo animado que simula el efecto de una lámpara de lava con múltiples elementos flotantes. Los elementos pueden personalizarse en estilo, tamaño, animación y cantidad.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=lavalamp-lavalamp--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=lavalamp-lavalamp--index&viewMode=story" />
 
 ### Importación
 

@@ -2,11 +2,11 @@
 
 El componente MediaPage proporciona una interfaz para subir, mostrar y seleccionar imágenes, con funcionalidades adicionales como eliminación, aceptación y un header personalizable. Permite manejar tanto una imagen única como múltiples imágenes.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=media-page--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=media-page--index&viewMode=story" />
 
 ### Importación
 

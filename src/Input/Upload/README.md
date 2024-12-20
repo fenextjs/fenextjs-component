@@ -2,11 +2,11 @@
 
 El componente InputUpload permite a los usuarios cargar archivos, proporcionando opciones de previsualización y una interfaz personalizable para seleccionar o arrastrar y soltar archivos.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputupload--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputupload--index&viewMode=story" />
 
 ### Importación
 

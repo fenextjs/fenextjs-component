@@ -2,11 +2,11 @@
 
 El componente InputSearch permite realizar búsquedas de manera eficiente y personalizable. Incluye soporte para resultados de búsqueda, filtros por pestañas y opciones de carga adicional.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputsearch--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-inputsearch--index&viewMode=story" />
 
 ### Importación
 

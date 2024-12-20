@@ -2,11 +2,11 @@
 
 El componente NotificationPop muestra mensajes de notificación flotantes que desaparecen automáticamente después de un tiempo especificado. Puede posicionarse en la parte superior o inferior de la pantalla.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=notification-notificationpop--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=notification-notificationpop--index&viewMode=story" />
 
 ### Importación
 

@@ -2,11 +2,11 @@
 
 El componente TwoColSticky crea una disposición de dos columnas, donde una columna es fija (sticky) y la otra es desplazable. Se puede personalizar la posición de la columna sticky, y las clases CSS para cada sección.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=twocolsticky-twocolsticky--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=twocolsticky-twocolsticky--index&viewMode=story" />
 
 ### Importación
 

@@ -2,11 +2,11 @@
 
 El componente InputScannerTextQr combina un campo de texto con un escáner QR. Permite al usuario ingresar texto manualmente o escanear un código QR para rellenar el campo de texto.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-scanner-inputscannertextqr--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=input-scanner-inputscannertextqr--index&viewMode=story" />
 
 ### Importación
 

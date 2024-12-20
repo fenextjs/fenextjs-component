@@ -2,11 +2,11 @@
 
 El componente ImgGallery muestra una galería de imágenes con la opción de cargar más imágenes y visualizar cada imagen en un modal con un deslizador.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=img-imggallery--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=img-imggallery--index&viewMode=story" />
 
 ### Importación
 

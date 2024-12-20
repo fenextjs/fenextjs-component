@@ -2,11 +2,11 @@
 
 El componente Box actúa como un contenedor básico que encapsula su contenido, permitiendo aplicar estilos personalizados mediante clases adicionales.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=box-box--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=box-box--index&viewMode=story" />
 
 ### Importación
 

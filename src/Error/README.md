@@ -2,11 +2,11 @@
 
 El componente ErrorComponent se utiliza para mostrar errores personalizados o basados en el estado de un componente, incluyendo mensajes de error y posibles entradas relacionadas con el error.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=error-errorcomponent--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=error-errorcomponent--index&viewMode=story" />
 
 ### Importación
 

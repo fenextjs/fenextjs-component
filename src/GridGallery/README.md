@@ -2,11 +2,11 @@
 
 El componente GridGallery permite mostrar una galería de elementos en un formato de cuadrícula, con soporte para clases personalizadas en los contenedores y los elementos.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=gridgallery-gridgallery--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=gridgallery-gridgallery--index&viewMode=story" />
 
 ### Importación
 

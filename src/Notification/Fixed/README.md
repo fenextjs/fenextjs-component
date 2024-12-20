@@ -2,11 +2,11 @@
 
 El componente Notification permite mostrar mensajes de notificación personalizados, con distintos tipos de resultados y estilos para cada tipo.
 
-import { Iframe } from "@/components/Iframe"; 
+ 
 
 ### Ejemplo
 
-<Iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=notification-notification--index&viewMode=story" />
+<iframe minHeightIframe="30dvh" src="https://fenextjs-component-storybook.vercel.app/iframe.html?args=&id=notification-notification--index&viewMode=story" />
 
 ### Importación
 
