@@ -12,13 +12,13 @@ import { Menú } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| items | ItemMenuProps[] | no | [] | Lista de elementos del menú. Cada uno debe cumplir con la interfaz `ItemMenuProps`. |
-| iconArrow | ReactNode | no | \<Arrow /\> | Ícono que se muestra para los elementos colapsables del menú. |
-| typeCollapse | 'radio' \| 'checkbox' | no | undefined | Tipo de comportamiento para los elementos colapsables del menú, ya sea radio o checkbox. |
-| className | string | no | '' | Clase CSS para personalizar el contenedor principal del menú. |
-| defaultShowSubMenu | boolean | no | false | Determina si los submenús deben mostrarse por defecto. |
+| Parámetro          | Tipo                  | Requerido | Default     | Descripcion                                                                              |
+| ------------------ | --------------------- | --------- | ----------- | ---------------------------------------------------------------------------------------- |
+| items              | ItemMenuProps[]       | no        | []          | Lista de elementos del menú. Cada uno debe cumplir con la interfaz `ItemMenuProps`.      |
+| iconArrow          | ReactNode             | no        | \<Arrow /\> | Ícono que se muestra para los elementos colapsables del menú.                            |
+| typeCollapse       | 'radio' \| 'checkbox' | no        | undefined   | Tipo de comportamiento para los elementos colapsables del menú, ya sea radio o checkbox. |
+| className          | string                | no        | ''          | Clase CSS para personalizar el contenedor principal del menú.                            |
+| defaultShowSubMenu | boolean               | no        | false       | Determina si los submenús deben mostrarse por defecto.                                   |
 
 ### Storybook
 
@@ -26,38 +26,37 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Menú básico
+-   Menú básico
 
 ```tsx copy
-<Menu 
+<Menu
     items={[
-        { label: 'Home', link: '/' }, 
-        { label: 'About', link: '/about' }
-    ]} 
+        { label: "Home", link: "/" },
+        { label: "About", link: "/about" },
+    ]}
 />
 ```
 
-- Menú con ícono personalizado
+-   Menú con ícono personalizado
 
 ```tsx copy
-<Menu 
-    iconArrow={<CustomIcon />} 
+<Menu
+    iconArrow={<CustomIcon />}
     items={[
-        { label: 'Home', link: '/' }, 
-        { label: 'Services', link: '/services' }
-    ]} 
+        { label: "Home", link: "/" },
+        { label: "Services", link: "/services" },
+    ]}
 />
 ```
 
-- Menú con submenús desplegables
+-   Menú con submenús desplegables
 
 ```tsx copy
-<Menu 
-    defaultShowSubMenu={true} 
+<Menu
+    defaultShowSubMenu={true}
     items={[
-        { label: 'Home', link: '/', defaultActive: true }, 
-        { label: 'Projects', link: '/projects' }
-    ]} 
+        { label: "Home", link: "/", defaultActive: true },
+        { label: "Projects", link: "/projects" },
+    ]}
 />
 ```
-

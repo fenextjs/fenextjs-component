@@ -47,7 +47,8 @@ export default {
             type: "ReactNode",
             require: false,
             default: "undefined",
-            description: "El ícono que se mostrará dentro del botón cuando esta en estado de carga.",
+            description:
+                "El ícono que se mostrará dentro del botón cuando esta en estado de carga.",
         },
         {
             id: "isBtn",
@@ -92,7 +93,7 @@ export default {
             require: false,
             default: '""',
             description:
-            "Clase personalizada para el componente Button cuando esta en estado de carga.",
+                "Clase personalizada para el componente Button cuando esta en estado de carga.",
         },
         {
             id: "classNameContentLoaderElement",
