@@ -794,6 +794,15 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   --fenext-btn-cursor: pointer;
   --fenext-btn-display: inline-block;
   --fenext-btn-position: relative;
+  --fenext-btn-content-loader-position: absolute;
+  --fenext-btn-content-loader-inset: 0;
+  --fenext-btn-content-loader-margin: auto;
+  --fenext-btn-content-loader-display: grid;
+  --fenext-btn-content-loader-place-content: center;
+  --fenext-btn-loader-max-height: 90%;
+  --fenext-btn-loader-height: 1.5rem;
+  --fenext-btn-loader-width:auto;
+  --fenext-btn-loader-color: var(--fenext-color-white);
 }
 
 .fenext-btn {
@@ -821,10 +830,12 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
 .fenext-btn-size-extra-small {
   --fenext-btn-padding: var(--fenext-btn-extra-small-padding);
   --fenext-btn-font-size: var(--fenext-btn-extra-small-font-size);
+  --fenext-btn-loader-max-height: 70%;
 }
 .fenext-btn-size-small {
   --fenext-btn-padding: var(--fenext-btn-small-padding);
   --fenext-btn-font-size: var(--fenext-btn-small-font-size);
+  --fenext-btn-loader-max-height: 80%;
 }
 .fenext-btn-size-normal {
   --fenext-btn-padding: var(--fenext-btn-normal-padding);
@@ -841,19 +852,23 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
 .fenext-btn-size-full {
   --fenext-btn-width: var(--fenext-btn-full-width);
 }
+.fenext-btn-content-loader-element {
+  position: var(--fenext-btn-content-loader-position);
+  inset: var(--fenext-btn-content-loader-inset);
+  margin: var(--fenext-btn-content-loader-margin);
+  display: var(--fenext-btn-content-loader-display);
+  place-content: var(--fenext-btn-content-loader-place-content);
+}
 .fenext-btn-loader-element {
-  max-height: 70%;
-  height: 1.5rem;
-  width: auto;
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  color: var(--fenext-color-white);
+  max-height: var(--fenext-btn-loader-max-height);
+  height: var(--fenext-btn-loader-height);
+  width: var(--fenext-btn-loader-width);
+  color: var(--fenext-btn-loader-color);
 }
 .fenext-btn-loader {
   --fenext-btn-color: var(--fenext-btn-color-loader);
 }
-.fenext-btn :where(.fenext-btn-loader > *:not(.fenext-loader)) {
+.fenext-btn :where(.fenext-btn-loader > *:not(.fenext-btn-content-loader-element)) {
   opacity: 0;
 }
 

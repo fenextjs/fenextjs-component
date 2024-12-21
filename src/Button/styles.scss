@@ -34,12 +34,16 @@
     --fenext-btn-display: inline-block;
     --fenext-btn-position: relative;
 
-    --fenext-btn-loader-max-height: 70%;
+
+    --fenext-btn-content-loader-position: absolute;
+    --fenext-btn-content-loader-inset: 0;
+    --fenext-btn-content-loader-margin: auto;
+    --fenext-btn-content-loader-display: grid;
+    --fenext-btn-content-loader-place-content: center;
+
+    --fenext-btn-loader-max-height: 90%;
     --fenext-btn-loader-height: 1.5rem;
     --fenext-btn-loader-width:auto;
-    --fenext-btn-loader-position: absolute;
-    --fenext-btn-loader-inset: 0;
-    --fenext-btn-loader-margin: auto;
     --fenext-btn-loader-color: var(--fenext-color-white);
 }
 
@@ -69,10 +73,12 @@
         &-extra-small {
             --fenext-btn-padding: var(--fenext-btn-extra-small-padding);
             --fenext-btn-font-size: var(--fenext-btn-extra-small-font-size);
+            --fenext-btn-loader-max-height: 70%;
         }
         &-small {
             --fenext-btn-padding: var(--fenext-btn-small-padding);
             --fenext-btn-font-size: var(--fenext-btn-small-font-size);
+            --fenext-btn-loader-max-height: 80%;
         }
         &-normal {
             --fenext-btn-padding: var(--fenext-btn-normal-padding);
@@ -90,18 +96,23 @@
             --fenext-btn-width : var(--fenext-btn-full-width);
         }
     }
+
+    &-content-loader-element{
+        position: var(--fenext-btn-content-loader-position);
+        inset: var(--fenext-btn-content-loader-inset);
+        margin: var(--fenext-btn-content-loader-margin);
+        display: var(--fenext-btn-content-loader-display);
+        place-content: var(--fenext-btn-content-loader-place-content);
+    }
     &-loader-element {
         max-height: var(--fenext-btn-loader-max-height);
         height: var(--fenext-btn-loader-height);
         width: var(--fenext-btn-loader-width);
-        position: var(--fenext-btn-loader-position);
-        inset: var(--fenext-btn-loader-inset);
-        margin: var(--fenext-btn-loader-margin);
         color: var(--fenext-btn-loader-color);
     }
     &-loader {
         --fenext-btn-color: var(--fenext-btn-color-loader);
-        > *:not(.fenext-loader) {
+        > *:not(.fenext-btn-content-loader-element) {
             @at-root #{$class_} :where(&) {
                 opacity: 0;
             }
