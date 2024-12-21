@@ -9,7 +9,7 @@ export default {
 } as Meta;
 
 const Profile: StoryFn<PropsWithChildren<ButtonProps>> = (args) => (
-    <Button {...args}>Test Children</Button>
+    <Button {...args}><span>Test Children</span></Button>
 );
 
 export const Index = Profile.bind({});

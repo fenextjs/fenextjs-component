@@ -1,4 +1,5 @@
 .fenext-btn {
+    $class_ : &;
     padding: 1rem 1.5rem;
     border-radius: 0.5rem;
     border: 0;
@@ -15,8 +16,7 @@
     &:hover {
         background: var(--fenext-color-dark-light);
     }
-    &-disabled,
-    &:disabled {
+    &-disabled {
         background: var(--fenext-color-secondary);
     }
     &-size {
@@ -43,16 +43,18 @@
             width: 100%;
         }
     }
-    .fenext-loader {
+    &-loader-element  {
         position: absolute;
         inset: 0;
         margin: auto;
         color: var(--fenext-color-white);
     }
-    &.fenext-btn-loader {
+    &-loader {
         color: transparent;
         > *:not(.fenext-loader) {
-            opacity: 0;
+            @at-root #{$class_} :where(&){
+                opacity: 0;
+            }
         }
     }
 }

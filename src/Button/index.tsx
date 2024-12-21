@@ -53,7 +53,7 @@ export interface ButtonBaseProps extends PropsWithChildren, _TProps {
 /**
  * Properties for the class of the button component.
  */
-export interface ButtonClassProps extends LoaderClassProps {
+export interface ButtonClassProps {
     /**
      * The class name for the component.
      */
@@ -62,6 +62,15 @@ export interface ButtonClassProps extends LoaderClassProps {
      * The class name for the component.
      */
     classNameDisabled?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameLoader?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameLoaderElement?: string;
+
 }
 
 /**
@@ -73,6 +82,7 @@ export const Button = ({
     className = "",
     classNameLoader = "",
     classNameDisabled = "",
+    classNameLoaderElement = "",
 
     children,
     loader = false,
@@ -99,7 +109,7 @@ export const Button = ({
                 onClick={disabled ? onClickDisabled : onClick}
                 className={`
                     fenext-btn
-                    fenext-btn-${loader ? "loader" : ""}
+                    fenext-btn-${loader ? `loader ${classNameLoader}` : ""}
                     fenext-btn-${disabled ? `disabled ${classNameDisabled}` : ""}
                     fenext-btn-size-${size}
                     ${full ? "fenext-btn-size-full" : ""}
@@ -107,7 +117,7 @@ export const Button = ({
                 `}
                 disabled={loader}
             >
-                {loader && <Loader classNameLoader={classNameLoader} />}
+                {loader && <Loader classNameLoader={`fenext-btn-loader-element ${classNameLoaderElement}`} />}
 
                 {icon}
                 {_t(children)}
