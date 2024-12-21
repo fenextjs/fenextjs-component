@@ -12,10 +12,10 @@ import { Portal } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo                        | Requerido | Default       | Descripcion                                                                                                                                    |
-| --------- | --------------------------- | --------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| container | Element \| DocumentFragment | no        | document.body | Elemento DOM donde se montarán los elementos secundarios. Si no se proporciona, el `body` del documento se usa como contenedor predeterminado. |
-| children  | ReactNode                   | sí        | N/A           | Contenido que se renderizará dentro del portal.                                                                                                |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| container | Element \| DocumentFragment | no | document.body | Elemento DOM donde se montarán los elementos secundarios. Si no se proporciona, el `body` del documento se usa como contenedor predeterminado. |
+| children | ReactNode | sí | N/A | Contenido que se renderizará dentro del portal. |
 
 ### Storybook
 
@@ -23,18 +23,15 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Portal básico
+- Portal básico
 
 ```tsx copy
-<Portal>
-    <div>Contenido en Portal</div>
-</Portal>
+<Portal><div>Contenido en Portal</div></Portal>
 ```
 
--   Portal con contenedor específico
+- Portal con contenedor específico
 
 ```tsx copy
-<Portal container={document.getElementById("mi-contenedor")}>
-    <div>Contenido en un contenedor específico</div>
-</Portal>
+<Portal container={document.getElementById("mi-contenedor")}><div>Contenido en un contenedor específico</div></Portal>
 ```
+

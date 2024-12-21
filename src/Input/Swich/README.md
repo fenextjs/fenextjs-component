@@ -12,18 +12,18 @@ import { InputSwich } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro         | Tipo                                                              | Requerido | Default           | Descripcion                                                                                                                         |
-| ----------------- | ----------------------------------------------------------------- | --------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| className         | string                                                            | no        | ''                | Clase CSS para personalizar el contenedor del interruptor.                                                                          |
-| classNameCicle    | string                                                            | no        | ''                | Clase CSS para personalizar el círculo dentro del interruptor.                                                                      |
-| classNameInactive | string                                                            | no        | ''                | Clase CSS para el estado inactivo del interruptor.                                                                                  |
-| classNameActive   | string                                                            | no        | ''                | Clase CSS para el estado activo del interruptor.                                                                                    |
-| name              | string                                                            | no        | ''                | Nombre del interruptor que se usará como atributo del input.                                                                        |
-| onChange          | (e: boolean) =\> void                                             | no        | undefined         | Función que se ejecuta cuando el estado del interruptor cambia. Recibe un valor booleano que indica si está activado o desactivado. |
-| defaultValue      | boolean                                                           | no        | false             | Valor inicial del interruptor cuando se renderiza por primera vez.                                                                  |
-| value             | boolean                                                           | no        | undefined         | Valor actual del interruptor, puede ser controlado externamente.                                                                    |
-| disabled          | boolean                                                           | no        | false             | Indica si el interruptor está deshabilitado.                                                                                        |
-| onValidateCheck   | (data: boolean) =\> Promise\<void \| boolean\> \| void \| boolean | no        | async () =\> \{\} | Función para validar el estado del interruptor cuando se cambia. Puede devolver una promesa para manejar validaciones asíncronas.   |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| className | string | no | '' | Clase CSS para personalizar el contenedor del interruptor. |
+| classNameCicle | string | no | '' | Clase CSS para personalizar el círculo dentro del interruptor. |
+| classNameInactive | string | no | '' | Clase CSS para el estado inactivo del interruptor. |
+| classNameActive | string | no | '' | Clase CSS para el estado activo del interruptor. |
+| name | string | no | '' | Nombre del interruptor que se usará como atributo del input. |
+| onChange | (e: boolean) =\> void | no | undefined | Función que se ejecuta cuando el estado del interruptor cambia. Recibe un valor booleano que indica si está activado o desactivado. |
+| defaultValue | boolean | no | false | Valor inicial del interruptor cuando se renderiza por primera vez. |
+| value | boolean | no | undefined | Valor actual del interruptor, puede ser controlado externamente. |
+| disabled | boolean | no | false | Indica si el interruptor está deshabilitado. |
+| onValidateCheck | (data: boolean) =\> Promise\<void \| boolean\> \| void \| boolean | no | async () =\> \{\} | Función para validar el estado del interruptor cuando se cambia. Puede devolver una promesa para manejar validaciones asíncronas. |
 
 ### Storybook
 
@@ -31,30 +31,27 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   InputSwich básico
+- InputSwich básico
 
 ```tsx copy
 <InputSwich />
 ```
 
--   InputSwich con valor controlado
+- InputSwich con valor controlado
 
 ```tsx copy
 <InputSwich value={true} onChange={(val) => console.log(val)} />
 ```
 
--   InputSwich deshabilitado
+- InputSwich deshabilitado
 
 ```tsx copy
 <InputSwich disabled={true} />
 ```
 
--   InputSwich con validación
+- InputSwich con validación
 
 ```tsx copy
-<InputSwich
-    onValidateCheck={async (val) => {
-        return val;
-    }}
-/>
+<InputSwich onValidateCheck={async (val) => { return val; }} />
 ```
+
