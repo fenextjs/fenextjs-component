@@ -43,6 +43,13 @@ export default {
             description: "El ícono que se mostrará dentro del botón.",
         },
         {
+            id: "iconLoader",
+            type: "ReactNode",
+            require: false,
+            default: "undefined",
+            description: "El ícono que se mostrará dentro del botón cuando esta en estado de carga.",
+        },
+        {
             id: "isBtn",
             type: "boolean",
             require: false,
@@ -77,10 +84,26 @@ export default {
             require: false,
             default: '""',
             description:
-                "Clase personalizada para el componente Button cuenado esta deshabilitado.",
+                "Clase personalizada para el componente Button cuando esta deshabilitado.",
         },
         {
             id: "classNameLoader",
+            type: "string",
+            require: false,
+            default: '""',
+            description:
+            "Clase personalizada para el componente Button cuando esta en estado de carga.",
+        },
+        {
+            id: "classNameContentLoaderElement",
+            type: "string",
+            require: false,
+            default: '""',
+            description:
+                "Clase personalizada para contenedor del componente Loader dentro del botón cuando está en estado de carga.",
+        },
+        {
+            id: "classNameLoaderElement",
             type: "string",
             require: false,
             default: '""',

@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactNode } from "react";
-import { Loader, LoaderClassProps } from "../Loader";
+import { Loader } from "../Loader";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 
@@ -37,6 +37,10 @@ export interface ButtonBaseProps extends PropsWithChildren, _TProps {
      */
     icon?: ReactNode;
     /**
+     * The icon to display in the button.
+     */
+    iconLoader?: ReactNode;
+    /**
      * Indicates whether the component should render as a button element.
      */
     isBtn?: boolean;
@@ -69,6 +73,10 @@ export interface ButtonClassProps {
     /**
      * The class name for the component.
      */
+    classNameContentLoaderElement?: string;
+    /**
+     * The class name for the component.
+     */
     classNameLoaderElement?: string;
 
 }
@@ -82,6 +90,7 @@ export const Button = ({
     className = "",
     classNameLoader = "",
     classNameDisabled = "",
+    classNameContentLoaderElement="",
     classNameLoaderElement = "",
 
     children,
@@ -90,6 +99,7 @@ export const Button = ({
     onClick = () => {},
     onClickDisabled: onClickDisabledProps,
     icon = "",
+    iconLoader = undefined,
     isBtn = true,
     full = false,
     size = "normal",
@@ -117,7 +127,11 @@ export const Button = ({
                 `}
                 disabled={loader}
             >
-                {loader && <Loader classNameLoader={`fenext-btn-loader-element ${classNameLoaderElement}`} />}
+                {loader && <>
+                    <div className={`fenext-btn-content-loader-element ${classNameContentLoaderElement}`}>
+                    { iconLoader ?? <Loader classNameLoader={`fenext-btn-loader-element ${classNameLoaderElement}`} />}
+                    </div>
+                </>}
 
                 {icon}
                 {_t(children)}
