@@ -37,6 +37,10 @@ export interface ButtonBaseProps extends PropsWithChildren, _TProps {
      */
     icon?: ReactNode;
     /**
+     * The icon to display in the button.
+     */
+    iconLoader?: ReactNode;
+    /**
      * Indicates whether the component should render as a button element.
      */
     isBtn?: boolean;
@@ -90,6 +94,7 @@ export const Button = ({
     onClick = () => {},
     onClickDisabled: onClickDisabledProps,
     icon = "",
+    iconLoader = undefined,
     isBtn = true,
     full = false,
     size = "normal",
@@ -117,7 +122,7 @@ export const Button = ({
                 `}
                 disabled={loader}
             >
-                {loader && <Loader classNameLoader={`fenext-btn-loader-element ${classNameLoaderElement}`} />}
+                {loader &&( iconLoader ?? <Loader classNameLoader={`fenext-btn-loader-element ${classNameLoaderElement}`} />)}
 
                 {icon}
                 {_t(children)}

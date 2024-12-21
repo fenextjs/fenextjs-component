@@ -1,58 +1,108 @@
+:root {
+    --fenext-btn-padding: 1rem 1.5rem;
+    --fenext-btn-extra-small-padding: 0.5rem 0.9rem;
+    --fenext-btn-small-padding: 0.75rem 1.2rem;
+    --fenext-btn-normal-padding: 1rem 1.5rem;
+    --fenext-btn-strong-padding: 1.2rem 1.7rem;
+    --fenext-btn-extra-strong-padding: 1.3rem 2rem;
+
+    --fenext-btn-font-size: 1rem;
+    --fenext-btn-extra-small-font-size: 0.7rem;
+    --fenext-btn-small-font-size: 0.8rem;
+    --fenext-btn-normal-font-size: 1rem;
+    --fenext-btn-strong-font-size: 1.2rem;
+    --fenext-btn-extra-strong-font-size: 1.4rem;
+
+    --fenext-btn-font-weight: 900;
+    --fenext-btn-line-height: 1;
+    --fenext-btn-text-align: center;
+
+    --fenext-btn-background: var(--fenext-color-dark);
+    --fenext-btn-background-hover: var(--fenext-color-dark-light);
+    --fenext-btn-background-disabled: var(--fenext-color-secondary);
+
+    --fenext-btn-color: var(--fenext-color-white);
+    --fenext-btn-color-loader: transparent;
+
+    --fenext-btn-border-radius: 0.5rem;
+    --fenext-btn-border: 0;
+
+    --fenext-btn-width: auto;
+    --fenext-btn-full-width: 100%;
+
+    --fenext-btn-cursor: pointer;
+    --fenext-btn-display: inline-block;
+    --fenext-btn-position: relative;
+
+    --fenext-btn-loader-max-height: 70%;
+    --fenext-btn-loader-height: 1.5rem;
+    --fenext-btn-loader-width:auto;
+    --fenext-btn-loader-position: absolute;
+    --fenext-btn-loader-inset: 0;
+    --fenext-btn-loader-margin: auto;
+    --fenext-btn-loader-color: var(--fenext-color-white);
+}
+
 .fenext-btn {
-    $class_ : &;
-    padding: 1rem 1.5rem;
-    border-radius: 0.5rem;
-    border: 0;
+    $class_: &;
+    color: var(--fenext-btn-color);
+    background: var(--fenext-btn-background);
+    padding: var(--fenext-btn-padding);
+    border-radius: var(--fenext-btn-border-radius);
+    border: var(--fenext-btn-border);
     font-family: var(--fenext-font-global);
-    font-size: 1rem;
-    font-weight: 900;
-    line-height: 1;
-    text-align: center;
-    cursor: pointer;
-    color: var(--fenext-color-white);
-    background: var(--fenext-color-dark);
-    display: inline-block;
-    position: relative;
+    font-size: var(--fenext-btn-font-size);
+    font-weight: var(--fenext-btn-font-weight);
+    line-height: var(--fenext-btn-line-height);
+    text-align: var(--fenext-btn-text-align);
+    width: var(--fenext-btn-width);
+    cursor: var(--fenext-btn-cursor);
+    display: var(--fenext-btn-display);
+    position: var(--fenext-btn-position);
     &:hover {
-        background: var(--fenext-color-dark-light);
+        --fenext-btn-background: var(--fenext-btn-background-hover);
     }
     &-disabled {
-        background: var(--fenext-color-secondary);
+        --fenext-btn-background: var(--fenext-btn-background-disabled);
     }
     &-size {
         &-extra-small {
-            padding: 0.5rem 0.9rem;
-            font-size: 0.7rem;
+            --fenext-btn-padding: var(--fenext-btn-extra-small-padding);
+            --fenext-btn-font-size: var(--fenext-btn-extra-small-font-size);
         }
         &-small {
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
+            --fenext-btn-padding: var(--fenext-btn-small-padding);
+            --fenext-btn-font-size: var(--fenext-btn-small-font-size);
         }
         &-normal {
-            padding: 1rem 1.5rem;
+            --fenext-btn-padding: var(--fenext-btn-normal-padding);
+            --fenext-btn-font-size: var(--fenext-btn-normal-font-size);
         }
         &-strong {
-            padding: 1.2rem 1.7rem;
-            font-size: 1.2rem;
+            --fenext-btn-padding: var(--fenext-btn-strong-padding);
+            --fenext-btn-font-size: var(--fenext-btn-strong-font-size);
         }
         &-extra-strong {
-            padding: 1.3rem 2rem;
-            font-size: 1.4rem;
+            --fenext-btn-padding: var(--fenext-btn-extra-strong-padding);
+            --fenext-btn-font-size: var(--fenext-btn-extra-strong-font-size);
         }
         &-full {
-            width: 100%;
+            --fenext-btn-width : var(--fenext-btn-full-width);
         }
     }
-    &-loader-element  {
-        position: absolute;
-        inset: 0;
-        margin: auto;
-        color: var(--fenext-color-white);
+    &-loader-element {
+        max-height: var(--fenext-btn-loader-max-height);
+        height: var(--fenext-btn-loader-height);
+        width: var(--fenext-btn-loader-width);
+        position: var(--fenext-btn-loader-position);
+        inset: var(--fenext-btn-loader-inset);
+        margin: var(--fenext-btn-loader-margin);
+        color: var(--fenext-btn-loader-color);
     }
     &-loader {
-        color: transparent;
+        --fenext-btn-color: var(--fenext-btn-color-loader);
         > *:not(.fenext-loader) {
-            @at-root #{$class_} :where(&){
+            @at-root #{$class_} :where(&) {
                 opacity: 0;
             }
         }
