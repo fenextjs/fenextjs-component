@@ -12,13 +12,13 @@ import { ImgSlider } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| imgs | ImgProps[] | sí |  | Lista de imágenes que se muestran en el deslizador. |
-| defaultStep | number | no | 0 | Paso inicial en el deslizador de imágenes. |
-| step | number | no |  | Paso actual en el deslizador de imágenes. |
-| setStep | (e: number) =\> void | no |  | Función para actualizar el paso actual en el deslizador. |
-| className | string | no | '' | Clase CSS para personalizar el contenedor del deslizador. |
+| Parámetro   | Tipo                 | Requerido | Default | Descripcion                                               |
+| ----------- | -------------------- | --------- | ------- | --------------------------------------------------------- |
+| imgs        | ImgProps[]           | sí        |         | Lista de imágenes que se muestran en el deslizador.       |
+| defaultStep | number               | no        | 0       | Paso inicial en el deslizador de imágenes.                |
+| step        | number               | no        |         | Paso actual en el deslizador de imágenes.                 |
+| setStep     | (e: number) =\> void | no        |         | Función para actualizar el paso actual en el deslizador.  |
+| className   | string               | no        | ''      | Clase CSS para personalizar el contenedor del deslizador. |
 
 ### Storybook
 
@@ -26,15 +26,14 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Deslizador básico
+-   Deslizador básico
 
 ```tsx copy
 <ImgSlider imgs={imageList} />
 ```
 
-- Deslizador con paso controlado
+-   Deslizador con paso controlado
 
 ```tsx copy
 <ImgSlider imgs={imageList} step={2} setStep={(e) => console.log(e)} />
 ```
-
