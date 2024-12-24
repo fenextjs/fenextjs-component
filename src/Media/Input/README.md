@@ -12,18 +12,18 @@ import { MediaInput } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro         | Tipo                                                               | Requerido | Default                                    | Descripcion                                                               |
-| ----------------- | ------------------------------------------------------------------ | --------- | ------------------------------------------ | ------------------------------------------------------------------------- |
-| className         | string                                                             | no        | ''                                         | Clase CSS para personalizar el contenedor del componente MediaInput.      |
-| titleView         | string                                                             | no        | 'Upload Image'                             | Título que se muestra en la vista de carga de imágenes.                   |
-| textView          | string                                                             | no        | 'Click for select or upload Image.'        | Texto que se muestra en la vista de carga de imágenes.                    |
-| iconView          | ReactNode                                                          | no        | undefined                                  | Icono que se muestra junto al título y texto de la vista de carga.        |
-| defaultValue      | ImgDataProps[] \| ImgDataProps                                     | no        | undefined                                  | Valor por defecto del componente, que puede ser una o varias imágenes.    |
-| multiple          | boolean                                                            | no        | false                                      | Define si se pueden seleccionar múltiples imágenes.                       |
-| onChange          | (data: ImgDataProps[] \| ImgDataProps \| undefined) =\> void       | no        | undefined                                  | Función que se ejecuta cuando cambian los datos seleccionados o cargados. |
-| ButtonUploadProps | Omit\<ButtonProps, 'onClick'\>                                     | no        | \{ children: 'Upload Image', full: true \} | Propiedades del botón de subida de imágenes.                              |
-| MediaPageProps    | Omit\<MediaPageProps, 'onChange' \| 'multiple' \| 'defaultValue'\> | no        | \{\}                                       | Propiedades adicionales para la galería de medios.                        |
-| ModalProps        | Pick\<ModalBaseBaseProps, 'type'\>                                 | no        | \{ type: 'full' \}                         | Propiedades del modal que contiene la galería de imágenes.                |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| className | string | no | '' | Clase CSS para personalizar el contenedor del componente MediaInput. |
+| titleView | string | no | 'Upload Image' | Título que se muestra en la vista de carga de imágenes. |
+| textView | string | no | 'Click for select or upload Image.' | Texto que se muestra en la vista de carga de imágenes. |
+| iconView | ReactNode | no | undefined | Icono que se muestra junto al título y texto de la vista de carga. |
+| defaultValue | ImgDataProps[] \| ImgDataProps | no | undefined | Valor por defecto del componente, que puede ser una o varias imágenes. |
+| multiple | boolean | no | false | Define si se pueden seleccionar múltiples imágenes. |
+| onChange | (data: ImgDataProps[] \| ImgDataProps \| undefined) =\> void | no | undefined | Función que se ejecuta cuando cambian los datos seleccionados o cargados. |
+| ButtonUploadProps | Omit\<ButtonProps, 'onClick'\> | no | \{ children: 'Upload Image', full: true \} | Propiedades del botón de subida de imágenes. |
+| MediaPageProps | Omit\<MediaPageProps, 'onChange' \| 'multiple' \| 'defaultValue'\> | no | \{\} | Propiedades adicionales para la galería de medios. |
+| ModalProps | Pick\<ModalBaseBaseProps, 'type'\> | no | \{ type: 'full' \} | Propiedades del modal que contiene la galería de imágenes. |
 
 ### Storybook
 
@@ -31,20 +31,21 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   MediaInput básico
+- MediaInput básico
 
 ```tsx copy
 <MediaInput />
 ```
 
--   MediaInput con múltiples imágenes
+- MediaInput con múltiples imágenes
 
 ```tsx copy
 <MediaInput multiple={true} />
 ```
 
--   MediaInput con valores predeterminados
+- MediaInput con valores predeterminados
 
 ```tsx copy
 <MediaInput defaultValue={defaultImages} />
 ```
+
