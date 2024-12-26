@@ -42,8 +42,8 @@ export interface TooltipProps extends _TProps {
 
 export const Tooltip = ({
     className = "",
-    classNameChildren="",
-    classNameContent="",
+    classNameChildren = "",
+    classNameContent = "",
     children,
     tooltip,
     positionX = "center",
@@ -118,7 +118,9 @@ export const Tooltip = ({
                     setConfigTooltip(undefined);
                 }}
             >
-                <div className={`fenext-tooltip-children ${classNameChildren}`}>{_t(children)}</div>
+                <div className={`fenext-tooltip-children ${classNameChildren}`}>
+                    {_t(children)}
+                </div>
             </div>
         </>
     );
