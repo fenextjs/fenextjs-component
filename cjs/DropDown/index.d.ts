@@ -1,6 +1,9 @@
 import React, { ReactNode } from "react";
 export interface DropDownProps {
     className?: string;
+    classNameContentHeader?: string;
+    classNameContentIcon?: string;
+    classNameBody?: string;
     loader?: boolean;
     disabled?: boolean;
     defaultActive?: boolean;
@@ -13,4 +16,4 @@ export interface DropDownProps {
     rotateIcon?: boolean;
     type?: "checked" | "focus";
 }
-export declare const DropDown: ({ className, header, active: activeProps, defaultActive, disabled, loader, onChange: onChangeProps, iconArrow, rotateIcon, name, children, type, }: DropDownProps) => React.JSX.Element;
+export declare const DropDown: ({ className, classNameBody, classNameContentHeader, classNameContentIcon, header, active: activeProps, defaultActive, disabled, loader, onChange: onChangeProps, iconArrow, rotateIcon, name, children, type, }: DropDownProps) => React.JSX.Element;

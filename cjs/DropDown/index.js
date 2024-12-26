@@ -7,7 +7,7 @@ const fenextjs_svg_1 = require("fenextjs-svg");
 const Loader_1 = require("../Loader");
 const Portal_1 = require("../Portal");
 const fenextjs_hook_1 = require("fenextjs-hook");
-const DropDown = ({ className = "", header, active: activeProps, defaultActive, disabled, loader, onChange: onChangeProps, iconArrow = react_1.default.createElement(fenextjs_svg_1.SvgArrow, null), rotateIcon = true, name, children, type = "focus", }) => {
+const DropDown = ({ className = "", classNameBody = "", classNameContentHeader = "", classNameContentIcon = "", header, active: activeProps, defaultActive, disabled, loader, onChange: onChangeProps, iconArrow = react_1.default.createElement(fenextjs_svg_1.SvgArrow, null), rotateIcon = true, name, children, type = "focus", }) => {
     const [tlrb, settlrb] = (0, react_1.useState)({
         top: "inherit",
         left: "inherit",
@@ -78,14 +78,15 @@ const DropDown = ({ className = "", header, active: activeProps, defaultActive, 
                     fenext-dropdown-rotate-icon-${rotateIcon ? "yes" : "no"}
                     ${className}
                 `, onClick: onClick },
-            react_1.default.createElement("div", { className: `fenext-dropdown-header-content ` }, header),
-            react_1.default.createElement("div", { className: `fenext-dropdown-header-icon ` }, loader ? (react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement("div", { className: `fenext-dropdown-header-content ${classNameContentHeader}` }, header),
+            react_1.default.createElement("div", { className: `fenext-dropdown-header-icon ${classNameContentIcon}` }, loader ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement(Loader_1.Loader, null))) : (react_1.default.createElement(react_1.default.Fragment, null, iconArrow)))),
         react_1.default.createElement(Portal_1.Portal, null,
             react_1.default.createElement("div", { ref: refDropDownBody, "data-component": "fenext-dropdown-body", className: `
                         fenext-dropdown-body
                         fenext-dropdown-body-${isChange ? "change" : "no-change"}
                         fenext-dropdown-body-${active ? "active" : "inactive"}
+                        ${classNameBody}
                     `, style: {
                     ["--fenext-dropdown-top"]: tlrb.top,
                     ["--fenext-dropdown-left"]: tlrb.left,

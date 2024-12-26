@@ -19,6 +19,9 @@ export interface DropDownProps {
      * The class name for the component.
      */
     className?: string;
+    classNameContentHeader?: string;
+    classNameContentIcon?: string;
+    classNameBody?: string;
 
     /**
      * Indicates whether the Collapse is currently in the loading state.
@@ -71,6 +74,9 @@ export interface DropDownProps {
 
 export const DropDown = ({
     className = "",
+    classNameBody = "",
+    classNameContentHeader = "",
+    classNameContentIcon = "",
 
     header,
     active: activeProps,
@@ -185,10 +191,14 @@ export const DropDown = ({
                 `}
                 onClick={onClick}
             >
-                <div className={`fenext-dropdown-header-content `}>
+                <div
+                    className={`fenext-dropdown-header-content ${classNameContentHeader}`}
+                >
                     {header}
                 </div>
-                <div className={`fenext-dropdown-header-icon `}>
+                <div
+                    className={`fenext-dropdown-header-icon ${classNameContentIcon}`}
+                >
                     {loader ? (
                         <>
                             <Loader />
@@ -206,6 +216,7 @@ export const DropDown = ({
                         fenext-dropdown-body
                         fenext-dropdown-body-${isChange ? "change" : "no-change"}
                         fenext-dropdown-body-${active ? "active" : "inactive"}
+                        ${classNameBody}
                     `}
                     style={
                         {
