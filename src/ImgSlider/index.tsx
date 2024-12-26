@@ -40,6 +40,11 @@ export interface ImgSliderClassProps
      * The class name for the component.
      */
     classNameSteps?: string;
+    /**
+     * The class name for the component.
+     */
+    classNamePictureImg?: string;
+    classNameImg?: string;
 }
 
 /**
@@ -52,6 +57,8 @@ export interface ImgSliderProps
 export const ImgSlider = ({
     className = "",
     classNameStep = "",
+    classNamePictureImg = "",
+    classNameImg = "",
     imgs,
 
     defaultStep = 0,
@@ -76,7 +83,14 @@ export const ImgSlider = ({
                     items={imgs.map((e, i) => {
                         return {
                             label: e.name ?? "",
-                            content: <Img key={i} {...e} />,
+                            content: (
+                                <Img
+                                    key={i}
+                                    {...e}
+                                    className={classNamePictureImg}
+                                    classNameImg={classNameImg}
+                                />
+                            ),
                         };
                     })}
                     stepPos="top"
