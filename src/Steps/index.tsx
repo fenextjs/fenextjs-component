@@ -175,6 +175,17 @@ export interface StepsClassProps {
     forceShowBtnPrev?: boolean;
 
     forceShowBtnNext?: boolean;
+
+    /**
+     * The class name for the content btn next and prev.
+     */
+    classNameContentDog?: string;
+    /**
+     * The class name for the btn next and prev.
+     */
+    classNameDog?: string;
+
+    classNameDogCurrent?: string;
 }
 
 /**
@@ -200,6 +211,9 @@ export const Steps = ({
     classNameBtnNextDisabled = "",
     classNameBtnPrev = "",
     classNameBtnPrevDisabled = "",
+    classNameContentDog='',
+    classNameDog="",
+    classNameDogCurrent="",
 
     defaultStep = 0,
     step = undefined,
@@ -380,7 +394,7 @@ export const Steps = ({
                         <Button
                             className={`fenext-steps-btn fenext-steps-btn-prev ${classNameBtn} ${classNameBtnPrev}`}
                             classNameDisabled={`${classNameBtnDisabled} ${classNameBtnPrevDisabled}`}
-                            disabled={disabledBtnPrev}
+                            disabled={disabledBtnPrev || currentStep == 0}
                             onClick={onPrev_}
                             onClickDisabled={onPrevDisabled}
                             loader={loader}
@@ -398,7 +412,7 @@ export const Steps = ({
                     )}
                     {useDogs && items.length > 1 && (
                         <>
-                            <div className="fenext-steps-content-dog">
+                            <div className={`fenext-steps-content-dog ${classNameContentDog}`}>
                                 {new Array(items.length).fill(1).map((e, i) => {
                                     return (
                                         <>
@@ -408,10 +422,11 @@ export const Steps = ({
                                                     setCurrentStep(i);
                                                 }}
                                                 className={`
-                                                fenext-steps-dog
+                                                    fenext-steps-dog
+                                                    ${classNameDog}
                                                 ${
                                                     currentStep == i
-                                                        ? "fenext-steps-dog-current"
+                                                        ? `fenext-steps-dog-current ${classNameDogCurrent}`
                                                         : ""
                                                 }    
 
@@ -427,7 +442,7 @@ export const Steps = ({
                         <Button
                             className={`fenext-steps-btn fenext-steps-btn-next ${classNameBtn} ${classNameBtnNext}`}
                             classNameDisabled={`${classNameBtnDisabled} ${classNameBtnNextDisabled}`}
-                            disabled={disabledBtnNext}
+                            disabled={disabledBtnNext || currentStep === items.length - 1} 
                             onClick={onNext_}
                             onClickDisabled={onNextDisabled}
                             loader={loader}

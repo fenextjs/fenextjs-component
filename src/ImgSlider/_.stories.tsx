@@ -44,4 +44,6 @@ Index.args = {
             src: "https://images.alphacoders.com/145/145923.jpg",
         },
     ],
+    // forceShowBtnNext:true,
+    // forceShowBtnPrev:true
 } as ImgSliderProps;
