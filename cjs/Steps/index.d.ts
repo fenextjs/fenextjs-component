@@ -44,7 +44,10 @@ export interface StepsClassProps {
     classNameBtnPrevDisabled?: string;
     forceShowBtnPrev?: boolean;
     forceShowBtnNext?: boolean;
+    classNameContentDog?: string;
+    classNameDog?: string;
+    classNameDogCurrent?: string;
 }
 export interface StepsProps extends StepsBaseProps, StepsClassProps {
 }
-export declare const Steps: ({ className, classNameContentItems, classNameContentSteps, classNameListSteps, classNameItem, classNameItemActive, classNameStep, classNameStepActive, classNameStepCircle, classNameStepLabel, classNameContentBtn, classNameBtn, classNameBtnDisabled, classNameBtnNext, classNameBtnNextDisabled, classNameBtnPrev, classNameBtnPrevDisabled, defaultStep, step, items, btnNext, btnPrev, disabledBtnNext, disabledBtnPrev, onNext, onPrev, onNextDisabled, onPrevDisabled, stepPos, showCurrentStepNStep, useArrowKey, useDogs, onSetStep, forceShowBtnPrev, forceShowBtnNext, ...props }: StepsProps) => React.JSX.Element;
+export declare const Steps: ({ className, classNameContentItems, classNameContentSteps, classNameListSteps, classNameItem, classNameItemActive, classNameStep, classNameStepActive, classNameStepCircle, classNameStepLabel, classNameContentBtn, classNameBtn, classNameBtnDisabled, classNameBtnNext, classNameBtnNextDisabled, classNameBtnPrev, classNameBtnPrevDisabled, classNameContentDog, classNameDog, classNameDogCurrent, defaultStep, step, items, btnNext, btnPrev, disabledBtnNext, disabledBtnPrev, onNext, onPrev, onNextDisabled, onPrevDisabled, stepPos, showCurrentStepNStep, useArrowKey, useDogs, onSetStep, forceShowBtnPrev, forceShowBtnNext, ...props }: StepsProps) => React.JSX.Element;
