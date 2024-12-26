@@ -7,7 +7,7 @@ const Img_1 = require("../Img");
 const Steps_1 = require("../Steps");
 const PaginationNext_1 = require("fenextjs-svg/cjs/PaginationNext");
 const PaginationPre_1 = require("fenextjs-svg/cjs/PaginationPre");
-const ImgSlider = ({ className = "", imgs, defaultStep = 0, setStep: setStepProps, step: stepProps, ...props }) => {
+const ImgSlider = ({ className = "", classNameStep = "", imgs, defaultStep = 0, setStep: setStepProps, step: stepProps, ...props }) => {
     const [step__, setStep__] = (0, react_1.useState)(defaultStep);
     const setStep = (e) => {
         setStep__(e);
@@ -16,7 +16,7 @@ const ImgSlider = ({ className = "", imgs, defaultStep = 0, setStep: setStepProp
     const step = (0, react_1.useMemo)(() => stepProps ?? step__, [stepProps, step__]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-img-slider ${className} ` },
-            react_1.default.createElement(Steps_1.Steps, { items: imgs.map((e, i) => {
+            react_1.default.createElement(Steps_1.Steps, { className: classNameStep, items: imgs.map((e, i) => {
                     return {
                         label: e.name ?? "",
                         content: react_1.default.createElement(Img_1.Img, { key: i, ...e }),

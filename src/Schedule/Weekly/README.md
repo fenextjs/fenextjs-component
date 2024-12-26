@@ -12,15 +12,15 @@ import { ScheduleWeekly } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| className | string | no | '' | Clase CSS para personalizar el contenedor del componente ScheduleWeekly. |
-| title | ReactNode | no | 'Schedule Weekly' | Título del componente ScheduleWeekly. |
-| defaultValue | ScheduleWeeklyValueType | no | \{\} | Valor inicial del horario semanal, estructurado por días de la semana. |
-| value | ScheduleWeeklyValueType | no | undefined | Valor actual del horario semanal, usado para el control del componente desde el exterior. |
-| onChange | (v: ScheduleWeeklyValueType) =\> void | no | N/A | Función callback para manejar cambios en el valor del horario semanal. |
-| CollapseMultipleProps | Omit\<CollapseMultipleProps, 'items'\> | no | \{ name: 'schedule', type: 'radio', defaultActive: 0 \} | Props para personalizar el comportamiento del componente CollapseMultiple que envuelve cada día de la semana. |
-| onParseHeaderDay | (v: DaysEnum) =\> ReactNode | no | undefined | Función para personalizar el encabezado de cada día de la semana en el colapso. |
+| Parámetro             | Tipo                                   | Requerido | Default                                                 | Descripcion                                                                                                   |
+| --------------------- | -------------------------------------- | --------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| className             | string                                 | no        | ''                                                      | Clase CSS para personalizar el contenedor del componente ScheduleWeekly.                                      |
+| title                 | ReactNode                              | no        | 'Schedule Weekly'                                       | Título del componente ScheduleWeekly.                                                                         |
+| defaultValue          | ScheduleWeeklyValueType                | no        | \{\}                                                    | Valor inicial del horario semanal, estructurado por días de la semana.                                        |
+| value                 | ScheduleWeeklyValueType                | no        | undefined                                               | Valor actual del horario semanal, usado para el control del componente desde el exterior.                     |
+| onChange              | (v: ScheduleWeeklyValueType) =\> void  | no        | N/A                                                     | Función callback para manejar cambios en el valor del horario semanal.                                        |
+| CollapseMultipleProps | Omit\<CollapseMultipleProps, 'items'\> | no        | \{ name: 'schedule', type: 'radio', defaultActive: 0 \} | Props para personalizar el comportamiento del componente CollapseMultiple que envuelve cada día de la semana. |
+| onParseHeaderDay      | (v: DaysEnum) =\> ReactNode            | no        | undefined                                               | Función para personalizar el encabezado de cada día de la semana en el colapso.                               |
 
 ### Storybook
 
@@ -28,21 +28,22 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Uso básico del ScheduleWeekly
+-   Uso básico del ScheduleWeekly
 
 ```tsx copy
 <ScheduleWeekly onChange={(value) => console.log(value)} />
 ```
 
-- ScheduleWeekly con título personalizado
+-   ScheduleWeekly con título personalizado
 
 ```tsx copy
 <ScheduleWeekly title="Horario Semanal" />
 ```
 
-- ScheduleWeekly con CollapseMultipleProps personalizados
+-   ScheduleWeekly con CollapseMultipleProps personalizados
 
 ```tsx copy
-<ScheduleWeekly CollapseMultipleProps={{ type: 'checkbox', defaultActive: [0, 1] }} />
+<ScheduleWeekly
+    CollapseMultipleProps={{ type: "checkbox", defaultActive: [0, 1] }}
+/>
 ```
-

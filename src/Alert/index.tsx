@@ -32,24 +32,27 @@ export const Alert = ({
     ...props
 }: AlertComponentProps) => {
     const { _t } = use_T({ ...props });
-    const [active, setActive] = useState(true)
+    const [active, setActive] = useState(true);
     return (
         <>
             <div
                 className={`
                     fenext-alert 
                     fenext-alert-${type} 
-                    fenext-alert-${active?"active":"inactive"} 
+                    fenext-alert-${active ? "active" : "inactive"} 
                     ${className}
                 `}
                 data-type={type}
                 meta-data={data}
             >
                 <div className={`fenext-alert-content`}>{_t(message)}</div>
-                <div className={`fenext-alert-close`} onClick={()=>{
-                    onClose?.()
-                    setActive(false)
-                }}>
+                <div
+                    className={`fenext-alert-close`}
+                    onClick={() => {
+                        onClose?.();
+                        setActive(false);
+                    }}
+                >
                     {iconClose}
                 </div>
             </div>

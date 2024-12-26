@@ -30,7 +30,8 @@ export interface ImgSliderBaseProps extends _TProps {
 /**
  * Properties for the class of the ImgSlider component.
  */
-export interface ImgSliderClassProps extends Omit<StepsClassProps,"className">{
+export interface ImgSliderClassProps
+    extends Omit<StepsClassProps, "className"> {
     /**
      * The class name for the component.
      */

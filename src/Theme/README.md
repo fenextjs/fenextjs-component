@@ -12,10 +12,10 @@ import { Theme } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| className | string | no | '' | Clase CSS para personalizar el contenedor del componente. |
-| classNameItem | string | no | '' | Clase CSS para los elementos dentro del componente. |
+| Parámetro     | Tipo   | Requerido | Default | Descripcion                                               |
+| ------------- | ------ | --------- | ------- | --------------------------------------------------------- |
+| className     | string | no        | ''      | Clase CSS para personalizar el contenedor del componente. |
+| classNameItem | string | no        | ''      | Clase CSS para los elementos dentro del componente.       |
 
 ### Storybook
 
@@ -23,15 +23,14 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Básico
+-   Básico
 
 ```tsx copy
 <Theme />
 ```
 
-- Con clases personalizadas
+-   Con clases personalizadas
 
 ```tsx copy
 <Theme className="custom-theme" classNameItem="custom-theme-item" />
 ```
-
