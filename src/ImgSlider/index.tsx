@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Img, ImgProps } from "../Img";
-import { Steps } from "../Steps";
+import { Steps, StepsClassProps } from "../Steps";
 import { SvgPaginationNext } from "fenextjs-svg/cjs/PaginationNext";
 import { SvgPaginationPre } from "fenextjs-svg/cjs/PaginationPre";
 import { _TProps } from "fenextjs-interface";
@@ -30,11 +30,15 @@ export interface ImgSliderBaseProps extends _TProps {
 /**
  * Properties for the class of the ImgSlider component.
  */
-export interface ImgSliderClassProps {
+export interface ImgSliderClassProps extends Omit<StepsClassProps,"className">{
     /**
      * The class name for the component.
      */
     className?: string;
+    /**
+     * The class name for the component.
+     */
+    classNameSteps?: string;
 }
 
 /**
@@ -46,6 +50,7 @@ export interface ImgSliderProps
 
 export const ImgSlider = ({
     className = "",
+    classNameStep = "",
     imgs,
 
     defaultStep = 0,
@@ -66,6 +71,7 @@ export const ImgSlider = ({
         <>
             <div className={`fenext-img-slider ${className} `}>
                 <Steps
+                    className={classNameStep}
                     items={imgs.map((e, i) => {
                         return {
                             label: e.name ?? "",
