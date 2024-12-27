@@ -896,6 +896,7 @@ export const InputSelect = <T = any,>({
                                                     iconDelete={iconDelete}
                                                     disabled={props?.disabled}
                                                     useT={useTOption}
+                                                    classNameOption={`${classNameOption} ${dataMemo?.option?.classNameOption}`}
                                                 />
                                             </div>
                                         </>

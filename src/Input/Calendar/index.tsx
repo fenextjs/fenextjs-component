@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
-import { InputText, InputTextProps } from "../Text";
+import { InputText, InputTextClassProps, InputTextProps } from "../Text";
 import { SvgDate } from "fenextjs-svg/cjs/Date";
-import { Collapse } from "../../Collapse";
+import { Collapse, CollapseProps } from "../../Collapse";
 import { useDate } from "fenextjs-hook/cjs/useDate";
 import { useData, useValidator } from "fenextjs-hook";
 import { InputCalendarMonth, InputCalendarMonthProps } from "./Month";
@@ -24,7 +24,9 @@ export interface InputCalendarProps
             | "validator"
             | "errorWithIsChange"
         >,
-        Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max"> {
+        Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max"> 
+        
+        {
     defaultValue?: Date;
     value?: Date;
     defaultValueRange?: Date[];
@@ -32,6 +34,12 @@ export interface InputCalendarProps
     onChange?: (d: Date | undefined) => void;
     onChangeRange?: (d: Date[]) => void;
     nMonthShow?: number;
+
+    collapseProps?:Omit<CollapseProps,"children"|"header">
+
+    className?:string
+    classNameContentCalendar?:string
+    classNameInputText?:InputTextClassProps
 }
 
 export const InputCalendar = ({
@@ -46,6 +54,10 @@ export const InputCalendar = ({
     onChangeRange,
     validator,
     errorWithIsChange = true,
+    collapseProps={},
+    className="",
+    classNameContentCalendar="",
+    classNameInputText={},
     ...props
 }: InputCalendarProps) => {
     const [isChange, setIsChange] = useState(!errorWithIsChange);
@@ -92,12 +104,14 @@ export const InputCalendar = ({
 
     return (
         <>
-            <div className={`fenext-input-calendar`}>
+            <div className={`fenext-input-calendar ${className}`}>
                 <Collapse
+                    {...collapseProps}
                     header={
                         <>
                             <InputText
                                 {...props}
+                                {...classNameInputText}
                                 icon={icon}
                                 value={
                                     type == "normal"
@@ -116,7 +130,7 @@ export const InputCalendar = ({
                     }
                 >
                     <div
-                        className={`fenext-input-calendar-content fenext-input-calendar-content-${nMonthShow > 1 ? "multiple" : ""}`}
+                        className={`fenext-input-calendar-content fenext-input-calendar-content-${nMonthShow > 1 ? "multiple" : ""} ${classNameContentCalendar}`}
                     >
                         <InputCalendarMonth
                             _t={props?._t}
