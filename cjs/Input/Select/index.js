@@ -366,7 +366,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
                             react_1.default.createElement("div", { className: `fenext-select-multiple-list ` },
                                 react_1.default.createElement(SelectOption_1.InputSelectOption, { ...dataMemo?.option, type: "multiple", onDelete: () => {
                                         onClear();
-                                    }, iconDelete: iconDelete, disabled: props?.disabled, useT: useTOption })))),
+                                    }, iconDelete: iconDelete, disabled: props?.disabled, useT: useTOption, classNameOption: `${classNameOption} ${dataMemo?.option?.classNameOption}` })))),
                         props?.extraInLabel) })),
             typeSelect == "div" &&
                 (typeSelectStyle == "normal" ||

@@ -4,7 +4,11 @@ import { SvgDate } from "fenextjs-svg/cjs/Date";
 import { Collapse, CollapseProps } from "../../Collapse";
 import { useDate } from "fenextjs-hook/cjs/useDate";
 import { useData, useValidator } from "fenextjs-hook";
-import { InputCalendarMonth, InputCalendarMonthClassProps, InputCalendarMonthProps } from "./Month";
+import {
+    InputCalendarMonth,
+    InputCalendarMonthClassProps,
+    InputCalendarMonthProps,
+} from "./Month";
 import { FenextjsDate } from "fenextjs-date";
 
 /**
@@ -24,9 +28,7 @@ export interface InputCalendarProps
             | "validator"
             | "errorWithIsChange"
         >,
-        Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max"> 
-        
-        {
+        Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max"> {
     defaultValue?: Date;
     value?: Date;
     defaultValueRange?: Date[];
@@ -35,12 +37,12 @@ export interface InputCalendarProps
     onChangeRange?: (d: Date[]) => void;
     nMonthShow?: number;
 
-    collapseProps?:Omit<CollapseProps,"children"|"header">
+    collapseProps?: Omit<CollapseProps, "children" | "header">;
 
-    className?:string
-    classNameContentCalendar?:string
-    classNameInputText?:InputTextClassProps
-    classNameInputCalendarMonth?:InputCalendarMonthClassProps
+    className?: string;
+    classNameContentCalendar?: string;
+    classNameInputText?: InputTextClassProps;
+    classNameInputCalendarMonth?: InputCalendarMonthClassProps;
 }
 
 export const InputCalendar = ({
@@ -55,11 +57,11 @@ export const InputCalendar = ({
     onChangeRange,
     validator,
     errorWithIsChange = true,
-    collapseProps={},
-    className="",
-    classNameContentCalendar="",
-    classNameInputText={},
-    classNameInputCalendarMonth={},
+    collapseProps = {},
+    className = "",
+    classNameContentCalendar = "",
+    classNameInputText = {},
+    classNameInputCalendarMonth = {},
     ...props
 }: InputCalendarProps) => {
     const [isChange, setIsChange] = useState(!errorWithIsChange);
@@ -135,7 +137,7 @@ export const InputCalendar = ({
                         className={`fenext-input-calendar-content fenext-input-calendar-content-${nMonthShow > 1 ? "multiple" : ""} ${classNameContentCalendar}`}
                     >
                         <InputCalendarMonth
-                        {...classNameInputCalendarMonth}
+                            {...classNameInputCalendarMonth}
                             _t={props?._t}
                             type={type}
                             dataNSelect={dataNSelect}

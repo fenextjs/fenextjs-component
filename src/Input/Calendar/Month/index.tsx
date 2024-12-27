@@ -5,27 +5,28 @@ import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 import { FenextjsDate } from "fenextjs-date";
 
-
 export interface InputCalendarMonthClassProps {
-    className?:string
-    classNameContent?:string
-    classNameTop?:string
-    classNameTopBtn?:string
-    classNameTopBtnPrev?:string
-    classNameTopBtnNext?:string
-    classNameTopInfo?:string
-    classNameDays?:string
-    classNameDay?:string
-    classNameDate?:string
-    classNameDateValid?:string
-    classNameDateDisabled?:string
-    classNameDateInMonth?:string
-    classNameDateOtherMonth?:string
-    classNameDateSelect?:string
-    classNameDateSelectRange?:string 
+    className?: string;
+    classNameContent?: string;
+    classNameTop?: string;
+    classNameTopBtn?: string;
+    classNameTopBtnPrev?: string;
+    classNameTopBtnNext?: string;
+    classNameTopInfo?: string;
+    classNameDays?: string;
+    classNameDay?: string;
+    classNameDate?: string;
+    classNameDateValid?: string;
+    classNameDateDisabled?: string;
+    classNameDateInMonth?: string;
+    classNameDateOtherMonth?: string;
+    classNameDateSelect?: string;
+    classNameDateSelectRange?: string;
 }
 
-export interface InputCalendarMonthProps extends InputCalendarMonthClassProps,_TProps {
+export interface InputCalendarMonthProps
+    extends InputCalendarMonthClassProps,
+        _TProps {
     type?: "normal" | "range";
 
     date?: FenextjsDate;
@@ -59,22 +60,22 @@ export const InputCalendarMonth = ({
     min,
     max,
 
-    className="",
-    classNameContent="",
-    classNameTop="",
-    classNameTopBtn="",
-    classNameTopBtnPrev="",
-    classNameTopBtnNext="",
-    classNameTopInfo="",
-    classNameDays="",
-    classNameDay="",
-    classNameDate="",
-    classNameDateValid="",
-    classNameDateDisabled="",
-    classNameDateInMonth="",
-    classNameDateOtherMonth="",
-    classNameDateSelect="",
-    classNameDateSelectRange="",
+    className = "",
+    classNameContent = "",
+    classNameTop = "",
+    classNameTopBtn = "",
+    classNameTopBtnPrev = "",
+    classNameTopBtnNext = "",
+    classNameTopInfo = "",
+    classNameDays = "",
+    classNameDay = "",
+    classNameDate = "",
+    classNameDateValid = "",
+    classNameDateDisabled = "",
+    classNameDateInMonth = "",
+    classNameDateOtherMonth = "",
+    classNameDateSelect = "",
+    classNameDateSelectRange = "",
 
     ...props
 }: InputCalendarMonthProps) => {
@@ -82,15 +83,21 @@ export const InputCalendarMonth = ({
     return (
         <>
             <div className={`fenext-input-calendar-month ${className}`}>
-                <div className={`fenext-input-calendar-month-content ${classNameContent}`}>
-                    <div className={`fenext-input-calendar-top ${classNameTop}`}>
+                <div
+                    className={`fenext-input-calendar-month-content ${classNameContent}`}
+                >
+                    <div
+                        className={`fenext-input-calendar-top ${classNameTop}`}
+                    >
                         <button
                             className={`fenext-input-calendar-btn ${classNameTopBtn} ${classNameTopBtnPrev}`}
                             onClick={onPreMonth}
                         >
                             <SvgPaginationPre />
                         </button>
-                        <div className={`fenext-input-calendar-top-info ${classNameTopInfo}`}>
+                        <div
+                            className={`fenext-input-calendar-top-info ${classNameTopInfo}`}
+                        >
                             {date?.onFormat({
                                 month: "long",
                                 year: "numeric",
@@ -103,7 +110,9 @@ export const InputCalendarMonth = ({
                             <SvgPaginationNext />
                         </button>
                     </div>
-                    <div className={`fenext-input-calendar-days ${classNameDays}`}>
+                    <div
+                        className={`fenext-input-calendar-days ${classNameDays}`}
+                    >
                         {[
                             DaysEnum.Sunday,
                             DaysEnum.Monday,
