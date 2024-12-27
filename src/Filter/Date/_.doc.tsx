@@ -1,78 +1,185 @@
 export default {
-    id: "form",
-    idStorybook: "component-form",
+    id: "filter-date",
+    idStorybook: "component-filter-date",
     name: "FilterDate",
     description:
-        "El componente FilterDate es un formulario que permite capturar datos del usuario. Ofrece funcionalidad para manejar el envío de formularios, opcionalmente realizar una acción al enviarlo y manejar un estado deshabilitado.",
+        "El componente FilterDate permite filtrar datos por fecha o por rango de fechas. Ofrece opciones configurables para seleccionar fechas, personalizar el formato, y manejar acciones mediante hooks como `useData` y `useDate`.",
     props: [
         {
-            id: "id",
+            id: "defaultValue",
+            type: "FilterDateDataProps",
+            require: false,
+            default: "{}",
+            description:
+                "Valor inicial del filtro de fecha, incluyendo tipo, fecha o rango de fechas.",
+        },
+        {
+            id: "onChange",
+            type: "(data: FilterDateDataProps) => void",
+            require: false,
+            default: "undefined",
+            description:
+                "Función que se ejecuta cuando cambia el valor del filtro de fecha.",
+        },
+        {
+            id: "formatDateOption",
+            type: "FenextjsDateFormatOptions",
+            require: false,
+            default: "{}",
+            description:
+                "Opciones de formato para mostrar las fechas seleccionadas.",
+        },
+        {
+            id: "textValue",
             type: "string",
             require: false,
-            default: "''",
-            description:
-                "ID único para identificar el formulario, usado para personalizar la acción en eventos.",
+            default: "'Filtrar por fecha:'",
+            description: "Texto principal que describe el propósito del filtro.",
         },
         {
-            id: "onSubmit",
-            type: "() => Promise<void>",
+            id: "textFilterByDate",
+            type: "string",
             require: false,
-            default: "async () => {}",
-            description:
-                "Función personalizada que se ejecuta al enviar el formulario. Debe ser una función asíncrona que realice la acción de envío.",
+            default: "'Filtar por fecha'",
+            description: "Texto que se muestra para la opción de filtro por fecha.",
         },
         {
-            id: "disabled",
-            type: "boolean",
+            id: "textFilterByRange",
+            type: "string",
             require: false,
-            default: "true",
+            default: "'Filtar por rango'",
+            description: "Texto que se muestra para la opción de filtro por rango de fechas.",
+        },
+        {
+            id: "textBtnToday",
+            type: "string",
+            require: false,
+            default: "'Hoy'",
+            description: "Texto del botón para seleccionar la fecha actual.",
+        },
+        {
+            id: "textBtnWeek",
+            type: "string",
+            require: false,
+            default: "'Esta Semana'",
+            description: "Texto del botón para seleccionar la semana actual.",
+        },
+        {
+            id: "iconTrash",
+            type: "ReactNode",
+            require: false,
+            default: "<SvgTrash />",
+            description: "Icono que se muestra como indicador para eliminar filtros.",
+        },
+        {
+            id: "extraListBtn",
+            type: "(data: ReturnType<typeof useData<FilterDateDataProps>>) => ReactNode[]",
+            require: false,
+            default: "[]",
             description:
-                "Indica si el formulario está deshabilitado, lo que previene la acción de envío.",
+                "Lista de botones personalizados que se pueden agregar dinámicamente.",
+        },
+        {
+            id: "nMonthShow",
+            type: "number",
+            require: false,
+            default: 2,
+            description: "Número de meses visibles en el calendario.",
         },
         {
             id: "className",
             type: "string",
             require: false,
             default: "''",
-            description:
-                "Clase CSS para personalizar el estilo del formulario.",
+            description: "Clase CSS para personalizar el contenedor principal.",
         },
         {
-            id: "children",
-            type: "ReactNode",
+            id: "classNameDropDown",
+            type: "DropDownClassProps",
             require: false,
-            default: "undefined",
-            description:
-                "Contenido o elementos dentro del formulario, típicamente los campos de entrada.",
+            default: "{}",
+            description: "Clase CSS para personalizar el menú desplegable.",
+        },
+        {
+            id: "classNameCollapse",
+            type: "InputCalendarClassProps",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar el calendario desplegable.",
+        },
+        {
+            id: "classNameBtnToday",
+            type: "ButtonClassProps",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar el botón 'Hoy'.",
+        },
+        {
+            id: "classNameBtnWeek",
+            type: "ButtonClassProps",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar el botón 'Esta Semana'.",
+        },
+        {
+            id: "classNameTextValue",
+            type: "Pick<TextProps, 'tag' | 'className'>",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar el texto principal.",
+        },
+        {
+            id: "classNameTextSwich",
+            type: "Pick<TextProps, 'tag' | 'className'>",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar los textos de los interruptores.",
+        },
+        {
+            id: "classNameInputSwich",
+            type: "InputSwichClassProps",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar los interruptores.",
+        },
+        {
+            id: "classNameContentTop",
+            type: "string",
+            require: false,
+            default: "''",
+            description: "Clase CSS para personalizar el contenedor superior del contenido.",
+        },
+        {
+            id: "classNameLabelSwich",
+            type: "string",
+            require: false,
+            default: "''",
+            description: "Clase CSS para personalizar las etiquetas de los interruptores.",
+        },
+        {
+            id: "classNameClear",
+            type: "string",
+            require: false,
+            default: "''",
+            description: "Clase CSS para personalizar el icono de limpiar filtros.",
         },
     ],
     useExample: [
         {
-            text: "FilterDateulario básico",
-            content: `<FilterDate><InputText name="example" /></FilterDate>`,
+            text: "Básico",
+            content: `<FilterDate />`,
         },
         {
-            text: "FilterDateulario con acción personalizada",
-            content: `<FilterDate onSubmit={async () => { console.log("FilterDateulario enviado"); }}><InputText name="example" /></FilterDate>`,
+            text: "Con valores iniciales",
+            content: `<FilterDate defaultValue={{ type: "range", dateRange: [new Date(), new Date()] }} />`,
         },
         {
-            text: "FilterDateulario deshabilitado",
-            content: `<FilterDate disabled={true}><InputText name="example" /></FilterDate>`,
+            text: "Con botón extra",
+            content: `<FilterDate extraListBtn={[({ data }) => <button>Extra</button>]} />`,
         },
-    ],
-    extras: [
         {
-            id: "Tracking",
-            title: "Eventos de tracking",
-            description:
-                "Cuando el formulario tiene un 'id' definido y se envía correctamente, se registra un evento en el Data Layer.",
-            tableItems: [
-                {
-                    Evento: "form-{id}",
-                    Descripción:
-                        "Evento de tracking cuando se envía el formulario con un 'id' definido.",
-                },
-            ],
+            text: "Con formato personalizado",
+            content: `<FilterDate formatDateOption={{ weekday: "long", year: "numeric", month: "long", day: "numeric" }} />`,
         },
     ],
 };
