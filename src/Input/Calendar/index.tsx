@@ -11,6 +11,15 @@ import {
 } from "./Month";
 import { FenextjsDate } from "fenextjs-date";
 
+
+export interface InputCalendarClassProps {
+    className?: string;
+    classNameContentCalendar?: string;
+    classNameInputText?: InputTextClassProps;
+    classNameInputCalendarMonth?: InputCalendarMonthClassProps;
+
+}
+
 /**
  * All props for the InputCalendar component.
  */
@@ -28,7 +37,8 @@ export interface InputCalendarProps
             | "validator"
             | "errorWithIsChange"
         >,
-        Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max"> {
+        Pick<InputCalendarMonthProps, "_t" | "type" | "min" | "max"> ,
+        InputCalendarClassProps{
     defaultValue?: Date;
     value?: Date;
     defaultValueRange?: Date[];
@@ -39,10 +49,6 @@ export interface InputCalendarProps
 
     collapseProps?: Omit<CollapseProps, "children" | "header">;
 
-    className?: string;
-    classNameContentCalendar?: string;
-    classNameInputText?: InputTextClassProps;
-    classNameInputCalendarMonth?: InputCalendarMonthClassProps;
 }
 
 export const InputCalendar = ({

@@ -14,6 +14,7 @@
     &-input {
         position: fixed;
         scale: 0;
+        opacity: 0;
     }
     &-circle {
         width: var(--size-cicle);

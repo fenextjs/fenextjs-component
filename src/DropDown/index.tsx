@@ -11,10 +11,11 @@ import { Loader } from "../Loader";
 import { Portal } from "../Portal";
 import { useActionDropDown } from "fenextjs-hook";
 
+
 /**
  * Properties for the DropDown component.
  */
-export interface DropDownProps {
+export interface DropDownClassProps {
     /**
      * The class name for the component.
      */
@@ -22,6 +23,13 @@ export interface DropDownProps {
     classNameContentHeader?: string;
     classNameContentIcon?: string;
     classNameBody?: string;
+}
+
+
+/**
+ * Properties for the DropDown component.
+ */
+export interface DropDownProps extends DropDownClassProps{
 
     /**
      * Indicates whether the Collapse is currently in the loading state.
