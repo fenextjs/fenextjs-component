@@ -1,192 +1,185 @@
 export default {
-    id: "back",
-    idStorybook: "component-back",
-    name: "Back",
+    id: "filter-date",
+    idStorybook: "component-filter-date",
+    name: "FilterDate",
     description:
-        "El componente Back representa un botón de retroceso que permite al usuario navegar a la página anterior en el historial del navegador, utilizar el Router de Next.js, redirigir a una URL específica, ejecutar una función personalizada o realizar una acción personalizada de 'fenextjs-history'.",
+        "El componente FilterDate permite filtrar datos por fecha o por rango de fechas. Ofrece opciones configurables para seleccionar fechas, personalizar el formato, y manejar acciones mediante hooks como `useData` y `useDate`.",
     props: [
         {
-            id: "loader",
-            type: "boolean",
+            id: "defaultValue",
+            type: "FilterDateDataProps",
             require: false,
-            default: "false",
+            default: "{}",
             description:
-                "Indica si el componente está en estado de carga, mostrando un indicador de 'Loader' y deshabilitando su funcionalidad.",
+                "Valor inicial del filtro de fecha, incluyendo tipo, fecha o rango de fechas.",
         },
         {
-            id: "disabled",
-            type: "boolean",
-            require: false,
-            default: "false",
-            description: "Indica si el botón está deshabilitado.",
-        },
-        {
-            id: "onClick",
-            type: "(e?: any) => void",
+            id: "onChange",
+            type: "(data: FilterDateDataProps) => void",
             require: false,
             default: "undefined",
             description:
-                "Función personalizada que se ejecuta al hacer clic en el botón.",
+                "Función que se ejecuta cuando cambia el valor del filtro de fecha.",
         },
         {
-            id: "icon",
-            type: "ReactNode",
+            id: "formatDateOption",
+            type: "FenextjsDateFormatOptions",
             require: false,
-            default: "<SvgPaginationPre />",
-            description: "Icono que se muestra dentro del botón.",
-        },
-        {
-            id: "children",
-            type: "ReactNode",
-            require: false,
-            default: "'Back'",
-            description: "Contenido o texto que se muestra dentro del botón.",
-        },
-        {
-            id: "typeOnBack",
-            type: "'fenextjs-history' | 'history' | 'router' | 'link' | 'none'",
-            require: false,
-            default: "'history'",
+            default: "{}",
             description:
-                "Define el tipo de acción que se ejecutará al hacer clic en el botón.",
+                "Opciones de formato para mostrar las fechas seleccionadas.",
         },
         {
-            id: "link",
+            id: "textValue",
             type: "string",
             require: false,
-            default: "''",
-            description: "URL a la que redirigir si 'typeOnBack' es 'link'.",
+            default: "'Filtrar por fecha:'",
+            description: "Texto principal que describe el propósito del filtro.",
         },
         {
-            id: "useHistoryMinLenght",
-            type: "boolean",
+            id: "textFilterByDate",
+            type: "string",
             require: false,
-            default: "false",
-            description:
-                "Determina si se debe mostrar el botón solo si el historial del navegador tiene una longitud mínima.",
+            default: "'Filtar por fecha'",
+            description: "Texto que se muestra para la opción de filtro por fecha.",
         },
         {
-            id: "minLenght",
+            id: "textFilterByRange",
+            type: "string",
+            require: false,
+            default: "'Filtar por rango'",
+            description: "Texto que se muestra para la opción de filtro por rango de fechas.",
+        },
+        {
+            id: "textBtnToday",
+            type: "string",
+            require: false,
+            default: "'Hoy'",
+            description: "Texto del botón para seleccionar la fecha actual.",
+        },
+        {
+            id: "textBtnWeek",
+            type: "string",
+            require: false,
+            default: "'Esta Semana'",
+            description: "Texto del botón para seleccionar la semana actual.",
+        },
+        {
+            id: "iconTrash",
+            type: "ReactNode",
+            require: false,
+            default: "<SvgTrash />",
+            description: "Icono que se muestra como indicador para eliminar filtros.",
+        },
+        {
+            id: "extraListBtn",
+            type: "(data: ReturnType<typeof useData<FilterDateDataProps>>) => ReactNode[]",
+            require: false,
+            default: "[]",
+            description:
+                "Lista de botones personalizados que se pueden agregar dinámicamente.",
+        },
+        {
+            id: "nMonthShow",
             type: "number",
             require: false,
             default: 2,
-            description:
-                "Longitud mínima del historial del navegador para mostrar el botón.",
-        },
-        {
-            id: "onValidateRuteBack",
-            type: "(path: string) => boolean",
-            require: false,
-            default: "undefined",
-            description:
-                "Función para validar el retroceso cuando 'typeOnBack' es 'fenextjs-history'.",
+            description: "Número de meses visibles en el calendario.",
         },
         {
             id: "className",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el contenedor del botón.",
+            description: "Clase CSS para personalizar el contenedor principal.",
         },
         {
-            id: "classNameDisabled",
+            id: "classNameDropDown",
+            type: "DropDownClassProps",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar el menú desplegable.",
+        },
+        {
+            id: "classNameCollapse",
+            type: "InputCalendarClassProps",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar el calendario desplegable.",
+        },
+        {
+            id: "classNameBtnToday",
+            type: "ButtonClassProps",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar el botón 'Hoy'.",
+        },
+        {
+            id: "classNameBtnWeek",
+            type: "ButtonClassProps",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar el botón 'Esta Semana'.",
+        },
+        {
+            id: "classNameTextValue",
+            type: "Pick<TextProps, 'tag' | 'className'>",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar el texto principal.",
+        },
+        {
+            id: "classNameTextSwich",
+            type: "Pick<TextProps, 'tag' | 'className'>",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar los textos de los interruptores.",
+        },
+        {
+            id: "classNameInputSwich",
+            type: "InputSwichClassProps",
+            require: false,
+            default: "{}",
+            description: "Clase CSS para personalizar los interruptores.",
+        },
+        {
+            id: "classNameContentTop",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para el estado deshabilitado del botón.",
+            description: "Clase CSS para personalizar el contenedor superior del contenido.",
         },
         {
-            id: "classNameIcon",
+            id: "classNameLabelSwich",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para el icono del botón.",
+            description: "Clase CSS para personalizar las etiquetas de los interruptores.",
         },
         {
-            id: "classNameContent",
+            id: "classNameClear",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para el contenido del botón.",
-        },
-        {
-            id: "classNameLoader",
-            type: "string",
-            require: false,
-            default: "''",
-            description: "Clase CSS para el componente 'Loader'.",
-        },
-    ],
-    extras: [
-        {
-            id: "redireccionamiento",
-            title: "Redireccionamiento",
-            description:
-                "Dependiendo del valor de 'typeOnBack', la redirección se ejecutará de la siguiente manera:",
-            tableItems: [
-                {
-                    "Tipo de back": "fenextjs-history",
-                    Redireccion: "onBack({onValidateRuteBack})",
-                    Descripción:
-                        "Acción personalizada utilizando el hook 'useHistory' de 'fenextjs'.",
-                },
-                {
-                    "Tipo de back": "history",
-                    Redireccion: "history.back()",
-                    Descripción:
-                        "Redirección a la página anterior mediante el historial del navegador.",
-                },
-                {
-                    "Tipo de back": "router",
-                    Redireccion: "router.back()",
-                    Descripción: "Redirección utilizando el router de Next.js.",
-                },
-                {
-                    "Tipo de back": "link",
-                    Redireccion: "router.push(link)",
-                    Descripción: "Redirección a una URL específica.",
-                },
-                {
-                    "Tipo de back": "none",
-                    Redireccion: "Ninguna acción",
-                    Descripción: "No se realiza ninguna redirección.",
-                },
-            ],
-        },
-        {
-            id: "NOTA",
-            title: "__NOTA__",
-            description:
-                "Para que `typeOnBack='fenextjs-history'` funcione correctamente debe ser ejecutado useHistory en _app o el layout mas superior que se posea.",
-            code: `import type { AppProps } from "next/app";
-import { useHistory } from "fenextjs";
-
-export default function App({ Component, pageProps }: AppProps) {
-  useHistory({})
-  return <Component {...pageProps} />
-}`,
+            description: "Clase CSS para personalizar el icono de limpiar filtros.",
         },
     ],
     useExample: [
         {
             text: "Básico",
-            content: `<Back />`,
+            content: `<FilterDate />`,
         },
         {
-            text: "Back con texto personalizado",
-            content: `<Back>Go Back</Back>`,
+            text: "Con valores iniciales",
+            content: `<FilterDate defaultValue={{ type: "range", dateRange: [new Date(), new Date()] }} />`,
         },
         {
-            text: "Back con acción personalizada",
-            content: `<Back onClick={() => console.log("Botón clickeado")}>Volver</Back>`,
+            text: "Con botón extra",
+            content: `<FilterDate extraListBtn={[({ data }) => <button>Extra</button>]} />`,
         },
         {
-            text: "Back deshabilitado",
-            content: `<Back disabled={true} />`,
-        },
-        {
-            text: "Back con validación personalizada",
-            content: `<Back typeOnBack="fenextjs-history" onValidateRuteBack={(path) => path !== "/home"} />`,
+            text: "Con formato personalizado",
+            content: `<FilterDate formatDateOption={{ weekday: "long", year: "numeric", month: "long", day: "numeric" }} />`,
         },
     ],
 };
