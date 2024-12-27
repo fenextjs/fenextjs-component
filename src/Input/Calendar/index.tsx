@@ -4,7 +4,7 @@ import { SvgDate } from "fenextjs-svg/cjs/Date";
 import { Collapse, CollapseProps } from "../../Collapse";
 import { useDate } from "fenextjs-hook/cjs/useDate";
 import { useData, useValidator } from "fenextjs-hook";
-import { InputCalendarMonth, InputCalendarMonthProps } from "./Month";
+import { InputCalendarMonth, InputCalendarMonthClassProps, InputCalendarMonthProps } from "./Month";
 import { FenextjsDate } from "fenextjs-date";
 
 /**
@@ -40,6 +40,7 @@ export interface InputCalendarProps
     className?:string
     classNameContentCalendar?:string
     classNameInputText?:InputTextClassProps
+    classNameInputCalendarMonth?:InputCalendarMonthClassProps
 }
 
 export const InputCalendar = ({
@@ -58,6 +59,7 @@ export const InputCalendar = ({
     className="",
     classNameContentCalendar="",
     classNameInputText={},
+    classNameInputCalendarMonth={},
     ...props
 }: InputCalendarProps) => {
     const [isChange, setIsChange] = useState(!errorWithIsChange);
@@ -133,6 +135,7 @@ export const InputCalendar = ({
                         className={`fenext-input-calendar-content fenext-input-calendar-content-${nMonthShow > 1 ? "multiple" : ""} ${classNameContentCalendar}`}
                     >
                         <InputCalendarMonth
+                        {...classNameInputCalendarMonth}
                             _t={props?._t}
                             type={type}
                             dataNSelect={dataNSelect}
@@ -163,6 +166,7 @@ export const InputCalendar = ({
                                             <>
                                                 <InputCalendarMonth
                                                     key={n}
+                                                    {...classNameInputCalendarMonth}
                                                     _t={props?._t}
                                                     type={type}
                                                     dataNSelect={dataNSelect}
