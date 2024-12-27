@@ -34,21 +34,24 @@ export default {
             type: "string",
             require: false,
             default: "'Filtrar por fecha:'",
-            description: "Texto principal que describe el propósito del filtro.",
+            description:
+                "Texto principal que describe el propósito del filtro.",
         },
         {
             id: "textFilterByDate",
             type: "string",
             require: false,
             default: "'Filtar por fecha'",
-            description: "Texto que se muestra para la opción de filtro por fecha.",
+            description:
+                "Texto que se muestra para la opción de filtro por fecha.",
         },
         {
             id: "textFilterByRange",
             type: "string",
             require: false,
             default: "'Filtar por rango'",
-            description: "Texto que se muestra para la opción de filtro por rango de fechas.",
+            description:
+                "Texto que se muestra para la opción de filtro por rango de fechas.",
         },
         {
             id: "textBtnToday",
@@ -69,7 +72,8 @@ export default {
             type: "ReactNode",
             require: false,
             default: "<SvgTrash />",
-            description: "Icono que se muestra como indicador para eliminar filtros.",
+            description:
+                "Icono que se muestra como indicador para eliminar filtros.",
         },
         {
             id: "extraListBtn",
@@ -105,7 +109,8 @@ export default {
             type: "InputCalendarClassProps",
             require: false,
             default: "{}",
-            description: "Clase CSS para personalizar el calendario desplegable.",
+            description:
+                "Clase CSS para personalizar el calendario desplegable.",
         },
         {
             id: "classNameBtnToday",
@@ -133,7 +138,8 @@ export default {
             type: "Pick<TextProps, 'tag' | 'className'>",
             require: false,
             default: "{}",
-            description: "Clase CSS para personalizar los textos de los interruptores.",
+            description:
+                "Clase CSS para personalizar los textos de los interruptores.",
         },
         {
             id: "classNameInputSwich",
@@ -147,21 +153,24 @@ export default {
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el contenedor superior del contenido.",
+            description:
+                "Clase CSS para personalizar el contenedor superior del contenido.",
         },
         {
             id: "classNameLabelSwich",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar las etiquetas de los interruptores.",
+            description:
+                "Clase CSS para personalizar las etiquetas de los interruptores.",
         },
         {
             id: "classNameClear",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el icono de limpiar filtros.",
+            description:
+                "Clase CSS para personalizar el icono de limpiar filtros.",
         },
     ],
     useExample: [

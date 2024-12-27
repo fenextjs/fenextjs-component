@@ -12,16 +12,16 @@ import { Counter } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| number | number | sí | 0 | El número que se mostrará y que será incrementado o decrementado gradualmente. |
-| text | ReactNode | no | undefined | Texto adicional que se puede mostrar junto con el contador. |
-| time | number | no | 1000 | Tiempo en milisegundos para alcanzar el número final. |
-| decimal | number | no | 2 | Cantidad de decimales a mostrar en el número. |
-| parseNumber | (n: number) =\> ReactNode | no | parseNumberCount | Función personalizada para formatear el número antes de mostrarlo. |
-| className | string | no | '' | Clase CSS para personalizar el contenedor del componente. |
-| classNameNumber | string | no | '' | Clase CSS para personalizar la apariencia del número. |
-| classNameText | string | no | '' | Clase CSS para personalizar la apariencia del texto. |
+| Parámetro       | Tipo                      | Requerido | Default          | Descripcion                                                                    |
+| --------------- | ------------------------- | --------- | ---------------- | ------------------------------------------------------------------------------ |
+| number          | number                    | sí        | 0                | El número que se mostrará y que será incrementado o decrementado gradualmente. |
+| text            | ReactNode                 | no        | undefined        | Texto adicional que se puede mostrar junto con el contador.                    |
+| time            | number                    | no        | 1000             | Tiempo en milisegundos para alcanzar el número final.                          |
+| decimal         | number                    | no        | 2                | Cantidad de decimales a mostrar en el número.                                  |
+| parseNumber     | (n: number) =\> ReactNode | no        | parseNumberCount | Función personalizada para formatear el número antes de mostrarlo.             |
+| className       | string                    | no        | ''               | Clase CSS para personalizar el contenedor del componente.                      |
+| classNameNumber | string                    | no        | ''               | Clase CSS para personalizar la apariencia del número.                          |
+| classNameText   | string                    | no        | ''               | Clase CSS para personalizar la apariencia del texto.                           |
 
 ### Storybook
 
@@ -29,21 +29,20 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Básico
+-   Básico
 
 ```tsx copy
 <Counter number={100} />
 ```
 
-- Counter con texto adicional
+-   Counter con texto adicional
 
 ```tsx copy
 <Counter number={100} text="Progreso" />
 ```
 
-- Counter con tiempo personalizado
+-   Counter con tiempo personalizado
 
 ```tsx copy
 <Counter number={500} time={2000} />
 ```
-
