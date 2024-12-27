@@ -12,17 +12,17 @@ import { InputCardExpDate } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro        | Tipo                                       | Requerido | Default   | Descripcion                                                                                                 |
-| ---------------- | ------------------------------------------ | --------- | --------- | ----------------------------------------------------------------------------------------------------------- |
-| defaultValue     | InputCardExpDateDataProps                  | no        | \{\}      | Valor predeterminado del componente, que incluye el mes y el año de expiración de la tarjeta.               |
-| value            | InputCardExpDateDataProps                  | no        | \{\}      | Valor controlado del componente, que debe incluir el mes y el año de expiración.                            |
-| onChange         | (data: InputCardExpDateDataProps) =\> void | no        | undefined | Función que se ejecuta cuando los datos del componente cambian, proporcionando el mes y el año como objeto. |
-| maxExpDateLength | number                                     | no        | 4         | Longitud máxima permitida para la entrada de la fecha de expiración. Se establece como 4 para MMYY.         |
-| placeholder      | string                                     | no        | 'MM/YY'   | Texto que se muestra como marcador de posición en el campo de entrada.                                      |
-| disabled         | boolean                                    | no        | false     | Indica si el campo de entrada está deshabilitado.                                                           |
-| required         | boolean                                    | no        | false     | Indica si el campo de entrada es obligatorio.                                                               |
-| error            | string \| undefined                        | no        | undefined | Mensaje de error que se muestra si la validación falla.                                                     |
-| className        | string                                     | no        | ''        | Clase CSS para personalizar el estilo del componente.                                                       |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| defaultValue | InputCardExpDateDataProps | no | \{\} | Valor predeterminado del componente, que incluye el mes y el año de expiración de la tarjeta. |
+| value | InputCardExpDateDataProps | no | \{\} | Valor controlado del componente, que debe incluir el mes y el año de expiración. |
+| onChange | (data: InputCardExpDateDataProps) =\> void | no | undefined | Función que se ejecuta cuando los datos del componente cambian, proporcionando el mes y el año como objeto. |
+| maxExpDateLength | number | no | 4 | Longitud máxima permitida para la entrada de la fecha de expiración. Se establece como 4 para MMYY. |
+| placeholder | string | no | 'MM/YY' | Texto que se muestra como marcador de posición en el campo de entrada. |
+| disabled | boolean | no | false | Indica si el campo de entrada está deshabilitado. |
+| required | boolean | no | false | Indica si el campo de entrada es obligatorio. |
+| error | string \| undefined | no | undefined | Mensaje de error que se muestra si la validación falla. |
+| className | string | no | '' | Clase CSS para personalizar el estilo del componente. |
 
 ### Storybook
 
@@ -30,29 +30,27 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Básico
+- Básico
 
 ```tsx copy
 <InputCardExpDate />
 ```
 
--   InputCardExpDate con valor predeterminado
+- InputCardExpDate con valor predeterminado
 
 ```tsx copy
 <InputCardExpDate defaultValue={{ month: 12, year: 23 }} />
 ```
 
--   InputCardExpDate controlado
+- InputCardExpDate controlado
 
 ```tsx copy
-<InputCardExpDate
-    value={{ month: 11, year: 25 }}
-    onChange={(data) => console.log(data)}
-/>
+<InputCardExpDate value={{ month: 11, year: 25 }} onChange={(data) => console.log(data)} />
 ```
 
--   InputCardExpDate deshabilitado
+- InputCardExpDate deshabilitado
 
 ```tsx copy
 <InputCardExpDate disabled={true} />
 ```
+

@@ -12,25 +12,25 @@ import { Img } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro    | Tipo                                                    | Requerido | Default   | Descripcion                                                                      |
-| ------------ | ------------------------------------------------------- | --------- | --------- | -------------------------------------------------------------------------------- |
-| src          | string                                                  | sí        |           | La URL de la imagen a mostrar.                                                   |
-| alt          | string                                                  | no        | undefined | Texto alternativo para la imagen.                                                |
-| srcMin1920   | string                                                  | no        | undefined | URL de la imagen para resoluciones mayores a 1920px.                             |
-| srcMin1680   | string                                                  | no        | undefined | URL de la imagen para resoluciones mayores a 1680px.                             |
-| srcMin1440   | string                                                  | no        | undefined | URL de la imagen para resoluciones mayores a 1440px.                             |
-| srcMin1024   | string                                                  | no        | undefined | URL de la imagen para resoluciones mayores a 1024px.                             |
-| srcMin992    | string                                                  | no        | undefined | URL de la imagen para resoluciones mayores a 992px.                              |
-| srcMin768    | string                                                  | no        | undefined | URL de la imagen para resoluciones mayores a 768px.                              |
-| srcMin575    | string                                                  | no        | undefined | URL de la imagen para resoluciones mayores a 575px.                              |
-| imgIf404     | string                                                  | no        | undefined | URL de la imagen que se mostrará en caso de error de carga.                      |
-| layers       | CSSProperties[]                                         | no        | []        | Capas CSS que se aplican como filtros o estilos adicionales a la imagen.         |
-| onErrorImg   | (e: SyntheticEvent\<HTMLImageElement, Event\>) =\> void | no        | undefined | Función personalizada que se ejecuta cuando ocurre un error al cargar la imagen. |
-| onClick      | () =\> void                                             | no        | undefined | Función personalizada que se ejecuta al hacer click en la imagen.                |
-| onLoad       | React.ReactEventHandler\<HTMLImageElement\>             | no        | undefined | Función que se ejecuta cuando la imagen se carga exitosamente.                   |
-| loader       | boolean                                                 | no        | false     | Indica si se debe mostrar un cargador mientras se carga la imagen.               |
-| className    | string                                                  | no        | ''        | Clase CSS para personalizar el contenedor del componente.                        |
-| classNameImg | string                                                  | no        | ''        | Clase CSS para personalizar la imagen en sí.                                     |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| src | string | sí |  | La URL de la imagen a mostrar. |
+| alt | string | no | undefined | Texto alternativo para la imagen. |
+| srcMin1920 | string | no | undefined | URL de la imagen para resoluciones mayores a 1920px. |
+| srcMin1680 | string | no | undefined | URL de la imagen para resoluciones mayores a 1680px. |
+| srcMin1440 | string | no | undefined | URL de la imagen para resoluciones mayores a 1440px. |
+| srcMin1024 | string | no | undefined | URL de la imagen para resoluciones mayores a 1024px. |
+| srcMin992 | string | no | undefined | URL de la imagen para resoluciones mayores a 992px. |
+| srcMin768 | string | no | undefined | URL de la imagen para resoluciones mayores a 768px. |
+| srcMin575 | string | no | undefined | URL de la imagen para resoluciones mayores a 575px. |
+| imgIf404 | string | no | undefined | URL de la imagen que se mostrará en caso de error de carga. |
+| layers | CSSProperties[] | no | [] | Capas CSS que se aplican como filtros o estilos adicionales a la imagen. |
+| onErrorImg | (e: SyntheticEvent\<HTMLImageElement, Event\>) =\> void | no | undefined | Función personalizada que se ejecuta cuando ocurre un error al cargar la imagen. |
+| onClick | () =\> void | no | undefined | Función personalizada que se ejecuta al hacer click en la imagen. |
+| onLoad | React.ReactEventHandler\<HTMLImageElement\> | no | undefined | Función que se ejecuta cuando la imagen se carga exitosamente. |
+| loader | boolean | no | false | Indica si se debe mostrar un cargador mientras se carga la imagen. |
+| className | string | no | '' | Clase CSS para personalizar el contenedor del componente. |
+| classNameImg | string | no | '' | Clase CSS para personalizar la imagen en sí. |
 
 ### Storybook
 
@@ -38,39 +38,33 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Imagen básica
+- Imagen básica
 
 ```tsx copy
 <Img src="/path/to/image.jpg" alt="Descripción" />
 ```
 
--   Imagen con capas
+- Imagen con capas
 
 ```tsx copy
-<Img
-    src="/path/to/image.jpg"
-    layers={[{ opacity: 0.5, mixBlendMode: "multiply" }]}
-/>
+<Img src="/path/to/image.jpg" layers={[{ opacity: 0.5, mixBlendMode: 'multiply' }]} />
 ```
 
--   Imagen con loader y acción de clic
+- Imagen con loader y acción de clic
 
 ```tsx copy
-<Img
-    src="/path/to/image.jpg"
-    loader={true}
-    onClick={() => alert("Imagen clickeada")}
-/>
+<Img src="/path/to/image.jpg" loader={true} onClick={() => alert('Imagen clickeada')} />
 ```
 
--   Imagen con manejo de error
+- Imagen con manejo de error
 
 ```tsx copy
 <Img src="/path/to/image.jpg" imgIf404="/path/to/fallback.jpg" />
 ```
 
--   Imagen con función de carga
+- Imagen con función de carga
 
 ```tsx copy
-<Img src="/path/to/image.jpg" onLoad={() => console.log("Imagen cargada")} />
+<Img src="/path/to/image.jpg" onLoad={() => console.log('Imagen cargada')} />
 ```
+

@@ -12,11 +12,11 @@ import { GridGallery } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro     | Tipo        | Requerido | Default | Descripcion                                                          |
-| ------------- | ----------- | --------- | ------- | -------------------------------------------------------------------- |
-| items         | ReactNode[] | sí        |         | Lista de elementos que se mostrarán dentro de la galería.            |
-| className     | string      | no        | ''      | Clase CSS para personalizar el contenedor principal de la galería.   |
-| classNameItem | string      | no        | ''      | Clase CSS para personalizar cada uno de los elementos de la galería. |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| items | ReactNode[] | sí |  | Lista de elementos que se mostrarán dentro de la galería. |
+| className | string | no | '' | Clase CSS para personalizar el contenedor principal de la galería. |
+| classNameItem | string | no | '' | Clase CSS para personalizar cada uno de los elementos de la galería. |
 
 ### Storybook
 
@@ -24,18 +24,27 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Uso básico
-
-```tsx copy
-<GridGallery items={[<div>Item 1</div>, <div>Item 2</div>]} />
-```
-
--   Galería con clases personalizadas
+- Uso básico
 
 ```tsx copy
 <GridGallery
-    className="mi-galeria"
-    classNameItem="mi-item"
-    items={[<div>Item 1</div>, <div>Item 2</div>]}
+    items={[
+        <div>Item 1</div>,
+        <div>Item 2</div>
+    ]} 
 />
 ```
+
+- Galería con clases personalizadas
+
+```tsx copy
+<GridGallery 
+    className="mi-galeria" 
+    classNameItem="mi-item" 
+    items={[
+        <div>Item 1</div>, 
+        <div>Item 2</div>
+    ]} 
+/>
+```
+

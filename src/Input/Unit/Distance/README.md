@@ -12,15 +12,15 @@ import { InputUnitDistance } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro       | Tipo                                               | Requerido | Default                                                  | Descripcion                                                                                           |
-| --------------- | -------------------------------------------------- | --------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| defaultValue    | Partial\<InputUnitDistanceValue\>                  | no        | \{\}                                                     | Valor por defecto del componente, incluye el valor numérico y la unidad de medida de distancia.       |
-| value           | Partial\<InputUnitDistanceValue\>                  | no        | undefined                                                | Valor actual del componente, incluye el valor numérico y la unidad de medida de distancia.            |
-| onChange        | (data: Partial\<InputUnitDistanceValue\>) =\> void | no        | undefined                                                | Función que se ejecuta cuando el valor o la unidad cambia, recibe el objeto con `value` y `unit`.     |
-| options         | Unit_Distance[]                                    | no        | Object.keys(Unit_Distance).map((e) =\> Unit_Distance[e]) | Opciones disponibles para las unidades de medida de distancia, definidas por el tipo `Unit_Distance`. |
-| className       | string                                             | no        | undefined                                                | Clase CSS personalizada para el componente principal.                                                 |
-| classNameSelect | string                                             | no        | undefined                                                | Clase CSS personalizada para el select de unidades.                                                   |
-| classNameInput  | string                                             | no        | undefined                                                | Clase CSS personalizada para el input del valor numérico.                                             |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| defaultValue | Partial\<InputUnitDistanceValue\> | no | \{\} | Valor por defecto del componente, incluye el valor numérico y la unidad de medida de distancia. |
+| value | Partial\<InputUnitDistanceValue\> | no | undefined | Valor actual del componente, incluye el valor numérico y la unidad de medida de distancia. |
+| onChange | (data: Partial\<InputUnitDistanceValue\>) =\> void | no | undefined | Función que se ejecuta cuando el valor o la unidad cambia, recibe el objeto con `value` y `unit`. |
+| options | Unit_Distance[] | no | Object.keys(Unit_Distance).map((e) =\> Unit_Distance[e]) | Opciones disponibles para las unidades de medida de distancia, definidas por el tipo `Unit_Distance`. |
+| className | string | no | undefined | Clase CSS personalizada para el componente principal. |
+| classNameSelect | string | no | undefined | Clase CSS personalizada para el select de unidades. |
+| classNameInput | string | no | undefined | Clase CSS personalizada para el input del valor numérico. |
 
 ### Storybook
 
@@ -28,26 +28,21 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   InputUnitDistance básico
+- InputUnitDistance básico
 
 ```tsx copy
-<InputUnitDistance options={["m", "km", "mi"]} />
+<InputUnitDistance options={['m', 'km', 'mi']} />
 ```
 
--   InputUnitDistance con valor y unidad iniciales
+- InputUnitDistance con valor y unidad iniciales
 
 ```tsx copy
-<InputUnitDistance
-    defaultValue={{ value: 5, unit: "km" }}
-    options={["m", "km", "mi"]}
-/>
+<InputUnitDistance defaultValue={{ value: 5, unit: 'km' }} options={['m', 'km', 'mi']} />
 ```
 
--   InputUnitDistance con función onChange
+- InputUnitDistance con función onChange
 
 ```tsx copy
-<InputUnitDistance
-    options={["m", "mi"]}
-    onChange={(data) => console.log(data)}
-/>
+<InputUnitDistance options={['m', 'mi']} onChange={(data) => console.log(data)} />
 ```
+

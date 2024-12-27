@@ -12,28 +12,30 @@ import { DropDown } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro     | Tipo                      | Requerido | Default        | Descripcion                                                                          |
-| ------------- | ------------------------- | --------- | -------------- | ------------------------------------------------------------------------------------ |
-| className     | string                    | no        | ''             | Clase CSS personalizada para el contenedor principal del componente DropDown.        |
-| loader        | boolean                   | no        | false          | Indica si el componente está en estado de carga, mostrando un indicador de 'Loader'. |
-| disabled      | boolean                   | no        | false          | Determina si el componente DropDown está deshabilitado.                              |
-| defaultActive | boolean                   | no        | false          | Establece si el DropDown está activo de forma predeterminada al renderizarse.        |
-| active        | boolean                   | no        | undefined      | Controla de manera explícita si el DropDown está activo o inactivo.                  |
-| name          | string                    | no        | undefined      | Nombre asignado al DropDown, utilizado para manejar eventos de interacción.          |
-| header        | ReactNode                 | sí        | undefined      | Elemento que se muestra como cabecera del DropDown.                                  |
-| onChange      | (value: boolean) =\> void | no        | undefined      | Función ejecutada al cambiar el estado activo del DropDown.                          |
-| iconArrow     | ReactNode                 | no        | \<SvgArrow /\> | Icono utilizado como indicador de colapso/expansión del DropDown.                    |
-| children      | ReactNode                 | no        | undefined      | Contenido adicional mostrado dentro del cuerpo del DropDown.                         |
-| rotateIcon    | boolean                   | no        | true           | Indica si el icono debe rotar al cambiar el estado activo.                           |
-| type          | 'checked' \| 'focus'      | no        | 'focus'        | Define el tipo de interacción que activa el DropDown.                                |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| className | string | no | '' | Clase CSS personalizada para el contenedor principal del componente DropDown. |
+| loader | boolean | no | false | Indica si el componente está en estado de carga, mostrando un indicador de 'Loader'. |
+| disabled | boolean | no | false | Determina si el componente DropDown está deshabilitado. |
+| defaultActive | boolean | no | false | Establece si el DropDown está activo de forma predeterminada al renderizarse. |
+| active | boolean | no | undefined | Controla de manera explícita si el DropDown está activo o inactivo. |
+| name | string | no | undefined | Nombre asignado al DropDown, utilizado para manejar eventos de interacción. |
+| header | ReactNode | sí | undefined | Elemento que se muestra como cabecera del DropDown. |
+| onChange | (value: boolean) =\> void | no | undefined | Función ejecutada al cambiar el estado activo del DropDown. |
+| iconArrow | ReactNode | no | \<SvgArrow /\> | Icono utilizado como indicador de colapso/expansión del DropDown. |
+| children | ReactNode | no | undefined | Contenido adicional mostrado dentro del cuerpo del DropDown. |
+| rotateIcon | boolean | no | true | Indica si el icono debe rotar al cambiar el estado activo. |
+| type | 'checked' \| 'focus' | no | 'focus' | Define el tipo de interacción que activa el DropDown. |
 
 ### Interacciones
 
 El comportamiento del DropDown está configurado por las propiedades `type` y `onChange`, permitiendo manejar eventos personalizados y estilos dinámicos.
 
-### **NOTA**
+
+### __NOTA__
 
 Para que el tipo `focus` funcione correctamente, es necesario que el evento global de clic esté vinculado al componente, asegurándose de que las interacciones externas cierren el DropDown automáticamente.
+
 
 ### Storybook
 
@@ -41,35 +43,31 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Básico
+- Básico
 
 ```tsx copy
 <DropDown header={<span>Menú</span>}>Contenido</DropDown>
 ```
 
--   DropDown con estado activo por defecto
+- DropDown con estado activo por defecto
 
 ```tsx copy
-<DropDown defaultActive={true} header={<span>Activo</span>}>
-    Contenido Activo
-</DropDown>
+<DropDown defaultActive={true} header={<span>Activo</span>}>Contenido Activo</DropDown>
 ```
 
--   DropDown deshabilitado
+- DropDown deshabilitado
 
 ```tsx copy
 <DropDown disabled={true} header={<span>Deshabilitado</span>} />
 ```
 
--   DropDown con icono personalizado
+- DropDown con icono personalizado
 
 ```tsx copy
-<DropDown iconArrow={<CustomIcon />} header={<span>Personalizado</span>}>
-    Contenido
-</DropDown>
+<DropDown iconArrow={<CustomIcon />} header={<span>Personalizado</span>}>Contenido</DropDown>
 ```
 
--   DropDown usando useActionDropDown
+- DropDown usando useActionDropDown
 
 ```tsx copy
 const { onActive, onClose, onToogle } = useActionDropDown({ name:"NAME_DROPDOWN" })
@@ -78,10 +76,11 @@ const { onActive, onClose, onToogle } = useActionDropDown({ name:"NAME_DROPDOWN"
 <Button onClick={onActive}>onActive</Button>
 <Button onClick={onClose}>onClose</Button>
 
-<DropDown
-    name="NAME_DROPDOWN"
+<DropDown 
+    name="NAME_DROPDOWN"  
     header={<span>Personalizado</span>}
 >
         Contenido
 </DropDown>
 ```
+
