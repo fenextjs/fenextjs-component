@@ -1,9 +1,11 @@
 import React, { ReactNode } from "react";
-export interface DropDownProps {
+export interface DropDownClassProps {
     className?: string;
     classNameContentHeader?: string;
     classNameContentIcon?: string;
     classNameBody?: string;
+}
+export interface DropDownProps extends DropDownClassProps {
     loader?: boolean;
     disabled?: boolean;
     defaultActive?: boolean;

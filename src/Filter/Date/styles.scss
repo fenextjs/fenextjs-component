@@ -1,47 +1,45 @@
-.fenext-filter-date{
-    --size-clear:1rem;
+.fenext-filter-date {
+    --size-clear: 1rem;
     display: grid;
-    grid-template-columns: auto var(--size-clear) ;
+    grid-template-columns: auto var(--size-clear);
     width: max-content;
-    gap: .25rem;
-    &-dropdown-body{
+    gap: 0.25rem;
+    &-dropdown-body {
         background-color: var(--fenext-color-gray-extra-light);
-        .fenext-input-calendar{
+        .fenext-input-calendar {
             --size-cell: 2.2rem;
-    
         }
-
     }
-    &-label-swich{
+    &-label-swich {
         display: flex;
-        gap: .25rem;
+        gap: 0.25rem;
         align-items: center;
     }
-    &-content-btn{
+    &-content-btn {
         margin-left: auto;
         display: flex;
-        gap: .25rem;
+        gap: 0.25rem;
         align-items: center;
     }
-    &-content-top{
+    &-content-top {
         display: flex;
         flex-wrap: wrap;
-        gap: .5rem;
+        gap: 0.5rem;
         align-items: center;
         margin-bottom: 1rem;
     }
-    &-clear{
+    &-clear {
         height: 100%;
         aspect-ratio: 1/1;
-        border-radius: .65rem;
+        border-radius: 0.65rem;
         background-color: var(--fenext-color-dark);
         color: var(--fenext-color-light);
-        padding: .75rem;
+        padding: 0.75rem;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        >*{
+        > * {
             max-width: 100%;
             max-height: 100%;
         }

@@ -1,17 +1,14 @@
-import React, { ReactNode } from 'react'
-import { SvgTrash } from 'fenextjs-svg';
+import React, { ReactNode } from "react";
+import { SvgTrash } from "fenextjs-svg";
 import { use_T, useData, useDate } from "fenextjs-hook";
-import { Text, TextProps } from '../../Text';
-import { DropDown, DropDownClassProps } from '../../DropDown';
+import { Text, TextProps } from "../../Text";
+import { DropDown, DropDownClassProps } from "../../DropDown";
 import { InputCalendarMonthProps } from "../../Input/Calendar/Month";
-import { InputCalendar, InputCalendarClassProps } from '../../Input/Calendar';
-import { InputSwich, InputSwichClassProps } from '../../Input/Swich';
-import { Button, ButtonClassProps } from '../../Button';
-import { FenextjsDateFormatOptions } from 'fenextjs-date';
-import { _TProps } from 'fenextjs-interface';
-
-
-
+import { InputCalendar, InputCalendarClassProps } from "../../Input/Calendar";
+import { InputSwich, InputSwichClassProps } from "../../Input/Swich";
+import { Button, ButtonClassProps } from "../../Button";
+import { FenextjsDateFormatOptions } from "fenextjs-date";
+import { _TProps } from "fenextjs-interface";
 
 export interface FilterDateDataProps {
     type?: InputCalendarMonthProps["type"];
@@ -19,74 +16,77 @@ export interface FilterDateDataProps {
     dateRange?: Date[];
 }
 export interface FilterDateClassProps {
-    className?: string
-    classNameDropDown?: DropDownClassProps
-    classNameCollapse?: InputCalendarClassProps
-    classNameBtnToday?: ButtonClassProps
-    classNameBtnWeek?: ButtonClassProps
-    classNameTextValue?:Pick<TextProps,"tag"|"className">
-    classNameTextSwich?:Pick<TextProps,"tag"|"className">
-    classNameInputSwich?:InputSwichClassProps
-    classNameContentTop?: string
-    classNameLabelSwich?:string
-    classNameClear?:string
+    className?: string;
+    classNameDropDown?: DropDownClassProps;
+    classNameCollapse?: InputCalendarClassProps;
+    classNameBtnToday?: ButtonClassProps;
+    classNameBtnWeek?: ButtonClassProps;
+    classNameTextValue?: Pick<TextProps, "tag" | "className">;
+    classNameTextSwich?: Pick<TextProps, "tag" | "className">;
+    classNameInputSwich?: InputSwichClassProps;
+    classNameContentTop?: string;
+    classNameLabelSwich?: string;
+    classNameClear?: string;
 }
-export interface FilterDateProps extends FilterDateClassProps,_TProps {
-    defaultValue?: FilterDateDataProps
+export interface FilterDateProps extends FilterDateClassProps, _TProps {
+    defaultValue?: FilterDateDataProps;
     onChange?: (data: FilterDateDataProps) => void;
-    formatDateOption?:FenextjsDateFormatOptions
+    formatDateOption?: FenextjsDateFormatOptions;
 
-    textValue?:string
-    textFilterByDate?:string
-    textFilterByRange?:string
-    textBtnToday?:string
-    textBtnWeek?:string
+    textValue?: string;
+    textFilterByDate?: string;
+    textFilterByRange?: string;
+    textBtnToday?: string;
+    textBtnWeek?: string;
 
-    iconTrash?:ReactNode
+    iconTrash?: ReactNode;
 
-    extraListBtn?:((data:ReturnType<typeof useData<FilterDateDataProps>>)=>ReactNode)[]
+    extraListBtn?: ((
+        data: ReturnType<typeof useData<FilterDateDataProps>>,
+    ) => ReactNode)[];
 
-    nMonthShow?:number
+    nMonthShow?: number;
 }
 
-export const FilterDate = ({ onChange, defaultValue = {},
+export const FilterDate = ({
+    onChange,
+    defaultValue = {},
 
-    formatDateOption={},
-
+    formatDateOption = {},
 
     className = "",
     classNameDropDown = {},
     classNameCollapse = {},
     classNameBtnToday = {},
     classNameBtnWeek = {},
-    classNameTextValue={},
-    classNameTextSwich={},
-    classNameInputSwich={},
-    classNameContentTop="",
-    classNameLabelSwich="",
-    classNameClear="",
+    classNameTextValue = {},
+    classNameTextSwich = {},
+    classNameInputSwich = {},
+    classNameContentTop = "",
+    classNameLabelSwich = "",
+    classNameClear = "",
 
-    textValue = 'Filtrar por fecha:',
-    textFilterByDate='Filtar por fecha',
-    textFilterByRange="Filtar por rango",
-    textBtnToday="Hoy",
-    textBtnWeek="Esta Semana",
+    textValue = "Filtrar por fecha:",
+    textFilterByDate = "Filtar por fecha",
+    textFilterByRange = "Filtar por rango",
+    textBtnToday = "Hoy",
+    textBtnWeek = "Esta Semana",
 
     iconTrash = <SvgTrash />,
 
-    extraListBtn=[],
+    extraListBtn = [],
 
-    nMonthShow=2,
+    nMonthShow = 2,
 
     ...p
 }: FilterDateProps) => {
     const { _t } = use_T({ ...p });
     const date = useDate({});
-    const { data, onChangeData, onConcatData, setData,...HOOK } =
+    const { data, onChangeData, onConcatData, setData, ...HOOK } =
         useData<FilterDateDataProps>(
             {
                 type: "normal",
-                ...defaultValue
+                ...defaultValue,
             },
             {
                 onChangeDataAfter: (e) => {
@@ -129,30 +129,38 @@ export const FilterDate = ({ onChange, defaultValue = {},
                 `}
             >
                 <DropDown
-                    header={<>
-                            <Text
-                                {...classNameTextValue}
-                            >
+                    header={
+                        <>
+                            <Text {...classNameTextValue}>
                                 {_t(textValue)}{" "}
-                                {data.type == "normal" && data.date != undefined && (
-                                    <>
-                                        {date.onFormat(formatDateOption, data.date)}
-                                    </>
-                                )}
-                                {data.type == "range" && data.dateRange != undefined && (
-                                    <>
-                                        {date.onFormat(formatDateOption, data.dateRange?.[0])}{" "}
-                                        -
-                                        {data.dateRange?.[1] != undefined
-                                            ? date.onFormat(formatDateOption,
-                                                data.dateRange?.[1],
-                                            )
-                                            : ""}
-                                    </>
-                                )}
+                                {data.type == "normal" &&
+                                    data.date != undefined && (
+                                        <>
+                                            {date.onFormat(
+                                                formatDateOption,
+                                                data.date,
+                                            )}
+                                        </>
+                                    )}
+                                {data.type == "range" &&
+                                    data.dateRange != undefined && (
+                                        <>
+                                            {date.onFormat(
+                                                formatDateOption,
+                                                data.dateRange?.[0],
+                                            )}{" "}
+                                            -
+                                            {data.dateRange?.[1] != undefined
+                                                ? date.onFormat(
+                                                      formatDateOption,
+                                                      data.dateRange?.[1],
+                                                  )
+                                                : ""}
+                                        </>
+                                    )}
                             </Text>
-
-                    </>}
+                        </>
+                    }
                     {...classNameDropDown}
                     rotateIcon={false}
                     classNameBody={`
@@ -160,14 +168,18 @@ export const FilterDate = ({ onChange, defaultValue = {},
                         ${[classNameDropDown.classNameBody]}
                     `}
                 >
-                    <div className={`fenext-filter-date-content-top  ${classNameContentTop}`}>
-                        <label 
+                    <div
+                        className={`fenext-filter-date-content-top  ${classNameContentTop}`}
+                    >
+                        <label
                             className={`
                                 fenext-filter-date-label-swich    
                                 ${classNameLabelSwich}
                             `}
                         >
-                            <Text {...classNameTextSwich}>{_t(textFilterByDate)}</Text>
+                            <Text {...classNameTextSwich}>
+                                {_t(textFilterByDate)}
+                            </Text>
                             <InputSwich
                                 value={data.type == "normal"}
                                 onChange={(e) => {
@@ -178,13 +190,15 @@ export const FilterDate = ({ onChange, defaultValue = {},
                                 {...classNameInputSwich}
                             />
                         </label>
-                        <label 
+                        <label
                             className={`
                                 fenext-filter-date-label-swich    
                                 ${classNameLabelSwich}
                             `}
                         >
-                            <Text {...classNameTextSwich}>{_t(textFilterByRange)}</Text>
+                            <Text {...classNameTextSwich}>
+                                {_t(textFilterByRange)}
+                            </Text>
                             <InputSwich
                                 value={data.type == "range"}
                                 onChange={(e) => {
@@ -195,7 +209,7 @@ export const FilterDate = ({ onChange, defaultValue = {},
                                 {...classNameInputSwich}
                             />
                         </label>
-                        <div 
+                        <div
                             className={`
                                 fenext-filter-date-content-btn    
                             `}
@@ -208,7 +222,7 @@ export const FilterDate = ({ onChange, defaultValue = {},
                                         date: new Date(),
                                     });
                                 }}
-                                size='extra-small'
+                                size="extra-small"
                             >
                                 {_t(textBtnToday)}
                             </Button>
@@ -228,13 +242,19 @@ export const FilterDate = ({ onChange, defaultValue = {},
                                         dateRange: [start, end],
                                     });
                                 }}
-                                size='extra-small'
+                                size="extra-small"
                             >
                                 {_t(textBtnWeek)}
                             </Button>
-                            {
-                                extraListBtn.map((f)=>f({data, onChangeData, onConcatData, setData,...HOOK}))
-                            }
+                            {extraListBtn.map((f) =>
+                                f({
+                                    data,
+                                    onChangeData,
+                                    onConcatData,
+                                    setData,
+                                    ...HOOK,
+                                }),
+                            )}
                         </div>
                     </div>
 
@@ -251,7 +271,10 @@ export const FilterDate = ({ onChange, defaultValue = {},
                         {...classNameCollapse}
                     />
                 </DropDown>
-                {((data?.type == "normal" && data?.date != undefined) || (data?.type == "range" && data?.dateRange?.[0]!= undefined && data?.dateRange?.[1]!= undefined)) && (
+                {((data?.type == "normal" && data?.date != undefined) ||
+                    (data?.type == "range" &&
+                        data?.dateRange?.[0] != undefined &&
+                        data?.dateRange?.[1] != undefined)) && (
                     <div
                         className={`
                             fenext-filter-date-clear
