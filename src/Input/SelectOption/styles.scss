@@ -24,8 +24,8 @@
         cursor: not-allowed;
     }
     &:hover {
-        color: var(--fenext-color-dark);
-        background-color: var(--fenext-color-light-extra-dark);
+        color: var(--fenext-color-light);
+        background-color: var(--fenext-color-primary);
     }
     &-img {
         max-width: 2rem;
@@ -44,8 +44,8 @@
     }
     &-type {
         &-multiple {
-            background-color: var(--fenext-color-dark);
-            color: var(--fenext-color-light);
+            background-color: var(--fenext-color-light);
+            color: var(--fenext-color-dark);
             border-radius: 0.7rem;
             display: flex;
             align-items: center;
@@ -61,10 +61,10 @@
         align-items: center;
         justify-content: center;
         padding-left: 1rem;
-        color: var(--fenext-color-light);
+        color: currentColor;
         margin-left: auto;
         &:hover {
-            color: var(--fenext-color-red);
+            color: var(--fenext-color-danger);
         }
         svg {
             width: 1rem;
@@ -83,8 +83,8 @@
         margin-bottom: 1rem;
         width: calc(100% - 2rem);
         text-align: center;
-        color: var(--fenext-color-white);
-        background: var(--fenext-color-dark);
+        color: var(--fenext-color-light);
+        background: var(--fenext-color-primary);
         z-index: 2;
         --box-shadow-color: var(--fenext-color-light);
         box-shadow:
@@ -92,8 +92,7 @@
             5rem 0 0 1rem var(--box-shadow-color),
             -5rem 0 0 1rem var(--box-shadow-color);
         &:hover {
-            background: var(--fenext-color-dark-light);
-            color: var(--fenext-color-white);
+            background: var(--fenext-color-secondary);
         }
     }
     &-item-max-lenght-show-options {

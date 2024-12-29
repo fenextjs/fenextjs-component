@@ -183,16 +183,21 @@ const Profile: StoryFn<any> = () => (
         }).join("\n\n")}
     </>}
 >
-    <div style={{display:"grid",gap:"2rem",padding:"2rem",gridTemplateColumns:"1fr"}}>
+    <div style={{display:"grid",gap:"8rem",padding:"1rem",gridTemplateColumns:"1fr"}}>
         ${COMPONENT_LIST.map(c=>{
             return `
-                <div style={{position:"relative"}} >
-                    <div id="${c}" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <${c}
-                        ${COMPONENTPROPS?.[c] ?? ''}
-                    >
-                        Test Children
-                    </${c}>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="${c}" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>${c}</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <${c}
+                            ${COMPONENTPROPS?.[c] ?? ''}
+                        >
+                            Test Children
+                        </${c}>
+                    </div>
                 </div>
             `
         }).join("\n\n")}

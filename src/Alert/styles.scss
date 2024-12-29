@@ -51,8 +51,8 @@
         padding: 0 0.4rem;
         border-radius: 100%;
         cursor: pointer;
-        background: var(--fenext-color-red-neto-light);
-        color: var(--fenext-color-light-neto-light);
+        background: var(--fenext-color-danger);
+        color: var(--fenext-color-light);
         transition: 0.5s;
         &:hover {
             scale: 0.8;
@@ -62,19 +62,19 @@
         }
     }
     &-OK {
-        --fenext-alert-color: var(--fenext-color-dark-neto-light);
-        --fenext-alert-background: var(--fenext-color-teal);
+        --fenext-alert-color: var(--fenext-color-light);
+        --fenext-alert-background: var(--fenext-color-success);
     }
     &-ERROR {
-        --fenext-alert-color: var(--fenext-color-light-neto-light);
-        --fenext-alert-background: var(--fenext-color-red);
+        --fenext-alert-color: var(--fenext-color-light);
+        --fenext-alert-background: var(--fenext-color-danger)
     }
     &-NORMAL {
-        --fenext-alert-color: var(--fenext-color-dark-neto-light);
-        --fenext-alert-background: var(--fenext-color-gray-extra-light);
+        --fenext-alert-color: var(--fenext-color-dark);
+        --fenext-alert-background: var(--fenext-color-light)
     }
     &-WARNING {
-        --fenext-alert-color: var(--fenext-color-dark-neto-light);
-        --fenext-alert-background: var(--fenext-color-yellow);
+        --fenext-alert-color: var(--fenext-color-theme-light-dark);
+        --fenext-alert-background: var(--fenext-color-warning)
     }
 }

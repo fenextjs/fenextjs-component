@@ -932,558 +932,802 @@ const Profile: StoryFn<any> = () => (
             
     </>}
 >
-    <div style={{display:"grid",gap:"2rem",padding:"2rem",gridTemplateColumns:"1fr"}}>
+    <div style={{display:"grid",gap:"8rem",padding:"1rem",gridTemplateColumns:"1fr"}}>
         
-                <div style={{position:"relative"}} >
-                    <div id="Chat" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Chat
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Chat" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Chat</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Chat
+                            
                  chatFormSendMessage={{}}
                  chatMessage={[]}
                  chatUser={[]}   
         
         
         
-                    >
-                        Test Children
-                    </Chat>
+                        >
+                            Test Children
+                        </Chat>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ChatMessage" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ChatMessage
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ChatMessage" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ChatMessage</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ChatMessage
+                            
              id={"1"}
         
-                    >
-                        Test Children
-                    </ChatMessage>
+                        >
+                            Test Children
+                        </ChatMessage>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ChatFormSendMessage" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ChatFormSendMessage
-                        
-                    >
-                        Test Children
-                    </ChatFormSendMessage>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ChatFormSendMessage" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ChatFormSendMessage</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ChatFormSendMessage
+                            
+                        >
+                            Test Children
+                        </ChatFormSendMessage>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ChatUser" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ChatUser
-                        
-                    >
-                        Test Children
-                    </ChatUser>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ChatUser" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ChatUser</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ChatUser
+                            
+                        >
+                            Test Children
+                        </ChatUser>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Text" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Text
-                        
-                    >
-                        Test Children
-                    </Text>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Text" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Text</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Text
+                            
+                        >
+                            Test Children
+                        </Text>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ContentShow" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ContentShow
-                        
-                    >
-                        Test Children
-                    </ContentShow>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ContentShow" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ContentShow</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ContentShow
+                            
+                        >
+                            Test Children
+                        </ContentShow>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Title" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Title
-                        
-                    >
-                        Test Children
-                    </Title>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Title" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Title</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Title
+                            
+                        >
+                            Test Children
+                        </Title>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Breadcrumb" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Breadcrumb
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Breadcrumb" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Breadcrumb</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Breadcrumb
+                            
              links={[]}
         
-                    >
-                        Test Children
-                    </Breadcrumb>
+                        >
+                            Test Children
+                        </Breadcrumb>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="SwichViewList" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <SwichViewList
-                        
-                    >
-                        Test Children
-                    </SwichViewList>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="SwichViewList" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>SwichViewList</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <SwichViewList
+                            
+                        >
+                            Test Children
+                        </SwichViewList>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="SwichViewTable" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <SwichViewTable
-                        
-                    >
-                        Test Children
-                    </SwichViewTable>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="SwichViewTable" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>SwichViewTable</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <SwichViewTable
+                            
+                        >
+                            Test Children
+                        </SwichViewTable>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="SwichViewSelect" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <SwichViewSelect
-                        
-                    >
-                        Test Children
-                    </SwichViewSelect>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="SwichViewSelect" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>SwichViewSelect</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <SwichViewSelect
+                            
+                        >
+                            Test Children
+                        </SwichViewSelect>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="TableActionCheckbox" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <TableActionCheckbox
-                        
-                    >
-                        Test Children
-                    </TableActionCheckbox>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="TableActionCheckbox" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>TableActionCheckbox</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <TableActionCheckbox
+                            
+                        >
+                            Test Children
+                        </TableActionCheckbox>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="MediaInput" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <MediaInput
-                        
-                    >
-                        Test Children
-                    </MediaInput>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="MediaInput" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>MediaInput</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <MediaInput
+                            
+                        >
+                            Test Children
+                        </MediaInput>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="MediaPage" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <MediaPage
-                        
-                    >
-                        Test Children
-                    </MediaPage>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="MediaPage" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>MediaPage</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <MediaPage
+                            
+                        >
+                            Test Children
+                        </MediaPage>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Cols" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Cols
-                        
-                    >
-                        Test Children
-                    </Cols>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Cols" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Cols</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Cols
+                            
+                        >
+                            Test Children
+                        </Cols>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Button" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Button
-                        
-                    >
-                        Test Children
-                    </Button>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Button" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Button</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Button
+                            
+                        >
+                            Test Children
+                        </Button>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Container" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Container
-                        
-                    >
-                        Test Children
-                    </Container>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Container" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Container</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Container
+                            
+                        >
+                            Test Children
+                        </Container>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="StepsCircle" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <StepsCircle
-                        
-                    >
-                        Test Children
-                    </StepsCircle>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="StepsCircle" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>StepsCircle</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <StepsCircle
+                            
+                        >
+                            Test Children
+                        </StepsCircle>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ButtonMenu" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ButtonMenu
-                        
-                    >
-                        Test Children
-                    </ButtonMenu>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ButtonMenu" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ButtonMenu</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ButtonMenu
+                            
+                        >
+                            Test Children
+                        </ButtonMenu>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Menu" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Menu
-                        
-                    >
-                        Test Children
-                    </Menu>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Menu" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Menu</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Menu
+                            
+                        >
+                            Test Children
+                        </Menu>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ItemMenu" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ItemMenu
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ItemMenu" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ItemMenu</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ItemMenu
+                            
             text="menu"
             url="/"
 
         
-                    >
-                        Test Children
-                    </ItemMenu>
+                        >
+                            Test Children
+                        </ItemMenu>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Box" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Box
-                        
-                    >
-                        Test Children
-                    </Box>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Box" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Box</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Box
+                            
+                        >
+                            Test Children
+                        </Box>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputNumber" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputNumber
-                        
-                    >
-                        Test Children
-                    </InputNumber>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputNumber" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputNumber</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputNumber
+                            
+                        >
+                            Test Children
+                        </InputNumber>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputText" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputText
-                        
-                    >
-                        Test Children
-                    </InputText>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputText" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputText</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputText
+                            
+                        >
+                            Test Children
+                        </InputText>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputCalendar" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputCalendar
-                        
-                    >
-                        Test Children
-                    </InputCalendar>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputCalendar" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputCalendar</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputCalendar
+                            
+                        >
+                            Test Children
+                        </InputCalendar>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSelectNumber" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSelectNumber
-                        
-                    >
-                        Test Children
-                    </InputSelectNumber>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSelectNumber" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSelectNumber</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSelectNumber
+                            
+                        >
+                            Test Children
+                        </InputSelectNumber>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputGallery" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputGallery
-                        
-                    >
-                        Test Children
-                    </InputGallery>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputGallery" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputGallery</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputGallery
+                            
+                        >
+                            Test Children
+                        </InputGallery>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputUpload" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputUpload
-                        
-                    >
-                        Test Children
-                    </InputUpload>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputUpload" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputUpload</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputUpload
+                            
+                        >
+                            Test Children
+                        </InputUpload>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputScannerQr" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputScannerQr
-                        
-                    >
-                        Test Children
-                    </InputScannerQr>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputScannerQr" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputScannerQr</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputScannerQr
+                            
+                        >
+                            Test Children
+                        </InputScannerQr>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputScannerTextQr" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputScannerTextQr
-                        
-                    >
-                        Test Children
-                    </InputScannerTextQr>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputScannerTextQr" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputScannerTextQr</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputScannerTextQr
+                            
+                        >
+                            Test Children
+                        </InputScannerTextQr>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputCardNumber" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputCardNumber
-                        
-                    >
-                        Test Children
-                    </InputCardNumber>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputCardNumber" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputCardNumber</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputCardNumber
+                            
+                        >
+                            Test Children
+                        </InputCardNumber>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputCardExpDate" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputCardExpDate
-                        
-                    >
-                        Test Children
-                    </InputCardExpDate>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputCardExpDate" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputCardExpDate</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputCardExpDate
+                            
+                        >
+                            Test Children
+                        </InputCardExpDate>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputCardCCV" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputCardCCV
-                        
-                    >
-                        Test Children
-                    </InputCardCCV>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputCardCCV" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputCardCCV</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputCardCCV
+                            
+                        >
+                            Test Children
+                        </InputCardCCV>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSelectCity" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSelectCity
-                        
-                    >
-                        Test Children
-                    </InputSelectCity>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSelectCity" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSelectCity</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSelectCity
+                            
+                        >
+                            Test Children
+                        </InputSelectCity>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSelect" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSelect
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSelect" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSelect</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSelect
+                            
             options={[]}
         
-                    >
-                        Test Children
-                    </InputSelect>
+                        >
+                            Test Children
+                        </InputSelect>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputColor" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputColor
-                        
-                    >
-                        Test Children
-                    </InputColor>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputColor" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputColor</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputColor
+                            
+                        >
+                            Test Children
+                        </InputColor>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSelectTimeZone" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSelectTimeZone
-                        
-                    >
-                        Test Children
-                    </InputSelectTimeZone>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSelectTimeZone" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSelectTimeZone</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSelectTimeZone
+                            
+                        >
+                            Test Children
+                        </InputSelectTimeZone>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputNumberCount" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputNumberCount
-                        
-                    >
-                        Test Children
-                    </InputNumberCount>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputNumberCount" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputNumberCount</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputNumberCount
+                            
+                        >
+                            Test Children
+                        </InputNumberCount>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputRate" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputRate
-                        
-                    >
-                        Test Children
-                    </InputRate>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputRate" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputRate</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputRate
+                            
+                        >
+                            Test Children
+                        </InputRate>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputPhone" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputPhone
-                        
-                    >
-                        Test Children
-                    </InputPhone>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputPhone" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputPhone</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputPhone
+                            
+                        >
+                            Test Children
+                        </InputPhone>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputDate" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputDate
-                        
-                    >
-                        Test Children
-                    </InputDate>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputDate" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputDate</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputDate
+                            
+                        >
+                            Test Children
+                        </InputDate>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSelectCSC" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSelectCSC
-                        
-                    >
-                        Test Children
-                    </InputSelectCSC>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSelectCSC" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSelectCSC</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSelectCSC
+                            
+                        >
+                            Test Children
+                        </InputSelectCSC>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSelectCountryMultiple" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSelectCountryMultiple
-                        
-                    >
-                        Test Children
-                    </InputSelectCountryMultiple>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSelectCountryMultiple" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSelectCountryMultiple</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSelectCountryMultiple
+                            
+                        >
+                            Test Children
+                        </InputSelectCountryMultiple>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputFileStatus" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputFileStatus
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputFileStatus" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputFileStatus</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputFileStatus
+                            
             onUploadFile={async (e)=>e}
         
-                    >
-                        Test Children
-                    </InputFileStatus>
+                        >
+                            Test Children
+                        </InputFileStatus>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputRange" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputRange
-                        
-                    >
-                        Test Children
-                    </InputRange>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputRange" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputRange</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputRange
+                            
+                        >
+                            Test Children
+                        </InputRange>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputGoogleLoadScript" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputGoogleLoadScript
-                        
-                    >
-                        Test Children
-                    </InputGoogleLoadScript>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputGoogleLoadScript" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputGoogleLoadScript</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputGoogleLoadScript
+                            
+                        >
+                            Test Children
+                        </InputGoogleLoadScript>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputGoogleMaps" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputGoogleMaps
-                        
-                    >
-                        Test Children
-                    </InputGoogleMaps>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputGoogleMaps" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputGoogleMaps</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputGoogleMaps
+                            
+                        >
+                            Test Children
+                        </InputGoogleMaps>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputGoogleAutocomplete" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputGoogleAutocomplete
-                        
-                    >
-                        Test Children
-                    </InputGoogleAutocomplete>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputGoogleAutocomplete" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputGoogleAutocomplete</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputGoogleAutocomplete
+                            
+                        >
+                            Test Children
+                        </InputGoogleAutocomplete>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSelectT" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSelectT
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSelectT" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSelectT</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSelectT
+                            
                     options={[]}
                     onParse={(e)=>{
                         return {
@@ -1493,90 +1737,125 @@ const Profile: StoryFn<any> = () => (
                     }}
 
         
-                    >
-                        Test Children
-                    </InputSelectT>
+                        >
+                            Test Children
+                        </InputSelectT>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSelectMultiple" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSelectMultiple
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSelectMultiple" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSelectMultiple</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSelectMultiple
+                            
                     options={[]}
 
         
-                    >
-                        Test Children
-                    </InputSelectMultiple>
+                        >
+                            Test Children
+                        </InputSelectMultiple>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputRadio" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputRadio
-                        
-                    >
-                        Test Children
-                    </InputRadio>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputRadio" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputRadio</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputRadio
+                            
+                        >
+                            Test Children
+                        </InputRadio>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputImg" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputImg
-                        
-                    >
-                        Test Children
-                    </InputImg>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputImg" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputImg</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputImg
+                            
+                        >
+                            Test Children
+                        </InputImg>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputCode" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputCode
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputCode" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputCode</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputCode
+                            
              maxLength={6}
         
-                    >
-                        Test Children
-                    </InputCode>
+                        >
+                            Test Children
+                        </InputCode>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputTextSelect" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputTextSelect
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputTextSelect" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputTextSelect</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputTextSelect
+                            
              options={[]}  
         
-                    >
-                        Test Children
-                    </InputTextSelect>
+                        >
+                            Test Children
+                        </InputTextSelect>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputPassword" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputPassword
-                        
-                    >
-                        Test Children
-                    </InputPassword>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputPassword" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputPassword</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputPassword
+                            
+                        >
+                            Test Children
+                        </InputPassword>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSelectMultipleT" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSelectMultipleT
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSelectMultipleT" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSelectMultipleT</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSelectMultipleT
+                            
                     options={[]}
                     onParse={(e)=>{
                         return {
@@ -1585,702 +1864,998 @@ const Profile: StoryFn<any> = () => (
                         }
                     }}
         
-                    >
-                        Test Children
-                    </InputSelectMultipleT>
+                        >
+                            Test Children
+                        </InputSelectMultipleT>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSelectCountry" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSelectCountry
-                        
-                    >
-                        Test Children
-                    </InputSelectCountry>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSelectCountry" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSelectCountry</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSelectCountry
+                            
+                        >
+                            Test Children
+                        </InputSelectCountry>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputFile" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputFile
-                        
-                    >
-                        Test Children
-                    </InputFile>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputFile" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputFile</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputFile
+                            
+                        >
+                            Test Children
+                        </InputFile>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputDateRange" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputDateRange
-                        
-                    >
-                        Test Children
-                    </InputDateRange>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputDateRange" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputDateRange</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputDateRange
+                            
+                        >
+                            Test Children
+                        </InputDateRange>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputCheckbox" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputCheckbox
-                        
-                    >
-                        Test Children
-                    </InputCheckbox>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputCheckbox" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputCheckbox</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputCheckbox
+                            
+                        >
+                            Test Children
+                        </InputCheckbox>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSwich" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSwich
-                        
-                    >
-                        Test Children
-                    </InputSwich>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSwich" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSwich</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSwich
+                            
+                        >
+                            Test Children
+                        </InputSwich>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSearch" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSearch
-                        
-                    >
-                        Test Children
-                    </InputSearch>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSearch" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSearch</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSearch
+                            
+                        >
+                            Test Children
+                        </InputSearch>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputSelectState" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputSelectState
-                        
-                    >
-                        Test Children
-                    </InputSelectState>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputSelectState" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputSelectState</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputSelectState
+                            
+                        >
+                            Test Children
+                        </InputSelectState>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputUnitVolumen" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputUnitVolumen
-                        
-                    >
-                        Test Children
-                    </InputUnitVolumen>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputUnitVolumen" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputUnitVolumen</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputUnitVolumen
+                            
+                        >
+                            Test Children
+                        </InputUnitVolumen>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputUnitBase" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputUnitBase
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputUnitBase" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputUnitBase</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputUnitBase
+                            
              options={[]} 
         
-                    >
-                        Test Children
-                    </InputUnitBase>
+                        >
+                            Test Children
+                        </InputUnitBase>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputUnitDistance" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputUnitDistance
-                        
-                    >
-                        Test Children
-                    </InputUnitDistance>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputUnitDistance" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputUnitDistance</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputUnitDistance
+                            
+                        >
+                            Test Children
+                        </InputUnitDistance>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="InputUnitWeight" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <InputUnitWeight
-                        
-                    >
-                        Test Children
-                    </InputUnitWeight>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="InputUnitWeight" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>InputUnitWeight</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <InputUnitWeight
+                            
+                        >
+                            Test Children
+                        </InputUnitWeight>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Counter" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Counter
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Counter" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Counter</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Counter
+                            
             number={100}
         
-                    >
-                        Test Children
-                    </Counter>
+                        >
+                            Test Children
+                        </Counter>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="NotificationPop" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <NotificationPop
-                        
-                    >
-                        Test Children
-                    </NotificationPop>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="NotificationPop" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>NotificationPop</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <NotificationPop
+                            
+                        >
+                            Test Children
+                        </NotificationPop>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Notification" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Notification
-                        
-                    >
-                        Test Children
-                    </Notification>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Notification" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Notification</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Notification
+                            
+                        >
+                            Test Children
+                        </Notification>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Copy" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Copy
-                        
-                    >
-                        Test Children
-                    </Copy>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Copy" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Copy</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Copy
+                            
+                        >
+                            Test Children
+                        </Copy>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Slider" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Slider
-                        
-                    >
-                        Test Children
-                    </Slider>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Slider" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Slider</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Slider
+                            
+                        >
+                            Test Children
+                        </Slider>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ImgGallery" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ImgGallery
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ImgGallery" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ImgGallery</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ImgGallery
+                            
             imgs={[]} 
         
-                    >
-                        Test Children
-                    </ImgGallery>
+                        >
+                            Test Children
+                        </ImgGallery>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ImgSlider" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ImgSlider
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ImgSlider" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ImgSlider</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ImgSlider
+                            
             imgs={[]}   
         
-                    >
-                        Test Children
-                    </ImgSlider>
+                        >
+                            Test Children
+                        </ImgSlider>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="PaginationItemPage" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <PaginationItemPage
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="PaginationItemPage" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>PaginationItemPage</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <PaginationItemPage
+                            
             nItems={10}
         
-                    >
-                        Test Children
-                    </PaginationItemPage>
+                        >
+                            Test Children
+                        </PaginationItemPage>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Pagination" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Pagination
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Pagination" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Pagination</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Pagination
+                            
             nItems={10}  
         
-                    >
-                        Test Children
-                    </Pagination>
+                        >
+                            Test Children
+                        </Pagination>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="PaginationNPage" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <PaginationNPage
-                        
-                    >
-                        Test Children
-                    </PaginationNPage>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="PaginationNPage" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>PaginationNPage</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <PaginationNPage
+                            
+                        >
+                            Test Children
+                        </PaginationNPage>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="AlertHook" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <AlertHook
-                        
-                    >
-                        Test Children
-                    </AlertHook>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="AlertHook" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>AlertHook</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <AlertHook
+                            
+                        >
+                            Test Children
+                        </AlertHook>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Table" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Table
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Table" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Table</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Table
+                            
             header={[]}
             items={[]}
             name="table"
         
-                    >
-                        Test Children
-                    </Table>
+                        >
+                            Test Children
+                        </Table>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Alert" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Alert
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Alert" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Alert</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Alert
+                            
                  message="alert" 
                  type="WARNING"  
         
-                    >
-                        Test Children
-                    </Alert>
+                        >
+                            Test Children
+                        </Alert>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Collapse" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Collapse
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Collapse" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Collapse</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Collapse
+                            
              header={<></>}
         
-                    >
-                        Test Children
-                    </Collapse>
+                        >
+                            Test Children
+                        </Collapse>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="CollapseMultiple" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <CollapseMultiple
-                        
-                    >
-                        Test Children
-                    </CollapseMultiple>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="CollapseMultiple" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>CollapseMultiple</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <CollapseMultiple
+                            
+                        >
+                            Test Children
+                        </CollapseMultiple>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="LavaLamp" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <LavaLamp
-                        
-                    >
-                        Test Children
-                    </LavaLamp>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="LavaLamp" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>LavaLamp</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <LavaLamp
+                            
+                        >
+                            Test Children
+                        </LavaLamp>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ErrorComponent" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ErrorComponent
-                        
-                    >
-                        Test Children
-                    </ErrorComponent>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ErrorComponent" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ErrorComponent</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ErrorComponent
+                            
+                        >
+                            Test Children
+                        </ErrorComponent>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Form" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Form
-                        
-                    >
-                        Test Children
-                    </Form>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Form" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Form</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Form
+                            
+                        >
+                            Test Children
+                        </Form>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Tooltip" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Tooltip
-                        
-                    >
-                        Test Children
-                    </Tooltip>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Tooltip" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Tooltip</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Tooltip
+                            
+                        >
+                            Test Children
+                        </Tooltip>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="TwoColSticky" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <TwoColSticky
-                        
-                    >
-                        Test Children
-                    </TwoColSticky>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="TwoColSticky" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>TwoColSticky</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <TwoColSticky
+                            
+                        >
+                            Test Children
+                        </TwoColSticky>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Tab" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Tab
-                        
-                    >
-                        Test Children
-                    </Tab>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Tab" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Tab</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Tab
+                            
+                        >
+                            Test Children
+                        </Tab>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="DropDown" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <DropDown
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="DropDown" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>DropDown</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <DropDown
+                            
              header={<></>}
         
-                    >
-                        Test Children
-                    </DropDown>
+                        >
+                            Test Children
+                        </DropDown>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="PrintIframe" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <PrintIframe
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="PrintIframe" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>PrintIframe</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <PrintIframe
+                            
             onComponent={()=>""}  
             url=""
         
-                    >
-                        Test Children
-                    </PrintIframe>
+                        >
+                            Test Children
+                        </PrintIframe>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="PrintPage" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <PrintPage
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="PrintPage" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>PrintPage</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <PrintPage
+                            
             onComponent={()=>""}  
         
-                    >
-                        Test Children
-                    </PrintPage>
+                        >
+                            Test Children
+                        </PrintPage>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Steps" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Steps
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Steps" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Steps</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Steps
+                            
             items={[]}
         
-                    >
-                        Test Children
-                    </Steps>
+                        >
+                            Test Children
+                        </Steps>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Back" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Back
-                        
-                    >
-                        Test Children
-                    </Back>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Back" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Back</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Back
+                            
+                        >
+                            Test Children
+                        </Back>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Theme" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Theme
-                        
-                    >
-                        Test Children
-                    </Theme>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Theme" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Theme</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Theme
+                            
+                        >
+                            Test Children
+                        </Theme>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Link" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Link
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Link" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Link</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Link
+                            
             href={"/"}        
         
-                    >
-                        Test Children
-                    </Link>
+                        >
+                            Test Children
+                        </Link>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Share" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Share
-                        
-                    >
-                        Test Children
-                    </Share>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Share" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Share</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Share
+                            
+                        >
+                            Test Children
+                        </Share>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ContentLoading" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ContentLoading
-                        
-                    >
-                        Test Children
-                    </ContentLoading>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ContentLoading" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ContentLoading</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ContentLoading
+                            
+                        >
+                            Test Children
+                        </ContentLoading>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="GridGallery" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <GridGallery
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="GridGallery" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>GridGallery</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <GridGallery
+                            
             items={[]}
         
-                    >
-                        Test Children
-                    </GridGallery>
+                        >
+                            Test Children
+                        </GridGallery>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ChronologicalList" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ChronologicalList
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ChronologicalList" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ChronologicalList</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ChronologicalList
+                            
              items={[]}
         
-                    >
-                        Test Children
-                    </ChronologicalList>
+                        >
+                            Test Children
+                        </ChronologicalList>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="User" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <User
-                        
-                    >
-                        Test Children
-                    </User>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="User" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>User</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <User
+                            
+                        >
+                            Test Children
+                        </User>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Img" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Img
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Img" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Img</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Img
+                            
             src=""
         
-                    >
-                        Test Children
-                    </Img>
+                        >
+                            Test Children
+                        </Img>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="DesignTypography" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <DesignTypography
-                        
-                    >
-                        Test Children
-                    </DesignTypography>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="DesignTypography" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>DesignTypography</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <DesignTypography
+                            
+                        >
+                            Test Children
+                        </DesignTypography>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="DesignBox" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <DesignBox
-                        
-                    >
-                        Test Children
-                    </DesignBox>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="DesignBox" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>DesignBox</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <DesignBox
+                            
+                        >
+                            Test Children
+                        </DesignBox>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="PageProgress" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <PageProgress
-                        
-                    >
-                        Test Children
-                    </PageProgress>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="PageProgress" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>PageProgress</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <PageProgress
+                            
+                        >
+                            Test Children
+                        </PageProgress>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="FilterDate" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <FilterDate
-                        
-                    >
-                        Test Children
-                    </FilterDate>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="FilterDate" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>FilterDate</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <FilterDate
+                            
+                        >
+                            Test Children
+                        </FilterDate>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ScheduleDay" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ScheduleDay
-                        
-                    >
-                        Test Children
-                    </ScheduleDay>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ScheduleDay" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ScheduleDay</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ScheduleDay
+                            
+                        >
+                            Test Children
+                        </ScheduleDay>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ScheduleWeekly" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ScheduleWeekly
-                        
-                    >
-                        Test Children
-                    </ScheduleWeekly>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ScheduleWeekly" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ScheduleWeekly</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ScheduleWeekly
+                            
+                        >
+                            Test Children
+                        </ScheduleWeekly>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Template" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Template
-                        
-                    >
-                        Test Children
-                    </Template>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Template" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Template</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Template
+                            
+                        >
+                            Test Children
+                        </Template>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Modal" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Modal
-                        
-                    >
-                        Test Children
-                    </Modal>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Modal" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Modal</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Modal
+                            
+                        >
+                            Test Children
+                        </Modal>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ProgressCircle" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ProgressCircle
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ProgressCircle" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ProgressCircle</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ProgressCircle
+                            
             p={10}
             showP={true}
         
-                    >
-                        Test Children
-                    </ProgressCircle>
+                        >
+                            Test Children
+                        </ProgressCircle>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="ProgressLine" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <ProgressLine
-                        
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="ProgressLine" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>ProgressLine</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <ProgressLine
+                            
             p={10}
             showP={true}
         
-                    >
-                        Test Children
-                    </ProgressLine>
+                        >
+                            Test Children
+                        </ProgressLine>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="Chronometer" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <Chronometer
-                        
-                    >
-                        Test Children
-                    </Chronometer>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="Chronometer" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>Chronometer</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <Chronometer
+                            
+                        >
+                            Test Children
+                        </Chronometer>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="LoaderLine" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <LoaderLine
-                        
-                    >
-                        Test Children
-                    </LoaderLine>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="LoaderLine" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>LoaderLine</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <LoaderLine
+                            
+                        >
+                            Test Children
+                        </LoaderLine>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="LoaderUser" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <LoaderUser
-                        
-                    >
-                        Test Children
-                    </LoaderUser>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="LoaderUser" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>LoaderUser</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <LoaderUser
+                            
+                        >
+                            Test Children
+                        </LoaderUser>
+                    </div>
                 </div>
             
 
 
-                <div style={{position:"relative"}} >
-                    <div id="LoaderSpinner" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
-                    <LoaderSpinner
-                        
-                    >
-                        Test Children
-                    </LoaderSpinner>
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="LoaderSpinner" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>LoaderSpinner</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <LoaderSpinner
+                            
+                        >
+                            Test Children
+                        </LoaderSpinner>
+                    </div>
                 </div>
             
     </div>

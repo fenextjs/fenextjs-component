@@ -19,4 +19,21 @@
     --fenext-color-#{$name}-neto-#{$theme}: #{$color};
     --fenext-color-#{$name}-light: #{$light};
     --fenext-color-#{$name}-extra-light: #{$extraLight};
+
+    @if $theme != "dark" {
+        --fenext-color-theme-light-#{$name}-extra-dark: #{$extraDark};
+        --fenext-color-theme-light-#{$name}-dark: #{$dark};
+        --fenext-color-theme-light-#{$name}: #{$color};
+        --fenext-color-theme-light-#{$name}-neto-#{$theme}: #{$color};
+        --fenext-color-theme-light-#{$name}-light: #{$light};
+        --fenext-color-theme-light-#{$name}-extra-light: #{$extraLight};
+    }
+    @if $theme == "dark" {
+        --fenext-color-theme-dark-#{$name}-extra-dark: #{$extraDark};
+        --fenext-color-theme-dark-#{$name}-dark: #{$dark};
+        --fenext-color-theme-dark-#{$name}: #{$color};
+        --fenext-color-theme-dark-#{$name}-neto-#{$theme}: #{$color};
+        --fenext-color-theme-dark-#{$name}-light: #{$light};
+        --fenext-color-theme-dark-#{$name}-extra-light: #{$extraLight};
+    }
 }
