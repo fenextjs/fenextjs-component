@@ -3,10 +3,11 @@
     height: 0.5rem;
 }
 ::-webkit-scrollbar-track {
-    background-color: var(--fenext-color-white, white);
+    background-color: var(--fenext-color-light, white);
 }
 ::-webkit-scrollbar-thumb {
-    background-color: var(--fenext-color-gray, gray);
+    background-color: var(--fenext-color-primary, gray);
+    border-radius: 1rem;
     cursor: pointer;
 }
 * {

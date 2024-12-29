@@ -15,7 +15,7 @@
 
     &-menu-left {
         position: sticky;
-        background-color: var(--fenext-color-light-dark);
+        background-color: var(--fenext-color-light);
         color: var(--fenext-color-dark);
         clip-path: var(--clip-path);
         height: 100dvh;
@@ -67,7 +67,7 @@
         background-color: var(--fenext-color-white);
         position: relative;
 
-        color: var(--fenext-color-black);
+        color: var(--fenext-color-dark);
         font-family: var(--fenext-font-global);
 
         container-type: inline-size;

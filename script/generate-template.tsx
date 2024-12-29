@@ -138,7 +138,7 @@ const main = async () => {
                                 .replace("SwichViewSwichView", "SwichView")
                                 .replace("LayoutGridGrid", "LayoutGrid")
                                 .replace("Header", "")
-        if (["LoaderCurrent", "ModalBase", "","InputSelectOption"].includes(COMPONENT)) {
+        if (["LoaderCurrent", "ModalBase", "","InputSelectOption","LayoutGridMenuLeft","LayoutGridMenuTopLeft","LayoutGridMenuTop","Portal"].includes(COMPONENT)) {
             continue;
         }
         if (COMPONENT == "ModalModal") {
@@ -162,7 +162,7 @@ const main = async () => {
     await Bun_.write("./src/_.stories.tsx", `
 import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
-import { ${COMPONENT_LIST.join(",")} } from "./index";
+import { LayoutGridMenuTopLeft,${COMPONENT_LIST.join(",")} } from "./index";
 
 export default {
     title: "All",
@@ -170,13 +170,34 @@ export default {
 } as Meta;
 
 const Profile: StoryFn<any> = () => (
-    <div style={{display:"grid",gap:"2rem",padding:"2rem"}}>
+<LayoutGridMenuTopLeft
+    menuLeft={<>
         ${COMPONENT_LIST.map(c=>{
-            return `<${c}
-                    ${COMPONENTPROPS?.[c] ?? ''}
-                >Test Children</${c}>`
+            return `
+                <div className="fenext-menu-item">
+                    <a className="fenext-menu-item-a" href="#${c}" style={{padding:"1rem"}}>
+                        ${c}
+                    </a>
+                </div>
+            `
+        }).join("\n\n")}
+    </>}
+>
+    <div style={{display:"grid",gap:"2rem",padding:"2rem",gridTemplateColumns:"1fr"}}>
+        ${COMPONENT_LIST.map(c=>{
+            return `
+                <div style={{position:"relative"}} >
+                    <div id="${c}" style={{position:"absolute",bottom:"calc(102% + var(--fenext-size-menu-top))"}}/>
+                    <${c}
+                        ${COMPONENTPROPS?.[c] ?? ''}
+                    >
+                        Test Children
+                    </${c}>
+                </div>
+            `
         }).join("\n\n")}
     </div>
+</LayoutGridMenuTopLeft>
 );
 export const Index = Profile.bind({});
 Index.args = {};
