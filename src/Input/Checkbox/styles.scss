@@ -13,7 +13,9 @@
         width: 1.25rem;
         aspect-ratio: 1/1;
         border-radius: 3px;
+        background: var(--fenext-color-light);
         border: 2px solid var(--fenext-color-dark);
+        color: var(--fenext-color-dark);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -32,13 +34,14 @@
         font-weight: 800;
         line-height: 1.36;
         text-align: left;
-        color: var(--fenext-color-gray-dark);
+        color: var(--fenext-color-dark);
     }
     &:has(&-input:checked) {
         #{$className } {
             &-box {
-                background: var(--fenext-color-dark);
-                color: var(--fenext-color-white);
+                border-color: var(--fenext-color-primary);
+                background: var(--fenext-color-primary);
+                color: var(--fenext-color-light);
             }
         }
     }

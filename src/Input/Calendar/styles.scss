@@ -46,8 +46,9 @@
             border-radius: var(--padding);
             width: var(--width);
 
-            color: var(--fenext-color-light);
-            background-color: var(--fenext-color-dark);
+            color: var(--fenext-color-dark);
+            background-color: var(--fenext-color-light);
+            box-shadow: inset 0 0 0 1px  var(--fenext-color-gray);
             font-size: 1rem;
         }
     }
@@ -64,11 +65,12 @@
     }
     &-days {
         grid-column: 1 /-1;
-        background: var(--fenext-color-dark-light);
+        background: var(--fenext-color-light);
         border-radius: var(--padding);
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         margin-bottom: 0.5rem;
+        box-shadow: inset 0 0 0 1px  var(--fenext-color-gray);
     }
     &-btn {
         cursor: pointer;
@@ -91,30 +93,12 @@
         cursor: pointer;
     }
     &-date {
+        color: var(--fenext-color-dark);
+        background-color: var(--fenext-color-light);
         cursor: pointer;
-        &-disabled {
-            filter: grayscale(1);
-            opacity: 0.75;
-            background: var(--fenext-color-dark-light);
-            cursor: not-allowed;
-        }
-        &-other-month {
-            background: var(--fenext-color-dark-light);
-            border-radius: var(--padding);
-            filter: grayscale(1);
-            opacity: 0.2;
-
-            &:has(+ .fenext-input-calendar-date-other-month) {
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-                + .fenext-input-calendar-date-other-month {
-                    border-top-left-radius: 0;
-                    border-bottom-left-radius: 0;
-                }
-            }
-        }
         &-select {
-            background: var(--fenext-color-info);
+            background: var(--fenext-color-primary);
+            color: var(--fenext-color-light);
             border-radius: var(--padding);
             &:has(+ .fenext-input-calendar-date-select-range),
             &:has(+ .fenext-input-calendar-date-select) {
@@ -126,8 +110,32 @@
                 }
             }
             &-range {
-                background: var(--fenext-color-info-dark);
+                background: var(--fenext-color-primary);
+                color: var(--fenext-color-light);
+                opacity: .5;
                 + .fenext-input-calendar-date-select {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+        }
+        &-disabled {
+            filter: grayscale(1);
+            opacity: 0.75;
+            background: var(--fenext-color-disabled);
+            cursor: not-allowed;
+        }
+        &-other-month {
+            background: var(--fenext-color-disabled);
+            color: var(--fenext-color-dark);
+            border-radius: var(--padding);
+            filter: grayscale(1);
+            opacity: 0.2;
+
+            &:has(+ .fenext-input-calendar-date-other-month) {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                + .fenext-input-calendar-date-other-month {
                     border-top-left-radius: 0;
                     border-bottom-left-radius: 0;
                 }

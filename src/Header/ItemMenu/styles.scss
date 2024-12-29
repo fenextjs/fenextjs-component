@@ -4,14 +4,14 @@
     --box-shadow-hover: none;
     --box-shadow: var(--box-shadow-normal);
 
-    --background-normal: var(--fenext-color-dark);
-    --background-active: var(--fenext-color-dark);
-    --background-hover: var(--fenext-color-dark);
+    --background-normal: var(--fenext-color-light);
+    --background-active: var(--fenext-color-primary);
+    --background-hover: var(--fenext-color-primary);
     --background: var(--background-normal);
 
-    --color-normal: var(--fenext-color-light);
-    --color-active: var(--fenext-color-info);
-    --color-hover: var(--fenext-color-info);
+    --color-normal: var(--fenext-color-primary);
+    --color-active: var(--fenext-color-light);
+    --color-hover: var(--fenext-color-light);
     --color: var(--color-normal);
     --size-icon: 1.2rem;
     &-a {
@@ -27,6 +27,9 @@
         color: var(--color);
         background: var(--background);
         box-shadow: var(--box-shadow);
+        &-text{
+            color: var(--color);
+        }
         &-icon {
             width: 100%;
             color: currentColor;

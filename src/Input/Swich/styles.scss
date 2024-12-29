@@ -3,8 +3,8 @@
     display: flex;
     align-items: center;
     --size-cicle: 1rem;
-    --bg: var(--fenext-color-red);
-    --bg-circle: var(--fenext-color-white);
+    --bg: var(--fenext-color-danger);
+    --bg-circle: var(--fenext-color-light);
 
     background-color: var(--bg);
     border-radius: var(--size-cicle);
@@ -24,7 +24,7 @@
         transition: 0.1s;
     }
     &:has(&-input:checked) {
-        --bg: var(--fenext-color-teal);
+        --bg: var(--fenext-color-success);
         .fenext-input-swich-circle {
             transform: translateX(175%);
         }

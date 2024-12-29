@@ -9,8 +9,8 @@
     font-weight: 900;
     line-height: 1;
     cursor: pointer;
-    background-color: var(--fenext-color-dark);
-    color: var(--fenext-color-light);
+    background-color: var(--fenext-color-light);
+    color: var(--fenext-color-dark);
     border-radius: 0.75rem;
 
     --icon-rotate: 0deg;
@@ -37,8 +37,8 @@
         font-size: 1rem;
         font-weight: 400;
         line-height: 1;
-        background-color: var(--fenext-color-dark);
-        color: var(--fenext-color-light);
+        background-color: var(--fenext-color-light);
+        color: var(--fenext-color-dark);
         border-radius: 0.75rem;
         transition: opacity var(--time);
 

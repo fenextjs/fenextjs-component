@@ -50,13 +50,13 @@
     }
     &-line {
         width: 100%;
-        height: 0.5rem;
-        border-radius: 0.2rem;
-        border: 1px solid var(--fenext-color-gray-extra-light);
+        height: 0.6rem;
+        border-radius: 0.3rem;
+        // border: 1px solid var(--fenext-color-gray-extra-light);
         background: linear-gradient(
             to right,
-            var(--fenext-color-blue) 0%,
-            var(--fenext-color-blue) var(--valueP),
+            var(--fenext-color-primary) 0%,
+            var(--fenext-color-primary) var(--valueP),
             var(--fenext-color-light) var(--valueP),
             var(--fenext-color-light) 100%
         );
@@ -65,7 +65,7 @@
         width: var(--size-circle);
         aspect-ratio: 1/1;
         border-radius: 100%;
-        background-color: var(--fenext-color-blue);
+        background-color: var(--fenext-color-primary);
         position: absolute;
         top: 50%;
         &-min {
@@ -96,8 +96,8 @@
         font-family: var(--fenext-font-global);
         padding: 0.25rem 0.5rem;
         border-radius: 0.35rem;
-        color: var(--fenext-color-light);
-        background-color: var(--fenext-color-dark);
+        color: var(--fenext-color-dark);
+        background-color: var(--fenext-color-light);
         position: absolute;
         --size-box: 3rem;
         --size-box-max: 3rem;
@@ -115,7 +115,7 @@
             bottom: 0rem;
             width: 1rem;
             height: 0.5rem;
-            background-color: var(--fenext-color-dark);
+            background-color: var(--fenext-color-light);
             clip-path: polygon(50% 100%, 0 0, 100% 0);
             --size-box: 1rem;
             --size-box-max: calc(var(--size-circle) * 1.75);
@@ -159,8 +159,8 @@
                     to right,
                     var(--fenext-color-light) 0%,
                     var(--fenext-color-light) var(--minP),
-                    var(--fenext-color-blue) var(--minP),
-                    var(--fenext-color-blue) calc(100% - var(--maxP)),
+                    var(--fenext-color-primary) var(--minP),
+                    var(--fenext-color-primary) calc(100% - var(--maxP)),
                     var(--fenext-color-light) calc(100% - var(--maxP)),
                     var(--fenext-color-light) 100%
                 );

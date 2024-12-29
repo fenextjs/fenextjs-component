@@ -1,8 +1,8 @@
 .fenext-progess-circle {
     --p: 50;
     --progess: calc(var(--p) * 3.6deg);
-    --bg: var(--fenext-color-white-dark);
-    --bgp: var(--fenext-color-blue);
+    --bg: var(--fenext-color-light);
+    --bgp: var(--fenext-color-primary);
     width: min(100%, 20rem);
     aspect-ratio: 1/1;
     border-radius: 100%;
@@ -21,7 +21,7 @@
     font-size: 3rem;
     font-weight: 700;
     line-height: 1;
-    color: var(--fenext-color-white);
+    color: var(--fenext-color-dark);
     &-show-p {
         &:before {
             counter-reset: p var(--p);

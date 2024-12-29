@@ -28,12 +28,12 @@
     &-item {
         border-radius: 0.7rem;
         border: 0;
-        background-color: var(--fenext-color-dark);
+        color: var(--fenext-color-dark);
+        background-color: var(--fenext-color-light);
         font-family: var(--fenext-font-global);
         font-size: 1rem;
         font-weight: 800;
         text-align: left;
-        color: var(--fenext-color-light);
         padding: 0.5rem;
         aspect-ratio: 1/1;
         line-height: 1;
@@ -46,7 +46,7 @@
         .fenext-input-code {
             &-item {
                 &-current {
-                    box-shadow: inset 0px 0px 0px 6px
+                    box-shadow: inset 0px 0px 0px 4px
                         var(--fenext-color-primary);
                 }
             }

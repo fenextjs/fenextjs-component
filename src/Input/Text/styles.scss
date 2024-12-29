@@ -5,7 +5,7 @@
         font-weight: 800;
         line-height: 1.36;
         text-align: left;
-        color: var(--fenext-color-gray-dark);
+        color: var(--fenext-color-dark);
         &:empty {
             display: none;
         }
@@ -27,7 +27,7 @@
         $classContent: &;
         position: relative;
         --box-shadow-color: var(--fenext-color-primary);
-        --box-shadow-color-target: var(--fenext-color-yellow-light);
+        --box-shadow-color-target: var(--fenext-color-secondary);
         --box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
         &:has([class*="fenext-input"]:focus) {
             .fenext-input-content-input {
@@ -35,7 +35,7 @@
             }
         }
         &:has(.fenext-input-validator-status-error) {
-            --box-shadow-color: var(--fenext-color-red);
+            --box-shadow-color: var(--fenext-color-danger);
         }
         &:has(.fenext-input-content-input-show-focus-target:target) {
             --box-shadow-color: var(--box-shadow-color-target);
@@ -46,13 +46,13 @@
             opacity: 1;
             border-radius: 0.7rem;
             border: 0;
-            background-color: var(--fenext-color-dark);
+            color: var(--fenext-color-dark);
+            background-color: var(--fenext-color-light);
             font-family: var(--fenext-font-global);
             font-size: 1rem;
             font-weight: 800;
             line-height: 1.36;
             text-align: left;
-            color: var(--fenext-color-light);
             outline: none;
             @media (max-width: 575px) {
                 padding: 0.75rem 1rem;
@@ -98,7 +98,7 @@
         &-icon {
             position: absolute;
             right: 1.5rem;
-            color: var(--fenext-color-white);
+            color: var(--fenext-color-dark);
             top: 0;
             bottom: 0;
             margin: auto;
@@ -116,7 +116,7 @@
         &-loader {
             position: absolute;
             right: 1.5rem;
-            color: var(--fenext-color-white);
+            color: var(--fenext-color-dark);
             top: 0;
             bottom: 0;
             margin: auto;
@@ -143,7 +143,7 @@
 }
 .fenext-input-error.fenext-input-error {
     text-align: right;
-    color: var(--fenext-color-red);
+    color: var(--fenext-color-danger);
     background-color: transparent;
     margin-bottom: 0;
     .fenext-error-input {

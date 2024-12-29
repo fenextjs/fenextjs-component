@@ -22,10 +22,10 @@
     }
     &-start {
         width: 1.5rem;
-        color: var(--fenext-color-light-dark);
+        color: var(--fenext-color-light);
         cursor: pointer;
         &-active {
-            color: var(--fenext-color-yellow);
+            color: var(--fenext-color-primary);
         }
     }
     &-cap {

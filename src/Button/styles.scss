@@ -17,11 +17,11 @@
     --fenext-btn-line-height: 1;
     --fenext-btn-text-align: center;
 
-    --fenext-btn-background: var(--fenext-color-dark);
-    --fenext-btn-background-hover: var(--fenext-color-dark-light);
-    --fenext-btn-background-disabled: var(--fenext-color-secondary);
+    --fenext-btn-background: var(--fenext-color-primary);
+    --fenext-btn-background-hover: var(--fenext-color-secondary);
+    --fenext-btn-background-disabled: var(--fenext-color-disabled);
 
-    --fenext-btn-color: var(--fenext-color-white);
+    --fenext-btn-color: var(--fenext-color-light);
     --fenext-btn-color-loader: transparent;
 
     --fenext-btn-border-radius: 0.5rem;
@@ -43,7 +43,7 @@
     --fenext-btn-loader-max-height: 90%;
     --fenext-btn-loader-height: 1.5rem;
     --fenext-btn-loader-width: auto;
-    --fenext-btn-loader-color: var(--fenext-color-white);
+    --fenext-btn-loader-color: var(--fenext-color-dark);
 }
 
 .fenext-btn {

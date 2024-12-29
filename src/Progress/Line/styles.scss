@@ -1,8 +1,8 @@
 .fenext-progess-line {
     --p: 50;
     --progess: calc(var(--p) * 1%);
-    --bg: var(--fenext-color-white-dark);
-    --bgp: var(--fenext-color-blue);
+    --bg: var(--fenext-color-light);
+    --bgp: var(--fenext-color-primary);
     position: relative;
     width: 100%;
     min-height: 1rem;
@@ -14,7 +14,7 @@
     font-weight: 700;
     line-height: 1;
     padding: 0.2rem 1rem;
-    color: var(--fenext-color-white);
+    color: var(--fenext-color-dark);
     &-bar {
         position: absolute;
         inset: 0;
