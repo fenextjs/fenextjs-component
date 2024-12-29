@@ -32,7 +32,8 @@
     "update-package-storybook": "ncu -u '/.*storybook.*$/'",
     "update-package": "ncu -u '/^fenextjs.*$/' country-state-city-nextjs uselocalstoragenextjs",
     "update": "npm run update-package && npm run remove && npm run bun-i && npm run flb",
-    "u": "npm run update"
+    "u": "npm run update",
+    "generate-template":"bun ./script/generate-template.tsx"
   },
   "repository": {
     "type": "git",

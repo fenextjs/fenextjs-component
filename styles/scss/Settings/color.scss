@@ -23,6 +23,15 @@
     @include generateColor("neto-dark", #212529);
     @include generateColor("loader-background", #f2f2f2);
     @include generateColor("loader-foreground", #9c9c9c);
+
+
+    @include generateColor("primary", #1E88E5);
+    @include generateColor("secondary", #E91E63);
+    @include generateColor("success", #43A047);
+    @include generateColor("warning", #FDD835);
+    @include generateColor("danger", #E53935);
+    @include generateColor("light", #F5F5F5);
+    @include generateColor("dark", #212121);
 }
 @mixin styleTheme_dark {
     @include generateColor("blue", #9eb9ff, "dark");
@@ -48,6 +57,15 @@
     @include generateColor("white-smoke", hsl(0, 0%, 10%));
     @include generateColor("loader-background", hsl(0, 0%, 35%));
     @include generateColor("loader-foreground", hsl(0, 0%, 71%));
+
+
+    @include generateColor("primary", #90CAF9, "dark");
+    @include generateColor("secondary", #F48FB1, "dark");
+    @include generateColor("success", #66BB6A, "dark");
+    @include generateColor("warning", #FFEB3B, "dark");
+    @include generateColor("danger", #EF5350, "dark");
+    @include generateColor("light", #121212, "dark");
+    @include generateColor("dark", #FAFAFA, "dark");
 
 }
 
