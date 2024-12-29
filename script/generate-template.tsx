@@ -174,7 +174,7 @@ const Profile: StoryFn<any> = () => (
         ${COMPONENT_LIST.map(c=>{
             return `<${c}
                     ${COMPONENTPROPS?.[c] ?? ''}
-                />`
+                >Test Children</${c}>`
         }).join("\n\n")}
     </div>
 );
