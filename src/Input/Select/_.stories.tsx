@@ -36,7 +36,6 @@ const args: InputSelectProps = {
     // typeSelectStyle:"normal-out",
     // forceShowOptionIfNotSelected:true,
     // _t:e=>"x",
-    // classNameOption:"bg-red",
     options: [
         {
             id: "1",

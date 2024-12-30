@@ -17,7 +17,7 @@ export default {
             type: "CSSProperties",
             require: false,
             default:
-                '{ width: "100%", height: "500px",background: "linear-gradient(45deg,var(--fenext-color-primary) 0%,var(--fenext-color-teal) 100%)"}',
+                '{ width: "100%", height: "500px",background: "linear-gradient(45deg,var(--fenext-color-primary) 0%,var(--fenext-color-success) 100%)"}',
             description:
                 "Estilos generales aplicados al contenedor de la lámpara de lava.",
         },

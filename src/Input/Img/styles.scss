@@ -22,7 +22,7 @@
         align-items: center;
         justify-content: center;
         color: var(--fenext-color-white);
-        background: var(--fenext-color-red);
+        background: var(--fenext-color-danger);
         padding: 0.4rem;
         border-radius: 100%;
         cursor: pointer;
@@ -49,14 +49,14 @@
         background: var(--fenext-color-white-dark);
     }
     &-ok {
-        border: solid 3px var(--fenext-color-green);
+        border: solid 3px var(--fenext-color-success);
         background: var(--fenext-color-white-dark);
         .fenext-input-img-up {
             padding: 0;
         }
     }
     &-error {
-        border: solid 3px var(--fenext-color-red);
+        border: solid 3px var(--fenext-color-danger);
         background: var(--fenext-color-white-dark);
     }
     .fenext-error {

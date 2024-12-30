@@ -1,27 +1,4 @@
 @mixin styleTheme_light {
-    @include generateColor("indigo", #6610f2);
-    @include generateColor("purple", #6f42c1);
-    @include generateColor("pink", #d63384);
-    @include generateColor("red", #dc3545);
-    @include generateColor("orange", #fd7e14);
-    @include generateColor("yellow", #ffc107);
-    @include generateColor("green", #198754);
-    @include generateColor("teal", #20c997);
-    @include generateColor("cyan", #0dcaf0);
-    @include generateColor("primary", #0d6efd);
-    @include generateColor("secondary", #6c757d);
-    @include generateColor("success", #198754);
-    @include generateColor("info", #0dcaf0);
-    @include generateColor("warning", #ffc107);
-    @include generateColor("danger", #dc3545);
-    @include generateColor("light", #f8f9fa);
-    @include generateColor("dark", #212529);
-    @include generateColor("white-smoke", hsl(0, 0%, 96%));
-    @include generateColor("neto-dark", #212529);
-    @include generateColor("loader-background", #f2f2f2);
-    @include generateColor("loader-foreground", #9c9c9c);
-
-
     @include generateColor("primary", #1E88E5);
     @include generateColor("secondary", #E91E63);
     @include generateColor("success", #43A047);
@@ -32,30 +9,10 @@
     @include generateColor("gray", #c9c9c9 );
     @include generateColor("disabled", #9c9c9c );
     @include generateColor("white", #fff);
+    @include generateColor("loader-background", #f2f2f2);
+    @include generateColor("loader-foreground", #9c9c9c);
 }
 @mixin styleTheme_dark {
-    @include generateColor("indigo", #c891ff, "dark");
-    @include generateColor("purple", #d2a8ff, "dark");
-    @include generateColor("pink", #ff9dd9, "dark");
-    @include generateColor("red", #ff938f, "dark");
-    @include generateColor("orange", #ffca8a, "dark");
-    @include generateColor("yellow", #ffe18d, "dark");
-    @include generateColor("green", #7cd790, "dark");
-    @include generateColor("teal", #6bcebb, "dark");
-    @include generateColor("cyan", #6acffb, "dark");
-    @include generateColor("primary", #9eb9ff, "dark");
-    @include generateColor("secondary", #f2f2f2, "dark");
-    @include generateColor("success", #7cd790, "dark");
-    @include generateColor("info", #6acffb, "dark");
-    @include generateColor("warning", #ffe18d, "dark");
-    @include generateColor("danger", #ff938f, "dark");
-    @include generateColor("light", hsl(210, 11%, 15%), "dark");
-    @include generateColor("dark", #f2f2f2, "dark");
-    @include generateColor("white-smoke", hsl(0, 0%, 10%));
-    @include generateColor("loader-background", hsl(0, 0%, 35%));
-    @include generateColor("loader-foreground", hsl(0, 0%, 71%));
-
-
     @include generateColor("primary", #90CAF9, "dark");
     @include generateColor("secondary", #F48FB1, "dark");
     @include generateColor("success", #66BB6A, "dark");
@@ -66,6 +23,8 @@
     @include generateColor("gray", #c9c9c9 , "dark");
     @include generateColor("disabled", #9c9c9c, "dark");
     @include generateColor("white", #242424, "dark");
+    @include generateColor("loader-background", hsl(0, 0%, 35%), "dark");
+    @include generateColor("loader-foreground", hsl(0, 0%, 71%), "dark");
 
 }
 

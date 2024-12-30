@@ -80,94 +80,6 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
 }
 
 :root {
-  --fenext-color-blue-dark: red;
-  --fenext-color-blue-light: red;
-  --fenext-color-blue: #0d6efd;
-  --fenext-color-theme-light-blue: #0d6efd;
-  --fenext-color-indigo-dark: red;
-  --fenext-color-indigo-light: red;
-  --fenext-color-indigo: #6610f2;
-  --fenext-color-theme-light-indigo: #6610f2;
-  --fenext-color-purple-dark: red;
-  --fenext-color-purple-light: red;
-  --fenext-color-purple: #6f42c1;
-  --fenext-color-theme-light-purple: #6f42c1;
-  --fenext-color-pink-dark: red;
-  --fenext-color-pink-light: red;
-  --fenext-color-pink: #d63384;
-  --fenext-color-theme-light-pink: #d63384;
-  --fenext-color-red-dark: red;
-  --fenext-color-red-light: red;
-  --fenext-color-red: #dc3545;
-  --fenext-color-theme-light-red: #dc3545;
-  --fenext-color-orange-dark: red;
-  --fenext-color-orange-light: red;
-  --fenext-color-orange: #fd7e14;
-  --fenext-color-theme-light-orange: #fd7e14;
-  --fenext-color-yellow-dark: red;
-  --fenext-color-yellow-light: red;
-  --fenext-color-yellow: #ffc107;
-  --fenext-color-theme-light-yellow: #ffc107;
-  --fenext-color-green-dark: red;
-  --fenext-color-green-light: red;
-  --fenext-color-green: #198754;
-  --fenext-color-theme-light-green: #198754;
-  --fenext-color-teal-dark: red;
-  --fenext-color-teal-light: red;
-  --fenext-color-teal: #20c997;
-  --fenext-color-theme-light-teal: #20c997;
-  --fenext-color-cyan-dark: red;
-  --fenext-color-cyan-light: red;
-  --fenext-color-cyan: #0dcaf0;
-  --fenext-color-theme-light-cyan: #0dcaf0;
-  --fenext-color-primary-dark: red;
-  --fenext-color-primary-light: red;
-  --fenext-color-primary: #0d6efd;
-  --fenext-color-theme-light-primary: #0d6efd;
-  --fenext-color-secondary-dark: red;
-  --fenext-color-secondary-light: red;
-  --fenext-color-secondary: #6c757d;
-  --fenext-color-theme-light-secondary: #6c757d;
-  --fenext-color-success-dark: red;
-  --fenext-color-success-light: red;
-  --fenext-color-success: #198754;
-  --fenext-color-theme-light-success: #198754;
-  --fenext-color-info-dark: red;
-  --fenext-color-info-light: red;
-  --fenext-color-info: #0dcaf0;
-  --fenext-color-theme-light-info: #0dcaf0;
-  --fenext-color-warning-dark: red;
-  --fenext-color-warning-light: red;
-  --fenext-color-warning: #ffc107;
-  --fenext-color-theme-light-warning: #ffc107;
-  --fenext-color-danger-dark: red;
-  --fenext-color-danger-light: red;
-  --fenext-color-danger: #dc3545;
-  --fenext-color-theme-light-danger: #dc3545;
-  --fenext-color-light-dark: red;
-  --fenext-color-light-light: red;
-  --fenext-color-light: #f8f9fa;
-  --fenext-color-theme-light-light: #f8f9fa;
-  --fenext-color-dark-dark: red;
-  --fenext-color-dark-light: red;
-  --fenext-color-dark: #212529;
-  --fenext-color-theme-light-dark: #212529;
-  --fenext-color-white-smoke-dark: red;
-  --fenext-color-white-smoke-light: red;
-  --fenext-color-white-smoke: hsl(0, 0%, 96%);
-  --fenext-color-theme-light-white-smoke: hsl(0, 0%, 96%);
-  --fenext-color-neto-dark-dark: red;
-  --fenext-color-neto-dark-light: red;
-  --fenext-color-neto-dark: #212529;
-  --fenext-color-theme-light-neto-dark: #212529;
-  --fenext-color-loader-background-dark: red;
-  --fenext-color-loader-background-light: red;
-  --fenext-color-loader-background: #f2f2f2;
-  --fenext-color-theme-light-loader-background: #f2f2f2;
-  --fenext-color-loader-foreground-dark: red;
-  --fenext-color-loader-foreground-light: red;
-  --fenext-color-loader-foreground: #9c9c9c;
-  --fenext-color-theme-light-loader-foreground: #9c9c9c;
   --fenext-color-primary-dark: red;
   --fenext-color-primary-light: red;
   --fenext-color-primary: #1E88E5;
@@ -208,94 +120,18 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   --fenext-color-white-light: red;
   --fenext-color-white: #fff;
   --fenext-color-theme-light-white: #fff;
+  --fenext-color-loader-background-dark: red;
+  --fenext-color-loader-background-light: red;
+  --fenext-color-loader-background: #f2f2f2;
+  --fenext-color-theme-light-loader-background: #f2f2f2;
+  --fenext-color-loader-foreground-dark: red;
+  --fenext-color-loader-foreground-light: red;
+  --fenext-color-loader-foreground: #9c9c9c;
+  --fenext-color-theme-light-loader-foreground: #9c9c9c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fenext-color-blue-dark: red;
-    --fenext-color-blue-light: red;
-    --fenext-color-blue: #9eb9ff;
-    --fenext-color-theme-dark-blue: #9eb9ff;
-    --fenext-color-indigo-dark: red;
-    --fenext-color-indigo-light: red;
-    --fenext-color-indigo: #c891ff;
-    --fenext-color-theme-dark-indigo: #c891ff;
-    --fenext-color-purple-dark: red;
-    --fenext-color-purple-light: red;
-    --fenext-color-purple: #d2a8ff;
-    --fenext-color-theme-dark-purple: #d2a8ff;
-    --fenext-color-pink-dark: red;
-    --fenext-color-pink-light: red;
-    --fenext-color-pink: #ff9dd9;
-    --fenext-color-theme-dark-pink: #ff9dd9;
-    --fenext-color-red-dark: red;
-    --fenext-color-red-light: red;
-    --fenext-color-red: #ff938f;
-    --fenext-color-theme-dark-red: #ff938f;
-    --fenext-color-orange-dark: red;
-    --fenext-color-orange-light: red;
-    --fenext-color-orange: #ffca8a;
-    --fenext-color-theme-dark-orange: #ffca8a;
-    --fenext-color-yellow-dark: red;
-    --fenext-color-yellow-light: red;
-    --fenext-color-yellow: #ffe18d;
-    --fenext-color-theme-dark-yellow: #ffe18d;
-    --fenext-color-green-dark: red;
-    --fenext-color-green-light: red;
-    --fenext-color-green: #7cd790;
-    --fenext-color-theme-dark-green: #7cd790;
-    --fenext-color-teal-dark: red;
-    --fenext-color-teal-light: red;
-    --fenext-color-teal: #6bcebb;
-    --fenext-color-theme-dark-teal: #6bcebb;
-    --fenext-color-cyan-dark: red;
-    --fenext-color-cyan-light: red;
-    --fenext-color-cyan: #6acffb;
-    --fenext-color-theme-dark-cyan: #6acffb;
-    --fenext-color-primary-dark: red;
-    --fenext-color-primary-light: red;
-    --fenext-color-primary: #9eb9ff;
-    --fenext-color-theme-dark-primary: #9eb9ff;
-    --fenext-color-secondary-dark: red;
-    --fenext-color-secondary-light: red;
-    --fenext-color-secondary: #f2f2f2;
-    --fenext-color-theme-dark-secondary: #f2f2f2;
-    --fenext-color-success-dark: red;
-    --fenext-color-success-light: red;
-    --fenext-color-success: #7cd790;
-    --fenext-color-theme-dark-success: #7cd790;
-    --fenext-color-info-dark: red;
-    --fenext-color-info-light: red;
-    --fenext-color-info: #6acffb;
-    --fenext-color-theme-dark-info: #6acffb;
-    --fenext-color-warning-dark: red;
-    --fenext-color-warning-light: red;
-    --fenext-color-warning: #ffe18d;
-    --fenext-color-theme-dark-warning: #ffe18d;
-    --fenext-color-danger-dark: red;
-    --fenext-color-danger-light: red;
-    --fenext-color-danger: #ff938f;
-    --fenext-color-theme-dark-danger: #ff938f;
-    --fenext-color-light-dark: red;
-    --fenext-color-light-light: red;
-    --fenext-color-light: hsl(210, 11%, 15%);
-    --fenext-color-theme-dark-light: hsl(210, 11%, 15%);
-    --fenext-color-dark-dark: red;
-    --fenext-color-dark-light: red;
-    --fenext-color-dark: #f2f2f2;
-    --fenext-color-theme-dark-dark: #f2f2f2;
-    --fenext-color-white-smoke-dark: red;
-    --fenext-color-white-smoke-light: red;
-    --fenext-color-white-smoke: hsl(0, 0%, 10%);
-    --fenext-color-theme-light-white-smoke: hsl(0, 0%, 10%);
-    --fenext-color-loader-background-dark: red;
-    --fenext-color-loader-background-light: red;
-    --fenext-color-loader-background: hsl(0, 0%, 35%);
-    --fenext-color-theme-light-loader-background: hsl(0, 0%, 35%);
-    --fenext-color-loader-foreground-dark: red;
-    --fenext-color-loader-foreground-light: red;
-    --fenext-color-loader-foreground: hsl(0, 0%, 71%);
-    --fenext-color-theme-light-loader-foreground: hsl(0, 0%, 71%);
     --fenext-color-primary-dark: red;
     --fenext-color-primary-light: red;
     --fenext-color-primary: #90CAF9;
@@ -336,93 +172,17 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
     --fenext-color-white-light: red;
     --fenext-color-white: #242424;
     --fenext-color-theme-dark-white: #242424;
+    --fenext-color-loader-background-dark: red;
+    --fenext-color-loader-background-light: red;
+    --fenext-color-loader-background: hsl(0, 0%, 35%);
+    --fenext-color-theme-dark-loader-background: hsl(0, 0%, 35%);
+    --fenext-color-loader-foreground-dark: red;
+    --fenext-color-loader-foreground-light: red;
+    --fenext-color-loader-foreground: hsl(0, 0%, 71%);
+    --fenext-color-theme-dark-loader-foreground: hsl(0, 0%, 71%);
   }
 }
 [fenext-theme=dark] {
-  --fenext-color-blue-dark: red;
-  --fenext-color-blue-light: red;
-  --fenext-color-blue: #9eb9ff;
-  --fenext-color-theme-dark-blue: #9eb9ff;
-  --fenext-color-indigo-dark: red;
-  --fenext-color-indigo-light: red;
-  --fenext-color-indigo: #c891ff;
-  --fenext-color-theme-dark-indigo: #c891ff;
-  --fenext-color-purple-dark: red;
-  --fenext-color-purple-light: red;
-  --fenext-color-purple: #d2a8ff;
-  --fenext-color-theme-dark-purple: #d2a8ff;
-  --fenext-color-pink-dark: red;
-  --fenext-color-pink-light: red;
-  --fenext-color-pink: #ff9dd9;
-  --fenext-color-theme-dark-pink: #ff9dd9;
-  --fenext-color-red-dark: red;
-  --fenext-color-red-light: red;
-  --fenext-color-red: #ff938f;
-  --fenext-color-theme-dark-red: #ff938f;
-  --fenext-color-orange-dark: red;
-  --fenext-color-orange-light: red;
-  --fenext-color-orange: #ffca8a;
-  --fenext-color-theme-dark-orange: #ffca8a;
-  --fenext-color-yellow-dark: red;
-  --fenext-color-yellow-light: red;
-  --fenext-color-yellow: #ffe18d;
-  --fenext-color-theme-dark-yellow: #ffe18d;
-  --fenext-color-green-dark: red;
-  --fenext-color-green-light: red;
-  --fenext-color-green: #7cd790;
-  --fenext-color-theme-dark-green: #7cd790;
-  --fenext-color-teal-dark: red;
-  --fenext-color-teal-light: red;
-  --fenext-color-teal: #6bcebb;
-  --fenext-color-theme-dark-teal: #6bcebb;
-  --fenext-color-cyan-dark: red;
-  --fenext-color-cyan-light: red;
-  --fenext-color-cyan: #6acffb;
-  --fenext-color-theme-dark-cyan: #6acffb;
-  --fenext-color-primary-dark: red;
-  --fenext-color-primary-light: red;
-  --fenext-color-primary: #9eb9ff;
-  --fenext-color-theme-dark-primary: #9eb9ff;
-  --fenext-color-secondary-dark: red;
-  --fenext-color-secondary-light: red;
-  --fenext-color-secondary: #f2f2f2;
-  --fenext-color-theme-dark-secondary: #f2f2f2;
-  --fenext-color-success-dark: red;
-  --fenext-color-success-light: red;
-  --fenext-color-success: #7cd790;
-  --fenext-color-theme-dark-success: #7cd790;
-  --fenext-color-info-dark: red;
-  --fenext-color-info-light: red;
-  --fenext-color-info: #6acffb;
-  --fenext-color-theme-dark-info: #6acffb;
-  --fenext-color-warning-dark: red;
-  --fenext-color-warning-light: red;
-  --fenext-color-warning: #ffe18d;
-  --fenext-color-theme-dark-warning: #ffe18d;
-  --fenext-color-danger-dark: red;
-  --fenext-color-danger-light: red;
-  --fenext-color-danger: #ff938f;
-  --fenext-color-theme-dark-danger: #ff938f;
-  --fenext-color-light-dark: red;
-  --fenext-color-light-light: red;
-  --fenext-color-light: hsl(210, 11%, 15%);
-  --fenext-color-theme-dark-light: hsl(210, 11%, 15%);
-  --fenext-color-dark-dark: red;
-  --fenext-color-dark-light: red;
-  --fenext-color-dark: #f2f2f2;
-  --fenext-color-theme-dark-dark: #f2f2f2;
-  --fenext-color-white-smoke-dark: red;
-  --fenext-color-white-smoke-light: red;
-  --fenext-color-white-smoke: hsl(0, 0%, 10%);
-  --fenext-color-theme-light-white-smoke: hsl(0, 0%, 10%);
-  --fenext-color-loader-background-dark: red;
-  --fenext-color-loader-background-light: red;
-  --fenext-color-loader-background: hsl(0, 0%, 35%);
-  --fenext-color-theme-light-loader-background: hsl(0, 0%, 35%);
-  --fenext-color-loader-foreground-dark: red;
-  --fenext-color-loader-foreground-light: red;
-  --fenext-color-loader-foreground: hsl(0, 0%, 71%);
-  --fenext-color-theme-light-loader-foreground: hsl(0, 0%, 71%);
   --fenext-color-primary-dark: red;
   --fenext-color-primary-light: red;
   --fenext-color-primary: #90CAF9;
@@ -463,97 +223,17 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   --fenext-color-white-light: red;
   --fenext-color-white: #242424;
   --fenext-color-theme-dark-white: #242424;
+  --fenext-color-loader-background-dark: red;
+  --fenext-color-loader-background-light: red;
+  --fenext-color-loader-background: hsl(0, 0%, 35%);
+  --fenext-color-theme-dark-loader-background: hsl(0, 0%, 35%);
+  --fenext-color-loader-foreground-dark: red;
+  --fenext-color-loader-foreground-light: red;
+  --fenext-color-loader-foreground: hsl(0, 0%, 71%);
+  --fenext-color-theme-dark-loader-foreground: hsl(0, 0%, 71%);
 }
 
 [fenext-theme=light] {
-  --fenext-color-blue-dark: red;
-  --fenext-color-blue-light: red;
-  --fenext-color-blue: #0d6efd;
-  --fenext-color-theme-light-blue: #0d6efd;
-  --fenext-color-indigo-dark: red;
-  --fenext-color-indigo-light: red;
-  --fenext-color-indigo: #6610f2;
-  --fenext-color-theme-light-indigo: #6610f2;
-  --fenext-color-purple-dark: red;
-  --fenext-color-purple-light: red;
-  --fenext-color-purple: #6f42c1;
-  --fenext-color-theme-light-purple: #6f42c1;
-  --fenext-color-pink-dark: red;
-  --fenext-color-pink-light: red;
-  --fenext-color-pink: #d63384;
-  --fenext-color-theme-light-pink: #d63384;
-  --fenext-color-red-dark: red;
-  --fenext-color-red-light: red;
-  --fenext-color-red: #dc3545;
-  --fenext-color-theme-light-red: #dc3545;
-  --fenext-color-orange-dark: red;
-  --fenext-color-orange-light: red;
-  --fenext-color-orange: #fd7e14;
-  --fenext-color-theme-light-orange: #fd7e14;
-  --fenext-color-yellow-dark: red;
-  --fenext-color-yellow-light: red;
-  --fenext-color-yellow: #ffc107;
-  --fenext-color-theme-light-yellow: #ffc107;
-  --fenext-color-green-dark: red;
-  --fenext-color-green-light: red;
-  --fenext-color-green: #198754;
-  --fenext-color-theme-light-green: #198754;
-  --fenext-color-teal-dark: red;
-  --fenext-color-teal-light: red;
-  --fenext-color-teal: #20c997;
-  --fenext-color-theme-light-teal: #20c997;
-  --fenext-color-cyan-dark: red;
-  --fenext-color-cyan-light: red;
-  --fenext-color-cyan: #0dcaf0;
-  --fenext-color-theme-light-cyan: #0dcaf0;
-  --fenext-color-primary-dark: red;
-  --fenext-color-primary-light: red;
-  --fenext-color-primary: #0d6efd;
-  --fenext-color-theme-light-primary: #0d6efd;
-  --fenext-color-secondary-dark: red;
-  --fenext-color-secondary-light: red;
-  --fenext-color-secondary: #6c757d;
-  --fenext-color-theme-light-secondary: #6c757d;
-  --fenext-color-success-dark: red;
-  --fenext-color-success-light: red;
-  --fenext-color-success: #198754;
-  --fenext-color-theme-light-success: #198754;
-  --fenext-color-info-dark: red;
-  --fenext-color-info-light: red;
-  --fenext-color-info: #0dcaf0;
-  --fenext-color-theme-light-info: #0dcaf0;
-  --fenext-color-warning-dark: red;
-  --fenext-color-warning-light: red;
-  --fenext-color-warning: #ffc107;
-  --fenext-color-theme-light-warning: #ffc107;
-  --fenext-color-danger-dark: red;
-  --fenext-color-danger-light: red;
-  --fenext-color-danger: #dc3545;
-  --fenext-color-theme-light-danger: #dc3545;
-  --fenext-color-light-dark: red;
-  --fenext-color-light-light: red;
-  --fenext-color-light: #f8f9fa;
-  --fenext-color-theme-light-light: #f8f9fa;
-  --fenext-color-dark-dark: red;
-  --fenext-color-dark-light: red;
-  --fenext-color-dark: #212529;
-  --fenext-color-theme-light-dark: #212529;
-  --fenext-color-white-smoke-dark: red;
-  --fenext-color-white-smoke-light: red;
-  --fenext-color-white-smoke: hsl(0, 0%, 96%);
-  --fenext-color-theme-light-white-smoke: hsl(0, 0%, 96%);
-  --fenext-color-neto-dark-dark: red;
-  --fenext-color-neto-dark-light: red;
-  --fenext-color-neto-dark: #212529;
-  --fenext-color-theme-light-neto-dark: #212529;
-  --fenext-color-loader-background-dark: red;
-  --fenext-color-loader-background-light: red;
-  --fenext-color-loader-background: #f2f2f2;
-  --fenext-color-theme-light-loader-background: #f2f2f2;
-  --fenext-color-loader-foreground-dark: red;
-  --fenext-color-loader-foreground-light: red;
-  --fenext-color-loader-foreground: #9c9c9c;
-  --fenext-color-theme-light-loader-foreground: #9c9c9c;
   --fenext-color-primary-dark: red;
   --fenext-color-primary-light: red;
   --fenext-color-primary: #1E88E5;
@@ -594,6 +274,14 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   --fenext-color-white-light: red;
   --fenext-color-white: #fff;
   --fenext-color-theme-light-white: #fff;
+  --fenext-color-loader-background-dark: red;
+  --fenext-color-loader-background-light: red;
+  --fenext-color-loader-background: #f2f2f2;
+  --fenext-color-theme-light-loader-background: #f2f2f2;
+  --fenext-color-loader-foreground-dark: red;
+  --fenext-color-loader-foreground-light: red;
+  --fenext-color-loader-foreground: #9c9c9c;
+  --fenext-color-theme-light-loader-foreground: #9c9c9c;
 }
 
 ::-webkit-scrollbar {
@@ -2251,7 +1939,7 @@ body:has(.fenext-input-search-fixed-focus .fenext-input-content-input:focus) {
   align-items: center;
   justify-content: center;
   color: var(--fenext-color-white);
-  background: var(--fenext-color-red);
+  background: var(--fenext-color-danger);
   padding: 0.4rem;
   border-radius: 100%;
   cursor: pointer;
@@ -2293,11 +1981,11 @@ body:has(.fenext-input-search-fixed-focus .fenext-input-content-input:focus) {
   background: var(--fenext-color-white-dark);
 }
 .fenext-input-upload-ok {
-  border: solid 3px var(--fenext-color-green);
+  border: solid 3px var(--fenext-color-success);
   background: var(--fenext-color-white-dark);
 }
 .fenext-input-upload-error {
-  border: solid 3px var(--fenext-color-red);
+  border: solid 3px var(--fenext-color-danger);
   background: var(--fenext-color-white-dark);
 }
 .fenext-input-upload .fenext-error {
@@ -2330,7 +2018,7 @@ body:has(.fenext-input-search-fixed-focus .fenext-input-content-input:focus) {
   align-items: center;
   justify-content: center;
   color: var(--fenext-color-white);
-  background: var(--fenext-color-red);
+  background: var(--fenext-color-danger);
   padding: 0.4rem;
   border-radius: 100%;
   cursor: pointer;
@@ -2349,14 +2037,14 @@ body:has(.fenext-input-search-fixed-focus .fenext-input-content-input:focus) {
   background: var(--fenext-color-white-dark);
 }
 .fenext-input-img-ok {
-  border: solid 3px var(--fenext-color-green);
+  border: solid 3px var(--fenext-color-success);
   background: var(--fenext-color-white-dark);
 }
 .fenext-input-img-ok .fenext-input-img-up {
   padding: 0;
 }
 .fenext-input-img-error {
-  border: solid 3px var(--fenext-color-red);
+  border: solid 3px var(--fenext-color-danger);
   background: var(--fenext-color-white-dark);
 }
 .fenext-input-img .fenext-error {
@@ -2568,9 +2256,9 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
 .fenext-input-file-status {
   --color-status-base: var(--fenext-color-gray);
   --color-status-NONE: var(--fenext-color-gray);
-  --color-status-APPROVED: var(--fenext-color-green);
-  --color-status-PENDING: var(--fenext-color-orange);
-  --color-status-REFUSED: var(--fenext-color-red);
+  --color-status-APPROVED: var(--fenext-color-success);
+  --color-status-PENDING: var(--fenext-color-warning);
+  --color-status-REFUSED: var(--fenext-color-danger);
   --color-status: var(--color-status-base);
   border-radius: 1rem;
   border: dashed 3px var(--color-status);
@@ -2595,7 +2283,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   align-items: center;
   justify-content: center;
   color: var(--fenext-color-white);
-  background: var(--fenext-color-red);
+  background: var(--fenext-color-danger);
   padding: 0.4rem;
   border-radius: 100%;
   cursor: pointer;
@@ -3615,7 +3303,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   --box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
 }
 .fenext-collapse-status-error {
-  --box-shadow-color: var(--fenext-color-red);
+  --box-shadow-color: var(--fenext-color-danger);
 }
 .fenext-collapse-status-ok {
   --box-shadow-color: var(--fenext-color-primary);
@@ -4236,7 +3924,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   background-color: var(--fenext-color-dark-light);
 }
 .fenext-slider-dog.active {
-  background-color: var(--fenext-color-teal);
+  background-color: var(--fenext-color-success);
 }
 .fenext-slider-arrow {
   cursor: pointer;
@@ -4555,7 +4243,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   text-decoration: none;
 }
 .fenext-breadcrumb-item-link:hover {
-  color: var(--fenext-color-info);
+  color: var(--fenext-color-primary);
 }
 
 .fenext-notification {
@@ -4889,7 +4577,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   height: calc(var(--fenext-size-menu-top) * 0.6);
 }
 .fenext-modal-base-close:hover {
-  color: var(--fenext-color-red);
+  color: var(--fenext-color-danger);
 }
 .fenext-modal-base-content {
   width: var(--content-width);
@@ -5085,7 +4773,7 @@ body:has(.fenext-modal-base-active)::-webkit-scrollbar {
 }
 .fenext-steps-step {
   --size-box-shadow-cicle: 3px;
-  --color-circle: var(--fenext-color-blue);
+  --color-circle: var(--fenext-color-primary);
   --color: var(--fenext-color-dark);
   display: flex;
   gap: 1rem;
@@ -5114,12 +4802,12 @@ body:has(.fenext-modal-base-active)::-webkit-scrollbar {
   max-width: 90%;
 }
 .fenext-steps-step-status-ok {
-  --color-circle: var(--fenext-color-teal);
+  --color-circle: var(--fenext-color-success);
   --size-box-shadow-cicle: 5rem;
   --color: var(--fenext-color-white);
 }
 .fenext-steps-step-status-error {
-  --color-circle: var(--fenext-color-red);
+  --color-circle: var(--fenext-color-danger);
   --size-box-shadow-cicle: 5rem;
   --color: var(--fenext-color-white);
 }
@@ -5175,7 +4863,7 @@ body:has(.fenext-modal-base-active)::-webkit-scrollbar {
   cursor: pointer;
 }
 .fenext-steps-dog-current {
-  background: var(--fenext-color-blue);
+  background: var(--fenext-color-primary);
 }
 @media (min-width: 768px) {
   .fenext-steps-pos-right {
@@ -5305,7 +4993,7 @@ body:has(.fenext-modal-base-active)::-webkit-scrollbar {
   position: absolute;
   display: none;
   border-radius: 0.5rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 85%, var(--fenext-color-info) 85%, var(--fenext-color-info) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 85%, var(--fenext-color-primary) 85%, var(--fenext-color-primary) 100%);
   z-index: 2;
 }
 .fenext-theme-item-light {
@@ -5395,7 +5083,7 @@ body:has(.fenext-modal-base-active)::-webkit-scrollbar {
   color: var(--fenext-color-gray-dark);
 }
 .fenext-schedule-day-date-range-close:hover {
-  color: var(--fenext-color-red);
+  color: var(--fenext-color-danger);
 }
 .fenext-schedule-day-date-range-close svg {
   width: 1rem;
@@ -6582,11 +6270,11 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
 .fenext-steps-circle {
   --size-circle: 3rem;
   --color: var(--fenext-color-light);
-  --bg: var(--fenext-color-blue);
+  --bg: var(--fenext-color-primary);
   --color-hover: var(--fenext-color-light);
   --bg-hover: var(--fenext-color-dark);
   --color-active: var(--fenext-color-light);
-  --bg-active: var(--fenext-color-teal);
+  --bg-active: var(--fenext-color-success);
   display: grid;
   align-items: flex-start;
   gap: 1rem;

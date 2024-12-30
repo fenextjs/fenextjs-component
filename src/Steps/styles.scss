@@ -69,12 +69,12 @@
         }
         &-status {
             &-ok {
-                --color-circle: var(--fenext-color-teal);
+                --color-circle: var(--fenext-color-success);
                 --size-box-shadow-cicle: 5rem;
                 --color: var(--fenext-color-white);
             }
             &-error {
-                --color-circle: var(--fenext-color-red);
+                --color-circle: var(--fenext-color-danger);
                 --size-box-shadow-cicle: 5rem;
                 --color: var(--fenext-color-white);
             }

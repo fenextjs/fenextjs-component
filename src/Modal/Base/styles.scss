@@ -178,7 +178,7 @@
             height: calc(var(--fenext-size-menu-top) * 0.6);
         }
         &:hover {
-            color: var(--fenext-color-red);
+            color: var(--fenext-color-danger);
         }
     }
     &-content {

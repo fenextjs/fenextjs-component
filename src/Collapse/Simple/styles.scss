@@ -10,7 +10,7 @@
     --box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
     &-status {
         &-error {
-            --box-shadow-color: var(--fenext-color-red);
+            --box-shadow-color: var(--fenext-color-danger);
         }
         &-ok {
             --box-shadow-color: var(--fenext-color-primary);

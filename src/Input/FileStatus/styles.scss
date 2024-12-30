@@ -1,9 +1,9 @@
 .fenext-input-file-status {
     --color-status-base: var(--fenext-color-gray);
     --color-status-NONE: var(--fenext-color-gray);
-    --color-status-APPROVED: var(--fenext-color-green);
-    --color-status-PENDING: var(--fenext-color-orange);
-    --color-status-REFUSED: var(--fenext-color-red);
+    --color-status-APPROVED: var(--fenext-color-success);
+    --color-status-PENDING: var(--fenext-color-warning);
+    --color-status-REFUSED: var(--fenext-color-danger);
 
     --color-status: var(--color-status-base);
     border-radius: 1rem;
@@ -28,7 +28,7 @@
         align-items: center;
         justify-content: center;
         color: var(--fenext-color-white);
-        background: var(--fenext-color-red);
+        background: var(--fenext-color-danger);
         padding: 0.4rem;
         border-radius: 100%;
         cursor: pointer;
