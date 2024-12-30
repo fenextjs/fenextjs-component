@@ -19,7 +19,7 @@ export interface ButtonBaseProps extends PropsWithChildren, _TProps {
     /**
      * Indicates whether the button is currently in the loading state.
      */
-    loader?: boolean
+    loader?: boolean;
     invert?: boolean;
     /**
      * Indicates whether the button is disabled or not.
@@ -93,7 +93,7 @@ export interface ButtonProps extends ButtonBaseProps, ButtonClassProps {}
 export const Button = ({
     className = "",
     classNameLoader = "",
-    classNameInvert="",
+    classNameInvert = "",
     classNameDisabled = "",
     classNameContentLoaderElement = "",
     classNameLoaderElement = "",

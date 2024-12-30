@@ -67,9 +67,11 @@
     &:hover {
         --fenext-btn-background: var(--fenext-btn-background-hover);
     }
-    &-invert{
+    &-invert {
         --fenext-btn-background: var(--fenext-btn-background-invert);
-        --fenext-btn-background-hover:var(--fenext-btn-background-invert-hover);
+        --fenext-btn-background-hover: var(
+            --fenext-btn-background-invert-hover
+        );
     }
     &-disabled {
         --fenext-btn-background: var(--fenext-btn-background-disabled);
