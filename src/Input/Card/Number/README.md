@@ -12,16 +12,16 @@ import { InputCardNumber } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| defaultValue | string | no | '' | Valor predeterminado del componente, que representa el número de tarjeta. |
-| value | string | no | '' | Valor controlado del componente, que representa el número de tarjeta. |
-| onChange | (value: string) =\> void | no | undefined | Función que se ejecuta cuando el valor del componente cambia, proporcionando el número de tarjeta como cadena. |
-| maxNumberLength | number | no | 19 | Longitud máxima permitida para la entrada del número de tarjeta. El valor mínimo es 15. |
-| disabled | boolean | no | false | Indica si el campo de entrada está deshabilitado. |
-| required | boolean | no | false | Indica si el campo de entrada es obligatorio. |
-| error | string \| undefined | no | undefined | Mensaje de error que se muestra si la validación falla. |
-| className | string | no | '' | Clase CSS para personalizar el estilo del componente. |
+| Parámetro       | Tipo                     | Requerido | Default   | Descripcion                                                                                                    |
+| --------------- | ------------------------ | --------- | --------- | -------------------------------------------------------------------------------------------------------------- |
+| defaultValue    | string                   | no        | ''        | Valor predeterminado del componente, que representa el número de tarjeta.                                      |
+| value           | string                   | no        | ''        | Valor controlado del componente, que representa el número de tarjeta.                                          |
+| onChange        | (value: string) =\> void | no        | undefined | Función que se ejecuta cuando el valor del componente cambia, proporcionando el número de tarjeta como cadena. |
+| maxNumberLength | number                   | no        | 19        | Longitud máxima permitida para la entrada del número de tarjeta. El valor mínimo es 15.                        |
+| disabled        | boolean                  | no        | false     | Indica si el campo de entrada está deshabilitado.                                                              |
+| required        | boolean                  | no        | false     | Indica si el campo de entrada es obligatorio.                                                                  |
+| error           | string \| undefined      | no        | undefined | Mensaje de error que se muestra si la validación falla.                                                        |
+| className       | string                   | no        | ''        | Clase CSS para personalizar el estilo del componente.                                                          |
 
 ### Storybook
 
@@ -29,27 +29,29 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Básico
+-   Básico
 
 ```tsx copy
 <InputCardNumber />
 ```
 
-- InputCardNumber con valor predeterminado
+-   InputCardNumber con valor predeterminado
 
 ```tsx copy
 <InputCardNumber defaultValue="1234 5678 9012 3456" />
 ```
 
-- InputCardNumber controlado
+-   InputCardNumber controlado
 
 ```tsx copy
-<InputCardNumber value="4111 1111 1111 1111" onChange={(number) => console.log(number)} />
+<InputCardNumber
+    value="4111 1111 1111 1111"
+    onChange={(number) => console.log(number)}
+/>
 ```
 
-- InputCardNumber deshabilitado
+-   InputCardNumber deshabilitado
 
 ```tsx copy
 <InputCardNumber disabled={true} />
 ```
-

@@ -12,13 +12,13 @@ import { LavaLamp } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| nItems | number | no | 20 | Número de elementos flotantes en la lámpara de lava. |
-| styles | CSSProperties | no | \{ width: "100%", height: "500px",background: "linear-gradient(45deg,var(--fenext-color-primary) 0%,var(--fenext-color-success) 100%)"\} | Estilos generales aplicados al contenedor de la lámpara de lava. |
-| stylesElement | LavaLampStylesElement[] | no |  | Estilos aplicados a los elementos individuales flotantes en la lámpara de lava. |
-| ranges | LavaLampRangeStylesProps | no | \{\} | Propiedades de rango aleatorio para determinar el movimiento, escala y posición de los elementos. |
-| className | string | no | '' | Clase CSS adicional para personalizar el contenedor del componente. |
+| Parámetro     | Tipo                     | Requerido | Default                                                                                                                                  | Descripcion                                                                                       |
+| ------------- | ------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| nItems        | number                   | no        | 20                                                                                                                                       | Número de elementos flotantes en la lámpara de lava.                                              |
+| styles        | CSSProperties            | no        | \{ width: "100%", height: "500px",background: "linear-gradient(45deg,var(--fenext-color-primary) 0%,var(--fenext-color-success) 100%)"\} | Estilos generales aplicados al contenedor de la lámpara de lava.                                  |
+| stylesElement | LavaLampStylesElement[]  | no        |                                                                                                                                          | Estilos aplicados a los elementos individuales flotantes en la lámpara de lava.                   |
+| ranges        | LavaLampRangeStylesProps | no        | \{\}                                                                                                                                     | Propiedades de rango aleatorio para determinar el movimiento, escala y posición de los elementos. |
+| className     | string                   | no        | ''                                                                                                                                       | Clase CSS adicional para personalizar el contenedor del componente.                               |
 
 ### Storybook
 
@@ -26,21 +26,20 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Uso básico
+-   Uso básico
 
 ```tsx copy
 <LavaLamp />
 ```
 
-- Con estilos personalizados
+-   Con estilos personalizados
 
 ```tsx copy
-<LavaLamp styles={{ width: '80%', height: '600px' }} />
+<LavaLamp styles={{ width: "80%", height: "600px" }} />
 ```
 
-- Con elementos personalizados
+-   Con elementos personalizados
 
 ```tsx copy
-<LavaLamp stylesElement={[{ width: '200px', background: 'red' }]} />
+<LavaLamp stylesElement={[{ width: "200px", background: "red" }]} />
 ```
-

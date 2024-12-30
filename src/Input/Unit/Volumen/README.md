@@ -12,15 +12,15 @@ import { InputUnitVolumen } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| defaultValue | Partial\<InputUnitVolumenValue\> | no | undefined | Valor predeterminado para el componente, que incluye el valor y la unidad seleccionados. |
-| value | Partial\<InputUnitVolumenValue\> | no | undefined | Valor actual del componente, que incluye el valor numérico y la unidad seleccionada. |
-| onChange | (data: Partial\<InputUnitVolumenValue\>) =\> void | no | undefined | Función que se ejecuta al cambiar el valor o la unidad, devolviendo los datos actualizados. |
-| options | Unit_Volumen[] | no | Object.keys(Unit_Volumen).map((e) =\> Unit_Volumen[e]) | Opciones de unidades de volumen disponibles para seleccionar. |
-| className | string | no | '' | Clase CSS para personalizar el estilo del componente. |
-| classNameDisabled | string | no | '' | Clase CSS para el estado deshabilitado del componente. |
-| classNameInput | string | no | '' | Clase CSS para el campo de entrada de texto. |
+| Parámetro         | Tipo                                              | Requerido | Default                                                | Descripcion                                                                                 |
+| ----------------- | ------------------------------------------------- | --------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| defaultValue      | Partial\<InputUnitVolumenValue\>                  | no        | undefined                                              | Valor predeterminado para el componente, que incluye el valor y la unidad seleccionados.    |
+| value             | Partial\<InputUnitVolumenValue\>                  | no        | undefined                                              | Valor actual del componente, que incluye el valor numérico y la unidad seleccionada.        |
+| onChange          | (data: Partial\<InputUnitVolumenValue\>) =\> void | no        | undefined                                              | Función que se ejecuta al cambiar el valor o la unidad, devolviendo los datos actualizados. |
+| options           | Unit_Volumen[]                                    | no        | Object.keys(Unit_Volumen).map((e) =\> Unit_Volumen[e]) | Opciones de unidades de volumen disponibles para seleccionar.                               |
+| className         | string                                            | no        | ''                                                     | Clase CSS para personalizar el estilo del componente.                                       |
+| classNameDisabled | string                                            | no        | ''                                                     | Clase CSS para el estado deshabilitado del componente.                                      |
+| classNameInput    | string                                            | no        | ''                                                     | Clase CSS para el campo de entrada de texto.                                                |
 
 ### Storybook
 
@@ -28,21 +28,20 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Uso básico
+-   Uso básico
 
 ```tsx copy
 <InputUnitVolumen />
 ```
 
-- Con valor predeterminado
+-   Con valor predeterminado
 
 ```tsx copy
 <InputUnitVolumen defaultValue={{ value: 10, unit: "liters" }} />
 ```
 
-- Con función onChange
+-   Con función onChange
 
 ```tsx copy
 <InputUnitVolumen onChange={(data) => console.log(data)} />
 ```
-
