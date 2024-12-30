@@ -45,7 +45,7 @@
             }
         }
     }
-    &:has(&-input:checked) {
+    &:has(&-box-icon:not(:empty) ) {
         #{$className } {
             &-box {
                 border-color: var(--fenext-color-primary);
@@ -60,6 +60,6 @@
         font-weight: 800;
         line-height: 1.36;
         text-align: left;
-        color: var(--fenext-color-gray-dark);
+        color: var(--fenext-color-dark);
     }
 }

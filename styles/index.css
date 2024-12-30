@@ -80,206 +80,110 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
 }
 
 :root {
-  --fenext-color-primary-dark: red;
-  --fenext-color-primary-light: red;
   --fenext-color-primary: #1E88E5;
   --fenext-color-theme-light-primary: #1E88E5;
-  --fenext-color-secondary-dark: red;
-  --fenext-color-secondary-light: red;
   --fenext-color-secondary: #E91E63;
   --fenext-color-theme-light-secondary: #E91E63;
-  --fenext-color-success-dark: red;
-  --fenext-color-success-light: red;
   --fenext-color-success: #43A047;
   --fenext-color-theme-light-success: #43A047;
-  --fenext-color-warning-dark: red;
-  --fenext-color-warning-light: red;
   --fenext-color-warning: #FDD835;
   --fenext-color-theme-light-warning: #FDD835;
-  --fenext-color-danger-dark: red;
-  --fenext-color-danger-light: red;
   --fenext-color-danger: #E53935;
   --fenext-color-theme-light-danger: #E53935;
-  --fenext-color-light-dark: red;
-  --fenext-color-light-light: red;
   --fenext-color-light: #F5F5F5;
   --fenext-color-theme-light-light: #F5F5F5;
-  --fenext-color-dark-dark: red;
-  --fenext-color-dark-light: red;
   --fenext-color-dark: #212121;
   --fenext-color-theme-light-dark: #212121;
-  --fenext-color-gray-dark: red;
-  --fenext-color-gray-light: red;
   --fenext-color-gray: #c9c9c9;
   --fenext-color-theme-light-gray: #c9c9c9;
-  --fenext-color-disabled-dark: red;
-  --fenext-color-disabled-light: red;
   --fenext-color-disabled: #9c9c9c;
   --fenext-color-theme-light-disabled: #9c9c9c;
-  --fenext-color-white-dark: red;
-  --fenext-color-white-light: red;
   --fenext-color-white: #fff;
   --fenext-color-theme-light-white: #fff;
-  --fenext-color-loader-background-dark: red;
-  --fenext-color-loader-background-light: red;
   --fenext-color-loader-background: #f2f2f2;
   --fenext-color-theme-light-loader-background: #f2f2f2;
-  --fenext-color-loader-foreground-dark: red;
-  --fenext-color-loader-foreground-light: red;
   --fenext-color-loader-foreground: #9c9c9c;
   --fenext-color-theme-light-loader-foreground: #9c9c9c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fenext-color-primary-dark: red;
-    --fenext-color-primary-light: red;
     --fenext-color-primary: #90CAF9;
     --fenext-color-theme-dark-primary: #90CAF9;
-    --fenext-color-secondary-dark: red;
-    --fenext-color-secondary-light: red;
     --fenext-color-secondary: #F48FB1;
     --fenext-color-theme-dark-secondary: #F48FB1;
-    --fenext-color-success-dark: red;
-    --fenext-color-success-light: red;
     --fenext-color-success: #66BB6A;
     --fenext-color-theme-dark-success: #66BB6A;
-    --fenext-color-warning-dark: red;
-    --fenext-color-warning-light: red;
     --fenext-color-warning: #FFEB3B;
     --fenext-color-theme-dark-warning: #FFEB3B;
-    --fenext-color-danger-dark: red;
-    --fenext-color-danger-light: red;
     --fenext-color-danger: #EF5350;
     --fenext-color-theme-dark-danger: #EF5350;
-    --fenext-color-light-dark: red;
-    --fenext-color-light-light: red;
     --fenext-color-light: #121212;
     --fenext-color-theme-dark-light: #121212;
-    --fenext-color-dark-dark: red;
-    --fenext-color-dark-light: red;
     --fenext-color-dark: #FAFAFA;
     --fenext-color-theme-dark-dark: #FAFAFA;
-    --fenext-color-gray-dark: red;
-    --fenext-color-gray-light: red;
     --fenext-color-gray: #c9c9c9;
     --fenext-color-theme-dark-gray: #c9c9c9;
-    --fenext-color-disabled-dark: red;
-    --fenext-color-disabled-light: red;
     --fenext-color-disabled: #9c9c9c;
     --fenext-color-theme-dark-disabled: #9c9c9c;
-    --fenext-color-white-dark: red;
-    --fenext-color-white-light: red;
     --fenext-color-white: #242424;
     --fenext-color-theme-dark-white: #242424;
-    --fenext-color-loader-background-dark: red;
-    --fenext-color-loader-background-light: red;
     --fenext-color-loader-background: hsl(0, 0%, 35%);
     --fenext-color-theme-dark-loader-background: hsl(0, 0%, 35%);
-    --fenext-color-loader-foreground-dark: red;
-    --fenext-color-loader-foreground-light: red;
     --fenext-color-loader-foreground: hsl(0, 0%, 71%);
     --fenext-color-theme-dark-loader-foreground: hsl(0, 0%, 71%);
   }
 }
 [fenext-theme=dark] {
-  --fenext-color-primary-dark: red;
-  --fenext-color-primary-light: red;
   --fenext-color-primary: #90CAF9;
   --fenext-color-theme-dark-primary: #90CAF9;
-  --fenext-color-secondary-dark: red;
-  --fenext-color-secondary-light: red;
   --fenext-color-secondary: #F48FB1;
   --fenext-color-theme-dark-secondary: #F48FB1;
-  --fenext-color-success-dark: red;
-  --fenext-color-success-light: red;
   --fenext-color-success: #66BB6A;
   --fenext-color-theme-dark-success: #66BB6A;
-  --fenext-color-warning-dark: red;
-  --fenext-color-warning-light: red;
   --fenext-color-warning: #FFEB3B;
   --fenext-color-theme-dark-warning: #FFEB3B;
-  --fenext-color-danger-dark: red;
-  --fenext-color-danger-light: red;
   --fenext-color-danger: #EF5350;
   --fenext-color-theme-dark-danger: #EF5350;
-  --fenext-color-light-dark: red;
-  --fenext-color-light-light: red;
   --fenext-color-light: #121212;
   --fenext-color-theme-dark-light: #121212;
-  --fenext-color-dark-dark: red;
-  --fenext-color-dark-light: red;
   --fenext-color-dark: #FAFAFA;
   --fenext-color-theme-dark-dark: #FAFAFA;
-  --fenext-color-gray-dark: red;
-  --fenext-color-gray-light: red;
   --fenext-color-gray: #c9c9c9;
   --fenext-color-theme-dark-gray: #c9c9c9;
-  --fenext-color-disabled-dark: red;
-  --fenext-color-disabled-light: red;
   --fenext-color-disabled: #9c9c9c;
   --fenext-color-theme-dark-disabled: #9c9c9c;
-  --fenext-color-white-dark: red;
-  --fenext-color-white-light: red;
   --fenext-color-white: #242424;
   --fenext-color-theme-dark-white: #242424;
-  --fenext-color-loader-background-dark: red;
-  --fenext-color-loader-background-light: red;
   --fenext-color-loader-background: hsl(0, 0%, 35%);
   --fenext-color-theme-dark-loader-background: hsl(0, 0%, 35%);
-  --fenext-color-loader-foreground-dark: red;
-  --fenext-color-loader-foreground-light: red;
   --fenext-color-loader-foreground: hsl(0, 0%, 71%);
   --fenext-color-theme-dark-loader-foreground: hsl(0, 0%, 71%);
 }
 
 [fenext-theme=light] {
-  --fenext-color-primary-dark: red;
-  --fenext-color-primary-light: red;
   --fenext-color-primary: #1E88E5;
   --fenext-color-theme-light-primary: #1E88E5;
-  --fenext-color-secondary-dark: red;
-  --fenext-color-secondary-light: red;
   --fenext-color-secondary: #E91E63;
   --fenext-color-theme-light-secondary: #E91E63;
-  --fenext-color-success-dark: red;
-  --fenext-color-success-light: red;
   --fenext-color-success: #43A047;
   --fenext-color-theme-light-success: #43A047;
-  --fenext-color-warning-dark: red;
-  --fenext-color-warning-light: red;
   --fenext-color-warning: #FDD835;
   --fenext-color-theme-light-warning: #FDD835;
-  --fenext-color-danger-dark: red;
-  --fenext-color-danger-light: red;
   --fenext-color-danger: #E53935;
   --fenext-color-theme-light-danger: #E53935;
-  --fenext-color-light-dark: red;
-  --fenext-color-light-light: red;
   --fenext-color-light: #F5F5F5;
   --fenext-color-theme-light-light: #F5F5F5;
-  --fenext-color-dark-dark: red;
-  --fenext-color-dark-light: red;
   --fenext-color-dark: #212121;
   --fenext-color-theme-light-dark: #212121;
-  --fenext-color-gray-dark: red;
-  --fenext-color-gray-light: red;
   --fenext-color-gray: #c9c9c9;
   --fenext-color-theme-light-gray: #c9c9c9;
-  --fenext-color-disabled-dark: red;
-  --fenext-color-disabled-light: red;
   --fenext-color-disabled: #9c9c9c;
   --fenext-color-theme-light-disabled: #9c9c9c;
-  --fenext-color-white-dark: red;
-  --fenext-color-white-light: red;
   --fenext-color-white: #fff;
   --fenext-color-theme-light-white: #fff;
-  --fenext-color-loader-background-dark: red;
-  --fenext-color-loader-background-light: red;
   --fenext-color-loader-background: #f2f2f2;
   --fenext-color-theme-light-loader-background: #f2f2f2;
-  --fenext-color-loader-foreground-dark: red;
-  --fenext-color-loader-foreground-light: red;
   --fenext-color-loader-foreground: #9c9c9c;
   --fenext-color-theme-light-loader-foreground: #9c9c9c;
 }
@@ -1433,7 +1337,7 @@ body:not(:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-s
 .fenext-input-radio-box-icon svg {
   width: 0.8rem;
 }
-.fenext-input-radio:has(.fenext-input-radio-input:checked) .fenext-input-radio-box {
+.fenext-input-radio:has(.fenext-input-radio-box-icon:not(:empty)) .fenext-input-radio-box {
   border-color: var(--fenext-color-primary);
   background: var(--fenext-color-primary);
   color: var(--fenext-color-light);
@@ -1444,7 +1348,7 @@ body:not(:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-s
   font-weight: 800;
   line-height: 1.36;
   text-align: left;
-  color: var(--fenext-color-gray-dark);
+  color: var(--fenext-color-dark);
 }
 
 .fenext-input-phone {
@@ -1977,16 +1881,16 @@ body:has(.fenext-input-search-fixed-focus .fenext-input-content-input:focus) {
   border: 0;
 }
 .fenext-input-upload-in-progress {
-  border: solid 3px var(--fenext-color-white-dark);
-  background: var(--fenext-color-white-dark);
+  border-color: var(--fenext-color-gray);
+  background: var(--fenext-color-white);
 }
 .fenext-input-upload-ok {
-  border: solid 3px var(--fenext-color-success);
-  background: var(--fenext-color-white-dark);
+  border-color: var(--fenext-color-success);
+  background: var(--fenext-color-white);
 }
 .fenext-input-upload-error {
-  border: solid 3px var(--fenext-color-danger);
-  background: var(--fenext-color-white-dark);
+  border-color: var(--fenext-color-danger);
+  background: var(--fenext-color-white);
 }
 .fenext-input-upload .fenext-error {
   margin: 0.5rem 0;
@@ -2033,19 +1937,19 @@ body:has(.fenext-input-search-fixed-focus .fenext-input-content-input:focus) {
   width: min(100%, 2rem);
 }
 .fenext-input-img-in-progress {
-  border: solid 3px var(--fenext-color-white-dark);
-  background: var(--fenext-color-white-dark);
+  border: solid 3px var(--fenext-color-gray);
+  background: var(--fenext-color-gray);
 }
 .fenext-input-img-ok {
-  border: solid 3px var(--fenext-color-success);
-  background: var(--fenext-color-white-dark);
+  border-color: var(--fenext-color-success);
+  background: var(--fenext-color-white);
 }
 .fenext-input-img-ok .fenext-input-img-up {
   padding: 0;
 }
 .fenext-input-img-error {
-  border: solid 3px var(--fenext-color-danger);
-  background: var(--fenext-color-white-dark);
+  border-color: var(--fenext-color-danger);
+  background: var(--fenext-color-white);
 }
 .fenext-input-img .fenext-error {
   margin: 0.5rem 0;
@@ -2576,13 +2480,13 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   width: 1.5rem;
   aspect-ratio: 1/1;
   border-radius: 100%;
-  background-color: var(--fenext-color-white-dark);
+  background-color: var(--fenext-color-light);
   font-size: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--fenext-color-gray-dark);
+  color: var(--fenext-color-dark);
 }
 .fenext-pagination-item-page-current-item-dog {
   background-color: transparent;
@@ -2604,8 +2508,8 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   }
 }
 .fenext-pagination-item-page-current-item-active {
-  background-color: var(--fenext-color-dark);
-  color: var(--fenext-color-white);
+  background-color: var(--fenext-color-primary);
+  color: var(--fenext-color-light);
 }
 .fenext-pagination-item-page-next svg {
   width: 0.6rem;
@@ -3917,14 +3821,14 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   width: 1rem;
   aspect-ratio: 1/1;
   border-radius: 100%;
-  background-color: var(--fenext-color-dark);
+  background-color: var(--fenext-color-light);
   cursor: pointer;
 }
 .fenext-slider-dog:hover {
-  background-color: var(--fenext-color-dark-light);
+  background-color: var(--fenext-color-primary);
 }
 .fenext-slider-dog.active {
-  background-color: var(--fenext-color-success);
+  background-color: var(--fenext-color-primary);
 }
 .fenext-slider-arrow {
   cursor: pointer;
@@ -5080,7 +4984,7 @@ body:has(.fenext-modal-base-active)::-webkit-scrollbar {
 .fenext-schedule-day-date-range-close {
   padding: 1rem;
   cursor: pointer;
-  color: var(--fenext-color-gray-dark);
+  color: var(--fenext-color-dark);
 }
 .fenext-schedule-day-date-range-close:hover {
   color: var(--fenext-color-danger);

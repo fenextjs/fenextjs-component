@@ -1,17 +1,4 @@
-@use "sass:color";
-
 @mixin generateColor($name, $color, $theme: "light") {
-    $dark: color.adjust($color, $lightness: -10%);
-    $light: color.adjust($color, $lightness: 10%);
-
-    @if $theme == "dark" {
-        $dark: color.adjust($color, $lightness: 10%);
-        $light: color.adjust($color, $lightness: -10%);
-    }
-
-    --fenext-color-#{$name}-dark: red;
-    --fenext-color-#{$name}-light: red;
-
     --fenext-color-#{$name}: #{$color};
     @if $theme != "dark" {
         --fenext-color-theme-light-#{$name}: #{$color};

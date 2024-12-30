@@ -1800,7 +1800,20 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputRadio
-                            
+                            items={[
+                                {
+                                    id:"1",
+                                    label:"option 1"
+                                },
+                                {
+                                    id:"2",
+                                    label:"option 2"
+                                },
+                                {
+                                    id:"3",
+                                    label:"option 3"
+                                },
+                            ]}
                         >
                             Test Children
                         </InputRadio>
@@ -2839,7 +2852,7 @@ const Profile: StoryFn<any> = () => (
                     <div style={{padding:"1rem"}}>
                         <Img
                             
-            src=""
+            src="https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
         
                         >
                             Test Children

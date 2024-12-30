@@ -66,13 +66,13 @@
         width: 1rem;
         aspect-ratio: 1/1;
         border-radius: 100%;
-        background-color: var(--fenext-color-dark);
+        background-color: var(--fenext-color-light);
         cursor: pointer;
         &:hover {
-            background-color: var(--fenext-color-dark-light);
+            background-color: var(--fenext-color-primary);
         }
         &.active {
-            background-color: var(--fenext-color-success);
+            background-color: var(--fenext-color-primary);
         }
     }
     &-arrows {

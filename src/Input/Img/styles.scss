@@ -45,19 +45,19 @@
     &-progress {
     }
     &-in-progress {
-        border: solid 3px var(--fenext-color-white-dark);
-        background: var(--fenext-color-white-dark);
+        border: solid 3px var(--fenext-color-gray);
+        background: var(--fenext-color-gray);
     }
     &-ok {
-        border: solid 3px var(--fenext-color-success);
-        background: var(--fenext-color-white-dark);
+        border-color: var(--fenext-color-success);
+        background: var(--fenext-color-white);
         .fenext-input-img-up {
             padding: 0;
         }
     }
     &-error {
-        border: solid 3px var(--fenext-color-danger);
-        background: var(--fenext-color-white-dark);
+        border-color: var(--fenext-color-danger);
+        background: var(--fenext-color-white);
     }
     .fenext-error {
         margin: 0.5rem 0;
