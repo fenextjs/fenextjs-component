@@ -14,6 +14,14 @@ export default {
                 "Si el botón está en estado de carga, mostrando un indicador de carga (spinner) y deshabilitado para otras acciones.",
         },
         {
+            id: "invert",
+            type: "boolean",
+            require: false,
+            default: "false",
+            description:
+                "Si el botón invierte sus colores de background y hover.",
+        },
+        {
             id: "disabled",
             type: "boolean",
             require: false,
