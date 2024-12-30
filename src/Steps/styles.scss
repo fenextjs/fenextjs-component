@@ -39,7 +39,7 @@
     }
     &-step {
         --size-box-shadow-cicle: 3px;
-        --color-circle: var(--fenext-color-blue);
+        --color-circle: var(--fenext-color-primary);
         --color: var(--fenext-color-dark);
         display: flex;
         gap: 1rem;
@@ -138,7 +138,7 @@
         background: var(--fenext-color-dark);
         cursor: pointer;
         &-current {
-            background: var(--fenext-color-blue);
+            background: var(--fenext-color-primary);
         }
     }
     @media (min-width: 768px) {

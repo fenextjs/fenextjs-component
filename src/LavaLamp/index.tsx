@@ -75,14 +75,14 @@ export const LavaLamp = ({
     styles = {
         width: "100%",
         height: "500px",
-        background: `linear-gradient(45deg,var(--fenext-color-blue) 0%,var(--fenext-color-teal) 100%)`,
+        background: `linear-gradient(45deg,var(--fenext-color-primary) 0%,var(--fenext-color-teal) 100%)`,
     },
     stylesElement = [
         {
             width: "150px",
             aspectRatio: "2/1.5",
             borderRadius: "30% 70% 70% 30% / 68% 30% 70% 32% ",
-            background: `linear-gradient(45deg,var(--fenext-color-blue) 0%,var(--fenext-color-teal) 100%)`,
+            background: `linear-gradient(45deg,var(--fenext-color-primary) 0%,var(--fenext-color-teal) 100%)`,
             animationTimingFunction: "ease",
         },
         {

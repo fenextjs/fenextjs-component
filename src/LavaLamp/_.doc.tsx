@@ -17,7 +17,7 @@ export default {
             type: "CSSProperties",
             require: false,
             default:
-                '{ width: "100%", height: "500px",background: "linear-gradient(45deg,var(--fenext-color-blue) 0%,var(--fenext-color-teal) 100%)"}',
+                '{ width: "100%", height: "500px",background: "linear-gradient(45deg,var(--fenext-color-primary) 0%,var(--fenext-color-teal) 100%)"}',
             description:
                 "Estilos generales aplicados al contenedor de la lámpara de lava.",
         },
@@ -25,7 +25,6 @@ export default {
             id: "stylesElement",
             type: "LavaLampStylesElement[]",
             require: false,
-            // default: `[{"width":"150px","aspectRatio":"2/1.5","borderRadius":"30% 70% 70% 30% / 68% 30% 70% 32% ","background":"linear-gradient(45deg,var(--fenext-color-blue) 0%,var(--fenext-color-teal) 100%)","animationTimingFunction":"ease"},{"width":"100px","aspectRatio":"1 / 1","borderRadius":"30% 70% 44% 56% / 23% 46% 54% 77% ","background":"linear-gradient(75deg,var(--fenext-color-info) 0%,var(--fenext-color-indigo) 100%)","animationTimingFunction":"ease-out"},{"width":"100px","aspectRatio":"1 / 1","borderRadius":"87% 13% 65% 35% / 46% 46% 54% 54% ","background":"linear-gradient(135deg,var(--fenext-color-cyan) 0%,var(--fenext-color-purple) 100%)","animationTimingFunction":"linear"}]`,
             default: "",
             description:
                 "Estilos aplicados a los elementos individuales flotantes en la lámpara de lava.",

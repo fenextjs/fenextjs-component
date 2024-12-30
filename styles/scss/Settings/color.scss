@@ -1,5 +1,4 @@
 @mixin styleTheme_light {
-    @include generateColor("blue", #0d6efd);
     @include generateColor("indigo", #6610f2);
     @include generateColor("purple", #6f42c1);
     @include generateColor("pink", #d63384);
@@ -35,7 +34,6 @@
     @include generateColor("white", #fff);
 }
 @mixin styleTheme_dark {
-    @include generateColor("blue", #9eb9ff, "dark");
     @include generateColor("indigo", #c891ff, "dark");
     @include generateColor("purple", #d2a8ff, "dark");
     @include generateColor("pink", #ff9dd9, "dark");

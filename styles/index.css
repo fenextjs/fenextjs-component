@@ -6177,7 +6177,7 @@ body:has(.fenext-layout-grid-mt) .fenext-chat {
   padding: 0.2rem 0.5rem;
   display: grid;
   align-items: center;
-  --color-active: var(--fenext-color-blue);
+  --color-active: var(--fenext-color-primary);
 }
 .fenext-swich-view .fenext-content-radio {
   display: grid;
@@ -6521,7 +6521,7 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
 
 .fenext-design-box {
   --together-color: var(--fenext-color-black);
-  --together-active-color: var(--fenext-color-blue);
+  --together-active-color: var(--fenext-color-primary);
 }
 .fenext-design-box-content {
   display: grid;
