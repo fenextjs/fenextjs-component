@@ -152,12 +152,12 @@ export default {
             description:
                 "Función a ejecutar para ordenar los datos de la tabla.",
         },
-        {
-            id: "onShowHidden",
-            type: '(showHidden: { id: keyof T; showHidden: "SHOW" | "HIDDEN" }) => void',
-            require: false,
-            description: "Función para mostrar u ocultar columnas de la tabla.",
-        },
+        // {
+        //     id: "onShowHidden",
+        //     type: '(showHidden: { id: keyof T; showHidden: "SHOW" | "HIDDEN" }) => void',
+        //     require: false,
+        //     description: "Función para mostrar u ocultar columnas de la tabla.",
+        // },
         {
             id: "notResult",
             type: "ReactNode",

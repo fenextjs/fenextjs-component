@@ -45,7 +45,7 @@
             }
         }
     }
-    &:has(&-box-icon:not(:empty) ) {
+    &:has(&-box-icon:not(:empty)) {
         #{$className } {
             &-box {
                 border-color: var(--fenext-color-primary);

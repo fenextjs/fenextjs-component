@@ -11,6 +11,7 @@ export * from "./SelectCountryMultiple";
 export * from "./SelectState";
 export * from "./SelectCity";
 export * from "./SelectMultiple";
+export * from "./SelectMultipleT";
 export * from "./SelectNumber";
 export * from "./SelectCSC";
 export * from "./SelectT";

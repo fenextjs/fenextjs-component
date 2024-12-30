@@ -38,7 +38,8 @@ const main = async () => {
                     onParse={(e)=>{
                         return {
                             id:"",
-                            text:"option"
+                            text:"option",
+                            data:e
                         }
                     }}
 
@@ -58,7 +59,8 @@ const main = async () => {
                     onParse={(e)=>{
                         return {
                             id:"",
-                            text:"option"
+                            text:"option",
+                            data:e
                         }
                     }}
         `,
@@ -431,10 +433,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <${c}
+                            {...({children:"Test Children"} as any)}
                             ${COMPONENTPROPS?.[c] ?? ''}
-                        >
-                            Test Children
-                        </${c}>
+                        />
                     </div>
                 </div>
             `

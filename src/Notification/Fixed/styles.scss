@@ -17,15 +17,15 @@
     }
     &-ERROR {
         --fenext-notification-color: var(--fenext-color-light);
-        --fenext-notification-background: var(--fenext-color-danger)
+        --fenext-notification-background: var(--fenext-color-danger);
     }
     &-NORMAL {
         --fenext-notification-color: var(--fenext-color-dark);
-        --fenext-notification-background: var(--fenext-color-light)
+        --fenext-notification-background: var(--fenext-color-light);
     }
     &-WARNING {
         --fenext-notification-color: var(--fenext-color-theme-light-dark);
-        --fenext-notification-background: var(--fenext-color-warning)
+        --fenext-notification-background: var(--fenext-color-warning);
     }
     &-close {
         position: absolute;

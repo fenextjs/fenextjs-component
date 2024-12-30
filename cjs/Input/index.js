@@ -14,6 +14,7 @@ tslib_1.__exportStar(require("./SelectCountryMultiple"), exports);
 tslib_1.__exportStar(require("./SelectState"), exports);
 tslib_1.__exportStar(require("./SelectCity"), exports);
 tslib_1.__exportStar(require("./SelectMultiple"), exports);
+tslib_1.__exportStar(require("./SelectMultipleT"), exports);
 tslib_1.__exportStar(require("./SelectNumber"), exports);
 tslib_1.__exportStar(require("./SelectCSC"), exports);
 tslib_1.__exportStar(require("./SelectT"), exports);

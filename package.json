@@ -23,7 +23,7 @@
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
     "push-storybook": "npm run build-storybook && git addc flb && git push vercel && git push",
-    "flb": "npm run format && npm run lint && npm run build && npm run sass-min && npm run build-storybook",
+    "flb": "npm run generate && npm run format && npm run lint && npm run build && npm run sass-min && npm run build-storybook",
     "storybook": "storybook dev -p 6006",
     "bun-i": "bun i",
     "remove-bun-lockb": "rm -r bun.lockb",
@@ -33,6 +33,7 @@
     "update-package": "ncu -u '/^fenextjs.*$/' country-state-city-nextjs uselocalstoragenextjs",
     "update": "npm run update-package && npm run remove && npm run bun-i && npm run flb",
     "u": "npm run update",
+    "generate":"npm run generate-template",
     "generate-template":"bun ./script/generate-template.tsx"
   },
   "repository": {

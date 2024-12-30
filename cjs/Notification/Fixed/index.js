@@ -11,7 +11,7 @@ const Notification = ({ className = "", type = Request_1.RequestResultTypeProps.
     const { _t } = (0, fenextjs_hook_2.use_T)({ ...props });
     const { reset } = (0, fenextjs_hook_1.useNotification)({});
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: `fenext-notification fenext-notification-${type.toLowerCase()} ${className} ` },
+        react_1.default.createElement("div", { className: `fenext-notification fenext-notification-${type.toUpperCase()} ${className} ` },
             _t(children),
             react_1.default.createElement("div", { className: "fenext-notification-close", onClick: reset },
                 react_1.default.createElement(Close_1.SvgClose, null)))));

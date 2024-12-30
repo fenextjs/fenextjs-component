@@ -22,7 +22,6 @@ export type TableHeader<T> = {
     parse?: (data: T) => any;
     columnOptions?: {
         orderBy?: boolean;
-        showHidden?: boolean;
     };
     defaultShowHidden?: "show" | "hidden";
     colNewTr?: boolean;
@@ -41,10 +40,6 @@ export interface TableBaseProps<T> extends _TProps {
         id: keyof T;
         order: "ASC" | "DESC";
     }) => void;
-    onShowHidden?: (showHidden: {
-        id: keyof T;
-        showHidden: "SHOW" | "HIDDEN";
-    }) => void;
     notResult?: ReactNode;
     showPagination?: boolean;
     actionsCheckbox?: Omit<TableActionCheckboxProps<T>, "actionAllCheckbox" | "data">;
@@ -52,4 +47,4 @@ export interface TableBaseProps<T> extends _TProps {
 }
 export interface TableProps<T> extends TableClassProps, TableBaseProps<T> {
 }
-export declare const Table: <T>({ classNameContent, classNameContentTable, classNameTable, classNameTHead, classNameTBody, classNameThr, classNameTr, classNameTh, classNameTd, classNameContentPagination, classNameLoader, name, items, header, pagination, showPagination, loader, typeLoader, useCheckbox, onOrderBy, onShowHidden, onChecked, notResult, actionsCheckbox, actionsCheckboxSelectAll, ...props }: TableProps<T>) => React.JSX.Element;
+export declare const Table: <T>({ classNameContent, classNameContentTable, classNameTable, classNameTHead, classNameTBody, classNameThr, classNameTr, classNameTh, classNameTd, classNameContentPagination, classNameLoader, name, items, header, pagination, showPagination, loader, typeLoader, useCheckbox, onOrderBy, onChecked, notResult, actionsCheckbox, actionsCheckboxSelectAll, ...props }: TableProps<T>) => React.JSX.Element;

@@ -941,6 +941,7 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Chat
+                            {...({children:"Test Children"} as any)}
                             
                  chatFormSendMessage={{}}
                  chatMessage={[]}
@@ -948,9 +949,7 @@ const Profile: StoryFn<any> = () => (
         
         
         
-                        >
-                            Test Children
-                        </Chat>
+                        />
                     </div>
                 </div>
             
@@ -963,12 +962,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ChatMessage
+                            {...({children:"Test Children"} as any)}
                             
              id={"1"}
         
-                        >
-                            Test Children
-                        </ChatMessage>
+                        />
                     </div>
                 </div>
             
@@ -981,10 +979,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ChatFormSendMessage
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </ChatFormSendMessage>
+                        />
                     </div>
                 </div>
             
@@ -997,10 +994,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ChatUser
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </ChatUser>
+                        />
                     </div>
                 </div>
             
@@ -1013,10 +1009,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Text
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Text>
+                        />
                     </div>
                 </div>
             
@@ -1029,10 +1024,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ContentShow
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </ContentShow>
+                        />
                     </div>
                 </div>
             
@@ -1045,10 +1039,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Title
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Title>
+                        />
                     </div>
                 </div>
             
@@ -1061,12 +1054,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Breadcrumb
+                            {...({children:"Test Children"} as any)}
                             
              links={[]}
         
-                        >
-                            Test Children
-                        </Breadcrumb>
+                        />
                     </div>
                 </div>
             
@@ -1079,10 +1071,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <SwichViewList
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </SwichViewList>
+                        />
                     </div>
                 </div>
             
@@ -1095,10 +1086,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <SwichViewTable
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </SwichViewTable>
+                        />
                     </div>
                 </div>
             
@@ -1111,10 +1101,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <SwichViewSelect
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </SwichViewSelect>
+                        />
                     </div>
                 </div>
             
@@ -1127,6 +1116,7 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <TableActionCheckbox
+                            {...({children:"Test Children"} as any)}
                             
             actions={[
                 ()=>{
@@ -1142,9 +1132,7 @@ const Profile: StoryFn<any> = () => (
             ]}
         
         
-                        >
-                            Test Children
-                        </TableActionCheckbox>
+                        />
                     </div>
                 </div>
             
@@ -1157,10 +1145,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <MediaInput
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </MediaInput>
+                        />
                     </div>
                 </div>
             
@@ -1173,6 +1160,7 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <MediaPage
+                            {...({children:"Test Children"} as any)}
                             
             images={[
                 {
@@ -1189,9 +1177,7 @@ const Profile: StoryFn<any> = () => (
                 },
             ]}
         
-                        >
-                            Test Children
-                        </MediaPage>
+                        />
                     </div>
                 </div>
             
@@ -1204,10 +1190,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Cols
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Cols>
+                        />
                     </div>
                 </div>
             
@@ -1220,10 +1205,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Button
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Button>
+                        />
                     </div>
                 </div>
             
@@ -1236,10 +1220,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Container
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Container>
+                        />
                     </div>
                 </div>
             
@@ -1252,10 +1235,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <StepsCircle
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </StepsCircle>
+                        />
                     </div>
                 </div>
             
@@ -1268,10 +1250,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ButtonMenu
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </ButtonMenu>
+                        />
                     </div>
                 </div>
             
@@ -1284,10 +1265,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Menu
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Menu>
+                        />
                     </div>
                 </div>
             
@@ -1300,14 +1280,13 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ItemMenu
+                            {...({children:"Test Children"} as any)}
                             
             text="menu"
             url="/"
 
         
-                        >
-                            Test Children
-                        </ItemMenu>
+                        />
                     </div>
                 </div>
             
@@ -1320,10 +1299,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Box
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Box>
+                        />
                     </div>
                 </div>
             
@@ -1336,10 +1314,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputNumber
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputNumber>
+                        />
                     </div>
                 </div>
             
@@ -1352,10 +1329,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputText
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputText>
+                        />
                     </div>
                 </div>
             
@@ -1368,10 +1344,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputCalendar
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputCalendar>
+                        />
                     </div>
                 </div>
             
@@ -1384,10 +1359,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSelectNumber
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputSelectNumber>
+                        />
                     </div>
                 </div>
             
@@ -1400,10 +1374,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputGallery
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputGallery>
+                        />
                     </div>
                 </div>
             
@@ -1416,10 +1389,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputUpload
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputUpload>
+                        />
                     </div>
                 </div>
             
@@ -1432,10 +1404,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputScannerQr
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputScannerQr>
+                        />
                     </div>
                 </div>
             
@@ -1448,10 +1419,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputScannerTextQr
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputScannerTextQr>
+                        />
                     </div>
                 </div>
             
@@ -1464,10 +1434,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputCardNumber
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputCardNumber>
+                        />
                     </div>
                 </div>
             
@@ -1480,10 +1449,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputCardExpDate
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputCardExpDate>
+                        />
                     </div>
                 </div>
             
@@ -1496,10 +1464,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputCardCCV
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputCardCCV>
+                        />
                     </div>
                 </div>
             
@@ -1512,10 +1479,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSelectCity
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputSelectCity>
+                        />
                     </div>
                 </div>
             
@@ -1528,12 +1494,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSelect
+                            {...({children:"Test Children"} as any)}
                             
             options={[]}
         
-                        >
-                            Test Children
-                        </InputSelect>
+                        />
                     </div>
                 </div>
             
@@ -1546,10 +1511,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputColor
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputColor>
+                        />
                     </div>
                 </div>
             
@@ -1562,10 +1526,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSelectTimeZone
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputSelectTimeZone>
+                        />
                     </div>
                 </div>
             
@@ -1578,10 +1541,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputNumberCount
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputNumberCount>
+                        />
                     </div>
                 </div>
             
@@ -1594,10 +1556,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputRate
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputRate>
+                        />
                     </div>
                 </div>
             
@@ -1610,10 +1571,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputPhone
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputPhone>
+                        />
                     </div>
                 </div>
             
@@ -1626,10 +1586,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputDate
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputDate>
+                        />
                     </div>
                 </div>
             
@@ -1642,10 +1601,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSelectCSC
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputSelectCSC>
+                        />
                     </div>
                 </div>
             
@@ -1658,10 +1616,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSelectCountryMultiple
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputSelectCountryMultiple>
+                        />
                     </div>
                 </div>
             
@@ -1674,12 +1631,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputFileStatus
+                            {...({children:"Test Children"} as any)}
                             
             onUploadFile={async (e)=>e}
         
-                        >
-                            Test Children
-                        </InputFileStatus>
+                        />
                     </div>
                 </div>
             
@@ -1692,10 +1648,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputRange
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputRange>
+                        />
                     </div>
                 </div>
             
@@ -1708,10 +1663,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputGoogleLoadScript
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputGoogleLoadScript>
+                        />
                     </div>
                 </div>
             
@@ -1724,10 +1678,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputGoogleMaps
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputGoogleMaps>
+                        />
                     </div>
                 </div>
             
@@ -1740,10 +1693,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputGoogleAutocomplete
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputGoogleAutocomplete>
+                        />
                     </div>
                 </div>
             
@@ -1756,19 +1708,19 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSelectT
+                            {...({children:"Test Children"} as any)}
                             
                     options={[]}
                     onParse={(e)=>{
                         return {
                             id:"",
-                            text:"option"
+                            text:"option",
+                            data:e
                         }
                     }}
 
         
-                        >
-                            Test Children
-                        </InputSelectT>
+                        />
                     </div>
                 </div>
             
@@ -1781,13 +1733,12 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSelectMultiple
+                            {...({children:"Test Children"} as any)}
                             
                     options={[]}
 
         
-                        >
-                            Test Children
-                        </InputSelectMultiple>
+                        />
                     </div>
                 </div>
             
@@ -1800,23 +1751,24 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputRadio
-                            items={[
-                                {
-                                    id:"1",
-                                    label:"option 1"
-                                },
-                                {
-                                    id:"2",
-                                    label:"option 2"
-                                },
-                                {
-                                    id:"3",
-                                    label:"option 3"
-                                },
-                            ]}
-                        >
-                            Test Children
-                        </InputRadio>
+                            {...({children:"Test Children"} as any)}
+                            
+            items={[
+                {
+                    id:"1",
+                    label:"option 1"
+                },
+                {
+                    id:"2",
+                    label:"option 2"
+                },
+                {
+                    id:"3",
+                    label:"option 3"
+                },
+            ]}
+        
+                        />
                     </div>
                 </div>
             
@@ -1829,10 +1781,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputImg
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputImg>
+                        />
                     </div>
                 </div>
             
@@ -1845,12 +1796,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputCode
+                            {...({children:"Test Children"} as any)}
                             
              maxLength={6}
         
-                        >
-                            Test Children
-                        </InputCode>
+                        />
                     </div>
                 </div>
             
@@ -1863,12 +1813,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputTextSelect
+                            {...({children:"Test Children"} as any)}
                             
              options={[]}  
         
-                        >
-                            Test Children
-                        </InputTextSelect>
+                        />
                     </div>
                 </div>
             
@@ -1881,10 +1830,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputPassword
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputPassword>
+                        />
                     </div>
                 </div>
             
@@ -1897,18 +1845,18 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSelectMultipleT
+                            {...({children:"Test Children"} as any)}
                             
                     options={[]}
                     onParse={(e)=>{
                         return {
                             id:"",
-                            text:"option"
+                            text:"option",
+                            data:e
                         }
                     }}
         
-                        >
-                            Test Children
-                        </InputSelectMultipleT>
+                        />
                     </div>
                 </div>
             
@@ -1921,10 +1869,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSelectCountry
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputSelectCountry>
+                        />
                     </div>
                 </div>
             
@@ -1937,10 +1884,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputFile
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputFile>
+                        />
                     </div>
                 </div>
             
@@ -1953,10 +1899,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputDateRange
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputDateRange>
+                        />
                     </div>
                 </div>
             
@@ -1969,10 +1914,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputCheckbox
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputCheckbox>
+                        />
                     </div>
                 </div>
             
@@ -1985,10 +1929,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSwich
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputSwich>
+                        />
                     </div>
                 </div>
             
@@ -2001,10 +1944,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSearch
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputSearch>
+                        />
                     </div>
                 </div>
             
@@ -2017,10 +1959,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputSelectState
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputSelectState>
+                        />
                     </div>
                 </div>
             
@@ -2033,10 +1974,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputUnitVolumen
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputUnitVolumen>
+                        />
                     </div>
                 </div>
             
@@ -2049,12 +1989,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputUnitBase
+                            {...({children:"Test Children"} as any)}
                             
              options={[]} 
         
-                        >
-                            Test Children
-                        </InputUnitBase>
+                        />
                     </div>
                 </div>
             
@@ -2067,10 +2006,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputUnitDistance
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputUnitDistance>
+                        />
                     </div>
                 </div>
             
@@ -2083,10 +2021,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <InputUnitWeight
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </InputUnitWeight>
+                        />
                     </div>
                 </div>
             
@@ -2099,12 +2036,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Counter
+                            {...({children:"Test Children"} as any)}
                             
             number={100}
         
-                        >
-                            Test Children
-                        </Counter>
+                        />
                     </div>
                 </div>
             
@@ -2117,10 +2053,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <NotificationPop
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </NotificationPop>
+                        />
                     </div>
                 </div>
             
@@ -2133,10 +2068,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Notification
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Notification>
+                        />
                     </div>
                 </div>
             
@@ -2149,10 +2083,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Copy
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Copy>
+                        />
                     </div>
                 </div>
             
@@ -2165,10 +2098,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Slider
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Slider>
+                        />
                     </div>
                 </div>
             
@@ -2181,12 +2113,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ImgGallery
+                            {...({children:"Test Children"} as any)}
                             
             imgs={[]} 
         
-                        >
-                            Test Children
-                        </ImgGallery>
+                        />
                     </div>
                 </div>
             
@@ -2199,12 +2130,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ImgSlider
+                            {...({children:"Test Children"} as any)}
                             
             imgs={[]}   
         
-                        >
-                            Test Children
-                        </ImgSlider>
+                        />
                     </div>
                 </div>
             
@@ -2217,12 +2147,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <PaginationItemPage
+                            {...({children:"Test Children"} as any)}
                             
             nItems={10}
         
-                        >
-                            Test Children
-                        </PaginationItemPage>
+                        />
                     </div>
                 </div>
             
@@ -2235,12 +2164,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Pagination
+                            {...({children:"Test Children"} as any)}
                             
             nItems={10}  
         
-                        >
-                            Test Children
-                        </Pagination>
+                        />
                     </div>
                 </div>
             
@@ -2253,10 +2181,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <PaginationNPage
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </PaginationNPage>
+                        />
                     </div>
                 </div>
             
@@ -2269,10 +2196,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <AlertHook
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </AlertHook>
+                        />
                     </div>
                 </div>
             
@@ -2285,6 +2211,7 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Table
+                            {...({children:"Test Children"} as any)}
                             
             header={[
                 {
@@ -2457,9 +2384,7 @@ const Profile: StoryFn<any> = () => (
             ]}
             name="table"
         
-                        >
-                            Test Children
-                        </Table>
+                        />
                     </div>
                 </div>
             
@@ -2472,13 +2397,12 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Alert
+                            {...({children:"Test Children"} as any)}
                             
                  message="alert" 
                  type="WARNING"  
         
-                        >
-                            Test Children
-                        </Alert>
+                        />
                     </div>
                 </div>
             
@@ -2491,12 +2415,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Collapse
+                            {...({children:"Test Children"} as any)}
                             
              header={<></>}
         
-                        >
-                            Test Children
-                        </Collapse>
+                        />
                     </div>
                 </div>
             
@@ -2509,10 +2432,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <CollapseMultiple
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </CollapseMultiple>
+                        />
                     </div>
                 </div>
             
@@ -2525,10 +2447,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <LavaLamp
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </LavaLamp>
+                        />
                     </div>
                 </div>
             
@@ -2541,10 +2462,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ErrorComponent
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </ErrorComponent>
+                        />
                     </div>
                 </div>
             
@@ -2557,10 +2477,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Form
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Form>
+                        />
                     </div>
                 </div>
             
@@ -2573,12 +2492,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Tooltip
+                            {...({children:"Test Children"} as any)}
                             
             tooltip="tooltip text"
         
-                        >
-                            Test Children
-                        </Tooltip>
+                        />
                     </div>
                 </div>
             
@@ -2591,10 +2509,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <TwoColSticky
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </TwoColSticky>
+                        />
                     </div>
                 </div>
             
@@ -2607,10 +2524,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Tab
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Tab>
+                        />
                     </div>
                 </div>
             
@@ -2623,12 +2539,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <DropDown
+                            {...({children:"Test Children"} as any)}
                             
              header={<></>}
         
-                        >
-                            Test Children
-                        </DropDown>
+                        />
                     </div>
                 </div>
             
@@ -2641,13 +2556,12 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <PrintIframe
+                            {...({children:"Test Children"} as any)}
                             
             onComponent={()=>""}  
             url=""
         
-                        >
-                            Test Children
-                        </PrintIframe>
+                        />
                     </div>
                 </div>
             
@@ -2660,12 +2574,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <PrintPage
+                            {...({children:"Test Children"} as any)}
                             
             onComponent={()=>""}  
         
-                        >
-                            Test Children
-                        </PrintPage>
+                        />
                     </div>
                 </div>
             
@@ -2678,12 +2591,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Steps
+                            {...({children:"Test Children"} as any)}
                             
             items={[]}
         
-                        >
-                            Test Children
-                        </Steps>
+                        />
                     </div>
                 </div>
             
@@ -2696,10 +2608,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Back
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Back>
+                        />
                     </div>
                 </div>
             
@@ -2712,10 +2623,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Theme
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Theme>
+                        />
                     </div>
                 </div>
             
@@ -2728,12 +2638,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Link
+                            {...({children:"Test Children"} as any)}
                             
             href={"/"}        
         
-                        >
-                            Test Children
-                        </Link>
+                        />
                     </div>
                 </div>
             
@@ -2746,10 +2655,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Share
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Share>
+                        />
                     </div>
                 </div>
             
@@ -2762,10 +2670,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ContentLoading
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </ContentLoading>
+                        />
                     </div>
                 </div>
             
@@ -2778,12 +2685,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <GridGallery
+                            {...({children:"Test Children"} as any)}
                             
             items={[]}
         
-                        >
-                            Test Children
-                        </GridGallery>
+                        />
                     </div>
                 </div>
             
@@ -2796,6 +2702,7 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ChronologicalList
+                            {...({children:"Test Children"} as any)}
                             
              items={[
                 {
@@ -2820,9 +2727,7 @@ const Profile: StoryFn<any> = () => (
                 },
              ]}
         
-                        >
-                            Test Children
-                        </ChronologicalList>
+                        />
                     </div>
                 </div>
             
@@ -2835,10 +2740,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <User
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </User>
+                        />
                     </div>
                 </div>
             
@@ -2851,12 +2755,11 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Img
+                            {...({children:"Test Children"} as any)}
                             
             src="https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
         
-                        >
-                            Test Children
-                        </Img>
+                        />
                     </div>
                 </div>
             
@@ -2869,10 +2772,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <DesignTypography
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </DesignTypography>
+                        />
                     </div>
                 </div>
             
@@ -2885,10 +2787,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <DesignBox
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </DesignBox>
+                        />
                     </div>
                 </div>
             
@@ -2901,10 +2802,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <PageProgress
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </PageProgress>
+                        />
                     </div>
                 </div>
             
@@ -2917,10 +2817,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <FilterDate
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </FilterDate>
+                        />
                     </div>
                 </div>
             
@@ -2933,10 +2832,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ScheduleDay
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </ScheduleDay>
+                        />
                     </div>
                 </div>
             
@@ -2949,10 +2847,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ScheduleWeekly
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </ScheduleWeekly>
+                        />
                     </div>
                 </div>
             
@@ -2965,10 +2862,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Template
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Template>
+                        />
                     </div>
                 </div>
             
@@ -2981,10 +2877,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Modal
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Modal>
+                        />
                     </div>
                 </div>
             
@@ -2997,13 +2892,12 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ProgressCircle
+                            {...({children:"Test Children"} as any)}
                             
             p={10}
             showP={true}
         
-                        >
-                            Test Children
-                        </ProgressCircle>
+                        />
                     </div>
                 </div>
             
@@ -3016,13 +2910,12 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <ProgressLine
+                            {...({children:"Test Children"} as any)}
                             
             p={10}
             showP={true}
         
-                        >
-                            Test Children
-                        </ProgressLine>
+                        />
                     </div>
                 </div>
             
@@ -3035,10 +2928,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <Chronometer
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </Chronometer>
+                        />
                     </div>
                 </div>
             
@@ -3051,10 +2943,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <LoaderLine
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </LoaderLine>
+                        />
                     </div>
                 </div>
             
@@ -3067,10 +2958,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <LoaderUser
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </LoaderUser>
+                        />
                     </div>
                 </div>
             
@@ -3083,10 +2973,9 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <LoaderSpinner
+                            {...({children:"Test Children"} as any)}
                             
-                        >
-                            Test Children
-                        </LoaderSpinner>
+                        />
                     </div>
                 </div>
             

@@ -13,8 +13,7 @@
 
     --fenext-alert-color: var(--fenext-color-dark);
     --fenext-alert-background: var(--fenext-color-light)
-
-    --fenext-alert-inactive-display: none;
+        --fenext-alert-inactive-display: none;
 
     --fenext-alert-display: grid;
     --fenext-alert-display: grid;
@@ -67,14 +66,14 @@
     }
     &-ERROR {
         --fenext-alert-color: var(--fenext-color-light);
-        --fenext-alert-background: var(--fenext-color-danger)
+        --fenext-alert-background: var(--fenext-color-danger);
     }
     &-NORMAL {
         --fenext-alert-color: var(--fenext-color-dark);
-        --fenext-alert-background: var(--fenext-color-light)
+        --fenext-alert-background: var(--fenext-color-light);
     }
     &-WARNING {
         --fenext-alert-color: var(--fenext-color-theme-light-dark);
-        --fenext-alert-background: var(--fenext-color-warning)
+        --fenext-alert-background: var(--fenext-color-warning);
     }
 }

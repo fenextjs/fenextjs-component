@@ -52,3 +52,4 @@ export * from "./Design";
 export * from "./Portal";
 export * from "./StepsCircle";
 export * from "./Filter";
+export * from "./ImgSlider";

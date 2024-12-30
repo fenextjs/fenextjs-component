@@ -148,11 +148,12 @@ export const InputSelectOption = <T = any,>({
                 selected={selected}
                 value={text}
             >
-                {
-                    type == "multiple"
-                    &&
-                    <InputCheckbox classNameLabel="fenext-select-option-checkbox" value={true}/>
-                }
+                {type == "multiple" && (
+                    <InputCheckbox
+                        classNameLabel="fenext-select-option-checkbox"
+                        value={true}
+                    />
+                )}
                 {img ? (
                     <>
                         <img

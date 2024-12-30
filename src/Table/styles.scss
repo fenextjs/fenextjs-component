@@ -69,16 +69,16 @@
                 &-arrow {
                     width: 0.5rem;
                 }
-                .fenext-dropdown{
+                .fenext-dropdown {
                     padding: 0;
                     background-color: transparent;
-                    &-header-icon{
+                    &-header-icon {
                         svg {
                             width: 0.5rem;
                         }
                     }
                 }
-                &-dropdown-body{
+                &-dropdown-body {
                     box-shadow: 0 0 2px 0 var(--fenext-color-gray);
                     .fenext-input-radio {
                         padding: 0.2rem 0rem;
@@ -90,7 +90,6 @@
                     .fenext-content-radio {
                         gap: 0;
                     }
-
                 }
             }
             &-tbody {

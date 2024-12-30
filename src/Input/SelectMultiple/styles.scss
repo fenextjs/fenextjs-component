@@ -19,14 +19,13 @@
             display: var(--display-list-empty) !important;
         }
     }
-    .fenext-select-option-checkbox{
+    .fenext-select-option-checkbox {
         display: none;
     }
-    &-normal{
-
+    &-normal {
     }
     &-checkbox {
-        .fenext-select-option-checkbox{
+        .fenext-select-option-checkbox {
             display: grid;
         }
         .fenext-select-multiple-list {

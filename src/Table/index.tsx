@@ -5,7 +5,7 @@ import { InputCheckbox } from "../Input/Checkbox";
 import { DropDown } from "../DropDown";
 import { Loader } from "../Loader";
 import { LoaderLine } from "../Loader/Line";
-import { InputRadio } from "../Input/Radio";
+// import { InputRadio } from "../Input/Radio";
 import {
     TableActionCheckbox,
     TableActionCheckboxProps,
@@ -172,13 +172,13 @@ export interface TableBaseProps<T> extends _TProps {
      */
     onOrderBy?: (order: { id: keyof T; order: "ASC" | "DESC" }) => void;
 
-    /**
-     * onShowHidden table.
-     */
-    onShowHidden?: (showHidden: {
-        id: keyof T;
-        showHidden: "SHOW" | "HIDDEN";
-    }) => void;
+    // /**
+    //  * onShowHidden table.
+    //  */
+    // onShowHidden?: (showHidden: {
+    //     id: keyof T;
+    //     showHidden: "SHOW" | "HIDDEN";
+    // }) => void;
     /**
      * notResult the table.
      */
@@ -228,7 +228,7 @@ export const Table = <T,>({
     typeLoader = "line",
     useCheckbox = true,
     onOrderBy,
-    onShowHidden,
+    // onShowHidden,
     onChecked,
     notResult = <div>There is not results</div>,
     actionsCheckbox,
@@ -488,46 +488,44 @@ export const Table = <T,>({
                                         data-col-id={h?.id}
                                         data-col-text={h?.th}
                                     >
-                                        {
-                                            (
-
-                                                Object.values(h?.columnOptions ?? {}).some(e => e == true)
-                                                ?
-                                                <DropDown header={<>{_t(h.th)}</>}
-                                                
-                                                    classNameBody={`
+                                        {Object.values(
+                                            h?.columnOptions ?? {},
+                                        ).some((e) => e == true) ? (
+                                            <DropDown
+                                                header={<>{_t(h.th)}</>}
+                                                classNameBody={`
                                                       fenext-table-content-table-th-dropdown-body  
                                                     `}
-                                                >
-                                                    {h?.columnOptions?.orderBy ? (
-                                                        <>
-                                                            <div
-                                                                onClick={() => {
-                                                                    onOrderBy?.({
-                                                                        id: h.id,
-                                                                        order: "ASC",
-                                                                    });
-                                                                }}
-                                                                className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
-                                                            >
-                                                                {_t("Order ASC")}
-                                                            </div>
-                                                            <div
-                                                                onClick={() => {
-                                                                    onOrderBy?.({
-                                                                        id: h.id,
-                                                                        order: "DESC",
-                                                                    });
-                                                                }}
-                                                                className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
-                                                            >
-                                                                {_t("Order DESC")}
-                                                            </div>
-                                                        </>
-                                                    ) : (
-                                                        <></>
-                                                    )}
-                                                    {/* {h?.columnOptions?.showHidden ? (
+                                            >
+                                                {h?.columnOptions?.orderBy ? (
+                                                    <>
+                                                        <div
+                                                            onClick={() => {
+                                                                onOrderBy?.({
+                                                                    id: h.id,
+                                                                    order: "ASC",
+                                                                });
+                                                            }}
+                                                            className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
+                                                        >
+                                                            {_t("Order ASC")}
+                                                        </div>
+                                                        <div
+                                                            onClick={() => {
+                                                                onOrderBy?.({
+                                                                    id: h.id,
+                                                                    order: "DESC",
+                                                                });
+                                                            }}
+                                                            className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
+                                                        >
+                                                            {_t("Order DESC")}
+                                                        </div>
+                                                    </>
+                                                ) : (
+                                                    <></>
+                                                )}
+                                                {/* {h?.columnOptions?.showHidden ? (
                                                         <>
                                                             <InputRadio
                                                                 name={`${h.th}-${i}-show-hidden`}
@@ -562,11 +560,10 @@ export const Table = <T,>({
                                                     ) : (
                                                         <></>
                                                     )} */}
-                                                </DropDown>
-                                                :
-                                                <>{_t(h.th)}</>
-                                            )
-                                        }
+                                            </DropDown>
+                                        ) : (
+                                            <>{_t(h.th)}</>
+                                        )}
                                     </th>
                                 ))}
                             </tr>

@@ -48,7 +48,7 @@
 
             color: var(--fenext-color-dark);
             background-color: var(--fenext-color-light);
-            box-shadow: inset 0 0 0 1px  var(--fenext-color-gray);
+            box-shadow: inset 0 0 0 1px var(--fenext-color-gray);
             font-size: 1rem;
         }
     }
@@ -70,7 +70,7 @@
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         margin-bottom: 0.5rem;
-        box-shadow: inset 0 0 0 1px  var(--fenext-color-gray);
+        box-shadow: inset 0 0 0 1px var(--fenext-color-gray);
     }
     &-btn {
         cursor: pointer;
@@ -112,7 +112,7 @@
             &-range {
                 background: var(--fenext-color-primary);
                 color: var(--fenext-color-light);
-                opacity: .5;
+                opacity: 0.5;
                 + .fenext-input-calendar-date-select {
                     border-top-left-radius: 0;
                     border-bottom-left-radius: 0;
