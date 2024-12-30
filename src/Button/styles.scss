@@ -19,6 +19,8 @@
 
     --fenext-btn-background: var(--fenext-color-primary);
     --fenext-btn-background-hover: var(--fenext-color-secondary);
+    --fenext-btn-background-invert: var(--fenext-color-secondary);
+    --fenext-btn-background-invert-hover: var(--fenext-color-primary);
     --fenext-btn-background-disabled: var(--fenext-color-disabled);
 
     --fenext-btn-color: var(--fenext-color-light);
@@ -64,6 +66,10 @@
     position: var(--fenext-btn-position);
     &:hover {
         --fenext-btn-background: var(--fenext-btn-background-hover);
+    }
+    &-invert{
+        --fenext-btn-background: var(--fenext-btn-background-invert);
+        --fenext-btn-background-hover:var(--fenext-btn-background-invert-hover);
     }
     &-disabled {
         --fenext-btn-background: var(--fenext-btn-background-disabled);

@@ -17,4 +17,5 @@ Index.args = {
     // onClick:()=>{alert(1)},
     // onClickDisabled:()=>{alert("disabled")},
     // disabled:true
+    invert:false
 } as ButtonProps;
