@@ -12,12 +12,12 @@ import { LoaderUser } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| classNameLoaderUser | string | no | '' | Clase CSS para personalizar el contenedor del componente del usuario cargando. |
-| classNameLoaderUserImg | string | no | '' | Clase CSS para personalizar la imagen del indicador de carga del usuario. |
-| classNameLoaderUserName | string | no | '' | Clase CSS para personalizar el nombre del indicador de carga del usuario. |
-| classNameLoaderUserEmail | string | no | '' | Clase CSS para personalizar el correo electrónico del indicador de carga del usuario. |
+| Parámetro                | Tipo   | Requerido | Default | Descripcion                                                                           |
+| ------------------------ | ------ | --------- | ------- | ------------------------------------------------------------------------------------- |
+| classNameLoaderUser      | string | no        | ''      | Clase CSS para personalizar el contenedor del componente del usuario cargando.        |
+| classNameLoaderUserImg   | string | no        | ''      | Clase CSS para personalizar la imagen del indicador de carga del usuario.             |
+| classNameLoaderUserName  | string | no        | ''      | Clase CSS para personalizar el nombre del indicador de carga del usuario.             |
+| classNameLoaderUserEmail | string | no        | ''      | Clase CSS para personalizar el correo electrónico del indicador de carga del usuario. |
 
 ### Storybook
 
@@ -25,15 +25,17 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- LoaderUser básico
+-   LoaderUser básico
 
 ```tsx copy
 <LoaderUser />
 ```
 
-- LoaderUser con clases personalizadas
+-   LoaderUser con clases personalizadas
 
 ```tsx copy
-<LoaderUser classNameLoaderUser="custom-user" classNameLoaderUserImg="custom-img" />
+<LoaderUser
+    classNameLoaderUser="custom-user"
+    classNameLoaderUserImg="custom-img"
+/>
 ```
-
