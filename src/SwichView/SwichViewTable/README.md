@@ -12,11 +12,11 @@ import { SwichViewTable } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro    | Tipo                                                            | Requerido | Default                        | Descripcion                                                           |
-| ------------ | --------------------------------------------------------------- | --------- | ------------------------------ | --------------------------------------------------------------------- |
-| className    | string                                                          | no        | ""                             | Clase CSS para el contenedor del componente.                          |
-| defaultValue | "fenext-swich-view-table-box" \| "fenext-swich-view-table-list" | no        | "fenext-swich-view-table-list" | Vista de tabla predeterminada que se muestra al cargar el componente. |
-| onChange     | (e?: SwichViewTableType) =\> void                               | no        | undefined                      | Función que se ejecuta cuando se selecciona una nueva vista de tabla. |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| className | string | no | "" | Clase CSS para el contenedor del componente. |
+| defaultValue | "fenext-swich-view-table-box" \| "fenext-swich-view-table-list" | no | "fenext-swich-view-table-list" | Vista de tabla predeterminada que se muestra al cargar el componente. |
+| onChange | (e?: SwichViewTableType) =\> void | no | undefined | Función que se ejecuta cuando se selecciona una nueva vista de tabla. |
 
 ### Storybook
 
@@ -24,23 +24,21 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Ejemplo básico
+- Ejemplo básico
 
 ```tsx copy
 <SwichViewTable />
 ```
 
--   Con valor predeterminado y función de cambio
+- Con valor predeterminado y función de cambio
 
 ```tsx copy
-<SwichViewTable
-    defaultValue="fenext-swich-view-table-box"
-    onChange={(e) => console.log("Vista de tabla seleccionada:", e)}
-/>
+<SwichViewTable defaultValue="fenext-swich-view-table-box" onChange={(e) => console.log("Vista de tabla seleccionada:", e)} />
 ```
 
--   Aplicando una clase personalizada
+- Aplicando una clase personalizada
 
 ```tsx copy
 <SwichViewTable className="custom-table-class" />
 ```
+

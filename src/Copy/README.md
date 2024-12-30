@@ -12,13 +12,13 @@ import { Copy } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro      | Tipo                  | Requerido | Default                                                | Descripcion                                                           |
-| -------------- | --------------------- | --------- | ------------------------------------------------------ | --------------------------------------------------------------------- |
-| text           | string                | no        | ''                                                     | Texto que se copiará al portapapeles al hacer click en el componente. |
-| children       | ReactNode             | no        | undefined                                              | El contenido que se mostrará dentro del componente Copy.              |
-| onClickForCopy | function              | no        | undefined                                              | Función personalizada que se ejecuta después de copiar el texto.      |
-| notification   | NotificationDataProps | no        | \{ message: 'Copy', type: RequestResultTypeProps.OK \} | Configuración de la notificación que se muestra al copiar el texto.   |
-| className      | string                | no        | ''                                                     | Clase CSS para personalizar el contenedor del componente.             |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| text | string | no | '' | Texto que se copiará al portapapeles al hacer click en el componente. |
+| children | ReactNode | no | undefined | El contenido que se mostrará dentro del componente Copy. |
+| onClickForCopy | function | no | undefined | Función personalizada que se ejecuta después de copiar el texto. |
+| notification | NotificationDataProps | no | \{ message: 'Copy', type: RequestResultTypeProps.OK \} | Configuración de la notificación que se muestra al copiar el texto. |
+| className | string | no | '' | Clase CSS para personalizar el contenedor del componente. |
 
 ### Storybook
 
@@ -26,30 +26,21 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Básico
+- Básico
 
 ```tsx copy
 <Copy text="Texto a copiar">Copia este texto</Copy>
 ```
 
--   Copy con notificación personalizada
+- Copy con notificación personalizada
 
 ```tsx copy
-<Copy
-    text="Texto a copiar"
-    notification={{ message: "Texto copiado", type: "success" }}
->
-    Copia este texto
-</Copy>
+<Copy text="Texto a copiar" notification={{ message: "Texto copiado", type: "success" }}>Copia este texto</Copy>
 ```
 
--   Copy con función personalizada
+- Copy con función personalizada
 
 ```tsx copy
-<Copy
-    text="Texto a copiar"
-    onClickForCopy={(text) => console.log("Texto copiado:", text)}
->
-    Copia este texto
-</Copy>
+<Copy text="Texto a copiar" onClickForCopy={(text) => console.log("Texto copiado:", text)}>Copia este texto</Copy>
 ```
+

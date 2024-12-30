@@ -12,16 +12,16 @@ import { InputGoogleMaps } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro                   | Tipo                                                     | Requerido | Default                               | Descripcion                                                                                     |
-| --------------------------- | -------------------------------------------------------- | --------- | ------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| mapContainerStyle           | object                                                   | no        | \{ width: '100%', height: '100dvh' \} | Estilo CSS para el contenedor del mapa.                                                         |
-| markers                     | MarkerProps[]                                            | no        | undefined                             | Lista de marcadores que se mostrarán en el mapa.                                                |
-| useLoadCenterWithMarker     | boolean                                                  | no        | true                                  | Determina si el mapa debe centrarse automáticamente basándose en los marcadores proporcionados. |
-| useLoadFitBoundsWithMarker  | boolean                                                  | no        | true                                  | Determina si el mapa debe ajustar los límites para mostrar todos los marcadores.                |
-| useLoadDirectionsWithMarker | boolean                                                  | no        | false                                 | Determina si se debe renderizar una ruta (direcciones) entre los marcadores.                    |
-| showDirectionsWaypoints     | boolean                                                  | no        | false                                 | Muestra los puntos intermedios (waypoints) en la ruta cuando se renderiza la dirección.         |
-| center                      | \{ lat: number; lng: number; \}                          | no        | \{ lat: 0, lng: 0 \}                  | Coordenadas para centrar el mapa inicialmente.                                                  |
-| onBoundsChanged             | (bounds: google.maps.LatLngBounds \| undefined) =\> void | no        | undefined                             | Función que se ejecuta cuando los límites del mapa cambian.                                     |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| mapContainerStyle | object | no | \{ width: '100%', height: '100dvh' \} | Estilo CSS para el contenedor del mapa. |
+| markers | MarkerProps[] | no | undefined | Lista de marcadores que se mostrarán en el mapa. |
+| useLoadCenterWithMarker | boolean | no | true | Determina si el mapa debe centrarse automáticamente basándose en los marcadores proporcionados. |
+| useLoadFitBoundsWithMarker | boolean | no | true | Determina si el mapa debe ajustar los límites para mostrar todos los marcadores. |
+| useLoadDirectionsWithMarker | boolean | no | false | Determina si se debe renderizar una ruta (direcciones) entre los marcadores. |
+| showDirectionsWaypoints | boolean | no | false | Muestra los puntos intermedios (waypoints) en la ruta cuando se renderiza la dirección. |
+| center | \{ lat: number; lng: number; \} | no | \{ lat: 0, lng: 0 \} | Coordenadas para centrar el mapa inicialmente. |
+| onBoundsChanged | (bounds: google.maps.LatLngBounds \| undefined) =\> void | no | undefined | Función que se ejecuta cuando los límites del mapa cambian. |
 
 ### Storybook
 
@@ -29,29 +29,34 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Mapa básico con marcadores
+- Mapa básico con marcadores
 
 ```tsx copy
+
 <InputGoogleMaps
     markers={[
-        { position: { lat: 40.7128, lng: -74.006 } }, // Nueva York
+        { position: { lat: 40.7128, lng: -74.0060 } }, // Nueva York
         { position: { lat: 34.0522, lng: -118.2437 } }, // Los Ángeles
     ]}
 />
+
 ```
 
--   Mapa centrado en un punto específico
+- Mapa centrado en un punto específico
 
 ```tsx copy
+
 <InputGoogleMaps
     center={{ lat: 51.5074, lng: -0.1278 }} // Londres
     useLoadCenterWithMarker={false}
 />
+
 ```
 
--   Mapa con ajuste de límites automático
+- Mapa con ajuste de límites automático
 
 ```tsx copy
+
 <InputGoogleMaps
     markers={[
         { position: { lat: -33.8688, lng: 151.2093 } }, // Sídney
@@ -59,27 +64,33 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
     ]}
     useLoadFitBoundsWithMarker={true}
 />
+
 ```
 
--   Mapa con ruta entre marcadores
+- Mapa con ruta entre marcadores
 
 ```tsx copy
+
 <InputGoogleMaps
     markers={[
-        { position: { lat: 40.7128, lng: -74.006 } }, // Nueva York
+        { position: { lat: 40.7128, lng: -74.0060 } }, // Nueva York
         { position: { lat: 41.8781, lng: -87.6298 } }, // Chicago
         { position: { lat: 34.0522, lng: -118.2437 } }, // Los Ángeles
     ]}
     useLoadDirectionsWithMarker={true}
     showDirectionsWaypoints={true}
 />
+
 ```
 
--   Mapa con estilos personalizados
+- Mapa con estilos personalizados
 
 ```tsx copy
+
 <InputGoogleMaps
     markers={[{ position: { lat: 48.8566, lng: 2.3522 } }]} // París
-    mapContainerStyle={{ width: "600px", height: "400px" }}
+    mapContainerStyle={{ width: '600px', height: '400px' }}
 />
+
 ```
+

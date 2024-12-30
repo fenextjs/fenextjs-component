@@ -12,25 +12,25 @@ import { ButtonMenu } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro             | Tipo    | Requerido | Default                    | Descripcion                                                                                                                   |
-| --------------------- | ------- | --------- | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| loader                | boolean | no        | false                      | Indica si el componente está en estado de carga, mostrando un indicador de carga (spinner) y deshabilitando su funcionalidad. |
-| disabled              | boolean | no        | false                      | Desactiva el botón del menú.                                                                                                  |
-| defaultActive         | boolean | no        | true                       | Determina si el menú está activo por defecto o no.                                                                            |
-| target                | string  | no        | 'fenext-btn-menu-checkbox' | ID objetivo del checkbox asociado al botón del menú.                                                                          |
-| className             | string  | no        | ''                         | Clase CSS para personalizar el contenedor del menú.                                                                           |
-| classNameIcon         | string  | no        | ''                         | Clase CSS para personalizar el icono del menú.                                                                                |
-| classNameIconBarClose | string  | no        | ''                         | Clase CSS para personalizar la barra de cierre del icono.                                                                     |
-| classNameContent      | string  | no        | ''                         | Clase CSS para personalizar el contenido del menú desplegable.                                                                |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| loader | boolean | no | false | Indica si el componente está en estado de carga, mostrando un indicador de carga (spinner) y deshabilitando su funcionalidad. |
+| disabled | boolean | no | false | Desactiva el botón del menú. |
+| defaultActive | boolean | no | true | Determina si el menú está activo por defecto o no. |
+| target | string | no | 'fenext-btn-menu-checkbox' | ID objetivo del checkbox asociado al botón del menú. |
+| className | string | no | '' | Clase CSS para personalizar el contenedor del menú. |
+| classNameIcon | string | no | '' | Clase CSS para personalizar el icono del menú. |
+| classNameIconBarClose | string | no | '' | Clase CSS para personalizar la barra de cierre del icono. |
+| classNameContent | string | no | '' | Clase CSS para personalizar el contenido del menú desplegable. |
 
 ### Funcionalidad adicional
 
 Este componente incluye un comportamiento reactivo que ajusta la visualización del menú en función del tamaño de la ventana del navegador.
 
-| Propiedad     | Uso                                                            | Descripción                                                                                       |
-| ------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| defaultActive | Determina si el menú se muestra activo por defecto.            | El menú se mostrará activado si el ancho de la ventana es mayor a 575px al cargar la página.      |
-| loader        | Muestra un indicador de carga en lugar del contenido del menú. | Cuando 'loader' está en 'true', el componente muestra un spinner en lugar del contenido del menú. |
+| Propiedad | Uso | Descripción |
+| --- | --- | --- |
+| defaultActive | Determina si el menú se muestra activo por defecto. | El menú se mostrará activado si el ancho de la ventana es mayor a 575px al cargar la página. |
+| loader | Muestra un indicador de carga en lugar del contenido del menú. | Cuando 'loader' está en 'true', el componente muestra un spinner en lugar del contenido del menú. |
 
 ### Storybook
 
@@ -38,32 +38,27 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Uso básico
+- Uso básico
 
 ```tsx copy
 <ButtonMenu>Contenido del menú</ButtonMenu>
 ```
 
--   Menú con estado de carga
+- Menú con estado de carga
 
 ```tsx copy
 <ButtonMenu loader={true} />
 ```
 
--   Menú deshabilitado
+- Menú deshabilitado
 
 ```tsx copy
 <ButtonMenu disabled={true} />
 ```
 
--   Menú con clases personalizadas
+- Menú con clases personalizadas
 
 ```tsx copy
-<ButtonMenu
-    className="mi-menu"
-    classNameIcon="mi-icono"
-    classNameContent="mi-contenido"
->
-    Contenido
-</ButtonMenu>
+<ButtonMenu className="mi-menu" classNameIcon="mi-icono" classNameContent="mi-contenido">Contenido</ButtonMenu>
 ```
+
