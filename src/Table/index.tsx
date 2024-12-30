@@ -105,7 +105,7 @@ export type TableHeader<T> = {
      */
     columnOptions?: {
         orderBy?: boolean;
-        showHidden?: boolean;
+        // showHidden?: boolean;
     };
     /**
      * The label to display in the header column.
@@ -488,71 +488,85 @@ export const Table = <T,>({
                                         data-col-id={h?.id}
                                         data-col-text={h?.th}
                                     >
-                                        <DropDown header={<>{_t(h.th)}</>}>
-                                            {h?.columnOptions?.orderBy ? (
-                                                <>
-                                                    <div
-                                                        onClick={() => {
-                                                            onOrderBy?.({
-                                                                id: h.id,
-                                                                order: "ASC",
-                                                            });
-                                                        }}
-                                                        className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
-                                                    >
-                                                        {_t("Order ASC")}
-                                                    </div>
-                                                    <div
-                                                        onClick={() => {
-                                                            onOrderBy?.({
-                                                                id: h.id,
-                                                                order: "DESC",
-                                                            });
-                                                        }}
-                                                        className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
-                                                    >
-                                                        {_t("Order DESC")}
-                                                    </div>
-                                                </>
-                                            ) : (
-                                                <></>
-                                            )}
-                                            {h?.columnOptions?.showHidden ? (
-                                                <>
-                                                    <InputRadio
-                                                        name={`${h.th}-${i}-show-hidden`}
-                                                        _t={_t}
-                                                        items={[
-                                                            {
-                                                                id: "show",
-                                                                label: "Show",
-                                                            },
-                                                            {
-                                                                id: "hidden",
-                                                                label: "Hidden",
-                                                            },
-                                                        ]}
-                                                        defaultValue={{
-                                                            id: "show",
-                                                            label: "Show",
-                                                        }}
-                                                        labelPosition="right"
-                                                        onChange={(e) => {
-                                                            onShowHidden?.({
-                                                                id: h.id,
-                                                                showHidden:
-                                                                    e?.id ==
-                                                                    "show"
-                                                                        ? "SHOW"
-                                                                        : "HIDDEN",
-                                                            });
-                                                        }}
-                                                    />
-                                                </>
-                                            ) : (
-                                                <></>
-                                            )}
-                                        </DropDown>
+                                        {
+                                            (
+
+                                                Object.values(h?.columnOptions ?? {}).some(e => e == true)
+                                                ?
+                                                <DropDown header={<>{_t(h.th)}</>}
+                                                
+                                                    classNameBody={`
+                                                      fenext-table-content-table-th-dropdown-body  
+                                                    `}
+                                                >
+                                                    {h?.columnOptions?.orderBy ? (
+                                                        <>
+                                                            <div
+                                                                onClick={() => {
+                                                                    onOrderBy?.({
+                                                                        id: h.id,
+                                                                        order: "ASC",
+                                                                    });
+                                                                }}
+                                                                className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
+                                                            >
+                                                                {_t("Order ASC")}
+                                                            </div>
+                                                            <div
+                                                                onClick={() => {
+                                                                    onOrderBy?.({
+                                                                        id: h.id,
+                                                                        order: "DESC",
+                                                                    });
+                                                                }}
+                                                                className={`fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by`}
+                                                            >
+                                                                {_t("Order DESC")}
+                                                            </div>
+                                                        </>
+                                                    ) : (
+                                                        <></>
+                                                    )}
+                                                    {/* {h?.columnOptions?.showHidden ? (
+                                                        <>
+                                                            <InputRadio
+                                                                name={`${h.th}-${i}-show-hidden`}
+                                                                _t={_t}
+                                                                items={[
+                                                                    {
+                                                                        id: "show",
+                                                                        label: "Show",
+                                                                    },
+                                                                    {
+                                                                        id: "hidden",
+                                                                        label: "Hidden",
+                                                                    },
+                                                                ]}
+                                                                defaultValue={{
+                                                                    id: "show",
+                                                                    label: "Show",
+                                                                }}
+                                                                labelPosition="right"
+                                                                onChange={(e) => {
+                                                                    onShowHidden?.({
+                                                                        id: h.id,
+                                                                        showHidden:
+                                                                            e?.id ==
+                                                                            "show"
+                                                                                ? "SHOW"
+                                                                                : "HIDDEN",
+                                                                    });
+                                                                }}
+                                                            />
+                                                        </>
+                                                    ) : (
+                                                        <></>
+                                                    )} */}
+                                                </DropDown>
+                                                :
+                                                <>{_t(h.th)}</>
+                                            )
+                                        }
                                     </th>
                                 ))}
                             </tr>

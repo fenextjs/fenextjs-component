@@ -9,7 +9,6 @@
     @include generateColor("green", #198754);
     @include generateColor("teal", #20c997);
     @include generateColor("cyan", #0dcaf0);
-    @include generateColor("white", #fff);
     @include generateColor("primary", #0d6efd);
     @include generateColor("secondary", #6c757d);
     @include generateColor("success", #198754);
@@ -33,6 +32,7 @@
     @include generateColor("dark", #212121);
     @include generateColor("gray", #c9c9c9 );
     @include generateColor("disabled", #9c9c9c );
+    @include generateColor("white", #fff);
 }
 @mixin styleTheme_dark {
     @include generateColor("blue", #9eb9ff, "dark");
@@ -45,7 +45,6 @@
     @include generateColor("green", #7cd790, "dark");
     @include generateColor("teal", #6bcebb, "dark");
     @include generateColor("cyan", #6acffb, "dark");
-    @include generateColor("white", #242424, "dark");
     @include generateColor("primary", #9eb9ff, "dark");
     @include generateColor("secondary", #f2f2f2, "dark");
     @include generateColor("success", #7cd790, "dark");
@@ -68,6 +67,7 @@
     @include generateColor("dark", #FAFAFA, "dark");
     @include generateColor("gray", #c9c9c9 , "dark");
     @include generateColor("disabled", #9c9c9c, "dark");
+    @include generateColor("white", #242424, "dark");
 
 }
 

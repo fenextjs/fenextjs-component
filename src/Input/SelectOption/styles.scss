@@ -9,6 +9,8 @@
     position: relative;
     color: var(--fenext-color-dark);
     background-color: var(--fenext-color-light);
+    background-color: var(--fenext-color-white);
+    // box-shadow: 0 0 2px 0 var(--fenext-color-gray);
     width: 100%;
     display: flex;
     align-items: center;
@@ -86,7 +88,7 @@
         color: var(--fenext-color-light);
         background: var(--fenext-color-primary);
         z-index: 2;
-        --box-shadow-color: var(--fenext-color-light);
+        --box-shadow-color: var(--fenext-color-white);
         box-shadow:
             0 0 0 1rem var(--box-shadow-color),
             5rem 0 0 1rem var(--box-shadow-color),

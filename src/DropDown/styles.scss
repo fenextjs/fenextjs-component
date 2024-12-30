@@ -37,7 +37,8 @@
         font-size: 1rem;
         font-weight: 400;
         line-height: 1;
-        background-color: var(--fenext-color-light);
+        background-color: var(--fenext-color-white);
+        box-shadow: 0 0 2px 0 var(--fenext-color-gray);
         color: var(--fenext-color-dark);
         border-radius: 0.75rem;
         transition: opacity var(--time);

@@ -10,7 +10,7 @@
         max-height: calc(100dvh - 1rem);
         overflow: auto;
         background: var(--fenext-color-white);
-        box-shadow: 0 0 2px var(--fenext-color-dark-extra-light);
+        box-shadow: 0 0 2px 1px var(--fenext-color-light);
         border-radius: 1rem;
         padding: 1rem;
         z-index: var(--fenext-z-index-modal);

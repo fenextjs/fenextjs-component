@@ -43,7 +43,7 @@ export const Notification = ({
     return (
         <>
             <div
-                className={`fenext-notification fenext-notification-${type.toLowerCase()} ${className} `}
+                className={`fenext-notification fenext-notification-${type.toUpperCase()} ${className} `}
             >
                 {_t(children)}
                 <div className="fenext-notification-close" onClick={reset}>

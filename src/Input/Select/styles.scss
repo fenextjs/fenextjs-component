@@ -229,6 +229,8 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
         transform: scaleY(var(--list-scaleY, 0));
         transform-origin: top center;
         overflow: auto;
+        background-color: var(--fenext-color-white);
+        box-shadow: 0 0 2px 0 var(--fenext-color-gray);
         &-type {
             &-select {
                 top: 0;

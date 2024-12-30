@@ -3,6 +3,7 @@ import { SvgTrash } from "fenextjs-svg/cjs/Trash";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 import { Img, ImgProps } from "../../Img";
+import { InputCheckbox } from "../Checkbox";
 /**
  * Interface that defines CSS class properties for a select input component.
  */
@@ -147,6 +148,11 @@ export const InputSelectOption = <T = any,>({
                 selected={selected}
                 value={text}
             >
+                {
+                    type == "multiple"
+                    &&
+                    <InputCheckbox classNameLabel="fenext-select-option-checkbox" value={true}/>
+                }
                 {img ? (
                     <>
                         <img

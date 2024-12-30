@@ -41,12 +41,12 @@
         padding: 1rem;
         border-radius: 1rem;
         align-items: flex-start;
-        background: var(--fenext-color-white-dark);
+        background: var(--fenext-color-light);
     }
     &-img {
         --border-color-capa: transparent;
         position: relative;
-        border: 1px solid var(--fenext-color-white-extra-dark);
+        border: 1px solid var(--fenext-color-gray);
         border-radius: 1rem;
         aspect-ratio: 1/1;
         cursor: pointer;
@@ -69,7 +69,7 @@
             z-index: 1;
         }
         &-active {
-            --border-color-capa: var(--fenext-color-teal);
+            --border-color-capa: var(--fenext-color-primary);
             border-color: transparent;
         }
         &-capa {
@@ -114,13 +114,13 @@
         }
         &-delete {
             &:hover {
-                background: var(--fenext-color-red);
+                background: var(--fenext-color-danger);
                 color: var(--fenext-color-white);
             }
         }
         &-download {
             &:hover {
-                background: var(--fenext-color-teal);
+                background: var(--fenext-color-success);
                 color: var(--fenext-color-white);
             }
         }

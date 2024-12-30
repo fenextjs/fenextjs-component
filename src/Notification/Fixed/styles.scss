@@ -5,28 +5,27 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1;
-    color: var(--fenext-color-neto-dark);
-    background: var(--fenext-color-white-dark);
     position: sticky;
     top: 0;
-    &-ok {
-        background: var(--fenext-color-success);
-        color: var(--fenext-color-white);
+    --fenext-notification-color: var(--fenext-color-dark);
+    --fenext-notification-background: var(--fenext-color-light);
+    color: var(--fenext-notification-color);
+    background: var(--fenext-notification-background);
+    &-OK {
+        --fenext-notification-color: var(--fenext-color-light);
+        --fenext-notification-background: var(--fenext-color-success);
     }
-    &-error {
-        background: var(--fenext-color-danger);
-        color: var(--fenext-color-white);
+    &-ERROR {
+        --fenext-notification-color: var(--fenext-color-light);
+        --fenext-notification-background: var(--fenext-color-danger)
     }
-    &-none {
-        color: var(--fenext-color-dark);
-        background: transparent;
+    &-NORMAL {
+        --fenext-notification-color: var(--fenext-color-dark);
+        --fenext-notification-background: var(--fenext-color-light)
     }
-    &-normal {
-        color: var(--fenext-color-dark);
-        background: var(--fenext-color-white-dark);
-    }
-    &-warning {
-        background: var(--fenext-color-warning);
+    &-WARNING {
+        --fenext-notification-color: var(--fenext-color-theme-light-dark);
+        --fenext-notification-background: var(--fenext-color-warning)
     }
     &-close {
         position: absolute;

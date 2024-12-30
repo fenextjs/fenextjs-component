@@ -80,898 +80,520 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
 }
 
 :root {
-  --fenext-color-blue-extra-dark: rgb(1.1352459016, 56.1946721311, 137.3647540984);
-  --fenext-color-blue-dark: rgb(1.762295082, 87.2336065574, 213.237704918);
-  --fenext-color-blue-neto-light: #0d6efd;
-  --fenext-color-blue-light: rgb(63.5819672131, 140.3073770492, 253.4180327869);
-  --fenext-color-blue-extra-light: rgb(139.4549180328, 185.768442623, 254.0450819672);
+  --fenext-color-blue-dark: red;
+  --fenext-color-blue-light: red;
   --fenext-color-blue: #0d6efd;
   --fenext-color-theme-light-blue: #0d6efd;
-  --fenext-color-indigo-extra-dark: rgb(51.2678571429, 6.7321428571, 123.7678571429);
-  --fenext-color-indigo-dark: rgb(81.3214285714, 10.6785714286, 196.3214285714);
-  --fenext-color-indigo-neto-light: #6610f2;
-  --fenext-color-indigo-light: rgb(132.9642857143, 64.369047619, 244.630952381);
-  --fenext-color-indigo-extra-light: rgb(179.4107142857, 136.9226190476, 248.5773809524);
+  --fenext-color-indigo-dark: red;
+  --fenext-color-indigo-light: red;
   --fenext-color-indigo: #6610f2;
   --fenext-color-theme-light-indigo: #6610f2;
-  --fenext-color-purple-extra-dark: rgb(56.0577689243, 32.4820717131, 99.0179282869);
-  --fenext-color-purple-dark: rgb(88.6693227092, 51.3784860558, 156.6215139442);
-  --fenext-color-purple-neto-light: #6f42c1;
-  --fenext-color-purple-light: rgb(140.2589641434, 104.4023904382, 205.5976095618);
-  --fenext-color-purple-extra-light: rgb(184.1474103586, 162.0059760956, 224.4940239044);
+  --fenext-color-purple-dark: red;
+  --fenext-color-purple-light: red;
   --fenext-color-purple: #6f42c1;
   --fenext-color-theme-light-purple: #6f42c1;
-  --fenext-color-pink-extra-dark: rgb(114.4897959184, 23.0102040816, 68.4693877551);
-  --fenext-color-pink-dark: rgb(178.187755102, 35.812244898, 106.5632653061);
-  --fenext-color-pink-neto-light: #d63384;
-  --fenext-color-pink-light: rgb(222.5346938776, 93.4653061224, 157.6040816327);
-  --fenext-color-pink-extra-light: rgb(235.3367346939, 157.1632653061, 196.0102040816);
+  --fenext-color-pink-dark: red;
+  --fenext-color-pink-light: red;
   --fenext-color-pink: #d63384;
   --fenext-color-theme-light-pink: #d63384;
-  --fenext-color-red-extra-dark: rgb(124.0126582278, 21.4873417722, 31.3101265823);
-  --fenext-color-red-dark: rgb(189.2151898734, 32.7848101266, 47.7721518987);
-  --fenext-color-red-neto-light: #dc3545;
-  --fenext-color-red-light: rgb(227.5316455696, 96.4683544304, 109.0253164557);
-  --fenext-color-red-extra-light: rgb(238.8291139241, 161.6708860759, 169.0632911392);
+  --fenext-color-red-dark: red;
+  --fenext-color-red-light: red;
   --fenext-color-red: #dc3545;
   --fenext-color-theme-light-red: #dc3545;
-  --fenext-color-orange-extra-dark: rgb(144.2721518987, 66.3037974684, 1.2278481013);
-  --fenext-color-orange-dark: rgb(220.1265822785, 101.164556962, 1.8734177215);
-  --fenext-color-orange-neto-light: #fd7e14;
-  --fenext-color-orange-light: rgb(253.4303797468, 153.7594936709, 70.5696202532);
-  --fenext-color-orange-extra-light: rgb(254.0759493671, 195.3987341772, 146.4240506329);
+  --fenext-color-orange-dark: red;
+  --fenext-color-orange-light: red;
   --fenext-color-orange: #fd7e14;
   --fenext-color-theme-light-orange: #fd7e14;
-  --fenext-color-yellow-extra-dark: rgb(134.5, 100.875, 0);
-  --fenext-color-yellow-dark: rgb(211, 158.25, 0);
-  --fenext-color-yellow-neto-light: #ffc107;
-  --fenext-color-yellow-light: rgb(255, 205.75, 58);
-  --fenext-color-yellow-extra-light: rgb(255, 224.875, 134.5);
+  --fenext-color-yellow-dark: red;
+  --fenext-color-yellow-light: red;
   --fenext-color-yellow: #ffc107;
   --fenext-color-theme-light-yellow: #ffc107;
-  --fenext-color-green-extra-dark: rgb(5.078125, 27.421875, 17.0625);
-  --fenext-color-green-dark: rgb(17.03125, 91.96875, 57.225);
-  --fenext-color-green-neto-light: #198754;
-  --fenext-color-green-light: rgb(32.96875, 178.03125, 110.775);
-  --fenext-color-green-extra-light: rgb(67.265625, 220.234375, 149.3125);
+  --fenext-color-green-dark: red;
+  --fenext-color-green-light: red;
   --fenext-color-green: #198754;
   --fenext-color-theme-light-green: #198754;
-  --fenext-color-teal-extra-dark: rgb(14.4892703863, 91.0107296137, 68.3712446352);
-  --fenext-color-teal-dark: rgb(24.9957081545, 157.0042918455, 117.9484978541);
-  --fenext-color-teal-neto-light: #20c997;
-  --fenext-color-teal-light: rgb(60.0386266094, 223.9613733906, 175.4635193133);
-  --fenext-color-teal-extra-light: rgb(126.0321888412, 234.4678111588, 202.3862660944);
+  --fenext-color-teal-dark: red;
+  --fenext-color-teal-light: red;
   --fenext-color-teal: #20c997;
   --fenext-color-theme-light-teal: #20c997;
-  --fenext-color-cyan-extra-dark: rgb(6.4486166008, 100.2015810277, 119.0513833992);
-  --fenext-color-cyan-dark: rgb(10.3794466403, 161.2806324111, 191.6205533597);
-  --fenext-color-cyan-neto-light: #0dcaf0;
-  --fenext-color-cyan-light: rgb(59.5849802372, 213.4743083004, 244.4150197628);
-  --fenext-color-cyan-extra-light: rgb(132.1541501976, 228.895256917, 248.3458498024);
+  --fenext-color-cyan-dark: red;
+  --fenext-color-cyan-light: red;
   --fenext-color-cyan: #0dcaf0;
   --fenext-color-theme-light-cyan: #0dcaf0;
-  --fenext-color-white-extra-dark: rgb(191.25, 191.25, 191.25);
-  --fenext-color-white-dark: rgb(229.5, 229.5, 229.5);
-  --fenext-color-white-neto-light: #fff;
-  --fenext-color-white-light: hsl(0, 0%, 110%);
-  --fenext-color-white-extra-light: hsl(0, 0%, 125%);
-  --fenext-color-white: #fff;
-  --fenext-color-theme-light-white: #fff;
-  --fenext-color-primary-extra-dark: rgb(1.1352459016, 56.1946721311, 137.3647540984);
-  --fenext-color-primary-dark: rgb(1.762295082, 87.2336065574, 213.237704918);
-  --fenext-color-primary-neto-light: #0d6efd;
-  --fenext-color-primary-light: rgb(63.5819672131, 140.3073770492, 253.4180327869);
-  --fenext-color-primary-extra-light: rgb(139.4549180328, 185.768442623, 254.0450819672);
+  --fenext-color-primary-dark: red;
+  --fenext-color-primary-light: red;
   --fenext-color-primary: #0d6efd;
   --fenext-color-theme-light-primary: #0d6efd;
-  --fenext-color-secondary-extra-dark: rgb(48.9012875536, 52.9763948498, 56.5987124464);
-  --fenext-color-secondary-dark: rgb(84.3605150215, 91.3905579399, 97.6394849785);
-  --fenext-color-secondary-neto-light: #6c757d;
-  --fenext-color-secondary-light: rgb(133.7553648069, 142.4849785408, 150.2446351931);
-  --fenext-color-secondary-extra-light: rgb(174.7961373391, 180.5708154506, 185.7038626609);
+  --fenext-color-secondary-dark: red;
+  --fenext-color-secondary-light: red;
   --fenext-color-secondary: #6c757d;
   --fenext-color-theme-light-secondary: #6c757d;
-  --fenext-color-success-extra-dark: rgb(5.078125, 27.421875, 17.0625);
-  --fenext-color-success-dark: rgb(17.03125, 91.96875, 57.225);
-  --fenext-color-success-neto-light: #198754;
-  --fenext-color-success-light: rgb(32.96875, 178.03125, 110.775);
-  --fenext-color-success-extra-light: rgb(67.265625, 220.234375, 149.3125);
+  --fenext-color-success-dark: red;
+  --fenext-color-success-light: red;
   --fenext-color-success: #198754;
   --fenext-color-theme-light-success: #198754;
-  --fenext-color-info-extra-dark: rgb(6.4486166008, 100.2015810277, 119.0513833992);
-  --fenext-color-info-dark: rgb(10.3794466403, 161.2806324111, 191.6205533597);
-  --fenext-color-info-neto-light: #0dcaf0;
-  --fenext-color-info-light: rgb(59.5849802372, 213.4743083004, 244.4150197628);
-  --fenext-color-info-extra-light: rgb(132.1541501976, 228.895256917, 248.3458498024);
+  --fenext-color-info-dark: red;
+  --fenext-color-info-light: red;
   --fenext-color-info: #0dcaf0;
   --fenext-color-theme-light-info: #0dcaf0;
-  --fenext-color-warning-extra-dark: rgb(134.5, 100.875, 0);
-  --fenext-color-warning-dark: rgb(211, 158.25, 0);
-  --fenext-color-warning-neto-light: #ffc107;
-  --fenext-color-warning-light: rgb(255, 205.75, 58);
-  --fenext-color-warning-extra-light: rgb(255, 224.875, 134.5);
+  --fenext-color-warning-dark: red;
+  --fenext-color-warning-light: red;
   --fenext-color-warning: #ffc107;
   --fenext-color-theme-light-warning: #ffc107;
-  --fenext-color-danger-extra-dark: rgb(124.0126582278, 21.4873417722, 31.3101265823);
-  --fenext-color-danger-dark: rgb(189.2151898734, 32.7848101266, 47.7721518987);
-  --fenext-color-danger-neto-light: #dc3545;
-  --fenext-color-danger-light: rgb(227.5316455696, 96.4683544304, 109.0253164557);
-  --fenext-color-danger-extra-light: rgb(238.8291139241, 161.6708860759, 169.0632911392);
+  --fenext-color-danger-dark: red;
+  --fenext-color-danger-light: red;
   --fenext-color-danger: #dc3545;
   --fenext-color-theme-light-danger: #dc3545;
-  --fenext-color-light-extra-dark: rgb(173.625, 185.25, 196.875);
-  --fenext-color-light-dark: rgb(218.25, 223.5, 228.75);
-  --fenext-color-light-neto-light: #f8f9fa;
-  --fenext-color-light-light: hsl(210, 16.6666666667%, 107.6470588235%);
-  --fenext-color-light-extra-light: hsl(210, 16.6666666667%, 122.6470588235%);
+  --fenext-color-light-dark: red;
+  --fenext-color-light-light: red;
   --fenext-color-light: #f8f9fa;
   --fenext-color-theme-light-light: #f8f9fa;
-  --fenext-color-dark-extra-dark: hsl(210, 10.8108108108%, -10.4901960784%);
-  --fenext-color-dark-dark: rgb(10.2567567568, 11.5, 12.7432432432);
-  --fenext-color-dark-neto-light: #212529;
-  --fenext-color-dark-light: rgb(55.7432432432, 62.5, 69.2567567568);
-  --fenext-color-dark-extra-light: rgb(89.8581081081, 100.75, 111.6418918919);
+  --fenext-color-dark-dark: red;
+  --fenext-color-dark-light: red;
   --fenext-color-dark: #212529;
   --fenext-color-theme-light-dark: #212529;
-  --fenext-color-white-smoke-extra-dark: hsl(0, 0%, 71%);
-  --fenext-color-white-smoke-dark: hsl(0, 0%, 86%);
-  --fenext-color-white-smoke-neto-light: hsl(0, 0%, 96%);
-  --fenext-color-white-smoke-light: hsl(0, 0%, 106%);
-  --fenext-color-white-smoke-extra-light: hsl(0, 0%, 121%);
+  --fenext-color-white-smoke-dark: red;
+  --fenext-color-white-smoke-light: red;
   --fenext-color-white-smoke: hsl(0, 0%, 96%);
   --fenext-color-theme-light-white-smoke: hsl(0, 0%, 96%);
-  --fenext-color-neto-dark-extra-dark: hsl(210, 10.8108108108%, -10.4901960784%);
-  --fenext-color-neto-dark-dark: rgb(10.2567567568, 11.5, 12.7432432432);
-  --fenext-color-neto-dark-neto-light: #212529;
-  --fenext-color-neto-dark-light: rgb(55.7432432432, 62.5, 69.2567567568);
-  --fenext-color-neto-dark-extra-light: rgb(89.8581081081, 100.75, 111.6418918919);
+  --fenext-color-neto-dark-dark: red;
+  --fenext-color-neto-dark-light: red;
   --fenext-color-neto-dark: #212529;
   --fenext-color-theme-light-neto-dark: #212529;
-  --fenext-color-loader-background-extra-dark: rgb(178.25, 178.25, 178.25);
-  --fenext-color-loader-background-dark: rgb(216.5, 216.5, 216.5);
-  --fenext-color-loader-background-neto-light: #f2f2f2;
-  --fenext-color-loader-background-light: hsl(0, 0%, 104.9019607843%);
-  --fenext-color-loader-background-extra-light: hsl(0, 0%, 119.9019607843%);
+  --fenext-color-loader-background-dark: red;
+  --fenext-color-loader-background-light: red;
   --fenext-color-loader-background: #f2f2f2;
   --fenext-color-theme-light-loader-background: #f2f2f2;
-  --fenext-color-loader-foreground-extra-dark: rgb(92.25, 92.25, 92.25);
-  --fenext-color-loader-foreground-dark: rgb(130.5, 130.5, 130.5);
-  --fenext-color-loader-foreground-neto-light: #9c9c9c;
-  --fenext-color-loader-foreground-light: rgb(181.5, 181.5, 181.5);
-  --fenext-color-loader-foreground-extra-light: rgb(219.75, 219.75, 219.75);
+  --fenext-color-loader-foreground-dark: red;
+  --fenext-color-loader-foreground-light: red;
   --fenext-color-loader-foreground: #9c9c9c;
   --fenext-color-theme-light-loader-foreground: #9c9c9c;
-  --fenext-color-primary-extra-dark: rgb(13.6215139442, 69.1553784861, 117.8784860558);
-  --fenext-color-primary-dark: rgb(21.5458167331, 109.3864541833, 186.4541832669);
-  --fenext-color-primary-neto-light: #1E88E5;
-  --fenext-color-primary-light: rgb(75.7171314741, 160.1792828685, 234.2828685259);
-  --fenext-color-primary-extra-light: rgb(144.2928286853, 196.4482071713, 242.2071713147);
+  --fenext-color-primary-dark: red;
+  --fenext-color-primary-light: red;
   --fenext-color-primary: #1E88E5;
   --fenext-color-theme-light-primary: #1E88E5;
-  --fenext-color-secondary-extra-dark: rgb(123.4311740891, 12.0688259109, 49.9210526316);
-  --fenext-color-secondary-dark: rgb(193.1174089069, 18.8825910931, 78.1052631579);
-  --fenext-color-secondary-neto-light: #E91E63;
-  --fenext-color-secondary-light: rgb(237.5425101215, 76.4574898785, 131.2105263158);
-  --fenext-color-secondary-extra-light: rgb(244.3562753036, 146.1437246964, 179.5263157895);
+  --fenext-color-secondary-dark: red;
+  --fenext-color-secondary-light: red;
   --fenext-color-secondary: #E91E63;
   --fenext-color-theme-light-secondary: #E91E63;
-  --fenext-color-success-extra-dark: rgb(29.3678414097, 70.1321585903, 31.1211453744);
-  --fenext-color-success-dark: rgb(51.9471365639, 124.0528634361, 55.0484581498);
-  --fenext-color-success-neto-light: #43A047;
-  --fenext-color-success-light: rgb(91.4757709251, 186.5242290749, 95.563876652);
-  --fenext-color-success-extra-light: rgb(145.3964757709, 209.1035242291, 148.1365638767);
+  --fenext-color-success-dark: red;
+  --fenext-color-success-light: red;
   --fenext-color-success: #43A047;
   --fenext-color-theme-light-success: #43A047;
-  --fenext-color-warning-extra-dark: rgb(176.75, 144.375, 1.75);
-  --fenext-color-warning-dark: rgb(252.5, 206.25, 2.5);
-  --fenext-color-warning-neto-light: #FDD835;
-  --fenext-color-warning-light: rgb(253.5, 225.75, 103.5);
-  --fenext-color-warning-extra-light: rgb(254.25, 240.375, 179.25);
+  --fenext-color-warning-dark: red;
+  --fenext-color-warning-light: red;
   --fenext-color-warning: #FDD835;
   --fenext-color-theme-light-warning: #FDD835;
-  --fenext-color-danger-extra-dark: rgb(136.8815789474, 20.3289473684, 17.6184210526);
-  --fenext-color-danger-dark: rgb(204.6578947368, 30.3947368421, 26.3421052632);
-  --fenext-color-danger-neto-light: #E53935;
-  --fenext-color-danger-light: rgb(234.8157894737, 101.2894736842, 98.1842105263);
-  --fenext-color-danger-extra-light: rgb(243.5394736842, 167.7236842105, 165.9605263158);
+  --fenext-color-danger-dark: red;
+  --fenext-color-danger-light: red;
   --fenext-color-danger: #E53935;
   --fenext-color-theme-light-danger: #E53935;
-  --fenext-color-light-extra-dark: rgb(181.25, 181.25, 181.25);
-  --fenext-color-light-dark: rgb(219.5, 219.5, 219.5);
-  --fenext-color-light-neto-light: #F5F5F5;
-  --fenext-color-light-light: hsl(0, 0%, 106.0784313725%);
-  --fenext-color-light-extra-light: hsl(0, 0%, 121.0784313725%);
+  --fenext-color-light-dark: red;
+  --fenext-color-light-light: red;
   --fenext-color-light: #F5F5F5;
   --fenext-color-theme-light-light: #F5F5F5;
-  --fenext-color-dark-extra-dark: hsl(0, 0%, -12.0588235294%);
-  --fenext-color-dark-dark: rgb(7.5, 7.5, 7.5);
-  --fenext-color-dark-neto-light: #212121;
-  --fenext-color-dark-light: rgb(58.5, 58.5, 58.5);
-  --fenext-color-dark-extra-light: rgb(96.75, 96.75, 96.75);
+  --fenext-color-dark-dark: red;
+  --fenext-color-dark-light: red;
   --fenext-color-dark: #212121;
   --fenext-color-theme-light-dark: #212121;
-  --fenext-color-gray-extra-dark: rgb(137.25, 137.25, 137.25);
-  --fenext-color-gray-dark: rgb(175.5, 175.5, 175.5);
-  --fenext-color-gray-neto-light: #c9c9c9;
-  --fenext-color-gray-light: rgb(226.5, 226.5, 226.5);
-  --fenext-color-gray-extra-light: hsl(0, 0%, 103.8235294118%);
+  --fenext-color-gray-dark: red;
+  --fenext-color-gray-light: red;
   --fenext-color-gray: #c9c9c9;
   --fenext-color-theme-light-gray: #c9c9c9;
-  --fenext-color-disabled-extra-dark: rgb(92.25, 92.25, 92.25);
-  --fenext-color-disabled-dark: rgb(130.5, 130.5, 130.5);
-  --fenext-color-disabled-neto-light: #9c9c9c;
-  --fenext-color-disabled-light: rgb(181.5, 181.5, 181.5);
-  --fenext-color-disabled-extra-light: rgb(219.75, 219.75, 219.75);
+  --fenext-color-disabled-dark: red;
+  --fenext-color-disabled-light: red;
   --fenext-color-disabled: #9c9c9c;
   --fenext-color-theme-light-disabled: #9c9c9c;
+  --fenext-color-white-dark: red;
+  --fenext-color-white-light: red;
+  --fenext-color-white: #fff;
+  --fenext-color-theme-light-white: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fenext-color-blue-extra-dark: hsl(223.2989690722, 100%, 105.9803921569%);
-    --fenext-color-blue-dark: rgb(209, 221.8041237113, 255);
-    --fenext-color-blue-neto-dark: #9eb9ff;
-    --fenext-color-blue-light: rgb(107, 148.1958762887, 255);
-    --fenext-color-blue-extra-light: rgb(30.5, 92.9896907216, 255);
+    --fenext-color-blue-dark: red;
+    --fenext-color-blue-light: red;
     --fenext-color-blue: #9eb9ff;
     --fenext-color-theme-dark-blue: #9eb9ff;
-    --fenext-color-indigo-extra-dark: hsl(270, 100%, 103.431372549%);
-    --fenext-color-indigo-dark: rgb(225.5, 196, 255);
-    --fenext-color-indigo-neto-dark: #c891ff;
-    --fenext-color-indigo-light: rgb(174.5, 94, 255);
-    --fenext-color-indigo-extra-light: rgb(136.25, 17.5, 255);
+    --fenext-color-indigo-dark: red;
+    --fenext-color-indigo-light: red;
     --fenext-color-indigo: #c891ff;
     --fenext-color-theme-dark-indigo: #c891ff;
-    --fenext-color-purple-extra-dark: hsl(268.9655172414, 100%, 107.9411764706%);
-    --fenext-color-purple-dark: rgb(236.3793103448, 219, 255);
-    --fenext-color-purple-neto-dark: #d2a8ff;
-    --fenext-color-purple-light: rgb(183.6206896552, 117, 255);
-    --fenext-color-purple-extra-light: rgb(144.0517241379, 40.5, 255);
+    --fenext-color-purple-dark: red;
+    --fenext-color-purple-light: red;
     --fenext-color-purple: #d2a8ff;
     --fenext-color-theme-dark-purple: #d2a8ff;
-    --fenext-color-pink-extra-dark: hsl(323.2653061224, 100%, 105.7843137255%);
-    --fenext-color-pink-dark: rgb(255, 208, 236.7755102041);
-    --fenext-color-pink-neto-dark: #ff9dd9;
-    --fenext-color-pink-light: rgb(255, 106, 197.2244897959);
-    --fenext-color-pink-extra-light: rgb(255, 29.5, 167.5612244898);
+    --fenext-color-pink-dark: red;
+    --fenext-color-pink-light: red;
     --fenext-color-pink: #ff9dd9;
     --fenext-color-theme-dark-pink: #ff9dd9;
-    --fenext-color-red-extra-dark: hsl(2.1428571429, 100%, 103.0392156863%);
-    --fenext-color-red-dark: rgb(255, 196.1785714286, 194);
-    --fenext-color-red-neto-dark: #ff938f;
-    --fenext-color-red-light: rgb(255, 97.8214285714, 92);
-    --fenext-color-red-extra-light: rgb(255, 24.0535714286, 15.5);
+    --fenext-color-red-dark: red;
+    --fenext-color-red-light: red;
     --fenext-color-red: #ff938f;
     --fenext-color-theme-dark-red: #ff938f;
-    --fenext-color-orange-extra-dark: hsl(32.8205128205, 100%, 102.0588235294%);
-    --fenext-color-orange-dark: rgb(255, 225.1025641026, 189);
-    --fenext-color-orange-neto-dark: #ffca8a;
-    --fenext-color-orange-light: rgb(255, 178.8974358974, 87);
-    --fenext-color-orange-extra-light: rgb(255, 144.2435897436, 10.5);
+    --fenext-color-orange-dark: red;
+    --fenext-color-orange-light: red;
     --fenext-color-orange: #ffca8a;
     --fenext-color-theme-dark-orange: #ffca8a;
-    --fenext-color-yellow-extra-dark: hsl(44.2105263158, 100%, 102.6470588235%);
-    --fenext-color-yellow-dark: rgb(255, 238.4210526316, 192);
-    --fenext-color-yellow-neto-dark: #ffe18d;
-    --fenext-color-yellow-light: rgb(255, 211.5789473684, 90);
-    --fenext-color-yellow-extra-light: rgb(255, 191.4473684211, 13.5);
+    --fenext-color-yellow-dark: red;
+    --fenext-color-yellow-light: red;
     --fenext-color-yellow: #ffe18d;
     --fenext-color-theme-dark-yellow: #ffe18d;
-    --fenext-color-green-extra-dark: rgb(221.6754385965, 244.8245614035, 226.7631578947);
-    --fenext-color-green-dark: rgb(163.0701754386, 226.9298245614, 177.1052631579);
-    --fenext-color-green-neto-dark: #7cd790;
-    --fenext-color-green-light: rgb(84.9298245614, 203.0701754386, 110.8947368421);
-    --fenext-color-green-extra-light: rgb(49.4736842105, 162.0263157895, 74.2105263158);
+    --fenext-color-green-dark: red;
+    --fenext-color-green-light: red;
     --fenext-color-green: #7cd790;
     --fenext-color-theme-dark-green: #7cd790;
-    --fenext-color-teal-extra-dark: rgb(202.7868020305, 237.7131979695, 231.0101522843);
-    --fenext-color-teal-dark: rgb(145.3147208122, 218.6852791878, 204.6040609137);
-    --fenext-color-teal-neto-dark: #6bcebb;
-    --fenext-color-teal-light: rgb(68.6852791878, 193.3147208122, 169.3959390863);
-    --fenext-color-teal-extra-light: rgb(46.1395939086, 139.3604060914, 121.4695431472);
+    --fenext-color-teal-dark: red;
+    --fenext-color-teal-light: red;
     --fenext-color-teal: #6bcebb;
     --fenext-color-theme-dark-teal: #6bcebb;
-    --fenext-color-cyan-extra-dark: rgb(230.1666666667, 247, 254.3333333333);
-    --fenext-color-cyan-dark: rgb(155.6666666667, 223, 252.3333333333);
-    --fenext-color-cyan-neto-dark: #6acffb;
-    --fenext-color-cyan-light: rgb(56.3333333333, 191, 249.6666666667);
-    --fenext-color-cyan-extra-light: rgb(6, 157.5, 223.5);
+    --fenext-color-cyan-dark: red;
+    --fenext-color-cyan-light: red;
     --fenext-color-cyan: #6acffb;
     --fenext-color-theme-dark-cyan: #6acffb;
-    --fenext-color-white-extra-dark: rgb(99.75, 99.75, 99.75);
-    --fenext-color-white-dark: rgb(61.5, 61.5, 61.5);
-    --fenext-color-white-neto-dark: #242424;
-    --fenext-color-white-light: rgb(10.5, 10.5, 10.5);
-    --fenext-color-white-extra-light: hsl(0, 0%, -10.8823529412%);
-    --fenext-color-white: #242424;
-    --fenext-color-theme-dark-white: #242424;
-    --fenext-color-primary-extra-dark: hsl(223.2989690722, 100%, 105.9803921569%);
-    --fenext-color-primary-dark: rgb(209, 221.8041237113, 255);
-    --fenext-color-primary-neto-dark: #9eb9ff;
-    --fenext-color-primary-light: rgb(107, 148.1958762887, 255);
-    --fenext-color-primary-extra-light: rgb(30.5, 92.9896907216, 255);
+    --fenext-color-primary-dark: red;
+    --fenext-color-primary-light: red;
     --fenext-color-primary: #9eb9ff;
     --fenext-color-theme-dark-primary: #9eb9ff;
-    --fenext-color-secondary-extra-dark: hsl(0, 0%, 119.9019607843%);
-    --fenext-color-secondary-dark: hsl(0, 0%, 104.9019607843%);
-    --fenext-color-secondary-neto-dark: #f2f2f2;
-    --fenext-color-secondary-light: rgb(216.5, 216.5, 216.5);
-    --fenext-color-secondary-extra-light: rgb(178.25, 178.25, 178.25);
+    --fenext-color-secondary-dark: red;
+    --fenext-color-secondary-light: red;
     --fenext-color-secondary: #f2f2f2;
     --fenext-color-theme-dark-secondary: #f2f2f2;
-    --fenext-color-success-extra-dark: rgb(221.6754385965, 244.8245614035, 226.7631578947);
-    --fenext-color-success-dark: rgb(163.0701754386, 226.9298245614, 177.1052631579);
-    --fenext-color-success-neto-dark: #7cd790;
-    --fenext-color-success-light: rgb(84.9298245614, 203.0701754386, 110.8947368421);
-    --fenext-color-success-extra-light: rgb(49.4736842105, 162.0263157895, 74.2105263158);
+    --fenext-color-success-dark: red;
+    --fenext-color-success-light: red;
     --fenext-color-success: #7cd790;
     --fenext-color-theme-dark-success: #7cd790;
-    --fenext-color-info-extra-dark: rgb(230.1666666667, 247, 254.3333333333);
-    --fenext-color-info-dark: rgb(155.6666666667, 223, 252.3333333333);
-    --fenext-color-info-neto-dark: #6acffb;
-    --fenext-color-info-light: rgb(56.3333333333, 191, 249.6666666667);
-    --fenext-color-info-extra-light: rgb(6, 157.5, 223.5);
+    --fenext-color-info-dark: red;
+    --fenext-color-info-light: red;
     --fenext-color-info: #6acffb;
     --fenext-color-theme-dark-info: #6acffb;
-    --fenext-color-warning-extra-dark: hsl(44.2105263158, 100%, 102.6470588235%);
-    --fenext-color-warning-dark: rgb(255, 238.4210526316, 192);
-    --fenext-color-warning-neto-dark: #ffe18d;
-    --fenext-color-warning-light: rgb(255, 211.5789473684, 90);
-    --fenext-color-warning-extra-light: rgb(255, 191.4473684211, 13.5);
+    --fenext-color-warning-dark: red;
+    --fenext-color-warning-light: red;
     --fenext-color-warning: #ffe18d;
     --fenext-color-theme-dark-warning: #ffe18d;
-    --fenext-color-danger-extra-dark: hsl(2.1428571429, 100%, 103.0392156863%);
-    --fenext-color-danger-dark: rgb(255, 196.1785714286, 194);
-    --fenext-color-danger-neto-dark: #ff938f;
-    --fenext-color-danger-light: rgb(255, 97.8214285714, 92);
-    --fenext-color-danger-extra-light: rgb(255, 24.0535714286, 15.5);
+    --fenext-color-danger-dark: red;
+    --fenext-color-danger-light: red;
     --fenext-color-danger: #ff938f;
     --fenext-color-theme-dark-danger: #ff938f;
-    --fenext-color-light-extra-dark: hsl(210, 11%, 40%);
-    --fenext-color-light-dark: hsl(210, 11%, 25%);
-    --fenext-color-light-neto-dark: hsl(210, 11%, 15%);
-    --fenext-color-light-light: hsl(210, 11%, 5%);
-    --fenext-color-light-extra-light: hsl(210, 11%, -10%);
+    --fenext-color-light-dark: red;
+    --fenext-color-light-light: red;
     --fenext-color-light: hsl(210, 11%, 15%);
     --fenext-color-theme-dark-light: hsl(210, 11%, 15%);
-    --fenext-color-dark-extra-dark: hsl(0, 0%, 119.9019607843%);
-    --fenext-color-dark-dark: hsl(0, 0%, 104.9019607843%);
-    --fenext-color-dark-neto-dark: #f2f2f2;
-    --fenext-color-dark-light: rgb(216.5, 216.5, 216.5);
-    --fenext-color-dark-extra-light: rgb(178.25, 178.25, 178.25);
+    --fenext-color-dark-dark: red;
+    --fenext-color-dark-light: red;
     --fenext-color-dark: #f2f2f2;
     --fenext-color-theme-dark-dark: #f2f2f2;
-    --fenext-color-white-smoke-extra-dark: hsl(0, 0%, -15%);
-    --fenext-color-white-smoke-dark: hsl(0, 0%, 0%);
-    --fenext-color-white-smoke-neto-light: hsl(0, 0%, 10%);
-    --fenext-color-white-smoke-light: hsl(0, 0%, 20%);
-    --fenext-color-white-smoke-extra-light: hsl(0, 0%, 35%);
+    --fenext-color-white-smoke-dark: red;
+    --fenext-color-white-smoke-light: red;
     --fenext-color-white-smoke: hsl(0, 0%, 10%);
     --fenext-color-theme-light-white-smoke: hsl(0, 0%, 10%);
-    --fenext-color-loader-background-extra-dark: hsl(0, 0%, 10%);
-    --fenext-color-loader-background-dark: hsl(0, 0%, 25%);
-    --fenext-color-loader-background-neto-light: hsl(0, 0%, 35%);
-    --fenext-color-loader-background-light: hsl(0, 0%, 45%);
-    --fenext-color-loader-background-extra-light: hsl(0, 0%, 60%);
+    --fenext-color-loader-background-dark: red;
+    --fenext-color-loader-background-light: red;
     --fenext-color-loader-background: hsl(0, 0%, 35%);
     --fenext-color-theme-light-loader-background: hsl(0, 0%, 35%);
-    --fenext-color-loader-foreground-extra-dark: hsl(0, 0%, 46%);
-    --fenext-color-loader-foreground-dark: hsl(0, 0%, 61%);
-    --fenext-color-loader-foreground-neto-light: hsl(0, 0%, 71%);
-    --fenext-color-loader-foreground-light: hsl(0, 0%, 81%);
-    --fenext-color-loader-foreground-extra-light: hsl(0, 0%, 96%);
+    --fenext-color-loader-foreground-dark: red;
+    --fenext-color-loader-foreground-light: red;
     --fenext-color-loader-foreground: hsl(0, 0%, 71%);
     --fenext-color-theme-light-loader-foreground: hsl(0, 0%, 71%);
-    --fenext-color-primary-extra-dark: hsl(206.8571428571, 89.7435897436%, 102.0588235294%);
-    --fenext-color-primary-dark: rgb(192.3846153846, 225.1025641026, 251.6153846154);
-    --fenext-color-primary-neto-dark: #90CAF9;
-    --fenext-color-primary-light: rgb(95.6153846154, 178.8974358974, 246.3846153846);
-    --fenext-color-primary-extra-light: rgb(23.0384615385, 144.2435897436, 242.4615384615);
+    --fenext-color-primary-dark: red;
+    --fenext-color-primary-light: red;
     --fenext-color-primary: #90CAF9;
     --fenext-color-theme-dark-primary: #90CAF9;
-    --fenext-color-secondary-extra-dark: hsl(339.801980198, 82.1138211382%, 100.8823529412%);
-    --fenext-color-secondary-dark: rgb(248.5609756098, 189.4390243902, 209.3414634146);
-    --fenext-color-secondary-neto-dark: #F48FB1;
-    --fenext-color-secondary-light: rgb(239.4390243902, 96.5609756098, 144.6585365854);
-    --fenext-color-secondary-extra-light: rgb(232.5975609756, 26.9024390244, 96.1463414634);
+    --fenext-color-secondary-dark: red;
+    --fenext-color-secondary-light: red;
     --fenext-color-secondary: #F48FB1;
     --fenext-color-theme-dark-secondary: #F48FB1;
-    --fenext-color-success-extra-dark: rgb(190.2692307692, 226.2307692308, 191.9615384615);
-    --fenext-color-success-dark: rgb(137.3076923077, 202.6923076923, 140.3846153846);
-    --fenext-color-success-neto-dark: #66BB6A;
-    --fenext-color-success-light: rgb(73.2307692308, 164.7692307692, 77.5384615385);
-    --fenext-color-success-extra-light: rgb(49.6923076923, 111.8076923077, 52.6153846154);
+    --fenext-color-success-dark: red;
+    --fenext-color-success-light: red;
     --fenext-color-success: #66BB6A;
     --fenext-color-theme-dark-success: #66BB6A;
-    --fenext-color-warning-extra-dark: rgb(255, 248.0102040816, 186.5);
-    --fenext-color-warning-dark: rgb(255, 240.2040816327, 110);
-    --fenext-color-warning-neto-dark: #FFEB3B;
-    --fenext-color-warning-light: rgb(255, 229.7959183673, 8);
-    --fenext-color-warning-extra-light: rgb(186.5, 167.4693877551, 0);
+    --fenext-color-warning-dark: red;
+    --fenext-color-warning-light: red;
     --fenext-color-warning: #FFEB3B;
     --fenext-color-theme-dark-warning: #FFEB3B;
-    --fenext-color-danger-extra-dark: rgb(249.6806282723, 197.8167539267, 196.8193717277);
-    --fenext-color-danger-dark: rgb(243.2722513089, 128.9267015707, 126.7277486911);
-    --fenext-color-danger-neto-dark: #EF5350;
-    --fenext-color-danger-light: rgb(234.7277486911, 37.0732984293, 33.2722513089);
-    --fenext-color-danger-extra-light: rgb(175.4581151832, 19.0497382199, 16.0418848168);
+    --fenext-color-danger-dark: red;
+    --fenext-color-danger-light: red;
     --fenext-color-danger: #EF5350;
     --fenext-color-theme-dark-danger: #EF5350;
-    --fenext-color-light-extra-dark: rgb(81.75, 81.75, 81.75);
-    --fenext-color-light-dark: rgb(43.5, 43.5, 43.5);
-    --fenext-color-light-neto-dark: #121212;
-    --fenext-color-light-light: hsl(0, 0%, -2.9411764706%);
-    --fenext-color-light-extra-light: hsl(0, 0%, -17.9411764706%);
+    --fenext-color-light-dark: red;
+    --fenext-color-light-light: red;
     --fenext-color-light: #121212;
     --fenext-color-theme-dark-light: #121212;
-    --fenext-color-dark-extra-dark: hsl(0, 0%, 123.0392156863%);
-    --fenext-color-dark-dark: hsl(0, 0%, 108.0392156863%);
-    --fenext-color-dark-neto-dark: #FAFAFA;
-    --fenext-color-dark-light: rgb(224.5, 224.5, 224.5);
-    --fenext-color-dark-extra-light: rgb(186.25, 186.25, 186.25);
+    --fenext-color-dark-dark: red;
+    --fenext-color-dark-light: red;
     --fenext-color-dark: #FAFAFA;
     --fenext-color-theme-dark-dark: #FAFAFA;
-    --fenext-color-gray-extra-dark: hsl(0, 0%, 103.8235294118%);
-    --fenext-color-gray-dark: rgb(226.5, 226.5, 226.5);
-    --fenext-color-gray-neto-dark: #c9c9c9;
-    --fenext-color-gray-light: rgb(175.5, 175.5, 175.5);
-    --fenext-color-gray-extra-light: rgb(137.25, 137.25, 137.25);
+    --fenext-color-gray-dark: red;
+    --fenext-color-gray-light: red;
     --fenext-color-gray: #c9c9c9;
     --fenext-color-theme-dark-gray: #c9c9c9;
-    --fenext-color-disabled-extra-dark: rgb(219.75, 219.75, 219.75);
-    --fenext-color-disabled-dark: rgb(181.5, 181.5, 181.5);
-    --fenext-color-disabled-neto-dark: #9c9c9c;
-    --fenext-color-disabled-light: rgb(130.5, 130.5, 130.5);
-    --fenext-color-disabled-extra-light: rgb(92.25, 92.25, 92.25);
+    --fenext-color-disabled-dark: red;
+    --fenext-color-disabled-light: red;
     --fenext-color-disabled: #9c9c9c;
     --fenext-color-theme-dark-disabled: #9c9c9c;
+    --fenext-color-white-dark: red;
+    --fenext-color-white-light: red;
+    --fenext-color-white: #242424;
+    --fenext-color-theme-dark-white: #242424;
   }
 }
 [fenext-theme=dark] {
-  --fenext-color-blue-extra-dark: hsl(223.2989690722, 100%, 105.9803921569%);
-  --fenext-color-blue-dark: rgb(209, 221.8041237113, 255);
-  --fenext-color-blue-neto-dark: #9eb9ff;
-  --fenext-color-blue-light: rgb(107, 148.1958762887, 255);
-  --fenext-color-blue-extra-light: rgb(30.5, 92.9896907216, 255);
+  --fenext-color-blue-dark: red;
+  --fenext-color-blue-light: red;
   --fenext-color-blue: #9eb9ff;
   --fenext-color-theme-dark-blue: #9eb9ff;
-  --fenext-color-indigo-extra-dark: hsl(270, 100%, 103.431372549%);
-  --fenext-color-indigo-dark: rgb(225.5, 196, 255);
-  --fenext-color-indigo-neto-dark: #c891ff;
-  --fenext-color-indigo-light: rgb(174.5, 94, 255);
-  --fenext-color-indigo-extra-light: rgb(136.25, 17.5, 255);
+  --fenext-color-indigo-dark: red;
+  --fenext-color-indigo-light: red;
   --fenext-color-indigo: #c891ff;
   --fenext-color-theme-dark-indigo: #c891ff;
-  --fenext-color-purple-extra-dark: hsl(268.9655172414, 100%, 107.9411764706%);
-  --fenext-color-purple-dark: rgb(236.3793103448, 219, 255);
-  --fenext-color-purple-neto-dark: #d2a8ff;
-  --fenext-color-purple-light: rgb(183.6206896552, 117, 255);
-  --fenext-color-purple-extra-light: rgb(144.0517241379, 40.5, 255);
+  --fenext-color-purple-dark: red;
+  --fenext-color-purple-light: red;
   --fenext-color-purple: #d2a8ff;
   --fenext-color-theme-dark-purple: #d2a8ff;
-  --fenext-color-pink-extra-dark: hsl(323.2653061224, 100%, 105.7843137255%);
-  --fenext-color-pink-dark: rgb(255, 208, 236.7755102041);
-  --fenext-color-pink-neto-dark: #ff9dd9;
-  --fenext-color-pink-light: rgb(255, 106, 197.2244897959);
-  --fenext-color-pink-extra-light: rgb(255, 29.5, 167.5612244898);
+  --fenext-color-pink-dark: red;
+  --fenext-color-pink-light: red;
   --fenext-color-pink: #ff9dd9;
   --fenext-color-theme-dark-pink: #ff9dd9;
-  --fenext-color-red-extra-dark: hsl(2.1428571429, 100%, 103.0392156863%);
-  --fenext-color-red-dark: rgb(255, 196.1785714286, 194);
-  --fenext-color-red-neto-dark: #ff938f;
-  --fenext-color-red-light: rgb(255, 97.8214285714, 92);
-  --fenext-color-red-extra-light: rgb(255, 24.0535714286, 15.5);
+  --fenext-color-red-dark: red;
+  --fenext-color-red-light: red;
   --fenext-color-red: #ff938f;
   --fenext-color-theme-dark-red: #ff938f;
-  --fenext-color-orange-extra-dark: hsl(32.8205128205, 100%, 102.0588235294%);
-  --fenext-color-orange-dark: rgb(255, 225.1025641026, 189);
-  --fenext-color-orange-neto-dark: #ffca8a;
-  --fenext-color-orange-light: rgb(255, 178.8974358974, 87);
-  --fenext-color-orange-extra-light: rgb(255, 144.2435897436, 10.5);
+  --fenext-color-orange-dark: red;
+  --fenext-color-orange-light: red;
   --fenext-color-orange: #ffca8a;
   --fenext-color-theme-dark-orange: #ffca8a;
-  --fenext-color-yellow-extra-dark: hsl(44.2105263158, 100%, 102.6470588235%);
-  --fenext-color-yellow-dark: rgb(255, 238.4210526316, 192);
-  --fenext-color-yellow-neto-dark: #ffe18d;
-  --fenext-color-yellow-light: rgb(255, 211.5789473684, 90);
-  --fenext-color-yellow-extra-light: rgb(255, 191.4473684211, 13.5);
+  --fenext-color-yellow-dark: red;
+  --fenext-color-yellow-light: red;
   --fenext-color-yellow: #ffe18d;
   --fenext-color-theme-dark-yellow: #ffe18d;
-  --fenext-color-green-extra-dark: rgb(221.6754385965, 244.8245614035, 226.7631578947);
-  --fenext-color-green-dark: rgb(163.0701754386, 226.9298245614, 177.1052631579);
-  --fenext-color-green-neto-dark: #7cd790;
-  --fenext-color-green-light: rgb(84.9298245614, 203.0701754386, 110.8947368421);
-  --fenext-color-green-extra-light: rgb(49.4736842105, 162.0263157895, 74.2105263158);
+  --fenext-color-green-dark: red;
+  --fenext-color-green-light: red;
   --fenext-color-green: #7cd790;
   --fenext-color-theme-dark-green: #7cd790;
-  --fenext-color-teal-extra-dark: rgb(202.7868020305, 237.7131979695, 231.0101522843);
-  --fenext-color-teal-dark: rgb(145.3147208122, 218.6852791878, 204.6040609137);
-  --fenext-color-teal-neto-dark: #6bcebb;
-  --fenext-color-teal-light: rgb(68.6852791878, 193.3147208122, 169.3959390863);
-  --fenext-color-teal-extra-light: rgb(46.1395939086, 139.3604060914, 121.4695431472);
+  --fenext-color-teal-dark: red;
+  --fenext-color-teal-light: red;
   --fenext-color-teal: #6bcebb;
   --fenext-color-theme-dark-teal: #6bcebb;
-  --fenext-color-cyan-extra-dark: rgb(230.1666666667, 247, 254.3333333333);
-  --fenext-color-cyan-dark: rgb(155.6666666667, 223, 252.3333333333);
-  --fenext-color-cyan-neto-dark: #6acffb;
-  --fenext-color-cyan-light: rgb(56.3333333333, 191, 249.6666666667);
-  --fenext-color-cyan-extra-light: rgb(6, 157.5, 223.5);
+  --fenext-color-cyan-dark: red;
+  --fenext-color-cyan-light: red;
   --fenext-color-cyan: #6acffb;
   --fenext-color-theme-dark-cyan: #6acffb;
-  --fenext-color-white-extra-dark: rgb(99.75, 99.75, 99.75);
-  --fenext-color-white-dark: rgb(61.5, 61.5, 61.5);
-  --fenext-color-white-neto-dark: #242424;
-  --fenext-color-white-light: rgb(10.5, 10.5, 10.5);
-  --fenext-color-white-extra-light: hsl(0, 0%, -10.8823529412%);
-  --fenext-color-white: #242424;
-  --fenext-color-theme-dark-white: #242424;
-  --fenext-color-primary-extra-dark: hsl(223.2989690722, 100%, 105.9803921569%);
-  --fenext-color-primary-dark: rgb(209, 221.8041237113, 255);
-  --fenext-color-primary-neto-dark: #9eb9ff;
-  --fenext-color-primary-light: rgb(107, 148.1958762887, 255);
-  --fenext-color-primary-extra-light: rgb(30.5, 92.9896907216, 255);
+  --fenext-color-primary-dark: red;
+  --fenext-color-primary-light: red;
   --fenext-color-primary: #9eb9ff;
   --fenext-color-theme-dark-primary: #9eb9ff;
-  --fenext-color-secondary-extra-dark: hsl(0, 0%, 119.9019607843%);
-  --fenext-color-secondary-dark: hsl(0, 0%, 104.9019607843%);
-  --fenext-color-secondary-neto-dark: #f2f2f2;
-  --fenext-color-secondary-light: rgb(216.5, 216.5, 216.5);
-  --fenext-color-secondary-extra-light: rgb(178.25, 178.25, 178.25);
+  --fenext-color-secondary-dark: red;
+  --fenext-color-secondary-light: red;
   --fenext-color-secondary: #f2f2f2;
   --fenext-color-theme-dark-secondary: #f2f2f2;
-  --fenext-color-success-extra-dark: rgb(221.6754385965, 244.8245614035, 226.7631578947);
-  --fenext-color-success-dark: rgb(163.0701754386, 226.9298245614, 177.1052631579);
-  --fenext-color-success-neto-dark: #7cd790;
-  --fenext-color-success-light: rgb(84.9298245614, 203.0701754386, 110.8947368421);
-  --fenext-color-success-extra-light: rgb(49.4736842105, 162.0263157895, 74.2105263158);
+  --fenext-color-success-dark: red;
+  --fenext-color-success-light: red;
   --fenext-color-success: #7cd790;
   --fenext-color-theme-dark-success: #7cd790;
-  --fenext-color-info-extra-dark: rgb(230.1666666667, 247, 254.3333333333);
-  --fenext-color-info-dark: rgb(155.6666666667, 223, 252.3333333333);
-  --fenext-color-info-neto-dark: #6acffb;
-  --fenext-color-info-light: rgb(56.3333333333, 191, 249.6666666667);
-  --fenext-color-info-extra-light: rgb(6, 157.5, 223.5);
+  --fenext-color-info-dark: red;
+  --fenext-color-info-light: red;
   --fenext-color-info: #6acffb;
   --fenext-color-theme-dark-info: #6acffb;
-  --fenext-color-warning-extra-dark: hsl(44.2105263158, 100%, 102.6470588235%);
-  --fenext-color-warning-dark: rgb(255, 238.4210526316, 192);
-  --fenext-color-warning-neto-dark: #ffe18d;
-  --fenext-color-warning-light: rgb(255, 211.5789473684, 90);
-  --fenext-color-warning-extra-light: rgb(255, 191.4473684211, 13.5);
+  --fenext-color-warning-dark: red;
+  --fenext-color-warning-light: red;
   --fenext-color-warning: #ffe18d;
   --fenext-color-theme-dark-warning: #ffe18d;
-  --fenext-color-danger-extra-dark: hsl(2.1428571429, 100%, 103.0392156863%);
-  --fenext-color-danger-dark: rgb(255, 196.1785714286, 194);
-  --fenext-color-danger-neto-dark: #ff938f;
-  --fenext-color-danger-light: rgb(255, 97.8214285714, 92);
-  --fenext-color-danger-extra-light: rgb(255, 24.0535714286, 15.5);
+  --fenext-color-danger-dark: red;
+  --fenext-color-danger-light: red;
   --fenext-color-danger: #ff938f;
   --fenext-color-theme-dark-danger: #ff938f;
-  --fenext-color-light-extra-dark: hsl(210, 11%, 40%);
-  --fenext-color-light-dark: hsl(210, 11%, 25%);
-  --fenext-color-light-neto-dark: hsl(210, 11%, 15%);
-  --fenext-color-light-light: hsl(210, 11%, 5%);
-  --fenext-color-light-extra-light: hsl(210, 11%, -10%);
+  --fenext-color-light-dark: red;
+  --fenext-color-light-light: red;
   --fenext-color-light: hsl(210, 11%, 15%);
   --fenext-color-theme-dark-light: hsl(210, 11%, 15%);
-  --fenext-color-dark-extra-dark: hsl(0, 0%, 119.9019607843%);
-  --fenext-color-dark-dark: hsl(0, 0%, 104.9019607843%);
-  --fenext-color-dark-neto-dark: #f2f2f2;
-  --fenext-color-dark-light: rgb(216.5, 216.5, 216.5);
-  --fenext-color-dark-extra-light: rgb(178.25, 178.25, 178.25);
+  --fenext-color-dark-dark: red;
+  --fenext-color-dark-light: red;
   --fenext-color-dark: #f2f2f2;
   --fenext-color-theme-dark-dark: #f2f2f2;
-  --fenext-color-white-smoke-extra-dark: hsl(0, 0%, -15%);
-  --fenext-color-white-smoke-dark: hsl(0, 0%, 0%);
-  --fenext-color-white-smoke-neto-light: hsl(0, 0%, 10%);
-  --fenext-color-white-smoke-light: hsl(0, 0%, 20%);
-  --fenext-color-white-smoke-extra-light: hsl(0, 0%, 35%);
+  --fenext-color-white-smoke-dark: red;
+  --fenext-color-white-smoke-light: red;
   --fenext-color-white-smoke: hsl(0, 0%, 10%);
   --fenext-color-theme-light-white-smoke: hsl(0, 0%, 10%);
-  --fenext-color-loader-background-extra-dark: hsl(0, 0%, 10%);
-  --fenext-color-loader-background-dark: hsl(0, 0%, 25%);
-  --fenext-color-loader-background-neto-light: hsl(0, 0%, 35%);
-  --fenext-color-loader-background-light: hsl(0, 0%, 45%);
-  --fenext-color-loader-background-extra-light: hsl(0, 0%, 60%);
+  --fenext-color-loader-background-dark: red;
+  --fenext-color-loader-background-light: red;
   --fenext-color-loader-background: hsl(0, 0%, 35%);
   --fenext-color-theme-light-loader-background: hsl(0, 0%, 35%);
-  --fenext-color-loader-foreground-extra-dark: hsl(0, 0%, 46%);
-  --fenext-color-loader-foreground-dark: hsl(0, 0%, 61%);
-  --fenext-color-loader-foreground-neto-light: hsl(0, 0%, 71%);
-  --fenext-color-loader-foreground-light: hsl(0, 0%, 81%);
-  --fenext-color-loader-foreground-extra-light: hsl(0, 0%, 96%);
+  --fenext-color-loader-foreground-dark: red;
+  --fenext-color-loader-foreground-light: red;
   --fenext-color-loader-foreground: hsl(0, 0%, 71%);
   --fenext-color-theme-light-loader-foreground: hsl(0, 0%, 71%);
-  --fenext-color-primary-extra-dark: hsl(206.8571428571, 89.7435897436%, 102.0588235294%);
-  --fenext-color-primary-dark: rgb(192.3846153846, 225.1025641026, 251.6153846154);
-  --fenext-color-primary-neto-dark: #90CAF9;
-  --fenext-color-primary-light: rgb(95.6153846154, 178.8974358974, 246.3846153846);
-  --fenext-color-primary-extra-light: rgb(23.0384615385, 144.2435897436, 242.4615384615);
+  --fenext-color-primary-dark: red;
+  --fenext-color-primary-light: red;
   --fenext-color-primary: #90CAF9;
   --fenext-color-theme-dark-primary: #90CAF9;
-  --fenext-color-secondary-extra-dark: hsl(339.801980198, 82.1138211382%, 100.8823529412%);
-  --fenext-color-secondary-dark: rgb(248.5609756098, 189.4390243902, 209.3414634146);
-  --fenext-color-secondary-neto-dark: #F48FB1;
-  --fenext-color-secondary-light: rgb(239.4390243902, 96.5609756098, 144.6585365854);
-  --fenext-color-secondary-extra-light: rgb(232.5975609756, 26.9024390244, 96.1463414634);
+  --fenext-color-secondary-dark: red;
+  --fenext-color-secondary-light: red;
   --fenext-color-secondary: #F48FB1;
   --fenext-color-theme-dark-secondary: #F48FB1;
-  --fenext-color-success-extra-dark: rgb(190.2692307692, 226.2307692308, 191.9615384615);
-  --fenext-color-success-dark: rgb(137.3076923077, 202.6923076923, 140.3846153846);
-  --fenext-color-success-neto-dark: #66BB6A;
-  --fenext-color-success-light: rgb(73.2307692308, 164.7692307692, 77.5384615385);
-  --fenext-color-success-extra-light: rgb(49.6923076923, 111.8076923077, 52.6153846154);
+  --fenext-color-success-dark: red;
+  --fenext-color-success-light: red;
   --fenext-color-success: #66BB6A;
   --fenext-color-theme-dark-success: #66BB6A;
-  --fenext-color-warning-extra-dark: rgb(255, 248.0102040816, 186.5);
-  --fenext-color-warning-dark: rgb(255, 240.2040816327, 110);
-  --fenext-color-warning-neto-dark: #FFEB3B;
-  --fenext-color-warning-light: rgb(255, 229.7959183673, 8);
-  --fenext-color-warning-extra-light: rgb(186.5, 167.4693877551, 0);
+  --fenext-color-warning-dark: red;
+  --fenext-color-warning-light: red;
   --fenext-color-warning: #FFEB3B;
   --fenext-color-theme-dark-warning: #FFEB3B;
-  --fenext-color-danger-extra-dark: rgb(249.6806282723, 197.8167539267, 196.8193717277);
-  --fenext-color-danger-dark: rgb(243.2722513089, 128.9267015707, 126.7277486911);
-  --fenext-color-danger-neto-dark: #EF5350;
-  --fenext-color-danger-light: rgb(234.7277486911, 37.0732984293, 33.2722513089);
-  --fenext-color-danger-extra-light: rgb(175.4581151832, 19.0497382199, 16.0418848168);
+  --fenext-color-danger-dark: red;
+  --fenext-color-danger-light: red;
   --fenext-color-danger: #EF5350;
   --fenext-color-theme-dark-danger: #EF5350;
-  --fenext-color-light-extra-dark: rgb(81.75, 81.75, 81.75);
-  --fenext-color-light-dark: rgb(43.5, 43.5, 43.5);
-  --fenext-color-light-neto-dark: #121212;
-  --fenext-color-light-light: hsl(0, 0%, -2.9411764706%);
-  --fenext-color-light-extra-light: hsl(0, 0%, -17.9411764706%);
+  --fenext-color-light-dark: red;
+  --fenext-color-light-light: red;
   --fenext-color-light: #121212;
   --fenext-color-theme-dark-light: #121212;
-  --fenext-color-dark-extra-dark: hsl(0, 0%, 123.0392156863%);
-  --fenext-color-dark-dark: hsl(0, 0%, 108.0392156863%);
-  --fenext-color-dark-neto-dark: #FAFAFA;
-  --fenext-color-dark-light: rgb(224.5, 224.5, 224.5);
-  --fenext-color-dark-extra-light: rgb(186.25, 186.25, 186.25);
+  --fenext-color-dark-dark: red;
+  --fenext-color-dark-light: red;
   --fenext-color-dark: #FAFAFA;
   --fenext-color-theme-dark-dark: #FAFAFA;
-  --fenext-color-gray-extra-dark: hsl(0, 0%, 103.8235294118%);
-  --fenext-color-gray-dark: rgb(226.5, 226.5, 226.5);
-  --fenext-color-gray-neto-dark: #c9c9c9;
-  --fenext-color-gray-light: rgb(175.5, 175.5, 175.5);
-  --fenext-color-gray-extra-light: rgb(137.25, 137.25, 137.25);
+  --fenext-color-gray-dark: red;
+  --fenext-color-gray-light: red;
   --fenext-color-gray: #c9c9c9;
   --fenext-color-theme-dark-gray: #c9c9c9;
-  --fenext-color-disabled-extra-dark: rgb(219.75, 219.75, 219.75);
-  --fenext-color-disabled-dark: rgb(181.5, 181.5, 181.5);
-  --fenext-color-disabled-neto-dark: #9c9c9c;
-  --fenext-color-disabled-light: rgb(130.5, 130.5, 130.5);
-  --fenext-color-disabled-extra-light: rgb(92.25, 92.25, 92.25);
+  --fenext-color-disabled-dark: red;
+  --fenext-color-disabled-light: red;
   --fenext-color-disabled: #9c9c9c;
   --fenext-color-theme-dark-disabled: #9c9c9c;
+  --fenext-color-white-dark: red;
+  --fenext-color-white-light: red;
+  --fenext-color-white: #242424;
+  --fenext-color-theme-dark-white: #242424;
 }
 
 [fenext-theme=light] {
-  --fenext-color-blue-extra-dark: rgb(1.1352459016, 56.1946721311, 137.3647540984);
-  --fenext-color-blue-dark: rgb(1.762295082, 87.2336065574, 213.237704918);
-  --fenext-color-blue-neto-light: #0d6efd;
-  --fenext-color-blue-light: rgb(63.5819672131, 140.3073770492, 253.4180327869);
-  --fenext-color-blue-extra-light: rgb(139.4549180328, 185.768442623, 254.0450819672);
+  --fenext-color-blue-dark: red;
+  --fenext-color-blue-light: red;
   --fenext-color-blue: #0d6efd;
   --fenext-color-theme-light-blue: #0d6efd;
-  --fenext-color-indigo-extra-dark: rgb(51.2678571429, 6.7321428571, 123.7678571429);
-  --fenext-color-indigo-dark: rgb(81.3214285714, 10.6785714286, 196.3214285714);
-  --fenext-color-indigo-neto-light: #6610f2;
-  --fenext-color-indigo-light: rgb(132.9642857143, 64.369047619, 244.630952381);
-  --fenext-color-indigo-extra-light: rgb(179.4107142857, 136.9226190476, 248.5773809524);
+  --fenext-color-indigo-dark: red;
+  --fenext-color-indigo-light: red;
   --fenext-color-indigo: #6610f2;
   --fenext-color-theme-light-indigo: #6610f2;
-  --fenext-color-purple-extra-dark: rgb(56.0577689243, 32.4820717131, 99.0179282869);
-  --fenext-color-purple-dark: rgb(88.6693227092, 51.3784860558, 156.6215139442);
-  --fenext-color-purple-neto-light: #6f42c1;
-  --fenext-color-purple-light: rgb(140.2589641434, 104.4023904382, 205.5976095618);
-  --fenext-color-purple-extra-light: rgb(184.1474103586, 162.0059760956, 224.4940239044);
+  --fenext-color-purple-dark: red;
+  --fenext-color-purple-light: red;
   --fenext-color-purple: #6f42c1;
   --fenext-color-theme-light-purple: #6f42c1;
-  --fenext-color-pink-extra-dark: rgb(114.4897959184, 23.0102040816, 68.4693877551);
-  --fenext-color-pink-dark: rgb(178.187755102, 35.812244898, 106.5632653061);
-  --fenext-color-pink-neto-light: #d63384;
-  --fenext-color-pink-light: rgb(222.5346938776, 93.4653061224, 157.6040816327);
-  --fenext-color-pink-extra-light: rgb(235.3367346939, 157.1632653061, 196.0102040816);
+  --fenext-color-pink-dark: red;
+  --fenext-color-pink-light: red;
   --fenext-color-pink: #d63384;
   --fenext-color-theme-light-pink: #d63384;
-  --fenext-color-red-extra-dark: rgb(124.0126582278, 21.4873417722, 31.3101265823);
-  --fenext-color-red-dark: rgb(189.2151898734, 32.7848101266, 47.7721518987);
-  --fenext-color-red-neto-light: #dc3545;
-  --fenext-color-red-light: rgb(227.5316455696, 96.4683544304, 109.0253164557);
-  --fenext-color-red-extra-light: rgb(238.8291139241, 161.6708860759, 169.0632911392);
+  --fenext-color-red-dark: red;
+  --fenext-color-red-light: red;
   --fenext-color-red: #dc3545;
   --fenext-color-theme-light-red: #dc3545;
-  --fenext-color-orange-extra-dark: rgb(144.2721518987, 66.3037974684, 1.2278481013);
-  --fenext-color-orange-dark: rgb(220.1265822785, 101.164556962, 1.8734177215);
-  --fenext-color-orange-neto-light: #fd7e14;
-  --fenext-color-orange-light: rgb(253.4303797468, 153.7594936709, 70.5696202532);
-  --fenext-color-orange-extra-light: rgb(254.0759493671, 195.3987341772, 146.4240506329);
+  --fenext-color-orange-dark: red;
+  --fenext-color-orange-light: red;
   --fenext-color-orange: #fd7e14;
   --fenext-color-theme-light-orange: #fd7e14;
-  --fenext-color-yellow-extra-dark: rgb(134.5, 100.875, 0);
-  --fenext-color-yellow-dark: rgb(211, 158.25, 0);
-  --fenext-color-yellow-neto-light: #ffc107;
-  --fenext-color-yellow-light: rgb(255, 205.75, 58);
-  --fenext-color-yellow-extra-light: rgb(255, 224.875, 134.5);
+  --fenext-color-yellow-dark: red;
+  --fenext-color-yellow-light: red;
   --fenext-color-yellow: #ffc107;
   --fenext-color-theme-light-yellow: #ffc107;
-  --fenext-color-green-extra-dark: rgb(5.078125, 27.421875, 17.0625);
-  --fenext-color-green-dark: rgb(17.03125, 91.96875, 57.225);
-  --fenext-color-green-neto-light: #198754;
-  --fenext-color-green-light: rgb(32.96875, 178.03125, 110.775);
-  --fenext-color-green-extra-light: rgb(67.265625, 220.234375, 149.3125);
+  --fenext-color-green-dark: red;
+  --fenext-color-green-light: red;
   --fenext-color-green: #198754;
   --fenext-color-theme-light-green: #198754;
-  --fenext-color-teal-extra-dark: rgb(14.4892703863, 91.0107296137, 68.3712446352);
-  --fenext-color-teal-dark: rgb(24.9957081545, 157.0042918455, 117.9484978541);
-  --fenext-color-teal-neto-light: #20c997;
-  --fenext-color-teal-light: rgb(60.0386266094, 223.9613733906, 175.4635193133);
-  --fenext-color-teal-extra-light: rgb(126.0321888412, 234.4678111588, 202.3862660944);
+  --fenext-color-teal-dark: red;
+  --fenext-color-teal-light: red;
   --fenext-color-teal: #20c997;
   --fenext-color-theme-light-teal: #20c997;
-  --fenext-color-cyan-extra-dark: rgb(6.4486166008, 100.2015810277, 119.0513833992);
-  --fenext-color-cyan-dark: rgb(10.3794466403, 161.2806324111, 191.6205533597);
-  --fenext-color-cyan-neto-light: #0dcaf0;
-  --fenext-color-cyan-light: rgb(59.5849802372, 213.4743083004, 244.4150197628);
-  --fenext-color-cyan-extra-light: rgb(132.1541501976, 228.895256917, 248.3458498024);
+  --fenext-color-cyan-dark: red;
+  --fenext-color-cyan-light: red;
   --fenext-color-cyan: #0dcaf0;
   --fenext-color-theme-light-cyan: #0dcaf0;
-  --fenext-color-white-extra-dark: rgb(191.25, 191.25, 191.25);
-  --fenext-color-white-dark: rgb(229.5, 229.5, 229.5);
-  --fenext-color-white-neto-light: #fff;
-  --fenext-color-white-light: hsl(0, 0%, 110%);
-  --fenext-color-white-extra-light: hsl(0, 0%, 125%);
-  --fenext-color-white: #fff;
-  --fenext-color-theme-light-white: #fff;
-  --fenext-color-primary-extra-dark: rgb(1.1352459016, 56.1946721311, 137.3647540984);
-  --fenext-color-primary-dark: rgb(1.762295082, 87.2336065574, 213.237704918);
-  --fenext-color-primary-neto-light: #0d6efd;
-  --fenext-color-primary-light: rgb(63.5819672131, 140.3073770492, 253.4180327869);
-  --fenext-color-primary-extra-light: rgb(139.4549180328, 185.768442623, 254.0450819672);
+  --fenext-color-primary-dark: red;
+  --fenext-color-primary-light: red;
   --fenext-color-primary: #0d6efd;
   --fenext-color-theme-light-primary: #0d6efd;
-  --fenext-color-secondary-extra-dark: rgb(48.9012875536, 52.9763948498, 56.5987124464);
-  --fenext-color-secondary-dark: rgb(84.3605150215, 91.3905579399, 97.6394849785);
-  --fenext-color-secondary-neto-light: #6c757d;
-  --fenext-color-secondary-light: rgb(133.7553648069, 142.4849785408, 150.2446351931);
-  --fenext-color-secondary-extra-light: rgb(174.7961373391, 180.5708154506, 185.7038626609);
+  --fenext-color-secondary-dark: red;
+  --fenext-color-secondary-light: red;
   --fenext-color-secondary: #6c757d;
   --fenext-color-theme-light-secondary: #6c757d;
-  --fenext-color-success-extra-dark: rgb(5.078125, 27.421875, 17.0625);
-  --fenext-color-success-dark: rgb(17.03125, 91.96875, 57.225);
-  --fenext-color-success-neto-light: #198754;
-  --fenext-color-success-light: rgb(32.96875, 178.03125, 110.775);
-  --fenext-color-success-extra-light: rgb(67.265625, 220.234375, 149.3125);
+  --fenext-color-success-dark: red;
+  --fenext-color-success-light: red;
   --fenext-color-success: #198754;
   --fenext-color-theme-light-success: #198754;
-  --fenext-color-info-extra-dark: rgb(6.4486166008, 100.2015810277, 119.0513833992);
-  --fenext-color-info-dark: rgb(10.3794466403, 161.2806324111, 191.6205533597);
-  --fenext-color-info-neto-light: #0dcaf0;
-  --fenext-color-info-light: rgb(59.5849802372, 213.4743083004, 244.4150197628);
-  --fenext-color-info-extra-light: rgb(132.1541501976, 228.895256917, 248.3458498024);
+  --fenext-color-info-dark: red;
+  --fenext-color-info-light: red;
   --fenext-color-info: #0dcaf0;
   --fenext-color-theme-light-info: #0dcaf0;
-  --fenext-color-warning-extra-dark: rgb(134.5, 100.875, 0);
-  --fenext-color-warning-dark: rgb(211, 158.25, 0);
-  --fenext-color-warning-neto-light: #ffc107;
-  --fenext-color-warning-light: rgb(255, 205.75, 58);
-  --fenext-color-warning-extra-light: rgb(255, 224.875, 134.5);
+  --fenext-color-warning-dark: red;
+  --fenext-color-warning-light: red;
   --fenext-color-warning: #ffc107;
   --fenext-color-theme-light-warning: #ffc107;
-  --fenext-color-danger-extra-dark: rgb(124.0126582278, 21.4873417722, 31.3101265823);
-  --fenext-color-danger-dark: rgb(189.2151898734, 32.7848101266, 47.7721518987);
-  --fenext-color-danger-neto-light: #dc3545;
-  --fenext-color-danger-light: rgb(227.5316455696, 96.4683544304, 109.0253164557);
-  --fenext-color-danger-extra-light: rgb(238.8291139241, 161.6708860759, 169.0632911392);
+  --fenext-color-danger-dark: red;
+  --fenext-color-danger-light: red;
   --fenext-color-danger: #dc3545;
   --fenext-color-theme-light-danger: #dc3545;
-  --fenext-color-light-extra-dark: rgb(173.625, 185.25, 196.875);
-  --fenext-color-light-dark: rgb(218.25, 223.5, 228.75);
-  --fenext-color-light-neto-light: #f8f9fa;
-  --fenext-color-light-light: hsl(210, 16.6666666667%, 107.6470588235%);
-  --fenext-color-light-extra-light: hsl(210, 16.6666666667%, 122.6470588235%);
+  --fenext-color-light-dark: red;
+  --fenext-color-light-light: red;
   --fenext-color-light: #f8f9fa;
   --fenext-color-theme-light-light: #f8f9fa;
-  --fenext-color-dark-extra-dark: hsl(210, 10.8108108108%, -10.4901960784%);
-  --fenext-color-dark-dark: rgb(10.2567567568, 11.5, 12.7432432432);
-  --fenext-color-dark-neto-light: #212529;
-  --fenext-color-dark-light: rgb(55.7432432432, 62.5, 69.2567567568);
-  --fenext-color-dark-extra-light: rgb(89.8581081081, 100.75, 111.6418918919);
+  --fenext-color-dark-dark: red;
+  --fenext-color-dark-light: red;
   --fenext-color-dark: #212529;
   --fenext-color-theme-light-dark: #212529;
-  --fenext-color-white-smoke-extra-dark: hsl(0, 0%, 71%);
-  --fenext-color-white-smoke-dark: hsl(0, 0%, 86%);
-  --fenext-color-white-smoke-neto-light: hsl(0, 0%, 96%);
-  --fenext-color-white-smoke-light: hsl(0, 0%, 106%);
-  --fenext-color-white-smoke-extra-light: hsl(0, 0%, 121%);
+  --fenext-color-white-smoke-dark: red;
+  --fenext-color-white-smoke-light: red;
   --fenext-color-white-smoke: hsl(0, 0%, 96%);
   --fenext-color-theme-light-white-smoke: hsl(0, 0%, 96%);
-  --fenext-color-neto-dark-extra-dark: hsl(210, 10.8108108108%, -10.4901960784%);
-  --fenext-color-neto-dark-dark: rgb(10.2567567568, 11.5, 12.7432432432);
-  --fenext-color-neto-dark-neto-light: #212529;
-  --fenext-color-neto-dark-light: rgb(55.7432432432, 62.5, 69.2567567568);
-  --fenext-color-neto-dark-extra-light: rgb(89.8581081081, 100.75, 111.6418918919);
+  --fenext-color-neto-dark-dark: red;
+  --fenext-color-neto-dark-light: red;
   --fenext-color-neto-dark: #212529;
   --fenext-color-theme-light-neto-dark: #212529;
-  --fenext-color-loader-background-extra-dark: rgb(178.25, 178.25, 178.25);
-  --fenext-color-loader-background-dark: rgb(216.5, 216.5, 216.5);
-  --fenext-color-loader-background-neto-light: #f2f2f2;
-  --fenext-color-loader-background-light: hsl(0, 0%, 104.9019607843%);
-  --fenext-color-loader-background-extra-light: hsl(0, 0%, 119.9019607843%);
+  --fenext-color-loader-background-dark: red;
+  --fenext-color-loader-background-light: red;
   --fenext-color-loader-background: #f2f2f2;
   --fenext-color-theme-light-loader-background: #f2f2f2;
-  --fenext-color-loader-foreground-extra-dark: rgb(92.25, 92.25, 92.25);
-  --fenext-color-loader-foreground-dark: rgb(130.5, 130.5, 130.5);
-  --fenext-color-loader-foreground-neto-light: #9c9c9c;
-  --fenext-color-loader-foreground-light: rgb(181.5, 181.5, 181.5);
-  --fenext-color-loader-foreground-extra-light: rgb(219.75, 219.75, 219.75);
+  --fenext-color-loader-foreground-dark: red;
+  --fenext-color-loader-foreground-light: red;
   --fenext-color-loader-foreground: #9c9c9c;
   --fenext-color-theme-light-loader-foreground: #9c9c9c;
-  --fenext-color-primary-extra-dark: rgb(13.6215139442, 69.1553784861, 117.8784860558);
-  --fenext-color-primary-dark: rgb(21.5458167331, 109.3864541833, 186.4541832669);
-  --fenext-color-primary-neto-light: #1E88E5;
-  --fenext-color-primary-light: rgb(75.7171314741, 160.1792828685, 234.2828685259);
-  --fenext-color-primary-extra-light: rgb(144.2928286853, 196.4482071713, 242.2071713147);
+  --fenext-color-primary-dark: red;
+  --fenext-color-primary-light: red;
   --fenext-color-primary: #1E88E5;
   --fenext-color-theme-light-primary: #1E88E5;
-  --fenext-color-secondary-extra-dark: rgb(123.4311740891, 12.0688259109, 49.9210526316);
-  --fenext-color-secondary-dark: rgb(193.1174089069, 18.8825910931, 78.1052631579);
-  --fenext-color-secondary-neto-light: #E91E63;
-  --fenext-color-secondary-light: rgb(237.5425101215, 76.4574898785, 131.2105263158);
-  --fenext-color-secondary-extra-light: rgb(244.3562753036, 146.1437246964, 179.5263157895);
+  --fenext-color-secondary-dark: red;
+  --fenext-color-secondary-light: red;
   --fenext-color-secondary: #E91E63;
   --fenext-color-theme-light-secondary: #E91E63;
-  --fenext-color-success-extra-dark: rgb(29.3678414097, 70.1321585903, 31.1211453744);
-  --fenext-color-success-dark: rgb(51.9471365639, 124.0528634361, 55.0484581498);
-  --fenext-color-success-neto-light: #43A047;
-  --fenext-color-success-light: rgb(91.4757709251, 186.5242290749, 95.563876652);
-  --fenext-color-success-extra-light: rgb(145.3964757709, 209.1035242291, 148.1365638767);
+  --fenext-color-success-dark: red;
+  --fenext-color-success-light: red;
   --fenext-color-success: #43A047;
   --fenext-color-theme-light-success: #43A047;
-  --fenext-color-warning-extra-dark: rgb(176.75, 144.375, 1.75);
-  --fenext-color-warning-dark: rgb(252.5, 206.25, 2.5);
-  --fenext-color-warning-neto-light: #FDD835;
-  --fenext-color-warning-light: rgb(253.5, 225.75, 103.5);
-  --fenext-color-warning-extra-light: rgb(254.25, 240.375, 179.25);
+  --fenext-color-warning-dark: red;
+  --fenext-color-warning-light: red;
   --fenext-color-warning: #FDD835;
   --fenext-color-theme-light-warning: #FDD835;
-  --fenext-color-danger-extra-dark: rgb(136.8815789474, 20.3289473684, 17.6184210526);
-  --fenext-color-danger-dark: rgb(204.6578947368, 30.3947368421, 26.3421052632);
-  --fenext-color-danger-neto-light: #E53935;
-  --fenext-color-danger-light: rgb(234.8157894737, 101.2894736842, 98.1842105263);
-  --fenext-color-danger-extra-light: rgb(243.5394736842, 167.7236842105, 165.9605263158);
+  --fenext-color-danger-dark: red;
+  --fenext-color-danger-light: red;
   --fenext-color-danger: #E53935;
   --fenext-color-theme-light-danger: #E53935;
-  --fenext-color-light-extra-dark: rgb(181.25, 181.25, 181.25);
-  --fenext-color-light-dark: rgb(219.5, 219.5, 219.5);
-  --fenext-color-light-neto-light: #F5F5F5;
-  --fenext-color-light-light: hsl(0, 0%, 106.0784313725%);
-  --fenext-color-light-extra-light: hsl(0, 0%, 121.0784313725%);
+  --fenext-color-light-dark: red;
+  --fenext-color-light-light: red;
   --fenext-color-light: #F5F5F5;
   --fenext-color-theme-light-light: #F5F5F5;
-  --fenext-color-dark-extra-dark: hsl(0, 0%, -12.0588235294%);
-  --fenext-color-dark-dark: rgb(7.5, 7.5, 7.5);
-  --fenext-color-dark-neto-light: #212121;
-  --fenext-color-dark-light: rgb(58.5, 58.5, 58.5);
-  --fenext-color-dark-extra-light: rgb(96.75, 96.75, 96.75);
+  --fenext-color-dark-dark: red;
+  --fenext-color-dark-light: red;
   --fenext-color-dark: #212121;
   --fenext-color-theme-light-dark: #212121;
-  --fenext-color-gray-extra-dark: rgb(137.25, 137.25, 137.25);
-  --fenext-color-gray-dark: rgb(175.5, 175.5, 175.5);
-  --fenext-color-gray-neto-light: #c9c9c9;
-  --fenext-color-gray-light: rgb(226.5, 226.5, 226.5);
-  --fenext-color-gray-extra-light: hsl(0, 0%, 103.8235294118%);
+  --fenext-color-gray-dark: red;
+  --fenext-color-gray-light: red;
   --fenext-color-gray: #c9c9c9;
   --fenext-color-theme-light-gray: #c9c9c9;
-  --fenext-color-disabled-extra-dark: rgb(92.25, 92.25, 92.25);
-  --fenext-color-disabled-dark: rgb(130.5, 130.5, 130.5);
-  --fenext-color-disabled-neto-light: #9c9c9c;
-  --fenext-color-disabled-light: rgb(181.5, 181.5, 181.5);
-  --fenext-color-disabled-extra-light: rgb(219.75, 219.75, 219.75);
+  --fenext-color-disabled-dark: red;
+  --fenext-color-disabled-light: red;
   --fenext-color-disabled: #9c9c9c;
   --fenext-color-theme-light-disabled: #9c9c9c;
+  --fenext-color-white-dark: red;
+  --fenext-color-white-light: red;
+  --fenext-color-white: #fff;
+  --fenext-color-theme-light-white: #fff;
 }
 
 ::-webkit-scrollbar {
@@ -1502,7 +1124,7 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   aspect-ratio: 1/1;
   border-radius: 3px;
   background: var(--fenext-color-light);
-  border: 2px solid var(--fenext-color-dark);
+  border: 2px solid var(--fenext-color-gray);
   color: var(--fenext-color-dark);
   display: flex;
   align-items: center;
@@ -1541,6 +1163,7 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   position: relative;
   color: var(--fenext-color-dark);
   background-color: var(--fenext-color-light);
+  background-color: var(--fenext-color-white);
   width: 100%;
   display: flex;
   align-items: center;
@@ -1616,7 +1239,7 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   color: var(--fenext-color-light);
   background: var(--fenext-color-primary);
   z-index: 2;
-  --box-shadow-color: var(--fenext-color-light);
+  --box-shadow-color: var(--fenext-color-white);
   box-shadow: 0 0 0 1rem var(--box-shadow-color), 5rem 0 0 1rem var(--box-shadow-color), -5rem 0 0 1rem var(--box-shadow-color);
 }
 .fenext-select-option-btn:hover {
@@ -1705,6 +1328,8 @@ body.sb-show-main.sb-main-padded:has(.fenext-layout-grid) {
   transform: scaleY(var(--list-scaleY, 0));
   transform-origin: top center;
   overflow: auto;
+  background-color: var(--fenext-color-white);
+  box-shadow: 0 0 2px 0 var(--fenext-color-gray);
 }
 .fenext-select-list-options-type-select {
   top: 0;
@@ -2055,34 +1680,14 @@ body:not(:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-s
 .fenext-select-multiple .fenext-select-list-options:not(:has(.fenext-select-option-not-hidden)) {
   display: var(--display-list-empty) !important;
 }
+.fenext-select-multiple .fenext-select-option-checkbox {
+  display: none;
+}
+.fenext-select-multiple-checkbox .fenext-select-option-checkbox {
+  display: grid;
+}
 .fenext-select-multiple-checkbox .fenext-select-multiple-list .fenext-select-option {
   position: relative;
-}
-.fenext-select-multiple-checkbox .fenext-select-multiple-list .fenext-select-option::before {
-  content: "";
-  width: 1em;
-  height: 1em;
-  font-size: 0.75em;
-  padding: 0.3em;
-  aspect-ratio: 1/1;
-  display: block;
-  border-radius: 0.25em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" fill="currentColor"/></svg>'), var(--fenext-color-green);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--fenext-color-white);
-}
-.fenext-select-multiple-checkbox .fenext-select-multiple-list .fenext-select-option::before-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.fenext-select-multiple-checkbox .fenext-select-multiple-list .fenext-select-option::before-icon svg {
-  width: 75%;
 }
 .fenext-select-multiple-checkbox .fenext-select-multiple-list .fenext-select-option-delete {
   position: absolute;
@@ -2125,8 +1730,9 @@ body:not(:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-s
   width: 1.25rem;
   aspect-ratio: 1/1;
   border-radius: 100%;
-  color: var(--fenext-color-gray-light);
-  border: 2px solid var(--fenext-color-gray-light);
+  background: var(--fenext-color-light);
+  border: 2px solid var(--fenext-color-gray);
+  color: var(--fenext-color-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2138,6 +1744,11 @@ body:not(:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-s
 }
 .fenext-input-radio-box-icon svg {
   width: 0.8rem;
+}
+.fenext-input-radio:has(.fenext-input-radio-input:checked) .fenext-input-radio-box {
+  border-color: var(--fenext-color-primary);
+  background: var(--fenext-color-primary);
+  color: var(--fenext-color-light);
 }
 .fenext-input-radio-text {
   font-family: var(--fenext-font-global);
@@ -3359,12 +2970,14 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
 .fenext-table-content-table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--fenext-color-white);
   color: var(--fenext-color-dark);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 2px var(--fenext-color-light);
 }
 .fenext-table-content-table-thead {
-  background-color: var(--fenext-color-white-smoke);
-  border-bottom: 1px solid var(--fenext-color-gray-extra-light);
+  background-color: var(--fenext-color-light);
+  border-bottom: 1px solid var(--fenext-color-light);
   position: sticky;
   top: 0;
 }
@@ -3607,7 +3220,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   font-weight: 800;
   line-height: 1.36;
   text-align: left;
-  color: var(--fenext-color-gray-dark);
+  color: var(--fenext-color-dark);
   padding: 1.5rem 1rem;
   white-space: nowrap;
   position: relative;
@@ -3617,43 +3230,31 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
 .fenext-table-content-table-th-arrow {
   width: 0.5rem;
 }
-.fenext-table-content-table-th .fenext-collapse-header {
-  color: var(--fenext-color-dark);
-  background-color: transparent;
+.fenext-table-content-table-th .fenext-dropdown {
   padding: 0;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
+  background-color: transparent;
 }
-.fenext-table-content-table-th .fenext-collapse-header-icon svg {
+.fenext-table-content-table-th .fenext-dropdown-header-icon svg {
   width: 0.5rem;
 }
-.fenext-table-content-table-th .fenext-collapse .fenext-collapse-body {
-  padding-inline: 0;
-  display: grid;
-  min-width: min(max(100%, 12rem), 100dvw);
+.fenext-table-content-table-th-dropdown-body {
+  box-shadow: 0 0 2px 0 var(--fenext-color-gray);
 }
-.fenext-table-content-table-th-popup-item,
-.fenext-table-content-table-th .fenext-input-radio {
-  padding: 0.2rem 1.5rem;
-  color: var(--fenext-color-white);
+.fenext-table-content-table-th-dropdown-body .fenext-input-radio {
+  padding: 0.2rem 0rem;
+  color: var(--fenext-color-dark);
 }
-.fenext-table-content-table-th-popup-item:hover,
-.fenext-table-content-table-th .fenext-input-radio:hover {
-  background-color: var(--fenext-color-gray-extra-light);
-}
-.fenext-table-content-table-th .fenext-input-radio-text {
+.fenext-table-content-table-th-dropdown-body .fenext-input-radio-text {
   color: currentColor;
 }
-.fenext-table-content-table-th .fenext-content-radio {
+.fenext-table-content-table-th-dropdown-body .fenext-content-radio {
   gap: 0;
 }
 .fenext-table-content-table-tr:nth-child(2n) {
-  background-color: var(--fenext-color-white-smoke);
+  background-color: var(--fenext-color-light);
 }
 .fenext-table-content-table-tr:hover {
-  background-color: var(--fenext-color-white-smoke-dark);
+  background-color: var(--fenext-color-light);
 }
 .fenext-table-content-table-td {
   font-family: var(--fenext-font-global);
@@ -3661,7 +3262,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   font-weight: 400;
   line-height: 1.36;
   text-align: left;
-  border-bottom: 1px solid var(--fenext-color-gray-extra-light);
+  border-bottom: 1px solid var(--fenext-color-light);
   padding: 1rem 1rem;
   transition: 0.25s;
   white-space: nowrap;
@@ -3695,7 +3296,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
       font-weight: 800;
       line-height: 1.36;
       text-align: left;
-      color: var(--fenext-color-gray-dark);
+      color: var(--fenext-color-dark);
       padding: 0.5rem 1rem;
     }
     .fenext-table-content-table-thead {
@@ -3712,11 +3313,11 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
       display: grid;
       padding: 1rem;
       border-radius: 0.5rem;
-      background-color: var(--fenext-color-white-smoke);
+      background-color: var(--fenext-color-light);
       align-items: flex-start;
     }
     .fenext-table-content-table-tr:hover {
-      background-color: var(--fenext-color-white-smoke);
+      background-color: var(--fenext-color-light);
     }
     .fenext-table-content-table-td {
       border: 0;
@@ -3729,7 +3330,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
       border-radius: 0.5rem;
     }
     .fenext-table-content-table-td:nth-child(2n) {
-      background-color: var(--fenext-color-white);
+      background-color: var(--fenext-color-light);
       border-radius: 0.5rem;
     }
     .fenext-table-content-table-td::before {
@@ -3865,7 +3466,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
 
 .fenext-error {
   background-color: var(--fenext-color-danger);
-  color: var(--fenext-color-dark);
+  color: var(--fenext-color-light);
   font-family: var(--fenext-font-global);
   font-size: 1rem;
   font-weight: 600;
@@ -4545,7 +4146,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   position: relative;
   gap: calc(var(--fenext-size-btn-menu) / 6);
   cursor: pointer;
-  color: var(--fenext-color-dark);
+  color: var(--fenext-color-primary);
 }
 .fenext-btn-menu-icon-bar-close, .fenext-btn-menu-icon::before, .fenext-btn-menu-icon::after {
   content: "";
@@ -4874,7 +4475,8 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   font-size: 1rem;
   font-weight: 400;
   line-height: 1;
-  background-color: var(--fenext-color-light);
+  background-color: var(--fenext-color-white);
+  box-shadow: 0 0 2px 0 var(--fenext-color-gray);
   color: var(--fenext-color-dark);
   border-radius: 0.75rem;
   transition: opacity var(--time);
@@ -4963,29 +4565,28 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
   font-size: 1rem;
   font-weight: 400;
   line-height: 1;
-  color: var(--fenext-color-neto-dark);
-  background: var(--fenext-color-white-dark);
   position: sticky;
   top: 0;
+  --fenext-notification-color: var(--fenext-color-dark);
+  --fenext-notification-background: var(--fenext-color-light);
+  color: var(--fenext-notification-color);
+  background: var(--fenext-notification-background);
 }
-.fenext-notification-ok {
-  background: var(--fenext-color-success);
-  color: var(--fenext-color-white);
+.fenext-notification-OK {
+  --fenext-notification-color: var(--fenext-color-light);
+  --fenext-notification-background: var(--fenext-color-success);
 }
-.fenext-notification-error {
-  background: var(--fenext-color-danger);
-  color: var(--fenext-color-white);
+.fenext-notification-ERROR {
+  --fenext-notification-color: var(--fenext-color-light);
+  --fenext-notification-background: var(--fenext-color-danger) ;
 }
-.fenext-notification-none {
-  color: var(--fenext-color-dark);
-  background: transparent;
+.fenext-notification-NORMAL {
+  --fenext-notification-color: var(--fenext-color-dark);
+  --fenext-notification-background: var(--fenext-color-light) ;
 }
-.fenext-notification-normal {
-  color: var(--fenext-color-dark);
-  background: var(--fenext-color-white-dark);
-}
-.fenext-notification-warning {
-  background: var(--fenext-color-warning);
+.fenext-notification-WARNING {
+  --fenext-notification-color: var(--fenext-color-theme-light-dark);
+  --fenext-notification-background: var(--fenext-color-warning) ;
 }
 .fenext-notification-close {
   position: absolute;
@@ -5762,9 +5363,8 @@ body:has(.fenext-modal-base-active)::-webkit-scrollbar {
 .fenext-box {
   padding: 1rem;
   border-radius: 1rem;
-  background-color: var(--fenext-color-white);
   color: var(--fenext-color-dark);
-  box-shadow: 0 0 7px 0 var(--fenext-color-gray-extra-light);
+  box-shadow: 0 0 5px 0 var(--fenext-color-gray);
   font-family: var(--fenext-font-global);
 }
 
@@ -6036,12 +5636,12 @@ body:has(.fenext-layout-grid-mt-menu-top) .fenext-two-col-sticky-col-sticky {
   padding: 1rem;
   border-radius: 1rem;
   align-items: flex-start;
-  background: var(--fenext-color-white-dark);
+  background: var(--fenext-color-light);
 }
 .fenext-media-page-img {
   --border-color-capa: transparent;
   position: relative;
-  border: 1px solid var(--fenext-color-white-extra-dark);
+  border: 1px solid var(--fenext-color-gray);
   border-radius: 1rem;
   aspect-ratio: 1/1;
   cursor: pointer;
@@ -6065,7 +5665,7 @@ body:has(.fenext-layout-grid-mt-menu-top) .fenext-two-col-sticky-col-sticky {
   z-index: 1;
 }
 .fenext-media-page-img-active {
-  --border-color-capa: var(--fenext-color-teal);
+  --border-color-capa: var(--fenext-color-primary);
   border-color: transparent;
 }
 .fenext-media-page-img-capa {
@@ -6111,11 +5711,11 @@ body:has(.fenext-layout-grid-mt-menu-top) .fenext-two-col-sticky-col-sticky {
   width: 50%;
 }
 .fenext-media-page-img-delete:hover {
-  background: var(--fenext-color-red);
+  background: var(--fenext-color-danger);
   color: var(--fenext-color-white);
 }
 .fenext-media-page-img-download:hover {
-  background: var(--fenext-color-teal);
+  background: var(--fenext-color-success);
   color: var(--fenext-color-white);
 }
 
@@ -6426,7 +6026,7 @@ body:has(.fenext-layout-grid-mt) .fenext-chat {
   max-height: calc(100dvh - 1rem);
   overflow: auto;
   background: var(--fenext-color-white);
-  box-shadow: 0 0 2px var(--fenext-color-dark-extra-light);
+  box-shadow: 0 0 2px 1px var(--fenext-color-light);
   border-radius: 1rem;
   padding: 1rem;
   z-index: var(--fenext-z-index-modal);
@@ -6519,7 +6119,7 @@ body:has(.fenext-layout-grid-mt) .fenext-chat {
   width: 0;
   padding: 1px;
   height: 100%;
-  background: var(--fenext-color-white-dark);
+  background: var(--fenext-color-light);
 }
 .fenext-chronological-list-group {
   display: grid;
@@ -6530,7 +6130,7 @@ body:has(.fenext-layout-grid-mt) .fenext-chat {
   font-family: var(--fenext-font-global);
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--fenext-color-blue-extra-dark);
+  color: var(--fenext-color-gray);
   padding-left: calc(var(--space-marker) + var(--item-gap));
 }
 .fenext-chronological-list-group-list {
@@ -6555,8 +6155,8 @@ body:has(.fenext-layout-grid-mt) .fenext-chat {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 0.05rem;
-  background: var(--fenext-color-dark-extra-light);
-  box-shadow: 0 0 0 0.25rem var(--fenext-color-white-dark);
+  background: var(--fenext-color-gray);
+  box-shadow: 0 0 0 0.25rem var(--fenext-color-light);
 }
 .fenext-chronological-list-item-children {
   font-family: var(--fenext-font-global);
@@ -6617,7 +6217,7 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-table-
   font-weight: 800;
   line-height: 1.36;
   text-align: left;
-  color: var(--fenext-color-gray-dark);
+  color: var(--fenext-color-dark);
   padding: 0.5rem 1rem;
 }
 body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-table-box:checked) .fenext-table-content-table-thead {
@@ -6634,11 +6234,11 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-table-
   display: grid;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: var(--fenext-color-white-smoke);
+  background-color: var(--fenext-color-light);
   align-items: flex-start;
 }
 body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-table-box:checked) .fenext-table-content-table-tr:hover {
-  background-color: var(--fenext-color-white-smoke);
+  background-color: var(--fenext-color-light);
 }
 body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-table-box:checked) .fenext-table-content-table-td {
   border: 0;
@@ -6651,7 +6251,7 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-table-
   border-radius: 0.5rem;
 }
 body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-table-box:checked) .fenext-table-content-table-td:nth-child(2n) {
-  background-color: var(--fenext-color-white);
+  background-color: var(--fenext-color-light);
   border-radius: 0.5rem;
 }
 body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-table-box:checked) .fenext-table-content-table-td::before {
@@ -6794,9 +6394,9 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
 
 .fenext-table-actions-checkbox {
   padding: 0.5rem 1rem;
-  background-color: var(--fenext-color-white);
+  background-color: var(--fenext-color-light);
   color: var(--fenext-color-dark);
-  border: 1px solid var(--fenext-color-gray-extra-light);
+  border-radius: 0.5rem;
   font-family: var(--fenext-font-global);
   width: auto;
   display: inline-flex;
@@ -6820,8 +6420,8 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
   --fenext-alert-font-size: 1rem;
   --fenext-alert-font-weight: 500;
   --fenext-alert-line-height: 1;
-  --fenext-alert-color: var(--fenext-color-dark-neto-light);
-  --fenext-alert-background: var(--fenext-color-gray);
+  --fenext-alert-color: var(--fenext-color-dark);
+  --fenext-alert-background: var(--fenext-color-light)
   --fenext-alert-inactive-display: none;
   --fenext-alert-display: grid;
   --fenext-alert-display: grid;
@@ -7054,9 +6654,6 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-select
   grid-template-columns: auto var(--size-clear);
   width: max-content;
   gap: 0.25rem;
-}
-.fenext-filter-date-dropdown-body {
-  background-color: var(--fenext-color-light);
 }
 .fenext-filter-date-dropdown-body .fenext-input-calendar {
   --size-cell: 2.2rem;

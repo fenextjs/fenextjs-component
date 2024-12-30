@@ -1128,6 +1128,20 @@ const Profile: StoryFn<any> = () => (
                     <div style={{padding:"1rem"}}>
                         <TableActionCheckbox
                             
+            actions={[
+                ()=>{
+                    return <>
+                        <Button size="extra-small">Eliminar</Button>
+                    </>
+                },
+                ()=>{
+                    return <>
+                        <Button size="extra-small">Descargar</Button>
+                    </>
+                },
+            ]}
+        
+        
                         >
                             Test Children
                         </TableActionCheckbox>
@@ -1160,6 +1174,21 @@ const Profile: StoryFn<any> = () => (
                     <div style={{padding:"1rem"}}>
                         <MediaPage
                             
+            images={[
+                {
+                    src:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
+                },
+                {
+                    src:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
+                },
+                {
+                    src:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
+                },
+                {
+                    src:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
+                },
+            ]}
+        
                         >
                             Test Children
                         </MediaPage>
@@ -2244,8 +2273,175 @@ const Profile: StoryFn<any> = () => (
                     <div style={{padding:"1rem"}}>
                         <Table
                             
-            header={[]}
-            items={[]}
+            header={[
+                {
+                    id:"id",
+                    th:"ID",
+                    columnOptions:{
+                        
+                    }
+                },
+                {
+                    id:"name",
+                    th:"Name"
+                },
+                {
+                    id:"lastName",
+                    th:"Lastname"
+                },
+                {
+                    id:"id",
+                    th:"ID",
+                    columnOptions:{
+                        
+                    }
+                },
+                {
+                    id:"name",
+                    th:"Name"
+                },
+                {
+                    id:"lastName",
+                    th:"Lastname"
+                },
+                {
+                    id:"id",
+                    th:"ID",
+                    columnOptions:{
+                        
+                    }
+                },
+                {
+                    id:"name",
+                    th:"Name"
+                },
+                {
+                    id:"lastName",
+                    th:"Lastname"
+                },
+                {
+                    id:"id",
+                    th:"ID",
+                    columnOptions:{
+                        
+                    }
+                },
+                {
+                    id:"name",
+                    th:"Name"
+                },
+                {
+                    id:"lastName",
+                    th:"Lastname"
+                },
+                {
+                    id:"id",
+                    th:"ID",
+                    columnOptions:{
+                        
+                    }
+                },
+                {
+                    id:"name",
+                    th:"Name"
+                },
+                {
+                    id:"lastName",
+                    th:"Lastname"
+                },
+                {
+                    id:"id",
+                    th:"ID",
+                    columnOptions:{
+                        
+                    }
+                },
+                {
+                    id:"name",
+                    th:"Name"
+                },
+                {
+                    id:"lastName",
+                    th:"Lastname"
+                },
+                {
+                    id:"id",
+                    th:"ID",
+                    columnOptions:{
+                        
+                    }
+                },
+                {
+                    id:"name",
+                    th:"Name"
+                },
+                {
+                    id:"lastName",
+                    th:"Lastname"
+                },
+            ]}
+            items={[
+                {
+                    id:1,
+                    name:"Name 1",
+                    lastName:"Lastname 1"
+                },
+                {
+                    id:2,
+                    name:"Name 2",
+                    lastName:"Lastname 2"
+                },
+                {
+                    id:3,
+                    name:"Name 3",
+                    lastName:"Lastname 3"
+                },
+                {
+                    id:1,
+                    name:"Name 1",
+                    lastName:"Lastname 1"
+                },
+                {
+                    id:2,
+                    name:"Name 2",
+                    lastName:"Lastname 2"
+                },
+                {
+                    id:3,
+                    name:"Name 3",
+                    lastName:"Lastname 3"
+                },
+                {
+                    id:1,
+                    name:"Name 1",
+                    lastName:"Lastname 1"
+                },
+                {
+                    id:2,
+                    name:"Name 2",
+                    lastName:"Lastname 2"
+                },
+                {
+                    id:3,
+                    name:"Name 3",
+                    lastName:"Lastname 3"
+                },
+                {
+                    id:1,
+                    name:"Name 1",
+                    lastName:"Lastname 1"
+                },
+                {
+                    id:2,
+                    name:"Name 2",
+                    lastName:"Lastname 2"
+                },
+                {
+                    id:3,
+                    name:"Name 3",
+                    lastName:"Lastname 3"
+                },
+            ]}
             name="table"
         
                         >
@@ -2365,6 +2561,8 @@ const Profile: StoryFn<any> = () => (
                     <div style={{padding:"1rem"}}>
                         <Tooltip
                             
+            tooltip="tooltip text"
+        
                         >
                             Test Children
                         </Tooltip>
@@ -2586,7 +2784,28 @@ const Profile: StoryFn<any> = () => (
                     <div style={{padding:"1rem"}}>
                         <ChronologicalList
                             
-             items={[]}
+             items={[
+                {
+                    date: new Date(2024,12,20),
+                    children:<>Contenido 1</>,
+
+                },
+                {
+                    date: new Date(2024,12,21),
+                    children:<>Contenido 2</>,
+
+                },
+                {
+                    date: new Date(2024,12,22),
+                    children:<>Contenido 3</>,
+
+                },
+                {
+                    date: new Date(2024,12,23),
+                    children:<>Contenido 4</>,
+
+                },
+             ]}
         
                         >
                             Test Children

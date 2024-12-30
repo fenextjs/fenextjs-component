@@ -14,7 +14,7 @@
         width: 0;
         padding: 1px;
         height: 100%;
-        background: var(--fenext-color-white-dark);
+        background: var(--fenext-color-light);
     }
     &-group {
         display: grid;
@@ -24,7 +24,7 @@
             font-family: var(--fenext-font-global);
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--fenext-color-blue-extra-dark);
+            color: var(--fenext-color-gray);
             padding-left: calc(var(--space-marker) + var(--item-gap));
         }
         &-list {
@@ -48,8 +48,8 @@
                 width: 100%;
                 aspect-ratio: 1/1;
                 border-radius: 0.05rem;
-                background: var(--fenext-color-dark-extra-light);
-                box-shadow: 0 0 0 0.25rem var(--fenext-color-white-dark);
+                background: var(--fenext-color-gray);
+                box-shadow: 0 0 0 0.25rem var(--fenext-color-light);
             }
         }
         &-children {
