@@ -12,18 +12,18 @@ import { InputSelectCSC } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro              | Tipo          | Requerido | Default | Descripcion                                                                            |
-| ---------------------- | ------------- | --------- | ------- | -------------------------------------------------------------------------------------- |
-| classNameSelectCSC     | string        | no        |         | Clase CSS personalizada para el select.                                                |
-| useContainer           | boolean       | no        | true    | Define si el componente se envuelve en un contenedor `div`.                            |
-| country                | InputCSCProps | no        |         | Propiedades del campo de selección para el país, incluyendo `label` y `placeholder`.   |
-| state                  | InputCSCProps | no        |         | Propiedades del campo de selección para el estado, incluyendo `label` y `placeholder`. |
-| city                   | InputCSCProps | no        |         | Propiedades del campo de selección para la ciudad, incluyendo `label` y `placeholder`. |
-| defaultValueJsonString | string        | no        |         | Valor por defecto en formato JSON para inicializar el select.                          |
-| valueJsonString        | string        | no        |         | Valor actual en formato JSON.                                                          |
-| onChangeJsonString     | function      | no        |         | Función de cambio que devuelve el valor seleccionado en formato JSON.                  |
-| parseJson_to_String    | function      | no        |         | Función para convertir JSON a string.                                                  |
-| parseString_to_Json    | function      | no        |         | Función para convertir string a JSON.                                                  |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| classNameSelectCSC | string | no |  | Clase CSS personalizada para el select. |
+| useContainer | boolean | no | true | Define si el componente se envuelve en un contenedor `div`. |
+| country | InputCSCProps | no |  | Propiedades del campo de selección para el país, incluyendo `label` y `placeholder`. |
+| state | InputCSCProps | no |  | Propiedades del campo de selección para el estado, incluyendo `label` y `placeholder`. |
+| city | InputCSCProps | no |  | Propiedades del campo de selección para la ciudad, incluyendo `label` y `placeholder`. |
+| defaultValueJsonString | string | no |  | Valor por defecto en formato JSON para inicializar el select. |
+| valueJsonString | string | no |  | Valor actual en formato JSON. |
+| onChangeJsonString | function | no |  | Función de cambio que devuelve el valor seleccionado en formato JSON. |
+| parseJson_to_String | function | no |  | Función para convertir JSON a string. |
+| parseString_to_Json | function | no |  | Función para convertir string a JSON. |
 
 ### Storybook
 
@@ -31,17 +31,20 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Selección de país, estado y ciudad
+- Selección de país, estado y ciudad
 
 ```tsx copy
+
 <InputSelectCSC />
 ```
 
--   InputSelectCSC con valores predeterminados
+- InputSelectCSC con valores predeterminados
 
 ```tsx copy
+
 <InputSelectCSC
     valueJsonString='{"country": "US", "state": "CA", "city": "Los Angeles"}'
     onChangeJsonString={(value) => console.log(value)}
 />
 ```
+

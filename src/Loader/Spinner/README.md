@@ -12,9 +12,9 @@ import { LoaderSpinner } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro              | Tipo   | Requerido | Default | Descripcion                                        |
-| ---------------------- | ------ | --------- | ------- | -------------------------------------------------- |
-| classNameLoaderSpinner | string | no        | ''      | Clase CSS para personalizar el estilo del spinner. |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| classNameLoaderSpinner | string | no | '' | Clase CSS para personalizar el estilo del spinner. |
 
 ### Storybook
 
@@ -22,14 +22,15 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   LoaderSpinner básico
+- LoaderSpinner básico
 
 ```tsx copy
 <LoaderSpinner />
 ```
 
--   LoaderSpinner con clase personalizada
+- LoaderSpinner con clase personalizada
 
 ```tsx copy
 <LoaderSpinner classNameLoaderSpinner="custom-loader-spinner" />
 ```
+
