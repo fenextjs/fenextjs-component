@@ -6,7 +6,8 @@ const react_1 = tslib_1.__importStar(require("react"));
 const Text_1 = require("../Text");
 const Date_1 = require("fenextjs-svg/cjs/Date");
 const Collapse_1 = require("../../Collapse");
-const test_1 = require("./Month/test");
+const fenextjs_date_1 = require("fenextjs-date");
+const useDate_1 = require("fenextjs-hook/cjs/useDate");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const Month_1 = require("./Month");
 const InputCalendar = ({ nMonthShow = 1, icon = react_1.default.createElement(Date_1.SvgDate, null), type = "normal", defaultValue, value, defaultValueRange, valueRange, onChange, onChangeRange, validator, errorWithIsChange = true, collapseProps = {}, className = "", classNameContentCalendar = "", classNameInputText = {}, classNameInputCalendarMonth = {}, ...props }) => {
@@ -26,7 +27,7 @@ const InputCalendar = ({ nMonthShow = 1, icon = react_1.default.createElement(Da
         },
     });
     const selectDateRange = (0, react_1.useMemo)(() => valueRange ?? dataSelectDateRange, [valueRange, dataSelectDateRange]);
-    const date = (0, test_1.useDate)({});
+    const date = (0, useDate_1.useDate)({});
     const onPreMonth = () => {
         date.addMonth(-1);
     };
@@ -55,7 +56,7 @@ const InputCalendar = ({ nMonthShow = 1, icon = react_1.default.createElement(Da
                         const d = new Date(date?.date ?? 0);
                         d.setDate(1);
                         d.setMonth(d.getMonth() + n);
-                        const dateN = new test_1.FenextjsDate({
+                        const dateN = new fenextjs_date_1.FenextjsDate({
                             defaultDate: d,
                         });
                         return (react_1.default.createElement(react_1.default.Fragment, null,

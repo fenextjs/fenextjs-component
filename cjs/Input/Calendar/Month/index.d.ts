@@ -1,6 +1,6 @@
 import React from "react";
 import { _TProps } from "fenextjs-interface";
-import { FenextjsDate } from "./test";
+import { FenextjsDate } from "fenextjs-date";
 export interface InputCalendarMonthClassProps {
     className?: string;
     classNameContent?: string;
