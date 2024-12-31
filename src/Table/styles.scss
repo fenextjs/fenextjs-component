@@ -119,21 +119,21 @@
                 &.fenext-table-not-result {
                     border: 0;
                 }
-                &-label-collapse{
+                &-label-collapse {
                     cursor: pointer;
                     padding: var(--padding);
                 }
-                &-collapse{
+                &-collapse {
                     .fenext-collapse-header {
                         padding: 0;
                         height: 0;
                         scale: 0;
                     }
                 }
-                &-is-label-collapse{
+                &-is-label-collapse {
                     padding: 0;
                 }
-                &-is-collapse{
+                &-is-collapse {
                     padding: 0;
                 }
             }

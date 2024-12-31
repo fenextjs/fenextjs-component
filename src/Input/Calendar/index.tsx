@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { InputText, InputTextClassProps, InputTextProps } from "../Text";
 import { SvgDate } from "fenextjs-svg/cjs/Date";
 import { Collapse, CollapseProps } from "../../Collapse";
+import { FenextjsDate } from "fenextjs-date";
 import { useDate } from "fenextjs-hook/cjs/useDate";
 import { useData, useValidator } from "fenextjs-hook";
 import {
@@ -9,7 +10,6 @@ import {
     InputCalendarMonthClassProps,
     InputCalendarMonthProps,
 } from "./Month";
-import { FenextjsDate } from "fenextjs-date";
 
 export interface InputCalendarClassProps {
     className?: string;
@@ -162,6 +162,7 @@ export const InputCalendar = ({
                                         const n = e * i + 1;
 
                                         const d = new Date(date?.date ?? 0);
+                                        d.setDate(1);
                                         d.setMonth(d.getMonth() + n);
                                         const dateN = new FenextjsDate({
                                             defaultDate: d,

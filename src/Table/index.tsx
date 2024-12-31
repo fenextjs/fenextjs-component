@@ -61,7 +61,7 @@ export interface TableClassProps {
      * A CSS class name for the table cell element.
      */
     classNameTd?: string;
-    classNameTdLabelCollapse?:string
+    classNameTdLabelCollapse?: string;
 
     /**
      * A CSS class name for the content container of the pagination component.
@@ -118,7 +118,7 @@ export type TableHeader<T> = {
     colNewTr?: boolean;
 
     isCollapse?: boolean;
-    collapseProps?: Omit<CollapseProps,"children">;
+    collapseProps?: Omit<CollapseProps, "children">;
     /**
      * The className of de column;
      */
@@ -204,7 +204,7 @@ export interface TableBaseProps<T> extends _TProps {
  *
  * @template T The type of data that the table contains.
  */
-export interface TableProps<T> extends TableClassProps, TableBaseProps<T> { }
+export interface TableProps<T> extends TableClassProps, TableBaseProps<T> {}
 
 export const Table = <T,>({
     classNameContent = "",
@@ -263,8 +263,8 @@ export const Table = <T,>({
                     ...e,
                     ...(i == j
                         ? {
-                            __checkbox,
-                        }
+                              __checkbox,
+                          }
                         : {}),
                 };
             });
@@ -376,7 +376,7 @@ export const Table = <T,>({
                                 key={`${i}-${j}`}
                                 className={`
                                     fenext-table-content-table-td 
-                                    fenext-table-content-table-td-${ h.isCollapse? "is-label-collapse" :""}
+                                    fenext-table-content-table-td-${h.isCollapse ? "is-label-collapse" : ""}
                                     ${classNameTd} 
                                     ${h?.className ?? ""}
                                 `}
@@ -388,22 +388,18 @@ export const Table = <T,>({
                                 data-col-id={h?.id}
                                 data-col-text={h?.thText ?? h?.th}
                             >
-                                {
-                                    h.isCollapse
-                                        ?
-                                        <>
-                                            <label 
-                                                htmlFor={`table-${name}-${h?.id?.toString()}-${i}`}
-                                                className={`fenext-table-content-table-td-label-collapse ${classNameTdLabelCollapse}`}
-                                            >
-                                                {h?.collapseProps?.header}
-                                            </label>
-                                        </>
-                                        :
-                                        <>
-                                            {h?.parse?.(item) ?? item[h.id] ?? ""}
-                                        </>
-                                }
+                                {h.isCollapse ? (
+                                    <>
+                                        <label
+                                            htmlFor={`table-${name}-${h?.id?.toString()}-${i}`}
+                                            className={`fenext-table-content-table-td-label-collapse ${classNameTdLabelCollapse}`}
+                                        >
+                                            {h?.collapseProps?.header}
+                                        </label>
+                                    </>
+                                ) : (
+                                    <>{h?.parse?.(item) ?? item[h.id] ?? ""}</>
+                                )}
                             </td>
                         ))}
                     </tr>
@@ -418,7 +414,7 @@ export const Table = <T,>({
                                         key={`${i}-${j}`}
                                         className={`
                                             fenext-table-content-table-td 
-                                            fenext-table-content-table-td-${ new_tr.isCollapse? "is-collapse" :""}
+                                            fenext-table-content-table-td-${new_tr.isCollapse ? "is-collapse" : ""}
                                             ${classNameTd}
                                         `}
                                         style={
@@ -432,33 +428,30 @@ export const Table = <T,>({
                                             new_tr?.thText ?? new_tr?.th
                                         }
                                     >
-
-                                        {
-                                            new_tr.isCollapse
-                                                ?
-                                                <>
-                                                    <Collapse
-                                                        {...new_tr.collapseProps}
-                                                        header=""
-                                                        id={`table-${name}-${new_tr?.id?.toString()}-${i}`}
-                                                        name={`table-${name}-${new_tr?.id?.toString()}-${i}`}
-                                                        className={`
-                                                            ${new_tr.collapseProps?.className ?? ''}
+                                        {new_tr.isCollapse ? (
+                                            <>
+                                                <Collapse
+                                                    {...new_tr.collapseProps}
+                                                    header=""
+                                                    id={`table-${name}-${new_tr?.id?.toString()}-${i}`}
+                                                    name={`table-${name}-${new_tr?.id?.toString()}-${i}`}
+                                                    className={`
+                                                            ${new_tr.collapseProps?.className ?? ""}
                                                             fenext-table-content-table-td-collapse
                                                         `}
-                                                    >
-                                                        {new_tr?.parse?.(item) ??
-                                                            item[new_tr.id] ??
-                                                            ""}
-                                                    </Collapse>
-                                                </>
-                                                :
-                                                <>
+                                                >
                                                     {new_tr?.parse?.(item) ??
                                                         item[new_tr.id] ??
                                                         ""}
-                                                </>
-                                        }
+                                                </Collapse>
+                                            </>
+                                        ) : (
+                                            <>
+                                                {new_tr?.parse?.(item) ??
+                                                    item[new_tr.id] ??
+                                                    ""}
+                                            </>
+                                        )}
                                     </td>
                                 </tr>
                             </>

@@ -832,7 +832,7 @@ WithCollapse.args = {
                 return <>
                     
                     <GridGallery
-                        items={user.files?.map?.((file,i)=><Img src={file.url}/>) ?? []}
+                        items={user.files?.map?.((file,i)=><Img key={i} src={file.url}/>) ?? []}
                     />
                 </>
             },
