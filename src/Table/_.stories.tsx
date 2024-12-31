@@ -3,6 +3,8 @@ import { StoryFn, Meta,  } from "@storybook/react";
 import { env_log } from "fenextjs-functions/cjs/env_log";
 
 import { Table, TableProps } from "./index";
+import {GridGallery} from '../GridGallery';
+import {Img} from '../Img';
 
 export default {
     title: "Table/Table",
@@ -20,6 +22,10 @@ interface TestItemTable {
         id: string;
         name: string;
     };
+    files?:{
+        id:string
+        url:string
+    }[]
 }
 
 const TableIndex: StoryFn<TableProps<TestItemTable>> = (args) =>{
@@ -56,7 +62,7 @@ Index.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -65,7 +71,7 @@ Index.args = {
             parse: (data: TestItemTable) => data.date.toDateString(),
             columnOptions:{
                 // orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -73,7 +79,7 @@ Index.args = {
             th: "Documento",
             columnOptions:{
                 // orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -81,7 +87,7 @@ Index.args = {
             th: "Monto",
             columnOptions:{
                 // orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -89,7 +95,7 @@ Index.args = {
             th: "Cantidad",
             columnOptions:{
                 // orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -100,7 +106,7 @@ Index.args = {
             },
             columnOptions:{
                 // orderBy:true,
-                showHidden:true
+                
             },
             defaultShowHidden:"hidden"
         },
@@ -112,7 +118,7 @@ Index.args = {
             },
             columnOptions:{
                 // orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -123,7 +129,7 @@ Index.args = {
             },
             // columnOptions:{
             //     orderBy:true,
-            //     showHidden:true
+            //     
             // }
         },
     ],
@@ -174,7 +180,7 @@ OneItem.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -183,7 +189,7 @@ OneItem.args = {
             parse: (data: TestItemTable) => data.date.toDateString(),
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -191,7 +197,7 @@ OneItem.args = {
             th: "Documento",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -199,7 +205,7 @@ OneItem.args = {
             th: "Monto",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -207,7 +213,7 @@ OneItem.args = {
             th: "Cantidad",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -218,7 +224,7 @@ OneItem.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             },
             defaultShowHidden:"hidden"
         },
@@ -230,7 +236,7 @@ OneItem.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -241,7 +247,7 @@ OneItem.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -252,7 +258,7 @@ OneItem.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
     ],
@@ -303,7 +309,7 @@ NotItem.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -312,7 +318,7 @@ NotItem.args = {
             parse: (data: TestItemTable) => data.date.toDateString(),
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -320,7 +326,7 @@ NotItem.args = {
             th: "Documento",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -328,7 +334,7 @@ NotItem.args = {
             th: "Monto",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -336,7 +342,7 @@ NotItem.args = {
             th: "Cantidad",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -347,7 +353,7 @@ NotItem.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             },
             defaultShowHidden:"hidden"
         },
@@ -359,7 +365,7 @@ NotItem.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -370,7 +376,7 @@ NotItem.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -381,7 +387,7 @@ NotItem.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
     ],
@@ -419,7 +425,7 @@ TableInTable.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -428,7 +434,7 @@ TableInTable.args = {
             parse: (data: TestItemTable) => data.date.toDateString(),
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -436,7 +442,7 @@ TableInTable.args = {
             th: "Documento",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -444,7 +450,7 @@ TableInTable.args = {
             th: "Monto",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -452,7 +458,7 @@ TableInTable.args = {
             th: "Cantidad",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -463,7 +469,7 @@ TableInTable.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             },
             defaultShowHidden:"hidden"
         },
@@ -475,7 +481,7 @@ TableInTable.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -486,7 +492,7 @@ TableInTable.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -494,7 +500,7 @@ TableInTable.args = {
             th: "newTabel",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             },
             colNewTr:true,
             parse: () => {
@@ -540,7 +546,7 @@ TableInTable.args = {
             th: "newTabel",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             },
             colNewTr:true,
             parse: () => {
@@ -629,7 +635,7 @@ Actions.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -638,7 +644,7 @@ Actions.args = {
             parse: (data: TestItemTable) => data.date.toDateString(),
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -646,7 +652,7 @@ Actions.args = {
             th: "Documento",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -654,7 +660,7 @@ Actions.args = {
             th: "Monto",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -662,7 +668,7 @@ Actions.args = {
             th: "Cantidad",
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -673,7 +679,7 @@ Actions.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             },
             defaultShowHidden:"hidden"
         },
@@ -685,7 +691,7 @@ Actions.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -696,7 +702,7 @@ Actions.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
         {
@@ -707,7 +713,7 @@ Actions.args = {
             },
             columnOptions:{
                 orderBy:true,
-                showHidden:true
+                
             }
         },
     ],
@@ -752,4 +758,120 @@ Actions.args = {
             }
         ]
     }
+} as TableProps<TestItemTable>
+
+
+
+
+
+export const WithCollapse = TableIndex.bind({});
+WithCollapse.args = {
+    name:"Usuarios",
+    
+    header: [
+        {
+            id: "id",
+            th: "ID",
+            parse: (data: TestItemTable) => {
+                return <a href={`#${data.id}`}>{data.id}</a>;
+            },
+            className:"id",
+            columnOptions: {
+                showHidden: true,
+            },
+        },
+        {
+            id: "name",
+            thText:"Name",
+            th: <>Name</>,
+            parse: (data: TestItemTable) => {
+                return <a href={`#${data.id}`}>{data.name}</a>;
+            },
+            columnOptions:{
+                orderBy:true,
+                
+            }
+        },
+        {
+            id: "date",
+            th: "Date",
+            parse: (data: TestItemTable) => data.date.toDateString(),
+            columnOptions:{
+                // orderBy:true,
+                
+            }
+        },
+        {
+            id: "dni",
+            th: "Documento",
+            columnOptions:{
+                // orderBy:true,
+                
+            }
+        },
+        {
+            id: "amount",
+            th: "Monto",
+            columnOptions:{
+                // orderBy:true,
+                
+            }
+        },
+        {
+            id: "quanty",
+            th: "Cantidad",
+            columnOptions:{
+                // orderBy:true,
+                
+            }
+        },
+        {
+            id: "files",
+            th: "Archivos",
+            parse:(user)=>{
+                return <>
+                    
+                    <GridGallery
+                        items={user.files?.map?.((file,i)=><Img src={file.url}/>) ?? []}
+                    />
+                </>
+            },
+            isCollapse:true,
+            collapseProps:{
+                header:"Ver Archivos",
+            }
+        },
+    ],
+    items: new Array(5).fill(1).map((e, i) => {
+        const n = e * i + 1;
+        const r: TestItemTable = {
+            id: `${n}`,
+            name: `Name ${n}`,
+            date: new Date(100000000 * n),
+            dni: `000${n}`,
+            amount: 1000 * n,
+            quanty: 10 * n,
+            org: {
+                id: `${n}`,
+                name: `Organizacion ${n}`,
+            },
+            files: new Array(5).fill(1).map((e, i) => {
+                return {
+                    id:`${e}-${i}`,
+                    url:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
+                }
+            })
+        };
+        return r;
+    }),
+    pagination: {
+        nItems: 20,
+        // nItemsPage:20
+    },
+    loader: false,
+    // onOrderBy:(a)=>{
+    //     env_log(a,{
+    //         name:"Order By"
+    //     })
+    // },
 } as TableProps<TestItemTable>

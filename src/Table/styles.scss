@@ -103,13 +103,14 @@
                 }
             }
             &-td {
+                --padding: 1rem 1rem;
                 font-family: var(--fenext-font-global);
                 font-size: 0.8rem;
                 font-weight: 400;
                 line-height: 1.36;
                 text-align: left;
                 border-bottom: 1px solid var(--fenext-color-light);
-                padding: 1rem 1rem;
+                padding: var(--padding);
 
                 transition: 0.25s;
 
@@ -117,6 +118,23 @@
 
                 &.fenext-table-not-result {
                     border: 0;
+                }
+                &-label-collapse{
+                    cursor: pointer;
+                    padding: var(--padding);
+                }
+                &-collapse{
+                    .fenext-collapse-header {
+                        padding: 0;
+                        height: 0;
+                        scale: 0;
+                    }
+                }
+                &-is-label-collapse{
+                    padding: 0;
+                }
+                &-is-collapse{
+                    padding: 0;
                 }
             }
         }

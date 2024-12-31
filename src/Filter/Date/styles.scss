@@ -1,5 +1,5 @@
 .fenext-filter-date {
-    --size-clear: 1rem;
+    --size-clear: 3rem;
     display: grid;
     grid-template-columns: auto var(--size-clear);
     width: max-content;
@@ -26,6 +26,9 @@
         gap: 0.5rem;
         align-items: center;
         margin-bottom: 1rem;
+    }
+    &:not(:has(&-clear)){
+        grid-template-columns: 1fr;
     }
     &-clear {
         height: 100%;
