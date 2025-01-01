@@ -4,6 +4,9 @@
     gap: 1rem;
     color: var(--fenext-color-dark);
     font-family: var(--fenext-font-global);
+    @media (max-width:575px) {
+        grid-template-columns: 1fr;
+    }
     &-item {
         color: currentColor;
         @media (min-width: 992px) {

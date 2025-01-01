@@ -43,6 +43,9 @@ body {
         &:has(.fenext-layout-grid){
             padding: 0;
         }
+        @media (max-width:991px) {
+            padding: 1rem;
+        }
     }
 }
 :root {
