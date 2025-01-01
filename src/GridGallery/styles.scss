@@ -8,6 +8,7 @@
         grid-template-columns: 1fr;
     }
     &-item {
+        display: grid;
         color: currentColor;
         @media (min-width: 992px) {
             &:nth-child(1) {

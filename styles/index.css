@@ -2967,6 +2967,7 @@ body:not(:has(.fenext-layout-grid-mt-menu-top)) .fenext-input-google-autocomplet
     }
     .fenext-table-content-table-td::before {
       content: var(--fenext-table-head-th) ": ";
+      font-weight: 700;
     }
     .fenext-table-content-table-td:has(.fenext-input-checkbox) {
       display: none;
@@ -4998,6 +4999,7 @@ body:has(.fenext-modal-base-active)::-webkit-scrollbar {
   }
 }
 .fenext-grid-gallery-item {
+  display: grid;
   color: currentColor;
 }
 @media (min-width: 992px) {
@@ -5917,6 +5919,7 @@ body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-table-
 }
 body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-table-box:checked) .fenext-table-content-table-td::before {
   content: var(--fenext-table-head-th) ": ";
+  font-weight: 700;
 }
 body:has(.fenext-input-radio-input-id-fenext-swich-view-fenext-swich-view-table-box:checked) .fenext-table-content-table-td:has(.fenext-input-checkbox) {
   display: none;

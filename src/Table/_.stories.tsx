@@ -5,6 +5,7 @@ import { env_log } from "fenextjs-functions/cjs/env_log";
 import { Table, TableProps } from "./index";
 import {GridGallery} from '../GridGallery';
 import {Img} from '../Img';
+import {Link} from '../Link';
 
 export default {
     title: "Table/Table",
@@ -46,7 +47,7 @@ Index.args = {
             id: "id",
             th: "ID",
             parse: (data: TestItemTable) => {
-                return <a href={`#${data.id}`}>{data.id}</a>;
+                return <Link href={`#${data.id}`}>{data.id}</Link>;
             },
             className:"id",
             columnOptions: {
@@ -58,7 +59,7 @@ Index.args = {
             thText:"Name",
             th: <>Name</>,
             parse: (data: TestItemTable) => {
-                return <a href={`#${data.id}`}>{data.name}</a>;
+                return <Link href={`#${data.id}`}>{data.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -102,7 +103,7 @@ Index.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 // orderBy:true,
@@ -114,7 +115,7 @@ Index.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 // orderBy:true,
@@ -125,7 +126,7 @@ Index.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             // columnOptions:{
             //     orderBy:true,
@@ -169,14 +170,14 @@ OneItem.args = {
             id: "id",
             th: "ID",
             parse: (data: TestItemTable) => {
-                return <a href={`#${data.id}`}>{data.id}</a>;
+                return <Link href={`#${data.id}`}>{data.id}</Link>;
             },
         },
         {
             id: "name",
             th: "Name",
             parse: (data: TestItemTable) => {
-                return <a href={`#${data.id}`}>{data.name}</a>;
+                return <Link href={`#${data.id}`}>{data.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -220,7 +221,7 @@ OneItem.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -232,7 +233,7 @@ OneItem.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -243,7 +244,7 @@ OneItem.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -254,7 +255,7 @@ OneItem.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -298,14 +299,14 @@ NotItem.args = {
             id: "id",
             th: "ID",
             parse: (data: TestItemTable) => {
-                return <a href={`#${data.id}`}>{data.id}</a>;
+                return <Link href={`#${data.id}`}>{data.id}</Link>;
             },
         },
         {
             id: "name",
             th: "Name",
             parse: (data: TestItemTable) => {
-                return <a href={`#${data.id}`}>{data.name}</a>;
+                return <Link href={`#${data.id}`}>{data.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -349,7 +350,7 @@ NotItem.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -361,7 +362,7 @@ NotItem.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -372,7 +373,7 @@ NotItem.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -383,7 +384,7 @@ NotItem.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -414,14 +415,14 @@ TableInTable.args = {
             id: "id",
             th: "ID",
             parse: (data: TestItemTable) => {
-                return <a href={`#${data.id}`}>{data.id}</a>;
+                return <Link href={`#${data.id}`}>{data.id}</Link>;
             },
         },
         {
             id: "name",
             th: "Name",
             parse: (data: TestItemTable) => {
-                return <a href={`#${data.id}`}>{data.name}</a>;
+                return <Link href={`#${data.id}`}>{data.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -465,7 +466,7 @@ TableInTable.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -477,7 +478,7 @@ TableInTable.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -488,7 +489,7 @@ TableInTable.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -624,14 +625,14 @@ Actions.args = {
             id: "id",
             th: "ID",
             parse: (data: TestItemTable) => {
-                return <a href={`#${data.id}`}>{data.id}</a>;
+                return <Link href={`#${data.id}`}>{data.id}</Link>;
             },
         },
         {
             id: "name",
             th: "Name",
             parse: (data: TestItemTable) => {
-                return <a href={`#${data.id}`}>{data.name}</a>;
+                return <Link href={`#${data.id}`}>{data.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -675,7 +676,7 @@ Actions.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -687,7 +688,7 @@ Actions.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -698,7 +699,7 @@ Actions.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -709,7 +710,7 @@ Actions.args = {
             id: "org",
             th: "Organizacion",
             parse: ({ org }: TestItemTable) => {
-                return <a href={`#${org?.id}`}>{org?.name}</a>;
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,
@@ -773,7 +774,7 @@ WithCollapse.args = {
             id: "id",
             th: "ID",
             parse: (data: TestItemTable) => {
-                return <a href={`#${data.id}`}>{data.id}</a>;
+                return <Link href={`#${data.id}`}>{data.id}</Link>;
             },
             className:"id",
             columnOptions: {
@@ -785,7 +786,7 @@ WithCollapse.args = {
             thText:"Name",
             th: <>Name</>,
             parse: (data: TestItemTable) => {
-                return <a href={`#${data.id}`}>{data.name}</a>;
+                return <Link href={`#${data.id}`}>{data.name}</Link>;
             },
             columnOptions:{
                 orderBy:true,

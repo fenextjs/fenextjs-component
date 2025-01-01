@@ -215,6 +215,7 @@
                     }
                     &::before {
                         content: var(--fenext-table-head-th) ": ";
+                        font-weight: 700;
                     }
                     &:has(.fenext-input-checkbox) {
                         display: none;
@@ -225,9 +226,6 @@
                     &-is-collapse{
                         grid-template-columns: 1fr;
                         padding: 1rem;
-                        &::before{
-                            // display: none;
-                        }
                         .fenext-collapse-body {
                             padding: 0;
                         }
