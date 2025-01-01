@@ -12,15 +12,14 @@ import { Pagination } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro         | Tipo                                    | Requerido | Default | Descripcion                                                                                   |
-| ----------------- | --------------------------------------- | --------- | ------- | --------------------------------------------------------------------------------------------- |
-| className         | string                                  | no        | ''      | Clase CSS para el contenedor principal de la paginación.                                      |
-| classNameItemPage | PaginationItemPageClassProps            | no        | \{\}    | Objeto con las clases CSS para personalizar el componente de cada página.                     |
-| classNameNPage    | PaginationNPageClassProps               | no        | \{\}    | Objeto con las clases CSS para personalizar el componente de selección de número de página.   |
-| showItemPage      | boolean                                 | no        | true    | Determina si se debe mostrar el componente de cada página en la paginación.                   |
-| showNPage         | boolean                                 | no        | true    | Determina si se debe mostrar el componente de selección de número de página en la paginación. |
-| listNpage         | Array\<\{ id: string; text: string \}\> | no        | [       |
-
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| className | string | no | '' | Clase CSS para el contenedor principal de la paginación. |
+| classNameItemPage | PaginationItemPageClassProps | no | \{\} | Objeto con las clases CSS para personalizar el componente de cada página. |
+| classNameNPage | PaginationNPageClassProps | no | \{\} | Objeto con las clases CSS para personalizar el componente de selección de número de página. |
+| showItemPage | boolean | no | true | Determina si se debe mostrar el componente de cada página en la paginación. |
+| showNPage | boolean | no | true | Determina si se debe mostrar el componente de selección de número de página en la paginación. |
+| listNpage | Array\<\{ id: string; text: string \}\> | no | [
                 \{ id: "10", text: "10" \},
                 \{ id: "20", text: "20" \},
                 \{ id: "50", text: "50" \},
@@ -34,20 +33,21 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Paginación básica
+- Paginación básica
 
 ```tsx copy
 <Pagination />
 ```
 
--   Paginación con selección de número de página oculta
+- Paginación con selección de número de página oculta
 
 ```tsx copy
 <Pagination showNPage={false} />
 ```
 
--   Paginación personalizada
+- Paginación personalizada
 
 ```tsx copy
 <Pagination className="mi-clase-personalizada" />
 ```
+

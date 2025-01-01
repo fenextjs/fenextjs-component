@@ -12,21 +12,21 @@ import { LayoutGridMenuLeft } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro                | Tipo           | Requerido | Default                    | Descripcion                                                                   |
-| ------------------------ | -------------- | --------- | -------------------------- | ----------------------------------------------------------------------------- |
-| useAlertHook             | boolean        | no        | true                       | Indica si se debe renderizar el componente de alerta (AlertHook).             |
-| alertHookProps           | AlertHookProps | no        | \{\}                       | Propiedades para configurar el AlertHook.                                     |
-| loader                   | boolean        | no        | false                      | Indica si la página está en estado de carga, mostrando un indicador de carga. |
-| menuLeft                 | ReactNode      | no        | undefined                  | Contenido que se renderiza en el menú izquierdo del layout.                   |
-| menuLeftActive           | boolean        | no        | true                       | Indica si el menú izquierdo está activo.                                      |
-| menuLeftMovilActive      | boolean        | no        | false                      | Indica si el menú izquierdo está activo en dispositivos móviles.              |
-| useHeaderButtonMenu      | boolean        | no        | false                      | Permite mostrar un botón en el encabezado para alternar el menú.              |
-| usePageProgress          | boolean        | no        | true                       | Habilita una barra de progreso de la página.                                  |
-| target                   | string         | no        | 'fenext-btn-menu-checkbox' | El objetivo del botón en el menú.                                             |
-| className                | string         | no        | ''                         | Clase CSS para el componente principal.                                       |
-| classNameMenuLeft        | string         | no        | ''                         | Clase CSS para el menú izquierdo.                                             |
-| classNameMenuLeftContent | string         | no        | ''                         | Clase CSS para el contenido del menú izquierdo.                               |
-| classNameChildren        | string         | no        | ''                         | Clase CSS para el contenedor de los hijos del componente.                     |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| useAlertHook | boolean | no | true | Indica si se debe renderizar el componente de alerta (AlertHook). |
+| alertHookProps | AlertHookProps | no | \{\} | Propiedades para configurar el AlertHook. |
+| loader | boolean | no | false | Indica si la página está en estado de carga, mostrando un indicador de carga. |
+| menuLeft | ReactNode | no | undefined | Contenido que se renderiza en el menú izquierdo del layout. |
+| menuLeftActive | boolean | no | true | Indica si el menú izquierdo está activo. |
+| menuLeftMovilActive | boolean | no | false | Indica si el menú izquierdo está activo en dispositivos móviles. |
+| useHeaderButtonMenu | boolean | no | false | Permite mostrar un botón en el encabezado para alternar el menú. |
+| usePageProgress | boolean | no | true | Habilita una barra de progreso de la página. |
+| target | string | no | 'fenext-btn-menu-checkbox' | El objetivo del botón en el menú. |
+| className | string | no | '' | Clase CSS para el componente principal. |
+| classNameMenuLeft | string | no | '' | Clase CSS para el menú izquierdo. |
+| classNameMenuLeftContent | string | no | '' | Clase CSS para el contenido del menú izquierdo. |
+| classNameChildren | string | no | '' | Clase CSS para el contenedor de los hijos del componente. |
 
 ### Storybook
 
@@ -34,20 +34,21 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Uso básico
+- Uso básico
 
 ```tsx copy
 <LayoutGridMenuLeft />
 ```
 
--   Con menú personalizado
+- Con menú personalizado
 
 ```tsx copy
 <LayoutGridMenuLeft menuLeft={<CustomMenu />} />
 ```
 
--   Con estado de carga
+- Con estado de carga
 
 ```tsx copy
 <LayoutGridMenuLeft loader={true} />
 ```
+

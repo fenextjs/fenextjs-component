@@ -12,18 +12,18 @@ import { InputCardCCV } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro     | Tipo     | Requerido | Default   | Descripcion                                                                                                                       |
-| ------------- | -------- | --------- | --------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| placeholder   | string   | no        | 'XXX'     | Texto que se muestra como marcador de posición en el campo de entrada.                                                            |
-| disabled      | boolean  | no        | false     | Indica si el campo de entrada está deshabilitado.                                                                                 |
-| required      | boolean  | no        | false     | Indica si el campo de entrada es obligatorio.                                                                                     |
-| optional      | boolean  | no        | false     | Indica si el campo de entrada es opcional.                                                                                        |
-| onChange      | function | no        | undefined | Función que se ejecuta al cambiar el valor del campo de entrada.                                                                  |
-| maxLength     | number   | no        | 4         | Longitud máxima permitida para la entrada, en este caso 4 caracteres. Se establece directamente en el componente.                 |
-| regExpReplace | string   | no        | ''        | Cadena utilizada para reemplazar los valores no deseados. Se establece directamente en el componente.                             |
-| regExp        | RegExp   | no        | /[^0-9]/g | Expresión regular que se utiliza para validar la entrada, permitiendo solo números. Se establece directamente en el componente.   |
-| inputMode     | string   | no        | 'numeric' | Modo de entrada para facilitar el ingreso de datos numéricos en dispositivos móviles. Se establece directamente en el componente. |
-| type          | string   | no        | 'number'  | Tipo de entrada del campo, que se establece como número. Se establece directamente en el componente.                              |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| placeholder | string | no | 'XXX' | Texto que se muestra como marcador de posición en el campo de entrada. |
+| disabled | boolean | no | false | Indica si el campo de entrada está deshabilitado. |
+| required | boolean | no | false | Indica si el campo de entrada es obligatorio. |
+| optional | boolean | no | false | Indica si el campo de entrada es opcional. |
+| onChange | function | no | undefined | Función que se ejecuta al cambiar el valor del campo de entrada. |
+| maxLength | number | no | 4 | Longitud máxima permitida para la entrada, en este caso 4 caracteres. Se establece directamente en el componente. |
+| regExpReplace | string | no | '' | Cadena utilizada para reemplazar los valores no deseados. Se establece directamente en el componente. |
+| regExp | RegExp | no | /[^0-9]/g | Expresión regular que se utiliza para validar la entrada, permitiendo solo números. Se establece directamente en el componente. |
+| inputMode | string | no | 'numeric' | Modo de entrada para facilitar el ingreso de datos numéricos en dispositivos móviles. Se establece directamente en el componente. |
+| type | string | no | 'number' | Tipo de entrada del campo, que se establece como número. Se establece directamente en el componente. |
 
 ### Storybook
 
@@ -31,26 +31,27 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Básico
+- Básico
 
 ```tsx copy
 <InputCardCCV />
 ```
 
--   InputCardCCV con texto de marcador de posición personalizado
+- InputCardCCV con texto de marcador de posición personalizado
 
 ```tsx copy
 <InputCardCCV placeholder="Ingresa tu CCV" />
 ```
 
--   InputCardCCV deshabilitado
+- InputCardCCV deshabilitado
 
 ```tsx copy
 <InputCardCCV disabled={true} />
 ```
 
--   InputCardCCV con función personalizada
+- InputCardCCV con función personalizada
 
 ```tsx copy
 <InputCardCCV onChange={(e) => console.log(e.target.value)} />
 ```
+

@@ -12,15 +12,15 @@ import { InputUnitBase } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro       | Tipo                                       | Requerido | Default   | Descripcion                                                                                       |
-| --------------- | ------------------------------------------ | --------- | --------- | ------------------------------------------------------------------------------------------------- |
-| defaultValue    | Partial\<InputUnitValue\>                  | no        | \{\}      | Valor por defecto del componente, incluye el valor numérico y la unidad de medida.                |
-| value           | Partial\<InputUnitValue\>                  | no        | undefined | Valor actual del componente, incluye el valor numérico y la unidad de medida.                     |
-| onChange        | (data: Partial\<InputUnitValue\>) =\> void | no        | undefined | Función que se ejecuta cuando el valor o la unidad cambia, recibe el objeto con `value` y `unit`. |
-| options         | Unit_All[]                                 | sí        | undefined | Opciones disponibles para las unidades de medida, definidas por el tipo `Unit_All`.               |
-| className       | string                                     | no        | undefined | Clase CSS personalizada para el componente principal.                                             |
-| classNameSelect | string                                     | no        | undefined | Clase CSS personalizada para el select de unidades.                                               |
-| classNameInput  | string                                     | no        | undefined | Clase CSS personalizada para el input del valor numérico.                                         |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| defaultValue | Partial\<InputUnitValue\> | no | \{\} | Valor por defecto del componente, incluye el valor numérico y la unidad de medida. |
+| value | Partial\<InputUnitValue\> | no | undefined | Valor actual del componente, incluye el valor numérico y la unidad de medida. |
+| onChange | (data: Partial\<InputUnitValue\>) =\> void | no | undefined | Función que se ejecuta cuando el valor o la unidad cambia, recibe el objeto con `value` y `unit`. |
+| options | Unit_All[] | sí | undefined | Opciones disponibles para las unidades de medida, definidas por el tipo `Unit_All`. |
+| className | string | no | undefined | Clase CSS personalizada para el componente principal. |
+| classNameSelect | string | no | undefined | Clase CSS personalizada para el select de unidades. |
+| classNameInput | string | no | undefined | Clase CSS personalizada para el input del valor numérico. |
 
 ### Storybook
 
@@ -28,23 +28,21 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   InputUnitBase básico
+- InputUnitBase básico
 
 ```tsx copy
-<InputUnitBase options={["cm", "in", "ft"]} />
+<InputUnitBase options={['cm', 'in', 'ft']} />
 ```
 
--   InputUnitBase con valor y unidad iniciales
+- InputUnitBase con valor y unidad iniciales
 
 ```tsx copy
-<InputUnitBase
-    defaultValue={{ value: 10, unit: "cm" }}
-    options={["cm", "in", "ft"]}
-/>
+<InputUnitBase defaultValue={{ value: 10, unit: 'cm' }} options={['cm', 'in', 'ft']} />
 ```
 
--   InputUnitBase con función onChange
+- InputUnitBase con función onChange
 
 ```tsx copy
-<InputUnitBase options={["kg", "g"]} onChange={(data) => console.log(data)} />
+<InputUnitBase options={['kg', 'g']} onChange={(data) => console.log(data)} />
 ```
+

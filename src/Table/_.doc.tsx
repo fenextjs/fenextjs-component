@@ -181,6 +181,18 @@ export default {
             description:
                 "Componente para seleccionar todas las casillas de verificación.",
         },
+        {
+            id: "isCollapse",
+            type: "boolean",
+            require: false,
+            description: "Indica si la columna tiene funcionalidad de colapso.",
+        },
+        {
+            id: "collapseProps",
+            type: "Omit<CollapseProps, \"children\">",
+            require: false,
+            description: "Propiedades del componente Collapse utilizadas en columnas colapsables.",
+        }
     ],
     useExample: [
         {
@@ -195,5 +207,35 @@ export default {
             text: "Tabla con ordenación y cargador",
             content: `<Table name="sortableTable" items={[{ id: 1, name: "Alpha" }, { id: 2, name: "Beta" }]} header={[{ id: "id", th: "ID", parse: (item) => \`#\${item}\` }, { id: "name", th: "Name" }]} loader={true} typeLoader="spinner" />`,
         },
+        
+        {
+            text: "Tabla con columna colapsable",
+            content: `<Table 
+    name="collapsibleTable" 
+    items={[
+        { id: 1, name:"Row 1", files:["file 1","file 2"] }, 
+        { id: 2, name:"Row 2", files:[] }
+    ]} 
+    header={[
+        { id:"name", th:"Nombre" }, 
+        { 
+            id:"files", 
+            th:"Archivos", 
+            isCollapse: true, 
+            collapseProps: { 
+                header:"Ver Archivos" 
+            },
+            parse:(data)=>{
+                return <>
+                    {
+                        data.files.map(file=>\`Archivo: \${file}\`)
+                    }
+                    {data.files.length == 0 ? "No hay archivos" : ""}
+                </>
+            },
+        }
+    ]}
+/>`,
+        }
     ],
 };

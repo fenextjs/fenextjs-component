@@ -12,13 +12,13 @@ import { Chronometer } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro         | Tipo                    | Requerido | Default                                                   | Descripcion                                                                                           |
-| ----------------- | ----------------------- | --------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| time              | number                  | no        | 100                                                       | El tiempo inicial en segundos que se mostrará y del cual el cronómetro comenzará la cuenta regresiva. |
-| onChange          | (time: number) =\> void | no        | undefined                                                 | Función que se ejecuta cada vez que el tiempo cambia, recibiendo el nuevo tiempo como parámetro.      |
-| min               | number                  | no        | 0                                                         | El tiempo mínimo al que puede llegar el cronómetro, en segundos.                                      |
-| optionsTimeToText | getTimeToTextProps      | no        | \{days: false, hours: true,minutes: true,seconds: true \} | Opciones para personalizar el formato del tiempo mostrado, como si incluir o no los días.             |
-| className         | string                  | no        | ''                                                        | Clase CSS personalizada para el componente.                                                           |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| time | number | no | 100 | El tiempo inicial en segundos que se mostrará y del cual el cronómetro comenzará la cuenta regresiva. |
+| onChange | (time: number) =\> void | no | undefined | Función que se ejecuta cada vez que el tiempo cambia, recibiendo el nuevo tiempo como parámetro. |
+| min | number | no | 0 | El tiempo mínimo al que puede llegar el cronómetro, en segundos. |
+| optionsTimeToText | getTimeToTextProps | no | \{days: false, hours: true,minutes: true,seconds: true \} | Opciones para personalizar el formato del tiempo mostrado, como si incluir o no los días. |
+| className | string | no | '' | Clase CSS personalizada para el componente. |
 
 ### Storybook
 
@@ -26,26 +26,29 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Cronómetro básico
+- Cronómetro básico
 
 ```tsx copy
 <Chronometer time={120} />
 ```
 
--   Cronómetro con acción al cambiar el tiempo
+- Cronómetro con acción al cambiar el tiempo
 
 ```tsx copy
-<Chronometer
-    time={60}
-    onChange={(newTime) => console.log("Nuevo tiempo:", newTime)}
+
+<Chronometer 
+    time={60} 
+    onChange={(newTime) => console.log("Nuevo tiempo:", newTime)} 
 />
 ```
 
--   Cronómetro con formato de tiempo personalizado
+- Cronómetro con formato de tiempo personalizado
 
 ```tsx copy
-<Chronometer
-    time={3600}
-    optionsTimeToText={{ hours: true, minutes: true, seconds: true }}
+
+<Chronometer 
+    time={3600} 
+    optionsTimeToText={{ hours: true, minutes: true, seconds: true }} 
 />
 ```
+
