@@ -12,13 +12,13 @@ import { Tooltip } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| className | string | no | '' | Clase CSS para personalizar el contenedor del tooltip. |
-| children | ReactNode | no | undefined | Contenido o elemento que activará la visualización del tooltip. |
-| tooltip | ReactNode | no | undefined | Contenido del tooltip que se mostrará al usuario. |
-| positionX | 'center' \| 'right' \| 'left' | no | 'center' | Posición horizontal del tooltip en relación con el elemento activador. |
-| positionY | 'center' \| 'top' \| 'bottom' | no | 'top' | Posición vertical del tooltip en relación con el elemento activador. |
+| Parámetro | Tipo                          | Requerido | Default   | Descripcion                                                            |
+| --------- | ----------------------------- | --------- | --------- | ---------------------------------------------------------------------- |
+| className | string                        | no        | ''        | Clase CSS para personalizar el contenedor del tooltip.                 |
+| children  | ReactNode                     | no        | undefined | Contenido o elemento que activará la visualización del tooltip.        |
+| tooltip   | ReactNode                     | no        | undefined | Contenido del tooltip que se mostrará al usuario.                      |
+| positionX | 'center' \| 'right' \| 'left' | no        | 'center'  | Posición horizontal del tooltip en relación con el elemento activador. |
+| positionY | 'center' \| 'top' \| 'bottom' | no        | 'top'     | Posición vertical del tooltip en relación con el elemento activador.   |
 
 ### Storybook
 
@@ -26,21 +26,24 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Tooltip básico
+-   Tooltip básico
 
 ```tsx copy
 <Tooltip tooltip="Texto de ayuda">Hover aquí</Tooltip>
 ```
 
-- Tooltip con posición ajustada
+-   Tooltip con posición ajustada
 
 ```tsx copy
-<Tooltip tooltip="Texto de ayuda" positionX="right" positionY="bottom">Hover aquí</Tooltip>
+<Tooltip tooltip="Texto de ayuda" positionX="right" positionY="bottom">
+    Hover aquí
+</Tooltip>
 ```
 
-- Tooltip con clase personalizada
+-   Tooltip con clase personalizada
 
 ```tsx copy
-<Tooltip tooltip="Texto de ayuda" className="custom-tooltip">Hover aquí</Tooltip>
+<Tooltip tooltip="Texto de ayuda" className="custom-tooltip">
+    Hover aquí
+</Tooltip>
 ```
-

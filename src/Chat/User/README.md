@@ -12,14 +12,14 @@ import { ChatUser } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| name | string | no | undefined | El nombre del usuario que se mostrará en el componente. |
-| img | Partial\<ImgProps\> | no | undefined | Propiedades de la imagen del usuario, incluyendo la URL o cualquier atributo de la imagen. |
-| role | string | no | undefined | El rol del usuario, usado para aplicar clases CSS adicionales al componente. |
-| loader | boolean | no | false | Indica si el componente está en estado de carga, mostrando placeholders en lugar del contenido real. |
-| imgProps | Partial\<ImgProps\> | no | \{ imgIf404: FenextImgUserPlaceholder \} | Propiedades adicionales para el componente Img, permitiendo personalizar cómo se maneja la imagen del usuario. |
-| extraData | ReactNode | no | undefined | Contenido adicional que se mostrará junto al nombre del usuario, como información adicional o etiquetas. |
+| Parámetro | Tipo                | Requerido | Default                                  | Descripcion                                                                                                    |
+| --------- | ------------------- | --------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| name      | string              | no        | undefined                                | El nombre del usuario que se mostrará en el componente.                                                        |
+| img       | Partial\<ImgProps\> | no        | undefined                                | Propiedades de la imagen del usuario, incluyendo la URL o cualquier atributo de la imagen.                     |
+| role      | string              | no        | undefined                                | El rol del usuario, usado para aplicar clases CSS adicionales al componente.                                   |
+| loader    | boolean             | no        | false                                    | Indica si el componente está en estado de carga, mostrando placeholders en lugar del contenido real.           |
+| imgProps  | Partial\<ImgProps\> | no        | \{ imgIf404: FenextImgUserPlaceholder \} | Propiedades adicionales para el componente Img, permitiendo personalizar cómo se maneja la imagen del usuario. |
+| extraData | ReactNode           | no        | undefined                                | Contenido adicional que se mostrará junto al nombre del usuario, como información adicional o etiquetas.       |
 
 ### Storybook
 
@@ -27,21 +27,20 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Usuario básico
+-   Usuario básico
 
 ```tsx copy
 <ChatUser name="Juan Perez" role="admin" />
 ```
 
-- Usuario con datos extra
+-   Usuario con datos extra
 
 ```tsx copy
 <ChatUser name="Maria" extraData={<span>Conectado</span>} />
 ```
 
-- Usuario en estado de carga
+-   Usuario en estado de carga
 
 ```tsx copy
 <ChatUser loader={true} />
 ```
-
