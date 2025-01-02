@@ -189,10 +189,11 @@ export default {
         },
         {
             id: "collapseProps",
-            type: "Omit<CollapseProps, \"children\">",
+            type: 'Omit<CollapseProps, "children">',
             require: false,
-            description: "Propiedades del componente Collapse utilizadas en columnas colapsables.",
-        }
+            description:
+                "Propiedades del componente Collapse utilizadas en columnas colapsables.",
+        },
     ],
     useExample: [
         {
@@ -207,7 +208,7 @@ export default {
             text: "Tabla con ordenación y cargador",
             content: `<Table name="sortableTable" items={[{ id: 1, name: "Alpha" }, { id: 2, name: "Beta" }]} header={[{ id: "id", th: "ID", parse: (item) => \`#\${item}\` }, { id: "name", th: "Name" }]} loader={true} typeLoader="spinner" />`,
         },
-        
+
         {
             text: "Tabla con columna colapsable",
             content: `<Table 
@@ -236,6 +237,6 @@ export default {
         }
     ]}
 />`,
-        }
+        },
     ],
 };

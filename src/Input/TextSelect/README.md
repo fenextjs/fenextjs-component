@@ -12,18 +12,18 @@ import { InputTextSelect } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| label | any | no | undefined | Texto de la etiqueta que se muestra para el campo de texto y select. |
-| placeholderSelect | string | no | undefined | Texto que se muestra como placeholder en el campo select. |
-| placeholderText | string | no | undefined | Texto que se muestra como placeholder en el campo de texto. |
-| defaultValue | Partial\<TextSelectProps\> | no | \{\} | Valor predeterminado para el componente, incluyendo el texto y la opción seleccionada. |
-| value | Partial\<TextSelectProps\> | no | undefined | Valor actual del componente, que puede ser controlado externamente. Incluye el texto y la opción seleccionada. |
-| onChange | (data: Partial\<TextSelectProps\>) =\> void | no | undefined | Función que se ejecuta al cambiar el valor del texto o del select. Recibe un objeto con las propiedades 'text' y 'select'. |
-| posSelect | 'left' \| 'right' | no | 'left' | Posición del campo select respecto al campo de texto. |
-| validator | any | no | undefined | Validador personalizado para el campo de texto y select. |
-| errorWithIsChange | boolean | no | false | Determina si se debe mostrar el mensaje de error cuando el valor cambia. |
-| error | string \| ReactNode | no | undefined | Mensaje de error que se muestra cuando la validación falla. |
+| Parámetro         | Tipo                                        | Requerido | Default   | Descripcion                                                                                                                |
+| ----------------- | ------------------------------------------- | --------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
+| label             | any                                         | no        | undefined | Texto de la etiqueta que se muestra para el campo de texto y select.                                                       |
+| placeholderSelect | string                                      | no        | undefined | Texto que se muestra como placeholder en el campo select.                                                                  |
+| placeholderText   | string                                      | no        | undefined | Texto que se muestra como placeholder en el campo de texto.                                                                |
+| defaultValue      | Partial\<TextSelectProps\>                  | no        | \{\}      | Valor predeterminado para el componente, incluyendo el texto y la opción seleccionada.                                     |
+| value             | Partial\<TextSelectProps\>                  | no        | undefined | Valor actual del componente, que puede ser controlado externamente. Incluye el texto y la opción seleccionada.             |
+| onChange          | (data: Partial\<TextSelectProps\>) =\> void | no        | undefined | Función que se ejecuta al cambiar el valor del texto o del select. Recibe un objeto con las propiedades 'text' y 'select'. |
+| posSelect         | 'left' \| 'right'                           | no        | 'left'    | Posición del campo select respecto al campo de texto.                                                                      |
+| validator         | any                                         | no        | undefined | Validador personalizado para el campo de texto y select.                                                                   |
+| errorWithIsChange | boolean                                     | no        | false     | Determina si se debe mostrar el mensaje de error cuando el valor cambia.                                                   |
+| error             | string \| ReactNode                         | no        | undefined | Mensaje de error que se muestra cuando la validación falla.                                                                |
 
 ### Storybook
 
@@ -31,27 +31,34 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- InputTextSelect básico
+-   InputTextSelect básico
 
 ```tsx copy
 <InputTextSelect />
 ```
 
-- InputTextSelect con placeholders
+-   InputTextSelect con placeholders
 
 ```tsx copy
-<InputTextSelect placeholderText="Ingresa texto" placeholderSelect="Selecciona una opción" />
+<InputTextSelect
+    placeholderText="Ingresa texto"
+    placeholderSelect="Selecciona una opción"
+/>
 ```
 
-- InputTextSelect con valores predeterminados
+-   InputTextSelect con valores predeterminados
 
 ```tsx copy
-<InputTextSelect defaultValue={{ text: "Texto inicial", select: { id: 1, text: "Opción 1" } }} />
+<InputTextSelect
+    defaultValue={{
+        text: "Texto inicial",
+        select: { id: 1, text: "Opción 1" },
+    }}
+/>
 ```
 
-- InputTextSelect con onChange
+-   InputTextSelect con onChange
 
 ```tsx copy
 <InputTextSelect onChange={(data) => console.log(data)} />
 ```
-

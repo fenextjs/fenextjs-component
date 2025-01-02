@@ -12,9 +12,9 @@ import { PageProgress } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| className | string | no | '' | Clase CSS para personalizar el contenedor de la barra de progreso. |
+| Parámetro | Tipo   | Requerido | Default | Descripcion                                                        |
+| --------- | ------ | --------- | ------- | ------------------------------------------------------------------ |
+| className | string | no        | ''      | Clase CSS para personalizar el contenedor de la barra de progreso. |
 
 ### Storybook
 
@@ -22,15 +22,14 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Barra de progreso básica
+-   Barra de progreso básica
 
 ```tsx copy
 <PageProgress />
 ```
 
-- Barra de progreso personalizada
+-   Barra de progreso personalizada
 
 ```tsx copy
 <PageProgress className="mi-clase-personalizada" />
 ```
-
