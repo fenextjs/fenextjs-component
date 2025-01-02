@@ -12,28 +12,29 @@ import { ChronologicalList } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro         | Tipo                          | Requerido | Default           | Descripcion                                                                                                                         |
-| ----------------- | ----------------------------- | --------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| items             | ChronologicalListItemsProps[] | sí        | undefined         | Lista de elementos que se mostrarán en la lista cronológica, cada uno con su respectiva fecha, contenido y posible personalización. |
-| market            | ReactNode                     | no        | undefined         | Contenido personalizado que se mostrará junto a cada elemento como marcador. Puede ser un ícono, texto o cualquier otro nodo.       |
-| parseDateYYYYMMDD | (date: Date) =\> string       | no        | parseDateYYYYMMDD | Función para parsear la fecha en el formato 'YYYY-MM-DD'.                                                                           |
-| parseDateHHMMSS   | (date: Date) =\> string       | no        | getTimeToText     | Función para parsear la hora en el formato 'HH:MM:SS'.                                                                              |
-| className         | string                        | no        | ''                | Clase CSS personalizada para el componente.                                                                                         |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| items | ChronologicalListItemsProps[] | sí | undefined | Lista de elementos que se mostrarán en la lista cronológica, cada uno con su respectiva fecha, contenido y posible personalización. |
+| market | ReactNode | no | undefined | Contenido personalizado que se mostrará junto a cada elemento como marcador. Puede ser un ícono, texto o cualquier otro nodo. |
+| parseDateYYYYMMDD | (date: Date) =\> string | no | parseDateYYYYMMDD | Función para parsear la fecha en el formato 'YYYY-MM-DD'. |
+| parseDateHHMMSS | (date: Date) =\> string | no | getTimeToText | Función para parsear la hora en el formato 'HH:MM:SS'. |
+| className | string | no | '' | Clase CSS personalizada para el componente. |
 
 ### ChronologicalListItemsProps
 
 Cada elemento de la lista tiene sus propios parámetros:
 
-| Propiedad | Tipo      | Requerido | Descripción                                                                                                                   |
-| --------- | --------- | --------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| date      | Date      | si        | La fecha correspondiente al elemento.                                                                                         |
-| children  | ReactNode | si        | El contenido que se mostrará dentro del elemento.                                                                             |
-| market    | ReactNode | no        | Contenido personalizado que se mostrará junto a cada elemento como marcador. Puede ser un ícono, texto o cualquier otro nodo. |
-| className | string    | no        | Clase CSS personalizada para el elemento.                                                                                     |
+| Propiedad | Tipo | Requerido | Descripción |
+| --- | --- | --- | --- |
+| date | Date | si | La fecha correspondiente al elemento. |
+| children | ReactNode | si | El contenido que se mostrará dentro del elemento. |
+| market | ReactNode | no | Contenido personalizado que se mostrará junto a cada elemento como marcador. Puede ser un ícono, texto o cualquier otro nodo. |
+| className | string | no | Clase CSS personalizada para el elemento. |
 
 ### Formato de Fecha y Hora
 
 El componente permite personalizar el formato de la fecha y hora utilizando las funciones `parseDateYYYYMMDD` y `parseDateHHMMSS`. Si no se proporcionan, se utilizan las funciones por defecto.
+
 
 ### Storybook
 
@@ -41,9 +42,10 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Lista cronológica básica
+- Lista cronológica básica
 
 ```tsx copy
+
 <ChronologicalList
     items={[
         { date: new Date(), children: "Elemento 1" },
@@ -52,9 +54,10 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 />
 ```
 
--   Lista cronológica con marcador personalizado
+- Lista cronológica con marcador personalizado
 
 ```tsx copy
+
 <ChronologicalList
     items={[
         { date: new Date(), children: "Elemento 1", market: <span>🌟</span> },
@@ -64,17 +67,15 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 />
 ```
 
--   Lista cronológica con formato de fecha personalizado
+- Lista cronológica con formato de fecha personalizado
 
 ```tsx copy
+
 <ChronologicalList
-    items={[{ date: new Date(), children: "Evento importante" }]}
-    parseDateYYYYMMDD={(date) =>
-        date.toLocaleDateString("es-ES", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-        })
-    }
+    items={[
+        { date: new Date(), children: "Evento importante" },
+    ]}
+    parseDateYYYYMMDD={(date) => date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
 />
 ```
+

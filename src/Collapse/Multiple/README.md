@@ -12,15 +12,15 @@ import { CollapseMultiple } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro                | Tipo                                                      | Requerido | Default    | Descripcion                                                                                       |
-| ------------------------ | --------------------------------------------------------- | --------- | ---------- | ------------------------------------------------------------------------------------------------- |
-| items                    | Omit\<CollapseBaseProps, 'checkbox' \| 'name' \| 'id'\>[] | no        | []         | Lista de items que se mostrarán como componentes Collapse dentro de CollapseMultiple.             |
-| defaultActive            | number \| number[]                                        | no        | []         | Índice(s) de los elementos que estarán activados por defecto.                                     |
-| name                     | string                                                    | no        | ''         | Nombre del conjunto de Collapse, utilizado para agrupar los items.                                |
-| type                     | 'radio' \| 'checkbox'                                     | no        | 'checkbox' | Determina si los items se comportarán como un conjunto de tipo 'radio' o 'checkbox'.              |
-| useActiveForShowChildren | boolean                                                   | no        |            | Si está habilitado, el contenido solo se mostrará cuando los elementos de Collapse estén activos. |
-| classNameMultiple        | string                                                    | no        | ''         | Clase CSS personalizada para el contenedor del componente CollapseMultiple.                       |
-| className                | string                                                    | no        | ''         | Clase CSS personalizada para cada elemento Collapse dentro de CollapseMultiple.                   |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| items | Omit\<CollapseBaseProps, 'checkbox' \| 'name' \| 'id'\>[] | no | [] | Lista de items que se mostrarán como componentes Collapse dentro de CollapseMultiple. |
+| defaultActive | number \| number[] | no | [] | Índice(s) de los elementos que estarán activados por defecto. |
+| name | string | no | '' | Nombre del conjunto de Collapse, utilizado para agrupar los items. |
+| type | 'radio' \| 'checkbox' | no | 'checkbox' | Determina si los items se comportarán como un conjunto de tipo 'radio' o 'checkbox'. |
+| useActiveForShowChildren | boolean | no |  | Si está habilitado, el contenido solo se mostrará cuando los elementos de Collapse estén activos. |
+| classNameMultiple | string | no | '' | Clase CSS personalizada para el contenedor del componente CollapseMultiple. |
+| className | string | no | '' | Clase CSS personalizada para cada elemento Collapse dentro de CollapseMultiple. |
 
 ### Storybook
 
@@ -28,10 +28,10 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   CollapseMultiple básico con varios Collapse
+- CollapseMultiple básico con varios Collapse
 
 ```tsx copy
-<CollapseMultiple
+<CollapseMultiple 
     items={[
         { header: <h3>Encabezado 1</h3>, children: "Contenido del collapse 1" },
         { header: <h3>Encabezado 2</h3>, children: "Contenido del collapse 2" },
@@ -39,10 +39,10 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 />
 ```
 
--   CollapseMultiple con estado de 'radio'
+- CollapseMultiple con estado de 'radio'
 
 ```tsx copy
-<CollapseMultiple
+<CollapseMultiple 
     type="radio"
     items={[
         { header: <h3>Encabezado 1</h3>, children: "Contenido del collapse 1" },
@@ -51,10 +51,10 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 />
 ```
 
--   CollapseMultiple con varios activos por defecto
+- CollapseMultiple con varios activos por defecto
 
 ```tsx copy
-<CollapseMultiple
+<CollapseMultiple 
     defaultActive={[0, 1]}
     items={[
         { header: <h3>Encabezado 1</h3>, children: "Contenido del collapse 1" },
@@ -62,3 +62,4 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
     ]}
 />
 ```
+

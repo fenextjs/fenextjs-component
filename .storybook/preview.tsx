@@ -6,7 +6,6 @@ import { InputGoogleLoadScript } from "../src/Input/Google/LoadScript";
 import { useReportWebVitals } from "next/web-vitals";
 
 import "../styles/index.css";
-import "../styles/font.css";
 import { env_log } from "fenextjs-functions";
 
 const preview: Preview = {

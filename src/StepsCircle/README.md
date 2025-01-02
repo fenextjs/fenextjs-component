@@ -12,22 +12,22 @@ import { StepsCircle } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro   | Tipo                   | Requerido | Default   | Descripcion                                                               |
-| ----------- | ---------------------- | --------- | --------- | ------------------------------------------------------------------------- |
-| className   | string                 | no        | ""        | Clase CSS para el contenedor del componente.                              |
-| items       | StepsCircleItemProps[] | no        | []        | Lista de elementos de paso con contenido y funciones de click opcionales. |
-| defaultStep | number                 | no        | undefined | El paso que se mostrará inicialmente.                                     |
-| valueStep   | number                 | no        | undefined | Paso actual cuando se controla externamente.                              |
-| disabled    | boolean                | no        | false     | Deshabilita la interacción con el componente.                             |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| className | string | no | "" | Clase CSS para el contenedor del componente. |
+| items | StepsCircleItemProps[] | no | [] | Lista de elementos de paso con contenido y funciones de click opcionales. |
+| defaultStep | number | no | undefined | El paso que se mostrará inicialmente. |
+| valueStep | number | no | undefined | Paso actual cuando se controla externamente. |
+| disabled | boolean | no | false | Deshabilita la interacción con el componente. |
 
 ### StepsCircleItemProps
 
 Los items de step tienen su propios parametros:
 
-| Parametro | Tipo      | Descripción                            |
-| --------- | --------- | -------------------------------------- |
-| children  | ReactNode | Contenido del elemento.                |
-| onClick   | function  | Funcion al hacer click en el elemento. |
+| Parametro | Tipo | Descripción |
+| --- | --- | --- |
+| children | ReactNode | Contenido del elemento. |
+| onClick | function | Funcion al hacer click en el elemento. |
 
 ### Storybook
 
@@ -35,28 +35,35 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Ejemplo básico
+- Ejemplo básico
 
 ```tsx copy
-<StepsCircle
-    items={[{ children: <div>Paso 1</div> }, { children: <div>Paso 2</div> }]}
+<StepsCircle 
+    items={[
+        { children: <div>Paso 1</div> }, 
+        { children: <div>Paso 2</div> }
+    ]}
 />
 ```
 
--   Con paso predeterminado
+- Con paso predeterminado
 
 ```tsx copy
-<StepsCircle
-    items={[{ children: <div>Inicio</div> }, { children: <div>Fin</div> }]}
+<StepsCircle 
+    items={[
+        { children: <div>Inicio</div> }, 
+        { children: <div>Fin</div> }
+    ]} 
     defaultStep={0}
 />
 ```
 
--   Ejemplo con deshabilitación
+- Ejemplo con deshabilitación
 
 ```tsx copy
-<StepsCircle
+<StepsCircle 
     disabled={true}
     items={[{ children: <div>Paso deshabilitado</div> }]}
 />
 ```
+

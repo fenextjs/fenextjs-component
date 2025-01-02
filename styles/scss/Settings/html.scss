@@ -49,6 +49,8 @@ body {
     }
 }
 :root {
+    --fenext-font-global:system-ui;
+
     --fenext-size-menu-top: 3rem;
     --fenext-size-menu-left-close: 0px;
     --fenext-size-menu-left-max: max(13rem, 10vw);
