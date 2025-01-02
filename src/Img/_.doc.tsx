@@ -72,7 +72,7 @@ export default {
             id: "imgIf404",
             type: "string",
             require: false,
-            default: "undefined",
+            default: "FenextImgPlaceholder",
             description:
                 "URL de la imagen que se mostrará en caso de error de carga.",
         },

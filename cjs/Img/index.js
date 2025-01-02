@@ -4,7 +4,8 @@ exports.Img = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importDefault(require("react"));
 const Line_1 = require("../Loader/Line");
-const Img = ({ className = "", classNameImg = "", id, name = "", alt, src, srcMin1920 = undefined, srcMin1680 = undefined, srcMin1440 = undefined, srcMin1024 = undefined, srcMin992 = undefined, srcMin768 = undefined, srcMin575 = undefined, imgIf404 = undefined, layers = [], onErrorImg: onErrorImg_, onClick, loader = false, onLoad, }) => {
+const fenextjs_img_placeholder_1 = require("fenextjs-img-placeholder");
+const Img = ({ className = "", classNameImg = "", id, name = "", alt, src, srcMin1920 = undefined, srcMin1680 = undefined, srcMin1440 = undefined, srcMin1024 = undefined, srcMin992 = undefined, srcMin768 = undefined, srcMin575 = undefined, imgIf404 = fenextjs_img_placeholder_1.FenextImgPlaceholder, layers = [], onErrorImg: onErrorImg_, onClick, loader = false, onLoad, }) => {
     const onErrorImg = (e) => {
         const img = e.target;
         if (imgIf404) {

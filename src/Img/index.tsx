@@ -1,6 +1,7 @@
 import React, { SyntheticEvent } from "react";
 import { ImgDataProps } from "fenextjs-interface/cjs/Img";
 import { LoaderLine } from "../Loader/Line";
+import { FenextImgPlaceholder } from "fenextjs-img-placeholder";
 
 /**
  * Properties for the base Img component.
@@ -70,7 +71,7 @@ export const Img = ({
     srcMin992 = undefined,
     srcMin768 = undefined,
     srcMin575 = undefined,
-    imgIf404 = undefined,
+    imgIf404 = FenextImgPlaceholder,
     layers = [],
     onErrorImg: onErrorImg_,
     onClick,
