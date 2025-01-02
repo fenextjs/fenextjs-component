@@ -33,9 +33,10 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not(:has([fenext-prefers-color-scheme-disabled])) {
         @include styleTheme_dark();
     }
+    
 }
 [fenext-theme="dark"] {
     @include styleTheme_dark();
