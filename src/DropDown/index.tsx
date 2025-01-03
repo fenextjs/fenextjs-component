@@ -100,11 +100,13 @@ export const DropDown = ({
         left: string;
         right: string;
         bottom: string;
+        spaceY: string;
     }>({
         top: "inherit",
         left: "inherit",
         right: "inherit",
         bottom: "inherit",
+        spaceY:"0"
     });
     const refDropDownHeader = useRef<HTMLDivElement>(null);
     const refDropDownBody = useRef<HTMLDivElement>(null);
@@ -152,6 +154,7 @@ export const DropDown = ({
             bottom: !swForTop ? "inherit" : `${window.innerHeight - top}px`,
             left: swForLeft ? "inherit" : `${left}px`,
             right: !swForLeft ? "inherit" : `${window.innerWidth - right}px`,
+            spaceY: swForTop ? `${window.innerHeight - top}px` : `${bottom}px`,
         });
     };
 
@@ -229,6 +232,7 @@ export const DropDown = ({
                             ["--fenext-dropdown-left"]: tlrb.left,
                             ["--fenext-dropdown-right"]: tlrb.right,
                             ["--fenext-dropdown-bottom"]: tlrb.bottom,
+                            ["--fenext-dropdown-space-y"]: tlrb.spaceY,
                         } as React.CSSProperties
                     }
                 >
