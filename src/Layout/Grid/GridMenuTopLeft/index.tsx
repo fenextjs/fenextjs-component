@@ -61,7 +61,6 @@ export const LayoutGridMenuTopLeft = ({
                 menuTop={menuTop}
                 usePageProgress={false}
                 useAlertHook={false}
-                
             >
                 <LayoutGridMenuLeft
                     classNameLoader={classNameLoader}

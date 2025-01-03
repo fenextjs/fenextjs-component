@@ -131,14 +131,12 @@ export const LayoutGridMenuLeft = ({
                     className={`fenext-layout-grid-ml-children ${classNameChildren}`}
                 >
                     {usePageProgress && <PageProgress />}
-                    {
-                        alert!= undefined
-                        &&
-                        (
-                            <Alert {...alert}
-                            className={`fenext-layout-grid-alert ${alert?.className ?? ""}`}/>
-                        )
-                    }
+                    {alert != undefined && (
+                        <Alert
+                            {...alert}
+                            className={`fenext-layout-grid-alert ${alert?.className ?? ""}`}
+                        />
+                    )}
                     {useAlertHook && (
                         <AlertHook
                             {...alertHookProps}

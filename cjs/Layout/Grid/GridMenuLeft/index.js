@@ -6,7 +6,8 @@ const react_1 = tslib_1.__importDefault(require("react"));
 const Loader_1 = require("../../../Loader");
 const PageProgress_1 = require("../../../PageProgress");
 const AlertHook_1 = require("../../../AlertHook");
-const LayoutGridMenuLeft = ({ className = "", classNameLoader = "", classNameChildren = "", classNameMenuLeft = "", classNameMenuLeftContent = "", children, menuLeft, loader = false, menuLeftActive = true, menuLeftMovilActive = false, useHeaderButtonMenu = false, usePageProgress = true, useAlertHook = true, alertHookProps = {}, target = "fenext-btn-menu-checkbox", ...props }) => {
+const Alert_1 = require("../../../Alert");
+const LayoutGridMenuLeft = ({ className = "", classNameLoader = "", classNameChildren = "", classNameMenuLeft = "", classNameMenuLeftContent = "", children, menuLeft, loader = false, menuLeftActive = true, menuLeftMovilActive = false, useHeaderButtonMenu = false, usePageProgress = true, useAlertHook = true, alertHookProps = {}, alert = undefined, target = "fenext-btn-menu-checkbox", ...props }) => {
     const t = `[name="${target}"]:checked`;
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-layout-grid fenext-layout-grid-ml 
@@ -19,6 +20,7 @@ const LayoutGridMenuLeft = ({ className = "", classNameLoader = "", classNameChi
                 react_1.default.createElement("div", { className: `fenext-layout-grid-ml-menu-left-content ${classNameMenuLeftContent}` }, menuLeft)),
             react_1.default.createElement("div", { className: `fenext-layout-grid-ml-children ${classNameChildren}` },
                 usePageProgress && react_1.default.createElement(PageProgress_1.PageProgress, null),
+                alert != undefined && (react_1.default.createElement(Alert_1.Alert, { ...alert, className: `fenext-layout-grid-alert ${alert?.className ?? ""}` })),
                 useAlertHook && (react_1.default.createElement(AlertHook_1.AlertHook, { ...alertHookProps, className: `fenext-layout-grid-alert ${alertHookProps?.className ?? ""}` })),
                 loader ? (react_1.default.createElement(Loader_1.Loader, { classNameLoader: `${classNameLoader} fenext-layout-grid-loader` })) : (react_1.default.createElement(react_1.default.Fragment, null, children))),
             target != "fenext-btn-menu-checkbox" && (react_1.default.createElement(react_1.default.Fragment, null,

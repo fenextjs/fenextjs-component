@@ -12,17 +12,17 @@ import { InputNumber } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| value | number \| '' | no | '' | Valor actual del input. Puede ser un número o una cadena vacía. |
-| defaultValue | number \| '' | no | '' | Valor inicial del input. |
-| onChange | (v: number \| '') =\> void | no | undefined | Función que se ejecuta al cambiar el valor del input. |
-| onChangeValidate | (v: number \| '') =\> void | no | undefined | Función que se ejecuta al perder el foco y después de validar el valor. |
-| min | number | no | undefined | Valor mínimo permitido para el input. |
-| max | number | no | undefined | Valor máximo permitido para el input. |
-| useBtnIncreaseDecrease | boolean | no | false | Determina si se deben mostrar los botones de aumento/disminución. |
-| disabledScroll | boolean | no | false | Deshabilita el desplazamiento del ratón en el input. |
-| className | string | no | '' | Clase CSS para el componente. |
+| Parámetro              | Tipo                       | Requerido | Default   | Descripcion                                                             |
+| ---------------------- | -------------------------- | --------- | --------- | ----------------------------------------------------------------------- |
+| value                  | number \| ''               | no        | ''        | Valor actual del input. Puede ser un número o una cadena vacía.         |
+| defaultValue           | number \| ''               | no        | ''        | Valor inicial del input.                                                |
+| onChange               | (v: number \| '') =\> void | no        | undefined | Función que se ejecuta al cambiar el valor del input.                   |
+| onChangeValidate       | (v: number \| '') =\> void | no        | undefined | Función que se ejecuta al perder el foco y después de validar el valor. |
+| min                    | number                     | no        | undefined | Valor mínimo permitido para el input.                                   |
+| max                    | number                     | no        | undefined | Valor máximo permitido para el input.                                   |
+| useBtnIncreaseDecrease | boolean                    | no        | false     | Determina si se deben mostrar los botones de aumento/disminución.       |
+| disabledScroll         | boolean                    | no        | false     | Deshabilita el desplazamiento del ratón en el input.                    |
+| className              | string                     | no        | ''        | Clase CSS para el componente.                                           |
 
 ### Storybook
 
@@ -30,27 +30,29 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Uso básico del componente InputNumber
+-   Uso básico del componente InputNumber
 
 ```tsx copy
 <InputNumber onChange={(value) => console.log(value)} />
 ```
 
-- Uso de InputNumber con validación
+-   Uso de InputNumber con validación
 
 ```tsx copy
-<InputNumber onChangeValidate={(value) => console.log('Validated:', value)} />
+<InputNumber onChangeValidate={(value) => console.log("Validated:", value)} />
 ```
 
-- Uso de InputNumber con límites
+-   Uso de InputNumber con límites
 
 ```tsx copy
 <InputNumber min={0} max={100} onChange={(value) => console.log(value)} />
 ```
 
-- Uso de InputNumber con botones de aumento/disminución
+-   Uso de InputNumber con botones de aumento/disminución
 
 ```tsx copy
-<InputNumber useBtnIncreaseDecrease={true} onChange={(value) => console.log(value)} />
+<InputNumber
+    useBtnIncreaseDecrease={true}
+    onChange={(value) => console.log(value)}
+/>
 ```
-
