@@ -101,6 +101,11 @@
                 &:hover {
                     background-color: var(--fenext-color-light);
                 }
+                .fenext-table {
+                    &::before {
+                        display: none;
+                    }
+                }
             }
             &-td {
                 --padding: 1rem 1rem;
@@ -191,6 +196,9 @@
                     &:hover {
                         background-color: var(--fenext-color-light);
                     }
+                    &-col-new-tr{
+                        padding: 0;
+                    }
                     &-is-collapse {
                         padding: 0;
                         &:not(:has(.fenext-collapse-header-checkbox:checked)) {
@@ -223,11 +231,35 @@
                     &-label-collapse {
                         padding: 0;
                     }
+                    &-col-new-tr{
+                        grid-template-columns: 1fr;
+                        padding: 1rem;
+                        .fenext-table-content-table-tbody {
+                            gap: 1rem;
+                        }
+                        .fenext-table-content-table-tr {
+                            padding: 0;
+                        }
+                        .fenext-table{
+                            padding-bottom: 0;
+                        }
+                        .fenext-table-content {
+                            margin-bottom: 0;
+                            padding-bottom: 0;
+                        }
+                    }
                     &-is-collapse {
                         grid-template-columns: 1fr;
                         padding: 1rem;
                         .fenext-collapse-body {
                             padding: 0;
+                        }
+                        .fenext-table{
+                            padding-bottom: 0;
+                        }
+                        .fenext-table-content {
+                            margin-bottom: 0;
+                            padding-bottom: 0;
                         }
                     }
                 }
