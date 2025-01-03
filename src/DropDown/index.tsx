@@ -106,7 +106,7 @@ export const DropDown = ({
         left: "inherit",
         right: "inherit",
         bottom: "inherit",
-        spaceY:"0"
+        spaceY: "0",
     });
     const refDropDownHeader = useRef<HTMLDivElement>(null);
     const refDropDownBody = useRef<HTMLDivElement>(null);

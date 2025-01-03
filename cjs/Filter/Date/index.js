@@ -48,7 +48,7 @@ const FilterDate = ({ onChange, defaultValue = {}, formatDateOption = {}, classN
                     ${className}
                 ` },
             react_1.default.createElement(DropDown_1.DropDown, { header: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(Text_1.Text, { ...classNameTextValue },
+                    react_1.default.createElement(Text_1.Text, { ...classNameTextValue, className: `fenext-filter-date-text-value ${classNameTextValue?.className ?? ""}` },
                         _t(textValue),
                         " ",
                         data.type == "normal" &&

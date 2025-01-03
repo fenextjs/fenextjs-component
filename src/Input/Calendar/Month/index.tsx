@@ -141,7 +141,7 @@ export const InputCalendarMonth = ({
                             max,
                             min,
                         });
-                        
+
                         const COMPARE_DATE = date.onCompareDate({
                             date: selectDate,
                             dateCompare: d,
@@ -151,7 +151,8 @@ export const InputCalendarMonth = ({
                                 FullYear: true,
                             },
                         });
-                        COMPARE_DATE["=="] = selectDate!=undefined && COMPARE_DATE["=="]
+                        COMPARE_DATE["=="] =
+                            selectDate != undefined && COMPARE_DATE["=="];
 
                         const COMPARE_DATE_RANGE_0 = date.onCompareDate({
                             date: d,

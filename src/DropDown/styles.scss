@@ -18,7 +18,7 @@
     --icon-rotate: 0deg;
 
     &-header {
-        &-content{
+        &-content {
             max-width: 100%;
         }
         &-icon {
@@ -62,7 +62,7 @@
                     1 * var(--fenext-dropdown-right, 0px)
                 )
         );
-        max-height: calc(100dvh -  var(--fenext-dropdown-space-y, 0px)  - 1rem);
+        max-height: calc(100dvh - var(--fenext-dropdown-space-y, 0px) - 1rem);
         overflow: auto;
 
         margin-block: 0.5rem;
