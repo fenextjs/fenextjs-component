@@ -12,49 +12,50 @@ import { Back } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro           | Tipo                                                            | Requerido | Default                | Descripcion                                                                                                            |
-| ------------------- | --------------------------------------------------------------- | --------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| loader              | boolean                                                         | no        | false                  | Indica si el componente está en estado de carga, mostrando un indicador de 'Loader' y deshabilitando su funcionalidad. |
-| disabled            | boolean                                                         | no        | false                  | Indica si el botón está deshabilitado.                                                                                 |
-| onClick             | (e?: any) =\> void                                              | no        | undefined              | Función personalizada que se ejecuta al hacer clic en el botón.                                                        |
-| icon                | ReactNode                                                       | no        | \<SvgPaginationPre /\> | Icono que se muestra dentro del botón.                                                                                 |
-| children            | ReactNode                                                       | no        | 'Back'                 | Contenido o texto que se muestra dentro del botón.                                                                     |
-| typeOnBack          | 'fenextjs-history' \| 'history' \| 'router' \| 'link' \| 'none' | no        | 'history'              | Define el tipo de acción que se ejecutará al hacer clic en el botón.                                                   |
-| link                | string                                                          | no        | ''                     | URL a la que redirigir si 'typeOnBack' es 'link'.                                                                      |
-| useHistoryMinLenght | boolean                                                         | no        | false                  | Determina si se debe mostrar el botón solo si el historial del navegador tiene una longitud mínima.                    |
-| minLenght           | number                                                          | no        | 2                      | Longitud mínima del historial del navegador para mostrar el botón.                                                     |
-| onValidateRuteBack  | (path: string) =\> boolean                                      | no        | undefined              | Función para validar el retroceso cuando 'typeOnBack' es 'fenextjs-history'.                                           |
-| className           | string                                                          | no        | ''                     | Clase CSS para personalizar el contenedor del botón.                                                                   |
-| classNameDisabled   | string                                                          | no        | ''                     | Clase CSS para el estado deshabilitado del botón.                                                                      |
-| classNameIcon       | string                                                          | no        | ''                     | Clase CSS para el icono del botón.                                                                                     |
-| classNameContent    | string                                                          | no        | ''                     | Clase CSS para el contenido del botón.                                                                                 |
-| classNameLoader     | string                                                          | no        | ''                     | Clase CSS para el componente 'Loader'.                                                                                 |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| loader | boolean | no | false | Indica si el componente está en estado de carga, mostrando un indicador de 'Loader' y deshabilitando su funcionalidad. |
+| disabled | boolean | no | false | Indica si el botón está deshabilitado. |
+| onClick | (e?: any) =\> void | no | undefined | Función personalizada que se ejecuta al hacer clic en el botón. |
+| icon | ReactNode | no | \<SvgPaginationPre /\> | Icono que se muestra dentro del botón. |
+| children | ReactNode | no | 'Back' | Contenido o texto que se muestra dentro del botón. |
+| typeOnBack | 'fenextjs-history' \| 'history' \| 'router' \| 'link' \| 'none' | no | 'history' | Define el tipo de acción que se ejecutará al hacer clic en el botón. |
+| link | string | no | '' | URL a la que redirigir si 'typeOnBack' es 'link'. |
+| useHistoryMinLenght | boolean | no | false | Determina si se debe mostrar el botón solo si el historial del navegador tiene una longitud mínima. |
+| minLenght | number | no | 2 | Longitud mínima del historial del navegador para mostrar el botón. |
+| onValidateRuteBack | (path: string) =\> boolean | no | undefined | Función para validar el retroceso cuando 'typeOnBack' es 'fenextjs-history'. |
+| className | string | no | '' | Clase CSS para personalizar el contenedor del botón. |
+| classNameDisabled | string | no | '' | Clase CSS para el estado deshabilitado del botón. |
+| classNameIcon | string | no | '' | Clase CSS para el icono del botón. |
+| classNameContent | string | no | '' | Clase CSS para el contenido del botón. |
+| classNameLoader | string | no | '' | Clase CSS para el componente 'Loader'. |
 
 ### Redireccionamiento
 
 Dependiendo del valor de 'typeOnBack', la redirección se ejecutará de la siguiente manera:
 
-| Tipo de back     | Redireccion                    | Descripción                                                           |
-| ---------------- | ------------------------------ | --------------------------------------------------------------------- |
-| fenextjs-history | onBack(\{onValidateRuteBack\}) | Acción personalizada utilizando el hook 'useHistory' de 'fenextjs'.   |
-| history          | history.back()                 | Redirección a la página anterior mediante el historial del navegador. |
-| router           | router.back()                  | Redirección utilizando el router de Next.js.                          |
-| link             | router.push(link)              | Redirección a una URL específica.                                     |
-| none             | Ninguna acción                 | No se realiza ninguna redirección.                                    |
+| Tipo de back | Redireccion | Descripción |
+| --- | --- | --- |
+| fenextjs-history | onBack(\{onValidateRuteBack\}) | Acción personalizada utilizando el hook 'useHistory' de 'fenextjs'. |
+| history | history.back() | Redirección a la página anterior mediante el historial del navegador. |
+| router | router.back() | Redirección utilizando el router de Next.js. |
+| link | router.push(link) | Redirección a una URL específica. |
+| none | Ninguna acción | No se realiza ninguna redirección. |
 
-### **NOTA**
+### __NOTA__
 
-Para que `typeOnBack='fenextjs-history'` funcione correctamente debe ser ejecutado useHistory en \_app o el layout mas superior que se posea.
+Para que `typeOnBack='fenextjs-history'` funcione correctamente debe ser ejecutado useHistory en _app o el layout mas superior que se posea.
 
 ```tsx copy
 import type { AppProps } from "next/app";
 import { useHistory } from "fenextjs";
 
 export default function App({ Component, pageProps }: AppProps) {
-    useHistory({});
-    return <Component {...pageProps} />;
+  useHistory({})
+  return <Component {...pageProps} />
 }
 ```
+
 
 ### Storybook
 
@@ -62,35 +63,33 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Básico
+- Básico
 
 ```tsx copy
 <Back />
 ```
 
--   Back con texto personalizado
+- Back con texto personalizado
 
 ```tsx copy
 <Back>Go Back</Back>
 ```
 
--   Back con acción personalizada
+- Back con acción personalizada
 
 ```tsx copy
 <Back onClick={() => console.log("Botón clickeado")}>Volver</Back>
 ```
 
--   Back deshabilitado
+- Back deshabilitado
 
 ```tsx copy
 <Back disabled={true} />
 ```
 
--   Back con validación personalizada
+- Back con validación personalizada
 
 ```tsx copy
-<Back
-    typeOnBack="fenextjs-history"
-    onValidateRuteBack={(path) => path !== "/home"}
-/>
+<Back typeOnBack="fenextjs-history" onValidateRuteBack={(path) => path !== "/home"} />
 ```
+

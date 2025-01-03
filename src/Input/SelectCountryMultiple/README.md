@@ -12,9 +12,9 @@ import { InputSelectCountryMultiple } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo                                      | Requerido | Default | Descripcion                                                                                                        |
-| --------- | ----------------------------------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
-| ...props  | InputSelectMultipleTProps\<CountryProps\> | no        |         | Propiedades adicionales que extienden de InputSelectMultipleTProps, como eventos o configuraciones del componente. |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| ...props | InputSelectMultipleTProps\<CountryProps\> | no |  | Propiedades adicionales que extienden de InputSelectMultipleTProps, como eventos o configuraciones del componente. |
 
 ### Storybook
 
@@ -22,25 +22,28 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Selección múltiple de países
+- Selección múltiple de países
 
 ```tsx copy
+
 <InputSelectCountryMultiple />
 ```
 
--   InputSelectCountryMultiple con estilos personalizados
+- InputSelectCountryMultiple con estilos personalizados
 
 ```tsx copy
-<InputSelectCountryMultiple classNameSelect="custom-select-multiple" />
-```
 
--   InputSelectCountryMultiple con opciones predeterminadas
-
-```tsx copy
 <InputSelectCountryMultiple
-    value={[
-        { name: "United States", isoCode: "US" },
-        { name: "Canada", isoCode: "CA" },
-    ]}
+    classNameSelect="custom-select-multiple"
 />
 ```
+
+- InputSelectCountryMultiple con opciones predeterminadas
+
+```tsx copy
+
+<InputSelectCountryMultiple
+    value={[{ name: "United States", isoCode: "US" }, { name: "Canada", isoCode: "CA" }]}
+/>
+```
+

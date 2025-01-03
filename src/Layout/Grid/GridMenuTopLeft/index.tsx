@@ -49,6 +49,7 @@ export const LayoutGridMenuTopLeft = ({
     useHeaderButtonMenu = false,
     usePageProgress = true,
     alertHookProps,
+    alert = undefined,
     useAlertHook = true,
     target = "fenext-btn-menu-checkbox",
 }: LayoutGridMenuTopLeftProps) => {
@@ -60,6 +61,7 @@ export const LayoutGridMenuTopLeft = ({
                 menuTop={menuTop}
                 usePageProgress={false}
                 useAlertHook={false}
+                
             >
                 <LayoutGridMenuLeft
                     classNameLoader={classNameLoader}
@@ -75,6 +77,7 @@ export const LayoutGridMenuTopLeft = ({
                     useAlertHook={useAlertHook}
                     alertHookProps={alertHookProps}
                     target={target}
+                    alert={alert}
                 >
                     {children}
                 </LayoutGridMenuLeft>

@@ -2,6 +2,7 @@ import React, { PropsWithChildren, ReactNode } from "react";
 import { Loader, LoaderClassProps } from "../../../Loader";
 import { PageProgress } from "../../../PageProgress";
 import { AlertHook, AlertHookProps } from "../../../AlertHook";
+import { Alert, AlertComponentProps } from "../../../Alert";
 
 /**
  * Properties for the base button component.
@@ -15,6 +16,10 @@ export interface LayoutGridMenuLeftBaseProps extends PropsWithChildren {
      * props for alert hook.
      */
     alertHookProps?: AlertHookProps;
+    /**
+     * props for alert hook.
+     */
+    alert?: AlertComponentProps;
     /**
      * Indicates whether the page is currently in the loading state.
      */
@@ -90,6 +95,7 @@ export const LayoutGridMenuLeft = ({
     usePageProgress = true,
     useAlertHook = true,
     alertHookProps = {},
+    alert = undefined,
     target = "fenext-btn-menu-checkbox",
     ...props
 }: LayoutGridMenuLeftProps) => {
@@ -125,6 +131,13 @@ export const LayoutGridMenuLeft = ({
                     className={`fenext-layout-grid-ml-children ${classNameChildren}`}
                 >
                     {usePageProgress && <PageProgress />}
+                    {
+                        alert!= undefined
+                        &&
+                        (
+                            <Alert {...alert}/>
+                        )
+                    }
                     {useAlertHook && (
                         <AlertHook
                             {...alertHookProps}
