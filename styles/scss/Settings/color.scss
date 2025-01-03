@@ -1,5 +1,5 @@
 @mixin styleTheme_light {
-    @include generateColor("primary", #1E88E5);
+    @include generateColor("primary", #007ec7);
     @include generateColor("secondary", #E91E63);
     @include generateColor("success", #43A047);
     @include generateColor("warning", #FDD835);
@@ -13,7 +13,7 @@
     @include generateColor("loader-foreground", #9c9c9c);
 }
 @mixin styleTheme_dark {
-    @include generateColor("primary", #90CAF9, "dark");
+    @include generateColor("primary", #60c5ff, "dark");
     @include generateColor("secondary", #F48FB1, "dark");
     @include generateColor("success", #66BB6A, "dark");
     @include generateColor("warning", #FFEB3B, "dark");
