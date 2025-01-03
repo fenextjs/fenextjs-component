@@ -1,6 +1,6 @@
 {
   "name": "fenextjs-component",
-  "version": "13.12.1",
+  "version": "13.12.2",
   "description": "",
   "main": "./cjs/index.js",
   "module": "./cjs/index.js",
@@ -64,8 +64,7 @@
   "files": [
     "cjs",
     "esm",
-    "styles/index.css",
-    "styles/font.css"
+    "styles/index.css"
   ],
   "devDependencies": {
     "@storybook/addon-actions": "8.0.9",
