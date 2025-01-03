@@ -92,7 +92,8 @@ export const LayoutGridMenuTop = ({
                                             alert!= undefined
                                             &&
                                             (
-                                                <Alert {...alert}/>
+                                                                        <Alert {...alert}
+                                                                        className={`fenext-layout-grid-alert ${alert?.className ?? ""}`}/>
                                             )
                                         }
                     {useAlertHook && (

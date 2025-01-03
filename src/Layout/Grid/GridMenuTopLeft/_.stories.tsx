@@ -224,6 +224,10 @@ Index.args = {
             <h3>It is Menu Left</h3>
         </>
     ),
+    // alert:{
+    //     type:"WARNING",
+    //     message:"Message"
+    // }
 } as LayoutGridMenuTopLeftProps;
 
 export const WithBtnMenu = Profile.bind({});

@@ -135,7 +135,8 @@ export const LayoutGridMenuLeft = ({
                         alert!= undefined
                         &&
                         (
-                            <Alert {...alert}/>
+                            <Alert {...alert}
+                            className={`fenext-layout-grid-alert ${alert?.className ?? ""}`}/>
                         )
                     }
                     {useAlertHook && (
