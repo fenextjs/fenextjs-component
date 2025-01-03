@@ -131,7 +131,10 @@ export const FilterDate = ({
                 <DropDown
                     header={
                         <>
-                            <Text {...classNameTextValue}>
+                            <Text
+                                {...classNameTextValue}
+                                className={`fenext-filter-date-text-value ${classNameTextValue?.className ?? ""}`}
+                            >
                                 {_t(textValue)}{" "}
                                 {data.type == "normal" &&
                                     data.date != undefined && (

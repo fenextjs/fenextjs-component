@@ -10,7 +10,11 @@ export default {
 } as Meta;
 
 const Profile: StoryFn<FilterDateProps> = (args) => (
-    <FilterDate {...args}>Test Children</FilterDate>
+    <div
+        // style={{paddingTop:"70dvh"}}
+    >
+        <FilterDate {...args}>Test Children</FilterDate>
+    </div>
 );
 
 export const Index = Profile.bind({});

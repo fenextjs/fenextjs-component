@@ -13,6 +13,7 @@ const DropDown = ({ className = "", classNameBody = "", classNameContentHeader =
         left: "inherit",
         right: "inherit",
         bottom: "inherit",
+        spaceY: "0",
     });
     const refDropDownHeader = (0, react_1.useRef)(null);
     const refDropDownBody = (0, react_1.useRef)(null);
@@ -50,6 +51,7 @@ const DropDown = ({ className = "", classNameBody = "", classNameContentHeader =
             bottom: !swForTop ? "inherit" : `${window.innerHeight - top}px`,
             left: swForLeft ? "inherit" : `${left}px`,
             right: !swForLeft ? "inherit" : `${window.innerWidth - right}px`,
+            spaceY: swForTop ? `${window.innerHeight - top}px` : `${bottom}px`,
         });
     };
     const onClickClose = (0, react_1.useCallback)((ev) => {
@@ -92,6 +94,7 @@ const DropDown = ({ className = "", classNameBody = "", classNameContentHeader =
                     ["--fenext-dropdown-left"]: tlrb.left,
                     ["--fenext-dropdown-right"]: tlrb.right,
                     ["--fenext-dropdown-bottom"]: tlrb.bottom,
+                    ["--fenext-dropdown-space-y"]: tlrb.spaceY,
                 } }, children))));
 };
 exports.DropDown = DropDown;

@@ -47,6 +47,8 @@ const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, se
                             FullYear: true,
                         },
                     });
+                    COMPARE_DATE["=="] =
+                        selectDate != undefined && COMPARE_DATE["=="];
                     const COMPARE_DATE_RANGE_0 = date.onCompareDate({
                         date: d,
                         dateCompare: selectDateRange[0],
