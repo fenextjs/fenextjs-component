@@ -1,5 +1,5 @@
 {
-    "include": ["src/*", "src/styles/*.css"],
+    "include": ["src/index.ts", "src/styles/*.css"],
     "exclude": [
         "cjs",
         "esm",
