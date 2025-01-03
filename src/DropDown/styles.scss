@@ -12,10 +12,15 @@
     background-color: var(--fenext-color-light);
     color: var(--fenext-color-dark);
     border-radius: 0.75rem;
+    max-width: 100%;
+    overflow: hidden;
 
     --icon-rotate: 0deg;
 
     &-header {
+        &-content{
+            max-width: 100%;
+        }
         &-icon {
             width: 1rem;
             display: flex;
