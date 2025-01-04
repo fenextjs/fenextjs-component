@@ -1,9 +1,7 @@
 import React, {
     ReactNode,
     useCallback,
-    useEffect,
     useMemo,
-    useState,
 } from "react";
 
 import {
@@ -14,8 +12,6 @@ import {
 import { InputSelectItemOptionBaseProps } from "../Select";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { InputSelectOption } from "../SelectOption";
-import { ErrorFenextjs } from "fenextjs-error";
-import { ErrorCode } from "fenextjs-interface";
 import { SvgTrash } from "fenextjs-svg";
 import { useValidator } from "fenextjs-hook";
 import { FenextjsValidatorClass } from "fenextjs-validator";
@@ -45,6 +41,7 @@ export interface InputSelectMultipleBaseProps<T = any>
         | "onChange"
         | "onChangeData"
         | "onChangeValidate"
+        | "validator"
         | "validatorData"
     > {
     /**
@@ -65,12 +62,6 @@ export interface InputSelectMultipleBaseProps<T = any>
     onChangeData?: (v?: T[]) => void;
 
     /**
-     * Function to call for custom input validation.
-     */
-    onChangeValidate?: (
-        e: InputSelectItemOptionBaseProps<T>[],
-    ) => Promise<any> | any;
-    /**
      * iconDelete custom of option.
      * @default <Trash />
      */
@@ -79,6 +70,10 @@ export interface InputSelectMultipleBaseProps<T = any>
     typeSelectMultipleStyle?: "normal" | "checkbox";
 
     CustomOptionsSelected?: typeof InputSelectOption<T>;
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validator?: FenextjsValidatorClass<(typeof InputSelectOption<T> )[]>;
     /**
      * FenextjsValidatorClass used for input validation.
      */
@@ -98,16 +93,15 @@ export const InputSelectMultiple = <T = any,>({
     onChangeData,
     value = undefined,
     defaultValue = [],
-    onChangeValidate,
     options = [],
     iconDelete = <SvgTrash />,
     typeSelectMultipleStyle = "normal",
     CustomOptionsSelected = undefined,
     validatorData,
+    validator,
     useTOption,
     ...props
 }: InputSelectMultipleProps<T>) => {
-    const [error, setError] = useState<ErrorFenextjs | undefined>(undefined);
     const { data, setData, setDataFunction } = useData<
         InputSelectItemOptionBaseProps<T>[]
     >(defaultValue, {
@@ -119,24 +113,6 @@ export const InputSelectMultiple = <T = any,>({
 
     const dataMemo = useMemo(() => value ?? data, [data, value]);
 
-    const validateOptions = async () => {
-        if (onChangeValidate) {
-            setError(undefined);
-            try {
-                await onChangeValidate(dataMemo);
-            } catch (error: any) {
-                setError(
-                    new ErrorFenextjs({
-                        code: ErrorCode.ERROR,
-                        message: `${error.message}`,
-                    }),
-                );
-            }
-        }
-    };
-    useEffect(() => {
-        validateOptions();
-    }, [dataMemo]);
     const onAddItemSelect = useCallback(
         (newItem: InputSelectItemOptionBaseProps<T> | undefined) => {
             if (newItem) {
@@ -172,6 +148,11 @@ export const InputSelectMultiple = <T = any,>({
         data: dataMemo?.map((e) => e?.data),
         validator: validatorData,
     });
+    const { error } = useValidator({
+        data: dataMemo,
+        validator: validator as any,
+    });
+
     return (
         <>
             <div
@@ -185,40 +166,36 @@ export const InputSelectMultiple = <T = any,>({
                     {...props}
                     onChange={onAddItemSelect}
                     options={OPTIONS}
-                    error={props?.error ?? errorFenextVD ?? error}
+                    error={props?.error ?? errorFenextVD ?? error }
                     isSelectClearText={true}
                     showOptionIconImg={false}
                     useTOption={useTOption}
-                    extraInLabel={
-                        <>
-                            <div
-                                className={`fenext-select-multiple-list ${classNameSelectMultipleList} `}
-                            >
-                                {dataMemo.map((option) => {
-                                    const OptionTag =
-                                        CustomOptionsSelected ??
-                                        InputSelectOption<T>;
-                                    return (
-                                        <OptionTag
-                                            {...option}
-                                            type={"multiple"}
-                                            onDelete={onRemoveItemSelect}
-                                            iconDelete={
-                                                option?.iconDelete ?? iconDelete
-                                            }
-                                            disabled={
-                                                props?.disabled ??
-                                                option?.disabled
-                                            }
-                                            useT={useTOption}
-                                        />
-                                    );
-                                })}
-                            </div>
-                            {props?.extraInLabel}
-                        </>
-                    }
+                    isChange={true}
                 />
+                <div
+                    className={`fenext-select-multiple-list ${classNameSelectMultipleList} `}
+                >
+                    {dataMemo.map((option) => {
+                        const OptionTag =
+                            CustomOptionsSelected ??
+                            InputSelectOption<T>;
+                        return (
+                            <OptionTag
+                                {...option}
+                                type={"multiple"}
+                                onDelete={onRemoveItemSelect}
+                                iconDelete={
+                                    option?.iconDelete ?? iconDelete
+                                }
+                                disabled={
+                                    props?.disabled ??
+                                    option?.disabled
+                                }
+                                useT={useTOption}
+                            />
+                        );
+                    })}
+                </div>
             </div>
         </>
     );
