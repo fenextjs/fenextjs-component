@@ -63,12 +63,12 @@
         cursor: var(--fenext-alert-close-cursor);
         background: var(--fenext-color-danger);
         color: var(--fenext-color-light);
-        transition:  var(--fenext-alert-close-transition);
+        transition: var(--fenext-alert-close-transition);
         &:hover {
-            scale:  var(--fenext-alert-close-hover-scale);
+            scale: var(--fenext-alert-close-hover-scale);
         }
         svg {
-            width:  var(--fenext-alert-close-svg-width);
+            width: var(--fenext-alert-close-svg-width);
         }
     }
     &-OK {

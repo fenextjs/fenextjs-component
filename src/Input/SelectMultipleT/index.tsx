@@ -8,7 +8,12 @@ import { InputSelectItemOptionBaseProps } from "../Select";
 export interface InputSelectMultipleTProps<T>
     extends Omit<
         InputSelectMultipleProps<T>,
-        "defaultValue" | "value" | "options" | "onChange" | "validator" | "validatorData"
+        | "defaultValue"
+        | "value"
+        | "options"
+        | "onChange"
+        | "validator"
+        | "validatorData"
     > {
     /**
      * Default Options of select.
@@ -30,10 +35,10 @@ export interface InputSelectMultipleTProps<T>
      * Function for converter T to InputSelectItemOptionBaseProps<T>
      */
     onParse: (v?: T) => InputSelectItemOptionBaseProps<T>;
-        /**
-         * FenextjsValidatorClass used for input validation.
-         */
-        validator?: InputSelectMultipleProps<T>["validatorData"];
+    /**
+     * FenextjsValidatorClass used for input validation.
+     */
+    validator?: InputSelectMultipleProps<T>["validatorData"];
 }
 
 export const InputSelectMultipleT = <T,>({

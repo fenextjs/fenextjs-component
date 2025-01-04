@@ -1,8 +1,4 @@
-import React, {
-    ReactNode,
-    useCallback,
-    useMemo,
-} from "react";
+import React, { ReactNode, useCallback, useMemo } from "react";
 
 import {
     InputSelect,
@@ -73,7 +69,7 @@ export interface InputSelectMultipleBaseProps<T = any>
     /**
      * FenextjsValidatorClass used for input validation.
      */
-    validator?: FenextjsValidatorClass<(typeof InputSelectOption<T> )[]>;
+    validator?: FenextjsValidatorClass<(typeof InputSelectOption<T>)[]>;
     /**
      * FenextjsValidatorClass used for input validation.
      */
@@ -166,7 +162,7 @@ export const InputSelectMultiple = <T = any,>({
                     {...props}
                     onChange={onAddItemSelect}
                     options={OPTIONS}
-                    error={props?.error ?? errorFenextVD ?? error }
+                    error={props?.error ?? errorFenextVD ?? error}
                     isSelectClearText={true}
                     showOptionIconImg={false}
                     useTOption={useTOption}
@@ -177,20 +173,14 @@ export const InputSelectMultiple = <T = any,>({
                 >
                     {dataMemo.map((option) => {
                         const OptionTag =
-                            CustomOptionsSelected ??
-                            InputSelectOption<T>;
+                            CustomOptionsSelected ?? InputSelectOption<T>;
                         return (
                             <OptionTag
                                 {...option}
                                 type={"multiple"}
                                 onDelete={onRemoveItemSelect}
-                                iconDelete={
-                                    option?.iconDelete ?? iconDelete
-                                }
-                                disabled={
-                                    props?.disabled ??
-                                    option?.disabled
-                                }
+                                iconDelete={option?.iconDelete ?? iconDelete}
+                                disabled={props?.disabled ?? option?.disabled}
                                 useT={useTOption}
                             />
                         );
