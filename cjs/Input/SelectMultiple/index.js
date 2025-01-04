@@ -6,12 +6,9 @@ const react_1 = tslib_1.__importStar(require("react"));
 const Select_1 = require("../Select");
 const useData_1 = require("fenextjs-hook/cjs/useData");
 const SelectOption_1 = require("../SelectOption");
-const fenextjs_error_1 = require("fenextjs-error");
-const fenextjs_interface_1 = require("fenextjs-interface");
 const fenextjs_svg_1 = require("fenextjs-svg");
 const fenextjs_hook_1 = require("fenextjs-hook");
-const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMultipleList = "", onChange, onChangeData, value = undefined, defaultValue = [], onChangeValidate, options = [], iconDelete = react_1.default.createElement(fenextjs_svg_1.SvgTrash, null), typeSelectMultipleStyle = "normal", CustomOptionsSelected = undefined, validatorData, useTOption, ...props }) => {
-    const [error, setError] = (0, react_1.useState)(undefined);
+const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMultipleList = "", onChange, onChangeData, value = undefined, defaultValue = [], options = [], iconDelete = react_1.default.createElement(fenextjs_svg_1.SvgTrash, null), typeSelectMultipleStyle = "normal", CustomOptionsSelected = undefined, validatorData, validator, useTOption, ...props }) => {
     const { data, setData, setDataFunction } = (0, useData_1.useData)(defaultValue, {
         onChangeDataAfter: (e) => {
             onChange?.(e);
@@ -19,23 +16,6 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
         },
     });
     const dataMemo = (0, react_1.useMemo)(() => value ?? data, [data, value]);
-    const validateOptions = async () => {
-        if (onChangeValidate) {
-            setError(undefined);
-            try {
-                await onChangeValidate(dataMemo);
-            }
-            catch (error) {
-                setError(new fenextjs_error_1.ErrorFenextjs({
-                    code: fenextjs_interface_1.ErrorCode.ERROR,
-                    message: `${error.message}`,
-                }));
-            }
-        }
-    };
-    (0, react_1.useEffect)(() => {
-        validateOptions();
-    }, [dataMemo]);
     const onAddItemSelect = (0, react_1.useCallback)((newItem) => {
         if (newItem) {
             setDataFunction(() => {
@@ -64,20 +44,21 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
         data: dataMemo?.map((e) => e?.data),
         validator: validatorData,
     });
+    const { error } = (0, fenextjs_hook_1.useValidator)({
+        data: dataMemo,
+        validator: validator,
+    });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `
                     fenext-select-multiple
                     fenext-select-multiple-${typeSelectMultipleStyle}
                     ${classNameSelectMultiple}
                 ` },
-            react_1.default.createElement(Select_1.InputSelect, { ...props, onChange: onAddItemSelect, options: OPTIONS, error: props?.error ?? errorFenextVD ?? error, isSelectClearText: true, showOptionIconImg: false, useTOption: useTOption, extraInLabel: react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectMultipleList} ` }, dataMemo.map((option) => {
-                        const OptionTag = CustomOptionsSelected ??
-                            (SelectOption_1.InputSelectOption);
-                        return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete, disabled: props?.disabled ??
-                                option?.disabled, useT: useTOption }));
-                    })),
-                    props?.extraInLabel) }))));
+            react_1.default.createElement(Select_1.InputSelect, { ...props, onChange: onAddItemSelect, options: OPTIONS, error: props?.error ?? errorFenextVD ?? error, isSelectClearText: true, showOptionIconImg: false, useTOption: useTOption, isChange: true }),
+            react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectMultipleList} ` }, dataMemo.map((option) => {
+                const OptionTag = CustomOptionsSelected ?? (SelectOption_1.InputSelectOption);
+                return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete, disabled: props?.disabled ?? option?.disabled, useT: useTOption }));
+            })))));
 };
 exports.InputSelectMultiple = InputSelectMultiple;
 //# sourceMappingURL=index.js.map

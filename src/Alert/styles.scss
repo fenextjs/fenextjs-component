@@ -16,6 +16,18 @@
     --fenext-alert-inactive-display: none;
 
     --fenext-alert-close-display: flex;
+    --fenext-alert-close-align-items: center;
+    --fenext-alert-close-justify-content: center;
+    --fenext-alert-close-width: 1.5rem;
+    --fenext-alert-close-aspect-ratio: 1/1;
+    --fenext-alert-close-padding: 0 0.4rem;
+    --fenext-alert-close-border-radius: 100%;
+    --fenext-alert-close-cursor: pointer;
+    --fenext-alert-close-background: var(--fenext-color-danger);
+    --fenext-alert-close-color: var(--fenext-color-light);
+    --fenext-alert-close-transition: 0.5s;
+    --fenext-alert-close-hover-scale: 0.8;
+    --fenext-alert-close-svg-width: 100%;
 }
 
 .fenext-alert {
@@ -41,22 +53,22 @@
         color: currentColor;
     }
     &-close {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 1.5rem;
-        aspect-ratio: 1/1;
-        padding: 0 0.4rem;
-        border-radius: 100%;
-        cursor: pointer;
+        display: var(--fenext-alert-close-display);
+        align-items: var(--fenext-alert-close-align-items);
+        justify-content: var(--fenext-alert-close-justify-content);
+        width: var(--fenext-alert-close-width);
+        aspect-ratio: var(--fenext-alert-close-aspect-ratio);
+        padding: var(--fenext-alert-close-padding);
+        border-radius: var(--fenext-alert-close-border-radius);
+        cursor: var(--fenext-alert-close-cursor);
         background: var(--fenext-color-danger);
         color: var(--fenext-color-light);
-        transition: 0.5s;
+        transition: var(--fenext-alert-close-transition);
         &:hover {
-            scale: 0.8;
+            scale: var(--fenext-alert-close-hover-scale);
         }
         svg {
-            width: 100%;
+            width: var(--fenext-alert-close-svg-width);
         }
     }
     &-OK {

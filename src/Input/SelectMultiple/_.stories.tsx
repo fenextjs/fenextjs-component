@@ -2,6 +2,7 @@ import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
 
 import { InputSelectMultiple, InputSelectMultipleProps } from "./index";
+import { FV } from "fenextjs-validator";
 
 export default {
     title: "Input/InputSelectMultiple",
@@ -94,11 +95,6 @@ const args: InputSelectMultipleProps = {
             text: "Option 11",
         },
     ],
-    onChangeValidate(e) {
-        if(e.length == 3){
-            throw "No Puedes seleccionar 3 elementos"
-        }
-    },
     typeSelectStyle:"normal",
     typeSelectMultipleStyle:"checkbox",
 };
@@ -119,3 +115,16 @@ const CustomOptionsSelectedArgs: InputSelectMultipleProps = {
 };
 
 CustomOptionsSelected.args = CustomOptionsSelectedArgs;
+
+
+
+
+export const WithValdidator = Profile.bind({});
+
+const WithValdidatorArgs: InputSelectMultipleProps = {
+    ...args,
+    defaultValue:[],
+    validator:FV().isArray().isMinOrEqual(3,"minimo 3 elementos").isMaxOrEqual(5,"maximo 5 elementos")
+};
+
+WithValdidator.args = WithValdidatorArgs;

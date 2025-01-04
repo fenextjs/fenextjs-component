@@ -281,7 +281,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
     ]);
     const { onLoadPos, onLoadChildren } = (0, useSelectOptionsPos_1.useSelectOptionsPos)({
         children: CHILDREN_SELECT,
-        target: selectRef?.current,
+        target: selectRef?.current?.querySelector?.("input.fenext-input-content-input"),
     });
     (0, react_1.useEffect)(() => {
         if (isFocus || forceShowOptionOnLoad) {
