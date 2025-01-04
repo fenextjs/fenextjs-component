@@ -714,7 +714,7 @@ export const InputSelect = <T = any,>({
 
     const { onLoadPos, onLoadChildren } = useSelectOptionsPos({
         children: CHILDREN_SELECT,
-        target: selectRef?.current,
+        target: selectRef?.current?.querySelector?.("input.fenext-input-content-input"),
     });
     useEffect(() => {
         if (isFocus || forceShowOptionOnLoad) {
