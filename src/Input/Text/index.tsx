@@ -59,6 +59,8 @@ export interface InputTextClassProps {
      */
     classNameIcon?: string;
 
+    classNameMaxLength?:string
+
     /**
      * CSS class name for the input error message.
      */
@@ -317,6 +319,7 @@ export const InputText = ({
     classNameContentInput = "",
     classNameInput = "",
     classNameIcon = "",
+    classNameMaxLength="",
     classNameLoaderValidate = "",
     classNameError = "",
     iconLoader = <Loader />,
@@ -583,7 +586,7 @@ export const InputText = ({
                     {extraInContentInput}
                     {type == "textarea" && maxLength && (
                         <>
-                            <span className="fenext-input-content-input-max-leght">
+                            <span className={`fenext-input-content-input-max-leght ${classNameMaxLength}`}>
                                 ({valueInput?.length ?? 0} / {maxLength})
                             </span>
                         </>
