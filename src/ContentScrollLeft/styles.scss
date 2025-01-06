@@ -1,0 +1,15 @@
+.fenext-container {
+    width: min(
+        100%,
+        var(--fenext-size-container-custom, var(--fenext-size-container, 100%))
+    );
+    margin-inline: auto;
+    color: var(--fenext-color-dark);
+    font-family: var(--fenext-font-global);
+    &-p {
+        padding-inline: 1rem;
+    }
+    &-notp {
+        padding-inline: 0;
+    }
+}
