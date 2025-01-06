@@ -25,7 +25,7 @@ export interface StepsCircleClassProps {
 /**
  * Properties for the class of the StepsCircle component.
  */
-export interface StepsCircleProps extends StepsCircleClassProps{
+export interface StepsCircleProps extends StepsCircleClassProps {
     items?: StepsCircleItemProps[];
 
     defaultStep?: number;
@@ -36,13 +36,13 @@ export interface StepsCircleProps extends StepsCircleClassProps{
 
 export const StepsCircle = ({
     className = "",
-    classNameDisabled="",
-    classNameItem="",
-    classNameItemCircle="",
-    classNameItemContent="",
-    classNameItemActive="",
-    classNameItemActiveCircle="",
-    classNameItemActiveContent="",
+    classNameDisabled = "",
+    classNameItem = "",
+    classNameItemCircle = "",
+    classNameItemContent = "",
+    classNameItemActive = "",
+    classNameItemActiveCircle = "",
+    classNameItemActiveContent = "",
     defaultStep = undefined,
     valueStep = undefined,
     disabled = false,
@@ -68,7 +68,7 @@ export const StepsCircle = ({
                 }
             >
                 {items?.map((item, i) => {
-                    const active  = step >= i
+                    const active = step >= i;
                     return (
                         <>
                             <div
@@ -90,7 +90,9 @@ export const StepsCircle = ({
                                 >
                                     {i + 1}
                                 </div>
-                                <div className={`fenext-steps-circle-item-content ${classNameItemContent} ${active ? `${classNameItemActiveContent}` : ""}`}>
+                                <div
+                                    className={`fenext-steps-circle-item-content ${classNameItemContent} ${active ? `${classNameItemActiveContent}` : ""}`}
+                                >
                                     {item?.children}
                                 </div>
                             </div>
