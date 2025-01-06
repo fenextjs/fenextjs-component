@@ -1,53 +1,40 @@
 export default {
-    id: "container",
-    idStorybook: "component-container",
-    name: "ContainerScrollLeft",
+    id: "content-scroll-left",
+    idStorybook: "component-content-scroll-left",
+    name: "ContentScrollLeft",
     description:
-        "El componente ContainerScrollLeft es un contenedor flexible que permite ajustar el tamaño personalizado y aplicar padding de forma opcional, proporcionando una estructura para organizar contenido.",
+        "El componente ContentScrollLeft renderiza un contenedor principal con un diseño predefinido que permite desplazar contenido hacia la izquierda, ideal para personalizaciones relacionadas con el estilo y funcionalidad de scroll.",
     props: [
         {
-            id: "customSize",
-            type: "number",
+            id: "className",
+            type: "string",
             require: false,
-            default: "undefined",
-            description:
-                "Tamaño personalizado del contenedor, calculado como customSize / 16 * rem.",
+            default: "''",
+            description: "Clase CSS para personalizar el contenedor principal del componente.",
         },
         {
-            id: "usePaddingInline",
-            type: "boolean",
+            id: "classNameContent",
+            type: "string",
             require: false,
-            default: "true",
-            description: "Determina si se aplica padding en el contenedor.",
+            default: "''",
+            description: "Clase CSS para personalizar el contenido interno del componente.",
         },
         {
             id: "children",
             type: "ReactNode",
             require: false,
             default: "undefined",
-            description:
-                "Contenido o elementos que se mostrarán dentro del contenedor.",
-        },
-        {
-            id: "className",
-            type: "string",
-            require: false,
-            default: "''",
-            description: "Clase CSS para personalizar el contenedor.",
+            description: "Elemento(s) hijos que se renderizarán dentro del componente.",
         },
     ],
     useExample: [
         {
             text: "Básico",
-            content: `<ContainerScrollLeft><div>Contenido</div></ContainerScrollLeft>`,
+            content: `<ContentScrollLeft>Contenido</ContentScrollLeft>`,
         },
         {
-            text: "ContainerScrollLeft con tamaño personalizado",
-            content: `<ContainerScrollLeft customSize={48}><div>Contenido</div></ContainerScrollLeft>`,
-        },
-        {
-            text: "ContainerScrollLeft sin padding",
-            content: `<ContainerScrollLeft usePaddingInline={false}><div>Contenido</div></ContainerScrollLeft>`,
+            text: "Con clases personalizadas",
+            content: `<ContentScrollLeft className="mi-clase" classNameContent="mi-clase-interna">Contenido personalizado</ContentScrollLeft>`,
         },
     ],
 };
