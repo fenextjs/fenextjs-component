@@ -13,24 +13,14 @@
         grid-template-columns: var(--fenext-size-user);
     }
 
-    &-picture,
-    &-letter {
+    &-picture {
         grid-area: 1 / 1 / 3 / 2;
     }
-    &-img,
-    &-letter {
+    &-img {
         width: 100%;
         aspect-ratio: 1/1;
         border-radius: 100%;
-    }
-    &-letter {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        background-color: var(--fenext-color-light);
-        color: var(--fenext-color-dark);
-        text-transform: uppercase;
+        background: var(--fenext-color-light);
     }
     &-name {
         grid-area: 1 / 2 / 2 / 3;
