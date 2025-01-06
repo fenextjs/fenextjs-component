@@ -8,8 +8,7 @@ export interface UserComponentProps {
     classNamePicture?: string;
     classNameImg?: string;
     classNameName?: string;
-    classNameLetter?: string;
     classNameEmail?: string;
     classNameLoader?: LoaderUserClassProps;
 }
-export declare const User: ({ className, classNameEmail, classNamePicture, classNameImg, classNameName, classNameLetter, classNameLoader, user, loader, }: UserComponentProps) => React.JSX.Element;
+export declare const User: ({ className, classNameEmail, classNamePicture, classNameImg, classNameName, classNameLoader, user, loader, }: UserComponentProps) => React.JSX.Element;
