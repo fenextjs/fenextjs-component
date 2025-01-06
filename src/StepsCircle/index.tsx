@@ -8,15 +8,24 @@ export interface StepsCircleItemProps {
     onClick?: () => void;
 }
 
-/**
- * Properties for the class of the StepsCircle component.
- */
-export interface StepsCircleProps {
+export interface StepsCircleClassProps {
     /**
      * The class name for the component.
      */
     className?: string;
+    classNameDisabled?: string;
+    classNameItem?: string;
+    classNameItemCircle?: string;
+    classNameItemContent?: string;
+    classNameItemActive?: string;
+    classNameItemActiveCircle?: string;
+    classNameItemActiveContent?: string;
+}
 
+/**
+ * Properties for the class of the StepsCircle component.
+ */
+export interface StepsCircleProps extends StepsCircleClassProps{
     items?: StepsCircleItemProps[];
 
     defaultStep?: number;
@@ -27,6 +36,13 @@ export interface StepsCircleProps {
 
 export const StepsCircle = ({
     className = "",
+    classNameDisabled="",
+    classNameItem="",
+    classNameItemCircle="",
+    classNameItemContent="",
+    classNameItemActive="",
+    classNameItemActiveCircle="",
+    classNameItemActiveContent="",
     defaultStep = undefined,
     valueStep = undefined,
     disabled = false,
@@ -41,7 +57,7 @@ export const StepsCircle = ({
             <div
                 className={`
                     fenext-steps-circle 
-                    fenext-steps-circle-${disabled ? "disabled" : ""}
+                    fenext-steps-circle-${disabled ? `disabled ${classNameDisabled}` : ""}
                     ${className} 
                 `}
                 style={
@@ -52,12 +68,14 @@ export const StepsCircle = ({
                 }
             >
                 {items?.map((item, i) => {
+                    const active  = step >= i
                     return (
                         <>
                             <div
                                 className={`
                                     fenext-steps-circle-item
-                                    fenext-steps-circle-item-${step >= i ? "active" : ""}
+                                    fenext-steps-circle-item-${active ? `active ${classNameItemActive}` : ""}
+                                    ${classNameItem}
                                 `}
                                 onClick={() => {
                                     if (disabled) {
@@ -68,11 +86,11 @@ export const StepsCircle = ({
                                 }}
                             >
                                 <div
-                                    className={`fenext-steps-circle-item-circle`}
+                                    className={`fenext-steps-circle-item-circle ${classNameItemCircle} ${active ? `${classNameItemActiveCircle}` : ""}`}
                                 >
                                     {i + 1}
                                 </div>
-                                <div className="fenext-steps-circle-item-content">
+                                <div className={`fenext-steps-circle-item-content ${classNameItemContent} ${active ? `${classNameItemActiveContent}` : ""}`}>
                                     {item?.children}
                                 </div>
                             </div>
