@@ -1,3 +1,4 @@
+import { ProgressLine ,ProgressLineClassProps} from "../Progress/Line";
 import React, { CSSProperties, ReactNode, useMemo, useState } from "react";
 
 /**
@@ -20,6 +21,7 @@ export interface StepsCircleClassProps {
     classNameItemActive?: string;
     classNameItemActiveCircle?: string;
     classNameItemActiveContent?: string;
+    classNameProgressLine?:ProgressLineClassProps
 }
 
 /**
@@ -43,6 +45,7 @@ export const StepsCircle = ({
     classNameItemActive = "",
     classNameItemActiveCircle = "",
     classNameItemActiveContent = "",
+    classNameProgressLine={},
     defaultStep = undefined,
     valueStep = undefined,
     disabled = false,
@@ -67,6 +70,10 @@ export const StepsCircle = ({
                     } as CSSProperties
                 }
             >
+                {
+                    items?.length &&  items?.length>1&&
+                    <ProgressLine p={100 /( items?.length  - 1)* (step)} showP={false} {...classNameProgressLine}  />
+                }
                 {items?.map((item, i) => {
                     const active = step >= i;
                     return (

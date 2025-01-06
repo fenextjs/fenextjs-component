@@ -2,13 +2,13 @@
     --size-circle: 3rem;
 
     --color: var(--fenext-color-light);
-    --bg: var(--fenext-color-primary);
+    --bg: var(--fenext-color-light);
 
     --color-hover: var(--fenext-color-light);
     --bg-hover: var(--fenext-color-dark);
 
     --color-active: var(--fenext-color-light);
-    --bg-active: var(--fenext-color-success);
+    --bg-active: var(--fenext-color-primary);
 
     display: grid;
     align-items: flex-start;
@@ -21,26 +21,17 @@
 
     --progess: calc(calc(100% / calc(var(--nItems) - 1)) * var(--step));
 
-    &::before {
-        content: "";
+    .fenext-progess-line{
         width: calc(100% * calc(var(--nItems) - 1) / var(--nItems));
-        height: 0.5rem;
-        background: linear-gradient(
-                to right,
-                var(--bg-active) 0%,
-                var(--bg-active) var(--progess),
-                var(--bg) var(--progess),
-                var(--bg) 100%
-            ),
-            var(--bg);
         position: absolute;
         top: calc(var(--size-circle) / 2);
         left: 0;
         right: 0;
         margin: auto;
         transform: translateY(-50%);
-        transition: 0.5s;
+
     }
+
 
     &-item {
         display: grid;
