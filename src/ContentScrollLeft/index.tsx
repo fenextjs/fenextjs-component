@@ -7,23 +7,15 @@ import React, { PropsWithChildren } from "react";
  */
 export interface ContentScrollLeftProps extends PropsWithChildren, _TProps {
     /**
-     * The Custom Size of ContentScrollLeft / 16 * rem.
-     */
-    customSize?: number;
-    /**
-     * Use Padding Inline in ContentScrollLeft.
-     */
-    usePaddingInline?: boolean;
-    /**
      * The class name for the component.
      */
     className?: string;
+    classNameContent?: string;
 }
 
 export const ContentScrollLeft = ({
     className = "",
-    customSize = undefined,
-    usePaddingInline = true,
+    classNameContent = "",
     children,
     ...props
 }: ContentScrollLeftProps) => {
@@ -31,22 +23,12 @@ export const ContentScrollLeft = ({
     return (
         <>
             <div
-                className={`fenext-container ${className} ${
-                    usePaddingInline
-                        ? "fenext-container-p"
-                        : "fenext-container-notp"
-                }`}
-                style={
-                    customSize
-                        ? ({
-                              ["--fenext-size-container-custom"]: `${
-                                  customSize / 16
-                              }rem`,
-                          } as React.CSSProperties)
-                        : {}
-                }
+                className={`fenext-content-scroll-left ${className}`}
             >
-                {_t(children)}
+                <div
+                    className={`fenext-content-scroll-left-content ${classNameContent}`}>
+                    {_t(children)}
+                </div>
             </div>
         </>
     );

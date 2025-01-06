@@ -9,7 +9,8 @@ export default {
 } as Meta;
 
 const Profile: StoryFn<PropsWithChildren<ContentScrollLeftProps>> = (args) => (
-    <ContentScrollLeft {...args}>
+    <div style={{height:"90dvh",overflow:"hidden"}}>
+        <ContentScrollLeft {...args}>
         <>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
             vitae itaque? Temporibus excepturi enim laboriosam veritatis numquam
@@ -1422,6 +1423,7 @@ const Profile: StoryFn<PropsWithChildren<ContentScrollLeftProps>> = (args) => (
             perspiciatis ex veritatis officia?
         </>
     </ContentScrollLeft>
+    </div>
 );
 
 export const Index = Profile.bind({});
