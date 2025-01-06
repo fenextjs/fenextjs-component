@@ -1,0 +1,8 @@
+.fenext-content-scroll-left {
+    transform: rotateY(180deg);
+    overflow: auto;
+    max-height: 100%;
+    &-content {
+        transform: rotateY(180deg);
+    }
+}
