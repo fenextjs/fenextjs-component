@@ -10,21 +10,24 @@ export default {
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el contenedor principal del componente.",
+            description:
+                "Clase CSS para personalizar el contenedor principal del componente.",
         },
         {
             id: "classNameContent",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS para personalizar el contenido interno del componente.",
+            description:
+                "Clase CSS para personalizar el contenido interno del componente.",
         },
         {
             id: "children",
             type: "ReactNode",
             require: false,
             default: "undefined",
-            description: "Elemento(s) hijos que se renderizarán dentro del componente.",
+            description:
+                "Elemento(s) hijos que se renderizarán dentro del componente.",
         },
     ],
     useExample: [

@@ -1,50 +1,39 @@
-# Container
+# ContentScrollLeft
 
-El componente Container es un contenedor flexible que permite ajustar el tamaño personalizado y aplicar padding de forma opcional, proporcionando una estructura para organizar contenido.
+El componente ContentScrollLeft renderiza un contenedor principal con un diseño predefinido que permite desplazar contenido hacia la izquierda, ideal para personalizaciones relacionadas con el estilo y funcionalidad de scroll.
 
 ### Importación
 
-Para importar el componente Container, se puede hacer desde fenextjs
+Para importar el componente ContentScrollLeft, se puede hacer desde fenextjs
 
 ```tsx copy
-import { Container } from "fenextjs";
+import { ContentScrollLeft } from "fenextjs";
 ```
 
 ### Parámetros
 
-| Parámetro        | Tipo      | Requerido | Default   | Descripcion                                                                 |
-| ---------------- | --------- | --------- | --------- | --------------------------------------------------------------------------- |
-| customSize       | number    | no        | undefined | Tamaño personalizado del contenedor, calculado como customSize / 16 \* rem. |
-| usePaddingInline | boolean   | no        | true      | Determina si se aplica padding en el contenedor.                            |
-| children         | ReactNode | no        | undefined | Contenido o elementos que se mostrarán dentro del contenedor.               |
-| className        | string    | no        | ''        | Clase CSS para personalizar el contenedor.                                  |
+| Parámetro        | Tipo      | Requerido | Default   | Descripcion                                                         |
+| ---------------- | --------- | --------- | --------- | ------------------------------------------------------------------- |
+| className        | string    | no        | ''        | Clase CSS para personalizar el contenedor principal del componente. |
+| classNameContent | string    | no        | ''        | Clase CSS para personalizar el contenido interno del componente.    |
+| children         | ReactNode | no        | undefined | Elemento(s) hijos que se renderizarán dentro del componente.        |
 
 ### Storybook
 
-Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/component-container--index)
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/component-contentscrollleft--index)
 
 ### Usos
 
 -   Básico
 
 ```tsx copy
-<Container>
-    <div>Contenido</div>
-</Container>
+<ContentScrollLeft>Contenido</ContentScrollLeft>
 ```
 
--   Container con tamaño personalizado
+-   Con clases personalizadas
 
 ```tsx copy
-<Container customSize={48}>
-    <div>Contenido</div>
-</Container>
-```
-
--   Container sin padding
-
-```tsx copy
-<Container usePaddingInline={false}>
-    <div>Contenido</div>
-</Container>
+<ContentScrollLeft className="mi-clase" classNameContent="mi-clase-interna">
+    Contenido personalizado
+</ContentScrollLeft>
 ```

@@ -22,11 +22,10 @@ export const ContentScrollLeft = ({
     const { _t } = use_T({ ...props });
     return (
         <>
-            <div
-                className={`fenext-content-scroll-left ${className}`}
-            >
+            <div className={`fenext-content-scroll-left ${className}`}>
                 <div
-                    className={`fenext-content-scroll-left-content ${classNameContent}`}>
+                    className={`fenext-content-scroll-left-content ${classNameContent}`}
+                >
                     {_t(children)}
                 </div>
             </div>
