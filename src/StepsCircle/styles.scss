@@ -21,7 +21,7 @@
 
     --progess: calc(calc(100% / calc(var(--nItems) - 1)) * var(--step));
 
-    .fenext-progess-line{
+    .fenext-progess-line {
         width: calc(100% * calc(var(--nItems) - 1) / var(--nItems));
         position: absolute;
         top: calc(var(--size-circle) / 2);
@@ -29,9 +29,7 @@
         right: 0;
         margin: auto;
         transform: translateY(-50%);
-
     }
-
 
     &-item {
         display: grid;
