@@ -23,7 +23,7 @@
     --fenext-btn-background-invert-hover: var(--fenext-color-primary);
     --fenext-btn-background-disabled: var(--fenext-color-disabled);
 
-    --fenext-btn-color: var(--fenext-color-light);
+    --fenext-btn-color: var(--fenext-color-theme-light-light);
     --fenext-btn-color-loader: transparent;
 
     --fenext-btn-border-radius: 0.5rem;
@@ -45,7 +45,7 @@
     --fenext-btn-loader-max-height: 90%;
     --fenext-btn-loader-height: 1.5rem;
     --fenext-btn-loader-width: auto;
-    --fenext-btn-loader-color: var(--fenext-color-dark);
+    --fenext-btn-loader-color: var(--fenext-color-light);
 }
 
 .fenext-btn {
