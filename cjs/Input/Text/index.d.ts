@@ -4,6 +4,7 @@ import { FenextjsValidatorClass } from "fenextjs-validator";
 import { _TProps } from "fenextjs-interface";
 export type InputTextChangeEvent = React.ChangeEvent<HTMLTextAreaElement> | React.ChangeEvent<HTMLInputElement>;
 export interface InputTextClassProps {
+    className?: string;
     classNameLabel?: string;
     classNameLabelError?: string;
     classNameLabelOk?: string;
@@ -42,7 +43,6 @@ export interface InputTextBaseProps extends _TProps {
     extraInLabel?: ReactNode;
     disabled?: boolean;
     showIcon?: boolean;
-    className?: string;
     error?: ErrorFenextjs;
     errorWithIsChange?: boolean;
     optional?: boolean;

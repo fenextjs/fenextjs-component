@@ -19,7 +19,6 @@ export type InputTextChangeEvent =
  * Interface that defines CSS class properties for a text input component.
  */
 export interface InputTextClassProps {
-
     /**
      * CSS class name for the input component.
      */
