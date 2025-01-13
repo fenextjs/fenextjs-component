@@ -36,8 +36,8 @@ export default {
             id: "NOTA",
             title: "__NOTA__",
             description:
-                "Fenextjs usa por defecto el `Tema Automático del Navegador`. En caso de que quieras deshabilitar esta funcionalidad sin usar el componente `Theme`, puedes agregar esta propiedad: `fenext-prefers-color-scheme-disabled` en cualquier etiqueta de HTML.",
-            code: `<body fenext-prefers-color-scheme-disabled>
+                "Fenextjs usa por defecto el `Tema Automático del Navegador`. En caso de que quieras deshabilitar esta funcionalidad sin usar el componente `Theme`, puedes agregar esta propiedad: `data-fenext-prefers-color-scheme-disabled` en cualquier etiqueta de HTML.",
+            code: `<body data-fenext-prefers-color-scheme-disabled>
     contenido
 </body>
 
@@ -45,7 +45,7 @@ export default {
 
 <body>
     contenido
-    <div fenext-prefers-color-scheme-disabled/>
+    <div data-fenext-prefers-color-scheme-disabled/>
 </body>
 `,
         },
