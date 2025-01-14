@@ -12,9 +12,9 @@ import { Loader } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro       | Tipo   | Requerido | Default | Descripcion                                                   |
-| --------------- | ------ | --------- | ------- | ------------------------------------------------------------- |
-| classNameLoader | string | no        | ''      | Clase CSS para personalizar el estilo del indicador de carga. |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| classNameLoader | string | no | '' | Clase CSS para personalizar el estilo del indicador de carga. |
 
 ### Storybook
 
@@ -22,14 +22,15 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Loader básico
+- Loader básico
 
 ```tsx copy
 <Loader />
 ```
 
--   Loader con clase personalizada
+- Loader con clase personalizada
 
 ```tsx copy
 <Loader classNameLoader="custom-loader" />
 ```
+

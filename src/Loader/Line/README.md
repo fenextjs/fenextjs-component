@@ -12,10 +12,10 @@ import { LoaderLine } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro           | Tipo   | Requerido | Default | Descripcion                                                               |
-| ------------------- | ------ | --------- | ------- | ------------------------------------------------------------------------- |
-| classNameLoaderLine | string | no        | ''      | Clase CSS para personalizar el estilo de la línea del indicador de carga. |
-| height              | number | no        | 20      | Altura de la línea del indicador de carga, en píxeles.                    |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| classNameLoaderLine | string | no | '' | Clase CSS para personalizar el estilo de la línea del indicador de carga. |
+| height | number | no | 20 | Altura de la línea del indicador de carga, en píxeles. |
 
 ### Storybook
 
@@ -23,20 +23,21 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   LoaderLine básico
+- LoaderLine básico
 
 ```tsx copy
 <LoaderLine />
 ```
 
--   LoaderLine con altura personalizada
+- LoaderLine con altura personalizada
 
 ```tsx copy
 <LoaderLine height={30} />
 ```
 
--   LoaderLine con clase personalizada
+- LoaderLine con clase personalizada
 
 ```tsx copy
 <LoaderLine classNameLoaderLine="custom-loader-line" />
 ```
+
