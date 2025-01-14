@@ -26,16 +26,13 @@
     &-content {
         $classContent: &;
         position: relative;
-        --box-shadow-color: var(--fenext-color-primary);
+        --box-shadow-size: 2px;
+        --box-shadow-color: var(--fenext-color-light);
+        --box-shadow-color-error: var(--fenext-color-danger);
         --box-shadow-color-target: var(--fenext-color-secondary);
-        --box-shadow: 0px 0px 0px 2px var(--box-shadow-color);
-        &:has([class*="fenext-input"]:focus) {
-            .fenext-input-content-input {
-                box-shadow: var(--box-shadow);
-            }
-        }
+        --box-shadow:inset 0px 0px 0px var(--box-shadow-size) var(--box-shadow-color);
         &:has(.fenext-input-validator-status-error) {
-            --box-shadow-color: var(--fenext-color-danger);
+            --box-shadow-color: var(--box-shadow-color-error);
         }
         &:has(.fenext-input-content-input-show-focus-target:target) {
             --box-shadow-color: var(--box-shadow-color-target);
@@ -49,6 +46,7 @@
             color: var(--fenext-color-dark);
             background-color: var(--fenext-color-light);
             font-family: var(--fenext-font-global);
+            box-shadow: var(--box-shadow);
             font-size: 1rem;
             font-weight: 800;
             line-height: 1.36;
