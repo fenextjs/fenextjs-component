@@ -12,11 +12,11 @@ import { ProgressLine } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| className | string | no | '' | Clase CSS para personalizar el contenedor del componente ProgressLine. |
-| p | number | sí | N/A | Valor de progreso representado en la barra, como un número entre 0 y 100. |
-| showP | boolean | no | true | Indica si el valor numérico del progreso (`p`) se muestra junto a la barra. |
+| Parámetro | Tipo    | Requerido | Default | Descripcion                                                                 |
+| --------- | ------- | --------- | ------- | --------------------------------------------------------------------------- |
+| className | string  | no        | ''      | Clase CSS para personalizar el contenedor del componente ProgressLine.      |
+| p         | number  | sí        | N/A     | Valor de progreso representado en la barra, como un número entre 0 y 100.   |
+| showP     | boolean | no        | true    | Indica si el valor numérico del progreso (`p`) se muestra junto a la barra. |
 
 ### Storybook
 
@@ -24,21 +24,20 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- ProgressLine básico
+-   ProgressLine básico
 
 ```tsx copy
 <ProgressLine p={75} />
 ```
 
-- ProgressLine con progreso visible
+-   ProgressLine con progreso visible
 
 ```tsx copy
 <ProgressLine p={50} showP={true} />
 ```
 
-- ProgressLine con clase personalizada
+-   ProgressLine con clase personalizada
 
 ```tsx copy
 <ProgressLine p={90} className="mi-clase" />
 ```
-

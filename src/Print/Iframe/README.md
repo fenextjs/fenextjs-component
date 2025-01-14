@@ -12,11 +12,11 @@ import { PrintIframe } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| className | string | no | '' | Clase CSS para personalizar el contenedor del componente PrintIframe. |
-| onComponent | (data: PrintIframeComponentProps) =\> ReactNode | sí | N/A | Función que retorna el contenido a renderizar dentro del iframe, aceptando datos de tipo `PrintIframeComponentProps`. |
-| loader | boolean | no | false | Indica si el iframe está en estado de carga, mostrando un indicador de carga. |
+| Parámetro   | Tipo                                            | Requerido | Default | Descripcion                                                                                                           |
+| ----------- | ----------------------------------------------- | --------- | ------- | --------------------------------------------------------------------------------------------------------------------- |
+| className   | string                                          | no        | ''      | Clase CSS para personalizar el contenedor del componente PrintIframe.                                                 |
+| onComponent | (data: PrintIframeComponentProps) =\> ReactNode | sí        | N/A     | Función que retorna el contenido a renderizar dentro del iframe, aceptando datos de tipo `PrintIframeComponentProps`. |
+| loader      | boolean                                         | no        | false   | Indica si el iframe está en estado de carga, mostrando un indicador de carga.                                         |
 
 ### Storybook
 
@@ -24,15 +24,23 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- PrintIframe básico
+-   PrintIframe básico
 
 ```tsx copy
-<PrintIframe onComponent={({ loader }) => <div>{loader ? "Cargando..." : "Contenido a imprimir"}</div>} />
+<PrintIframe
+    onComponent={({ loader }) => (
+        <div>{loader ? "Cargando..." : "Contenido a imprimir"}</div>
+    )}
+/>
 ```
 
-- PrintIframe con clase personalizada
+-   PrintIframe con clase personalizada
 
 ```tsx copy
-<PrintIframe className="mi-clase" onComponent={({ loader }) => <div>{loader ? "Cargando..." : "Contenido listo"}</div>} />
+<PrintIframe
+    className="mi-clase"
+    onComponent={({ loader }) => (
+        <div>{loader ? "Cargando..." : "Contenido listo"}</div>
+    )}
+/>
 ```
-

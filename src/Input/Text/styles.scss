@@ -30,7 +30,8 @@
         --box-shadow-color: var(--fenext-color-light);
         --box-shadow-color-error: var(--fenext-color-danger);
         --box-shadow-color-target: var(--fenext-color-secondary);
-        --box-shadow:inset 0px 0px 0px var(--box-shadow-size) var(--box-shadow-color);
+        --box-shadow: inset 0px 0px 0px var(--box-shadow-size)
+            var(--box-shadow-color);
         &:has(.fenext-input-validator-status-error) {
             --box-shadow-color: var(--box-shadow-color-error);
         }

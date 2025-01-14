@@ -12,13 +12,13 @@ import { InputSelectMultipleT } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| defaultValue | T[] | no |  | Valores por defecto seleccionados en el select. |
-| value | T[] | no |  | Valores actualmente seleccionados. |
-| options | T[] | sí |  | Lista de opciones disponibles para seleccionar. |
-| onChange | (v?: T[]) =\> void | no |  | Función que se ejecuta cuando cambian los valores seleccionados. |
-| onParse | (v?: T) =\> InputSelectItemOptionBaseProps\<T\> | sí |  | Función utilizada para convertir cada valor del tipo `T` en una opción seleccionable para el componente `InputSelectMultiple`. |
+| Parámetro    | Tipo                                            | Requerido | Default | Descripcion                                                                                                                    |
+| ------------ | ----------------------------------------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| defaultValue | T[]                                             | no        |         | Valores por defecto seleccionados en el select.                                                                                |
+| value        | T[]                                             | no        |         | Valores actualmente seleccionados.                                                                                             |
+| options      | T[]                                             | sí        |         | Lista de opciones disponibles para seleccionar.                                                                                |
+| onChange     | (v?: T[]) =\> void                              | no        |         | Función que se ejecuta cuando cambian los valores seleccionados.                                                               |
+| onParse      | (v?: T) =\> InputSelectItemOptionBaseProps\<T\> | sí        |         | Función utilizada para convertir cada valor del tipo `T` en una opción seleccionable para el componente `InputSelectMultiple`. |
 
 ### Storybook
 
@@ -26,10 +26,9 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Uso básico de InputSelectMultipleT
+-   Uso básico de InputSelectMultipleT
 
 ```tsx copy
-
 const options = [
     { id: 1, name: "Option 1" },
     { id: 2, name: "Option 2" },
@@ -40,13 +39,12 @@ const options = [
     options={options}
     onParse={(option) => ({ label: option.name, value: option.id })}
     onChange={(selected) => console.log(selected)}
-/>
+/>;
 ```
 
-- InputSelectMultipleT con valores por defecto
+-   InputSelectMultipleT con valores por defecto
 
 ```tsx copy
-
 const options = [
     { id: 1, name: "Option 1" },
     { id: 2, name: "Option 2" },
@@ -58,6 +56,5 @@ const options = [
     options={options}
     onParse={(option) => ({ label: option.name, value: option.id })}
     onChange={(selected) => console.log(selected)}
-/>
+/>;
 ```
-
