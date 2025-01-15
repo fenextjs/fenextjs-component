@@ -83,17 +83,10 @@ export default {
             description: "Placeholder para el campo del número de teléfono.",
         },
         {
-            id: "defaultCode",
-            type: "string",
-            require: false,
-            default: "'+57'",
-            description: "Código de país por defecto.",
-        },
-        {
             id: "defaultValue",
             type: "Partial<PhoneProps>",
             require: false,
-            default: "undefined",
+            default: "{code:'+57'}",
             description: "Valor por defecto para el número de teléfono.",
         },
         {
