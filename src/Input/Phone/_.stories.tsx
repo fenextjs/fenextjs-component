@@ -22,15 +22,14 @@ const args: InputPhoneProps = {
     label: "Label",
     // defaultValue:parseString_to_Phone(""),
     // onChange:console.log,
-    defaultValue: {
+    // defaultValue: {
         // country:{
         //     "id": 55,
         //     "text": "Estados Unidos",
         //     "code": "US",
         //     "code_phone": "+1"
         //   }
-        code:"+57"
-    },
+    // },
     // value:{
     //     code_country:"US",
     //     code: "+58",

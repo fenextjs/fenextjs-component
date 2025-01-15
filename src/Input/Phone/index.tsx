@@ -122,7 +122,9 @@ export const InputPhone = ({
     required = false,
     requiredText = "*",
 
-    defaultValue = undefined,
+    defaultValue = {
+        code: "+57",
+    },
     value = undefined,
     onChange: onChangeProps,
     parseCountrys,
