@@ -25,23 +25,23 @@ export interface InputGoogleAutocompleteBaseProps
             | "onChangeValidate"
             | "value"
             | "validator"
-        >{
+        > {
     /**
      * FenextjsValidatorClass used for input validation.
      */
     validator?: FenextjsValidatorClass<AddressGoogle | undefined>;
-        /**
-         * Default Value =
-         */
-        defaultValue?: AddressGoogle;
-        /**
-         * Value
-         */
-        value?: AddressGoogle
-        /**
-         * onChange
-         */
-        onChange?: (data?: AddressGoogle) => void;
+    /**
+     * Default Value =
+     */
+    defaultValue?: AddressGoogle;
+    /**
+     * Value
+     */
+    value?: AddressGoogle;
+    /**
+     * onChange
+     */
+    onChange?: (data?: AddressGoogle) => void;
 }
 
 /**
@@ -58,11 +58,9 @@ export interface InputGoogleAutocompleteProps
         InputGoogleAutocompleteClassProps {}
 
 export const InputGoogleAutocomplete = ({
-
     defaultValue = undefined,
     value = undefined,
     onChange,
-
 
     className = "",
     validator,

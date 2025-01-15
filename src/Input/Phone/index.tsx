@@ -52,18 +52,14 @@ export interface InputPhoneClassProps {
  */
 export interface InputPhoneBaseProps
     extends Omit<
-            InputTextBaseProps,
-            | "type"
-            | "value"
-            | "onChange"
-            | "defaultValue"
-            | "datalist"
-            | "validator"
-        >{
-    /**
-     * defaultCode select code.
-     */
-    defaultCode?: string;
+        InputTextBaseProps,
+        | "type"
+        | "value"
+        | "onChange"
+        | "defaultValue"
+        | "datalist"
+        | "validator"
+    > {
     /**
      * disabled select code.
      */
@@ -126,22 +122,20 @@ export const InputPhone = ({
     required = false,
     requiredText = "*",
 
-    defaultCode = "+57",
     defaultValue = undefined,
     value = undefined,
-    onChange : onChangeProps,
+    onChange: onChangeProps,
     parseCountrys,
     ...props
 }: InputPhoneProps) => {
     const { _t } = use_T({ ...props });
 
-
     const onChange = (v: Partial<PhoneProps>) => {
         onChangeProps?.({
             ...v,
-            tel: `${v.code ?? ''} ${v.number ?? ''}`,
+            tel: `${v.code ?? ""} ${v.number ?? ""}`,
         });
-    }
+    };
 
     const [loadPhoneCodes, setlLoadPhoneCodes] = useState(false);
     const {
@@ -157,7 +151,7 @@ export const InputPhone = ({
                 const v = value ?? d;
                 return {
                     ...v,
-                    tel: `${v.code ?? ''} ${v.number ?? ''}`,
+                    tel: `${v.code ?? ""} ${v.number ?? ""}`,
                 };
             },
         },

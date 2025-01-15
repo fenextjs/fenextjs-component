@@ -29,6 +29,7 @@ const args: InputPhoneProps = {
         //     "code": "US",
         //     "code_phone": "+1"
         //   }
+        code:"+57"
     },
     // value:{
     //     code_country:"US",
@@ -44,7 +45,7 @@ const args: InputPhoneProps = {
     //         return 0;
     //     });
     // }
-    onChange:console.log,
+    // onChange:console.log,
     // defaultValueJsonString:`{"code":"+57","number":"2123123","tel":"+57 2123123","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png"}`
 }
 
