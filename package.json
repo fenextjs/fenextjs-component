@@ -1,6 +1,6 @@
 {
   "name": "fenextjs-component",
-  "version": "14.0.0",
+  "version": "14.0.1",
   "description": "",
   "main": "./cjs/index.js",
   "module": "./cjs/index.js",
@@ -53,7 +53,7 @@
     "fenextjs-date": "3.2.7",
     "fenextjs-error": "3.2.0",
     "fenextjs-functions": "6.1.0",
-    "fenextjs-hook": "13.9.2",
+    "fenextjs-hook": "14.0.0",
     "fenextjs-img-placeholder": "4.0.0",
     "fenextjs-interface": "4.5.0",
     "fenextjs-nextjs-dependencies": "3.0.0",
