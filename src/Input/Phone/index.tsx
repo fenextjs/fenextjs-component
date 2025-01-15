@@ -8,11 +8,6 @@ import { CountryProps } from "fenextjs-interface";
 import { useValidator, use_T } from "fenextjs-hook";
 import { useData } from "fenextjs-hook";
 import { FenextjsValidator } from "fenextjs-validator";
-import { parsePhone_to_String, parseString_to_Phone } from "fenextjs-functions";
-import {
-    useJsonString,
-    useJsonStringProps,
-} from "fenextjs-hook/cjs/useJsonString";
 import { getDataCountrys, getRuteCountryImg } from "country-state-city-nextjs";
 import { InputSelectT } from "../SelectT";
 import { FenextjsValidatorClass } from "fenextjs-validator";
@@ -64,8 +59,7 @@ export interface InputPhoneBaseProps
             | "defaultValue"
             | "datalist"
             | "validator"
-        >,
-        useJsonStringProps<Partial<PhoneProps>> {
+        >{
     /**
      * defaultCode select code.
      */
@@ -84,6 +78,18 @@ export interface InputPhoneBaseProps
     validator?: FenextjsValidatorClass<PhoneProps>;
 
     parseCountrys?: (data: CountryProps[]) => CountryProps[];
+    /**
+     * Default Value =
+     */
+    defaultValue?: Partial<PhoneProps>;
+    /**
+     * Value
+     */
+    value?: Partial<PhoneProps>;
+    /**
+     * onChange
+     */
+    onChange?: (data: Partial<PhoneProps>) => void;
 }
 
 /**
@@ -121,40 +127,21 @@ export const InputPhone = ({
     requiredText = "*",
 
     defaultCode = "+57",
-    defaultValue: defaultValueProps = undefined,
-    value: valueProps = undefined,
-    onChange: onChangeProps,
-    defaultValueJsonString,
-    valueJsonString,
-    onChangeJsonString,
-    parseJson_to_String,
-    parseString_to_Json,
+    defaultValue = undefined,
+    value = undefined,
+    onChange : onChangeProps,
     parseCountrys,
     ...props
 }: InputPhoneProps) => {
     const { _t } = use_T({ ...props });
-    const { value, defaultValue, onChange } = useJsonString<
-        Partial<PhoneProps>
-    >({
-        parseJson_to_String: parseJson_to_String ?? parsePhone_to_String,
-        parseString_to_Json: parseString_to_Json ?? parseString_to_Phone,
-        defaultValueJsonString,
-        valueJsonString,
-        onChangeJsonString,
-        value: valueProps,
-        defaultValue: {
-            code:
-                (defaultValueProps?.code ?? "") == ""
-                    ? defaultCode
-                    : defaultValueProps?.code,
-            number: defaultValueProps?.number ?? "",
-            tel: defaultValueProps?.tel ?? "",
-            code_country: defaultValueProps?.code_country ?? undefined,
-            country: defaultValueProps?.country ?? undefined,
-            img: defaultValueProps?.img ?? undefined,
-        },
-        onChange: onChangeProps,
-    });
+
+
+    const onChange = (v: Partial<PhoneProps>) => {
+        onChangeProps?.({
+            ...v,
+            tel: `${v.code ?? ''} ${v.number ?? ''}`,
+        });
+    }
 
     const [loadPhoneCodes, setlLoadPhoneCodes] = useState(false);
     const {
@@ -165,18 +152,12 @@ export const InputPhone = ({
     } = useData<Partial<PhoneProps>, Partial<PhoneProps>>(
         value ?? defaultValue ?? {},
         {
-            onChangeDataMemoAfter: (v: Partial<PhoneProps>) => {
-                onChange({
-                    ...v,
-                    tel: `${v.code} ${v.number}`,
-                });
-            },
             memoDependencies: [value],
             onMemo: (d: Partial<PhoneProps>) => {
                 const v = value ?? d;
                 return {
                     ...v,
-                    tel: `${v.code} ${v.number}`,
+                    tel: `${v.code ?? ''} ${v.number ?? ''}`,
                 };
             },
         },
@@ -268,7 +249,7 @@ export const InputPhone = ({
                                 onConcatData({
                                     ...v,
                                 });
-                                onChange({
+                                onChange?.({
                                     ...data,
                                     ...v,
                                 });
@@ -295,7 +276,7 @@ export const InputPhone = ({
                         type="text"
                         onChange={(n) => {
                             onChangeData("number")(n);
-                            onChange({
+                            onChange?.({
                                 ...data,
                                 number: n,
                             });
