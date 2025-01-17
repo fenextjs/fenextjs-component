@@ -158,6 +158,7 @@ export const InputFile = ({
             updateProgress: data.setProgress,
         });
         return {
+            file: data?.file,
             fileData,
             base64: `${fileData ?? ""}`,
             text: data.nameFile,
@@ -194,7 +195,7 @@ export const InputFile = ({
     const uploadFile = async (e: any) => {
         try {
             setError(undefined);
-            const file = e.target.files[0];
+            const file = e.target.files[0] as File;
             if (!file) {
                 setProgress(-2);
                 setData({

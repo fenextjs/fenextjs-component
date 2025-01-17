@@ -23,12 +23,16 @@ const args: InputPhoneProps = {
     // defaultValue:parseString_to_Phone(""),
     // onChange:console.log,
     // defaultValue: {
-        // country:{
-        //     "id": 55,
-        //     "text": "Estados Unidos",
-        //     "code": "US",
-        //     "code_phone": "+1"
-        //   }
+    //     code: '+1',
+    //     code_country: 'US',
+    //     country: {
+    //         id: 55,
+    //         text: 'Estados Unidos',
+    //         code: 'US',
+    //         code_phone: '+1',
+    //         lang: 'en',
+    //     },
+    //     "img": "https://country-state-city-nextjs.vercel.app/country/55_estados_unidos/img.png",
     // },
     // value:{
     //     code_country:"US",
@@ -44,7 +48,6 @@ const args: InputPhoneProps = {
     //         return 0;
     //     });
     // }
-    // onChange:console.log,
     // defaultValueJsonString:`{"code":"+57","number":"2123123","tel":"+57 2123123","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/20px-Flag_of_Colombia.svg.png"}`
 }
 
