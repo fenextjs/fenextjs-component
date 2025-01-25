@@ -1,7 +1,8 @@
 import React, { PropsWithChildren } from "react";
 import { _TProps } from "fenextjs-interface";
+export type TextTypeProps = "span" | "p" | "strong" | "small" | "em" | "b" | "del" | "i" | "mark" | "ins" | "sub" | "sup";
 export interface TextBaseProps extends PropsWithChildren, _TProps {
-    tag?: "p" | "strong" | "small" | "em" | "b" | "del" | "i" | "mark" | "ins" | "sub" | "sup";
+    tag?: TextTypeProps;
     loader?: boolean;
     nLineLoader?: number;
 }

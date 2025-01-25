@@ -3,6 +3,20 @@ import { LoaderLine } from "../Loader/Line";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 
+export type TextTypeProps =
+    | "span"
+    | "p"
+    | "strong"
+    | "small"
+    | "em"
+    | "b"
+    | "del"
+    | "i"
+    | "mark"
+    | "ins"
+    | "sub"
+    | "sup";
+
 /**
  * Properties for the base Text component.
  */
@@ -10,18 +24,8 @@ export interface TextBaseProps extends PropsWithChildren, _TProps {
     /**
      * The class name for the component.
      */
-    tag?:
-        | "p"
-        | "strong"
-        | "small"
-        | "em"
-        | "b"
-        | "del"
-        | "i"
-        | "mark"
-        | "ins"
-        | "sub"
-        | "sup";
+    tag?: TextTypeProps;
+
     /**
      * The loader for the component.
      */
