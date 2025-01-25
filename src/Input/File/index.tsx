@@ -109,7 +109,7 @@ export interface InputFileBaseProps extends _TProps {
      */
     textMaxSizeFile?: string;
 
-    capture?:React.InputHTMLAttributes<HTMLInputElement>['capture']
+    capture?: React.InputHTMLAttributes<HTMLInputElement>["capture"];
 }
 
 /**

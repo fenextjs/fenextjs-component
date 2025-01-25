@@ -21,3 +21,9 @@ const arg : InputFileProps = {
     // capture:"user"
 }
 Index.args = arg
+
+export const Cature = Profile.bind({});
+const CatureArg : InputFileProps = {
+    capture:"user"
+}
+Cature.args = CatureArg
