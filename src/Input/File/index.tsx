@@ -108,6 +108,8 @@ export interface InputFileBaseProps extends _TProps {
      * textMaxSizeFile.
      */
     textMaxSizeFile?: string;
+
+    capture?:React.InputHTMLAttributes<HTMLInputElement>['capture']
 }
 
 /**
@@ -142,6 +144,7 @@ export const InputFile = ({
     onChangeError,
     disabled = false,
     textMaxSizeFile = "File max size",
+    capture,
     ...props
 }: InputFileProps) => {
     const { _t } = use_T({ ...props });
@@ -269,6 +272,7 @@ export const InputFile = ({
                         onChange={uploadFile}
                         accept={accept.map((e: string) => `.${e}`).join(",")}
                         disabled={disabled}
+                        capture={capture}
                     />
                 </label>
                 {progress > 0 && progress < 100 && parseProgress(progress)}

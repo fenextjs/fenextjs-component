@@ -18,6 +18,6 @@ const Profile: StoryFn<PropsWithChildren<InputFileProps>> = (args) => (
 
 export const Index = Profile.bind({});
 const arg : InputFileProps = {
-    
+    // capture:"user"
 }
 Index.args = arg
