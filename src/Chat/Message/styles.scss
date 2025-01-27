@@ -69,4 +69,27 @@
             font-size: 1rem;
         }
     }
+    &-file{
+        display: flex;
+        .fenext-input-upload {
+            max-width: 250px;
+            &-up{
+                justify-items: flex-start;
+                padding: .5rem;
+                gap: .1rem;
+                .fenext-collapse-header {
+                    text-align: left;
+                    font-size: .8rem;
+                    padding: .5rem 0 ;
+                }
+            }
+            &-title{
+                font-size: 1rem;
+                white-space: nowrap;
+            }
+            &-preview{
+                min-height: 0;
+            }
+        }
+    }
 }

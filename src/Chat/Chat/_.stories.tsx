@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StoryFn, Meta } from "@storybook/react";
 import { Chat, ChatProps } from "./index";
 import { UserProps} from "fenextjs-interface";
@@ -8,7 +8,26 @@ export default {
     title: "Chat/Chat",
 } as Meta;
 
-const Chat_: StoryFn<ChatProps> = (args) => <Chat {...args} />;
+const Chat_: StoryFn<ChatProps> = (args) => {
+    const [messages, setMessages] = useState(args?.chatMessage ?? [])
+
+    return <>
+    <Chat {...args} 
+    
+        chatMessage={messages}
+        chatFormSendMessage={{
+            onSubmit:async (d)=>{
+                console.log({d});
+                
+                setMessages(o=>[...o,{
+                    id:"",
+                    ...d,
+                }])
+            }
+        }}
+    />
+    </>
+};
 
 const User1: Partial<UserProps> = {
     id: "1",
@@ -26,7 +45,7 @@ const User2: Partial<UserProps> = {
 export const Index = Chat_.bind({});
 Index.args = {
     chatFormSendMessage: {},
-    chatMessage: new Array(20).fill(1).map((ele, i) => {
+    chatMessage: new Array(1).fill(1).map((ele, i) => {
         return {
             id: `${i * ele}`,
             account: i % 2 == 0 ? User1 : User2,

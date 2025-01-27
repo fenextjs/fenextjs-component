@@ -4,6 +4,8 @@ import { Text } from "../../Text";
 import React, { ReactNode } from "react";
 import { UserProps } from "fenextjs-interface/cjs/User";
 import { FenextImgUserPlaceholder } from "fenextjs-img-placeholder";
+import { FileProps } from "fenextjs-interface";
+import { InputUpload } from "@/Input";
 
 export interface ChatMessageProps {
     id: string | number;
@@ -11,12 +13,14 @@ export interface ChatMessageProps {
     right?: boolean;
     account?: Partial<UserProps>;
     message?: ReactNode;
+    file?:FileProps
     createdAt?: Date;
     view?: boolean;
     imgProps?: Partial<ImgProps>;
 }
 export const ChatMessage = ({
     message,
+    file,
     createdAt,
     account,
 
@@ -78,7 +82,17 @@ export const ChatMessage = ({
                         className="fenext-chat-message-message"
                     >
                         {message}
+                        <br />
                     </Text>
+                        {file && <>
+                            <div
+                        className="fenext-chat-message-file">
+                            <InputUpload
+                            defaultValue={file}
+                            disabled={true}
+                        />
+                            </div>
+                        </>}
                 </div>
             </div>
         </>
