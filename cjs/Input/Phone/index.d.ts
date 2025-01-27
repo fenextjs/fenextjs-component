@@ -21,7 +21,8 @@ export interface InputPhoneBaseProps extends Omit<InputTextBaseProps, "type" | "
     defaultValue?: Partial<PhoneProps>;
     value?: Partial<PhoneProps>;
     onChange?: (data: Partial<PhoneProps>) => void;
+    maxLengthShowOptionsCodes?: number;
 }
 export interface InputPhoneProps extends InputPhoneBaseProps, InputPhoneClassProps {
 }
-export declare const InputPhone: ({ classNameInputNumber, classNameSelectCode, classNamePhone, classNamePhoneCode, classNamePhoneLabel, classNamePhoneNumber, classNameError, disabledSelectCode, disabled, label, loader, placeholderCode, placeholder, validator, optional, optionalText, required, requiredText, defaultValue, value, onChange: onChangeProps, parseCountrys, ...props }: InputPhoneProps) => React.JSX.Element;
+export declare const InputPhone: ({ classNameInputNumber, classNameSelectCode, classNamePhone, classNamePhoneCode, classNamePhoneLabel, classNamePhoneNumber, classNameError, disabledSelectCode, disabled, label, loader, placeholderCode, placeholder, validator, optional, optionalText, required, requiredText, maxLengthShowOptionsCodes, defaultValue, value, onChange: onChangeProps, parseCountrys, ...props }: InputPhoneProps) => React.JSX.Element;

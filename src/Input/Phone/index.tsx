@@ -86,6 +86,8 @@ export interface InputPhoneBaseProps
      * onChange
      */
     onChange?: (data: Partial<PhoneProps>) => void;
+
+    maxLengthShowOptionsCodes?: number;
 }
 
 /**
@@ -121,6 +123,7 @@ export const InputPhone = ({
     optionalText = "(optional)",
     required = false,
     requiredText = "*",
+    maxLengthShowOptionsCodes,
 
     defaultValue = {
         code: "+57",
@@ -261,6 +264,7 @@ export const InputPhone = ({
                             id: "fenext-item-max-length-show-options",
                             text: "...",
                         }}
+                        maxLengthShowOptions={maxLengthShowOptionsCodes}
                     />
                 </div>
                 <div
