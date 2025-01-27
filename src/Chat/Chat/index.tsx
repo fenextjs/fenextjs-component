@@ -101,9 +101,6 @@ export const Chat = ({
         }
     }, [chatMessage]);
 
-    console.log({chatMessage});
-    
-
     return (
         <>
             <div

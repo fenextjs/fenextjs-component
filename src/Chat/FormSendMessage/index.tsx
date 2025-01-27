@@ -9,7 +9,7 @@ import { InputFile, InputFileProps } from "../../Input/File";
 
 export interface ChatFormSendMessageDataProps {
     message?: string;
-    file?: FileProps
+    file?: FileProps;
 }
 
 export interface ChatFormSendMessageProps extends _TProps {
@@ -18,7 +18,7 @@ export interface ChatFormSendMessageProps extends _TProps {
     useSubmitInEnter?: boolean;
     btnChildren?: ReactNode;
     btnFileChildren?: ReactNode;
-    InputFileProps?: Omit<InputFileProps, "onChange">
+    InputFileProps?: Omit<InputFileProps, "onChange">;
     placeholderMessage?: string;
 }
 export const ChatFormSendMessage = ({
@@ -31,46 +31,46 @@ export const ChatFormSendMessage = ({
     ...props
 }: ChatFormSendMessageProps) => {
     const { _t } = use_T({ ...props });
-    const ref = useRef(null)
+    const ref = useRef(null);
     const [__key, set__key] = useState(0);
 
-    const { data, setData, onChangeData, loaderSubmit, onSubmitData } = useData<ChatFormSendMessageDataProps>({
+    const { data, setData, onChangeData, loaderSubmit, onSubmitData } =
+        useData<ChatFormSendMessageDataProps>(
+            {},
+            {
+                onSubmitData: async (data) => {
+                    try {
+                        await props?.onSubmit?.(data);
+                    } finally {
+                        set__key((a) => a + 1);
+                        setData({});
+                        const label = (ref?.current as any)?.querySelector?.(
+                            `.fenext-chat-form-send-message-label`,
+                        ) as any;
+                        const chat = document.querySelector(
+                            ".fenext-chat",
+                        ) as any;
 
-    }, {
-        
-        onSubmitData: async (data) => {
-            try {
-                console.log({data});
-                
-                await props?.onSubmit?.(data);
-            } finally {
-                set__key((a) => a + 1);
-                setData({})
-                const label = ((ref?.current as any)?.querySelector?.(`.fenext-chat-form-send-message-label`) as any)
-                const chat = document.querySelector(".fenext-chat") as any
-
-                setTimeout(function () {
-                    label?.click?.();
-                }, 0);
-                setTimeout(function () {
-                    chat?.scrollTo?.(0, chat?.scrollTop + 99990000009)
-                }, 10);
-            }
-        }
-    });
+                        setTimeout(function () {
+                            label?.click?.();
+                        }, 0);
+                        setTimeout(function () {
+                            chat?.scrollTo?.(0, chat?.scrollTop + 99990000009);
+                        }, 10);
+                    }
+                },
+            },
+        );
     return (
         <>
-            <div
-                className="fenext-chat-form-send-message"
-                ref={ref}
-            >
+            <div className="fenext-chat-form-send-message" ref={ref}>
                 <InputText
                     classNameLabel="fenext-chat-form-send-message-label"
                     type="textarea"
                     placeholder={_t(placeholderMessage)}
                     className="fenext-chat-form-send-message-input-message"
                     onChange={onChangeData("message")}
-                    value={data.message ?? ''}
+                    value={data.message ?? ""}
                     onEnter={() => {
                         if (!data.message || data.message == "") {
                             return;
@@ -81,35 +81,33 @@ export const ChatFormSendMessage = ({
                     }}
                     disabled={loaderSubmit || props?.loader}
                 />
-                <div
-                    className="fenext-chat-form-send-message-content-btn"
-                >
+                <div className="fenext-chat-form-send-message-content-btn">
                     <Button
                         loader={loaderSubmit || props?.loader}
                         disabled={!data.message || data.message == ""}
                         _t={_t}
                         size="extra-small"
-                    >{btnChildren}
+                    >
+                        {btnChildren}
                     </Button>
                     <InputFile
                         {...InputFileProps}
                         key={__key}
                         onChange={(e) => {
                             onSubmitData({
-                                data:{
+                                data: {
                                     ...data,
-                                    file:e
-                                }
-                            })
+                                    file: e,
+                                },
+                            });
                         }}
-
                     >
-
                         <Button
                             loader={loaderSubmit || props?.loader}
                             _t={_t}
                             size="extra-small"
-                        >{btnFileChildren}
+                        >
+                            {btnFileChildren}
                         </Button>
                     </InputFile>
                 </div>

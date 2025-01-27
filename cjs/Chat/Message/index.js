@@ -7,7 +7,8 @@ const Img_1 = require("../../Img");
 const Text_1 = require("../../Text");
 const react_1 = tslib_1.__importDefault(require("react"));
 const fenextjs_img_placeholder_1 = require("fenextjs-img-placeholder");
-const ChatMessage = ({ message, createdAt, account, right = false, view = false, loader, imgProps = {
+const Input_1 = require("@/Input");
+const ChatMessage = ({ message, file, createdAt, account, right = false, view = false, loader, imgProps = {
     imgIf404: fenextjs_img_placeholder_1.FenextImgUserPlaceholder,
 }, }) => {
     return (react_1.default.createElement(react_1.default.Fragment, null,
@@ -31,7 +32,12 @@ const ChatMessage = ({ message, createdAt, account, right = false, view = false,
                             date: createdAt,
                             type: "time",
                         }))))),
-                react_1.default.createElement(Text_1.Text, { loader: loader, className: "fenext-chat-message-message" }, message)))));
+                react_1.default.createElement(Text_1.Text, { loader: loader, className: "fenext-chat-message-message" },
+                    message,
+                    react_1.default.createElement("br", null)),
+                file && (react_1.default.createElement(react_1.default.Fragment, null,
+                    react_1.default.createElement("div", { className: "fenext-chat-message-file" },
+                        react_1.default.createElement(Input_1.InputUpload, { defaultValue: file, disabled: true }))))))));
 };
 exports.ChatMessage = ChatMessage;
 //# sourceMappingURL=index.js.map

@@ -13,7 +13,7 @@ export interface ChatMessageProps {
     right?: boolean;
     account?: Partial<UserProps>;
     message?: ReactNode;
-    file?:FileProps
+    file?: FileProps;
     createdAt?: Date;
     view?: boolean;
     imgProps?: Partial<ImgProps>;
@@ -84,15 +84,16 @@ export const ChatMessage = ({
                         {message}
                         <br />
                     </Text>
-                        {file && <>
-                            <div
-                        className="fenext-chat-message-file">
-                            <InputUpload
-                            defaultValue={file}
-                            disabled={true}
-                        />
+                    {file && (
+                        <>
+                            <div className="fenext-chat-message-file">
+                                <InputUpload
+                                    defaultValue={file}
+                                    disabled={true}
+                                />
                             </div>
-                        </>}
+                        </>
+                    )}
                 </div>
             </div>
         </>

@@ -17,8 +17,6 @@ const Chat_: StoryFn<ChatProps> = (args) => {
         chatMessage={messages}
         chatFormSendMessage={{
             onSubmit:async (d)=>{
-                console.log({d});
-                
                 setMessages(o=>[...o,{
                     id:"",
                     ...d,
