@@ -7,7 +7,6 @@ import {
     ChatFormSendMessageProps,
 } from "../FormSendMessage";
 import { Button, ButtonProps } from "../../Button";
-import { Back } from "../../Back";
 import { Text } from "../../Text";
 import { SvgTelegram } from "fenextjs-svg/cjs/Telegram";
 
@@ -110,7 +109,7 @@ export const Chat = ({
                 }`}
             >
                 <div className="fenext-chat-contentTop">
-                    {customBack ?? <Back />}
+                    {customBack}
 
                     {[chatUser].flat(2).map((e, i) => {
                         return (

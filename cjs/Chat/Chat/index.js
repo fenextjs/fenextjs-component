@@ -7,7 +7,6 @@ const User_1 = require("../User");
 const Message_1 = require("../Message");
 const FormSendMessage_1 = require("../FormSendMessage");
 const Button_1 = require("../../Button");
-const Back_1 = require("../../Back");
 const Text_1 = require("../../Text");
 const Telegram_1 = require("fenextjs-svg/cjs/Telegram");
 const Chat = ({ loader, empty = (react_1.default.createElement(react_1.default.Fragment, null,
@@ -41,7 +40,7 @@ const Chat = ({ loader, empty = (react_1.default.createElement(react_1.default.F
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-chat fenext-chat-${fullPage ? "full-page" : ""}` },
             react_1.default.createElement("div", { className: "fenext-chat-contentTop" },
-                customBack ?? react_1.default.createElement(Back_1.Back, null),
+                customBack,
                 [chatUser].flat(2).map((e, i) => {
                     return (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement(User_1.ChatUser, { key: i, ...e })));

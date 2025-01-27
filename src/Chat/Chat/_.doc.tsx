@@ -50,7 +50,7 @@ export default {
             require: false,
             default: "undefined",
             description:
-                "Componente Back personalizado para remplazar Back por defecto.",
+                "Componente Back personalizado ejectuar la accion de atras.",
         },
         {
             id: "chatUser",
