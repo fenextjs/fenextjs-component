@@ -5,7 +5,7 @@ import React, { ReactNode } from "react";
 import { UserProps } from "fenextjs-interface/cjs/User";
 import { FenextImgUserPlaceholder } from "fenextjs-img-placeholder";
 import { FileProps } from "fenextjs-interface";
-import { InputUpload } from "@/Input";
+import { InputUpload } from "../../Input/Upload";
 
 export interface ChatMessageProps {
     id: string | number;
