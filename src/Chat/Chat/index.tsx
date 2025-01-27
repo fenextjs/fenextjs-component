@@ -18,6 +18,7 @@ export interface ChatProps {
     onActionAfterNewMessage?: () => void;
 
     empty?: ReactNode;
+    customBack?: ReactNode;
 
     chatUser: ChatUserProps | ChatUserProps[];
     loaderChatUser?: boolean;
@@ -42,6 +43,7 @@ export const Chat = ({
             <SvgTelegram />
         </>
     ),
+    customBack,
 
     chatUser,
     loaderChatUser,
@@ -108,7 +110,8 @@ export const Chat = ({
                 }`}
             >
                 <div className="fenext-chat-contentTop">
-                    <Back />
+                    {customBack ?? <Back />}
+
                     {[chatUser].flat(2).map((e, i) => {
                         return (
                             <>

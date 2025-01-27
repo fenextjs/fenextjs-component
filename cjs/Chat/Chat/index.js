@@ -12,7 +12,7 @@ const Text_1 = require("../../Text");
 const Telegram_1 = require("fenextjs-svg/cjs/Telegram");
 const Chat = ({ loader, empty = (react_1.default.createElement(react_1.default.Fragment, null,
     react_1.default.createElement(Text_1.Text, null, "There is not messages yet"),
-    react_1.default.createElement(Telegram_1.SvgTelegram, null))), chatUser, loaderChatUser, chatMessage, loaderChatMessage, chatFormSendMessage, loaderChatFormSendMessage, useBtnLoadMoreMssages = false, btnLoadMoreMessages = {
+    react_1.default.createElement(Telegram_1.SvgTelegram, null))), customBack, chatUser, loaderChatUser, chatMessage, loaderChatMessage, chatFormSendMessage, loaderChatFormSendMessage, useBtnLoadMoreMssages = false, btnLoadMoreMessages = {
     children: "Load more messages",
 }, fullPage = true, onScrollIfNewMessage = true, ...props }) => {
     const onActionAfterNewMessage = () => {
@@ -41,7 +41,7 @@ const Chat = ({ loader, empty = (react_1.default.createElement(react_1.default.F
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-chat fenext-chat-${fullPage ? "full-page" : ""}` },
             react_1.default.createElement("div", { className: "fenext-chat-contentTop" },
-                react_1.default.createElement(Back_1.Back, null),
+                customBack ?? react_1.default.createElement(Back_1.Back, null),
                 [chatUser].flat(2).map((e, i) => {
                     return (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement(User_1.ChatUser, { key: i, ...e })));

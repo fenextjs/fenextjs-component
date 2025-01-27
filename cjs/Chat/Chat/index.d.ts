@@ -9,6 +9,7 @@ export interface ChatProps {
     onScrollIfNewMessage?: boolean;
     onActionAfterNewMessage?: () => void;
     empty?: ReactNode;
+    customBack?: ReactNode;
     chatUser: ChatUserProps | ChatUserProps[];
     loaderChatUser?: boolean;
     chatMessage: ChatMessageProps[];
@@ -19,4 +20,4 @@ export interface ChatProps {
     btnLoadMoreMessages?: ButtonProps;
     fullPage?: boolean;
 }
-export declare const Chat: ({ loader, empty, chatUser, loaderChatUser, chatMessage, loaderChatMessage, chatFormSendMessage, loaderChatFormSendMessage, useBtnLoadMoreMssages, btnLoadMoreMessages, fullPage, onScrollIfNewMessage, ...props }: ChatProps) => React.JSX.Element;
+export declare const Chat: ({ loader, empty, customBack, chatUser, loaderChatUser, chatMessage, loaderChatMessage, chatFormSendMessage, loaderChatFormSendMessage, useBtnLoadMoreMssages, btnLoadMoreMessages, fullPage, onScrollIfNewMessage, ...props }: ChatProps) => React.JSX.Element;

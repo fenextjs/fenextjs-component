@@ -45,6 +45,14 @@ export default {
                 "Contenido que se mostrará si no hay mensajes en el chat.",
         },
         {
+            id: "customBack",
+            type: "ReactNode",
+            require: false,
+            default: "undefined",
+            description:
+                "Componente Back personalizado para remplazar Back por defecto.",
+        },
+        {
             id: "chatUser",
             type: "ChatUserProps | ChatUserProps[]",
             require: true,
