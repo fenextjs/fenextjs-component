@@ -1,33 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PaginationNPage = void 0;
+exports.PaginationNPage = exports.PaginationNPageDefaultOptions = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importDefault(require("react"));
-const Select_1 = require("../../Input/Select");
-const PaginationNPage = ({ className = "", defaultValue, listNpage = [
-    {
-        id: "10",
-        text: "10",
-    },
-    {
-        id: "20",
-        text: "20",
-    },
-    {
-        id: "50",
-        text: "50",
-    },
-    {
-        id: "100",
-        text: "100",
-    },
-    {
-        id: "all",
-        text: "All",
-    },
-], onChangeNPage, ...props }) => {
-    return (react_1.default.createElement("div", { className: `fenext-pagination-npage ${className}` },
-        react_1.default.createElement(Select_1.InputSelect, { ...props, useItemMaxLengthShowOptions: false, options: listNpage, onChange: onChangeNPage, isSelectChangeText: false, defaultValue: defaultValue ?? listNpage[0] })));
+const SelectT_1 = require("../../Input/SelectT");
+const fenextjs_hook_1 = require("fenextjs-hook");
+exports.PaginationNPageDefaultOptions = [10, 20, 50, 100];
+const PaginationNPage = ({ className = "", options = exports.PaginationNPageDefaultOptions, onChange, paginationName, disabled, ...props }) => {
+    const { onChangeData, data: { npage = 10 }, } = (0, fenextjs_hook_1.usePagination)({
+        name: paginationName,
+        onChage: (e) => {
+            onChange?.(e?.npage ?? 10);
+        },
+    });
+    return (react_1.default.createElement(SelectT_1.InputSelectT, { ...props, className: `fenext-pagination-npage ${className}`, useItemMaxLengthShowOptions: false, options: options, onChange: onChangeData("page"), isSelectChangeText: false, value: npage, onParse: (e) => {
+            return {
+                id: e ?? "",
+                text: `${e}`,
+                data: e,
+            };
+        }, disabled: disabled }));
 };
 exports.PaginationNPage = PaginationNPage;
 //# sourceMappingURL=index.js.map

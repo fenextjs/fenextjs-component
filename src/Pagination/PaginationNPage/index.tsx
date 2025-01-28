@@ -5,7 +5,7 @@ import { InputSelectClassProps } from "../../Input/Select";
 import { usePagination } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
 
-export const PaginationNPageDefaultOptions =  [10, 20, 50, 100]
+export const PaginationNPageDefaultOptions = [10, 20, 50, 100];
 
 /**
  * Class properties to customize the style of the pagination.
@@ -19,7 +19,7 @@ export interface PaginationNPageClassProps extends InputSelectClassProps {
 /**
  * The base props for the pagination component
  */
-export interface PaginationNPageBaseProps extends _TProps{
+export interface PaginationNPageBaseProps extends _TProps {
     /**
      * List NPage for select.
      */
@@ -27,18 +27,18 @@ export interface PaginationNPageBaseProps extends _TProps{
     /**
      * onChange of nPage.
      */
-    onChange?: (npage: number) => void
+    onChange?: (npage: number) => void;
 
-    paginationName?: string
+    paginationName?: string;
 
-    disabled?:boolean
+    disabled?: boolean;
 }
 /**
  * Props for PaginationNPage component
  */
 export interface PaginationNPageProps
     extends PaginationNPageClassProps,
-    PaginationNPageBaseProps { }
+        PaginationNPageBaseProps {}
 
 export const PaginationNPage = ({
     className = "",
@@ -48,9 +48,15 @@ export const PaginationNPage = ({
     disabled,
     ...props
 }: PaginationNPageProps) => {
-    const { onChangeData, data: { npage = 10 } } = usePagination({ name: paginationName,onChage:(e)=>{
-        onChange?.(e?.npage ?? 10)
-    } })
+    const {
+        onChangeData,
+        data: { npage = 10 },
+    } = usePagination({
+        name: paginationName,
+        onChage: (e) => {
+            onChange?.(e?.npage ?? 10);
+        },
+    });
     return (
         <InputSelectT<number>
             {...props}
@@ -62,10 +68,10 @@ export const PaginationNPage = ({
             value={npage}
             onParse={(e) => {
                 return {
-                    id: e ?? '',
+                    id: e ?? "",
                     text: `${e}`,
-                    data: e
-                }
+                    data: e,
+                };
             }}
             disabled={disabled}
         />

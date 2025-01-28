@@ -7,13 +7,19 @@ const PaginationDown_1 = require("fenextjs-svg/cjs/PaginationDown");
 const PaginationNext_1 = require("fenextjs-svg/cjs/PaginationNext");
 const PaginationPre_1 = require("fenextjs-svg/cjs/PaginationPre");
 const PaginationUp_1 = require("fenextjs-svg/cjs/PaginationUp");
-const PaginationItemPage = ({ classNameContent = "", classNameUp = "", classNamePre = "", classNameCurrent = "", classNameCurrentItem = "", classNameNext = "", classNameDown = "", icons = {
+const fenextjs_hook_1 = require("fenextjs-hook");
+const PaginationItemPage = ({ classNameContent = "", classNameUp = "", classNamePre = "", classNameCurrent = "", classNameCurrentItem = "", classNameNext = "", classNameDown = "", paginationName, icons = {
     up: react_1.default.createElement(PaginationUp_1.SvgPaginationUp, null),
     pre: react_1.default.createElement(PaginationPre_1.SvgPaginationPre, null),
     next: react_1.default.createElement(PaginationNext_1.SvgPaginationNext, null),
     down: react_1.default.createElement(PaginationDown_1.SvgPaginationDown, null),
-}, defaultPage = 0, nItems, nItemsPage = 10, disabled = false, onChangePage, hiddenIfNItemsSmallerThanOrEqualNItemsPage = true, }) => {
-    const [page, setPage_] = (0, react_1.useState)(defaultPage);
+}, nItems, disabled = false, onChange, hiddenIfNItemsSmallerThanOrEqualNItemsPage = true, }) => {
+    const { onChangeData, data: { page = 0, npage: nItemsPage = 10 }, } = (0, fenextjs_hook_1.usePagination)({
+        name: paginationName,
+        onChage: (e) => {
+            onChange?.(e?.page ?? 0);
+        },
+    });
     const maxPage = (0, react_1.useMemo)(() => (nItemsPage == 0 ? 0 : Math.ceil(nItems / nItemsPage) - 1), [nItems, nItemsPage]);
     const minMaxValue = (v) => {
         return Math.max(0, Math.min(maxPage, v));
@@ -23,8 +29,7 @@ const PaginationItemPage = ({ classNameContent = "", classNameUp = "", className
             return;
         }
         const Value = minMaxValue(v);
-        setPage_(Value);
-        onChangePage?.(Value);
+        onChangeData("page")(Value);
     };
     const onSetPage = (e) => () => setPage(e);
     const addPage = (add) => () => {

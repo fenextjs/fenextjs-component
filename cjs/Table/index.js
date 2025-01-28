@@ -52,7 +52,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                         react_1.default.createElement("div", { className: `${classNameLoader}` },
                             react_1.default.createElement(Loader_1.Loader, null)))));
             }
-            return new Array(Math.min(pagination?.nItemsPage ?? 10, 20))
+            return new Array(Math.min(pagination?.PaginationItemPageProps?.nItems ?? 10, 20))
                 .fill(1)
                 .map((item, i) => (react_1.default.createElement("tr", { key: i * item, className: `fenext-table-content-table-tr ${classNameTr}` },
                 useCheckbox && (react_1.default.createElement("td", { key: `${i}-checkbox`, className: `fenext-table-content-table-td ${classNameTd}` },

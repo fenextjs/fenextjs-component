@@ -18,24 +18,21 @@ export default {
             type: "PaginationItemPageProps",
             require: true,
             default: "",
-            description:
-                "Objeto de configuracion para PaginationItemPage.",
+            description: "Objeto de configuracion para PaginationItemPage.",
         },
         {
             id: "PaginationNPageProps",
             type: "PaginationNPageProps",
             require: false,
             default: "{}",
-            description:
-                "Objeto de configuracion para PaginationNPage.",
+            description: "Objeto de configuracion para PaginationNPage.",
         },
         {
             id: "paginationName",
             type: "string",
             require: false,
             default: "undefined",
-            description:
-                "Nombre unico para el uso de usePagination.",
+            description: "Nombre unico para el uso de usePagination.",
         },
         {
             id: "showItemPage",

@@ -24,17 +24,14 @@ export interface PaginationClassProps {
 /**
  * The base props for the pagination component
  */
-export interface PaginationBaseProps
-    extends 
-        _TProps {
+export interface PaginationBaseProps extends _TProps {
     showItemPage?: boolean;
     showNPage?: boolean;
-    disabled?:boolean
+    disabled?: boolean;
 
-
-    PaginationItemPageProps:Omit<PaginationItemPageProps,"paginationName">
-    PaginationNPageProps?:Omit<PaginationNPageProps,"paginationName">
-    paginationName?:string
+    PaginationItemPageProps: Omit<PaginationItemPageProps, "paginationName">;
+    PaginationNPageProps?: Omit<PaginationNPageProps, "paginationName">;
+    paginationName?: string;
 }
 /**
  * Props for Pagination component
@@ -49,14 +46,16 @@ export const Pagination = ({
     PaginationNPageProps = {},
     showItemPage = true,
     showNPage = true,
-    disabled=false,
+    disabled = false,
     paginationName,
     ...props
 }: PaginationProps) => {
     const { _t } = use_T({ ...props });
     const minPage = useMemo(() => {
         let m = Infinity;
-        (PaginationNPageProps?.options ?? PaginationNPageDefaultOptions )?.forEach((e) => {
+        (
+            PaginationNPageProps?.options ?? PaginationNPageDefaultOptions
+        )?.forEach((e) => {
             const n = parseInt(`${e ?? ""}`);
             if (n && !Number.isNaN(n)) {
                 m = Math.min(m, n);
@@ -78,15 +77,17 @@ export const Pagination = ({
                 )}
             </div>
             <div className={`fenext-pagination-content-n-page ${className}`}>
-                {showNPage && minPage < (PaginationItemPageProps?.nItems ?? minPage + 1) && (
-                    <PaginationNPage
-                        {...PaginationNPageProps}
-                        {...props}
-                        _t={_t}
-                        disabled={disabled}
-                        paginationName={paginationName}
-                    />
-                )}
+                {showNPage &&
+                    minPage <
+                        (PaginationItemPageProps?.nItems ?? minPage + 1) && (
+                        <PaginationNPage
+                            {...PaginationNPageProps}
+                            {...props}
+                            _t={_t}
+                            disabled={disabled}
+                            paginationName={paginationName}
+                        />
+                    )}
             </div>
         </div>
     );

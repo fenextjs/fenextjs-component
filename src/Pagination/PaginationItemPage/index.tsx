@@ -73,7 +73,7 @@ export interface PaginationItemPageClassProps {
  * The base props for the pagination component
  */
 export interface PaginationItemPageBaseProps extends _TProps {
-    paginationName?: string
+    paginationName?: string;
     /**
      * The total number of items to paginate
      */
@@ -98,7 +98,7 @@ export interface PaginationItemPageBaseProps extends _TProps {
  */
 export interface PaginationItemPageProps
     extends PaginationItemPageClassProps,
-    PaginationItemPageBaseProps { }
+        PaginationItemPageBaseProps {}
 
 export const PaginationItemPage = ({
     classNameContent = "",
@@ -123,9 +123,15 @@ export const PaginationItemPage = ({
     onChange,
     hiddenIfNItemsSmallerThanOrEqualNItemsPage = true,
 }: PaginationItemPageProps) => {
-    const { onChangeData, data: { page = 0, npage: nItemsPage = 10 } } = usePagination({ name: paginationName ,onChage:(e)=>{
-        onChange?.(e?.page ?? 0)
-    }})
+    const {
+        onChangeData,
+        data: { page = 0, npage: nItemsPage = 10 },
+    } = usePagination({
+        name: paginationName,
+        onChage: (e) => {
+            onChange?.(e?.page ?? 0);
+        },
+    });
 
     const maxPage = useMemo(
         () => (nItemsPage == 0 ? 0 : Math.ceil(nItems / nItemsPage) - 1),
@@ -150,11 +156,12 @@ export const PaginationItemPage = ({
 
     return (
         <div
-            className={`fenext-pagination-item-page ${hiddenIfNItemsSmallerThanOrEqualNItemsPage &&
-                    nItems <= nItemsPage
+            className={`fenext-pagination-item-page ${
+                hiddenIfNItemsSmallerThanOrEqualNItemsPage &&
+                nItems <= nItemsPage
                     ? "fenext-pagination-item-page-hidden"
                     : ""
-                } ${classNameContent} `}
+            } ${classNameContent} `}
         >
             {page > 0 && (
                 <>
@@ -205,10 +212,11 @@ export const PaginationItemPage = ({
                         <>
                             <div
                                 key={`fenext-pagination-item-page-current-item-${i}`}
-                                className={`fenext-pagination-item-page-current-item ${n == page
+                                className={`fenext-pagination-item-page-current-item ${
+                                    n == page
                                         ? "fenext-pagination-item-page-current-item-active"
                                         : ""
-                                    } ${classNameCurrentItem}`}
+                                } ${classNameCurrentItem}`}
                                 onClick={onSetPage(n)}
                             >
                                 {n + 1}

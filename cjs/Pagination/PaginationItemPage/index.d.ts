@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { _TProps } from "fenextjs-interface";
 export interface PaginationItemPageClassProps {
     classNameContent?: string;
@@ -9,20 +9,19 @@ export interface PaginationItemPageClassProps {
     classNameNext?: string;
     classNameDown?: string;
     icons?: {
-        up?: any;
-        pre?: any;
-        next?: any;
-        down?: any;
+        up?: ReactNode;
+        pre?: ReactNode;
+        next?: ReactNode;
+        down?: ReactNode;
     };
 }
 export interface PaginationItemPageBaseProps extends _TProps {
-    defaultPage?: number;
+    paginationName?: string;
     nItems: number;
-    nItemsPage?: number;
     disabled?: boolean;
     hiddenIfNItemsSmallerThanOrEqualNItemsPage?: boolean;
-    onChangePage?: (page: number) => void;
+    onChange?: (page: number) => void;
 }
 export interface PaginationItemPageProps extends PaginationItemPageClassProps, PaginationItemPageBaseProps {
 }
-export declare const PaginationItemPage: ({ classNameContent, classNameUp, classNamePre, classNameCurrent, classNameCurrentItem, classNameNext, classNameDown, icons, defaultPage, nItems, nItemsPage, disabled, onChangePage, hiddenIfNItemsSmallerThanOrEqualNItemsPage, }: PaginationItemPageProps) => React.JSX.Element;
+export declare const PaginationItemPage: ({ classNameContent, classNameUp, classNamePre, classNameCurrent, classNameCurrentItem, classNameNext, classNameDown, paginationName, icons, nItems, disabled, onChange, hiddenIfNItemsSmallerThanOrEqualNItemsPage, }: PaginationItemPageProps) => React.JSX.Element;

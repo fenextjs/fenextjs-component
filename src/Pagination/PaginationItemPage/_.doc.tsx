@@ -83,8 +83,7 @@ export default {
             type: "string",
             require: false,
             default: "undefined",
-            description:
-                "Nombre unico para el uso de usePagination.",
+            description: "Nombre unico para el uso de usePagination.",
         },
         {
             id: "hiddenIfNItemsSmallerThanOrEqualNItemsPage",
