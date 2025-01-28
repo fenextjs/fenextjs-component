@@ -1,11 +1,16 @@
 import React from "react";
 
-import { InputSelect, InputSelectBaseProps } from "../../Input/Select";
+import { InputSelectT } from "../../Input/SelectT";
+import { InputSelectClassProps } from "../../Input/Select";
+import { usePagination } from "fenextjs-hook";
+import { _TProps } from "fenextjs-interface";
+
+export const PaginationNPageDefaultOptions =  [10, 20, 50, 100]
 
 /**
  * Class properties to customize the style of the pagination.
  */
-export interface PaginationNPageClassProps {
+export interface PaginationNPageClassProps extends InputSelectClassProps {
     /**
      * CSS class for the main container of the pagination.
      */
@@ -14,65 +19,55 @@ export interface PaginationNPageClassProps {
 /**
  * The base props for the pagination component
  */
-export interface PaginationNPageBaseProps
-    extends Omit<
-        InputSelectBaseProps,
-        "options" | "onChange" | "nItems" | "maxLengthShowOptions"
-    > {
+export interface PaginationNPageBaseProps extends _TProps{
     /**
      * List NPage for select.
      */
-    listNpage?: InputSelectBaseProps["options"];
+    options?: number[];
     /**
      * onChange of nPage.
      */
-    onChangeNPage?: InputSelectBaseProps["onChange"];
+    onChange?: (npage: number) => void
+
+    paginationName?: string
+
+    disabled?:boolean
 }
 /**
  * Props for PaginationNPage component
  */
 export interface PaginationNPageProps
     extends PaginationNPageClassProps,
-        PaginationNPageBaseProps {}
+    PaginationNPageBaseProps { }
 
 export const PaginationNPage = ({
     className = "",
-    defaultValue,
-    listNpage = [
-        {
-            id: "10",
-            text: "10",
-        },
-        {
-            id: "20",
-            text: "20",
-        },
-        {
-            id: "50",
-            text: "50",
-        },
-        {
-            id: "100",
-            text: "100",
-        },
-        {
-            id: "all",
-            text: "All",
-        },
-    ],
-    onChangeNPage,
+    options = PaginationNPageDefaultOptions,
+    onChange,
+    paginationName,
+    disabled,
     ...props
 }: PaginationNPageProps) => {
+    const { onChangeData, data: { npage = 10 } } = usePagination({ name: paginationName,onChage:(e)=>{
+        onChange?.(e?.npage ?? 10)
+    } })
     return (
-        <div className={`fenext-pagination-npage ${className}`}>
-            <InputSelect
-                {...props}
-                useItemMaxLengthShowOptions={false}
-                options={listNpage}
-                onChange={onChangeNPage}
-                isSelectChangeText={false}
-                defaultValue={defaultValue ?? listNpage[0]}
-            />
-        </div>
+        <InputSelectT<number>
+            {...props}
+            className={`fenext-pagination-npage ${className}`}
+            useItemMaxLengthShowOptions={false}
+            options={options}
+            onChange={onChangeData("page")}
+            isSelectChangeText={false}
+            value={npage}
+            onParse={(e) => {
+                return {
+                    id: e ?? '',
+                    text: `${e}`,
+                    data: e
+                }
+            }}
+            disabled={disabled}
+        />
     );
 };

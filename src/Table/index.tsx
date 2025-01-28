@@ -304,7 +304,7 @@ export const Table = <T,>({
                     </tr>
                 );
             }
-            return new Array(Math.min(pagination?.nItemsPage ?? 10, 20))
+            return new Array(Math.min(pagination?.PaginationItemPageProps?.nItems ?? 10, 20))
                 .fill(1)
                 .map((item, i) => (
                     <tr

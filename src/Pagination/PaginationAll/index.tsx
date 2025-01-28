@@ -2,13 +2,12 @@ import React, { useMemo } from "react";
 
 import {
     PaginationItemPage,
-    PaginationItemPageBaseProps,
-    PaginationItemPageClassProps,
+    PaginationItemPageProps,
 } from "../PaginationItemPage";
 import {
     PaginationNPage,
-    PaginationNPageBaseProps,
-    PaginationNPageClassProps,
+    PaginationNPageDefaultOptions,
+    PaginationNPageProps,
 } from "../PaginationNPage";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
@@ -21,24 +20,20 @@ export interface PaginationClassProps {
      * CSS class for the main container of the pagination.
      */
     className?: string;
-    /**
-     * Object with className of component classNameNPage.
-     */
-    classNameItemPage?: PaginationItemPageClassProps;
-    /**
-     * Object with className of component PaginationNPage.
-     */
-    classNameNPage?: PaginationNPageClassProps;
 }
 /**
  * The base props for the pagination component
  */
 export interface PaginationBaseProps
-    extends PaginationItemPageBaseProps,
-        PaginationNPageBaseProps,
+    extends 
         _TProps {
     showItemPage?: boolean;
     showNPage?: boolean;
+    disabled?:boolean
+
+
+    PaginationItemPageProps:PaginationItemPageProps
+    PaginationNPageProps?:PaginationNPageProps
 }
 /**
  * Props for Pagination component
@@ -49,73 +44,44 @@ export interface PaginationProps
 
 export const Pagination = ({
     className = "",
-    classNameItemPage = {},
-    classNameNPage = {},
+    PaginationItemPageProps,
+    PaginationNPageProps = {},
     showItemPage = true,
     showNPage = true,
-    listNpage = [
-        {
-            id: "10",
-            text: "10",
-        },
-        {
-            id: "20",
-            text: "20",
-        },
-        {
-            id: "50",
-            text: "50",
-        },
-        {
-            id: "100",
-            text: "100",
-        },
-        {
-            id: "all",
-            text: "All",
-        },
-    ],
+    disabled=false,
 
     ...props
 }: PaginationProps) => {
     const { _t } = use_T({ ...props });
     const minPage = useMemo(() => {
         let m = Infinity;
-        listNpage?.forEach((e) => {
-            const n = parseInt(`${e?.id ?? ""}`);
+        (PaginationNPageProps?.options ?? PaginationNPageDefaultOptions )?.forEach((e) => {
+            const n = parseInt(`${e ?? ""}`);
             if (n && !Number.isNaN(n)) {
                 m = Math.min(m, n);
             }
         });
         return m;
-    }, [listNpage]);
+    }, [PaginationNPageProps?.options]);
 
     return (
         <div className={`fenext-pagination ${className}`}>
             <div className={`fenext-pagination-content-item-page ${className}`}>
                 {showItemPage && (
                     <PaginationItemPage
-                        {...classNameItemPage}
-                        {...props}
+                        {...PaginationItemPageProps}
                         _t={_t}
+                        disabled={disabled}
                     />
                 )}
             </div>
             <div className={`fenext-pagination-content-n-page ${className}`}>
-                {showNPage && minPage < (props?.nItems ?? minPage + 1) && (
+                {showNPage && minPage < (PaginationItemPageProps?.nItems ?? minPage + 1) && (
                     <PaginationNPage
-                        {...classNameNPage}
+                        {...PaginationNPageProps}
                         {...props}
-                        listNpage={listNpage}
-                        defaultValue={
-                            props?.nItemsPage
-                                ? listNpage.find(
-                                      (e) =>
-                                          `${e.id}` == `${props?.nItemsPage}`,
-                                  )
-                                : undefined
-                        }
                         _t={_t}
+                        disabled={disabled}
                     />
                 )}
             </div>

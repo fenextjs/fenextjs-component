@@ -1,10 +1,11 @@
-import React, { useMemo, useState } from "react";
+import React, { ReactNode, useMemo } from "react";
 
 import { SvgPaginationDown } from "fenextjs-svg/cjs/PaginationDown";
 import { SvgPaginationNext } from "fenextjs-svg/cjs/PaginationNext";
 import { SvgPaginationPre } from "fenextjs-svg/cjs/PaginationPre";
 import { SvgPaginationUp } from "fenextjs-svg/cjs/PaginationUp";
 import { _TProps } from "fenextjs-interface";
+import { usePagination } from "fenextjs-hook";
 /**
  * Class properties to customize the style of the pagination.
  */
@@ -50,40 +51,33 @@ export interface PaginationItemPageClassProps {
         /**
          * Custom icon for the "Go Up" button.
          */
-        up?: any;
+        up?: ReactNode;
 
         /**
          * Custom icon for the previous button.
          */
-        pre?: any;
+        pre?: ReactNode;
 
         /**
          * Custom icon for the next button.
          */
-        next?: any;
+        next?: ReactNode;
 
         /**
          * Custom icon for the "Go Down" button.
          */
-        down?: any;
+        down?: ReactNode;
     };
 }
 /**
  * The base props for the pagination component
  */
 export interface PaginationItemPageBaseProps extends _TProps {
-    /**
-     * The default page to show when the component is mounted
-     */
-    defaultPage?: number;
+    paginationName?: string
     /**
      * The total number of items to paginate
      */
     nItems: number;
-    /**
-     * The number of items to display per page
-     */
-    nItemsPage?: number;
     /**
      * Whether the component is disabled
      */
@@ -97,14 +91,14 @@ export interface PaginationItemPageBaseProps extends _TProps {
      * A callback function that is called when the page changes
      * @param page - The new page number
      */
-    onChangePage?: (page: number) => void;
+    onChange?: (page: number) => void;
 }
 /**
  * Props for PaginationItemPage component
  */
 export interface PaginationItemPageProps
     extends PaginationItemPageClassProps,
-        PaginationItemPageBaseProps {}
+    PaginationItemPageBaseProps { }
 
 export const PaginationItemPage = ({
     classNameContent = "",
@@ -114,6 +108,7 @@ export const PaginationItemPage = ({
     classNameCurrentItem = "",
     classNameNext = "",
     classNameDown = "",
+    paginationName,
 
     icons = {
         up: <SvgPaginationUp />,
@@ -122,16 +117,15 @@ export const PaginationItemPage = ({
         down: <SvgPaginationDown />,
     },
 
-    defaultPage = 0,
-
     nItems,
-    nItemsPage = 10,
 
     disabled = false,
-    onChangePage,
+    onChange,
     hiddenIfNItemsSmallerThanOrEqualNItemsPage = true,
 }: PaginationItemPageProps) => {
-    const [page, setPage_] = useState(defaultPage);
+    const { onChangeData, data: { page = 0, npage: nItemsPage = 10 } } = usePagination({ name: paginationName ,onChage:(e)=>{
+        onChange?.(e?.page ?? 0)
+    }})
 
     const maxPage = useMemo(
         () => (nItemsPage == 0 ? 0 : Math.ceil(nItems / nItemsPage) - 1),
@@ -146,8 +140,7 @@ export const PaginationItemPage = ({
             return;
         }
         const Value = minMaxValue(v);
-        setPage_(Value);
-        onChangePage?.(Value);
+        onChangeData("page")(Value);
     };
     const onSetPage = (e: number) => () => setPage(e);
 
@@ -157,12 +150,11 @@ export const PaginationItemPage = ({
 
     return (
         <div
-            className={`fenext-pagination-item-page ${
-                hiddenIfNItemsSmallerThanOrEqualNItemsPage &&
-                nItems <= nItemsPage
+            className={`fenext-pagination-item-page ${hiddenIfNItemsSmallerThanOrEqualNItemsPage &&
+                    nItems <= nItemsPage
                     ? "fenext-pagination-item-page-hidden"
                     : ""
-            } ${classNameContent} `}
+                } ${classNameContent} `}
         >
             {page > 0 && (
                 <>
@@ -213,11 +205,10 @@ export const PaginationItemPage = ({
                         <>
                             <div
                                 key={`fenext-pagination-item-page-current-item-${i}`}
-                                className={`fenext-pagination-item-page-current-item ${
-                                    n == page
+                                className={`fenext-pagination-item-page-current-item ${n == page
                                         ? "fenext-pagination-item-page-current-item-active"
                                         : ""
-                                } ${classNameCurrentItem}`}
+                                    } ${classNameCurrentItem}`}
                                 onClick={onSetPage(n)}
                             >
                                 {n + 1}
