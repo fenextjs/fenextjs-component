@@ -32,8 +32,9 @@ export interface PaginationBaseProps
     disabled?:boolean
 
 
-    PaginationItemPageProps:PaginationItemPageProps
-    PaginationNPageProps?:PaginationNPageProps
+    PaginationItemPageProps:Omit<PaginationItemPageProps,"paginationName">
+    PaginationNPageProps?:Omit<PaginationNPageProps,"paginationName">
+    paginationName?:string
 }
 /**
  * Props for Pagination component
@@ -49,7 +50,7 @@ export const Pagination = ({
     showItemPage = true,
     showNPage = true,
     disabled=false,
-
+    paginationName,
     ...props
 }: PaginationProps) => {
     const { _t } = use_T({ ...props });
@@ -72,6 +73,7 @@ export const Pagination = ({
                         {...PaginationItemPageProps}
                         _t={_t}
                         disabled={disabled}
+                        paginationName={paginationName}
                     />
                 )}
             </div>
@@ -82,6 +84,7 @@ export const Pagination = ({
                         {...props}
                         _t={_t}
                         disabled={disabled}
+                        paginationName={paginationName}
                     />
                 )}
             </div>

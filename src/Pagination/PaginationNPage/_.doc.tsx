@@ -14,6 +14,22 @@ export default {
                 "Clase CSS para el contenedor principal del componente de paginación.",
         },
         {
+            id: "disabled",
+            type: "boolean",
+            require: false,
+            default: "false",
+            description:
+                "Deshabilita la navegación del componente si se establece en true.",
+        },
+        {
+            id: "paginationName",
+            type: "string",
+            require: false,
+            default: "undefined",
+            description:
+                "Nombre unico para el uso de usePagination.",
+        },
+        {
             id: "options",
             type: "number[]",
             require: false,

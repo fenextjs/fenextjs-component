@@ -14,20 +14,28 @@ export default {
                 "Clase CSS para el contenedor principal de la paginación.",
         },
         {
-            id: "classNameItemPage",
-            type: "PaginationItemPageClassProps",
-            require: false,
-            default: "{}",
+            id: "PaginationItemPageProps",
+            type: "PaginationItemPageProps",
+            require: true,
+            default: "",
             description:
-                "Objeto con las clases CSS para personalizar el componente de cada página.",
+                "Objeto de configuracion para PaginationItemPage.",
         },
         {
-            id: "classNameNPage",
-            type: "PaginationNPageClassProps",
+            id: "PaginationNPageProps",
+            type: "PaginationNPageProps",
             require: false,
             default: "{}",
             description:
-                "Objeto con las clases CSS para personalizar el componente de selección de número de página.",
+                "Objeto de configuracion para PaginationNPage.",
+        },
+        {
+            id: "paginationName",
+            type: "string",
+            require: false,
+            default: "undefined",
+            description:
+                "Nombre unico para el uso de usePagination.",
         },
         {
             id: "showItemPage",
@@ -44,20 +52,6 @@ export default {
             default: "true",
             description:
                 "Determina si se debe mostrar el componente de selección de número de página en la paginación.",
-        },
-        {
-            id: "listNpage",
-            type: "Array<{ id: string; text: string }>",
-            require: false,
-            default: `[
-                { id: "10", text: "10" },
-                { id: "20", text: "20" },
-                { id: "50", text: "50" },
-                { id: "100", text: "100" },
-                { id: "all", text: "All" }
-            ]`,
-            description:
-                "Lista de opciones de número de página para mostrar en la selección de paginación.",
         },
     ],
     useExample: [

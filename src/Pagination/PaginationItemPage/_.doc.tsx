@@ -79,6 +79,14 @@ export default {
                 "Deshabilita la navegación del componente si se establece en true.",
         },
         {
+            id: "paginationName",
+            type: "string",
+            require: false,
+            default: "undefined",
+            description:
+                "Nombre unico para el uso de usePagination.",
+        },
+        {
             id: "hiddenIfNItemsSmallerThanOrEqualNItemsPage",
             type: "boolean",
             require: false,
