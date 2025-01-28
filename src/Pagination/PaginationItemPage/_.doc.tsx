@@ -64,26 +64,11 @@ export default {
                 "Objetos de iconos personalizados para cada botón de la paginación.",
         },
         {
-            id: "defaultPage",
-            type: "number",
-            require: false,
-            default: "0",
-            description:
-                "Página por defecto a mostrar al montar el componente.",
-        },
-        {
             id: "nItems",
             type: "number",
             require: true,
             default: "",
             description: "Número total de elementos a paginar.",
-        },
-        {
-            id: "nItemsPage",
-            type: "number",
-            require: false,
-            default: "10",
-            description: "Número de elementos a mostrar por página.",
         },
         {
             id: "disabled",
@@ -102,7 +87,7 @@ export default {
                 "Oculta la paginación si el número de elementos es menor o igual que los elementos por página.",
         },
         {
-            id: "onChangePage",
+            id: "onChange",
             type: "(page: number) => void",
             require: false,
             default: "",
@@ -121,7 +106,7 @@ export default {
         },
         {
             text: "Paginación con callback en cambio de página",
-            content: `<PaginationItemPage nItems={50} onChangePage={(page) => console.log('Página actual:', page)} />`,
+            content: `<PaginationItemPage nItems={50} onChange={(page) => console.log('Página actual:', page)} />`,
         },
     ],
 };

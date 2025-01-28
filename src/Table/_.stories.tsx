@@ -151,8 +151,9 @@ Index.args = {
         return r;
     }),
     pagination: {
-        nItems: 20,
-        // nItemsPage:20
+        PaginationItemPageProps:{
+            nItems:50
+        }
     },
     loader: false,
     // onOrderBy:(a)=>{
@@ -280,7 +281,9 @@ OneItem.args = {
         return r;
     }),
     pagination: {
-        nItems: 1,
+        PaginationItemPageProps:{
+            nItems:1,
+        },
         showNPage:false
     },
     loader: false,
@@ -394,7 +397,9 @@ NotItem.args = {
     ],
     items: [],
     pagination: {
-        nItems: 1,
+        PaginationItemPageProps:{
+            nItems:0,
+        },
         showNPage:false
     },
     loader: false,
@@ -604,7 +609,9 @@ TableInTable.args = {
         return r;
     }),
     pagination: {
-        nItems: 200,
+        PaginationItemPageProps:{
+            nItems:200,
+        },
     },
     loader: false,
     onOrderBy:(a)=>{
@@ -735,7 +742,9 @@ Actions.args = {
         return r;
     }),
     pagination: {
-        nItems: 100,
+        PaginationItemPageProps:{
+            nItems:100,
+        },
         showNPage:true
     },
     loader: false,
@@ -866,7 +875,9 @@ WithCollapse.args = {
         return r;
     }),
     pagination: {
-        nItems: 20,
+        PaginationItemPageProps:{
+            nItems:20,
+        },
         // nItemsPage:20
     },
     loader: false,
