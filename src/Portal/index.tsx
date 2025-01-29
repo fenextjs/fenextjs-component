@@ -6,7 +6,7 @@ export interface PortalProps {
     children: ReactNode;
 }
 export const Portal = ({ children, container }: PortalProps) => {
-    if ( typeof window == "undefined") {
+    if (typeof window == "undefined") {
         return <></>;
     }
     return createPortal(<>{children}</>, container ?? document?.body);
