@@ -1,4 +1,4 @@
-import { DaysEnum } from "fenextjs-interface";
+import { DateDataTypeProps, DaysEnum } from "fenextjs-interface";
 import React from "react";
 import { SvgPaginationNext, SvgPaginationPre } from "fenextjs-svg";
 import { _TProps } from "fenextjs-interface";
@@ -27,7 +27,7 @@ export interface InputCalendarMonthClassProps {
 export interface InputCalendarMonthProps
     extends InputCalendarMonthClassProps,
         _TProps {
-    type?: "normal" | "range";
+    type?: DateDataTypeProps;
 
     date?: FenextjsDate;
     onPreMonth?: () => void;

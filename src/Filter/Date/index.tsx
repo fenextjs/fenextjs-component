@@ -1,20 +1,14 @@
 import React, { ReactNode } from "react";
 import { SvgTrash } from "fenextjs-svg";
-import { use_T, useData, useDate } from "fenextjs-hook";
+import { use_T, useData, useDate, useFilter } from "fenextjs-hook";
 import { Text, TextProps } from "../../Text";
 import { DropDown, DropDownClassProps } from "../../DropDown";
-import { InputCalendarMonthProps } from "../../Input/Calendar/Month";
 import { InputCalendar, InputCalendarClassProps } from "../../Input/Calendar";
 import { InputSwich, InputSwichClassProps } from "../../Input/Swich";
 import { Button, ButtonClassProps } from "../../Button";
 import { FenextjsDateFormatOptions } from "fenextjs-date";
-import { _TProps } from "fenextjs-interface";
+import { _TProps, DateDataProps } from "fenextjs-interface";
 
-export interface FilterDateDataProps {
-    type?: InputCalendarMonthProps["type"];
-    date?: Date;
-    dateRange?: Date[];
-}
 export interface FilterDateClassProps {
     className?: string;
     classNameDropDown?: DropDownClassProps;
@@ -29,8 +23,8 @@ export interface FilterDateClassProps {
     classNameClear?: string;
 }
 export interface FilterDateProps extends FilterDateClassProps, _TProps {
-    defaultValue?: FilterDateDataProps;
-    onChange?: (data: FilterDateDataProps) => void;
+    defaultValue?: DateDataProps;
+    onChange?: (data: DateDataProps) => void;
     formatDateOption?: FenextjsDateFormatOptions;
 
     textValue?: string;
@@ -42,10 +36,12 @@ export interface FilterDateProps extends FilterDateClassProps, _TProps {
     iconTrash?: ReactNode;
 
     extraListBtn?: ((
-        data: ReturnType<typeof useData<FilterDateDataProps>>,
+        data: ReturnType<typeof useData<DateDataProps>>,
     ) => ReactNode)[];
 
     nMonthShow?: number;
+
+    nameFilter?:string
 }
 
 export const FilterDate = ({
@@ -78,12 +74,14 @@ export const FilterDate = ({
 
     nMonthShow = 2,
 
+    nameFilter,
     ...p
 }: FilterDateProps) => {
     const { _t } = use_T({ ...p });
+    const { onConcatData : onConcatDataFilter} = useFilter({name:nameFilter})
     const date = useDate({});
     const { data, onChangeData, onConcatData, setData, ...HOOK } =
-        useData<FilterDateDataProps>(
+        useData<DateDataProps>(
             {
                 type: "normal",
                 ...defaultValue,
@@ -115,6 +113,7 @@ export const FilterDate = ({
                             date.dateRange?.[1]?.getSeconds() - 10,
                         );
                     }
+                    onConcatDataFilter(date)
                     onChange?.(date);
                 },
             },

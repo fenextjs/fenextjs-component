@@ -6,6 +6,14 @@ export default {
         "El componente FilterDate permite filtrar datos por fecha o por rango de fechas. Ofrece opciones configurables para seleccionar fechas, personalizar el formato, y manejar acciones mediante hooks como `useData` y `useDate`.",
     props: [
         {
+            id: "nameFilter",
+            type: "string",
+            require: false,
+            description:
+                "Nombre único para el filtro, utilizado en el contexto global.",
+            default: "undefined",
+        },
+        {
             id: "defaultValue",
             type: "FilterDateDataProps",
             require: false,
