@@ -41,7 +41,7 @@ export interface FilterDateProps extends FilterDateClassProps, _TProps {
 
     nMonthShow?: number;
 
-    nameFilter?:string
+    nameFilter?: string;
 }
 
 export const FilterDate = ({
@@ -78,7 +78,9 @@ export const FilterDate = ({
     ...p
 }: FilterDateProps) => {
     const { _t } = use_T({ ...p });
-    const { onConcatData : onConcatDataFilter} = useFilter({name:nameFilter})
+    const { onConcatData: onConcatDataFilter } = useFilter({
+        name: nameFilter,
+    });
     const date = useDate({});
     const { data, onChangeData, onConcatData, setData, ...HOOK } =
         useData<DateDataProps>(
@@ -113,7 +115,7 @@ export const FilterDate = ({
                             date.dateRange?.[1]?.getSeconds() - 10,
                         );
                     }
-                    onConcatDataFilter(date)
+                    onConcatDataFilter(date);
                     onChange?.(date);
                 },
             },

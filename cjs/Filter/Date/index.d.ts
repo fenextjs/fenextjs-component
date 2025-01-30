@@ -2,17 +2,11 @@ import React, { ReactNode } from "react";
 import { useData } from "fenextjs-hook";
 import { TextProps } from "../../Text";
 import { DropDownClassProps } from "../../DropDown";
-import { InputCalendarMonthProps } from "../../Input/Calendar/Month";
 import { InputCalendarClassProps } from "../../Input/Calendar";
 import { InputSwichClassProps } from "../../Input/Swich";
 import { ButtonClassProps } from "../../Button";
 import { FenextjsDateFormatOptions } from "fenextjs-date";
-import { _TProps } from "fenextjs-interface";
-export interface FilterDateDataProps {
-    type?: InputCalendarMonthProps["type"];
-    date?: Date;
-    dateRange?: Date[];
-}
+import { _TProps, DateDataProps } from "fenextjs-interface";
 export interface FilterDateClassProps {
     className?: string;
     classNameDropDown?: DropDownClassProps;
@@ -27,8 +21,8 @@ export interface FilterDateClassProps {
     classNameClear?: string;
 }
 export interface FilterDateProps extends FilterDateClassProps, _TProps {
-    defaultValue?: FilterDateDataProps;
-    onChange?: (data: FilterDateDataProps) => void;
+    defaultValue?: DateDataProps;
+    onChange?: (data: DateDataProps) => void;
     formatDateOption?: FenextjsDateFormatOptions;
     textValue?: string;
     textFilterByDate?: string;
@@ -36,7 +30,8 @@ export interface FilterDateProps extends FilterDateClassProps, _TProps {
     textBtnToday?: string;
     textBtnWeek?: string;
     iconTrash?: ReactNode;
-    extraListBtn?: ((data: ReturnType<typeof useData<FilterDateDataProps>>) => ReactNode)[];
+    extraListBtn?: ((data: ReturnType<typeof useData<DateDataProps>>) => ReactNode)[];
     nMonthShow?: number;
+    nameFilter?: string;
 }
-export declare const FilterDate: ({ onChange, defaultValue, formatDateOption, className, classNameDropDown, classNameCollapse, classNameBtnToday, classNameBtnWeek, classNameTextValue, classNameTextSwich, classNameInputSwich, classNameContentTop, classNameLabelSwich, classNameClear, textValue, textFilterByDate, textFilterByRange, textBtnToday, textBtnWeek, iconTrash, extraListBtn, nMonthShow, ...p }: FilterDateProps) => React.JSX.Element;
+export declare const FilterDate: ({ onChange, defaultValue, formatDateOption, className, classNameDropDown, classNameCollapse, classNameBtnToday, classNameBtnWeek, classNameTextValue, classNameTextSwich, classNameInputSwich, classNameContentTop, classNameLabelSwich, classNameClear, textValue, textFilterByDate, textFilterByRange, textBtnToday, textBtnWeek, iconTrash, extraListBtn, nMonthShow, nameFilter, ...p }: FilterDateProps) => React.JSX.Element;

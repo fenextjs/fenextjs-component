@@ -1,6 +1,6 @@
 import React from "react";
 import { InputTextBaseProps, InputTextClassProps } from "../Text";
-import { TypeDate } from "fenextjs-interface/cjs/Date";
+import { TypeDate } from "fenextjs-interface/cjs/Day";
 export type InputDateValueType = Date | undefined;
 export interface InputDateBaseProps extends Omit<InputTextBaseProps, "type" | "value" | "onChange" | "defaultValue"> {
     type?: TypeDate;

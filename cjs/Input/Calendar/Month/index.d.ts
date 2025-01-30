@@ -1,3 +1,4 @@
+import { DateDataTypeProps } from "fenextjs-interface";
 import React from "react";
 import { _TProps } from "fenextjs-interface";
 import { FenextjsDate } from "fenextjs-date";
@@ -20,7 +21,7 @@ export interface InputCalendarMonthClassProps {
     classNameDateSelectRange?: string;
 }
 export interface InputCalendarMonthProps extends InputCalendarMonthClassProps, _TProps {
-    type?: "normal" | "range";
+    type?: DateDataTypeProps;
     date?: FenextjsDate;
     onPreMonth?: () => void;
     onNextMonth?: () => void;

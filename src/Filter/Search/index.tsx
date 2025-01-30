@@ -1,21 +1,21 @@
-import React  from "react";
-import {  useFilter } from "fenextjs-hook";
-import { InputSearch,InputSearchClassProps} from "../../Input/Search";
+import React from "react";
+import { useFilter } from "fenextjs-hook";
+import { InputSearch, InputSearchClassProps } from "../../Input/Search";
 import { _TProps, SearchDataProps } from "fenextjs-interface";
 
 export interface FilterSearchClassProps {
     className?: string;
-    classNameSearch?:InputSearchClassProps
+    classNameSearch?: InputSearchClassProps;
 }
 export interface FilterSearchProps extends FilterSearchClassProps, _TProps {
     defaultValue?: SearchDataProps;
     onChange?: (data: SearchDataProps) => void;
-    nameFilter?:string
+    nameFilter?: string;
 }
 
 export const FilterSearch = ({
-    className="",
-    classNameSearch={},
+    className = "",
+    classNameSearch = {},
 
     onChange,
     defaultValue = {},
@@ -23,7 +23,7 @@ export const FilterSearch = ({
 
     ...p
 }: FilterSearchProps) => {
-    const { onChangeData } = useFilter({name:nameFilter})
+    const { onChangeData } = useFilter({ name: nameFilter });
 
     return (
         <>
@@ -33,13 +33,13 @@ export const FilterSearch = ({
                     ${className}
                 `}
             >
-                <InputSearch 
+                <InputSearch
                     {...classNameSearch}
                     {...p}
                     defaultValue={defaultValue?.search}
-                    onEnterSearch={(search)=>{
-                        onChangeData("search")(search)
-                        onChange?.({search})
+                    onEnterSearch={(search) => {
+                        onChangeData("search")(search);
+                        onChange?.({ search });
                     }}
                 />
             </div>

@@ -18,8 +18,7 @@ export default {
             type: "SearchDataProps",
             require: false,
             default: "{}",
-            description:
-                "Valor inicial del filtro de busqueda.",
+            description: "Valor inicial del filtro de busqueda.",
         },
         {
             id: "onChange",

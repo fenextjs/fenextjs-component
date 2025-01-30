@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { DaysEnum } from "fenextjs-interface/cjs/Date";
+import { DaysEnum } from "fenextjs-interface/cjs/Day";
 import { CollapseMultipleProps } from "../../Collapse/Multiple";
 import { ScheduleDayValueType, ScheduleDayBaseProps } from "../Day";
 import { _TProps } from "fenextjs-interface";
