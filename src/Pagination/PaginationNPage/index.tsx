@@ -38,7 +38,7 @@ export interface PaginationNPageBaseProps extends _TProps {
  */
 export interface PaginationNPageProps
     extends PaginationNPageClassProps,
-        PaginationNPageBaseProps {}
+    PaginationNPageBaseProps { }
 
 export const PaginationNPage = ({
     className = "",
@@ -49,7 +49,7 @@ export const PaginationNPage = ({
     ...props
 }: PaginationNPageProps) => {
     const {
-        onChangeData,
+        setData,
         data: { npage = 10 },
     } = usePagination({
         name: paginationName,
@@ -63,7 +63,12 @@ export const PaginationNPage = ({
             className={`fenext-pagination-npage ${className}`}
             useItemMaxLengthShowOptions={false}
             options={options}
-            onChange={onChangeData("page")}
+            onChange={(e) => {
+                setData({
+                    page: 0,
+                    npage: e
+                })
+            }}
             isSelectChangeText={false}
             value={npage}
             onParse={(e) => {
