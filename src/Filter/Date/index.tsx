@@ -78,7 +78,7 @@ export const FilterDate = ({
     ...p
 }: FilterDateProps) => {
     const { _t } = use_T({ ...p });
-    const { onConcatData: onConcatDataFilter } = useFilter({
+    const { onChangeData: onChangeDataFilter } = useFilter({
         name: nameFilter,
     });
     const date = useDate({});
@@ -115,7 +115,16 @@ export const FilterDate = ({
                             date.dateRange?.[1]?.getSeconds() - 10,
                         );
                     }
-                    onConcatDataFilter(date);
+
+                    if (
+                        (date.type == "range" &&
+                            date.dateRange?.[0] &&
+                            date.dateRange?.[1]) ||
+                        (date.type == "normal" && date.date)
+                    ) {
+                        onChangeDataFilter("date")(date);
+                    }
+
                     onChange?.(date);
                 },
             },

@@ -12,7 +12,7 @@ const Swich_1 = require("../../Input/Swich");
 const Button_1 = require("../../Button");
 const FilterDate = ({ onChange, defaultValue = {}, formatDateOption = {}, className = "", classNameDropDown = {}, classNameCollapse = {}, classNameBtnToday = {}, classNameBtnWeek = {}, classNameTextValue = {}, classNameTextSwich = {}, classNameInputSwich = {}, classNameContentTop = "", classNameLabelSwich = "", classNameClear = "", textValue = "Filtrar por fecha:", textFilterByDate = "Filtar por fecha", textFilterByRange = "Filtar por rango", textBtnToday = "Hoy", textBtnWeek = "Esta Semana", iconTrash = react_1.default.createElement(fenextjs_svg_1.SvgTrash, null), extraListBtn = [], nMonthShow = 2, nameFilter, ...p }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...p });
-    const { onConcatData: onConcatDataFilter } = (0, fenextjs_hook_1.useFilter)({
+    const { onChangeData: onChangeDataFilter } = (0, fenextjs_hook_1.useFilter)({
         name: nameFilter,
     });
     const date = (0, fenextjs_hook_1.useDate)({});
@@ -42,7 +42,12 @@ const FilterDate = ({ onChange, defaultValue = {}, formatDateOption = {}, classN
                 date.dateRange?.[1].setDate(date.dateRange?.[1]?.getDate() + 1);
                 date.dateRange?.[1].setSeconds(date.dateRange?.[1]?.getSeconds() - 10);
             }
-            onConcatDataFilter(date);
+            if ((date.type == "range" &&
+                date.dateRange?.[0] &&
+                date.dateRange?.[1]) ||
+                (date.type == "normal" && date.date)) {
+                onChangeDataFilter("date")(date);
+            }
             onChange?.(date);
         },
     });
