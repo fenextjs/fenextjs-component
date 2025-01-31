@@ -38,7 +38,7 @@ export interface PaginationNPageBaseProps extends _TProps {
  */
 export interface PaginationNPageProps
     extends PaginationNPageClassProps,
-    PaginationNPageBaseProps { }
+        PaginationNPageBaseProps {}
 
 export const PaginationNPage = ({
     className = "",
@@ -66,8 +66,8 @@ export const PaginationNPage = ({
             onChange={(e) => {
                 setData({
                     page: 0,
-                    npage: e
-                })
+                    npage: e,
+                });
             }}
             isSelectChangeText={false}
             value={npage}
