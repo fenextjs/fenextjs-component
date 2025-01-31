@@ -141,8 +141,8 @@ export interface TableBaseProps<T> extends _TProps {
      * An array of data objects to display in the table.
      */
     items: T[];
-    nItems?: number
-    error?: ErrorFenextjs
+    nItems?: number;
+    error?: ErrorFenextjs;
 
     /**
      * The header configuration for the table.
@@ -208,7 +208,7 @@ export interface TableBaseProps<T> extends _TProps {
  *
  * @template T The type of data that the table contains.
  */
-export interface TableProps<T> extends TableClassProps, TableBaseProps<T> { }
+export interface TableProps<T> extends TableClassProps, TableBaseProps<T> {}
 
 export const Table = <T,>({
     classNameContent = "",
@@ -269,8 +269,8 @@ export const Table = <T,>({
                     ...e,
                     ...(i == j
                         ? {
-                            __checkbox,
-                        }
+                              __checkbox,
+                          }
                         : {}),
                 };
             });
@@ -300,7 +300,7 @@ export const Table = <T,>({
                         className={`fenext-table-content-table-td fenext-table-error ${classNameTd}`}
                         colSpan={999}
                     >
-                        <ErrorComponent error={error}/>
+                        <ErrorComponent error={error} />
                     </td>
                 </tr>
             );
@@ -495,7 +495,7 @@ export const Table = <T,>({
         typeLoader,
         notResult,
         headerTr,
-        error
+        error,
     ]);
 
     return (
@@ -645,15 +645,18 @@ export const Table = <T,>({
                         </tbody>
                     </table>
                 </div>
-                {(nItems!=undefined || pagination) && showPagination && (
+                {(nItems != undefined || pagination) && showPagination && (
                     <div
                         className={`fenext-table-content-pagination ${classNameContentPagination}`}
                     >
                         <Pagination
                             {...pagination}
-                            PaginationItemPageProps={{ nItems: nItems ?? 10, ...pagination }}
-                            disabled={loader} 
-                            _t={_t} 
+                            PaginationItemPageProps={{
+                                nItems: nItems ?? 10,
+                                ...pagination,
+                            }}
+                            disabled={loader}
+                            _t={_t}
                         />
                     </div>
                 )}

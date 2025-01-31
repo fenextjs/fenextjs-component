@@ -3,6 +3,7 @@ import { PaginationProps } from "../Pagination";
 import { TableActionCheckboxProps } from "../TableActionCheckbox";
 import { _TProps } from "fenextjs-interface";
 import { CollapseProps } from "../Collapse/Simple";
+import { ErrorFenextjs } from "fenextjs-error";
 export interface TableClassProps {
     classNameContent?: string;
     classNameContentTable?: string;
@@ -34,6 +35,8 @@ export type TableHeader<T> = {
 export interface TableBaseProps<T> extends _TProps {
     name: string;
     items: T[];
+    nItems?: number;
+    error?: ErrorFenextjs;
     header: TableHeader<T>;
     pagination?: PaginationProps;
     loader?: boolean;
@@ -51,4 +54,4 @@ export interface TableBaseProps<T> extends _TProps {
 }
 export interface TableProps<T> extends TableClassProps, TableBaseProps<T> {
 }
-export declare const Table: <T>({ classNameContent, classNameContentTable, classNameTable, classNameTHead, classNameTBody, classNameThr, classNameTr, classNameTh, classNameTd, classNameTdLabelCollapse, classNameContentPagination, classNameLoader, name, items, header, pagination, showPagination, loader, typeLoader, useCheckbox, onOrderBy, onChecked, notResult, actionsCheckbox, actionsCheckboxSelectAll, ...props }: TableProps<T>) => React.JSX.Element;
+export declare const Table: <T>({ classNameContent, classNameContentTable, classNameTable, classNameTHead, classNameTBody, classNameThr, classNameTr, classNameTh, classNameTd, classNameTdLabelCollapse, classNameContentPagination, classNameLoader, name, items, header, error, nItems, pagination, showPagination, loader, typeLoader, useCheckbox, onOrderBy, onChecked, notResult, actionsCheckbox, actionsCheckboxSelectAll, ...props }: TableProps<T>) => React.JSX.Element;

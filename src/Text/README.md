@@ -12,13 +12,13 @@ import { Text } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| className | string | no | "" | Clase CSS para el contenedor principal del componente. |
-| tag | "p" \| "strong" \| "small" \| "em" \| "b" \| "del" \| "i" \| "mark" \| "ins" \| "sub" \| "sup" | no | "p" | Define la etiqueta HTML que se utiliza para el texto. Permite diferentes opciones como `p`, `strong`, `small`, etc. |
-| loader | boolean | no | false | Determina si se muestra un indicador de carga. Cuando es `true`, muestra líneas de carga en lugar del contenido. |
-| nLineLoader | number | no | 3 | Número de líneas de esqueleto que se muestran cuando `loader` está activo. |
-| children | ReactNode | no |  | Contenido que se mostrará dentro del componente `Text` si `loader` es `false`. |
+| Parámetro   | Tipo                                                                                           | Requerido | Default | Descripcion                                                                                                         |
+| ----------- | ---------------------------------------------------------------------------------------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
+| className   | string                                                                                         | no        | ""      | Clase CSS para el contenedor principal del componente.                                                              |
+| tag         | "p" \| "strong" \| "small" \| "em" \| "b" \| "del" \| "i" \| "mark" \| "ins" \| "sub" \| "sup" | no        | "p"     | Define la etiqueta HTML que se utiliza para el texto. Permite diferentes opciones como `p`, `strong`, `small`, etc. |
+| loader      | boolean                                                                                        | no        | false   | Determina si se muestra un indicador de carga. Cuando es `true`, muestra líneas de carga en lugar del contenido.    |
+| nLineLoader | number                                                                                         | no        | 3       | Número de líneas de esqueleto que se muestran cuando `loader` está activo.                                          |
+| children    | ReactNode                                                                                      | no        |         | Contenido que se mostrará dentro del componente `Text` si `loader` es `false`.                                      |
 
 ### Storybook
 
@@ -26,15 +26,16 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Uso básico del componente Text
+-   Uso básico del componente Text
 
 ```tsx copy
-<Text tag="strong" className="text-strong">Texto destacado</Text>
+<Text tag="strong" className="text-strong">
+    Texto destacado
+</Text>
 ```
 
-- Uso del componente Text con el loader activo
+-   Uso del componente Text con el loader activo
 
 ```tsx copy
 <Text loader={true} nLineLoader={5} />
 ```
-

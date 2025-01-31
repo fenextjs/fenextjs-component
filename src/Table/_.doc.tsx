@@ -97,6 +97,18 @@ export default {
             description: "Arreglo de datos a mostrar en la tabla.",
         },
         {
+            id: "nItems",
+            type: "number",
+            require: false,
+            description: "Cantiad total de los items.",
+        },
+        {
+            id: "error",
+            type: "ErrorFenextjs",
+            require: false,
+            description: "Error que se muestra en la tabla.",
+        },
+        {
             id: "header",
             type: "TableHeader<T>",
             require: true,

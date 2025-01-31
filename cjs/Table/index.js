@@ -11,7 +11,8 @@ const Line_1 = require("../Loader/Line");
 const TableActionCheckbox_1 = require("../TableActionCheckbox");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const Simple_1 = require("../Collapse/Simple");
-const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameTdLabelCollapse = "", classNameContentPagination = "", classNameLoader = "", name, items, header, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), actionsCheckbox, actionsCheckboxSelectAll = "Select All", ...props }) => {
+const Error_1 = require("../Error");
+const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameTdLabelCollapse = "", classNameContentPagination = "", classNameLoader = "", name, items, header, error, nItems, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), actionsCheckbox, actionsCheckboxSelectAll = "Select All", ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const checkboxItems = (0, react_1.useMemo)(() => items.map((item) => ({ ...item, __checkbox: false })), [items]);
     const [checkbox, setCheckbox] = (0, react_1.useState)(checkboxItems);
@@ -45,6 +46,11 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
     const headerNotTr = (0, react_1.useMemo)(() => header.filter((e) => e.colNewTr !== true || e?.isCollapse), [header]);
     const headerTr = (0, react_1.useMemo)(() => header.filter((e) => e.colNewTr === true || e?.isCollapse), [header]);
     const CONTENT = (0, react_1.useMemo)(() => {
+        if (error) {
+            return (react_1.default.createElement("tr", { className: `fenext-table-content-table-tr ${classNameTr}` },
+                react_1.default.createElement("td", { className: `fenext-table-content-table-td fenext-table-error ${classNameTd}`, colSpan: 999 },
+                    react_1.default.createElement(Error_1.ErrorComponent, { error: error }))));
+        }
         if (loader) {
             if (typeLoader == "spinner") {
                 return (react_1.default.createElement("tr", { className: `fenext-table-content-table-tr ${classNameTr}` },
@@ -117,6 +123,7 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
         typeLoader,
         notResult,
         headerTr,
+        error,
     ]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: `fenext-table ${classNameContent}`, style: {
@@ -152,8 +159,11 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                                         });
                                     }, className: `fenext-table-content-table-th-popup-item fenext-table-content-table-th-order-by` }, _t("Order DESC")))) : (react_1.default.createElement(react_1.default.Fragment, null)))) : (react_1.default.createElement(react_1.default.Fragment, null, _t(h.th)))))))),
                     react_1.default.createElement("tbody", { className: `fenext-table-content-table-tbody ${classNameTBody}` }, CONTENT))),
-            pagination && showPagination && (react_1.default.createElement("div", { className: `fenext-table-content-pagination ${classNameContentPagination}` },
-                react_1.default.createElement(Pagination_1.Pagination, { ...pagination, disabled: loader, _t: _t }))))));
+            (nItems != undefined || pagination) && showPagination && (react_1.default.createElement("div", { className: `fenext-table-content-pagination ${classNameContentPagination}` },
+                react_1.default.createElement(Pagination_1.Pagination, { ...pagination, PaginationItemPageProps: {
+                        nItems: nItems ?? 10,
+                        ...pagination,
+                    }, disabled: loader, _t: _t }))))));
 };
 exports.Table = Table;
 //# sourceMappingURL=index.js.map
