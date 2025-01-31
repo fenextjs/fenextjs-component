@@ -1,6 +1,6 @@
 export default {
     id: "filter-search",
-    idStorybook: "component-filter-search",
+    idStorybook: "filter-search",
     name: "FilterSearch",
     description:
         "El componente FilterSearch permite filtrar datos por busquedas.",

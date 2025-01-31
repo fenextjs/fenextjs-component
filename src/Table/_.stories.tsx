@@ -6,6 +6,7 @@ import { Table, TableProps } from "./index";
 import {GridGallery} from '../GridGallery';
 import {Img} from '../Img';
 import {Link} from '../Link';
+import { ErrorFenextjs } from "fenextjs-error";
 
 export default {
     title: "Table/Table",
@@ -134,7 +135,7 @@ Index.args = {
             // }
         },
     ],
-    items: new Array(50).fill(1).map((e, i) => {
+    items: new Array(10).fill(1).map((e, i) => {
         const n = e * i + 1;
         const r: TestItemTable = {
             id: `${n}`,
@@ -150,11 +151,7 @@ Index.args = {
         };
         return r;
     }),
-    pagination: {
-        PaginationItemPageProps:{
-            nItems:50
-        }
-    },
+    nItems:50,
     loader: false,
     // onOrderBy:(a)=>{
     //     env_log(a,{
@@ -408,6 +405,113 @@ NotItem.args = {
             name:"Order By"
         })
     },
+} as TableProps<TestItemTable>
+
+
+export const WithError = TableIndex.bind({});
+WithError.args = {
+    name:"Usuarios",
+    header: [
+        {
+            id: "id",
+            th: "ID",
+            parse: (data: TestItemTable) => {
+                return <Link href={`#${data.id}`}>{data.id}</Link>;
+            },
+        },
+        {
+            id: "name",
+            th: "Name",
+            parse: (data: TestItemTable) => {
+                return <Link href={`#${data.id}`}>{data.name}</Link>;
+            },
+            columnOptions:{
+                orderBy:true,
+                
+            }
+        },
+        {
+            id: "date",
+            th: "Date",
+            parse: (data: TestItemTable) => data.date.toDateString(),
+            columnOptions:{
+                orderBy:true,
+                
+            }
+        },
+        {
+            id: "dni",
+            th: "Documento",
+            columnOptions:{
+                orderBy:true,
+                
+            }
+        },
+        {
+            id: "amount",
+            th: "Monto",
+            columnOptions:{
+                orderBy:true,
+                
+            }
+        },
+        {
+            id: "quanty",
+            th: "Cantidad",
+            columnOptions:{
+                orderBy:true,
+                
+            }
+        },
+        {
+            id: "org",
+            th: "Organizacion",
+            parse: ({ org }: TestItemTable) => {
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
+            },
+            columnOptions:{
+                orderBy:true,
+                
+            },
+            defaultShowHidden:"hidden"
+        },
+        {
+            id: "org",
+            th: "Organizacion",
+            parse: ({ org }: TestItemTable) => {
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
+            },
+            columnOptions:{
+                orderBy:true,
+                
+            }
+        },
+        {
+            id: "org",
+            th: "Organizacion",
+            parse: ({ org }: TestItemTable) => {
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
+            },
+            columnOptions:{
+                orderBy:true,
+                
+            }
+        },
+        {
+            id: "org",
+            th: "Organizacion",
+            parse: ({ org }: TestItemTable) => {
+                return <Link href={`#${org.id}`}>{org.name}</Link>;
+            },
+            columnOptions:{
+                orderBy:true,
+                
+            }
+        },
+    ],
+    items: [],
+    loader: false,
+    error:new ErrorFenextjs({message:"Error Custom"})
 } as TableProps<TestItemTable>
 
 

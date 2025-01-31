@@ -12,6 +12,8 @@ import {
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
 import { Collapse, CollapseProps } from "../Collapse/Simple";
+import { ErrorFenextjs } from "fenextjs-error";
+import { ErrorComponent } from "../Error";
 
 /**
  * Represents the properties that can be passed to a table component to specify CSS class names.
@@ -139,6 +141,8 @@ export interface TableBaseProps<T> extends _TProps {
      * An array of data objects to display in the table.
      */
     items: T[];
+    nItems?: number
+    error?: ErrorFenextjs
 
     /**
      * The header configuration for the table.
@@ -204,7 +208,7 @@ export interface TableBaseProps<T> extends _TProps {
  *
  * @template T The type of data that the table contains.
  */
-export interface TableProps<T> extends TableClassProps, TableBaseProps<T> {}
+export interface TableProps<T> extends TableClassProps, TableBaseProps<T> { }
 
 export const Table = <T,>({
     classNameContent = "",
@@ -226,6 +230,8 @@ export const Table = <T,>({
     name,
     items,
     header,
+    error,
+    nItems,
 
     pagination,
     showPagination = true,
@@ -263,8 +269,8 @@ export const Table = <T,>({
                     ...e,
                     ...(i == j
                         ? {
-                              __checkbox,
-                          }
+                            __checkbox,
+                        }
                         : {}),
                 };
             });
@@ -287,6 +293,18 @@ export const Table = <T,>({
     );
 
     const CONTENT = useMemo(() => {
+        if (error) {
+            return (
+                <tr className={`fenext-table-content-table-tr ${classNameTr}`}>
+                    <td
+                        className={`fenext-table-content-table-td fenext-table-error ${classNameTd}`}
+                        colSpan={999}
+                    >
+                        <ErrorComponent error={error}/>
+                    </td>
+                </tr>
+            );
+        }
         if (loader) {
             if (typeLoader == "spinner") {
                 return (
@@ -477,6 +495,7 @@ export const Table = <T,>({
         typeLoader,
         notResult,
         headerTr,
+        error
     ]);
 
     return (
@@ -626,11 +645,16 @@ export const Table = <T,>({
                         </tbody>
                     </table>
                 </div>
-                {pagination && showPagination && (
+                {(nItems!=undefined || pagination) && showPagination && (
                     <div
                         className={`fenext-table-content-pagination ${classNameContentPagination}`}
                     >
-                        <Pagination {...pagination} disabled={loader} _t={_t} />
+                        <Pagination
+                            {...pagination}
+                            PaginationItemPageProps={{ nItems: nItems ?? 10, ...pagination }}
+                            disabled={loader} 
+                            _t={_t} 
+                        />
                     </div>
                 )}
             </div>

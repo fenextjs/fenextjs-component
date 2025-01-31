@@ -12,13 +12,13 @@ import { InputColor } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro    | Tipo                     | Requerido | Default   | Descripcion                                                                     |
-| ------------ | ------------------------ | --------- | --------- | ------------------------------------------------------------------------------- |
-| defaultValue | string                   | no        | ''        | Valor predeterminado del selector de color cuando se renderiza por primera vez. |
-| value        | string                   | no        | undefined | Valor del selector de color, si se proporciona, anula el valor predeterminado.  |
-| onChange     | (color: string) =\> void | no        | undefined | Función que se ejecuta cuando el color seleccionado cambia.                     |
-| className    | string                   | no        | ''        | Clase CSS adicional para el contenedor del selector de color.                   |
-| disabled     | boolean                  | no        | false     | Indica si el selector de color está deshabilitado.                              |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| defaultValue | string | no | '' | Valor predeterminado del selector de color cuando se renderiza por primera vez. |
+| value | string | no | undefined | Valor del selector de color, si se proporciona, anula el valor predeterminado. |
+| onChange | (color: string) =\> void | no | undefined | Función que se ejecuta cuando el color seleccionado cambia. |
+| className | string | no | '' | Clase CSS adicional para el contenedor del selector de color. |
+| disabled | boolean | no | false | Indica si el selector de color está deshabilitado. |
 
 ### Storybook
 
@@ -26,14 +26,15 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Selector de color por defecto
+- Selector de color por defecto
 
 ```tsx copy
 <InputColor defaultValue="#ff0000" onChange={(color) => console.log(color)} />
 ```
 
--   Selector de color deshabilitado
+- Selector de color deshabilitado
 
 ```tsx copy
 <InputColor defaultValue="#00ff00" disabled={true} />
 ```
+
