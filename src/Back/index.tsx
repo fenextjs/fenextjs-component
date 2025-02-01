@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { useRouter } from "fenextjs-hook";
+import { useRouter, useRouterProps } from "fenextjs-hook";
 import { Loader, LoaderClassProps } from "../Loader";
 import { SvgPaginationPre } from "fenextjs-svg/cjs/PaginationPre";
 import { _TProps } from "fenextjs-interface";
@@ -14,7 +14,10 @@ export type BackTypeOnBack =
 /**
  * Properties for the base Back component.
  */
-export interface BackBaseProps extends _TProps, useHistoryOnBackProps {
+export interface BackBaseProps
+    extends _TProps,
+        useHistoryOnBackProps,
+        useRouterProps {
     /**
      * Indicates whether the Back is currently in the loading state.
      */
@@ -99,11 +102,12 @@ export const Back = ({
     minLenght = 2,
     useHistoryMinLenght = false,
     onValidateRuteBack,
+    useNextRouter,
     ...props
 }: BackProps) => {
     const { onBack: onBackHistory } = useHistory({});
     const { _t } = use_T({ ...props });
-    const router = useRouter();
+    const router = useRouter({ useNextRouter });
     const onBack = () => {
         if (loader || disabled) {
             return;

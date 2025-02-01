@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
+import { useRouterProps } from "fenextjs-hook";
 import { _TProps } from "fenextjs-interface";
-export interface ItemMenuBaseProps extends _TProps {
+export interface ItemMenuBaseProps extends _TProps, useRouterProps {
     url: string;
     text: ReactNode;
     icon?: ReactNode;
@@ -20,4 +21,4 @@ export interface ItemMenuClassProps {
 }
 export interface ItemMenuProps extends ItemMenuBaseProps, ItemMenuClassProps {
 }
-export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, nameNumber, typeCollapse, isLink, onClick, ...props }: ItemMenuProps) => React.JSX.Element;
+export declare const ItemMenu: ({ className, classNameA, classNameIcon, classNameText, text, url, icon, subItems, defaultActive, iconArrow, nameNumber, typeCollapse, isLink, onClick, useNextRouter, ...props }: ItemMenuProps) => React.JSX.Element;
