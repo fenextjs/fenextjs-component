@@ -14,6 +14,22 @@
     --color-hover: var(--fenext-color-light);
     --color: var(--color-normal);
     --size-icon: 1.2rem;
+
+    .fenext-collapse-header {
+        padding: 0;
+        gap: 0;
+        position: relative;
+        &-icon{
+            padding: 1rem;
+            position: absolute;
+            right: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            top: 0;
+        }
+    }
+
     &-a {
         font-family: var(--fenext-font-global);
         font-size: 1rem;
@@ -27,12 +43,14 @@
         color: var(--color);
         background: var(--background);
         box-shadow: var(--box-shadow);
+        padding: 1rem;
+        padding-right: 3rem;
         &-text {
             color: var(--color);
         }
         &-icon {
             width: 100%;
-            color: currentColor;
+            color: var(--color);
             svg {
                 color: currentColor;
                 fill: currentColor;

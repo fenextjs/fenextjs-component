@@ -26,17 +26,17 @@ Index.args = {
             ),
         },
         {
-            url: "/",
+            url: "/?path=/story/header-menu--index",
             text: "Text Items 2",
         },
         {
-            url: "/123",
+            url: "/?path=/story/header-menu--index",
             text: "Text Items 3",
             // defaultActive: true,
             isLink:false,
             subItems: [
                 {
-                    url: "/123",
+                    url: "/?path=/story/header-menu--index",
                     text: "Text SubItems 1-1",
                 },
                 {

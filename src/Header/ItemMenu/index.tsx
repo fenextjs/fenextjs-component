@@ -1,5 +1,5 @@
 import React, { ReactNode, useCallback, useMemo } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "fenextjs-hook";
 import { Collapse } from "../../Collapse/Simple";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
