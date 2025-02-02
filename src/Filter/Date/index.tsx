@@ -297,6 +297,9 @@ export const FilterDate = ({
                             setData({
                                 type: "normal",
                             });
+                            onChangeDataFilter("date")({
+                                type: "normal",
+                            });
                         }}
                     >
                         {iconTrash}
