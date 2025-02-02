@@ -8,9 +8,9 @@ const Simple_1 = require("../../Collapse/Simple");
 const fenextjs_hook_2 = require("fenextjs-hook");
 const Arrow_1 = require("fenextjs-svg/cjs/Arrow");
 const Link_1 = require("../../Link");
-const ItemMenu = ({ className = "", classNameA = "", classNameIcon = "", classNameText = "", text, url, icon = react_1.default.createElement(react_1.default.Fragment, null), subItems = [], defaultActive = false, iconArrow = react_1.default.createElement(Arrow_1.SvgArrow, null), nameNumber = 1, typeCollapse, isLink = true, onClick, useNextRouter, ...props }) => {
+const ItemMenu = ({ className = "", classNameA = "", classNameIcon = "", classNameText = "", text, url, icon = react_1.default.createElement(react_1.default.Fragment, null), subItems = [], defaultActive = false, iconArrow = react_1.default.createElement(Arrow_1.SvgArrow, null), nameNumber = 1, typeCollapse, isLink = true, onClick, useNextRouter, useRouterCustom = fenextjs_hook_1.useRouter, ...props }) => {
     const { _t } = (0, fenextjs_hook_2.use_T)({ ...props });
-    const router = (0, fenextjs_hook_1.useRouter)({ useNextRouter });
+    const router = useRouterCustom({ useNextRouter });
     const urlInter = (0, react_1.useMemo)(() => {
         const nlLink = router?.asPath.split("/");
         const nlUrl = url.split("/");

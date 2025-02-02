@@ -108,7 +108,10 @@ export const Back = ({
     useRouterCustom = useRouter,
     ...props
 }: BackProps) => {
-    const { onBack: onBackHistory } = useHistory({});
+    const { onBack: onBackHistory } = useHistory({
+        useNextRouter,
+        useRouterCustom,
+    });
     const { _t } = use_T({ ...props });
     const router = useRouterCustom({ useNextRouter });
     const onBack = () => {

@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import { ItemMenu, ItemMenuProps } from "../ItemMenu";
 import { _TProps } from "fenextjs-interface";
 import { SvgArrow } from "fenextjs-svg/cjs/Arrow";
+import { useRouter } from "fenextjs-hook";
 
 /**
  * Properties for the base Menu component.
@@ -35,6 +36,7 @@ export interface MenuClassProps {
      * @default false
      */
     defaultShowSubMenu?: boolean;
+    useRouterCustom?: typeof useRouter;
 }
 
 /**
@@ -50,6 +52,7 @@ export const Menu = ({
     defaultShowSubMenu = false,
     iconArrow = <SvgArrow />,
     typeCollapse,
+    useRouterCustom = useRouter,
     ...props
 }: MenuProps) => {
     return (
@@ -63,6 +66,7 @@ export const Menu = ({
                         defaultActive={item.defaultActive ?? defaultShowSubMenu}
                         iconArrow={item?.iconArrow ?? iconArrow}
                         typeCollapse={item?.typeCollapse ?? typeCollapse}
+                        useRouterCustom={useRouterCustom}
                     />
                 ))}
             </div>

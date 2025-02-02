@@ -52,6 +52,7 @@ export interface ItemMenuBaseProps extends _TProps, useRouterProps {
      * isLink.
      */
     onClick?: () => void;
+    useRouterCustom?: typeof useRouter;
 }
 
 /**
@@ -98,10 +99,11 @@ export const ItemMenu = ({
     isLink = true,
     onClick,
     useNextRouter,
+    useRouterCustom = useRouter,
     ...props
 }: ItemMenuProps) => {
     const { _t } = use_T({ ...props });
-    const router = useRouter({ useNextRouter });
+    const router = useRouterCustom({ useNextRouter });
 
     const urlInter = useMemo(() => {
         const nlLink = router?.asPath.split("/");
