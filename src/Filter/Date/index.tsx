@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { SvgTrash } from "fenextjs-svg";
-import { use_T, useData, useDate, useFilter } from "fenextjs-hook";
+import { use_T, useData, useDate, useFilter, usePagination } from "fenextjs-hook";
 import { Text, TextProps } from "../../Text";
 import { DropDown, DropDownClassProps } from "../../DropDown";
 import { InputCalendar, InputCalendarClassProps } from "../../Input/Calendar";
@@ -78,6 +78,7 @@ export const FilterDate = ({
     ...p
 }: FilterDateProps) => {
     const { _t } = use_T({ ...p });
+    const { onChangeData: onChangeDataPagination } = usePagination({ name: nameFilter });
     const { onChangeData: onChangeDataFilter } = useFilter({
         name: nameFilter,
     });
@@ -122,6 +123,7 @@ export const FilterDate = ({
                             date.dateRange?.[1]) ||
                         (date.type == "normal" && date.date)
                     ) {
+                        onChangeDataPagination("page")(0)
                         onChangeDataFilter("date")(date);
                     }
 
@@ -165,9 +167,9 @@ export const FilterDate = ({
                                             -
                                             {data.dateRange?.[1] != undefined
                                                 ? date.onFormat(
-                                                      formatDateOption,
-                                                      data.dateRange?.[1],
-                                                  )
+                                                    formatDateOption,
+                                                    data.dateRange?.[1],
+                                                )
                                                 : ""}
                                         </>
                                     )}
@@ -288,23 +290,24 @@ export const FilterDate = ({
                     (data?.type == "range" &&
                         data?.dateRange?.[0] != undefined &&
                         data?.dateRange?.[1] != undefined)) && (
-                    <div
-                        className={`
+                        <div
+                            className={`
                             fenext-filter-date-clear
                             ${classNameClear}
                         `}
-                        onClick={() => {
-                            setData({
-                                type: "normal",
-                            });
-                            onChangeDataFilter("date")({
-                                type: "normal",
-                            });
-                        }}
-                    >
-                        {iconTrash}
-                    </div>
-                )}
+                            onClick={() => {
+                                setData({
+                                    type: "normal",
+                                });
+                                onChangeDataFilter("date")({
+                                    type: "normal",
+                                });
+                                onChangeDataPagination("page")(0)
+                            }}
+                        >
+                            {iconTrash}
+                        </div>
+                    )}
             </div>
         </>
     );
