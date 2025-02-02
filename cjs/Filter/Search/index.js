@@ -15,6 +15,9 @@ const FilterSearch = ({ className = "", classNameSearch = {}, onChange, defaultV
             react_1.default.createElement(Search_1.InputSearch, { ...classNameSearch, ...p, defaultValue: defaultValue?.search, onEnterSearch: (search) => {
                     onChangeData("search")(search);
                     onChange?.({ search });
+                }, onClearSearch: () => {
+                    onChangeData("search")("");
+                    onChange?.({ search: "" });
                 } }))));
 };
 exports.FilterSearch = FilterSearch;

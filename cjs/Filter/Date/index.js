@@ -129,6 +129,9 @@ const FilterDate = ({ onChange, defaultValue = {}, formatDateOption = {}, classN
                     setData({
                         type: "normal",
                     });
+                    onChangeDataFilter("date")({
+                        type: "normal",
+                    });
                 } }, iconTrash)))));
 };
 exports.FilterDate = FilterDate;

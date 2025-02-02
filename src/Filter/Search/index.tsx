@@ -41,9 +41,9 @@ export const FilterSearch = ({
                         onChangeData("search")(search);
                         onChange?.({ search });
                     }}
-                    onClearSearch={()=>{
+                    onClearSearch={() => {
                         onChangeData("search")("");
-                        onChange?.({ search:"" });
+                        onChange?.({ search: "" });
                     }}
                 />
             </div>
