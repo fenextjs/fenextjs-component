@@ -33,8 +33,14 @@
     --fenext-btn-full-width: 100%;
 
     --fenext-btn-cursor: pointer;
-    --fenext-btn-display: inline-block;
+    --fenext-btn-display: inline-flex;
+    --fenext-btn-align-items: center;
+    --fenext-btn-justify-content: center;
+    --fenext-btn-gap:.5rem;
     --fenext-btn-position: relative;
+
+
+    --fenext-btn-icon-justify-content: start;
 
     --fenext-btn-content-loader-position: absolute;
     --fenext-btn-content-loader-inset: 0;
@@ -46,6 +52,9 @@
     --fenext-btn-loader-height: 1.5rem;
     --fenext-btn-loader-width: auto;
     --fenext-btn-loader-color: var(--fenext-color-light);
+
+
+    --fenext-btn-fenext-svg: 1em;
 }
 
 .fenext-btn {
@@ -64,6 +73,9 @@
     cursor: var(--fenext-btn-cursor);
     display: var(--fenext-btn-display);
     position: var(--fenext-btn-position);
+    align-items: var(--fenext-btn-align-items);
+    justify-content: var(--fenext-btn-justify-content);
+    gap: var(--fenext-btn-gap);
     &:hover {
         --fenext-btn-background: var(--fenext-btn-background-hover);
     }
@@ -72,6 +84,14 @@
         --fenext-btn-background-hover: var(
             --fenext-btn-background-invert-hover
         );
+    }
+    &-icon{
+        --fenext-btn-justify-content : var(--fenext-btn-icon-justify-content);
+        .fenext_svg {
+            @at-root #{$class_} :where(&) {
+                width: var(--fenext-btn-fenext-svg);
+            }
+        }
     }
     &-disabled {
         --fenext-btn-background: var(--fenext-btn-background-disabled);

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import { StoryFn, Meta } from "@storybook/react";
-
+import {SvgArrow} from 'fenextjs-svg';
 import { Button, ButtonProps } from "./index";
 
 export default {
@@ -18,4 +18,11 @@ Index.args = {
     // onClickDisabled:()=>{alert("disabled")},
     // disabled:true
     invert:false
+} as ButtonProps;
+
+
+
+export const Icon = Profile.bind({});
+Icon.args = {
+    icon:<SvgArrow/>
 } as ButtonProps;
