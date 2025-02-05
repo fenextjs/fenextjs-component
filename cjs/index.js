@@ -57,4 +57,5 @@ tslib_1.__exportStar(require("./StepsCircle"), exports);
 tslib_1.__exportStar(require("./Filter"), exports);
 tslib_1.__exportStar(require("./ImgSlider"), exports);
 tslib_1.__exportStar(require("./ContentScrollLeft"), exports);
+tslib_1.__exportStar(require("./QueryClientProvider"), exports);
 //# sourceMappingURL=index.js.map

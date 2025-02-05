@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/QueryClientProvider/index.tsx"],"names":[],"mappings":";;;;AAAA,0DAAyC;AACzC,uDAG+B;AASxB,MAAM,mBAAmB,GAAG,CAAC,EAAE,QAAQ,EAA4B,EAAE,EAAE;IAC1E,MAAM,WAAW,GAAG,IAAI,yBAAW,EAAE,CAAC;IACtC,OAAO,CACH;QACI,8BAAC,iCAA2B,IAAC,MAAM,EAAE,WAAW,IAC3C,QAAQ,CACiB,CAC/B,CACN,CAAC;AACN,CAAC,CAAC;AATW,QAAA,mBAAmB,uBAS9B"}

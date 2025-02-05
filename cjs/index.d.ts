@@ -54,3 +54,4 @@ export * from "./StepsCircle";
 export * from "./Filter";
 export * from "./ImgSlider";
 export * from "./ContentScrollLeft";
+export * from "./QueryClientProvider";
