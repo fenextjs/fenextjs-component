@@ -129,7 +129,7 @@ export const Button = ({
                     fenext-btn-${invert ? `invert ${classNameInvert}` : ""}
                     fenext-btn-${disabled ? `disabled ${classNameDisabled}` : ""}
                     fenext-btn-size-${size}
-                    fenext-btn-${icon!=""?"icon":""}
+                    fenext-btn-${icon != "" ? "icon" : ""}
                     ${full ? "fenext-btn-size-full" : ""}
                     ${className}
                 `}

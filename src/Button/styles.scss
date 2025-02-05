@@ -36,9 +36,8 @@
     --fenext-btn-display: inline-flex;
     --fenext-btn-align-items: center;
     --fenext-btn-justify-content: center;
-    --fenext-btn-gap:.5rem;
+    --fenext-btn-gap: 0.5rem;
     --fenext-btn-position: relative;
-
 
     --fenext-btn-icon-justify-content: start;
 
@@ -52,7 +51,6 @@
     --fenext-btn-loader-height: 1.5rem;
     --fenext-btn-loader-width: auto;
     --fenext-btn-loader-color: var(--fenext-color-light);
-
 
     --fenext-btn-fenext-svg: 1em;
 }
@@ -85,8 +83,8 @@
             --fenext-btn-background-invert-hover
         );
     }
-    &-icon{
-        --fenext-btn-justify-content : var(--fenext-btn-icon-justify-content);
+    &-icon {
+        --fenext-btn-justify-content: var(--fenext-btn-icon-justify-content);
         .fenext_svg {
             @at-root #{$class_} :where(&) {
                 width: var(--fenext-btn-fenext-svg);
