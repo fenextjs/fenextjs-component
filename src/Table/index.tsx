@@ -152,7 +152,7 @@ export interface TableBaseProps<T> extends _TProps {
     /**
      * Optional pagination properties for the table.
      */
-    pagination?: PaginationProps;
+    pagination?: Omit<PaginationProps, "nItems">;
 
     /**
      * Whether to display a loader while the table data is being loaded.
