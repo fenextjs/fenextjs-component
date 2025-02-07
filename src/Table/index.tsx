@@ -10,7 +10,7 @@ import {
     TableActionCheckboxProps,
 } from "../TableActionCheckbox";
 import { _TProps } from "fenextjs-interface";
-import { use_T } from "fenextjs-hook";
+import { use_T, usePagination } from "fenextjs-hook";
 import { Collapse, CollapseProps } from "../Collapse/Simple";
 import { ErrorFenextjs } from "fenextjs-error";
 import { ErrorComponent } from "../Error";
@@ -202,13 +202,15 @@ export interface TableBaseProps<T> extends _TProps {
         "actionAllCheckbox" | "data"
     >;
     actionsCheckboxSelectAll?: ReactNode;
+
+    restartPaginationInRenderTable?: boolean;
 }
 /**
  * Represents the properties that can be passed to a table component.
  *
  * @template T The type of data that the table contains.
  */
-export interface TableProps<T> extends TableClassProps, TableBaseProps<T> {}
+export interface TableProps<T> extends TableClassProps, TableBaseProps<T> { }
 
 export const Table = <T,>({
     classNameContent = "",
@@ -239,6 +241,9 @@ export const Table = <T,>({
     typeLoader = "line",
     useCheckbox = true,
     onOrderBy,
+
+    restartPaginationInRenderTable = true,
+
     // onShowHidden,
     onChecked,
     notResult = <div>There is not results</div>,
@@ -247,6 +252,18 @@ export const Table = <T,>({
     ...props
 }: TableProps<T>) => {
     const { _t } = use_T({ ...props });
+    const { setData } = usePagination({
+        name: pagination?.paginationName,
+    });
+    useEffect(() => {
+        if (restartPaginationInRenderTable) {
+            setData({
+                npage: 10,
+                page: 0
+            })
+        }
+    }, [restartPaginationInRenderTable]);
+
     const checkboxItems = useMemo(
         () => items.map((item: T) => ({ ...item, __checkbox: false })),
         [items],
@@ -269,8 +286,8 @@ export const Table = <T,>({
                     ...e,
                     ...(i == j
                         ? {
-                              __checkbox,
-                          }
+                            __checkbox,
+                        }
                         : {}),
                 };
             });
