@@ -52,7 +52,7 @@
     --fenext-btn-loader-width: auto;
     --fenext-btn-loader-color: var(--fenext-color-light);
 
-    --fenext-btn-fenext-svg: 1em;
+    --fenext-btn-fenext-svg-size: 1em;
 }
 
 .fenext-btn {
@@ -87,7 +87,8 @@
         --fenext-btn-justify-content: var(--fenext-btn-icon-justify-content);
         .fenext_svg {
             @at-root #{$class_} :where(&) {
-                width: var(--fenext-btn-fenext-svg);
+                width: var(--fenext-btn-fenext-svg-size);
+                height: var(--fenext-btn-fenext-svg-size);
             }
         }
     }
