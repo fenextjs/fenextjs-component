@@ -210,7 +210,7 @@ export interface TableBaseProps<T> extends _TProps {
  *
  * @template T The type of data that the table contains.
  */
-export interface TableProps<T> extends TableClassProps, TableBaseProps<T> { }
+export interface TableProps<T> extends TableClassProps, TableBaseProps<T> {}
 
 export const Table = <T,>({
     classNameContent = "",
@@ -259,8 +259,8 @@ export const Table = <T,>({
         if (restartPaginationInRenderTable) {
             setData({
                 npage: 10,
-                page: 0
-            })
+                page: 0,
+            });
         }
     }, [restartPaginationInRenderTable]);
 
@@ -286,8 +286,8 @@ export const Table = <T,>({
                     ...e,
                     ...(i == j
                         ? {
-                            __checkbox,
-                        }
+                              __checkbox,
+                          }
                         : {}),
                 };
             });

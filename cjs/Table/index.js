@@ -12,8 +12,19 @@ const TableActionCheckbox_1 = require("../TableActionCheckbox");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const Simple_1 = require("../Collapse/Simple");
 const Error_1 = require("../Error");
-const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameTdLabelCollapse = "", classNameContentPagination = "", classNameLoader = "", name, items, header, error, nItems, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), actionsCheckbox, actionsCheckboxSelectAll = "Select All", ...props }) => {
+const Table = ({ classNameContent = "", classNameContentTable = "", classNameTable = "", classNameTHead = "", classNameTBody = "", classNameThr = "", classNameTr = "", classNameTh = "", classNameTd = "", classNameTdLabelCollapse = "", classNameContentPagination = "", classNameLoader = "", name, items, header, error, nItems, pagination, showPagination = true, loader = false, typeLoader = "line", useCheckbox = true, onOrderBy, restartPaginationInRenderTable = true, onChecked, notResult = react_1.default.createElement("div", null, "There is not results"), actionsCheckbox, actionsCheckboxSelectAll = "Select All", ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
+    const { setData } = (0, fenextjs_hook_1.usePagination)({
+        name: pagination?.paginationName,
+    });
+    (0, react_1.useEffect)(() => {
+        if (restartPaginationInRenderTable) {
+            setData({
+                npage: 10,
+                page: 0,
+            });
+        }
+    }, [restartPaginationInRenderTable]);
     const checkboxItems = (0, react_1.useMemo)(() => items.map((item) => ({ ...item, __checkbox: false })), [items]);
     const [checkbox, setCheckbox] = (0, react_1.useState)(checkboxItems);
     const onCheckedAll = (v) => {
