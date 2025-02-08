@@ -1,7 +1,7 @@
 
 import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
-import { LayoutGridMenuTopLeft,Chat,ChatMessage,ChatFormSendMessage,ChatUser,Text,ContentShow,Title,Breadcrumb,SwichViewList,SwichViewTable,SwichViewSelect,TableActionCheckbox,MediaInput,MediaPage,Cols,Button,QueryClientProvider,Container,StepsCircle,ButtonMenu,Menu,ItemMenu,Box,ContentScrollLeft,InputNumber,InputText,InputCalendar,InputSelectNumber,InputGallery,InputUpload,InputScannerQr,InputScannerTextQr,InputCardNumber,InputCardExpDate,InputCardCCV,InputSelectCity,InputSelect,InputColor,InputSelectTimeZone,InputNumberCount,InputRate,InputPhone,InputDate,InputSelectCSC,InputSelectCountryMultiple,InputFileStatus,InputRange,InputGoogleLoadScript,InputGoogleMaps,InputGoogleAutocomplete,InputSelectT,InputSelectMultiple,InputRadio,InputImg,InputCode,InputTextSelect,InputPassword,InputSelectMultipleT,InputSelectCountry,InputFile,InputDateRange,InputCheckbox,InputSwich,InputSearch,InputSelectState,InputUnitVolumen,InputUnitBase,InputUnitDistance,InputUnitWeight,Counter,NotificationPop,Notification,Copy,Slider,ImgGallery,ImgSlider,PaginationItemPage,Pagination,PaginationNPage,AlertHook,Table,Alert,Collapse,CollapseMultiple,LavaLamp,ErrorComponent,Form,Tooltip,TwoColSticky,Tab,DropDown,PrintIframe,PrintPage,Steps,Back,Theme,Link,Share,ContentLoading,GridGallery,ChronologicalList,User,Img,DesignTypography,DesignBox,PageProgress,FilterDate,FilterSearch,ScheduleDay,ScheduleWeekly,Template,Modal,ProgressCircle,ProgressLine,Chronometer,LoaderLine,LoaderUser,LoaderSpinner } from "./index";
+import { LayoutGridMenuTopLeft,Chat,ChatMessage,ChatFormSendMessage,ChatUser,Text,ContentShow,Title,Breadcrumb,SwichViewList,SwichViewTable,SwichViewSelect,TableActionCheckbox,MediaInput,MediaPage,Cols,Button,QueryClientProvider,Container,StepsCircle,ButtonMenu,Menu,ItemMenu,Box,ContentScrollLeft,InputNumber,InputText,InputCalendar,InputSelectNumber,InputGallery,InputUpload,InputScannerQr,InputScannerTextQr,InputCardNumber,InputCardExpDate,InputCardCCV,InputSelectCity,InputSelect,InputColor,InputSelectTimeZone,InputNumberCount,InputRate,InputPhone,InputDate,InputSelectCSC,InputSelectCountryMultiple,InputFileStatus,InputRange,InputGoogleLoadScript,InputGoogleMaps,InputGoogleAutocomplete,InputSelectT,InputSelectMultiple,InputRadio,InputImg,InputCode,InputTextSelect,InputPassword,InputSelectMultipleT,InputSelectCountry,InputFile,InputDateRange,InputCheckbox,InputSwich,InputSearch,InputSelectState,InputUnitVolumen,InputUnitBase,InputUnitDistance,InputUnitWeight,Counter,NotificationPop,Notification,Copy,Slider,ImgGallery,ImgSlider,PaginationItemPage,Pagination,PaginationNPage,AlertHook,Table,Alert,Collapse,CollapseMultiple,LavaLamp,ErrorComponent,Form,Tooltip,TwoColSticky,Tab,DropDown,PrintIframe,PrintPage,Steps,Back,Theme,Link,Share,ContentLoading,GridGallery,ChronologicalList,User,Img,DesignTypography,DesignBox,GridCols,PageProgress,FilterDate,FilterSearch,ScheduleDay,ScheduleWeekly,Template,Modal,ProgressCircle,ProgressLine,Chronometer,LoaderLine,LoaderUser,LoaderSpinner } from "./index";
 
 export default {
     title: "All",
@@ -847,6 +847,14 @@ const Profile: StoryFn<any> = () => (
                 <div className="fenext-menu-item">
                     <a className="fenext-menu-item-a" href="#DesignBox" style={{padding:"1rem"}}>
                         DesignBox
+                    </a>
+                </div>
+            
+
+
+                <div className="fenext-menu-item">
+                    <a className="fenext-menu-item-a" href="#GridCols" style={{padding:"1rem"}}>
+                        GridCols
                     </a>
                 </div>
             
@@ -2841,6 +2849,21 @@ const Profile: StoryFn<any> = () => (
                     </div>
                     <div style={{padding:"1rem"}}>
                         <DesignBox
+                            {...({children:"Test Children"} as any)}
+                            
+                        />
+                    </div>
+                </div>
+            
+
+
+                <div style={{position:"relative",border:"1px solid gray",borderRadius:"1rem"}} >
+                    <div id="GridCols" style={{position:"absolute",bottom:"calc(105% + var(--fenext-size-menu-top))"}}/>
+                    <div style={{borderBottom:"1px solid gray",padding:"1rem"}}>
+                        <Title>GridCols</Title>
+                    </div>
+                    <div style={{padding:"1rem"}}>
+                        <GridCols
                             {...({children:"Test Children"} as any)}
                             
                         />

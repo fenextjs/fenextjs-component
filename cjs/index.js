@@ -58,4 +58,5 @@ tslib_1.__exportStar(require("./Filter"), exports);
 tslib_1.__exportStar(require("./ImgSlider"), exports);
 tslib_1.__exportStar(require("./ContentScrollLeft"), exports);
 tslib_1.__exportStar(require("./QueryClientProvider"), exports);
+tslib_1.__exportStar(require("./GridCols"), exports);
 //# sourceMappingURL=index.js.map
