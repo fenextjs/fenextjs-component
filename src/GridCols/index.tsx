@@ -1,11 +1,9 @@
-import { _TProps } from "fenextjs-interface";
 import React, { CSSProperties, ReactNode } from "react";
 
 /**
  * Properties for the GridCols component.
  */
 export interface GridColsProps {
-
     /**
      * The children for the component.
      */

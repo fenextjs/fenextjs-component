@@ -1,40 +1,40 @@
-.fenext-grid-cols{
+.fenext-grid-cols {
     display: grid;
-    --grid-cols-value: var(--grid-cols,1fr);
+    --grid-cols-value: var(--grid-cols, 1fr);
     grid-template-columns: var(--grid-cols-value);
     gap: 1rem;
     align-items: flex-start;
-    &[style*="--grid-cols-575"]{
+    &[style*="--grid-cols-575"] {
         @media (min-width: 575px) {
             --grid-cols-value: var(--grid-cols-575);
         }
     }
-    &[style*="--grid-cols-768"]{
+    &[style*="--grid-cols-768"] {
         @media (min-width: 768px) {
             --grid-cols-value: var(--grid-cols-768);
         }
     }
-    &[style*="--grid-cols-992"]{
+    &[style*="--grid-cols-992"] {
         @media (min-width: 992px) {
             --grid-cols-value: var(--grid-cols-992);
         }
     }
-    &[style*="--grid-cols-1024"]{
+    &[style*="--grid-cols-1024"] {
         @media (min-width: 1024px) {
             --grid-cols-value: var(--grid-cols-1024);
         }
     }
-    &[style*="--grid-cols-1440"]{
+    &[style*="--grid-cols-1440"] {
         @media (min-width: 1440px) {
             --grid-cols-value: var(--grid-cols-1440);
         }
     }
-    &[style*="--grid-cols-1680"]{
+    &[style*="--grid-cols-1680"] {
         @media (min-width: 1680px) {
             --grid-cols-value: var(--grid-cols-1680);
         }
     }
-    &[style*="--grid-cols-1920"]{
+    &[style*="--grid-cols-1920"] {
         @media (min-width: 1920px) {
             --grid-cols-value: var(--grid-cols-1920);
         }
