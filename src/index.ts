@@ -57,3 +57,4 @@ export * from "./Filter";
 export * from "./ImgSlider";
 export * from "./ContentScrollLeft";
 export * from "./QueryClientProvider";
+export * from "./GridCols";
