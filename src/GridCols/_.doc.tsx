@@ -10,71 +10,81 @@ export default {
             type: "ReactNode",
             require: false,
             default: "undefined",
-            description: "Contenido o elementos que se mostrarán dentro de la cuadrícula.",
+            description:
+                "Contenido o elementos que se mostrarán dentro de la cuadrícula.",
         },
         {
             id: "className",
             type: "string",
             require: false,
             default: "''",
-            description: "Clase CSS adicional para personalizar el contenedor de la cuadrícula.",
+            description:
+                "Clase CSS adicional para personalizar el contenedor de la cuadrícula.",
         },
         {
             id: "cols",
             type: "string",
             require: false,
             default: "'1fr'",
-            description: "Configuración de columnas por defecto usando CSS Grid.",
+            description:
+                "Configuración de columnas por defecto usando CSS Grid.",
         },
         {
             id: "colsMin1920",
             type: "string",
             require: false,
             default: "undefined",
-            description: "Configuración de columnas para pantallas con un ancho mínimo de 1920px.",
+            description:
+                "Configuración de columnas para pantallas con un ancho mínimo de 1920px.",
         },
         {
             id: "colsMin1680",
             type: "string",
             require: false,
             default: "undefined",
-            description: "Configuración de columnas para pantallas con un ancho mínimo de 1680px.",
+            description:
+                "Configuración de columnas para pantallas con un ancho mínimo de 1680px.",
         },
         {
             id: "colsMin1440",
             type: "string",
             require: false,
             default: "undefined",
-            description: "Configuración de columnas para pantallas con un ancho mínimo de 1440px.",
+            description:
+                "Configuración de columnas para pantallas con un ancho mínimo de 1440px.",
         },
         {
             id: "colsMin1024",
             type: "string",
             require: false,
             default: "undefined",
-            description: "Configuración de columnas para pantallas con un ancho mínimo de 1024px.",
+            description:
+                "Configuración de columnas para pantallas con un ancho mínimo de 1024px.",
         },
         {
             id: "colsMin992",
             type: "string",
             require: false,
             default: "undefined",
-            description: "Configuración de columnas para pantallas con un ancho mínimo de 992px.",
+            description:
+                "Configuración de columnas para pantallas con un ancho mínimo de 992px.",
         },
         {
             id: "colsMin768",
             type: "string",
             require: false,
             default: "undefined",
-            description: "Configuración de columnas para pantallas con un ancho mínimo de 768px.",
+            description:
+                "Configuración de columnas para pantallas con un ancho mínimo de 768px.",
         },
         {
             id: "colsMin575",
             type: "string",
             require: false,
             default: "undefined",
-            description: "Configuración de columnas para pantallas con un ancho mínimo de 575px.",
-        }
+            description:
+                "Configuración de columnas para pantallas con un ancho mínimo de 575px.",
+        },
     ],
     useExample: [
         {
