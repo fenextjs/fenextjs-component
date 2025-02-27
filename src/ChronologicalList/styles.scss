@@ -1,70 +1,142 @@
-.fenext-chronological-list {
-    display: grid;
-    gap: 1.5rem;
-    position: relative;
+:root {
+    --fenext-chronological-list-display: grid;
+    --fenext-chronological-list-gap: 1.5rem;
+    --fenext-chronological-list-position: relative;
+    --fenext-chronological-list-space-marker: 2rem;
 
-    --space-marker: 2rem;
-    --item-gap: 0.5rem;
+    --fenext-chronological-list-before-content: "";
+    --fenext-chronological-list-before-position: absolute;
+    --fenext-chronological-list-before-left: calc(
+        calc(var(--fenext-chronological-list-space-marker) / 2) - 1px
+    );
+    --fenext-chronological-list-before-top: 0;
+    --fenext-chronological-list-before-width: 0;
+    --fenext-chronological-list-before-padding: 1px;
+    --fenext-chronological-list-before-height: 100%;
+    --fenext-chronological-list-before-background: var(--fenext-color-light);
+
+    --fenext-chronological-list-group-display: grid;
+    --fenext-chronological-list-group-gap: 0.5rem;
+    --fenext-chronological-list-group-position: relative;
+
+    --fenext-chronological-list-group-day-font-family: var(
+        --fenext-font-global
+    );
+    --fenext-chronological-list-group-day-font-size: 0.9rem;
+    --fenext-chronological-list-group-day-font-weight: 600;
+    --fenext-chronological-list-group-day-color: var(--fenext-color-gray);
+    --fenext-chronological-list-group-day-padding-left: calc(
+        var(--fenext-chronological-list-space-marker) +
+            var(--fenext-chronological-list-item-gap)
+    );
+
+    --fenext-chronological-list-group-list-display: grid;
+    --fenext-chronological-list-group-list-gap: 1rem;
+
+    --fenext-chronological-list-item-display: grid;
+    --fenext-chronological-list-item-grid-template-columns: 2rem 1fr auto;
+    --fenext-chronological-list-item-gap: 0.5rem;
+    --fenext-chronological-list-item-align-items: center;
+
+    --fenext-chronological-list-item-market-display: flex;
+    --fenext-chronological-list-item-market-align-items: center;
+    --fenext-chronological-list-item-market-justify-content: center;
+
+    --fenext-chronological-list-item-market-max-width: 0.5rem;
+
+
+    --fenext-chronological-list-item-market-default-width: 100%;
+
+    --fenext-chronological-list-item-market-default-aspect-ratio: 1/1;
+    --fenext-chronological-list-item-market-default-border-radius: 0.05rem;
+    --fenext-chronological-list-item-market-default-background:  var(--fenext-color-gray);
+    --fenext-chronological-list-item-market-default-box-shadow: 0 0 0 0.25rem var(--fenext-color-light);
+
+    --fenext-chronological-list-item-children-font-family:  var(--fenext-font-global);
+    --fenext-chronological-list-item-children-font-size:  1rem;
+    --fenext-chronological-list-item-children-font-weight:  500;
+    --fenext-chronological-list-item-children-color:  var(--fenext-color-dark);
+    --fenext-chronological-list-item-children-line-height:  1.1;
+
+    --fenext-chronological-list-item-time-font-family:  var(--fenext-font-global);
+    --fenext-chronological-list-item-time-font-size:  0.8rem;
+    --fenext-chronological-list-item-time-font-weight:  500;
+    --fenext-chronological-list-item-time-color:  var(--fenext-color-gray);
+    --fenext-chronological-list-item-time-line-height:  1.1;
+}
+
+.fenext-chronological-list {
+    display: var(--fenext-chronological-list-display);
+    gap: var(--fenext-chronological-list-gap);
+    position: var(--fenext-chronological-list-position);
 
     &::before {
-        content: "";
-        position: absolute;
-        left: calc(calc(var(--space-marker) / 2) - 1px);
-        top: 0;
-        width: 0;
-        padding: 1px;
-        height: 100%;
-        background: var(--fenext-color-light);
+        content: var(--fenext-chronological-list-before-content);
+        position: var(--fenext-chronological-list-before-position);
+        left: var(--fenext-chronological-list-before-left);
+        top: var(--fenext-chronological-list-before-top);
+        width: var(--fenext-chronological-list-before-width);
+        padding: var(--fenext-chronological-list-before-padding);
+        height: var(--fenext-chronological-list-before-height);
+        background: var(--fenext-chronological-list-before-background);
     }
     &-group {
-        display: grid;
-        gap: 0.5rem;
-        position: relative;
+        display: var(--fenext-chronological-list-group-display);
+        gap: var(--fenext-chronological-list-group-gap);
+        position: var(--fenext-chronological-list-group-position);
         &-day {
-            font-family: var(--fenext-font-global);
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--fenext-color-gray);
-            padding-left: calc(var(--space-marker) + var(--item-gap));
+            font-family: var(--fenext-chronological-list-group-day-font-family);
+            font-size: var(--fenext-chronological-list-group-day-font-size);
+            font-weight: var(--fenext-chronological-list-group-day-font-weight);
+            color: var(--fenext-chronological-list-group-day-color);
+            padding-left: var(
+                --fenext-chronological-list-group-day-padding-left
+            );
         }
         &-list {
-            display: grid;
-            gap: 1rem;
+            display: var(--fenext-chronological-list-group-list-display);
+            gap: var(--fenext-chronological-list-group-list-gap);
         }
     }
     &-item {
-        display: grid;
-        grid-template-columns: 2rem 1fr auto;
-        gap: var(--item-gap);
-        align-items: center;
+        display: var(--fenext-chronological-list-item-display);
+        grid-template-columns: var(
+            --fenext-chronological-list-item-grid-template-columns
+        );
+        gap: var(--fenext-chronological-list-item-gap);
+        align-items: var(--fenext-chronological-list-item-align-items);
         &-market {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: var(--fenext-chronological-list-item-market-display);
+            align-items: var(
+                --fenext-chronological-list-item-market-align-items
+            );
+            justify-content: var(
+                --fenext-chronological-list-item-market-justify-content
+            );
             > * {
-                max-width: 0.5rem;
+                max-width: var(--fenext-chronological-list-item-market-max-width);
             }
             &-default {
-                width: 100%;
-                aspect-ratio: 1/1;
-                border-radius: 0.05rem;
-                background: var(--fenext-color-gray);
-                box-shadow: 0 0 0 0.25rem var(--fenext-color-light);
+                width: var(--fenext-chronological-list-item-market-default-width);
+                aspect-ratio: var(--fenext-chronological-list-item-market-default-aspect-ratio);
+                border-radius: var(--fenext-chronological-list-item-market-default-border-radius);
+                background: var(--fenext-chronological-list-item-market-default-background);
+                box-shadow: var(--fenext-chronological-list-item-market-default-box-shadow);
             }
         }
         &-children {
-            font-family: var(--fenext-font-global);
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--fenext-color-dark);
-            line-height: 1.1;
+            font-family: var(--fenext-chronological-list-item-children-font-family);
+            font-size: var(--fenext-chronological-list-item-children-font-size);
+            font-weight: var(--fenext-chronological-list-item-children-font-weight);
+            color:  var(--fenext-chronological-list-item-children-color);
+            line-height:  var(--fenext-chronological-list-item-children-line-height);
         }
         &-time {
-            font-family: var(--fenext-font-global);
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--fenext-color-gray);
-            line-height: 1.1;
+            font-family: var(--fenext-chronological-list-item-time-font-family);
+            font-size: var(--fenext-chronological-list-item-time-font-size);
+            font-weight: var(--fenext-chronological-list-item-time-font-weight);
+            color:  var(--fenext-chronological-list-item-time-color);
+            line-height:  var(--fenext-chronological-list-item-time-line-height);
         }
     }
 }
