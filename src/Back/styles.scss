@@ -1,28 +1,53 @@
+:root {
+    --fenext-back-display: grid;
+    --fenext-back-grid-template-columns: auto 1fr;
+    --fenext-back-grid-template-rows: 1fr;
+    --fenext-back-gap: 0.5rem;
+    --fenext-back-align-items: center;
+    --fenext-back-cursor: pointer;
+    --fenext-back-color: var(--fenext-color-dark);
+    --fenext-back-padding: 0.5rem 0;
+
+    --fenext-back-icon-display: flex;
+    --fenext-back-icon-align-items: center;
+
+    --fenext-back-icon-svg-width: 1rem;
+    --fenext-back-icon-svg-max-height: 1em;
+
+    --fenext-back-content-font-family: var(--fenext-font-global);
+    --fenext-back-content-font-size: 1rem;
+    --fenext-back-content-font-weight: 900;
+    --fenext-back-content-line-height: 1;
+
+    --fenext-back-disabled-cursor: not-allowed;
+    --fenext-back-disabled-opacity: 0.5;
+}
+
 .fenext-back {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: 1fr;
-    gap: 0.5rem;
-    align-items: center;
-    cursor: pointer;
-    color: var(--fenext-color-dark);
-    padding: 0.5rem 0;
+    display: var(--fenext-back-display);
+    grid-template-columns: var(--fenext-back-grid-template-columns);
+    grid-template-rows: var(--fenext-back-grid-template-rows);
+    gap: var(--fenext-back-gap);
+    align-items: var(--fenext-back-align-items);
+    cursor: var(--fenext-back-cursor);
+    color: var(--fenext-back-color);
+    padding: var(--fenext-back-padding);
     &-icon {
-        display: flex;
-        align-items: center;
+        display: var(--fenext-back-icon-display);
+        align-items: var(--fenext-back-icon-align-items);
         svg {
-            width: 1rem;
-            max-height: 1em;
+            width: var(--fenext-back-icon-svg-width);
+            max-height: var(--fenext-back-icon-svg-max-height);
         }
     }
     &-content {
-        font-family: var(--fenext-font-global);
-        font-size: 1rem;
-        font-weight: 900;
-        line-height: 1;
+        font-family: var(--fenext-back-content-font-family);
+        font-size: var(--fenext-back-content-font-size);
+        font-weight: var(--fenext-back-content-font-weight);
+        line-height: var(--fenext-back-content-line-height);
     }
     &-disabled {
-        cursor: not-allowed;
-        opacity: 0.5;
+        cursor: var(--fenext-back-disabled-cursor);
+        opacity: var(--fenext-back-disabled-opacity);
     }
 }
