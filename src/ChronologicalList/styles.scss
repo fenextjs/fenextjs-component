@@ -44,25 +44,31 @@
 
     --fenext-chronological-list-item-market-max-width: 0.5rem;
 
-
     --fenext-chronological-list-item-market-default-width: 100%;
 
     --fenext-chronological-list-item-market-default-aspect-ratio: 1/1;
     --fenext-chronological-list-item-market-default-border-radius: 0.05rem;
-    --fenext-chronological-list-item-market-default-background:  var(--fenext-color-gray);
-    --fenext-chronological-list-item-market-default-box-shadow: 0 0 0 0.25rem var(--fenext-color-light);
+    --fenext-chronological-list-item-market-default-background: var(
+        --fenext-color-gray
+    );
+    --fenext-chronological-list-item-market-default-box-shadow: 0 0 0 0.25rem
+        var(--fenext-color-light);
 
-    --fenext-chronological-list-item-children-font-family:  var(--fenext-font-global);
-    --fenext-chronological-list-item-children-font-size:  1rem;
-    --fenext-chronological-list-item-children-font-weight:  500;
-    --fenext-chronological-list-item-children-color:  var(--fenext-color-dark);
-    --fenext-chronological-list-item-children-line-height:  1.1;
+    --fenext-chronological-list-item-children-font-family: var(
+        --fenext-font-global
+    );
+    --fenext-chronological-list-item-children-font-size: 1rem;
+    --fenext-chronological-list-item-children-font-weight: 500;
+    --fenext-chronological-list-item-children-color: var(--fenext-color-dark);
+    --fenext-chronological-list-item-children-line-height: 1.1;
 
-    --fenext-chronological-list-item-time-font-family:  var(--fenext-font-global);
-    --fenext-chronological-list-item-time-font-size:  0.8rem;
-    --fenext-chronological-list-item-time-font-weight:  500;
-    --fenext-chronological-list-item-time-color:  var(--fenext-color-gray);
-    --fenext-chronological-list-item-time-line-height:  1.1;
+    --fenext-chronological-list-item-time-font-family: var(
+        --fenext-font-global
+    );
+    --fenext-chronological-list-item-time-font-size: 0.8rem;
+    --fenext-chronological-list-item-time-font-weight: 500;
+    --fenext-chronological-list-item-time-color: var(--fenext-color-gray);
+    --fenext-chronological-list-item-time-line-height: 1.1;
 }
 
 .fenext-chronological-list {
@@ -114,29 +120,47 @@
                 --fenext-chronological-list-item-market-justify-content
             );
             > * {
-                max-width: var(--fenext-chronological-list-item-market-max-width);
+                max-width: var(
+                    --fenext-chronological-list-item-market-max-width
+                );
             }
             &-default {
-                width: var(--fenext-chronological-list-item-market-default-width);
-                aspect-ratio: var(--fenext-chronological-list-item-market-default-aspect-ratio);
-                border-radius: var(--fenext-chronological-list-item-market-default-border-radius);
-                background: var(--fenext-chronological-list-item-market-default-background);
-                box-shadow: var(--fenext-chronological-list-item-market-default-box-shadow);
+                width: var(
+                    --fenext-chronological-list-item-market-default-width
+                );
+                aspect-ratio: var(
+                    --fenext-chronological-list-item-market-default-aspect-ratio
+                );
+                border-radius: var(
+                    --fenext-chronological-list-item-market-default-border-radius
+                );
+                background: var(
+                    --fenext-chronological-list-item-market-default-background
+                );
+                box-shadow: var(
+                    --fenext-chronological-list-item-market-default-box-shadow
+                );
             }
         }
         &-children {
-            font-family: var(--fenext-chronological-list-item-children-font-family);
+            font-family: var(
+                --fenext-chronological-list-item-children-font-family
+            );
             font-size: var(--fenext-chronological-list-item-children-font-size);
-            font-weight: var(--fenext-chronological-list-item-children-font-weight);
-            color:  var(--fenext-chronological-list-item-children-color);
-            line-height:  var(--fenext-chronological-list-item-children-line-height);
+            font-weight: var(
+                --fenext-chronological-list-item-children-font-weight
+            );
+            color: var(--fenext-chronological-list-item-children-color);
+            line-height: var(
+                --fenext-chronological-list-item-children-line-height
+            );
         }
         &-time {
             font-family: var(--fenext-chronological-list-item-time-font-family);
             font-size: var(--fenext-chronological-list-item-time-font-size);
             font-weight: var(--fenext-chronological-list-item-time-font-weight);
-            color:  var(--fenext-chronological-list-item-time-color);
-            line-height:  var(--fenext-chronological-list-item-time-line-height);
+            color: var(--fenext-chronological-list-item-time-color);
+            line-height: var(--fenext-chronological-list-item-time-line-height);
         }
     }
 }
