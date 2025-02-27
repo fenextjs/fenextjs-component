@@ -1,4 +1,4 @@
-:root{
+:root {
     --fenext-breadcrumb-display: flex;
     --fenext-breadcrumb-flex-wrap: wrap;
     --fenext-breadcrumb-gap: 0.5rem;
@@ -6,35 +6,34 @@
     --fenext-breadcrumb-list-style: none;
 
     --fenext-breadcrumb-item-display: flex;
-    --fenext-breadcrumb-item-gap:  0.5rem;
+    --fenext-breadcrumb-item-gap: 0.5rem;
     --fenext-breadcrumb-item-align-items: center;
     --fenext-breadcrumb-item-color: var(--fenext-color-dark);
 
-    --fenext-breadcrumb-item-after-content:  "/";
-
+    --fenext-breadcrumb-item-after-content: "/";
 
     --fenext-breadcrumb-item-link-font-family: var(--fenext-font-global);
     --fenext-breadcrumb-item-link-font-size: 1rem;
     --fenext-breadcrumb-item-link-font-weight: 400;
     --fenext-breadcrumb-item-link-line-height: 1;
-    --fenext-breadcrumb-item-link-cursor:pointer;
-    --fenext-breadcrumb-item-link-color:var(--fenext-color-dark);
-    --fenext-breadcrumb-item-link-text-decoration:none;
+    --fenext-breadcrumb-item-link-cursor: pointer;
+    --fenext-breadcrumb-item-link-color: var(--fenext-color-dark);
+    --fenext-breadcrumb-item-link-text-decoration: none;
 
     --fenext-breadcrumb-item-link-hover-color: var(--fenext-color-primary);
 }
 
 .fenext-breadcrumb {
     display: var(--fenext-breadcrumb-display);
-    flex-wrap:var(--fenext-breadcrumb-flex-wrap);
+    flex-wrap: var(--fenext-breadcrumb-flex-wrap);
     gap: var(--fenext-breadcrumb-gap);
     align-items: var(--fenext-breadcrumb-align-items);
     list-style: var(--fenext-breadcrumb-list-style);
     &-item {
         display: var(--fenext-breadcrumb-item-display);
-        gap:  var(--fenext-breadcrumb-item-gap);
-        align-items:  var(--fenext-breadcrumb-item-align-items);
-        color:  var(--fenext-breadcrumb-item-color);
+        gap: var(--fenext-breadcrumb-item-gap);
+        align-items: var(--fenext-breadcrumb-item-align-items);
+        color: var(--fenext-breadcrumb-item-color);
         &:not(:last-child) {
             &::after {
                 content: var(--fenext-breadcrumb-item-after-content);
@@ -42,11 +41,11 @@
         }
         &-link {
             font-family: var(--fenext-breadcrumb-item-link-font-family);
-            font-size:  var(--fenext-breadcrumb-item-link-font-size);
-            font-weight:  var(--fenext-breadcrumb-item-link-font-weight);
-            line-height:  var(--fenext-breadcrumb-item-link-line-height);
+            font-size: var(--fenext-breadcrumb-item-link-font-size);
+            font-weight: var(--fenext-breadcrumb-item-link-font-weight);
+            line-height: var(--fenext-breadcrumb-item-link-line-height);
             cursor: var(--fenext-breadcrumb-item-link-cursor);
-            color:var(--fenext-breadcrumb-item-link-color);
+            color: var(--fenext-breadcrumb-item-link-color);
             text-decoration: var(--fenext-breadcrumb-item-link-text-decoration);
             &:hover {
                 color: var(--fenext-breadcrumb-item-link-hover-color);
