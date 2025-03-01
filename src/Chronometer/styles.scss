@@ -1,12 +1,25 @@
+:root {
+    --fenext-chronometer-text-align: center;
+    --fenext-chronometer-padding: 1rem 1.5rem;
+    --fenext-chronometer-border-radius: 0.7rem;
+    --fenext-chronometer-color: var(--fenext-color-dark);
+    --fenext-chronometer-background-color: var(--fenext-color-light);
+    --fenext-chronometer-font-family: var(--fenext-font-global);
+    --fenext-chronometer-font-size: 1rem;
+    --fenext-chronometer-font-weight: 800;
+    --fenext-chronometer-line-height: 1.36;
+    --fenext-chronometer-letter-spacing: 0.25rem;
+}
+
 .fenext-chronometer {
-    text-align: center;
-    padding: 1rem 1.5rem;
-    border-radius: 0.7rem;
-    color: var(--fenext-color-dark);
-    background-color: var(--fenext-color-light);
-    font-family: var(--fenext-font-global);
-    font-size: 1rem;
-    font-weight: 800;
-    line-height: 1.36;
-    letter-spacing: 4px;
+    text-align: var(--fenext-chronometer-text-align);
+    padding: var(--fenext-chronometer-padding);
+    border-radius: var(--fenext-chronometer-border-radius);
+    color: var(--fenext-chronometer-color);
+    background-color: var(--fenext-chronometer-background-color);
+    font-family: var(--fenext-chronometer-font-family);
+    font-size: var(--fenext-chronometer-font-size);
+    font-weight: var(--fenext-chronometer-font-weight);
+    line-height: var(--fenext-chronometer-line-height);
+    letter-spacing: var(--fenext-chronometer-letter-spacing);
 }
