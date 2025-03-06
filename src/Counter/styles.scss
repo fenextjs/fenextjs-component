@@ -1,4 +1,4 @@
-:root{
+:root {
     --fenext-counter-font-family: var(--fenext-font-global);
     --fenext-counter-color: var(--fenext-color-dark);
     --fenext-counter-font-size: 1rem;
@@ -24,18 +24,18 @@
 .fenext-counter {
     font-family: var(--fenext-counter-font-family);
     color: var(--fenext-counter-color);
-    font-size:  var(--fenext-counter-font-size);
-    font-weight:  var(--fenext-counter-font-weight);
-    line-height:  var(--fenext-counter-line-height);
-    display:  var(--fenext-counter-display);
-    text-align:  var(--fenext-counter-text-align);
+    font-size: var(--fenext-counter-font-size);
+    font-weight: var(--fenext-counter-font-weight);
+    line-height: var(--fenext-counter-line-height);
+    display: var(--fenext-counter-display);
+    text-align: var(--fenext-counter-text-align);
     gap: var(--fenext-counter-gap);
-    width:  var(--fenext-counter-width);
+    width: var(--fenext-counter-width);
     &-text {
     }
     &-number {
-        font-size:  var(--fenext-counter-number-font-size);
-        font-weight:  var(--fenext-counter-number-font-weight);
+        font-size: var(--fenext-counter-number-font-size);
+        font-weight: var(--fenext-counter-number-font-weight);
         position: var(--fenext-counter-number-position);
         &-rel {
             color: var(--fenext-counter-number-rel-color);
