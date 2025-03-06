@@ -1,12 +1,23 @@
+:root {
+    --fenext-content-loading-color: var(--fenext-color-dark);
+    --fenext-content-loading-font-family: var(--fenext-font-global);
+
+    --fenext-content-loading-page-width: 100%;
+    --fenext-content-loading-page-min-height: calc(100dvh - var(--fenext-size-menu-top, auto));
+
+    --fenext-content-loading-loader-display: grid;
+    --fenext-content-loading-loader-place-content: center;
+}
+
 .fenext-content-loading {
-    color: var(--fenext-color-dark);
-    font-family: var(--fenext-font-global);
+    color: var(--fenext-content-loading-color);
+    font-family: var(--fenext-content-loading-font-family);
     &-page {
-        width: 100%;
-        min-height: calc(100dvh - var(--fenext-size-menu-top, auto));
+        width: var(--fenext-content-loading-page-width);
+        min-height: var(--fenext-content-loading-page-min-height);
     }
     &-loader {
-        display: grid;
-        place-content: center;
+        display: var(--fenext-content-loading-loader-display);
+        place-content: var(--fenext-content-loading-loader-place-content);
     }
 }
