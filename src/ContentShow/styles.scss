@@ -1,7 +1,14 @@
+:root{
+    --fenext-content-show-color: var(--fenext-color-dark);
+    --fenext-content-show-font-family: var(--fenext-font-global);
+
+    --fenext-content-show-hidden-display: none;
+}
+
 .fenext-content-show {
-    color: var(--fenext-color-dark);
-    font-family: var(--fenext-font-global);
+    color: var(--fenext-content-show-color);
+    font-family: var(--fenext-content-show-font-family);
     &-hidden {
-        display: none;
+        display: var(--fenext-content-show-hidden-display);
     }
 }
