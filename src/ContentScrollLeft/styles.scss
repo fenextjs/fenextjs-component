@@ -1,8 +1,15 @@
+:root{
+    --fenext-content-scroll-left-transform : rotateY(180deg);
+    --fenext-content-scroll-left-overflow : auto;
+    --fenext-content-scroll-left-max-height : 100%;
+    --fenext-content-scroll-left-content-transform : rotateY(180deg);
+}
+
 .fenext-content-scroll-left {
-    transform: rotateY(180deg);
-    overflow: auto;
-    max-height: 100%;
+    transform: var(--fenext-content-scroll-left-transform);
+    overflow: var(--fenext-content-scroll-left-overflow);
+    max-height:var(--fenext-content-scroll-left-max-height);
     &-content {
-        transform: rotateY(180deg);
+        transform: var(--fenext-content-scroll-left-content-transform);
     }
 }
