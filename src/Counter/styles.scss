@@ -1,27 +1,50 @@
+:root{
+    --fenext-counter-font-family: var(--fenext-font-global);
+    --fenext-counter-color: var(--fenext-color-dark);
+    --fenext-counter-font-size: 1rem;
+    --fenext-counter-font-weight: 400;
+    --fenext-counter-line-height: 1;
+    --fenext-counter-display: grid;
+    --fenext-counter-text-align: center;
+    --fenext-counter-gap: 0.25rem;
+    --fenext-counter-width: max-content;
+
+    --fenext-counter-number-font-size: 3rem;
+    --fenext-counter-number-font-weight: 700;
+    --fenext-counter-number-position: relative;
+
+    --fenext-counter-number-rel-color: transparent;
+
+    --fenext-counter-number-abs-position: absolute;
+    --fenext-counter-number-abs-width: 100%;
+    --fenext-counter-number-abs-height: 100%;
+    --fenext-counter-number-abs-inset: 0;
+}
+
 .fenext-counter {
-    font-family: var(--fenext-font-global);
-    color: var(--fenext-color-dark);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1;
-    display: grid;
-    text-align: center;
-    gap: 0.25rem;
-    width: max-content;
+    font-family: var(--fenext-counter-font-family);
+    color: var(--fenext-counter-color);
+    font-size:  var(--fenext-counter-font-size);
+    font-weight:  var(--fenext-counter-font-weight);
+    line-height:  var(--fenext-counter-line-height);
+    display:  var(--fenext-counter-display);
+    text-align:  var(--fenext-counter-text-align);
+    gap: var(--fenext-counter-gap);
+    width:  var(--fenext-counter-width);
     &-text {
     }
     &-number {
-        font-size: 3rem;
-        font-weight: 700;
-        position: relative;
+        font-size:  var(--fenext-counter-number-font-size);
+        font-weight:  var(--fenext-counter-number-font-weight);
+        position: var(--fenext-counter-number-position);
         &-rel {
-            color: transparent;
+            color: var(--fenext-counter-number-rel-color);
         }
         &-abs {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            inset: 0;
+            position: var(--fenext-counter-number-abs-position);
+            width: var(--fenext-counter-number-abs-width);
+            height: var(--fenext-counter-number-abs-height);
+            inset: var(--fenext-counter-number-abs-inset);
         }
     }
 }
