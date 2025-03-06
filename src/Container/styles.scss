@@ -1,8 +1,8 @@
-:root{
-    --fenext-container-margin-inline:auto;
-    --fenext-container-color:var(--fenext-color-dark);
-    --fenext-container-font-family:var(--fenext-font-global);
-    --fenext-container-padding-inline:1rem;
+:root {
+    --fenext-container-margin-inline: auto;
+    --fenext-container-color: var(--fenext-color-dark);
+    --fenext-container-font-family: var(--fenext-font-global);
+    --fenext-container-padding-inline: 1rem;
 }
 
 .fenext-container {
@@ -15,9 +15,9 @@
     font-family: var(--fenext-container-font-family);
     padding-inline: var(--fenext-container-px);
     &-p {
-        --fenext-container-px:var(--fenext-container-padding-inline);
+        --fenext-container-px: var(--fenext-container-padding-inline);
     }
     &-notp {
-        --fenext-container-px:0;
+        --fenext-container-px: 0;
     }
 }
