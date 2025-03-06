@@ -1,15 +1,23 @@
+:root{
+    --fenext-container-margin-inline:auto;
+    --fenext-container-color:var(--fenext-color-dark);
+    --fenext-container-font-family:var(--fenext-font-global);
+    --fenext-container-padding-inline:1rem;
+}
+
 .fenext-container {
     width: min(
         100%,
         var(--fenext-size-container-custom, var(--fenext-size-container, 100%))
     );
-    margin-inline: auto;
-    color: var(--fenext-color-dark);
-    font-family: var(--fenext-font-global);
+    margin-inline: var(--fenext-container-margin-inline);
+    color: var(--fenext-container-color);
+    font-family: var(--fenext-container-font-family);
+    padding-inline: var(--fenext-container-px);
     &-p {
-        padding-inline: 1rem;
+        --fenext-container-px:var(--fenext-container-padding-inline);
     }
     &-notp {
-        padding-inline: 0;
+        --fenext-container-px:0;
     }
 }
