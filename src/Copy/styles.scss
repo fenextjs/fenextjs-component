@@ -1,5 +1,10 @@
+:root {
+    --fenext-copy-color: var(--fenext-color-dark);
+    --fenext-copy-font-family: var(--fenext-font-global);
+    --fenext-copy-cursor: pointer;
+}
 .fenext-copy {
-    color: var(--fenext-color-dark);
-    font-family: var(--fenext-font-global);
-    cursor: pointer;
+    color: var(--fenext-copy-color);
+    font-family: var(--fenext-copy-font-family);
+    cursor: var(--fenext-copy-cursor);
 }
