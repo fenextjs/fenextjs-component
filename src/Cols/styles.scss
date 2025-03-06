@@ -1,10 +1,17 @@
+:root{
+    --fenext-cols-columns:1;
+    --fenext-cols-color:var(--fenext-color-dark);
+    --fenext-cols-font-family:var(--fenext-font-global);
+    --fenext-cols-break-inside:avoid;
+}
+
 .fenext-cols {
-    columns: var(--nCols, 1);
-    color: var(--fenext-color-dark);
-    font-family: var(--fenext-font-global);
+    columns: var(--fenext-cols-columns);
+    color: var(--fenext-cols-color);
+    font-family: var(--fenext-cols-font-family);
     &-break-inside {
         > * {
-            break-inside: avoid;
+            break-inside: var(--fenext-cols-break-inside);
         }
     }
 }

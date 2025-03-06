@@ -41,7 +41,7 @@ export const Cols = ({
                 } ${className} `}
                 style={
                     {
-                        ["--nCols"]: nCols,
+                        ["--fenext-cols-columns"]: nCols,
                     } as CSSProperties
                 }
             >
