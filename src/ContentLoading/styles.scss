@@ -3,7 +3,9 @@
     --fenext-content-loading-font-family: var(--fenext-font-global);
 
     --fenext-content-loading-page-width: 100%;
-    --fenext-content-loading-page-min-height: calc(100dvh - var(--fenext-size-menu-top, auto));
+    --fenext-content-loading-page-min-height: calc(
+        100dvh - var(--fenext-size-menu-top, auto)
+    );
 
     --fenext-content-loading-loader-display: grid;
     --fenext-content-loading-loader-place-content: center;
