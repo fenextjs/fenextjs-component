@@ -1,5 +1,5 @@
 import React, { ReactNode, useCallback, useMemo } from "react";
-import { useRouter, useRouterProps } from "fenextjs-hook";
+import { useRouter } from "fenextjs-hook";
 import { Collapse } from "../../Collapse/Simple";
 import { _TProps } from "fenextjs-interface";
 import { use_T } from "fenextjs-hook";
@@ -9,7 +9,7 @@ import { Link } from "../../Link";
 /**
  * Properties for the base ItemMenu component.
  */
-export interface ItemMenuBaseProps extends _TProps, useRouterProps {
+export interface ItemMenuBaseProps extends _TProps {
     /**
      * Url of page in Menu Item.
      */
@@ -98,12 +98,11 @@ export const ItemMenu = ({
     typeCollapse,
     isLink = true,
     onClick,
-    useNextRouter,
     useRouterCustom = useRouter,
     ...props
 }: ItemMenuProps) => {
     const { _t } = use_T({ ...props });
-    const router = useRouterCustom({ useNextRouter });
+    const router = useRouterCustom();
 
     const urlInter = useMemo(() => {
         const nlLink = router?.asPath.split("/");
