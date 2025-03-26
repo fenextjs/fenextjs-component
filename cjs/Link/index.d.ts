@@ -1,8 +1,7 @@
 import React, { AnchorHTMLAttributes, PropsWithChildren } from "react";
-import { LinkProps as LinkNextProps } from "next/link";
 import { _TProps } from "fenextjs-interface";
 export type LinkTypeOnLink = "history" | "router" | "link" | "none";
-export interface LinkBaseProps extends PropsWithChildren, LinkNextProps, Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "target" | "referrerPolicy" | "rel">, _TProps {
+export interface LinkBaseProps extends PropsWithChildren, Partial<AnchorHTMLAttributes<HTMLAnchorElement>>, _TProps {
 }
 export interface LinkClassProps {
     className?: string;

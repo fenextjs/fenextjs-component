@@ -9,9 +9,7 @@ export type LinkTypeOnLink = "history" | "router" | "link" | "none";
  */
 export interface LinkBaseProps
     extends PropsWithChildren,
-        Partial<
-            AnchorHTMLAttributes<HTMLAnchorElement>
-        >,
+        Partial<AnchorHTMLAttributes<HTMLAnchorElement>>,
         _TProps {}
 
 /**
