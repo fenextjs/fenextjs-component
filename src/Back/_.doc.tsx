@@ -158,10 +158,9 @@ export default {
             title: "__NOTA__",
             description:
                 "Para que `typeOnBack='fenextjs-history'` funcione correctamente debe ser ejecutado useHistory en _app o el layout mas superior que se posea.",
-            code: `import type { AppProps } from "next/app";
-import { useHistory } from "fenextjs";
+            code: `import { useHistory } from "fenextjs";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }) {
   useHistory({})
   return <Component {...pageProps} />
 }`,

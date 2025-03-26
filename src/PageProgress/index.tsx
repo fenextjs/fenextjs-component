@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import Router from "next/router";
 /**
  * Properties for the base PageProgress component.
  */
@@ -39,14 +38,38 @@ export const PageProgress = ({ className = "" }: PageProgressProps) => {
         setStatusBar("start");
     };
 
-    Router?.events?.on?.("routeChangeStart", onStart);
-    Router?.events?.on?.("routeChangeComplete", onDone);
-    Router?.events?.on?.("routeChangeError", onDone);
+    useEffect(() => {
+        const handleStart = () => onStart();
+        const handleDone = () => onDone();
+
+        // Interceptar cambios en la URL
+        const originalPushState = history.pushState;
+        const originalReplaceState = history.replaceState;
+
+        history.pushState = function (...args) {
+            handleStart();
+            originalPushState.apply(this, args);
+            handleDone();
+        };
+
+        history.replaceState = function (...args) {
+            handleStart();
+            originalReplaceState.apply(this, args);
+            handleDone();
+        };
+
+        window.addEventListener("popstate", handleDone);
+
+        return () => {
+            history.pushState = originalPushState;
+            history.replaceState = originalReplaceState;
+            window.removeEventListener("popstate", handleDone);
+        };
+    }, []);
+
     return (
-        <>
-            <div
-                className={`fenext-page-progress fenext-page-progress-${statusBar} ${className} `}
-            ></div>
-        </>
+        <div
+            className={`fenext-page-progress fenext-page-progress-${statusBar} ${className}`}
+        ></div>
     );
 };
