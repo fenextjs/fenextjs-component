@@ -7,13 +7,12 @@ const fenextjs_hook_1 = require("fenextjs-hook");
 const Loader_1 = require("../Loader");
 const PaginationPre_1 = require("fenextjs-svg/cjs/PaginationPre");
 const fenextjs_hook_2 = require("fenextjs-hook");
-const Back = ({ className = "", classNameLoader = "", classNameDisabled = "", classNameIcon = "", classNameContent = "", children = "Back", loader = false, disabled = false, onClick = undefined, icon = react_1.default.createElement(PaginationPre_1.SvgPaginationPre, null), typeOnBack = "history", link = "", minLenght = 2, useHistoryMinLenght = false, onValidateRuteBack, useNextRouter, useRouterCustom = fenextjs_hook_1.useRouter, ...props }) => {
+const Back = ({ className = "", classNameLoader = "", classNameDisabled = "", classNameIcon = "", classNameContent = "", children = "Back", loader = false, disabled = false, onClick = undefined, icon = react_1.default.createElement(PaginationPre_1.SvgPaginationPre, null), typeOnBack = "history", link = "", minLenght = 2, useHistoryMinLenght = false, onValidateRuteBack, useRouterCustom = fenextjs_hook_1.useRouter, ...props }) => {
     const { onBack: onBackHistory } = (0, fenextjs_hook_2.useHistory)({
-        useNextRouter,
         useRouterCustom,
     });
     const { _t } = (0, fenextjs_hook_2.use_T)({ ...props });
-    const router = useRouterCustom({ useNextRouter });
+    const router = useRouterCustom();
     const onBack = () => {
         if (loader || disabled) {
             return;
