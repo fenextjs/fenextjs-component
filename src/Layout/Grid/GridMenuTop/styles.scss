@@ -8,6 +8,7 @@
     min-height: 100dvh;
     .fenext-layout-grid-alert {
         top: var(--fenext-size-menu-top, 0);
+        z-index: 1;
     }
     &-menu-top {
         position: relative;
