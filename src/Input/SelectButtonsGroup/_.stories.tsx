@@ -82,6 +82,15 @@ Index.args = args;
 
 
 
+export const Multiple = Profile.bind({});
+
+const MultipleArgs: InputSelectButtonsGroupProps = {
+    ...args,
+    isMultiple:true,
+};
+
+Multiple.args = MultipleArgs;
+
 export const WithValdidator = Profile.bind({});
 
 const WithValdidatorArgs: InputSelectButtonsGroupProps = {

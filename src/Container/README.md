@@ -12,12 +12,12 @@ import { Container } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro        | Tipo      | Requerido | Default   | Descripcion                                                                 |
-| ---------------- | --------- | --------- | --------- | --------------------------------------------------------------------------- |
-| customSize       | number    | no        | undefined | Tamaño personalizado del contenedor, calculado como customSize / 16 \* rem. |
-| usePaddingInline | boolean   | no        | true      | Determina si se aplica padding en el contenedor.                            |
-| children         | ReactNode | no        | undefined | Contenido o elementos que se mostrarán dentro del contenedor.               |
-| className        | string    | no        | ''        | Clase CSS para personalizar el contenedor.                                  |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| customSize | number | no | undefined | Tamaño personalizado del contenedor, calculado como customSize / 16 * rem. |
+| usePaddingInline | boolean | no | true | Determina si se aplica padding en el contenedor. |
+| children | ReactNode | no | undefined | Contenido o elementos que se mostrarán dentro del contenedor. |
+| className | string | no | '' | Clase CSS para personalizar el contenedor. |
 
 ### Storybook
 
@@ -25,26 +25,21 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Básico
+- Básico
 
 ```tsx copy
-<Container>
-    <div>Contenido</div>
-</Container>
+<Container><div>Contenido</div></Container>
 ```
 
--   Container con tamaño personalizado
+- Container con tamaño personalizado
 
 ```tsx copy
-<Container customSize={48}>
-    <div>Contenido</div>
-</Container>
+<Container customSize={48}><div>Contenido</div></Container>
 ```
 
--   Container sin padding
+- Container sin padding
 
 ```tsx copy
-<Container usePaddingInline={false}>
-    <div>Contenido</div>
-</Container>
+<Container usePaddingInline={false}><div>Contenido</div></Container>
 ```
+

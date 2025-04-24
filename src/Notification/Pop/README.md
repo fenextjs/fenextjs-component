@@ -12,12 +12,12 @@ import { NotificationPop } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro    | Tipo            | Requerido | Default | Descripcion                                                                        |
-| ------------ | --------------- | --------- | ------- | ---------------------------------------------------------------------------------- |
-| classNamePop | string          | no        | ''      | Clase CSS para el contenedor del pop de notificación.                              |
-| className    | string          | no        | ''      | Clase CSS adicional para el componente.                                            |
-| typePop      | 'top' \| 'down' | no        | 'down'  | Posición de la notificación en la pantalla.                                        |
-| time         | number          | no        | 2000    | Duración en milisegundos antes de que la notificación desaparezca automáticamente. |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| classNamePop | string | no | '' | Clase CSS para el contenedor del pop de notificación. |
+| className | string | no | '' | Clase CSS adicional para el componente. |
+| typePop | 'top' \| 'down' | no | 'down' | Posición de la notificación en la pantalla. |
+| time | number | no | 2000 | Duración en milisegundos antes de que la notificación desaparezca automáticamente. |
 
 ### Storybook
 
@@ -25,22 +25,21 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Notificación Pop básica
+- Notificación Pop básica
 
 ```tsx copy
 <NotificationPop>Mensaje de notificación</NotificationPop>
 ```
 
--   Notificación Pop en la parte superior
+- Notificación Pop en la parte superior
 
 ```tsx copy
-<NotificationPop typePop="top">
-    Notificación en la parte superior
-</NotificationPop>
+<NotificationPop typePop="top">Notificación en la parte superior</NotificationPop>
 ```
 
--   Notificación Pop con duración personalizada
+- Notificación Pop con duración personalizada
 
 ```tsx copy
 <NotificationPop time={3000}>Mensaje que dura 3 segundos</NotificationPop>
 ```
+

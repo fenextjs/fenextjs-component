@@ -34,7 +34,7 @@ export interface InputSelectButtonsGroupBaseProps<T = any>
         "_t" | "useT"
 
     > {
-
+    isMultiple?: boolean;
 }
 /**
  * Props interface for the InputSelectButtonsGroup component. Extends both InputSelectButtonsGroupBaseProps and InputSelectButtonsGroupClassProps interfaces.
@@ -63,11 +63,12 @@ export const InputSelectButtonsGroup = <T = any,>({
     optionalText = "(optional)",
     required = false,
     requiredText = "*",
+    isMultiple = false,
     _t: _tProps,
     useT
 }: InputSelectButtonsGroupProps<T>) => {
     const { _t } = use_T({ _t: _tProps, useT });
-    const { data, setDataFunction } = useData<
+    const { data, setData, setDataFunction } = useData<
         InputSelectItemOptionBaseProps<T>[]
     >(defaultValue, {
         onChangeDataAfter: (e) => {
@@ -81,6 +82,10 @@ export const InputSelectButtonsGroup = <T = any,>({
     const onAddItemSelect = useCallback(
         (newItem: InputSelectItemOptionBaseProps<T> | undefined) => {
             if (newItem) {
+                if (isMultiple == false) {
+                    setData([newItem]);
+                    return;
+                }
                 setDataFunction(() => {
                     const old = [...dataMemo];
                     if (old.find((e) => e.id == newItem.id)) {

@@ -3,7 +3,7 @@ export default {
     idStorybook: "input-select-buttons-group",
     name: "InputSelectButtonsGroup",
     description:
-        "El componente InputSelectButtonsGroup permite seleccionar múltiples opciones de una lista de elementos. Ofrece funcionalidades avanzadas como validación personalizada, deshabilitacion de opciones y selección de estilo de visualización.",
+        "El componente InputSelectButtonsGroup permite seleccionar múltiples opciones de una lista de elementos. Ofrece funcionalidades avanzadas como validación personalizada, deshabilitación de opciones y selección de estilo de visualización.",
     props: [
         {
             id: "classNameSelectButtonsGroup",
@@ -112,6 +112,14 @@ export default {
             require: false,
             description: "Indica si el componente está deshabilitado.",
         },
+        {
+            id: "isMultiple",
+            type: "boolean",
+            require: false,
+            description:
+                "Indica si se pueden seleccionar múltiples opciones. Si es `false`, solo se puede seleccionar una opción.",
+            default: "false",
+        },
     ],
     useExample: [
         {
@@ -128,20 +136,16 @@ export default {
 />`,
         },
         {
-            text: "InputSelectButtonsGroup con validación personalizada",
+            text: "InputSelectButtonsGroup con selección multiple",
             content: `
 <InputSelectButtonsGroup
+    isMultiple={true}
     options={[
         { label: "Opción 1", value: 1 },
         { label: "Opción 2", value: 2 },
         { label: "Opción 3", value: 3 },
     ]}
-    onChangeValidate={async (selected) => {
-        if (selected.length > 2) {
-            throw new Error("No puedes seleccionar más de 2 opciones.");
-        }
-    }}
-    onChangeData={(data) => console.log("Datos seleccionados:", data)}
+    onChange={(selected) => console.log("Opciónes seleccionadas:", selected)}
 />`,
         },
     ],

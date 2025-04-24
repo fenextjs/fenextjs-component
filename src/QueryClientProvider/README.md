@@ -12,9 +12,9 @@ import { QueryClientProvider } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo      | Requerido | Default | Descripcion |
-| --------- | --------- | --------- | ------- | ----------- |
-| children  | ReactNode | sí        |         | Contenido.  |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| children | ReactNode | sí |  | Contenido. |
 
 ### Storybook
 
@@ -22,8 +22,9 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Básico
+- Básico
 
 ```tsx copy
 <QueryClientProvider>Contenido</QueryClientProvider>
 ```
+

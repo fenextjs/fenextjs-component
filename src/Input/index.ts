@@ -6,6 +6,7 @@ export * from "./File";
 export * from "./Number";
 export * from "./Checkbox";
 export * from "./Select";
+export * from "./SelectButtonsGroup";
 export * from "./SelectCountry";
 export * from "./SelectCountryMultiple";
 export * from "./SelectState";
