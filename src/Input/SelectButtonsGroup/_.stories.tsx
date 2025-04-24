@@ -74,8 +74,7 @@ const OPTIONS = [
 
 const args: InputSelectButtonsGroupProps<string> = {
     label: "Select Buttons Group",
-    defaultValue:[
-    ],
+    defaultValue:["Option 1",],
     options: OPTIONS.map(e=>e.text),
     onParse:e=>({
         id:e ?? '',
@@ -94,6 +93,7 @@ export const Multiple = Profile.bind({});
 
 const MultipleArgs: InputSelectButtonsGroupProps = {
     ...args,
+    defaultValue:["Option 1","Option 2"],
     isMultiple:true,
 };
 
@@ -103,7 +103,6 @@ export const WithValdidator = Profile.bind({});
 
 const WithValdidatorArgs: InputSelectButtonsGroupProps = {
     ...args,
-    defaultValue:[],
     isMultiple:true,
     validator:FV().isArray(
         FV().isString("string").isCustom(e=>e == "Option 1" ? new ErrorFenextjs({message:"No puedes seleccionar esta opcion",}):true)

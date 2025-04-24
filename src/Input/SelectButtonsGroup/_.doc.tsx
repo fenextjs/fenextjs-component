@@ -23,7 +23,7 @@ export default {
         },
         {
             id: "defaultValue",
-            type: "InputSelectItemOptionBaseProps<T>[]",
+            type: "T[]",
             require: false,
             description:
                 "Opciones predeterminadas seleccionadas al iniciar el componente.",
@@ -31,37 +31,23 @@ export default {
         },
         {
             id: "value",
-            type: "InputSelectItemOptionBaseProps<T>[]",
+            type: "T[]",
             require: false,
             description: "Opciones seleccionadas actualmente.",
         },
         {
             id: "onChange",
-            type: "(v?: InputSelectItemOptionBaseProps<T>[]) => void",
-            require: false,
-            description:
-                "Función que se ejecuta cuando el valor seleccionado cambia.",
-        },
-        {
-            id: "onChangeData",
             type: "(v?: T[]) => void",
             require: false,
             description:
                 "Función que se ejecuta cuando los datos seleccionados cambian.",
         },
         {
-            id: "validatorData",
+            id: "validator",
             type: "FenextjsValidatorClass<T[]>",
             require: false,
             description:
                 "Instancia de `FenextjsValidatorClass` para validar los datos seleccionados.",
-        },
-        {
-            id: "validator",
-            type: "(e: InputSelectItemOptionBaseProps<T>[]) => Promise<any> | any",
-            require: false,
-            description:
-                "Función de validación personalizada que se ejecuta cuando el valor cambia.",
         },
         {
             id: "CustomOptionsSelected",
@@ -72,7 +58,7 @@ export default {
         },
         {
             id: "options",
-            type: "InputSelectItemOptionBaseProps<T>[]",
+            type: "T[]",
             require: false,
             description: "Lista de opciones disponibles para seleccionar.",
         },
@@ -126,26 +112,45 @@ export default {
             text: "Uso básico de InputSelectButtonsGroup",
             content: `
 <InputSelectButtonsGroup
-    defaultValue={[{ label: "Opción 1", value: 1 }, { label: "Opción 2", value: 2 }]}
-    options={[
-        { label: "Opción 1", value: 1 },
-        { label: "Opción 2", value: 2 },
-        { label: "Opción 3", value: 3 },
-    ]}
+    defaultValue={["Opción 1","Opción 2"]}
+    options={["Opción 1","Opción 2", "Opción 3", ]}
+    onParse={(e) => ({
+        id: e ?? "",
+        text: e ?? "",
+        data: e,
+    })}
     onChange={(selected) => console.log(selected)}
 />`,
         },
         {
-            text: "InputSelectButtonsGroup con selección multiple",
+            text: "InputSelectButtonsGroup con selección múltiple",
             content: `
 <InputSelectButtonsGroup
     isMultiple={true}
-    options={[
-        { label: "Opción 1", value: 1 },
-        { label: "Opción 2", value: 2 },
-        { label: "Opción 3", value: 3 },
-    ]}
-    onChange={(selected) => console.log("Opciónes seleccionadas:", selected)}
+    options={["Opción 1","Opción 2", "Opción 3", ]}
+    onParse={(e) => ({
+        id: e ?? "",
+        text: e ?? "",
+        data: e,
+    })}
+    onChange={(selected) => console.log("Opciones seleccionadas:", selected)}
+/>`,
+        },
+        {
+            text: "InputSelectButtonsGroup con validación personalizada",
+            content: `
+<InputSelectButtonsGroup
+    options={["Opción 1","Opción 2", "Opción 3", ]}
+    onParse={(e) => ({
+        id: e ?? "",
+        text: e ?? "",
+        data: e,
+    })}
+    isMultiple={true}
+    validator={FV().isArray(
+        FV().isString("string").isCustom(e => e === "Opción 1" ? new ErrorFenextjs({ message: "No puedes seleccionar esta opción" }) : true)
+    ).isMinOrEqual(3, "mínimo 3 elementos").isMaxOrEqual(5, "máximo 5 elementos")}
+    onChange={(selected) => console.log("Opciones seleccionadas:", selected)}
 />`,
         },
     ],
