@@ -1,6 +1,6 @@
 export default {
     id: "input-select-buttons-group",
-    idStorybook: "input-select-buttons-group",
+    idStorybook: "input-inputselectbuttonsgroup",
     name: "InputSelectButtonsGroup",
     description:
         "El componente InputSelectButtonsGroup permite seleccionar múltiples opciones de una lista de elementos. Ofrece funcionalidades avanzadas como validación personalizada, deshabilitación de opciones y selección de estilo de visualización.",

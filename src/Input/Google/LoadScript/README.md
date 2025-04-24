@@ -12,13 +12,13 @@ import { InputGoogleLoadScript } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro        | Tipo      | Requerido | Default                               | Descripcion                                                                                                                         |
-| ---------------- | --------- | --------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| googleMapsApiKey | string    | no        | process.env['NEXT_PUBLIC_GOOGLE_KEY'] | Clave API de Google Maps. Si no se proporciona, se usará la clave API predeterminada en las variables de entorno.                   |
-| children         | ReactNode | no        | undefined                             | Los elementos hijos que se renderizarán dentro del componente una vez que el script de Google Maps haya sido cargado correctamente. |
-| className        | string    | no        | ''                                    | Clase CSS para personalizar el contenedor del componente.                                                                           |
-| \_t              | unknown   | no        | undefined                             | Propiedades de traducción para mensajes de error u otros textos.                                                                    |
-| useT             | unknown   | no        | undefined                             | Hook de traducción para manejar cadenas traducibles dentro del componente.                                                          |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| googleMapsApiKey | string | no | process.env['NEXT_PUBLIC_GOOGLE_KEY'] | Clave API de Google Maps. Si no se proporciona, se usará la clave API predeterminada en las variables de entorno. |
+| children | ReactNode | no | undefined | Los elementos hijos que se renderizarán dentro del componente una vez que el script de Google Maps haya sido cargado correctamente. |
+| className | string | no | '' | Clase CSS para personalizar el contenedor del componente. |
+| _t | unknown | no | undefined | Propiedades de traducción para mensajes de error u otros textos. |
+| useT | unknown | no | undefined | Hook de traducción para manejar cadenas traducibles dentro del componente. |
 
 ### Storybook
 
@@ -26,7 +26,7 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   InputGoogleLoadScript básico
+- InputGoogleLoadScript básico
 
 ```tsx copy
 <InputGoogleLoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
@@ -34,7 +34,7 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 </InputGoogleLoadScript>
 ```
 
--   InputGoogleLoadScript con validación
+- InputGoogleLoadScript con validación
 
 ```tsx copy
 <InputGoogleLoadScript>
@@ -42,10 +42,11 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 </InputGoogleLoadScript>
 ```
 
--   InputGoogleLoadScript con manejo de errores
+- InputGoogleLoadScript con manejo de errores
 
 ```tsx copy
 <InputGoogleLoadScript googleMapsApiKey="INVALID_KEY">
     <YourGoogleMapsComponent />
 </InputGoogleLoadScript>
 ```
+

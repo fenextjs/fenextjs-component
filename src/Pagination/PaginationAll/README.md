@@ -12,14 +12,14 @@ import { Pagination } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro               | Tipo                    | Requerido | Default   | Descripcion                                                                                   |
-| ----------------------- | ----------------------- | --------- | --------- | --------------------------------------------------------------------------------------------- |
-| className               | string                  | no        | ''        | Clase CSS para el contenedor principal de la paginación.                                      |
-| PaginationItemPageProps | PaginationItemPageProps | sí        |           | Objeto de configuracion para PaginationItemPage.                                              |
-| PaginationNPageProps    | PaginationNPageProps    | no        | \{\}      | Objeto de configuracion para PaginationNPage.                                                 |
-| paginationName          | string                  | no        | undefined | Nombre unico para el uso de usePagination.                                                    |
-| showItemPage            | boolean                 | no        | true      | Determina si se debe mostrar el componente de cada página en la paginación.                   |
-| showNPage               | boolean                 | no        | true      | Determina si se debe mostrar el componente de selección de número de página en la paginación. |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| className | string | no | '' | Clase CSS para el contenedor principal de la paginación. |
+| PaginationItemPageProps | PaginationItemPageProps | sí |  | Objeto de configuracion para PaginationItemPage. |
+| PaginationNPageProps | PaginationNPageProps | no | \{\} | Objeto de configuracion para PaginationNPage. |
+| paginationName | string | no | undefined | Nombre unico para el uso de usePagination. |
+| showItemPage | boolean | no | true | Determina si se debe mostrar el componente de cada página en la paginación. |
+| showNPage | boolean | no | true | Determina si se debe mostrar el componente de selección de número de página en la paginación. |
 
 ### Storybook
 
@@ -27,20 +27,21 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
--   Paginación básica
+- Paginación básica
 
 ```tsx copy
 <Pagination />
 ```
 
--   Paginación con selección de número de página oculta
+- Paginación con selección de número de página oculta
 
 ```tsx copy
 <Pagination showNPage={false} />
 ```
 
--   Paginación personalizada
+- Paginación personalizada
 
 ```tsx copy
 <Pagination className="mi-clase-personalizada" />
 ```
+

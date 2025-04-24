@@ -1,8 +1,6 @@
 import React, { useCallback, useMemo } from "react";
-import {
-    InputSelectMultipleClassProps,
-    InputSelectMultipleBaseProps,
-} from "../SelectMultiple";
+import {InputSelectMultipleTProps
+} from "../SelectMultipleT";
 import { InputSelectItemOptionBaseProps } from "../Select";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { InputSelectOption } from "../SelectOption";
@@ -14,7 +12,7 @@ import { ErrorComponent } from "../../Error";
  */
 export interface InputSelectButtonsGroupClassProps
     extends Pick<
-        InputSelectMultipleClassProps,
+    InputSelectMultipleTProps<any>,
         "classNameLabel" | "classNameError"
     > {
     /**
@@ -33,14 +31,13 @@ export interface InputSelectButtonsGroupClassProps
  */
 export interface InputSelectButtonsGroupBaseProps<T = any>
     extends Pick<
-        InputSelectMultipleBaseProps<T>,
+    InputSelectMultipleTProps<T>,
+        | "onParse"
         | "onChange"
-        | "onChangeData"
         | "value"
         | "defaultValue"
         | "options"
         | "validator"
-        | "validatorData"
         | "CustomOptionsSelected"
         | "useTOption"
         | "label"
@@ -65,12 +62,10 @@ export const InputSelectButtonsGroup = <T = any,>({
     classNameSelectButtonsGroup = "",
     classNameSelectButtonsGroupList = "",
     onChange,
-    onChangeData,
     value = undefined,
     defaultValue = [],
     options = [],
     CustomOptionsSelected = undefined,
-    validatorData,
     validator,
     useTOption,
     classNameLabel,
@@ -84,18 +79,18 @@ export const InputSelectButtonsGroup = <T = any,>({
     isMultiple = false,
     _t: _tProps,
     useT,
+    onParse
 }: InputSelectButtonsGroupProps<T>) => {
     const { _t } = use_T({ _t: _tProps, useT });
     const { data, setData, setDataFunction } = useData<
-        InputSelectItemOptionBaseProps<T>[]
-    >(defaultValue, {
+    InputSelectItemOptionBaseProps<T>[]
+    >(defaultValue?.map(onParse), {
         onChangeDataAfter: (e) => {
-            onChange?.(e);
-            onChangeData?.(e?.map((e) => e.data as T));
+            onChange?.(e?.map((e) => e.data as T));
         },
     });
 
-    const dataMemo = useMemo(() => value ?? data, [data, value]);
+    const dataMemo = useMemo(() => value ? (value?.map(onParse)) :  data, [data, value]);
 
     const onAddItemSelect = useCallback(
         (newItem: InputSelectItemOptionBaseProps<T> | undefined) => {
@@ -116,12 +111,8 @@ export const InputSelectButtonsGroup = <T = any,>({
         [dataMemo],
     );
 
-    const { error: errorFenextVD } = useValidator({
-        data: dataMemo?.map((e) => e?.data),
-        validator: validatorData,
-    });
     const { error } = useValidator({
-        data: dataMemo,
+        data: dataMemo?.map((e) => e.data),
         validator: validator as any,
     });
 
@@ -155,7 +146,8 @@ export const InputSelectButtonsGroup = <T = any,>({
                 <div
                     className={`fenext-select-multiple-list ${classNameSelectButtonsGroupList} `}
                 >
-                    {options.map((option) => {
+                    {options.map((o) => {
+                        const option = onParse(o);
                         const OptionTag =
                             CustomOptionsSelected ?? InputSelectOption<T>;
                         return (
@@ -173,9 +165,9 @@ export const InputSelectButtonsGroup = <T = any,>({
                         );
                     })}
                 </div>
-                {(errorFenextVD || error) && (
+                {(error) && (
                     <ErrorComponent
-                        error={errorFenextVD ?? error}
+                        error={ error}
                         className={`fenext-input-error ${classNameError}`}
                         _t={_t}
                     />

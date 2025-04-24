@@ -12,40 +12,38 @@ import { InputSelectButtonsGroup } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro                       | Tipo                                                                 | Requerido | Default | Descripcion                                                                                              |
-| ------------------------------- | -------------------------------------------------------------------- | --------- | ------- | -------------------------------------------------------------------------------------------------------- |
-| classNameSelectButtonsGroup     | string                                                               | no        | ""      | Clase CSS personalizada para el contenedor principal del grupo de botones select.                        |
-| classNameSelectButtonsGroupList | string                                                               | no        | ""      | Clase CSS personalizada para la lista de opciones del grupo de botones select.                           |
-| defaultValue                    | InputSelectItemOptionBaseProps\<T\>[]                                | no        | []      | Opciones predeterminadas seleccionadas al iniciar el componente.                                         |
-| value                           | InputSelectItemOptionBaseProps\<T\>[]                                | no        |         | Opciones seleccionadas actualmente.                                                                      |
-| onChange                        | (v?: InputSelectItemOptionBaseProps\<T\>[]) =\> void                 | no        |         | Función que se ejecuta cuando el valor seleccionado cambia.                                              |
-| onChangeData                    | (v?: T[]) =\> void                                                   | no        |         | Función que se ejecuta cuando los datos seleccionados cambian.                                           |
-| validatorData                   | FenextjsValidatorClass\<T[]\>                                        | no        |         | Instancia de `FenextjsValidatorClass` para validar los datos seleccionados.                              |
-| validator                       | (e: InputSelectItemOptionBaseProps\<T\>[]) =\> Promise\<any\> \| any | no        |         | Función de validación personalizada que se ejecuta cuando el valor cambia.                               |
-| CustomOptionsSelected           | typeof InputSelectOption\<T\>                                        | no        |         | Componente personalizado para renderizar las opciones seleccionadas.                                     |
-| options                         | InputSelectItemOptionBaseProps\<T\>[]                                | no        |         | Lista de opciones disponibles para seleccionar.                                                          |
-| label                           | string                                                               | no        |         | Etiqueta para el grupo de botones select.                                                                |
-| optional                        | boolean                                                              | no        |         | Indica si el campo es opcional.                                                                          |
-| optionalText                    | string                                                               | no        |         | Texto que se muestra cuando el campo es opcional.                                                        |
-| required                        | boolean                                                              | no        |         | Indica si el campo es obligatorio.                                                                       |
-| requiredText                    | string                                                               | no        |         | Texto que se muestra cuando el campo es obligatorio.                                                     |
-| disabled                        | boolean                                                              | no        |         | Indica si el componente está deshabilitado.                                                              |
-| isMultiple                      | boolean                                                              | no        | false   | Indica si se pueden seleccionar múltiples opciones. Si es `false`, solo se puede seleccionar una opción. |
+| Parámetro | Tipo | Requerido | Default | Descripcion |
+| --------- | ---- | --------- | ------- | ----------- |
+| classNameSelectButtonsGroup | string | no | "" | Clase CSS personalizada para el contenedor principal del grupo de botones select. |
+| classNameSelectButtonsGroupList | string | no | "" | Clase CSS personalizada para la lista de opciones del grupo de botones select. |
+| defaultValue | InputSelectItemOptionBaseProps\<T\>[] | no | [] | Opciones predeterminadas seleccionadas al iniciar el componente. |
+| value | InputSelectItemOptionBaseProps\<T\>[] | no |  | Opciones seleccionadas actualmente. |
+| onChange | (v?: InputSelectItemOptionBaseProps\<T\>[]) =\> void | no |  | Función que se ejecuta cuando el valor seleccionado cambia. |
+| onChangeData | (v?: T[]) =\> void | no |  | Función que se ejecuta cuando los datos seleccionados cambian. |
+| validatorData | FenextjsValidatorClass\<T[]\> | no |  | Instancia de `FenextjsValidatorClass` para validar los datos seleccionados. |
+| validator | (e: InputSelectItemOptionBaseProps\<T\>[]) =\> Promise\<any\> \| any | no |  | Función de validación personalizada que se ejecuta cuando el valor cambia. |
+| CustomOptionsSelected | typeof InputSelectOption\<T\> | no |  | Componente personalizado para renderizar las opciones seleccionadas. |
+| options | InputSelectItemOptionBaseProps\<T\>[] | no |  | Lista de opciones disponibles para seleccionar. |
+| label | string | no |  | Etiqueta para el grupo de botones select. |
+| optional | boolean | no |  | Indica si el campo es opcional. |
+| optionalText | string | no |  | Texto que se muestra cuando el campo es opcional. |
+| required | boolean | no |  | Indica si el campo es obligatorio. |
+| requiredText | string | no |  | Texto que se muestra cuando el campo es obligatorio. |
+| disabled | boolean | no |  | Indica si el componente está deshabilitado. |
+| isMultiple | boolean | no | false | Indica si se pueden seleccionar múltiples opciones. Si es `false`, solo se puede seleccionar una opción. |
 
 ### Storybook
 
-Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/input-select-buttons-group--index)
+Para ver el storybook del componente lo puede hacer con este [link](https://fenextjs-component-storybook.vercel.app/?path=/story/input-inputselectbuttonsgroup--index)
 
 ### Usos
 
--   Uso básico de InputSelectButtonsGroup
+- Uso básico de InputSelectButtonsGroup
 
 ```tsx copy
+
 <InputSelectButtonsGroup
-    defaultValue={[
-        { label: "Opción 1", value: 1 },
-        { label: "Opción 2", value: 2 },
-    ]}
+    defaultValue={[{ label: "Opción 1", value: 1 }, { label: "Opción 2", value: 2 }]}
     options={[
         { label: "Opción 1", value: 1 },
         { label: "Opción 2", value: 2 },
@@ -55,9 +53,10 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 />
 ```
 
--   InputSelectButtonsGroup con selección multiple
+- InputSelectButtonsGroup con selección multiple
 
 ```tsx copy
+
 <InputSelectButtonsGroup
     isMultiple={true}
     options={[
@@ -68,3 +67,4 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
     onChange={(selected) => console.log("Opciónes seleccionadas:", selected)}
 />
 ```
+
