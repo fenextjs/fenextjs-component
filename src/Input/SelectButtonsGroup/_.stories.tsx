@@ -81,7 +81,7 @@ const args: InputSelectButtonsGroupProps<string> = {
         text: e ?? '',
         data: e
     }),
-    onChange:console.log
+    // onChange:console.log
 };
 
 Index.args = args;

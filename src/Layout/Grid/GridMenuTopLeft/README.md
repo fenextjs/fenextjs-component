@@ -12,23 +12,23 @@ import { LayoutGridMenuTopLeft } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| useAlertHook | boolean | no | true | Indica si se debe renderizar el componente de alerta (AlertHook). |
-| alertHookProps | AlertHookProps | no | \{\} | Propiedades para el componente AlertHook. |
-| loader | boolean | no | false | Indica si la página está en estado de carga, mostrando un indicador de carga. |
-| menuTop | ReactNode | no | undefined | Elemento del menú superior dentro del layout. |
-| menuLeft | ReactNode | no | undefined | Elemento del menú lateral izquierdo dentro del layout. |
-| menuLeftActive | boolean | no | true | Indica si el menú lateral izquierdo está activo. |
-| menuLeftMovilActive | boolean | no | false | Indica si el menú lateral izquierdo está activo en dispositivos móviles. |
-| useHeaderButtonMenu | boolean | no | false | Indica si el botón del menú en el header está habilitado. |
-| usePageProgress | boolean | no | true | Indica si se debe mostrar la barra de progreso de la página. |
-| className | string | no | '' | Clase CSS personalizada para el contenedor del layout. |
-| classNameLoader | string | no | '' | Clase CSS personalizada para el indicador de carga. |
-| classNameChildren | string | no | '' | Clase CSS personalizada para el contenido de los hijos. |
-| classNameMenuTop | string | no | '' | Clase CSS personalizada para el menú superior. |
-| classNameMenuLeft | string | no | '' | Clase CSS personalizada para el menú lateral izquierdo. |
-| classNameMenuLeftContent | string | no | '' | Clase CSS personalizada para el contenido del menú lateral izquierdo. |
+| Parámetro                | Tipo           | Requerido | Default   | Descripcion                                                                   |
+| ------------------------ | -------------- | --------- | --------- | ----------------------------------------------------------------------------- |
+| useAlertHook             | boolean        | no        | true      | Indica si se debe renderizar el componente de alerta (AlertHook).             |
+| alertHookProps           | AlertHookProps | no        | \{\}      | Propiedades para el componente AlertHook.                                     |
+| loader                   | boolean        | no        | false     | Indica si la página está en estado de carga, mostrando un indicador de carga. |
+| menuTop                  | ReactNode      | no        | undefined | Elemento del menú superior dentro del layout.                                 |
+| menuLeft                 | ReactNode      | no        | undefined | Elemento del menú lateral izquierdo dentro del layout.                        |
+| menuLeftActive           | boolean        | no        | true      | Indica si el menú lateral izquierdo está activo.                              |
+| menuLeftMovilActive      | boolean        | no        | false     | Indica si el menú lateral izquierdo está activo en dispositivos móviles.      |
+| useHeaderButtonMenu      | boolean        | no        | false     | Indica si el botón del menú en el header está habilitado.                     |
+| usePageProgress          | boolean        | no        | true      | Indica si se debe mostrar la barra de progreso de la página.                  |
+| className                | string         | no        | ''        | Clase CSS personalizada para el contenedor del layout.                        |
+| classNameLoader          | string         | no        | ''        | Clase CSS personalizada para el indicador de carga.                           |
+| classNameChildren        | string         | no        | ''        | Clase CSS personalizada para el contenido de los hijos.                       |
+| classNameMenuTop         | string         | no        | ''        | Clase CSS personalizada para el menú superior.                                |
+| classNameMenuLeft        | string         | no        | ''        | Clase CSS personalizada para el menú lateral izquierdo.                       |
+| classNameMenuLeftContent | string         | no        | ''        | Clase CSS personalizada para el contenido del menú lateral izquierdo.         |
 
 ### Storybook
 
@@ -36,27 +36,32 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Básico
+-   Básico
 
 ```tsx copy
 <LayoutGridMenuTopLeft />
 ```
 
-- Con menú superior y lateral
+-   Con menú superior y lateral
 
 ```tsx copy
-<LayoutGridMenuTopLeft menuTop={<div>Menú Top</div>} menuLeft={<div>Menú Izquierdo</div>} />
+<LayoutGridMenuTopLeft
+    menuTop={<div>Menú Top</div>}
+    menuLeft={<div>Menú Izquierdo</div>}
+/>
 ```
 
-- Con barra de progreso deshabilitada
+-   Con barra de progreso deshabilitada
 
 ```tsx copy
 <LayoutGridMenuTopLeft usePageProgress={false} />
 ```
 
-- Con alertas personalizadas
+-   Con alertas personalizadas
 
 ```tsx copy
-<LayoutGridMenuTopLeft useAlertHook={true} alertHookProps={{ message: 'Alerta' }} />
+<LayoutGridMenuTopLeft
+    useAlertHook={true}
+    alertHookProps={{ message: "Alerta" }}
+/>
 ```
-

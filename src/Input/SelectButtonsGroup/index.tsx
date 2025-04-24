@@ -1,6 +1,5 @@
 import React, { useCallback, useMemo } from "react";
-import {InputSelectMultipleTProps
-} from "../SelectMultipleT";
+import { InputSelectMultipleTProps } from "../SelectMultipleT";
 import { InputSelectItemOptionBaseProps } from "../Select";
 import { useData } from "fenextjs-hook/cjs/useData";
 import { InputSelectOption } from "../SelectOption";
@@ -12,7 +11,7 @@ import { ErrorComponent } from "../../Error";
  */
 export interface InputSelectButtonsGroupClassProps
     extends Pick<
-    InputSelectMultipleTProps<any>,
+        InputSelectMultipleTProps<any>,
         "classNameLabel" | "classNameError"
     > {
     /**
@@ -31,7 +30,7 @@ export interface InputSelectButtonsGroupClassProps
  */
 export interface InputSelectButtonsGroupBaseProps<T = any>
     extends Pick<
-    InputSelectMultipleTProps<T>,
+        InputSelectMultipleTProps<T>,
         | "onParse"
         | "onChange"
         | "value"
@@ -79,18 +78,21 @@ export const InputSelectButtonsGroup = <T = any,>({
     isMultiple = false,
     _t: _tProps,
     useT,
-    onParse
+    onParse,
 }: InputSelectButtonsGroupProps<T>) => {
     const { _t } = use_T({ _t: _tProps, useT });
     const { data, setData, setDataFunction } = useData<
-    InputSelectItemOptionBaseProps<T>[]
+        InputSelectItemOptionBaseProps<T>[]
     >(defaultValue?.map(onParse), {
         onChangeDataAfter: (e) => {
             onChange?.(e?.map((e) => e.data as T));
         },
     });
 
-    const dataMemo = useMemo(() => value ? (value?.map(onParse)) :  data, [data, value]);
+    const dataMemo = useMemo(
+        () => (value ? value?.map(onParse) : data),
+        [data, value],
+    );
 
     const onAddItemSelect = useCallback(
         (newItem: InputSelectItemOptionBaseProps<T> | undefined) => {
@@ -165,9 +167,9 @@ export const InputSelectButtonsGroup = <T = any,>({
                         );
                     })}
                 </div>
-                {(error) && (
+                {error && (
                     <ErrorComponent
-                        error={ error}
+                        error={error}
                         className={`fenext-input-error ${classNameError}`}
                         _t={_t}
                     />
