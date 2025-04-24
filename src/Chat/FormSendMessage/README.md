@@ -12,13 +12,13 @@ import { ChatFormSendMessage } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| onSubmit | RequestProps\<ChatFormSendMessageDataProps, RequestResultProps\> | no |  | Función que se ejecuta al enviar el mensaje, recibiendo los datos del formulario como parámetros. |
-| loader | boolean | no | false | Indica si el formulario está en estado de carga, deshabilitando la interacción del usuario. |
-| useSubmitInEnter | boolean | no | true | Si se debe permitir el envío del mensaje presionando 'Enter'. |
-| btnChildren | ReactNode | no | Send | Contenido del botón para enviar el mensaje. |
-| placeholderMessage | string | no | Message | Texto de placeholder que se mostrará en el campo del mensaje. |
+| Parámetro          | Tipo                                                             | Requerido | Default | Descripcion                                                                                       |
+| ------------------ | ---------------------------------------------------------------- | --------- | ------- | ------------------------------------------------------------------------------------------------- |
+| onSubmit           | RequestProps\<ChatFormSendMessageDataProps, RequestResultProps\> | no        |         | Función que se ejecuta al enviar el mensaje, recibiendo los datos del formulario como parámetros. |
+| loader             | boolean                                                          | no        | false   | Indica si el formulario está en estado de carga, deshabilitando la interacción del usuario.       |
+| useSubmitInEnter   | boolean                                                          | no        | true    | Si se debe permitir el envío del mensaje presionando 'Enter'.                                     |
+| btnChildren        | ReactNode                                                        | no        | Send    | Contenido del botón para enviar el mensaje.                                                       |
+| placeholderMessage | string                                                           | no        | Message | Texto de placeholder que se mostrará en el campo del mensaje.                                     |
 
 ### Storybook
 
@@ -26,34 +26,27 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Formulario básico de enviar mensaje
+-   Formulario básico de enviar mensaje
 
 ```tsx copy
-
-<ChatFormSendMessage 
-    onSubmit={async (data) => { console.log(data); }}
+<ChatFormSendMessage
+    onSubmit={async (data) => {
+        console.log(data);
+    }}
 />
-            
 ```
 
-- Formulario con botón y placeholder personalizados
+-   Formulario con botón y placeholder personalizados
 
 ```tsx copy
-
-<ChatFormSendMessage 
+<ChatFormSendMessage
     btnChildren="Enviar"
     placeholderMessage="Escribe tu mensaje aquí"
 />
-            
 ```
 
-- Formulario sin envío con Enter
+-   Formulario sin envío con Enter
 
 ```tsx copy
-
-<ChatFormSendMessage 
-    useSubmitInEnter={false}
-/>
-            
+<ChatFormSendMessage useSubmitInEnter={false} />
 ```
-

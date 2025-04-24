@@ -32,7 +32,7 @@ const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", clas
                     });
                 }
             }, disabled: disabled, selected: selected, value: text },
-            type == "multiple" && (react_1.default.createElement(Checkbox_1.InputCheckbox, { classNameLabel: "fenext-select-option-checkbox", value: true })),
+            type == "multiple" && (react_1.default.createElement(Checkbox_1.InputCheckbox, { classNameLabel: "fenext-select-option-checkbox", value: selected })),
             img ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("img", { src: img, alt: text, className: `fenext-select-option-img ${classNameOptionImg}` }))) : (react_1.default.createElement(react_1.default.Fragment, null, imgComponent ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement(Img_1.Img, { ...imgComponent, className: `fenext-select-option-img ${classNameOptionImg} ${imgComponent.className}` }))) : (react_1.default.createElement(react_1.default.Fragment, null)))),

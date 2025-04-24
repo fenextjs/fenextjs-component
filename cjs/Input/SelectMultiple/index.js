@@ -57,7 +57,7 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
             react_1.default.createElement(Select_1.InputSelect, { ...props, onChange: onAddItemSelect, options: OPTIONS, error: props?.error ?? errorFenextVD ?? error, isSelectClearText: true, showOptionIconImg: false, useTOption: useTOption, isChange: true }),
             react_1.default.createElement("div", { className: `fenext-select-multiple-list ${classNameSelectMultipleList} ` }, dataMemo.map((option) => {
                 const OptionTag = CustomOptionsSelected ?? (SelectOption_1.InputSelectOption);
-                return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete, disabled: props?.disabled ?? option?.disabled, useT: useTOption }));
+                return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", onDelete: onRemoveItemSelect, iconDelete: option?.iconDelete ?? iconDelete, disabled: props?.disabled ?? option?.disabled, useT: useTOption, selected: true }));
             })))));
 };
 exports.InputSelectMultiple = InputSelectMultiple;

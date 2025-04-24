@@ -9,6 +9,7 @@ tslib_1.__exportStar(require("./File"), exports);
 tslib_1.__exportStar(require("./Number"), exports);
 tslib_1.__exportStar(require("./Checkbox"), exports);
 tslib_1.__exportStar(require("./Select"), exports);
+tslib_1.__exportStar(require("./SelectButtonsGroup"), exports);
 tslib_1.__exportStar(require("./SelectCountry"), exports);
 tslib_1.__exportStar(require("./SelectCountryMultiple"), exports);
 tslib_1.__exportStar(require("./SelectState"), exports);

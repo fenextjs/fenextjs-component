@@ -12,7 +12,11 @@ import { ErrorComponent } from "../../Error";
 /**
  * Interface that defines CSS class properties for a select-multiple input component.
  */
-export interface InputSelectButtonsGroupClassProps extends Pick<InputSelectMultipleClassProps, "classNameLabel" | "classNameError"> {
+export interface InputSelectButtonsGroupClassProps
+    extends Pick<
+        InputSelectMultipleClassProps,
+        "classNameLabel" | "classNameError"
+    > {
     /**
      * CSS class name for the input select-multiple.
      */
@@ -30,9 +34,23 @@ export interface InputSelectButtonsGroupClassProps extends Pick<InputSelectMulti
 export interface InputSelectButtonsGroupBaseProps<T = any>
     extends Pick<
         InputSelectMultipleBaseProps<T>,
-        "onChange" | "onChangeData" | "value" | "defaultValue" | "options" | "validator" | "validatorData" | "CustomOptionsSelected" | "useTOption" | "label" | "optional" | "optionalText" | "required" | "disabled" | "requiredText" |
-        "_t" | "useT"
-
+        | "onChange"
+        | "onChangeData"
+        | "value"
+        | "defaultValue"
+        | "options"
+        | "validator"
+        | "validatorData"
+        | "CustomOptionsSelected"
+        | "useTOption"
+        | "label"
+        | "optional"
+        | "optionalText"
+        | "required"
+        | "disabled"
+        | "requiredText"
+        | "_t"
+        | "useT"
     > {
     isMultiple?: boolean;
 }
@@ -41,7 +59,7 @@ export interface InputSelectButtonsGroupBaseProps<T = any>
  */
 export interface InputSelectButtonsGroupProps<T = any>
     extends InputSelectButtonsGroupBaseProps<T>,
-    InputSelectButtonsGroupClassProps { }
+        InputSelectButtonsGroupClassProps {}
 
 export const InputSelectButtonsGroup = <T = any,>({
     classNameSelectButtonsGroup = "",
@@ -65,7 +83,7 @@ export const InputSelectButtonsGroup = <T = any,>({
     requiredText = "*",
     isMultiple = false,
     _t: _tProps,
-    useT
+    useT,
 }: InputSelectButtonsGroupProps<T>) => {
     const { _t } = use_T({ _t: _tProps, useT });
     const { data, setData, setDataFunction } = useData<
@@ -97,7 +115,6 @@ export const InputSelectButtonsGroup = <T = any,>({
         },
         [dataMemo],
     );
-
 
     const { error: errorFenextVD } = useValidator({
         data: dataMemo?.map((e) => e?.data),
@@ -145,7 +162,10 @@ export const InputSelectButtonsGroup = <T = any,>({
                             <OptionTag
                                 {...option}
                                 type={"multiple"}
-                                selected={dataMemo?.find((e) => e.id == option.id) !== undefined}
+                                selected={
+                                    dataMemo?.find((e) => e.id == option.id) !==
+                                    undefined
+                                }
                                 onClick={onAddItemSelect}
                                 disabled={disabled ?? option?.disabled}
                                 useT={useTOption}

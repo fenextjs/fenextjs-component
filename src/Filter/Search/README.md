@@ -12,13 +12,13 @@ import { FilterSearch } from "fenextjs";
 
 ### Parámetros
 
-| Parámetro | Tipo | Requerido | Default | Descripcion |
-| --------- | ---- | --------- | ------- | ----------- |
-| nameFilter | string | no | undefined | Nombre único para el filtro, utilizado en el contexto global. |
-| defaultValue | SearchDataProps | no | \{\} | Valor inicial del filtro de busqueda. |
-| onChange | (data: SearchDataProps) =\> void | no | undefined | Función que se ejecuta cuando cambia el valor del busqueda. |
-| className | string | no | '' | Clase CSS para personalizar el contenedor principal. |
-| classNameSearch | InputSearchClassProps | no | \{\} | Clase CSS para personalizar el InputSearch. |
+| Parámetro       | Tipo                             | Requerido | Default   | Descripcion                                                   |
+| --------------- | -------------------------------- | --------- | --------- | ------------------------------------------------------------- |
+| nameFilter      | string                           | no        | undefined | Nombre único para el filtro, utilizado en el contexto global. |
+| defaultValue    | SearchDataProps                  | no        | \{\}      | Valor inicial del filtro de busqueda.                         |
+| onChange        | (data: SearchDataProps) =\> void | no        | undefined | Función que se ejecuta cuando cambia el valor del busqueda.   |
+| className       | string                           | no        | ''        | Clase CSS para personalizar el contenedor principal.          |
+| classNameSearch | InputSearchClassProps            | no        | \{\}      | Clase CSS para personalizar el InputSearch.                   |
 
 ### Storybook
 
@@ -26,15 +26,14 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
 
 ### Usos
 
-- Básico
+-   Básico
 
 ```tsx copy
 <FilterSearch />
 ```
 
-- Con valores iniciales
+-   Con valores iniciales
 
 ```tsx copy
-<FilterSearch defaultValue={{ search:"" }} />
+<FilterSearch defaultValue={{ search: "" }} />
 ```
-
