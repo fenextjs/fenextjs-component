@@ -182,6 +182,7 @@ export const InputSelectMultiple = <T = any,>({
                                 iconDelete={option?.iconDelete ?? iconDelete}
                                 disabled={props?.disabled ?? option?.disabled}
                                 useT={useTOption}
+                                selected={true}
                             />
                         );
                     })}

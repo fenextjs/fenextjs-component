@@ -899,6 +899,7 @@ export const InputSelect = <T = any,>({
                                                     disabled={props?.disabled}
                                                     useT={useTOption}
                                                     classNameOption={`${classNameOption} ${dataMemo?.option?.classNameOption}`}
+                                                    selected={true}
                                                 />
                                             </div>
                                         </>
