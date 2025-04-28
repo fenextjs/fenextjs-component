@@ -29,7 +29,7 @@ export interface StepsCircleClassProps {
 /**
  * Properties for the class of the StepsCircle component.
  */
-export interface StepsCircleProps extends StepsCircleClassProps , _TProps{
+export interface StepsCircleProps extends StepsCircleClassProps, _TProps {
     items?: StepsCircleItemProps[];
 
     defaultStep?: number;
@@ -54,7 +54,7 @@ export const StepsCircle = ({
     items = [],
     ...props
 }: StepsCircleProps) => {
-    const {_t}=use_T({...props})
+    const { _t } = use_T({ ...props });
     const [step_, setStep] = useState(defaultStep ?? 0);
 
     const step = useMemo(() => valueStep ?? step_, [step_, valueStep]);

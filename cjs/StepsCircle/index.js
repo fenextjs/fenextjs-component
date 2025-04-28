@@ -4,7 +4,9 @@ exports.StepsCircle = void 0;
 const tslib_1 = require("tslib");
 const Line_1 = require("../Progress/Line");
 const react_1 = tslib_1.__importStar(require("react"));
-const StepsCircle = ({ className = "", classNameDisabled = "", classNameItem = "", classNameItemCircle = "", classNameItemContent = "", classNameItemActive = "", classNameItemActiveCircle = "", classNameItemActiveContent = "", classNameProgressLine = {}, defaultStep = undefined, valueStep = undefined, disabled = false, items = [], }) => {
+const fenextjs_hook_1 = require("fenextjs-hook");
+const StepsCircle = ({ className = "", classNameDisabled = "", classNameItem = "", classNameItemCircle = "", classNameItemContent = "", classNameItemActive = "", classNameItemActiveCircle = "", classNameItemActiveContent = "", classNameProgressLine = {}, defaultStep = undefined, valueStep = undefined, disabled = false, items = [], ...props }) => {
+    const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const [step_, setStep] = (0, react_1.useState)(defaultStep ?? 0);
     const step = (0, react_1.useMemo)(() => valueStep ?? step_, [step_, valueStep]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
@@ -32,7 +34,7 @@ const StepsCircle = ({ className = "", classNameDisabled = "", classNameItem = "
                             setStep(i);
                         } },
                         react_1.default.createElement("div", { className: `fenext-steps-circle-item-circle ${classNameItemCircle} ${active ? `${classNameItemActiveCircle}` : ""}` }, i + 1),
-                        react_1.default.createElement("div", { className: `fenext-steps-circle-item-content ${classNameItemContent} ${active ? `${classNameItemActiveContent}` : ""}` }, item?.children))));
+                        react_1.default.createElement("div", { className: `fenext-steps-circle-item-content ${classNameItemContent} ${active ? `${classNameItemActiveContent}` : ""}` }, _t(item?.children)))));
             }))));
 };
 exports.StepsCircle = StepsCircle;
