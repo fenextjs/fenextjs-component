@@ -218,7 +218,7 @@ export default {
         },
         {
             text: "Tabla con ordenación y cargador",
-            content: `<Table name="sortableTable" items={[{ id: 1, name: "Alpha" }, { id: 2, name: "Beta" }]} header={[{ id: "id", th: "ID", parse: (item) => \`#\${item}\` }, { id: "name", th: "Name" }]} loader={true} typeLoader="spinner" />`,
+            content: `<Table name="sortableTable" items={[{ id: 1, name: "Alpha" }, { id: 2, name: "Beta" }]} header={[{ id: "id", th: "ID", parse: (item,i) => \`#\${item}\` }, { id: "name", th: "Name" }]} loader={true} typeLoader="spinner" />`,
         },
 
         {
@@ -238,7 +238,7 @@ export default {
             collapseProps: { 
                 header:"Ver Archivos" 
             },
-            parse:(data)=>{
+            parse:(data,i)=>{
                 return <>
                     {
                         data.files.map(file=>\`Archivo: \${file}\`)
