@@ -1,13 +1,13 @@
 import React from "react";
 import { useFilter, usePagination } from "fenextjs-hook";
-import { InputSearch, InputSearchClassProps } from "../../Input/Search";
+import { InputSearch, InputSearchBaseProps, InputSearchClassProps } from "../../Input/Search";
 import { _TProps, SearchDataProps } from "fenextjs-interface";
 
 export interface FilterSearchClassProps {
     className?: string;
     classNameSearch?: InputSearchClassProps;
 }
-export interface FilterSearchProps extends FilterSearchClassProps, _TProps {
+export interface FilterSearchProps extends Omit<InputSearchBaseProps,"defaultValue"|"onChange">,FilterSearchClassProps, _TProps {
     defaultValue?: SearchDataProps;
     onChange?: (data: SearchDataProps) => void;
     nameFilter?: string;
