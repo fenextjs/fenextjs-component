@@ -113,7 +113,7 @@ export interface InputUploadClassProps {
  */
 export interface InputUploadProps
     extends InputUploadBaseProps,
-        InputUploadClassProps {}
+    InputUploadClassProps { }
 
 export const InputUpload = ({
     className = "",
@@ -177,15 +177,13 @@ export const InputUpload = ({
     return (
         <>
             <div
-                className={`fenext-input-upload ${className} ${
-                    progress > 0 && progress < 100
+                className={`fenext-input-upload ${className} ${progress > 0 && progress < 100
                         ? "fenext-input-upload-in-progress"
                         : ""
-                } ${
-                    data?.fileData && data?.fileData != ""
+                    } ${data?.fileData && data?.fileData != ""
                         ? "fenext-input-upload-ok"
                         : ""
-                } ${error ? "fenext-input-upload-error" : ""}`}
+                    } ${error ? "fenext-input-upload-error" : ""}`}
             >
                 {data.fileData && data.fileData != "" ? (
                     <>
@@ -227,7 +225,7 @@ export const InputUpload = ({
                                     <>{customPreview(data)}</>
                                 ) : (
                                     <TAGPREVIEW
-                                        src={data.fileData}
+                                        src={(data?.url && data?.url != '') ? data?.url : data.fileData}
                                         className={`fenext-input-upload-preview ${classNamePreview}`}
                                     />
                                 )}
