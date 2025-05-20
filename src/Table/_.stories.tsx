@@ -54,6 +54,7 @@ Index.args = {
             columnOptions: {
                 showHidden: true,
             },
+            // hidden:true
         },
         {
             id: "name",
