@@ -1,20 +1,62 @@
 .fenext-notification-pop {
+    --time: 4000ms;
+    --speed: 0.3s;
     position: fixed;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: min(100%, 20rem);
     margin: auto;
     z-index: var(--fenext-z-index-notification);
-    transition: 0.5s;
     transform: translateY(0%);
+    transition: var(--speed);
+    display: grid;
+    gap: 0.1rem;
     &-top {
         top: 0;
-        transform: translateY(-100%);
+        &:empty {
+            transform: translateY(-100%);
+        }
     }
     &-down {
         bottom: 0;
-        transform: translateY(100%);
+        display: flex;
+        flex-direction: column-reverse;
+        &:empty {
+            transform: translateY(100%);
+        }
     }
-    &-active {
-        transform: translateY(0%);
+    .fenext-notification {
+        transition: var(--speed);
+        transform: translateX(100%);
+        right: 0;
+        padding: .5rem 1rem;
+        min-height: 4lh;
+        display: flex;
+        align-items: center;
+        @keyframes fenext-notification-slide-in {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0%);
+            }
+        }
+
+        @keyframes fenext-notification-slide-out {
+            from {
+                transform: translateX(0%);
+            }
+            to {
+                transform: translateX(100%);
+                position: fixed;
+            }
+        }
+        animation:
+            fenext-notification-slide-in var(--speed) linear forwards,
+            fenext-notification-slide-out var(--speed) linear forwards;
+        animation-delay: 0s, calc(var(--time) - calc(2 * var(--speed)));
+
+        &-close{
+            display: none;
+        }
     }
 }

@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { CSSProperties, useEffect } from "react";
 import { NotificationClassProps, Notification } from "../Fixed";
 import {
     useNotification,
     useNotificationProps,
 } from "fenextjs-hook/cjs/useNotification";
+// } from "./a";
 import { _TProps } from "fenextjs-interface";
 
 /**
@@ -39,7 +40,7 @@ export const NotificationPop = ({
     classNamePop = "",
     className = "",
     typePop = "down",
-    time = 2000,
+    time = 4000,
     ...props
 }: NotificationPopProps) => {
     const { notification, reset } = useNotification({ time });
@@ -51,23 +52,32 @@ export const NotificationPop = ({
 
     return (
         <>
-            {notification && (
-                <div
-                    className={`
+            <div
+                className={`
                         fenext-notification-pop
                         fenext-notification-pop-${typePop}
-                        fenext-notification-pop-${notification?.message != "" ? "active" : ""}
                         ${classNamePop}
                     `}
-                >
-                    <Notification
-                        {...props}
-                        className={className}
-                        type={notification?.type}
-                        children={notification?.message}
-                    />
-                </div>
-            )}
+                style={
+                    {
+                        ["--time"]: `${time}ms`,
+                    } as CSSProperties
+                }
+            >
+                {(notification ?? []).map((e, i) => {
+                    return (
+                        <>
+                            <Notification
+                                key={i}
+                                {...props}
+                                className={className}
+                                type={e?.type}
+                                children={e?.message}
+                            />
+                        </>
+                    );
+                })}
+            </div>
         </>
     );
 };

@@ -3,7 +3,7 @@ import { StoryFn, Meta } from "@storybook/react";
 
 import { NotificationPop, NotificationPopProps } from "./index";
 import { Button } from "../../Button";
-import { useNotification } from "fenextjs-hook/cjs/useNotification";
+import { useNotification } from "fenextjs-hook";
 import { RequestResultTypeProps } from "fenextjs-interface/cjs/Request";
 
 export default {
