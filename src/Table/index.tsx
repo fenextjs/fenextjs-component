@@ -302,11 +302,19 @@ export const Table = <T,>({
     }, [checkboxItems]);
 
     const headerNotTr = useMemo(
-        () => header.filter((e) => (e.colNewTr !== true || e?.isCollapse) && (e.hidden!=true)),
+        () =>
+            header.filter(
+                (e) =>
+                    (e.colNewTr !== true || e?.isCollapse) && e.hidden != true,
+            ),
         [header],
     );
     const headerTr = useMemo(
-        () => header.filter((e) => (e.colNewTr === true || e?.isCollapse) && (e.hidden!=true)),
+        () =>
+            header.filter(
+                (e) =>
+                    (e.colNewTr === true || e?.isCollapse) && e.hidden != true,
+            ),
         [header],
     );
 
