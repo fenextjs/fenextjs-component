@@ -36,7 +36,9 @@
         &:has(.fenext-input-content-input:focus) {
             --box-shadow-color: var(--box-shadow-color-focus);
         }
-        &:has(.fenext-input-validator-status-error.fenext-input-validator-status-error) {
+        &:has(
+                .fenext-input-validator-status-error.fenext-input-validator-status-error
+            ) {
             --box-shadow-color: var(--box-shadow-color-error);
         }
         &:has(.fenext-input-content-input-show-focus-target:target) {
