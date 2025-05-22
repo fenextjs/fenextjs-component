@@ -30,9 +30,13 @@
         --box-shadow-color: var(--fenext-color-light);
         --box-shadow-color-error: var(--fenext-color-danger);
         --box-shadow-color-target: var(--fenext-color-secondary);
+        --box-shadow-color-focus: var(--fenext-color-primary);
         --box-shadow: inset 0px 0px 0px var(--box-shadow-size)
             var(--box-shadow-color);
-        &:has(.fenext-input-validator-status-error) {
+        &:has(.fenext-input-content-input:focus) {
+            --box-shadow-color: var(--box-shadow-color-focus);
+        }
+        &:has(.fenext-input-validator-status-error.fenext-input-validator-status-error) {
             --box-shadow-color: var(--box-shadow-color-error);
         }
         &:has(.fenext-input-content-input-show-focus-target:target) {
