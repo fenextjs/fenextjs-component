@@ -167,7 +167,8 @@ export const InputSelectMultiple = <T = any,>({
                     showOptionIconImg={false}
                     useTOption={useTOption}
                     isChange={true}
-                />
+                    extraInLabel={<>
+                    
                 <div
                     className={`fenext-select-multiple-list ${classNameSelectMultipleList} `}
                 >
@@ -187,6 +188,8 @@ export const InputSelectMultiple = <T = any,>({
                         );
                     })}
                 </div>
+                    </>}
+                />
             </div>
         </>
     );

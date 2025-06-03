@@ -25,6 +25,8 @@ const args: InputSelectMultipleProps = {
     // },
     // disabled:true,
     nItems:11,
+    typeSelect:"div",
+    
     maxLengthShowOptions:10,
     defaultValue:[
         {
@@ -95,7 +97,7 @@ const args: InputSelectMultipleProps = {
             text: "Option 11",
         },
     ],
-    typeSelectStyle:"normal",
+    typeSelectStyle:"box",
     typeSelectMultipleStyle:"checkbox",
 };
 
