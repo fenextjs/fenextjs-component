@@ -52,7 +52,7 @@ const InputSelectButtonsGroup = ({ classNameSelectButtonsGroup = "", classNameSe
                 const option = onParse(o);
                 const OptionTag = CustomOptionsSelected ?? (SelectOption_1.InputSelectOption);
                 return (react_1.default.createElement(OptionTag, { ...option, type: "multiple", selected: dataMemo?.find((e) => e.id == option.id) !==
-                        undefined, onClick: onAddItemSelect, disabled: disabled ?? option?.disabled, useT: useTOption }));
+                        undefined, onClick: onAddItemSelect, disabled: disabled ?? option?.disabled, useT: useTOption, _t: _t }));
             })),
             error && (react_1.default.createElement(Error_1.ErrorComponent, { error: error, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
