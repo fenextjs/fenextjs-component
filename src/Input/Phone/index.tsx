@@ -265,6 +265,7 @@ export const InputPhone = ({
                             text: "...",
                         }}
                         maxLengthShowOptions={maxLengthShowOptionsCodes}
+                        useTOption={false}
                     />
                 </div>
                 <div
