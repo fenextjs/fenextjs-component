@@ -399,7 +399,7 @@ body:has(.fenext-select.hover:hover),
 body:has(.fenext-select.focus .fenext-input-content-input:focus),
 body:has(.fenext-select.focus-hover:hover),
 body:has(.fenext-select.focus-hover .fenext-input-content-input:focus) {
-    #fenext-select {
+    [id^="fenext-select"] {
         --list-scaleY: 1;
     }
 }
@@ -418,7 +418,7 @@ body:not(
             .fenext-select-use-swich-select-style.focus-hover
                 .fenext-input-content-input:focus
         ) {
-        #fenext-select {
+        [id^="fenext-select"] {
             display: none;
         }
     }

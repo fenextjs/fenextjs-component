@@ -66,6 +66,7 @@ export interface InputSelectBaseProps<T = any>
         | "onEnter"
         | "onChangeValidate"
     > {
+        idSelectOptions?:string
     /**
      * Options of select.
      */
@@ -234,6 +235,7 @@ export const InputSelect = <T = any,>({
     classNameSelect = "",
     classNameList = "",
     classNameOption = "",
+    idSelectOptions,
 
     error = undefined,
     options: optionsProps = [],
@@ -713,6 +715,7 @@ export const InputSelect = <T = any,>({
     ]);
 
     const { onLoadPos, onLoadChildren } = useSelectOptionsPos({
+        idSelectOptions,
         children: CHILDREN_SELECT,
         target: selectRef?.current?.querySelector?.(
             "input.fenext-input-content-input",

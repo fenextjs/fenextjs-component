@@ -26,6 +26,7 @@ export const Index = Profile.bind({});
 
 
 const args: InputSelectProps = {
+    idSelectOptions:"s",
     id: "select",
     showFocusInTarget:true,
     name: "select",
@@ -42,13 +43,13 @@ const args: InputSelectProps = {
             text: "Option 1",
             // children: <>Option 1</>,
             disabled:true,
-            img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
+            // img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
         },
         {
             id: "2",
             text: "Option 2",
             // children: <>Option 2</>,
-            img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
+            // img:"https://www.aerocivil.gov.co/Style%20Library/CEA/img/01.jpg"
         },
         {
             id: "3",

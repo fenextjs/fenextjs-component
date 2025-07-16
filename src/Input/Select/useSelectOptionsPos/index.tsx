@@ -2,18 +2,20 @@ import React, { ReactNode, useCallback, useEffect, useState } from "react";
 import * as ReactDOM from "react-dom";
 
 export interface useSelectOptionsPosProps {
+    idSelectOptions?:string
     children?: ReactNode;
     target?: HTMLElement | null | undefined;
 }
 
 export const useSelectOptionsPos = ({
+    idSelectOptions,
     children,
     target,
 }: useSelectOptionsPosProps) => {
     const [ref, setRef] = useState<HTMLElement | undefined>(undefined);
 
     const onLoadRef = () => {
-        const ID = "fenext-select";
+        const ID = `fenext-select${idSelectOptions ? `-${idSelectOptions}`:""}`;
         let ele = document.getElementById(ID);
         if (!ele) {
             ele = document.createElement("div");
