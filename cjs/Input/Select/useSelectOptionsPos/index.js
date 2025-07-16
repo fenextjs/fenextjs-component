@@ -4,10 +4,10 @@ exports.useSelectOptionsPos = void 0;
 const tslib_1 = require("tslib");
 const react_1 = tslib_1.__importStar(require("react"));
 const ReactDOM = tslib_1.__importStar(require("react-dom"));
-const useSelectOptionsPos = ({ children, target, }) => {
+const useSelectOptionsPos = ({ idSelectOptions, children, target, }) => {
     const [ref, setRef] = (0, react_1.useState)(undefined);
     const onLoadRef = () => {
-        const ID = "fenext-select";
+        const ID = `fenext-select${idSelectOptions ? `-${idSelectOptions}` : ""}`;
         let ele = document.getElementById(ID);
         if (!ele) {
             ele = document.createElement("div");

@@ -15,7 +15,7 @@ const fenextjs_hook_2 = require("fenextjs-hook");
 const fenextjs_svg_1 = require("fenextjs-svg");
 const Img_1 = require("../../Img");
 const useSelectOptionsPos_1 = require("./useSelectOptionsPos");
-const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption = "", error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(Arrow_1.SvgArrow, null), iconSearch = react_1.default.createElement(fenextjs_svg_1.SvgSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(Cancel_1.SvgCancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, converterInSearchWithMaxLenght = false, nItems = undefined, useSearch = true, useItemMaxLengthShowOptions = true, maxLengthShowOptions = 20, itemMaxLengthShowOptions = {
+const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption = "", idSelectOptions, error = undefined, options: optionsProps = [], showOptions = "focus", hiddenOptions = "not-hover", defaultValue = undefined, typeSelect = "div", typeSelectStyle = "normal", value = undefined, onChange, onChangeData, onChangeText, onChangeValidate, icon = react_1.default.createElement(Arrow_1.SvgArrow, null), iconSearch = react_1.default.createElement(fenextjs_svg_1.SvgSearch, null), noResult, loaderOption, selected, create, onCreate, isSelectClearText = false, iconCloseMovil = react_1.default.createElement(Cancel_1.SvgCancel, null), filterOptions = undefined, clearContent = "Clear", isSelectChangeText = true, errorWithIsChange = true, validator, searchById = false, useSwichtypeSelectStyle = false, changeByFirstOptionInOnBlur = false, converterInSearchWithMaxLenght = false, nItems = undefined, useSearch = true, useItemMaxLengthShowOptions = true, maxLengthShowOptions = 20, itemMaxLengthShowOptions = {
     id: "fenext-item-max-length-show-options",
     text: "There are more elements ...",
 }, showOptionIconImg = true, validatorData, useTOption, forceShowOptionOnLoad = false, iconDelete = react_1.default.createElement(fenextjs_svg_1.SvgTrash, null), ...props }) => {
@@ -280,6 +280,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
         selectRef,
     ]);
     const { onLoadPos, onLoadChildren } = (0, useSelectOptionsPos_1.useSelectOptionsPos)({
+        idSelectOptions,
         children: CHILDREN_SELECT,
         target: selectRef?.current?.querySelector?.("input.fenext-input-content-input"),
     });

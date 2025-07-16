@@ -66,7 +66,7 @@ export interface InputSelectBaseProps<T = any>
         | "onEnter"
         | "onChangeValidate"
     > {
-        idSelectOptions?:string
+    idSelectOptions?: string;
     /**
      * Options of select.
      */
