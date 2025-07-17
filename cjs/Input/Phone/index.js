@@ -64,11 +64,15 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
                 required && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement("small", { className: "fenext-input-required" }, _t(requiredText))))),
             react_1.default.createElement("div", { className: `fenext-input-phone-code ${classNamePhoneCode}` },
-                react_1.default.createElement(SelectT_1.InputSelectT, { ...classNameSelectCode, classNameList: `fenext-input-phone-select-code ${classNameSelectCode?.classNameList ?? ""}`, key: `${defaultValue?.code_country}-${defaultValue?.code}-${value?.code}-${phones.length}`, placeholder: placeholderCode, _t: _t, options: phones, onParse: (e) => {
+                react_1.default.createElement(SelectT_1.InputSelectT, { ...classNameSelectCode, classNameList: `fenext-input-phone-select-code ${classNameSelectCode?.classNameList ?? ""}`, key: `${defaultValue?.code_country}-${defaultValue?.code}-${value?.code}-${phones.length}`, placeholder: placeholderCode, _t: _t, useNowrap: true, options: phones, onParse: (e) => {
                         return {
                             id: e?.code_phone ?? "",
-                            text: e?.code_phone ?? "",
+                            text: `${e?.code_phone ?? ""}`,
                             data: e,
+                            children: (react_1.default.createElement(react_1.default.Fragment, null,
+                                react_1.default.createElement("div", { className: "fenext-input-phone-option-country" },
+                                    react_1.default.createElement("span", { className: "fenext-input-phone-option-country-code" }, e?.code_phone),
+                                    react_1.default.createElement("span", { className: "fenext-input-phone-option-country-text" }, e?.text)))),
                             img: e ? `${(0, country_state_city_nextjs_1.getRuteCountryImg)(e)}` : undefined,
                         };
                     }, disabled: !loadPhoneCodes || disabled || disabledSelectCode, defaultValue: getCountryPhone(defaultValue), value: getCountryPhone(value), onChange: (e) => {

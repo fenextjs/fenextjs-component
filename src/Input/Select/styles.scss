@@ -104,8 +104,7 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
                 margin-top: 0.5rem;
                 overflow: auto;
                 z-index: 1;
-                &.fenext-select-list-options-use-nowrap{
-
+                &.fenext-select-list-options-use-nowrap {
                 }
                 .fenext-select {
                     &-option {
@@ -331,10 +330,10 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
     top: var(--element-bottom);
     left: var(--element-left);
 
-    &:has(.fenext-select-list-options-use-nowrap){
+    &:has(.fenext-select-list-options-use-nowrap) {
         min-width: var(--element-width);
         width: auto !important;
-        .fenext-select-list-options{
+        .fenext-select-list-options {
             width: auto;
         }
     }

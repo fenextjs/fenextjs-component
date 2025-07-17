@@ -218,7 +218,7 @@ export interface InputSelectBaseProps<T = any>
      */
     useSearch?: boolean;
     /**
-     * 
+     *
      */
     useNowrap?: boolean;
 }
@@ -273,7 +273,7 @@ export const InputSelect = <T = any,>({
     converterInSearchWithMaxLenght = false,
     nItems = undefined,
     useSearch = true,
-    useNowrap=false,
+    useNowrap = false,
 
     useItemMaxLengthShowOptions = true,
     maxLengthShowOptions = 20,
@@ -523,7 +523,7 @@ export const InputSelect = <T = any,>({
             <>
                 <TAG
                     id={props?.datalist}
-                    className={`fenext-select-list-options fenext-select-list-options-type-${typeSelect} ${useNowrap?"fenext-select-list-options-use-nowrap":""} ${classNameList}`}
+                    className={`fenext-select-list-options fenext-select-list-options-type-${typeSelect} ${useNowrap ? "fenext-select-list-options-use-nowrap" : ""} ${classNameList}`}
                     onChange={(e) => {
                         onChangeText_(e?.target?.value);
                     }}
