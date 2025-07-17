@@ -34,4 +34,12 @@
             max-width: 1.5rem;
         }
     }
+    &-option{
+        &-country{
+            white-space: nowrap;
+            display: grid;
+            grid-template-columns: 2.2rem 1fr;
+            gap: .5rem;
+        }
+    }
 }

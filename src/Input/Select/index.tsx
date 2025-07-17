@@ -217,6 +217,10 @@ export interface InputSelectBaseProps<T = any>
      * Use component to search when user types on text field.
      */
     useSearch?: boolean;
+    /**
+     * 
+     */
+    useNowrap?: boolean;
 }
 /**
  * Props interface for the InputSelect component. Extends both InputSelectBaseProps and InputSelectClassProps interfaces.
@@ -269,6 +273,7 @@ export const InputSelect = <T = any,>({
     converterInSearchWithMaxLenght = false,
     nItems = undefined,
     useSearch = true,
+    useNowrap=false,
 
     useItemMaxLengthShowOptions = true,
     maxLengthShowOptions = 20,
@@ -518,7 +523,7 @@ export const InputSelect = <T = any,>({
             <>
                 <TAG
                     id={props?.datalist}
-                    className={`fenext-select-list-options fenext-select-list-options-type-${typeSelect}  ${classNameList}`}
+                    className={`fenext-select-list-options fenext-select-list-options-type-${typeSelect} ${useNowrap?"fenext-select-list-options-use-nowrap":""} ${classNameList}`}
                     onChange={(e) => {
                         onChangeText_(e?.target?.value);
                     }}

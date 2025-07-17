@@ -104,6 +104,9 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
                 margin-top: 0.5rem;
                 overflow: auto;
                 z-index: 1;
+                &.fenext-select-list-options-use-nowrap{
+
+                }
                 .fenext-select {
                     &-option {
                         border-radius: 0.75rem;
@@ -327,6 +330,14 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
 
     top: var(--element-bottom);
     left: var(--element-left);
+
+    &:has(.fenext-select-list-options-use-nowrap){
+        min-width: var(--element-width);
+        width: auto !important;
+        .fenext-select-list-options{
+            width: auto;
+        }
+    }
 
     .fenext-select-list-options {
         max-height: calc(100dvh - var(--element-bottom) - 0.5rem);

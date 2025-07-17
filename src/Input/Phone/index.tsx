@@ -96,7 +96,7 @@ export interface InputPhoneBaseProps
  */
 export interface InputPhoneProps
     extends InputPhoneBaseProps,
-        InputPhoneClassProps {}
+    InputPhoneClassProps { }
 
 /**
  * Component that renders a checkbox input.
@@ -221,12 +221,19 @@ export const InputPhone = ({
                         key={`${defaultValue?.code_country}-${defaultValue?.code}-${value?.code}-${phones.length}`}
                         placeholder={placeholderCode}
                         _t={_t}
+                        useNowrap={true}
                         options={phones}
                         onParse={(e) => {
                             return {
                                 id: e?.code_phone ?? "",
-                                text: e?.code_phone ?? "",
+                                text: `${e?.code_phone ?? ""}`,
                                 data: e,
+                                children: (<>
+                                        <div className="fenext-input-phone-option-country">
+                                            <span className="fenext-input-phone-option-country-code">{e?.code_phone}</span>
+                                            <span className="fenext-input-phone-option-country-text">{e?.text}</span>
+                                        </div>
+                                </>),
                                 img: e ? `${getRuteCountryImg(e)}` : undefined,
                             };
                         }}
