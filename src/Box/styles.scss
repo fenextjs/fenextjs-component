@@ -1,6 +1,7 @@
 :root {
     --fenext-box-padding: 1rem;
     --fenext-box-border-radius: 1rem;
+    --fenext-box-background: var(--fenext-color-white);
     --fenext-box-color: var(--fenext-color-dark);
     --fenext-box-box-shadow: 0 0 5px 0 var(--fenext-color-gray);
     --fenext-box-font-family: var(--fenext-font-global);
@@ -9,6 +10,7 @@
 .fenext-box {
     padding: var(--fenext-box-padding);
     border-radius: var(--fenext-box-border-radius);
+    background: var(--fenext-box-background);
     color: var(--fenext-box-color);
     box-shadow: var(--fenext-box-box-shadow);
     font-family: var(--fenext-font-global);
