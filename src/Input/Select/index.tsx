@@ -291,7 +291,7 @@ export const InputSelect = <T = any,>({
     forceShowOptionOnLoad = false,
     iconDelete = <SvgTrash />,
     name,
-    useIdForValue =false,
+    useIdForValue = false,
     ...props
 }: InputSelectProps<T>) => {
     const { _t } = use_T({ ...props });

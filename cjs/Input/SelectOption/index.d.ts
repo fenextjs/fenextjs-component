@@ -21,7 +21,8 @@ export interface InputSelectOptionBaseProps<T = any> extends PropsWithChildren, 
     isBtn?: boolean;
     data?: T;
     iconDelete?: ReactNode;
+    useIdForValue?: boolean;
 }
 export interface InputSelectOptionProps<T = any> extends InputSelectOptionBaseProps<T>, InputSelectOptionClassProps {
 }
-export declare const InputSelectOption: <T = any>({ classNameOption, classNameOptionImg, classNameOptionDelete, id, text, img, imgComponent, icon, children, type, onClick, onDelete, disabled, selected, hidden, isBtn, data, iconDelete, ...props }: InputSelectOptionProps<T>) => React.JSX.Element;
+export declare const InputSelectOption: <T = any>({ classNameOption, classNameOptionImg, classNameOptionDelete, id, text, img, imgComponent, icon, children, type, onClick, onDelete, disabled, selected, hidden, isBtn, data, iconDelete, useIdForValue, ...props }: InputSelectOptionProps<T>) => React.JSX.Element;

@@ -84,7 +84,7 @@ export interface InputSelectOptionBaseProps<T = any>
      * @default <Trash />
      */
     iconDelete?: ReactNode;
-    useIdForValue?:boolean
+    useIdForValue?: boolean;
 }
 /**
  * Props interface for the InputSelectOption component. Extends both InputSelectOptionBaseProps and InputSelectOptionClassProps interfaces.

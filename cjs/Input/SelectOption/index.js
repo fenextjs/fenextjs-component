@@ -7,7 +7,7 @@ const Trash_1 = require("fenextjs-svg/cjs/Trash");
 const fenextjs_hook_1 = require("fenextjs-hook");
 const Img_1 = require("../../Img");
 const Checkbox_1 = require("../Checkbox");
-const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", classNameOptionDelete = "", id, text, img = undefined, imgComponent = undefined, icon = undefined, children, type = "div", onClick, onDelete, disabled = false, selected = false, hidden = false, isBtn = false, data, iconDelete = react_1.default.createElement(Trash_1.SvgTrash, null), ...props }) => {
+const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", classNameOptionDelete = "", id, text, img = undefined, imgComponent = undefined, icon = undefined, children, type = "div", onClick, onDelete, disabled = false, selected = false, hidden = false, isBtn = false, data, iconDelete = react_1.default.createElement(Trash_1.SvgTrash, null), useIdForValue = false, ...props }) => {
     const { _t } = (0, fenextjs_hook_1.use_T)({ ...props });
     const TAG = type == "option" ? "option" : "div";
     return (react_1.default.createElement(react_1.default.Fragment, null,
@@ -31,7 +31,7 @@ const InputSelectOption = ({ classNameOption = "", classNameOptionImg = "", clas
                         imgComponent,
                     });
                 }
-            }, disabled: disabled, selected: selected, value: text },
+            }, disabled: disabled, selected: selected, value: useIdForValue ? id : text },
             type == "multiple" && (react_1.default.createElement(Checkbox_1.InputCheckbox, { classNameLabel: "fenext-select-option-checkbox", value: selected })),
             img ? (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement("img", { src: img, alt: text, className: `fenext-select-option-img ${classNameOptionImg}` }))) : (react_1.default.createElement(react_1.default.Fragment, null, imgComponent ? (react_1.default.createElement(react_1.default.Fragment, null,
