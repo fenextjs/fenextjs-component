@@ -652,6 +652,7 @@ export const InputSelect = <T = any,>({
         props.loader,
         loaderOption,
         selectRef,
+        useIdForValue,
     ]);
 
     const [isFocus, setIsFocus] = useState(false);

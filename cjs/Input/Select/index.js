@@ -243,6 +243,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
         props.loader,
         loaderOption,
         selectRef,
+        useIdForValue,
     ]);
     const [isFocus, setIsFocus] = (0, react_1.useState)(false);
     const CHILDREN_SELECT = (0, react_1.useMemo)(() => {
