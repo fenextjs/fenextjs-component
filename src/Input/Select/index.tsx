@@ -106,6 +106,10 @@ export interface InputSelectBaseProps<T = any>
      */
     useTOption?: boolean;
     /**
+     * useIdForValue.
+     */
+    useIdForValue?: boolean;
+    /**
      * Value Options of select.
      */
     value?: InputSelectItemOptionBaseProps<T>;
@@ -287,6 +291,7 @@ export const InputSelect = <T = any,>({
     forceShowOptionOnLoad = false,
     iconDelete = <SvgTrash />,
     name,
+    useIdForValue =false,
     ...props
 }: InputSelectProps<T>) => {
     const { _t } = use_T({ ...props });
@@ -560,6 +565,7 @@ export const InputSelect = <T = any,>({
                                 children={selected?.children ?? undefined}
                                 _t={_t}
                                 useT={useTOption}
+                                useIdForValue={useIdForValue}
                             />
                         </>
                     ) : (

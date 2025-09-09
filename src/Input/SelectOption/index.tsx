@@ -84,6 +84,7 @@ export interface InputSelectOptionBaseProps<T = any>
      * @default <Trash />
      */
     iconDelete?: ReactNode;
+    useIdForValue?:boolean
 }
 /**
  * Props interface for the InputSelectOption component. Extends both InputSelectOptionBaseProps and InputSelectOptionClassProps interfaces.
@@ -112,6 +113,7 @@ export const InputSelectOption = <T = any,>({
     isBtn = false,
     data,
     iconDelete = <SvgTrash />,
+    useIdForValue = false,
     ...props
 }: InputSelectOptionProps<T>) => {
     const { _t } = use_T({ ...props });
@@ -146,7 +148,7 @@ export const InputSelectOption = <T = any,>({
                 }}
                 disabled={disabled}
                 selected={selected}
-                value={text}
+                value={useIdForValue ? id : text}
             >
                 {type == "multiple" && (
                     <InputCheckbox
