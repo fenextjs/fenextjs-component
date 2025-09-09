@@ -208,7 +208,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
                     onChangeText_(e?.target?.value);
                 }, key: props.loader ? "loader" : "load" },
                 create && typeSelect == "div" ? (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(SelectOption_1.InputSelectOption, { type: "div", id: create?.id ?? "create", text: create?.text ?? "Create", children: create?.children ?? undefined, _t: _t, isBtn: true, onClick: create?.onClick ?? onCreate, classNameOption: `${classNameOption} ${create?.classNameOption}` }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
+                    react_1.default.createElement(SelectOption_1.InputSelectOption, { type: "div", id: create?.id ?? "create", text: create?.text ?? "Create", children: create?.children ?? undefined, _t: _t, isBtn: true, onClick: create?.onClick ?? onCreate, classNameOption: `${classNameOption} ${create?.classNameOption}`, useIdForValue: useIdForValue }))) : (react_1.default.createElement(react_1.default.Fragment, null)),
                 OPTIONSLENGTH != 0 && typeSelect == "select" ? (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(SelectOption_1.InputSelectOption, { type: "option", id: noResult?.id ?? "selected", text: _t(selected?.text ??
                             props?.placeholder ??
@@ -218,7 +218,7 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
                             data.option?.id === option?.id, ...option, classNameOption: `${classNameOption} ${option?.classNameOption}`, onClick: (e) => {
                             onChangeOption(e);
                             option?.onClick?.(e);
-                        }, type: typeSelect == "div" ? "div" : "option", _t: _t, useT: useTOption }));
+                        }, type: typeSelect == "div" ? "div" : "option", _t: _t, useT: useTOption, useIdForValue: useIdForValue }));
                 }),
                 props.loader ? (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(SelectOption_1.InputSelectOption, { type: typeSelect == "div" ? "div" : "option", id: loaderOption?.id ?? "loader", text: loaderOption?.text ?? "Loading", children: loaderOption?.children ?? undefined, classNameOption: `${classNameOption} fenext-select-option-loading`, _t: _t, useT: useTOption, disabled: true }))) : (react_1.default.createElement(react_1.default.Fragment, null, OPTIONSLENGTH == 0 ? (react_1.default.createElement(react_1.default.Fragment, null,

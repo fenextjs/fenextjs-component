@@ -547,6 +547,7 @@ export const InputSelect = <T = any,>({
                                 isBtn={true}
                                 onClick={create?.onClick ?? onCreate}
                                 classNameOption={`${classNameOption} ${create?.classNameOption}`}
+                                useIdForValue={useIdForValue}
                             />
                         </>
                     ) : (
@@ -588,6 +589,7 @@ export const InputSelect = <T = any,>({
                                 type={typeSelect == "div" ? "div" : "option"}
                                 _t={_t}
                                 useT={useTOption}
+                                useIdForValue={useIdForValue}
                             />
                         );
                     })}

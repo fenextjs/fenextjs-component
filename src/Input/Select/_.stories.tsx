@@ -37,6 +37,8 @@ const args: InputSelectProps = {
     // typeSelectStyle:"normal-out",
     // forceShowOptionIfNotSelected:true,
     // _t:e=>"x",
+    typeSelect:"select",
+    useIdForValue:true,
     options: [
         {
             id: "1",
