@@ -51,7 +51,11 @@ export const InputGoogleLoadScript = ({
         <div className={`fenext-input-google-load-script ${className}`}>
             <LoadScript
                 {...props}
-                googleMapsApiKey={googleMapsApiKey ?? getProcessEnv("NEXT_PUBLIC_GOOGLE_KEY") ?? ""}
+                googleMapsApiKey={
+                    googleMapsApiKey ??
+                    getProcessEnv("NEXT_PUBLIC_GOOGLE_KEY") ??
+                    ""
+                }
                 libraries={["places", "geometry", "marker"]}
                 onError={() => {
                     setError(new ErrorGoogleKeyInvalid());
