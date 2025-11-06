@@ -3,6 +3,7 @@ import { LoadScript, LoadScriptProps } from "@react-google-maps/api";
 import { ErrorComponent } from "../../../Error";
 import { ErrorFenextjs, ErrorGoogleKeyInvalid } from "fenextjs-error";
 import { _TProps } from "fenextjs-interface";
+import { getProcessEnv } from "fenextjs-functions";
 
 /**
  * Properties for the base InputGoogleLoadScript component.
@@ -37,7 +38,7 @@ export interface InputGoogleLoadScriptProps
         InputGoogleLoadScriptClassProps {}
 
 export const InputGoogleLoadScript = ({
-    googleMapsApiKey = process.env["NEXT_PUBLIC_GOOGLE_KEY"],
+    googleMapsApiKey = undefined,
     children,
     className = "",
     _t,
@@ -50,7 +51,7 @@ export const InputGoogleLoadScript = ({
         <div className={`fenext-input-google-load-script ${className}`}>
             <LoadScript
                 {...props}
-                googleMapsApiKey={googleMapsApiKey ?? ""}
+                googleMapsApiKey={googleMapsApiKey ?? getProcessEnv("NEXT_PUBLIC_GOOGLE_KEY") ?? ""}
                 libraries={["places", "geometry", "marker"]}
                 onError={() => {
                     setError(new ErrorGoogleKeyInvalid());
