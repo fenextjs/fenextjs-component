@@ -25,4 +25,3 @@ const SwichViewSelect = ({ className = "", defaultValue = "fenext-swich-view-sel
     return (react_1.default.createElement(SwichViewList_1.SwichViewList, { ...props, name: "fenext-swich-view-select", className: `fenext-swich-view-select ${className}`, list: ITEMS, defaultValue: defaultValue }));
 };
 exports.SwichViewSelect = SwichViewSelect;
-//# sourceMappingURL=index.js.map

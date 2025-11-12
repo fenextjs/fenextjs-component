@@ -22,4 +22,3 @@ const Alert = ({ className = "", message, iconClose = react_1.default.createElem
                 } }, iconClose))));
 };
 exports.Alert = Alert;
-//# sourceMappingURL=index.js.map

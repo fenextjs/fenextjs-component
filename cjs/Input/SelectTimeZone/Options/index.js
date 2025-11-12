@@ -303,4 +303,3 @@ exports.TimeZoneList = [
         time: "(GMT+13:00) Nuku'alofa",
     },
 ];
-//# sourceMappingURL=index.js.map

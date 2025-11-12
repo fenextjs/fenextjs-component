@@ -25,4 +25,3 @@ const NotificationPop = ({ classNamePop = "", className = "", typePop = "down", 
         }))));
 };
 exports.NotificationPop = NotificationPop;
-//# sourceMappingURL=index.js.map

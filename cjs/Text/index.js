@@ -13,4 +13,3 @@ const Text = ({ className = "", tag = "p", loader = false, children, nLineLoader
             react_1.default.createElement("div", { className: "fenext-text-loader" }, new Array(nLineLoader).fill(react_1.default.createElement(Line_1.LoaderLine, null))))) : (react_1.default.createElement(react_1.default.Fragment, null, _t(children))))));
 };
 exports.Text = Text;
-//# sourceMappingURL=index.js.map

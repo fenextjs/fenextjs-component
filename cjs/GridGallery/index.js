@@ -12,4 +12,3 @@ const GridGallery = ({ className = "", classNameItem = "", items, ...props }) =>
         }))));
 };
 exports.GridGallery = GridGallery;
-//# sourceMappingURL=index.js.map

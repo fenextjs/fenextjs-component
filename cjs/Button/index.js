@@ -29,4 +29,3 @@ const Button = ({ className = "", classNameLoader = "", classNameInvert = "", cl
             _t(children))));
 };
 exports.Button = Button;
-//# sourceMappingURL=index.js.map

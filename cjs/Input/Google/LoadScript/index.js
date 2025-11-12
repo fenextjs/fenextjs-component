@@ -18,4 +18,3 @@ const InputGoogleLoadScript = ({ googleMapsApiKey = undefined, children, classNa
         error && react_1.default.createElement(Error_1.ErrorComponent, { error: error, _t: _t, useT: useT })));
 };
 exports.InputGoogleLoadScript = InputGoogleLoadScript;
-//# sourceMappingURL=index.js.map

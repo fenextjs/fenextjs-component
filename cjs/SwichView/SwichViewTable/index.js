@@ -20,4 +20,3 @@ const SwichViewTable = ({ className = "", defaultValue = "fenext-swich-view-tabl
     return (react_1.default.createElement(SwichViewList_1.SwichViewList, { ...props, name: "fenext-swich-view-table", className: `fenext-swich-view-table ${className}`, list: ITEMS, defaultValue: defaultValue }));
 };
 exports.SwichViewTable = SwichViewTable;
-//# sourceMappingURL=index.js.map

@@ -40,4 +40,3 @@ const ScheduleDay = ({ className = "", defaultValue = [[undefined, undefined]], 
                 react_1.default.createElement(Button_1.Button, { ...ButtonProps, onClick: onAddTimeRange, _t: _t })))));
 };
 exports.ScheduleDay = ScheduleDay;
-//# sourceMappingURL=index.js.map

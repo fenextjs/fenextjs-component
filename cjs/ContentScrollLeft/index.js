@@ -11,4 +11,3 @@ const ContentScrollLeft = ({ className = "", classNameContent = "", children, ..
             react_1.default.createElement("div", { className: `fenext-content-scroll-left-content ${classNameContent}` }, _t(children)))));
 };
 exports.ContentScrollLeft = ContentScrollLeft;
-//# sourceMappingURL=index.js.map

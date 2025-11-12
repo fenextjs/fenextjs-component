@@ -60,4 +60,3 @@ const Share = ({ className = "", share = "", ButtonProps = {
                     react_1.default.createElement(Copy_2.Copy, { className: `fenext-share-copy`, text: share, _t: _t }, share)))))));
 };
 exports.Share = Share;
-//# sourceMappingURL=index.js.map

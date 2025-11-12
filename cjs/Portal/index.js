@@ -15,4 +15,3 @@ const Portal = ({ children, container }) => {
     return (0, react_dom_1.createPortal)(react_1.default.createElement(react_1.default.Fragment, null, children), container ?? document?.body);
 };
 exports.Portal = Portal;
-//# sourceMappingURL=index.js.map

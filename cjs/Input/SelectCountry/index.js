@@ -28,4 +28,3 @@ const InputSelectCountry = ({ ...props }) => {
             }, loader: loader, useLoader: true, maxLengthShowOptions: 50 })));
 };
 exports.InputSelectCountry = InputSelectCountry;
-//# sourceMappingURL=index.js.map

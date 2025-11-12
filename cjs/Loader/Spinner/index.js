@@ -8,4 +8,3 @@ const LoaderSpinner = ({ classNameLoaderSpinner = "", }) => {
         react_1.default.createElement("div", { className: `fenext-loader-spinner ${classNameLoaderSpinner}` })));
 };
 exports.LoaderSpinner = LoaderSpinner;
-//# sourceMappingURL=index.js.map

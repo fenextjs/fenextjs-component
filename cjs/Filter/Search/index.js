@@ -26,4 +26,3 @@ const FilterSearch = ({ className = "", classNameSearch = {}, onChange, defaultV
                 } }))));
 };
 exports.FilterSearch = FilterSearch;
-//# sourceMappingURL=index.js.map

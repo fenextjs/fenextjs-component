@@ -23,4 +23,3 @@ const Copy = ({ className = "", children, text = "", onClickForCopy, notificatio
         react_1.default.createElement("div", { className: `fenext-copy ${className} `, onClick: onCopy }, _t(children))));
 };
 exports.Copy = Copy;
-//# sourceMappingURL=index.js.map

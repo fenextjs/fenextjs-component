@@ -34,4 +34,3 @@ const InputRate = ({ className = "", classNameContentStar = "", classNameStar = 
             react_1.default.createElement("div", { className: `fenext-input-rate-number ${classNameNumber}` }, start))));
 };
 exports.InputRate = InputRate;
-//# sourceMappingURL=index.js.map

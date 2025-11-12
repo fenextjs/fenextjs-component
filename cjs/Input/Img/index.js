@@ -54,4 +54,3 @@ const InputImg = ({ className = "", classNameContentIcon = "", classNameText = {
                     react_1.default.createElement(Text_1.Text, { ...classNameText, className: `fenext-input-img-text ${classNameText.className}` }, _t(text)))))))));
 };
 exports.InputImg = InputImg;
-//# sourceMappingURL=index.js.map

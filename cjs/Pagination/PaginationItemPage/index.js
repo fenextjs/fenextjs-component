@@ -64,4 +64,3 @@ const PaginationItemPage = ({ classNameContent = "", classNameUp = "", className
             react_1.default.createElement("div", { key: `fenext-pagination-item-page-down`, className: `fenext-pagination-item-page-current-item fenext-pagination-item-page-down ${classNameDown}`, onClick: onSetPage(maxPage) }, icons.down)))));
 };
 exports.PaginationItemPage = PaginationItemPage;
-//# sourceMappingURL=index.js.map

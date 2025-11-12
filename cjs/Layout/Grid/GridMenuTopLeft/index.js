@@ -11,4 +11,3 @@ const LayoutGridMenuTopLeft = ({ className = "", classNameLoader = "", className
             react_1.default.createElement(GridMenuLeft_1.LayoutGridMenuLeft, { classNameLoader: classNameLoader, classNameChildren: classNameChildren, classNameMenuLeft: classNameMenuLeft, classNameMenuLeftContent: classNameMenuLeftContent, menuLeft: menuLeft, loader: loader, menuLeftActive: menuLeftActive, menuLeftMovilActive: menuLeftMovilActive, useHeaderButtonMenu: useHeaderButtonMenu, usePageProgress: usePageProgress, useAlertHook: useAlertHook, alertHookProps: alertHookProps, target: target, alert: alert }, children))));
 };
 exports.LayoutGridMenuTopLeft = LayoutGridMenuTopLeft;
-//# sourceMappingURL=index.js.map

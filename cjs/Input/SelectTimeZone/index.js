@@ -17,4 +17,3 @@ const InputSelectTimeZone = ({ useTOption = false, ...props }) => {
             }, useTOption: useTOption })));
 };
 exports.InputSelectTimeZone = InputSelectTimeZone;
-//# sourceMappingURL=index.js.map

@@ -53,4 +53,3 @@ const DesignBoxMargin = ({ textMargin = "Margin", textMarginBottom = "Bottom", t
                 react_1.default.createElement(NumberCount_1.InputNumberCount, { placeholder: textMarginLeft, onChange: onChangeMargin("marginLeft"), value: data.marginLeft, symbolInit: "", symbolFinal: data.marginUnit })))));
 };
 exports.DesignBoxMargin = DesignBoxMargin;
-//# sourceMappingURL=index.js.map

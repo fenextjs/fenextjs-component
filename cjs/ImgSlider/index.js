@@ -26,4 +26,3 @@ const ImgSlider = ({ className = "", classNameStep = "", classNamePictureImg = "
                     react_1.default.createElement(PaginationPre_1.SvgPaginationPre, null)), useDogs: true, ...props }))));
 };
 exports.ImgSlider = ImgSlider;
-//# sourceMappingURL=index.js.map

@@ -63,4 +63,3 @@ const DesignBox = ({ className = "", textBox = "Box", textBackground = "Backgrou
                     react_1.default.createElement(Gap_1.DesignBoxGap, { data: data, onChangeData: onChangeData, setDataFunction: setDataFunction, textGap: textGap, textGapRow: textGapRow, textGapColumn: textGapColumn, _t: _t }))))));
 };
 exports.DesignBox = DesignBox;
-//# sourceMappingURL=index.js.map

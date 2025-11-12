@@ -27,4 +27,3 @@ const PaginationNPage = ({ className = "", options = exports.PaginationNPageDefa
         }, disabled: disabled }));
 };
 exports.PaginationNPage = PaginationNPage;
-//# sourceMappingURL=index.js.map

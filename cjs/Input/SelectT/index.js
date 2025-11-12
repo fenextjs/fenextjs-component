@@ -9,4 +9,3 @@ const InputSelectT = ({ defaultValue, value, options, onChange, onParse, ...prop
         react_1.default.createElement(Select_1.InputSelect, { ...props, defaultValue: defaultValue ? onParse(defaultValue) : undefined, value: value ? onParse(value) : undefined, options: options.map(onParse), onChangeData: onChange })));
 };
 exports.InputSelectT = InputSelectT;
-//# sourceMappingURL=index.js.map

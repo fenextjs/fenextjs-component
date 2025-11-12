@@ -27,4 +27,3 @@ const InputSwich = ({ className = "", classNameActive = "", classNameInactive = 
         react_1.default.createElement("span", { className: `fenext-input-swich-circle ${classNameCicle}` })));
 };
 exports.InputSwich = InputSwich;
-//# sourceMappingURL=index.js.map

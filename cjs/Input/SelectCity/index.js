@@ -36,4 +36,3 @@ const InputSelectCity = ({ country = undefined, state = undefined, ...props }) =
             }, loader: loader, useLoader: true })));
 };
 exports.InputSelectCity = InputSelectCity;
-//# sourceMappingURL=index.js.map

@@ -17,4 +17,3 @@ const Notification = ({ className = "", type = Request_1.RequestResultTypeProps.
                 react_1.default.createElement(Close_1.SvgClose, null)))));
 };
 exports.Notification = Notification;
-//# sourceMappingURL=index.js.map

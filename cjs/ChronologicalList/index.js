@@ -44,4 +44,3 @@ const ChronologicalList = ({ className = "", items, market = undefined, parseDat
         }))));
 };
 exports.ChronologicalList = ChronologicalList;
-//# sourceMappingURL=index.js.map

@@ -1,0 +1,74 @@
+:root {
+    --fenext-badge-width: auto;
+    --fenext-badge-display: inline-block;
+    --fenext-badge-border-radius: .4rem;
+    --fenext-badge-gap: 1rem;
+    --fenext-badge-align-items: center;
+    --fenext-badge-padding: 0.5rem 0.75rem;
+    --fenext-badge-font-family: var(--fenext-font-global);
+    --fenext-badge-font-size: 1rem;
+    --fenext-badge-font-weight: 500;
+    --fenext-badge-line-height: 0.4;
+
+    --fenext-badge-color: var(--fenext-color-dark);
+    --fenext-badge-background: var(--fenext-color-light);
+    --fenext-badge-inactive-display: none;
+
+    --fenext-badge-close-display: flex;
+    --fenext-badge-close-align-items: center;
+    --fenext-badge-close-justify-content: center;
+    --fenext-badge-close-width: 1.5rem;
+    --fenext-badge-close-aspect-ratio: 1/1;
+    --fenext-badge-close-padding: 0 0.4rem;
+    --fenext-badge-close-border-radius: 100%;
+    --fenext-badge-close-cursor: pointer;
+    --fenext-badge-close-background: var(--fenext-color-danger);
+    --fenext-badge-close-color: var(--fenext-color-light);
+    --fenext-badge-close-transition: 0.5s;
+    --fenext-badge-close-hover-scale: 0.8;
+    --fenext-badge-close-svg-width: 100%;
+}
+
+.fenext-badge {
+    width: var(--fenext-badge-width);
+    border-radius: var(--fenext-badge-border-radius);
+    display: var(--fenext-badge-display);
+    gap: var(--fenext-badge-gap);
+    align-items: var(--fenext-badge-align-items);
+    padding: var(--fenext-badge-padding);
+    font-family: var(--fenext-badge-font-family);
+    font-size: var(--fenext-badge-font-size);
+    font-weight: var(--fenext-badge-font-weight);
+    line-height: var(--fenext-badge-line-height);
+
+    color: color-mix(in srgb, var(--fenext-badge-color) 40%,  #000 60%);
+    background: color-mix(in srgb, var(--fenext-badge-background) 40%,  #fff 60%);
+
+    &-inactive {
+        --fenext-badge-display: var(--fenext-badge-inactive-display);
+    }
+    &-content {
+        color: currentColor;
+    }
+    
+    &-completed {
+        --fenext-badge-color: var(--fenext-color-theme-light-dark);
+        --fenext-badge-background: var(--fenext-color-success);
+    }
+    &-error {
+        --fenext-badge-color: var(--fenext-color-theme-light-dark);
+        --fenext-badge-background: var(--fenext-color-danger);
+    }
+    &-loader {
+        --fenext-badge-color: var(--fenext-color-theme-light-dark);
+        --fenext-badge-background: var(--fenext-color-warning);
+    }
+    &-processed {
+        --fenext-badge-color: var(--fenext-color-theme-light-dark);
+        --fenext-badge-background: var(--fenext-color-processed);
+    }
+    &-pendding {
+        --fenext-badge-color: var(--fenext-color-theme-light-dark);
+        --fenext-badge-background: var(--fenext-color-pendding);
+    }
+}

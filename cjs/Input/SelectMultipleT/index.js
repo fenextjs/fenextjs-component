@@ -9,4 +9,3 @@ const InputSelectMultipleT = ({ defaultValue, value, options, onChange, onParse,
         react_1.default.createElement(SelectMultiple_1.InputSelectMultiple, { ...props, defaultValue: defaultValue ? defaultValue.map(onParse) : undefined, value: value ? value.map(onParse) : undefined, options: options.map(onParse), onChangeData: onChange, validatorData: validator })));
 };
 exports.InputSelectMultipleT = InputSelectMultipleT;
-//# sourceMappingURL=index.js.map

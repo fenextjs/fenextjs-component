@@ -10,4 +10,3 @@ const InputUnitVolumen = ({ options = Object.keys(Unit_1.Unit_Volumen).map((e) =
         react_1.default.createElement(Base_1.InputUnitBase, { ...props, options: options })));
 };
 exports.InputUnitVolumen = InputUnitVolumen;
-//# sourceMappingURL=index.js.map

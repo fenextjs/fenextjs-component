@@ -63,4 +63,3 @@ const InputSelectMultiple = ({ classNameSelectMultiple = "", classNameSelectMult
                     }))) }))));
 };
 exports.InputSelectMultiple = InputSelectMultiple;
-//# sourceMappingURL=index.js.map

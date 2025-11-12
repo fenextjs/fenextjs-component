@@ -38,4 +38,3 @@ const InputDateRange = ({ classNameInputDateRange = "", classNameInputDateRangeC
                 react_1.default.createElement(Date_1.InputDate, { ...props, ...propsEnd, _t: _t, max: max, min: data?.valueMin ?? min, onChange: onChangeData("valueMax"), value: data.valueMax })))));
 };
 exports.InputDateRange = InputDateRange;
-//# sourceMappingURL=index.js.map

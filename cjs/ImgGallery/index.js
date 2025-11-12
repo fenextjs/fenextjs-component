@@ -46,4 +46,3 @@ const ImgGallery = ({ className = "", imgs, buttonShowMoreImg = {
                         } }))))))));
 };
 exports.ImgGallery = ImgGallery;
-//# sourceMappingURL=index.js.map

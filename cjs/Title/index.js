@@ -12,4 +12,3 @@ const Title = ({ className = "", tag = "h1", loader = false, children, ...props 
         react_1.default.createElement(Tag, { className: `fenext-title fenext-title-${tag} ${className} ` }, loader ? react_1.default.createElement(Line_1.LoaderLine, null) : react_1.default.createElement(react_1.default.Fragment, null, _t(children)))));
 };
 exports.Title = Title;
-//# sourceMappingURL=index.js.map

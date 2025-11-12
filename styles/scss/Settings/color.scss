@@ -1,6 +1,8 @@
 @mixin styleTheme_light {
     @include generateColor("primary", #007ec7);
     @include generateColor("secondary", #1c2434);
+    @include generateColor("processed", #5700d1);
+    @include generateColor("pendding", #60c5ff);
     @include generateColor("success", #43A047);
     @include generateColor("warning", #FDD835);
     @include generateColor("danger", #E53935);
@@ -15,6 +17,8 @@
 @mixin styleTheme_dark {
     @include generateColor("primary", #60c5ff, "dark");
     @include generateColor("secondary", #24303f, "dark");
+    @include generateColor("processed", #5700d1, "dark");
+    @include generateColor("pendding", #60c5ff, "dark");
     @include generateColor("success", #66BB6A, "dark");
     @include generateColor("warning", #FFEB3B, "dark");
     @include generateColor("danger", #EF5350, "dark");

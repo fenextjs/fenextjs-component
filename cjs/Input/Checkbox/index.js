@@ -51,4 +51,3 @@ const InputCheckbox = ({ classNameLabel = "", classNameLabelActive = "", classNa
                 react_1.default.createElement("small", { className: "fenext-input-required" }, _t(requiredText)))))));
 };
 exports.InputCheckbox = InputCheckbox;
-//# sourceMappingURL=index.js.map

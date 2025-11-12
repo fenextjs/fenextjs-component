@@ -18,4 +18,3 @@ const LayoutGridMenuTop = ({ className = "", classNameLoader = "", classNameChil
                 loader ? (react_1.default.createElement(Loader_1.Loader, { classNameLoader: `${classNameLoader} fenext-layout-grid-loader` })) : (react_1.default.createElement(react_1.default.Fragment, null, children))))));
 };
 exports.LayoutGridMenuTop = LayoutGridMenuTop;
-//# sourceMappingURL=index.js.map

@@ -29,8 +29,8 @@
     "update-package": "ncu -u '/^fenextjs.*$/' country-state-city-nextjs uselocalstoragenextjs",
     "update": "npm run update-package && npm run remove && npm run bun-i && npm run flb",
     "u": "npm run update",
-    "generate":"npm run generate-template",
-    "generate-template":"bun ./script/generate-template.tsx"
+    "generate": "npm run generate-template",
+    "generate-template": "bun ./script/generate-template.tsx"
   },
   "repository": {
     "type": "git",
@@ -51,12 +51,12 @@
     "@react-google-maps/api": "2.19.3",
     "country-state-city-nextjs": "10.0.0",
     "fenextjs-date": "3.3.0",
+    "fenextjs-dependencies": "1.0.0",
     "fenextjs-error": "3.2.3",
     "fenextjs-functions": "7.0.3",
-    "fenextjs-hook": "15.2.1",
+    "fenextjs-hook": "15.2.2",
     "fenextjs-img-placeholder": "4.0.1",
     "fenextjs-interface": "4.8.1",
-    "fenextjs-dependencies": "1.0.0",
     "fenextjs-svg": "9.0.0",
     "fenextjs-validator": "4.7.0",
     "qr-scanner": "1.4.2"
@@ -74,9 +74,8 @@
     "@storybook/addon-onboarding": "8.0.9",
     "@storybook/blocks": "8.0.9",
     "@storybook/builder-webpack5": "8.0.9",
-    "@storybook/manager-webpack5": "6.5.16",
-    "@storybook/nextjs": "8.0.9",
     "@storybook/react": "8.0.9",
+    "@storybook/react-vite": "8.0.9",
     "@storybook/testing-library": "0.2.2",
     "@types/node": "20.12.4",
     "@types/react": "18.2.74",

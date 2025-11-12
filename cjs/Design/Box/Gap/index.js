@@ -47,4 +47,3 @@ const DesignBoxGap = ({ textGap = "Gap", textGapRow = "Gap Row", textGapColumn =
                 react_1.default.createElement(NumberCount_1.InputNumberCount, { placeholder: textGapColumn, onChange: onChangeGap("gapColumn"), value: data.gapColumn, symbolInit: "", symbolFinal: data.gapUnit })))));
 };
 exports.DesignBoxGap = DesignBoxGap;
-//# sourceMappingURL=index.js.map

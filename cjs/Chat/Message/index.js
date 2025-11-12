@@ -40,4 +40,3 @@ const ChatMessage = ({ message, file, createdAt, account, right = false, view = 
                         react_1.default.createElement(Upload_1.InputUpload, { defaultValue: file, disabled: true }))))))));
 };
 exports.ChatMessage = ChatMessage;
-//# sourceMappingURL=index.js.map

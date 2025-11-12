@@ -47,6 +47,7 @@ export * from "./Chronometer";
 export * from "./ChronologicalList";
 export * from "./SwichView";
 export * from "./TableActionCheckbox";
+export * from "./Badge";
 export * from "./Alert";
 export * from "./AlertHook";
 export * from "./Design";

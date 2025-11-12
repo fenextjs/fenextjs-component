@@ -40,4 +40,3 @@ const PageProgress = ({ className = "" }) => {
     return (react_1.default.createElement("div", { className: `fenext-page-progress fenext-page-progress-${statusBar} ${className}` }));
 };
 exports.PageProgress = PageProgress;
-//# sourceMappingURL=index.js.map

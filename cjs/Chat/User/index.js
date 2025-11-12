@@ -17,4 +17,3 @@ const ChatUser = ({ name, img, role, imgProps = {
                 extraData))));
 };
 exports.ChatUser = ChatUser;
-//# sourceMappingURL=index.js.map

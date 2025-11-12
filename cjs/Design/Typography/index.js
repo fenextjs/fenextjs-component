@@ -96,4 +96,3 @@ const DesignTypography = ({ className = "", textTypography = "Typography", textE
                             ], defaultValue: data.wordSpacingUnit, onChange: onChangeData("wordSpacingUnit") })))))));
 };
 exports.DesignTypography = DesignTypography;
-//# sourceMappingURL=index.js.map

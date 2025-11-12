@@ -63,4 +63,3 @@ const InputUpload = ({ className = "", classNameBtn = {}, classNameContentIcon =
                     react_1.default.createElement(Text_1.Text, { ...classNameText, className: `fenext-input-upload-text ${classNameText.className}` }, _t(text)))))))));
 };
 exports.InputUpload = InputUpload;
-//# sourceMappingURL=index.js.map

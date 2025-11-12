@@ -59,4 +59,3 @@ const LavaLamp = ({ className = "", nItems = 20, styles = {
         }))));
 };
 exports.LavaLamp = LavaLamp;
-//# sourceMappingURL=index.js.map

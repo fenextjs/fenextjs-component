@@ -376,4 +376,3 @@ const InputSelect = ({ classNameSelect = "", classNameList = "", classNameOption
                 !useSwichtypeSelectStyle ? (react_1.default.createElement(react_1.default.Fragment, null)) : (react_1.default.createElement(react_1.default.Fragment, null, TAGLIST)))));
 };
 exports.InputSelect = InputSelect;
-//# sourceMappingURL=index.js.map

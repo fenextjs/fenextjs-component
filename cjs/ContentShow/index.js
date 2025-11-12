@@ -10,4 +10,3 @@ const ContentShow = ({ className = "", children, show = true, ...props }) => {
         react_1.default.createElement("div", { className: `fenext-content-show fenext-content-show-${show ? "show" : "hidden"} ${className} ` }, _t(children))));
 };
 exports.ContentShow = ContentShow;
-//# sourceMappingURL=index.js.map

@@ -103,4 +103,3 @@ const InputCalendarMonth = ({ type = "normal", onPreMonth, onNextMonth, date, se
                 })))));
 };
 exports.InputCalendarMonth = InputCalendarMonth;
-//# sourceMappingURL=index.js.map

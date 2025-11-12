@@ -1,46 +1,44 @@
 import React from "react";
-import type { Preview } from "@storybook/react";
 import { PageProgress } from "../src/PageProgress";
 import { NotificationPop } from "../src/Notification/Pop";
 import { InputGoogleLoadScript } from "../src/Input/Google/LoadScript";
-import { useReportWebVitals } from "next/web-vitals";
-
 import "../styles/index.css";
-import { env_log } from "fenextjs-functions";
+import { env_log, getProcessEnv } from "fenextjs-functions";
 
-const preview: Preview = {
-    parameters: {
-        actions: { argTypesRegex: "^on[A-Z].*" },
-        controls: {
-            matchers: {
-                color: /(background|color)$/i,
-                date: /Date$/,
-            },
-        },
+// Ya no usamos "useReportWebVitals" porque es exclusivo de Next.js
+// Si quieres conservar métricas de rendimiento, podrías usar Performance API nativa
+
+const preview = {
+  parameters: {
+    actions: { argTypesRegex: "^on[A-Z].*" },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
     },
-    decorators: [
-        (Story) => {
-            useReportWebVitals((metric) => {
-                console.log(metric?.name,metric?.value,metric);
-                
-                env_log(metric, {
-                    name: "metric",
-                    color: "#cf00ff",
-                });
-            });
-            return (
-               <>
-                <InputGoogleLoadScript
-                    googleMapsApiKey={process?.env?.["NEXT_PUBLIC_GOOGLE_KEY"]}
-                >
-                    <NotificationPop />
-                    <PageProgress />
-                    <Story />
-                </InputGoogleLoadScript>
-               </>
-            );
-        },
-    ],
+  },
+  decorators: [
+    (Story) => {
+      // Puedes conservar un log manual si deseas
+      if (typeof performance !== "undefined") {
+        env_log("Storybook loaded", {
+          name: "metric",
+          color: "#cf00ff",
+        });
+      }
+
+      return (
+        <InputGoogleLoadScript
+          googleMapsApiKey={getProcessEnv("NEXT_PUBLIC_GOOGLE_KEY") ?? undefined}
+        >
+          <NotificationPop />
+          <PageProgress />
+          <Story />
+        </InputGoogleLoadScript>
+      );
+    },
+  ],
 };
 
 export default preview;

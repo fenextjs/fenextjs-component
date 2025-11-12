@@ -10,4 +10,3 @@ const ProgressCircle = ({ className = "", p, showP = true, }) => {
             } })));
 };
 exports.ProgressCircle = ProgressCircle;
-//# sourceMappingURL=index.js.map

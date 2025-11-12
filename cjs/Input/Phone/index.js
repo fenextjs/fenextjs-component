@@ -108,4 +108,3 @@ const InputPhone = ({ classNameInputNumber = {}, classNameSelectCode = {}, class
             (props?.error || (errorFenext && isChange)) && (react_1.default.createElement(Error_1.ErrorComponent, { error: errorFenext ?? props?.error, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputPhone = InputPhone;
-//# sourceMappingURL=index.js.map

@@ -117,4 +117,3 @@ const InputFile = ({ defaultValue = {
             error && (react_1.default.createElement("div", { className: `fenext-error ${classNameError}` }, _t(error.message))))));
 };
 exports.InputFile = InputFile;
-//# sourceMappingURL=index.js.map

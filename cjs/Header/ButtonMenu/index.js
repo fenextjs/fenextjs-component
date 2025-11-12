@@ -29,4 +29,3 @@ const ButtonMenu = ({ className = "", classNameIcon = "", classNameIconBarClose 
                 react_1.default.createElement("div", { className: `fenext-btn-menu-content ${classNameContent}` }, _t(children)))))));
 };
 exports.ButtonMenu = ButtonMenu;
-//# sourceMappingURL=index.js.map

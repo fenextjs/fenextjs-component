@@ -11,4 +11,3 @@ const ContentLoading = ({ className = "", children, componentLoader = react_1.de
         react_1.default.createElement("div", { className: `fenext-content-loading fenext-content-loading-${loader ? "loader" : ""} fenext-content-loading-${isPage ? "page" : ""} ${className} ` }, loader ? componentLoader : _t(children))));
 };
 exports.ContentLoading = ContentLoading;
-//# sourceMappingURL=index.js.map

@@ -160,4 +160,3 @@ const InputText = ({ id = "", datalist = undefined, name = "", label = "", place
             FenextInputValidatorStatus == "error" && (react_1.default.createElement(Error_1.ErrorComponent, { error: errorFenext ?? errorInput, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputText = InputText;
-//# sourceMappingURL=index.js.map

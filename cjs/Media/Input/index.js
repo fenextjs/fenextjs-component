@@ -74,4 +74,3 @@ const MediaInput = ({ className = "", titleView = "Upload Image", textView = "Cl
                 react_1.default.createElement(Page_1.MediaPage, { ...MediaPageProps, key: JSON.stringify(data), multiple: multiple, onChange: onAddImg, defaultValue: data, onAcepte: onAcepteImg, isPage: false, _t: _t })))));
 };
 exports.MediaInput = MediaInput;
-//# sourceMappingURL=index.js.map

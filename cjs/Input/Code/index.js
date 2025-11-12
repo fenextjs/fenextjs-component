@@ -30,4 +30,3 @@ const InputCode = ({ ...props }) => {
                 }))) })));
 };
 exports.InputCode = InputCode;
-//# sourceMappingURL=index.js.map

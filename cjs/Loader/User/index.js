@@ -12,4 +12,3 @@ const LoaderUser = ({ classNameLoaderUser = "", classNameLoaderUserImg = "", cla
             react_1.default.createElement(Line_1.LoaderLine, { classNameLoaderLine: `fenext-loader-user-email ${classNameLoaderUserEmail}` }))));
 };
 exports.LoaderUser = LoaderUser;
-//# sourceMappingURL=index.js.map

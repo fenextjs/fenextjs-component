@@ -19,4 +19,3 @@ const InputPassword = ({ classNameContentEye = "", iconEye, iconEyeBar, ...props
         react_1.default.createElement(Text_1.InputText, { ...props, icon: ICON, type: type })));
 };
 exports.InputPassword = InputPassword;
-//# sourceMappingURL=index.js.map

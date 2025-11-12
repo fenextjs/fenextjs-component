@@ -11,4 +11,3 @@ const AlertHook = ({ className = "", configHook = {}, ...props }) => {
         react_1.default.createElement(Alert_1.Alert, { ...props, ...alert, onClose: onClearAlert })))));
 };
 exports.AlertHook = AlertHook;
-//# sourceMappingURL=index.js.map

@@ -55,4 +55,3 @@ const ChatFormSendMessage = ({ useSubmitInEnter = true, btnChildren = react_1.de
                     react_1.default.createElement(Button_1.Button, { loader: loaderSubmit || props?.loader, _t: _t, size: "extra-small" }, btnFileChildren))))));
 };
 exports.ChatFormSendMessage = ChatFormSendMessage;
-//# sourceMappingURL=index.js.map

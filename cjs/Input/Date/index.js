@@ -89,4 +89,3 @@ const InputDate = ({ classNameInputDate = "", type = "date", defaultValue = unde
             DATALIST))), iconPos: iconPos, icon: react_1.default.createElement("span", { className: `fenext-input-date-icon ` }, icon), validator: undefined, error: errorFenext, isChange: isChange }));
 };
 exports.InputDate = InputDate;
-//# sourceMappingURL=index.js.map

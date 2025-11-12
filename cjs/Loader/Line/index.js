@@ -10,4 +10,3 @@ const LoaderLine = ({ classNameLoaderLine = "", height = 20, }) => {
             } })));
 };
 exports.LoaderLine = LoaderLine;
-//# sourceMappingURL=index.js.map

@@ -8,4 +8,3 @@ const Loader = ({ classNameLoader = "" }) => {
         react_1.default.createElement("div", { className: `fenext-loader ${classNameLoader}` })));
 };
 exports.Loader = Loader;
-//# sourceMappingURL=index.js.map
