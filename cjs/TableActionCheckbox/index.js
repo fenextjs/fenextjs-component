@@ -18,3 +18,4 @@ const TableActionCheckbox = ({ className = "", actionAllCheckbox, actions, data,
             ACTIONS)));
 };
 exports.TableActionCheckbox = TableActionCheckbox;
+//# sourceMappingURL=index.js.map

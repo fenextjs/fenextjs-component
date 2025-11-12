@@ -21,3 +21,4 @@ const SwichViewList = ({ className = "", defaultValue, onChange, list = [], name
             } })));
 };
 exports.SwichViewList = SwichViewList;
+//# sourceMappingURL=index.js.map

@@ -23,3 +23,4 @@ const InputSelectNumber = ({ onChange, defaultValue = undefined, min = 0, max = 
             }), onChangeData: onChange, useTOption: useTOption })));
 };
 exports.InputSelectNumber = InputSelectNumber;
+//# sourceMappingURL=index.js.map

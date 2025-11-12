@@ -17,3 +17,4 @@ const ErrorComponent = ({ error, children, className = "", useDataError = true, 
             react_1.default.createElement("span", { className: "fenext-error-input" }, _t(`[${error?.input ?? ""}]`)))))))) : (_t(children))));
 };
 exports.ErrorComponent = ErrorComponent;
+//# sourceMappingURL=index.js.map

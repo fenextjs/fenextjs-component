@@ -93,7 +93,7 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
         { id: 2, name: "Beta" },
     ]}
     header={[
-        { id: "id", th: "ID", parse: (item) => `#${item}` },
+        { id: "id", th: "ID", parse: (item, i) => `#${item}` },
         { id: "name", th: "Name" },
     ]}
     loader={true}
@@ -119,7 +119,7 @@ Para ver el storybook del componente lo puede hacer con este [link](https://fene
             collapseProps: {
                 header: "Ver Archivos",
             },
-            parse: (data) => {
+            parse: (data, i) => {
                 return (
                     <>
                         {data.files.map((file) => `Archivo: ${file}`)}

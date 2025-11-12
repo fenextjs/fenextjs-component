@@ -21,37 +21,37 @@ const argsBase: BadgeProps = {
 export const Index = Profile.bind({});
 Index.args = argsBase;
 
-export const completed = Profile.bind({});
-completed.args = argsBase;
+export const COMPETED = Profile.bind({});
+COMPETED.args = argsBase;
 
 
 const argsBasependding: BadgeProps = {
     ...argsBase,
     type: "pendding",
 };
-export const pendding = Profile.bind({});
-pendding.args = argsBasependding;
+export const PEDDING = Profile.bind({});
+PEDDING.args = argsBasependding;
 
 
 const argsBaseerror: BadgeProps = {
     ...argsBase,
     type: "error",
 };
-export const error = Profile.bind({});
-error.args = argsBaseerror;
+export const ERROR = Profile.bind({});
+ERROR.args = argsBaseerror;
 
 
 const argsBaseloader: BadgeProps = {
     ...argsBase,
     type: "loader",
 };
-export const loader = Profile.bind({});
-loader.args = argsBaseloader;
+export const LOADER = Profile.bind({});
+LOADER.args = argsBaseloader;
 
 
 const argsBaseprocessed: BadgeProps = {
     ...argsBase,
     type: "processed",
 };
-export const processed = Profile.bind({});
-processed.args = argsBaseprocessed;
+export const PROCESSED = Profile.bind({});
+PROCESSED.args = argsBaseprocessed;

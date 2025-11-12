@@ -15,3 +15,4 @@ const Breadcrumb = ({ className = "", classNameItem = "", classNameLink = "", li
         }))));
 };
 exports.Breadcrumb = Breadcrumb;
+//# sourceMappingURL=index.js.map

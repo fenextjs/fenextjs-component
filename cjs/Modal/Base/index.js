@@ -66,3 +66,4 @@ const ModalBase = ({ className = "", classNameBg = "", classNameContent = "", cl
     return react_1.default.createElement(react_1.default.Fragment, null, CONTENT);
 };
 exports.ModalBase = ModalBase;
+//# sourceMappingURL=index.js.map

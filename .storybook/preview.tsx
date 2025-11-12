@@ -2,8 +2,8 @@ import React from "react";
 import { PageProgress } from "../src/PageProgress";
 import { NotificationPop } from "../src/Notification/Pop";
 import { InputGoogleLoadScript } from "../src/Input/Google/LoadScript";
-import "../styles/index.css";
 import { env_log, getProcessEnv } from "fenextjs-functions";
+import "../styles/index.css";
 
 // Ya no usamos "useReportWebVitals" porque es exclusivo de Next.js
 // Si quieres conservar métricas de rendimiento, podrías usar Performance API nativa

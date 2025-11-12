@@ -48,3 +48,4 @@ const Back = ({ className = "", classNameLoader = "", classNameDisabled = "", cl
             react_1.default.createElement("div", { className: `fenext-back-content ${classNameContent}` }, _t(children)))));
 };
 exports.Back = Back;
+//# sourceMappingURL=index.js.map

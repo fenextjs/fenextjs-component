@@ -12,3 +12,4 @@ const TwoColSticky = ({ className = "", classNameChildren = "", classNameColStic
             react_1.default.createElement("div", { className: `fenext-two-col-sticky-children ${classNameChildren} ` }, _t(children)))));
 };
 exports.TwoColSticky = TwoColSticky;
+//# sourceMappingURL=index.js.map

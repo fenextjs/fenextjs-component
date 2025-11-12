@@ -17,3 +17,4 @@ const GridCols = ({ className = "", children, colsMin1920, colsMin1680, colsMin1
             } }, children)));
 };
 exports.GridCols = GridCols;
+//# sourceMappingURL=index.js.map

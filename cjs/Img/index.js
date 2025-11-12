@@ -34,3 +34,4 @@ const Img = ({ className = "", classNameImg = "", id, name = "", alt, src, srcMi
             layers?.map((e, i) => (react_1.default.createElement("div", { key: i, className: "fenext-img-layer", style: e }))))));
 };
 exports.Img = Img;
+//# sourceMappingURL=index.js.map

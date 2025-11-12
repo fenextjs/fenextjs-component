@@ -68,3 +68,4 @@ const InputRange = ({ className = "", classNameContentValue = "", classNameValue
                 react_1.default.createElement("input", { type: "range", className: `fenext-input-range-item fenext-input-range-max ${classNameMax} `, min: min + step, max: max, value: data.max, onChange: onChangeItem("max"), step: step })))));
 };
 exports.InputRange = InputRange;
+//# sourceMappingURL=index.js.map

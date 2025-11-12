@@ -77,3 +77,4 @@ const Tab = ({ className = "", classNameContentHead = "", classNameHead = "", cl
             react_1.default.createElement("div", { className: `fenext-tab-body ${classNameBody}` }, CBody))));
 };
 exports.Tab = Tab;
+//# sourceMappingURL=index.js.map

@@ -11,3 +11,4 @@ const Menu = ({ className = "", items = [], defaultShowSubMenu = false, iconArro
         react_1.default.createElement("div", { className: `fenext-menu ${className}` }, items?.map((item, i) => (react_1.default.createElement(ItemMenu_1.ItemMenu, { key: i, ...props, ...item, defaultActive: item.defaultActive ?? defaultShowSubMenu, iconArrow: item?.iconArrow ?? iconArrow, typeCollapse: item?.typeCollapse ?? typeCollapse, useRouterCustom: useRouterCustom }))))));
 };
 exports.Menu = Menu;
+//# sourceMappingURL=index.js.map

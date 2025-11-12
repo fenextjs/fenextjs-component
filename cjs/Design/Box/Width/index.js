@@ -26,3 +26,4 @@ const DesignBoxWidth = ({ textWidth = "Width", textMinWidth = "Min Width", textM
             react_1.default.createElement(SelectT_1.InputSelectT, { onParse: _p, options: [...boxUnit_1.ConstDesignBoxWidthUnit], defaultValue: data.minWidthUnit, onChange: onChangeData("minWidthUnit"), placeholder: "Min Width" }))));
 };
 exports.DesignBoxWidth = DesignBoxWidth;
+//# sourceMappingURL=index.js.map

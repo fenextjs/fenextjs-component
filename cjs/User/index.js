@@ -18,3 +18,4 @@ const User = ({ className = "", classNameEmail = "", classNamePicture = "", clas
             react_1.default.createElement("div", { className: `fenext-user-email ${classNameEmail} ` }, user?.email))));
 };
 exports.User = User;
+//# sourceMappingURL=index.js.map

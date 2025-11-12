@@ -55,3 +55,4 @@ const Collapse = ({ className = "", classNameHeader = "", classNameHeaderContent
             react_1.default.createElement("div", { className: `fenext-collapse-body ${classNameBody}` }, useActiveForShowChildren ? (react_1.default.createElement(react_1.default.Fragment, null, active && react_1.default.createElement(react_1.default.Fragment, null, children))) : (react_1.default.createElement(react_1.default.Fragment, null, children))))));
 };
 exports.Collapse = Collapse;
+//# sourceMappingURL=index.js.map

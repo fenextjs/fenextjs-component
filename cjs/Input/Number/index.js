@@ -70,3 +70,4 @@ const InputNumber = ({ defaultValue = "", onChange, useBtnIncreaseDecrease = fal
             } })));
 };
 exports.InputNumber = InputNumber;
+//# sourceMappingURL=index.js.map

@@ -35,3 +35,4 @@ const Counter = ({ className = "", classNameNumber = "", classNameText = "", num
                 react_1.default.createElement("span", { className: `fenext-counter-number-abs ` }, parseNumber(formatNumber(numberShow)))))));
 };
 exports.Counter = Counter;
+//# sourceMappingURL=index.js.map

@@ -15,3 +15,4 @@ const InputColor = ({ className = "", defaultValue, value, onChange, disabled, }
             }, disabled: disabled })));
 };
 exports.InputColor = InputColor;
+//# sourceMappingURL=index.js.map

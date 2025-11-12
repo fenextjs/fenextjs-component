@@ -45,3 +45,4 @@ const Tooltip = ({ className = "", classNameChildren = "", classNameContent = ""
             react_1.default.createElement("div", { className: `fenext-tooltip-children ${classNameChildren}` }, _t(children)))));
 };
 exports.Tooltip = Tooltip;
+//# sourceMappingURL=index.js.map

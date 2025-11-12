@@ -19,3 +19,4 @@ const DesignBoxAlign = ({ textAlignItems = "Align Vertical", textJustifyContent 
             react_1.default.createElement(SelectT_1.InputSelectT, { onParse: _p, options: [...boxUnit_1.ConstDesignBoxJustifyContentUnit], defaultValue: data.justifyContent, onChange: onChangeData("justifyContent"), placeholder: textJustifyContent }))));
 };
 exports.DesignBoxAlign = DesignBoxAlign;
+//# sourceMappingURL=index.js.map

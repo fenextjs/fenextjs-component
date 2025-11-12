@@ -18,3 +18,4 @@ const InputScannerTextQr = ({ className = "", defaultValue = "", onChange, ...pr
                 react_1.default.createElement(Qr_1.InputScannerQr, { ...props, onChange: setData })) })));
 };
 exports.InputScannerTextQr = InputScannerTextQr;
+//# sourceMappingURL=index.js.map

@@ -14,3 +14,4 @@ const DesignBoxBackground = ({ textBackground = "Background", data, onChangeData
             react_1.default.createElement(Color_1.InputColor, { value: data.background, onChange: onChangeData("background") }))));
 };
 exports.DesignBoxBackground = DesignBoxBackground;
+//# sourceMappingURL=index.js.map

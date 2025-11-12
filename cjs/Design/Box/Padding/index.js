@@ -53,3 +53,4 @@ const DesignBoxPadding = ({ textPadding = "Padding", textPaddingBottom = "Bottom
                 react_1.default.createElement(NumberCount_1.InputNumberCount, { placeholder: textPaddingLeft, onChange: onChangePadding("paddingLeft"), value: data.paddingLeft, symbolInit: "", symbolFinal: data.paddingUnit })))));
 };
 exports.DesignBoxPadding = DesignBoxPadding;
+//# sourceMappingURL=index.js.map

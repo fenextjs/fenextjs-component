@@ -21,3 +21,4 @@ const Modal = ({ classNameElementActionModalActive = "", classNameModal = {}, El
         react_1.default.createElement(Base_1.ModalBase, { ...classNameModal, closeComponent: closeComponent, onClose: onClose, active: active, activeName: activeName, activeNameLast: activeNameLast, type: type, typeClose: typeClose, disabledClose: disabledClose, useRender: useRender, name: name, nameLocalStorage: nameLocalStorage }, children)));
 };
 exports.Modal = Modal;
+//# sourceMappingURL=index.js.map

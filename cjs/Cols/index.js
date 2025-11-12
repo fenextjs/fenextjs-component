@@ -12,3 +12,4 @@ const Cols = ({ className = "", children, nCols = 2, breakInside = true, ...prop
             } }, _t(children))));
 };
 exports.Cols = Cols;
+//# sourceMappingURL=index.js.map

@@ -14,3 +14,4 @@ const DesignBoxBorderColor = ({ textBorderColor = "Border Color", data, onChange
             react_1.default.createElement(Color_1.InputColor, { value: data.borderColor, onChange: onChangeData("borderColor") }))));
 };
 exports.DesignBoxBorderColor = DesignBoxBorderColor;
+//# sourceMappingURL=index.js.map

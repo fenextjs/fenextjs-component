@@ -40,3 +40,4 @@ const ItemMenu = ({ className = "", classNameA = "", classNameIcon = "", classNa
                         react_1.default.createElement("div", { className: `fenext-menu-item-a-text ${classNameText}` }, _t(text)))), iconArrow: iconArrow }, subItems?.map((sub, i) => (react_1.default.createElement(exports.ItemMenu, { key: i, ...sub, _t: _t, iconArrow: sub?.iconArrow ?? iconArrow, nameNumber: nameNumber + 1 })))))));
 };
 exports.ItemMenu = ItemMenu;
+//# sourceMappingURL=index.js.map

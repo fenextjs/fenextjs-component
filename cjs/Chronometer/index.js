@@ -25,3 +25,4 @@ const Chronometer = ({ className = "", time = 100, min = 0, onChange, optionsTim
         react_1.default.createElement("div", { className: `fenext-chronometer ${className} ` }, (0, fenextjs_functions_1.getTimeToText)(new Date(0, 0, 0, 0, 0, data, 0), optionsTimeToText))));
 };
 exports.Chronometer = Chronometer;
+//# sourceMappingURL=index.js.map

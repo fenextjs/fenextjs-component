@@ -11,3 +11,4 @@ const PrintIframe = ({ className = "", onComponent, ...props }) => {
         react_1.default.createElement("div", { className: `fenext-print-iframe ${className} `, onClick: onPrint }, COMPONENT)));
 };
 exports.PrintIframe = PrintIframe;
+//# sourceMappingURL=index.js.map

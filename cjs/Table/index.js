@@ -179,3 +179,4 @@ const Table = ({ classNameContent = "", classNameContentTable = "", classNameTab
                     }, disabled: loader, _t: _t }))))));
 };
 exports.Table = Table;
+//# sourceMappingURL=index.js.map

@@ -120,3 +120,4 @@ const Steps = ({ className = "", classNameContentItems = "", classNameContentSte
                         currentStep === items.length - 1, onClick: onNext_, onClickDisabled: onNextDisabled, loader: loader, _t: _t }, btnNext))))));
 };
 exports.Steps = Steps;
+//# sourceMappingURL=index.js.map

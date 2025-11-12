@@ -5,3 +5,4 @@ tslib_1.__exportStar(require("./Chat"), exports);
 tslib_1.__exportStar(require("./FormSendMessage"), exports);
 tslib_1.__exportStar(require("./Message"), exports);
 tslib_1.__exportStar(require("./User"), exports);
+//# sourceMappingURL=index.js.map

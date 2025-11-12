@@ -4,3 +4,4 @@ const tslib_1 = require("tslib");
 tslib_1.__exportStar(require("./SwichViewList"), exports);
 tslib_1.__exportStar(require("./SwichViewTable"), exports);
 tslib_1.__exportStar(require("./SwichViewSelect"), exports);
+//# sourceMappingURL=index.js.map

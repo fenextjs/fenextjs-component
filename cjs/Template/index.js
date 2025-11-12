@@ -8,3 +8,4 @@ const Template = ({ className = "" }) => {
         react_1.default.createElement("div", { className: `fenext-template ${className} ` })));
 };
 exports.Template = Template;
+//# sourceMappingURL=index.js.map

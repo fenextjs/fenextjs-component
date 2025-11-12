@@ -111,3 +111,4 @@ const MediaPage = ({ className = "", multiple = false, onChange, onUploadImg, on
                 extraContentImgs && (react_1.default.createElement("div", { className: `fenext-media-page-extra-content-imgs` }, _t(extraContentImgs)))))));
 };
 exports.MediaPage = MediaPage;
+//# sourceMappingURL=index.js.map

@@ -27,3 +27,4 @@ const Form = ({ id = "", disabled = true, children, className = "", onSubmit = a
         react_1.default.createElement("form", { className: `fenext-form ${className}`, onSubmit: onSendForm }, children)));
 };
 exports.Form = Form;
+//# sourceMappingURL=index.js.map

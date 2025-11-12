@@ -26,3 +26,4 @@ const DesignBoxHeight = ({ textHeight = "Height", textMinHeight = "Min Height", 
             react_1.default.createElement(SelectT_1.InputSelectT, { onParse: _p, options: [...boxUnit_1.ConstDesignBoxHeightUnit], defaultValue: data.minHeightUnit, onChange: onChangeData("minHeightUnit"), placeholder: "Min Height" }))));
 };
 exports.DesignBoxHeight = DesignBoxHeight;
+//# sourceMappingURL=index.js.map

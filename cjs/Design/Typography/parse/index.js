@@ -16,3 +16,4 @@ const parseDesignTypographyValueProps_to_CSSProperties = (d) => {
     };
 };
 exports.parseDesignTypographyValueProps_to_CSSProperties = parseDesignTypographyValueProps_to_CSSProperties;
+//# sourceMappingURL=index.js.map

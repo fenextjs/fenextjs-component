@@ -89,3 +89,4 @@ const InputNumberCount = ({ onChange, value: valueProps = undefined, defaultValu
         react_1.default.createElement(Text_1.InputText, { ...props, className: `fenext-input-number-count ${props?.className ?? ""}`, type: "text", value: dataText, isChange: isChange, onKeyDown: onKeyDown, validator: undefined, error: errorFenext, inputMode: "numeric" })));
 };
 exports.InputNumberCount = InputNumberCount;
+//# sourceMappingURL=index.js.map

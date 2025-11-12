@@ -57,3 +57,4 @@ const InputSelectButtonsGroup = ({ classNameSelectButtonsGroup = "", classNameSe
             error && (react_1.default.createElement(Error_1.ErrorComponent, { error: error, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputSelectButtonsGroup = InputSelectButtonsGroup;
+//# sourceMappingURL=index.js.map

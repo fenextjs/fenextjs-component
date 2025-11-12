@@ -8,3 +8,4 @@ const Box = ({ className = "", children }) => {
         react_1.default.createElement("div", { className: `fenext-box ${className} ` }, children)));
 };
 exports.Box = Box;
+//# sourceMappingURL=index.js.map

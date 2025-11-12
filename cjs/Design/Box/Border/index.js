@@ -53,3 +53,4 @@ const DesignBoxBorder = ({ textBorder = "Border", textBorderBottom = "Bottom", t
                 react_1.default.createElement(NumberCount_1.InputNumberCount, { placeholder: textBorderLeft, onChange: onChangeBorder("borderLeft"), value: data.borderLeft, symbolInit: "", symbolFinal: data.borderUnit })))));
 };
 exports.DesignBoxBorder = DesignBoxBorder;
+//# sourceMappingURL=index.js.map

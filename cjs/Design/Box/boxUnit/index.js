@@ -53,3 +53,4 @@ exports.ConstDesignBoxAlignItemsUnit = [
     "start",
 ];
 exports.ConstDesignBoxGapsUnit = ["px", "em", "rem"];
+//# sourceMappingURL=index.js.map

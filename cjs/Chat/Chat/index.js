@@ -65,3 +65,4 @@ const Chat = ({ loader, empty = (react_1.default.createElement(react_1.default.F
                 react_1.default.createElement(FormSendMessage_1.ChatFormSendMessage, { loader: loader || loaderChatFormSendMessage, ...chatFormSendMessage })))));
 };
 exports.Chat = Chat;
+//# sourceMappingURL=index.js.map

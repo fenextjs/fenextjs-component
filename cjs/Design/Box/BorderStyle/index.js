@@ -52,3 +52,4 @@ const DesignBoxBorderStyle = ({ textBorderStyle = "Border Style", textBorderStyl
                 react_1.default.createElement(SelectT_1.InputSelectT, { onParse: _p, options: [...boxUnit_1.ConstDesignBoxBorderStylesUnit], placeholder: textBorderStyleBottom, onChange: onChangeBorderStyle("borderBottomStyle"), value: data.borderBottomStyle })))));
 };
 exports.DesignBoxBorderStyle = DesignBoxBorderStyle;
+//# sourceMappingURL=index.js.map

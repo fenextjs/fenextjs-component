@@ -25,3 +25,4 @@ const Pagination = ({ className = "", PaginationItemPageProps, PaginationNPagePr
                 (PaginationItemPageProps?.nItems ?? minPage + 1) && (react_1.default.createElement(PaginationNPage_1.PaginationNPage, { ...PaginationNPageProps, ...props, _t: _t, disabled: disabled, paginationName: paginationName })))));
 };
 exports.Pagination = Pagination;
+//# sourceMappingURL=index.js.map

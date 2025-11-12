@@ -80,3 +80,4 @@ const InputScannerQr = ({ className = "", onChange, buttonScannerContent = react
                 hasFlash && (react_1.default.createElement(Button_1.Button, { className: "fenext-input-scanner-qr-btn-flash", onClick: onToggleFlash }, buttonToggleFlashContent))))));
 };
 exports.InputScannerQr = InputScannerQr;
+//# sourceMappingURL=index.js.map

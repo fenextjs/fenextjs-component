@@ -53,3 +53,4 @@ const DesignBoxBorderRadius = ({ textBorderRadius = "Border Radius", textBorderR
                 react_1.default.createElement(NumberCount_1.InputNumberCount, { placeholder: textBorderRadiusBottomRight, onChange: onChangeBorderRadius("borderBottomRightRadius"), value: data.borderBottomRightRadius, symbolInit: "", symbolFinal: data.borderUnitRadius })))));
 };
 exports.DesignBoxBorderRadius = DesignBoxBorderRadius;
+//# sourceMappingURL=index.js.map

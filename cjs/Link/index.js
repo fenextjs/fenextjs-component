@@ -11,3 +11,4 @@ const Link = ({ className = "", children = "", ...props }) => {
             react_1.default.createElement(react_1.default.Fragment, null, _t(children)))));
 };
 exports.Link = Link;
+//# sourceMappingURL=index.js.map

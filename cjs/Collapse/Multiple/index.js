@@ -9,3 +9,4 @@ const CollapseMultiple = ({ classNameMultiple = "", name = "", items = [], type 
         react_1.default.createElement("div", { className: `fenext-collapse-multiple ${classNameMultiple}` }, items.map((item, i) => (react_1.default.createElement(Simple_1.Collapse, { key: i, name: name, type: type, defaultActive: [defaultActive].flat(2).includes(i), ...props, ...item }))))));
 };
 exports.CollapseMultiple = CollapseMultiple;
+//# sourceMappingURL=index.js.map

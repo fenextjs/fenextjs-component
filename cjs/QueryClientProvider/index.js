@@ -10,3 +10,4 @@ const QueryClientProvider = ({ children }) => {
         react_1.default.createElement(react_query_1.QueryClientProvider, { client: queryClient }, children)));
 };
 exports.QueryClientProvider = QueryClientProvider;
+//# sourceMappingURL=index.js.map

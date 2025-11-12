@@ -39,3 +39,4 @@ const parseDesignBoxValueProps_to_CSSProperties = (d) => {
     };
 };
 exports.parseDesignBoxValueProps_to_CSSProperties = parseDesignBoxValueProps_to_CSSProperties;
+//# sourceMappingURL=index.js.map

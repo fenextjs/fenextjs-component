@@ -11,3 +11,4 @@ const PrintPage = ({ className = "", onComponent, ...props }) => {
         react_1.default.createElement("div", { className: `fenext-print-page ${className} ` }, COMPONENT)));
 };
 exports.PrintPage = PrintPage;
+//# sourceMappingURL=index.js.map

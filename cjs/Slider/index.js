@@ -109,3 +109,4 @@ const Slider = ({ className = "", classNameContent = "", classNameItem = "", cla
                 react_1.default.createElement(PaginationNext_1.SvgPaginationNext, null)))));
 };
 exports.Slider = Slider;
+//# sourceMappingURL=index.js.map

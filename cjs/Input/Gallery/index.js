@@ -75,3 +75,4 @@ const InputGallery = ({ className = "", classNameContentButton = "", classNameBu
                 ], _t: _t }))));
 };
 exports.InputGallery = InputGallery;
+//# sourceMappingURL=index.js.map

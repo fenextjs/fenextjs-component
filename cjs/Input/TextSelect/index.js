@@ -36,3 +36,4 @@ const InputTextSelect = ({ label, placeholderSelect, placeholderText, defaultVal
             errorInput && (react_1.default.createElement(Error_1.ErrorComponent, { error: errorInput, className: `fenext-input-error ${classNameError}`, _t: _t })))));
 };
 exports.InputTextSelect = InputTextSelect;
+//# sourceMappingURL=index.js.map
