@@ -1,74 +1,71 @@
 export default {
-    id: "alert",
-    idStorybook: "component-alert",
-    name: "Alert",
+    id: "badge",
+    idStorybook: "component-badge",
+    name: "Badge",
     description:
-        "El componente Alert se utiliza para mostrar mensajes de alerta en la interfaz de usuario, proporcionando diferentes tipos de alertas y permitiendo la opción de cerrarlas.",
+        "El componente Badge se utiliza para mostrar un indicador visual asociado a un estado o tipo específico, como 'pendding', 'completed' o 'error'. Es útil para resaltar información de estado dentro de la interfaz de usuario.",
     props: [
         {
-            id: "message",
-            type: "string",
+            id: "children",
+            type: "ReactNode",
             require: true,
             description:
-                "El mensaje que se mostrará en el contenido de la alerta.",
+                "Contenido que se mostrará dentro del badge. Puede ser texto o un elemento React.",
         },
         {
             id: "type",
-            type: "AlertType",
+            type: "BadgeType",
             require: true,
             description:
-                "El tipo de alerta a mostrar, que puede estar relacionado con el estilo visual de la misma.",
-        },
-        {
-            id: "iconClose",
-            type: "ReactNode",
-            require: false,
-            default: "<Close />",
-            description: "El icono que se mostrará para cerrar la alerta.",
-        },
-        {
-            id: "onClose",
-            type: "function",
-            require: false,
-            description: "Función que se ejecuta cuando se cierra la alerta.",
+                "Define el tipo o estado del badge, el cual determina su estilo visual.",
         },
         {
             id: "className",
             type: "string",
             require: false,
             default: '""',
-            description: "Clase personalizada para el componente de alerta.",
+            description:
+                "Clase personalizada para aplicar estilos adicionales al badge.",
         },
         {
-            id: "data",
-            type: "any",
+            id: "_t",
+            type: "function",
             require: false,
             description:
-                "Datos adicionales o metadatos que se pueden agregar al componente de alerta.",
+                "Función de traducción proveniente de `use_T`, utilizada para traducir el contenido del badge si se requiere.",
         },
     ],
     extras: [
         {
-            id: "AlertType",
-            title: "AlertType",
+            id: "BadgeType",
+            title: "BadgeType",
             description:
-                "Dependiendo del valor de 'AlertType', el estilo de la alerta sera diferente",
+                "Dependiendo del valor de 'BadgeType', el estilo y color del badge varían para representar diferentes estados.",
             tableItems: [
                 {
-                    AlertType: "OK",
-                    Descripción: "Mensaje de éxito.",
+                    BadgeType: "pendding",
+                    Descripción:
+                        "Indica que una tarea o proceso está pendiente.",
                 },
                 {
-                    AlertType: "ERROR",
-                    Descripción: "Mensaje de error.",
+                    BadgeType: "loader",
+                    Descripción:
+                        "Indica que un proceso está en curso o cargando.",
                 },
                 {
-                    AlertType: "NORMAL",
-                    Descripción: "Mensaje sin estatus específico.",
+                    BadgeType: "completed",
+                    Descripción:
+                        "Indica que la tarea o proceso ha sido completado exitosamente.",
                 },
                 {
-                    AlertType: "WARNING",
-                    Descripción: "Mensaje de advertencia.",
+                    BadgeType: "error",
+                    Descripción:
+                        "Indica que ocurrió un error en la tarea o proceso.",
+                },
+                {
+                    BadgeType: "processed",
+                    Descripción:
+                        "Indica que el proceso ha sido correctamente procesado.",
                 },
             ],
         },
@@ -76,15 +73,15 @@ export default {
     useExample: [
         {
             text: "Básico",
-            content: `<Alert message="This is an alert!" type="info" />`,
+            content: `<Badge type="completed">Completado</Badge>`,
         },
         {
-            text: "Alerta con función de cierre",
-            content: `<Alert message="Close this alert" type="warning" onClose={() => alert('¡Alerta cerró!')} />`,
+            text: "Badge de error",
+            content: `<Badge type="error">Error en el proceso</Badge>`,
         },
         {
-            text: "Alerta con icono personalizado",
-            content: `<Alert message="Custom icon alert" type="error" iconClose={<CustomIcon />} />`,
+            text: "Badge pendiente con clase personalizada",
+            content: `<Badge type="pendding" className="custom-badge">Pendiente</Badge>`,
         },
     ],
 };

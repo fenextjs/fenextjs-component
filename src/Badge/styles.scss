@@ -1,7 +1,7 @@
 :root {
     --fenext-badge-width: auto;
     --fenext-badge-display: inline-block;
-    --fenext-badge-border-radius: .4rem;
+    --fenext-badge-border-radius: 0.4rem;
     --fenext-badge-gap: 1rem;
     --fenext-badge-align-items: center;
     --fenext-badge-padding: 0.5rem 0.75rem;
@@ -41,8 +41,12 @@
     font-weight: var(--fenext-badge-font-weight);
     line-height: var(--fenext-badge-line-height);
 
-    color: color-mix(in srgb, var(--fenext-badge-color) 40%,  #000 60%);
-    background: color-mix(in srgb, var(--fenext-badge-background) 40%,  #fff 60%);
+    color: color-mix(in srgb, var(--fenext-badge-color) 40%, #000 60%);
+    background: color-mix(
+        in srgb,
+        var(--fenext-badge-background) 40%,
+        #fff 60%
+    );
 
     &-inactive {
         --fenext-badge-display: var(--fenext-badge-inactive-display);
@@ -50,7 +54,7 @@
     &-content {
         color: currentColor;
     }
-    
+
     &-completed {
         --fenext-badge-color: var(--fenext-color-theme-light-dark);
         --fenext-badge-background: var(--fenext-color-success);

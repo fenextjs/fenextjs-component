@@ -22,7 +22,7 @@ export interface BadgeProps extends _TProps {
      */
     children: ReactNode;
 
-    type: BadgeType
+    type: BadgeType;
 }
 
 export const Badge = ({
