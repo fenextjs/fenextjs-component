@@ -1,0 +1,12 @@
+import{R as e}from"./index-BBqxgoSh.js";import{L as u}from"./index-BvGAx8bm.js";import{c as i}from"./index-CZnEoGlV.js";const p=({className:l="",tag:a="p",loader:n=!1,children:t,nLineLoader:r=3,...s})=>{const{_t:m}=i.use_T({...s}),o=a;return e.createElement(e.Fragment,null,e.createElement(o,{className:`fenext-text fenext-text-${a} ${l} `},n?e.createElement(e.Fragment,null,e.createElement("div",{className:"fenext-text-loader"},new Array(r).fill(e.createElement(u,null)))):e.createElement(e.Fragment,null,m(t))))};p.__docgenInfo={description:"",methods:[],displayName:"Text",props:{tag:{required:!1,tsType:{name:"union",raw:`| "span"
+| "p"
+| "strong"
+| "small"
+| "em"
+| "b"
+| "del"
+| "i"
+| "mark"
+| "ins"
+| "sub"
+| "sup"`,elements:[{name:"literal",value:'"span"'},{name:"literal",value:'"p"'},{name:"literal",value:'"strong"'},{name:"literal",value:'"small"'},{name:"literal",value:'"em"'},{name:"literal",value:'"b"'},{name:"literal",value:'"del"'},{name:"literal",value:'"i"'},{name:"literal",value:'"mark"'},{name:"literal",value:'"ins"'},{name:"literal",value:'"sub"'},{name:"literal",value:'"sup"'}]},description:"The class name for the component.",defaultValue:{value:'"p"',computed:!1}},loader:{required:!1,tsType:{name:"boolean"},description:"The loader for the component.",defaultValue:{value:"false",computed:!1}},nLineLoader:{required:!1,tsType:{name:"number"},description:"The nLineLoader for the component.",defaultValue:{value:"3",computed:!1}},className:{required:!1,tsType:{name:"string"},description:"The class name for the component.",defaultValue:{value:'""',computed:!1}}},composes:["PropsWithChildren","_TProps"]};export{p as T};
