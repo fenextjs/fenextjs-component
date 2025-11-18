@@ -11,7 +11,7 @@ import {
     InputSelectItemOptionBaseProps,
     InputSelectProps,
 } from "./index";
-import { ErrorInputRequired } from "fenextjs-error";
+import { ErrorFenextjs, ErrorInputRequired } from "fenextjs-error";
 
 export default {
     title: "Input/InputSelect",
@@ -34,6 +34,9 @@ const args: InputSelectProps = {
     placeholder: "Select",
     datalist: "listOption",
     useTOption:true,
+
+    // errorWithIsChange:false,
+    error:new ErrorFenextjs({message:"Agente Requerido"}),
     // typeSelectStyle:"normal-out",
     // forceShowOptionIfNotSelected:true,
     // _t:e=>"x",

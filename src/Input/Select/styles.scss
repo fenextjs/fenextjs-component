@@ -251,7 +251,7 @@ $breakSelectModalMovilTop: $breakSelectModalMovil + 1px;
     }
     &:has(.fenext-error) {
         .fenext-select-list-options {
-            top: calc(100% - 2rem);
+            // top: calc(100% - 2rem);
         }
     }
     &-close {
