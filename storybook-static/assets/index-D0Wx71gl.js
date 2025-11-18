@@ -1,6 +1,0 @@
-import{r as p,R as e}from"./index-BBqxgoSh.js";import{c as d}from"./index-CZnEoGlV.js";import{c as u}from"./index-0i6QVfK7.js";const f=({className:s="",message:r,iconClose:n=e.createElement(u.SvgClose,null),type:a,data:o,onClose:t,...c})=>{const{_t:l}=d.use_T({...c}),[i,m]=p.useState(!0);return e.createElement(e.Fragment,null,e.createElement("div",{className:`
-                    fenext-alert 
-                    fenext-alert-${a} 
-                    fenext-alert-${i?"active":"inactive"} 
-                    ${s}
-                `,"data-type":a,"meta-data":o},e.createElement("div",{className:"fenext-alert-content"},l(r)),e.createElement("div",{className:"fenext-alert-close",onClick:()=>{t==null||t(),m(!1)}},n)))};f.__docgenInfo={description:"",methods:[],displayName:"Alert",props:{className:{required:!1,tsType:{name:"string"},description:"The class name for the component.",defaultValue:{value:'""',computed:!1}},iconClose:{required:!1,tsType:{name:"ReactNode"},description:"The iconClose for the component.",defaultValue:{value:"<SvgClose />",computed:!1}},onClose:{required:!1,tsType:{name:"signature",type:"function",raw:"() => void",signature:{arguments:[],return:{name:"void"}}},description:"The onClose for the component."}},composes:["_TProps","AlertProps"]};export{f as A};
